@@ -8,7 +8,7 @@ Some permanent CTF challenges I'd recommend are:
 - [SmashTheStack](http://smashthestack.org/)  
 - [DareYourMind](http://www.dareyourmind.net/) (the one that got me hooked on CTFs way back when :) )  
 - [WeChall](http://www.wechall.net/) (aggregates scores from various permanent CTF challenge sites)   
-- [Comprehensive list of CTF sites from WeChall website](http://www.wechall.net/active_sites/all/by/site_id/ASC/page-1)  
+- Comprehensive [list](http://www.wechall.net/active_sites/all/by/site_id/ASC/page-1) of CTF sites from WeChall website  
 
 
 ### Contents of this repository:
