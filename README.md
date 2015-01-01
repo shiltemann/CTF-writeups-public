@@ -4,11 +4,11 @@
 I like to participate in "Capture The Flag" events. For upcoming events see [CTFtime](https://ctftime.org/).
   
 Some permanent CTF challenges I'd recommend are:  
--[OverTheWire](http://overthewire.org/wargames/)  
--[SmashTheStack](http://smashthestack.org/)  
--[DareYourMind](http://www.dareyourmind.net/) (the one that got me hooked on CTFs way back when :) )  
--[WeChall](http://www.wechall.net/) (aggregates scores from various permanent CTF challenge sites)   
--[List of CTF sites](http://www.wechall.net/active_sites/all/by/site_id/ASC/page-1)  
+- [OverTheWire](http://overthewire.org/wargames/)  
+- [SmashTheStack](http://smashthestack.org/)  
+- [DareYourMind](http://www.dareyourmind.net/) (the one that got me hooked on CTFs way back when :) )  
+- [WeChall](http://www.wechall.net/) (aggregates scores from various permanent CTF challenge sites)   
+- [Comprehensive list of CTF sites from WeChall website](http://www.wechall.net/active_sites/all/by/site_id/ASC/page-1)  
 
 
 ### Contents of this repository:
