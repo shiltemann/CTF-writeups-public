@@ -1,0 +1,76 @@
+#import requests
+
+#url="http://wargame.kr:8080/strcmp/"
+# pass our PHPSESSID, value of flag depends on it
+#cookies=dict(PHPSESSID="pejombchaqsphmo5jf0k8fu397")
+# make password an array to get around strcmp functions 
+#params={'password[]':'eu'}
+# make post request
+#r=requests.post(url,cookies=cookies,data=params)
+#print r.text
+#result:  Congratulations! Flag is <b>404f55462dd825f1627ae49706afb0004a401afa</b>
+
+
+
+
+# thinnest section of space or line signifies width of 1
+# barcodes always start with 101
+# next in units of width 7, can determine number by looking at width of groups
+# of line or space:
+# 0 - 3211
+# 1 - 2221
+# 2 - 2122
+# 3 - 1411
+# 4 - 1132
+# 5 - 1231
+# 6 - 1114
+# 7 - 1312
+# 8 - 1213
+# 9 - 3112
+
+
+# characters in our barcodes:
+# e2 96 88 = 11
+# e2 96 8c = 10
+# e2 96 90 = 01
+# 20       = 00
+
+
+# get barcode
+f = open('barcodelist')
+barcode = f.readline()
+f.close()
+
+
+# print raw value
+tmp="".join("{:02x}".format(ord(c)) for c in barcode)
+print tmp
+
+tmp=tmp.replace('e29688','11')
+tmp=tmp.replace('e2968c','10')
+tmp=tmp.replace('e29690','01')
+tmp=tmp.replace('20','00')
+tmp=tmp.replace('0a','')
+
+print tmp[3:]
+
+
+# group into groups of 7 and count thicknesses
+
+lastchar=tmp[3]
+streak=1
+counted=''
+i=4
+while i<=len(tmp):
+  group=tmp[i:i+7]
+  print group
+  
+
+
+print counted
+# convert to numbers
+
+
+
+
+

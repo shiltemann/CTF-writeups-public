@@ -13,6 +13,11 @@ Some permanent CTF challenges I'd recommend are:
 
 ### Contents of this repository:
 
+
+#### Advent Calendar CTF 2014
+
+[http://adctf2014.katsudon.org/](http://adctf2014.katsudon.org/)
+
 #### HackVent 2014
 
 A great advent-calender style CTF run by [Hacking-Lab](https://www.hacking-lab.com/). 
