@@ -437,10 +437,6 @@ The barcode is different every time, and seems like we need to decode 10 barcode
 
 We created a small python program to do this
 
-```
-
-
-``
 
 
 
