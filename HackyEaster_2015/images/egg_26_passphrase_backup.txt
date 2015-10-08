@@ -1,0 +1,12 @@
+{ 
+  "name" : "Clumsy Cloud Backup",
+  "comment" : "Backup of your passphrase, protected with your secret PIN.",
+  "params" : {
+      "s" : "ovaederecumsale",
+      "h" : "1.3.14.3.2.26",
+      "i" : 10000,
+      "k" : 128,
+      "e" : "2.16.840.1.101.3.4.1.1",
+      "p" : "8QeNdEdkspV6+1I77SEEEF4aWs5dl/auahJ46MMufkg="
+    }
+}

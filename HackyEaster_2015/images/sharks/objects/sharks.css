@@ -1,0 +1,7 @@
+html { background: url(shark.jpg) no-repeat center center fixed;  -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; font-family:'Source Sans Pro';}
+.panel { position: absolute; top: 50%; left: 50%; width: 400px; height: 214px; margin-top: -107px; margin-left: -200px; background-color: rgba(255,255,255,0.1); border-radius: 5px;}
+.title {color:white; font-size: 48px; font-weight:bold; position:absolute; top: 20px; left: 0; width: 100%; text-align: center;}
+input[type=text], input[type=password] {border: 0; border-radius: 5px; padding:10px 20px; font-size:18px;background:#fff; width:322px; height: 25px; margin: 20px 20px 0 20px;}
+input[type=submit] {border: 0; border-radius: 5px; padding:10px 20px; font-size:18px;background:#003; color: white; width: 362px; height: 44px; margin: 20px 20px 0 20px;}
+.imageBg { position: absolute; top: 50%; left: 50%; width: 360px; height: 360px; margin-top: -180px; margin-left: -180px; background-color: rgba(255,255,255,0.7); border-radius: 5px;}
+.image {width: 360px; height:360px;}

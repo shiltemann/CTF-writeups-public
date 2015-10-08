@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Sharks on Wire</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="icon" type="image/ico" href="../images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="sharks.css">
+    <script src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/crypto-js/sha1.js"></script>
+    <script type="text/javascript" src="../js/crypto-js/core-min.js"></script>
+    <script type="text/javascript" src="../js/crypto-js/enc-base64-min.js"></script>
+  <body>
+    <div class="title">Sharks on Wire</div>
+    <div class="panel">
+      <form action="auth" method="post" onsubmit="$('#hash').val(CryptoJS.SHA1($('#pass').val()));$('#pass').val('hashed!!!');">
+        <input class="input" type="text" name="user" placeholder="User"/>
+        <input class="input" type="password" name="pass" id="pass" placeholder="Password"/>
+        <input class="input" type="hidden" name="hash" id="hash" />
+        <input class="button" type="submit" value="Dive in"/>
+      </form>
+    </div>
+  </body>
+</html>

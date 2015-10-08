@@ -1,0 +1,60 @@
+// <!-- <mdb:mork:z v="1.4"/> -->
+< <(a=c)> // (f=iso-8859-1)
+  (B8=storeToken)(B9=account)(BA=dateReceived)(BB=ProtoThreadFlags)
+  (BC=sender_name)(BD=gloda-dirty)(BE=gloda-id)(BF=customSortCol)
+  (C0=keywords)(C1=imageSize)(C2=junkscore)(C3=notAPhishMessage)
+  (80=ns:msg:db:row:scope:msgs:all)(81=subject)(82=sender)(83=message-id)
+  (84=references)(85=recipients)(86=date)(87=size)(88=flags)(89=priority)
+  (8A=label)(8B=statusOfset)(8C=numLines)(8D=ccList)(8E=bccList)
+  (8F=msgThreadId)(90=threadId)(91=threadFlags)(92=threadNewestMsgDate)
+  (93=children)(94=unreadChildren)(95=threadSubject)(96=msgCharSet)
+  (97=ns:msg:db:table:kind:msgs)(98=ns:msg:db:table:kind:thread)
+  (99=ns:msg:db:table:kind:allthreads)
+  (9A=ns:msg:db:row:scope:threads:all)(9B=threadParent)(9C=threadRoot)
+  (9D=msgOffset)(9E=offlineMsgSize)
+  (9F=ns:msg:db:row:scope:dbfolderinfo:all)
+  (A0=ns:msg:db:table:kind:dbfolderinfo)(A1=numMsgs)(A2=numNewMsgs)
+  (A3=folderSize)(A4=expungedBytes)(A5=folderDate)(A6=highWaterKey)
+  (A7=mailboxName)(A8=UIDValidity)(A9=totPendingMsgs)
+  (AA=unreadPendingMsgs)(AB=expiredMark)(AC=version)
+  (AD=fixedBadRefThreading)(AE=folderName)(AF=charSetOverride)
+  (B0=charSet)(B1=sortType)(B2=sortOrder)(B3=viewFlags)(B4=viewType)
+  (B5=columnStates)(B6=MRUTime)(B7=sortColumns)>
+<(83=0)>[1:m(^9C=0)(^90=0)(^92=0)(^91=0)(^93=0)(^94=0)]
+
+<(80=1)(97=1412021182)(82=12)(84=)(85
+    ={"threadCol":{"visible":true,"ordinal":"1"},"flaggedCol":{"visible":true,\
+"ordinal":"3"},"attachmentCol":{"visible":true,"ordinal":"5"},"subjectCol":{"v\
+isible":true,"ordinal":"7"},"unreadButtonColHeader":{"visible":true,"ordinal":\
+"9"},"senderCol":{"visible":true,"ordinal":"11"},"recipientCol":{"visible":fal\
+se,"ordinal":"13"},"junkStatusCol":{"visible":true,"ordinal":"15"},"receivedCo\
+l":{"visible":false,"ordinal":"17"},"dateCol":{"visible":true,"ordinal":"19"},\
+"statusCol":{"visible":false,"ordinal":"21"},"sizeCol":{"visible":false,"ordin\
+al":"23"},"tagsCol":{"visible":false,"ordinal":"25"},"accountCol":{"visible":f\
+alse,"ordinal":"27"},"priorityCol":{"visible":false,"ordinal":"29"},"unreadCol\
+":{"visible":false,"ordinal":"31"},"totalCol":{"visible":false,"ordinal":"33"}\
+,"locationCol":{"visible":false,"ordinal":"35"},"idCol":{"visible":false,"ordi\
+nal":"37"}})(95=168a8)(9A=5429bbec)(8F=168c7)>
+{1:^9F {(k^A0:c)(s=9)} 
+  [1(^AC=1)(^AD=1)(^B6^97)(^B1=12)(^B2=1)(^B3=0)(^B4=0)(^B7=)(^B5^85)
+    (^A1=0)(^A3^95)(^A5^9A)(^A2=0)(^A4^8F)]}
+
+@$${B{@
+<(9F=5422575a)>[-1:m(^9C=0)(^90=0)(^92^9F)(^91=0)(^93=1)]
+
+<(87=5b)(9C=pamclose@mediacombb.net)(9D
+    ==?utf-8?Q?This_Email_ID_has_won_=C2=A3750,000_Pounds,_Send:_Details?=)
+  (9E=472584193.7415301411536730270.JavaMail.root@dsmdc-mail-mbs14)
+  (8C=account1)(A0=54225784)(A1=a28)(A2=d)(91=ffffffff)(A4
+    =0|pamclose@mediacombb.net)(A5=74)>
+{-0:^80 {(k^98:c)(s=9)1:m } [-0(^9D=0)(^B8=0)(^88=1)(^8A=0)(^8B=5b)(^82^9C)
+    (^81^9D)(^83^9E)(^B9^8C)(^86^9F)(^BA^A0)(^89=1)(^87^A1)(^8C=d)(^9B^91)
+    (^8F=0)(^BB=0)(^BC^A4)(^BE=74)]}
+{-1:^80 {(k^97:c)(s=9)} 0 }
+[-0:^9A(^95^9D)]
+<(A6=5429bc10)>[-1:^9F(^AC=1)(^AD=1)(^B6^97)(^B1=12)(^B2=1)(^B3=0)
+    (^B4=0)(^B7=)(^B5^85)(^A1=1)(^A3^A1)(^A5^A6)(^A2=0)(^A4^8F)]
+@$$}B}@
+
+@$${C{@
+@$$}C}@
