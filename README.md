@@ -37,7 +37,7 @@ A great easter egg hunt run by [Hacking-Lab](https://www.hacking-lab.com/).
 website: [http://hackyeaster.hacking-lab.com/hackyeaster/](http://hackyeaster.hacking-lab.com/hackyeaster/)
 
 
-![](images/egg_10_screenshot.png)
+![](HackyEaster_2015/images/egg_10_screenshot.png)
 
 
 #### CSAW HSF 2015
