@@ -52,7 +52,7 @@ website: [http://hackyeaster.hacking-lab.com/hackyeaster/](http://hackyeaster.ha
 
 #### CSAW HSF 2015
 
-a week-long CTF during NYU Poly's Cyber Security Awareness Week
+a two-week-long CTF during NYU Poly's Cyber Security Awareness Week
 
 (will post writeup after competition ends) 
 
