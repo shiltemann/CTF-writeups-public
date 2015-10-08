@@ -1,8 +1,0 @@
-#!/bin/bash
-
-
-for i in qrcodes/*
-do
-  zbarimg $i
-
-done
