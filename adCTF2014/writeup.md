@@ -34,7 +34,7 @@ Below are the writeups for each day (WIP)
 
 
 # December 1st: Warmup
-```
+
 
 **Category**
 
