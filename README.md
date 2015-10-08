@@ -30,5 +30,28 @@ Merry Christmas and a Happy 2015!
 
 (user: ysje)
 
+#### HackyEaster 2015
+
+A great easter egg hunt run by [Hacking-Lab](https://www.hacking-lab.com/). 
+
+website: [http://hackyeaster.hacking-lab.com/hackyeaster/](http://hackyeaster.hacking-lab.com/hackyeaster/)
+
+
+![](images/egg_10_screenshot.png)
+
+
+#### CSAW HSF 2015
+
+a week-long CTF during NYU Poly's Cyber Security Awareness Week
+
+(will post writeup after competition ends) 
+
+
+#### EasyCTF 2015
+
+A week-long CTF 31 October - 7 November 2015
+
+(will post writeup after competition ends) 
+
 ## more to come..
 
