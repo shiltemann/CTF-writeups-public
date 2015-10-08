@@ -31,7 +31,7 @@ Dec. 25   Xmas              bonus         ADCTF_m3RRy_ChR157m42
 Below are the writeups for each day (WIP)
 
 
-# December 1st: warmup
+# December 1st: Warmup
 ```
 
 **Category**

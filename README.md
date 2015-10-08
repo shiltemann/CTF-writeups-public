@@ -16,7 +16,12 @@ Some permanent CTF challenges I'd recommend are:
 
 #### Advent Calendar CTF 2014
 
+A challenge for each day of advent
+
 [http://adctf2014.katsudon.org/](http://adctf2014.katsudon.org/)
+
+![](adCTF2014/files/scoreboard.png)
+
 
 #### HackVent 2014
 
