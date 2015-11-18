@@ -10,6 +10,8 @@ Some permanent CTF challenges I'd recommend are:
 - [WeChall](http://www.wechall.net/) (aggregates scores from various permanent CTF challenge sites)   
 - Comprehensive [list](http://www.wechall.net/active_sites/all/by/site_id/ASC/page-1) of CTF sites from WeChall website  
 
+and another list of permanent CTFs is here: [http://captf.com/practice-ctf/](http://captf.com/practice-ctf/)
+
 
 ### Contents of this repository:
 
@@ -54,14 +56,18 @@ website: [http://hackyeaster.hacking-lab.com/hackyeaster/](http://hackyeaster.ha
 
 a two-week-long CTF during NYU Poly's Cyber Security Awareness Week
 
-(will post writeup after competition ends) 
 
 
 #### EasyCTF 2015
 
 A week-long CTF 31 October - 7 November 2015
 
-(will post writeup after competition ends) 
+
+#### HackVent 2015
+
+Advent-calendar CTF
+
+(will post writeups after Christmas)
 
 ## more to come..
 
