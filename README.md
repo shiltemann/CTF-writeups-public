@@ -1,7 +1,7 @@
 # CTF writeups 
 
 
-I like to participate in "Capture The Flag" events; computer security/hacking competitions which generally consist of participants breaking, investigating, reverse engineering and doing anything they can think of to reach the end goal; the *flag*, which is usually as specific string. 
+I like to participate in *Capture The Flag* events; computer security/hacking competitions which generally consist of participants breaking, investigating, reverse engineering and doing anything they can think of to reach the end goal; the *flag*, which is usually a specific string of text. 
 
 **Join Me!** I am always looking for team mates, so if you are interesting participating in one of these events and want to team up, please let me know :D
 
