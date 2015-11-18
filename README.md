@@ -35,7 +35,7 @@ This is a multi-stage challenge, final flag is of format:
 HV15-XXXX-XXXX-XXXX-XXXX-XXXX
 ```
 
-To check your answer and claim your points, signup and submit [here](https://www.hacking-lab.com/cases/8891-santas-leak/8891-santas-leak-wargame.html?event=979&case=1283) (signup needed)
+To check your answer and claim your points, signup and submit [here](https://www.hacking-lab.com/cases/8891-santas-leak/8891-santas-leak-wargame.html?event=979&case=1283) 
 
 
 (will post writeups after Christmas)
