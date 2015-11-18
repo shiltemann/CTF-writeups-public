@@ -1,4 +1,4 @@
-# CTF Resources
+# CTF Resources (WIP)
 
 List of useful tools and online resources for CTF challenges. WIP.
 
@@ -12,7 +12,25 @@ Collection of writeups of past events (for large number of events and teams):
 
 [https://github.com/ctfs/](https://github.com/ctfs/)
 
-## Misc
+
+## Overview
+
+This document contains links to tools, documentation, and tips and tricks for each of the following categories:
+
+- General
+- Forensics
+- Cryptography
+- Steganography
+- Binary Exploit/Reversing
+- Programming
+- Web
+- Network
+- Audio
+- File Formats
+- Misc
+
+
+## General 
 
 **Tools**  
 
@@ -21,64 +39,9 @@ Base64 decoder for non-ascii outputs: [http://www.motobit.com/util/base64-decode
 Base32 decoder : [http://tomeko.net/online_tools/base32.php?lang=en](http://tomeko.net/online_tools/base32.php?lang=en)  
 
 QR-code & other barcodes decoder: [http://www.onlinebarcodereader.com/](http://www.onlinebarcodereader.com/)  
-Morse decoder:  [http://morsecode.scphillips.com/translator.html](http://morsecode.scphillips.com/translator.html)  
 
 Ascii table:  
 ![](resources/ascii.jpg)
-
-Morse code alphabet:  
-![](resources/morsecode.png)
-
-Braille alphabet:  
-![](resources/braille.jpg)
-
-Wingdings alphabet:  
-![](resources/windings-alphabet.png)
-
-Dancing men cipher (Sherlock Holmes):  
-![](resources/dancingmen.png)
-
-**Documentation**  
-
-ROILA language (robot interaction language) (Asimov): [http://roila.org/language-guide/vocabulary/](http://roila.org/language-guide/vocabulary/)
-
-**Tips and Tricks**  
-
-Things like this:
-
-```
-(half of a megasecond) squared squared ( (bakers dozen donkeypower (number of horns on a unicorn 
-once in a blue moon)/ answer to life the universe and everything ) / a beard second squared earth mass)
-```
-Google can solve for you.
-
-Things like
-
-```
-Bama wopa tiwil
-Pito loki jifi bati bama
-```
-are ROILA.
-
-
-
-## Forensics
-
-**Tools**  
-
-Binwalk (search for file signatures in datafiles): ubuntu apt tool  
-Exiftool (exifdata viewer): ubuntu apt tool  
-strings (view printable characters in files): ubuntu apt tool  
-file (detect file type): ubuntu apt tool  
-
-PDF file extracter: [pdfextract.com](pdfextract.com)  
-NTFS alternate datastream extracter: [http://www.nirsoft.net/utils/alternate_data_streams.html](http://www.nirsoft.net/utils/alternate_data_streams.html)  
-
-
-**Documentation**  
-
-**Tips and Tricks**  
-
 
 
 ## Cryptography
@@ -120,6 +83,23 @@ GOST hashing algorithm:  [http://en.wikipedia.org/wiki/GOST_%28hash_function%29]
 
 **Tips and Tricks**  
 
+
+## Forensics
+
+**Tools**  
+
+Binwalk (search for file signatures in datafiles): ubuntu apt tool  
+Exiftool (exifdata viewer): ubuntu apt tool  
+strings (view printable characters in files): ubuntu apt tool  
+file (detect file type): ubuntu apt tool  
+
+PDF file extracter: [pdfextract.com](pdfextract.com)  
+NTFS alternate datastream extracter: [http://www.nirsoft.net/utils/alternate_data_streams.html](http://www.nirsoft.net/utils/alternate_data_streams.html)  
+
+
+**Documentation**  
+
+**Tips and Tricks**  
 
 
 ## Steganography
@@ -243,11 +223,49 @@ Check spectogram in Audacity
 
 QR-code format description: [http://www.ucreative.com/articles/what-is-a-qr-code-and-how-does-it-work/](http://www.ucreative.com/articles/what-is-a-qr-code-and-how-does-it-work/)  
 
+
+
+
+
+## Misc
+
+**Tools**  
+
+Morse decoder:  [http://morsecode.scphillips.com/translator.html](http://morsecode.scphillips.com/translator.html)  
+
+**Documentation**  
+
+Morse code alphabet:  
+![](resources/morsecode.png)
+
+Braille alphabet:  
+![](resources/braille.jpg)
+
+Wingdings alphabet:  
+![](resources/windings-alphabet.png)
+
+Dancing men cipher (Sherlock Holmes):  
+![](resources/dancingmen.png)
+
+ROILA language (robot interaction language) (Asimov): [http://roila.org/language-guide/vocabulary/](http://roila.org/language-guide/vocabulary/)
+
 **Tips and Tricks**  
 
+Things like this:
 
+```
+(half of a megasecond) squared squared ( (bakers dozen donkeypower (number of horns on a unicorn 
+once in a blue moon)/ answer to life the universe and everything ) / a beard second squared earth mass)
+```
+Google can solve for you.
 
+Things like
 
+```
+Bama wopa tiwil
+Pito loki jifi bati bama
+```
+are ROILA.
 
 
 
