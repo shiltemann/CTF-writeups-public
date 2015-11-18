@@ -25,7 +25,7 @@ Advent-calendar CTF by [Hacking-Lab](https://www.hacking-lab.com)
 
 **Teaser Challenge**
 
-All you need for this challenge is this image [link](resources/santas_leak_new.png):
+All you need for this challenge is this image [(link)](resources/santas_leak_new.png):
 
 ![](resources/santas_leak_new.png)
 
