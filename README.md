@@ -1,12 +1,14 @@
 # CTF writeups 
 
 
-I like to participate in "Capture The Flag" events; computer security/hacking competitions which generally consist of participants breaking, investigating, reverse engineering and doing anything they can to reach the end goal, a "flag" which is usually found as a string of text. 
+I like to participate in "Capture The Flag" events; computer security/hacking competitions which generally consist of participants breaking, investigating, reverse engineering and doing anything they can think of to reach the end goal; the *flag*, which is usually as specific string. 
 
-For upcoming events see [CTFtime](https://ctftime.org/).
+**Join Me!** I am always looking for team mates, so if you are interesting participating in one of these events and want to team up, please let me know :D
 
-I am always looking for team mates, so if you are interesting in teaming up please let me know :D
-  
+### Upcoming and Permanent CTFs:
+
+For a list of upcoming events see [CTFtime](https://ctftime.org/).
+
 Some permanent CTF challenges I'd recommend are:  
 - [OverTheWire](http://overthewire.org/wargames/)  
 - [SmashTheStack](http://smashthestack.org/)  
@@ -17,7 +19,8 @@ Some permanent CTF challenges I'd recommend are:
 and another list of permanent CTFs is here: [http://captf.com/practice-ctf/](http://captf.com/practice-ctf/)
 
 
-### Contents of this repository:
+### Writeups in this repository:
+
 
 #### HackVent 2015
 
