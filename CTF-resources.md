@@ -1,0 +1,256 @@
+# CTF Resources
+
+List of useful tools and online resources for CTF challenges. WIP.
+
+## CTFs
+
+List of past and upcoming CTF events:
+
+[https://ctftime.org/](https://ctftime.org/)
+
+Collection of writeups of past events (for large number of events and teams):
+
+[https://github.com/ctfs/](https://github.com/ctfs/)
+
+## Misc
+
+**Tools**  
+
+Hex/ASCII/Binary/Base64/Decimal/ROT13 conversions: [http://www.asciitohex.com/](http://www.asciitohex.com/)  
+Base64 decoder for non-ascii outputs: [http://www.motobit.com/util/base64-decoder-encoder.asp](http://www.motobit.com/util/base64-decoder-encoder.asp)  
+Base32 decoder : [http://tomeko.net/online_tools/base32.php?lang=en](http://tomeko.net/online_tools/base32.php?lang=en)  
+
+QR-code & other barcodes decoder: [http://www.onlinebarcodereader.com/](http://www.onlinebarcodereader.com/)  
+Morse decoder:  [http://morsecode.scphillips.com/translator.html](http://morsecode.scphillips.com/translator.html)  
+
+Ascii table:  
+![](resources/ascii.jpg)
+
+Morse code alphabet:  
+![](resources/morsecode.png)
+
+Braille alphabet:  
+![](resources/braille.jpg)
+
+Wingdings alphabet:  
+![](resources/windings-alphabet.png)
+
+Dancing men cipher (Sherlock Holmes):  
+![](resources/dancingmen.png)
+
+**Documentation**  
+
+ROILA language (robot interaction language) (Asimov): [http://roila.org/language-guide/vocabulary/](http://roila.org/language-guide/vocabulary/)
+
+**Tips and Tricks**  
+
+Things like this:
+
+```
+(half of a megasecond) squared squared ( (bakers dozen donkeypower (number of horns on a unicorn 
+once in a blue moon)/ answer to life the universe and everything ) / a beard second squared earth mass)
+```
+Google can solve for you.
+
+Things like
+
+```
+Bama wopa tiwil
+Pito loki jifi bati bama
+```
+are ROILA.
+
+
+
+## Forensics
+
+**Tools**  
+
+Binwalk (search for file signatures in datafiles): ubuntu apt tool  
+Exiftool (exifdata viewer): ubuntu apt tool  
+strings (view printable characters in files): ubuntu apt tool  
+file (detect file type): ubuntu apt tool  
+
+PDF file extracter: [pdfextract.com](pdfextract.com)  
+NTFS alternate datastream extracter: [http://www.nirsoft.net/utils/alternate_data_streams.html](http://www.nirsoft.net/utils/alternate_data_streams.html)  
+
+
+**Documentation**  
+
+**Tips and Tricks**  
+
+
+
+## Cryptography
+
+**Tools**  
+
+*Classical*  
+Geocaching Toolbox (many classic crypto decoders): [http://www.geocachingtoolbox.com/index.php](http://www.geocachingtoolbox.com/index.php)  
+ROT cipher (caesar) decoder (outputs all possible rotations): [http://planetcalc.com/1434/](http://planetcalc.com/1434/)  
+Rail fence cipher decoder: [http://rumkin.com/tools/cipher/railfence.php](http://rumkin.com/tools/cipher/railfence.php)  
+Bacon cipher decoder: [http://www.geocachingtoolbox.com/index.php?page=baconianCipher](http://www.geocachingtoolbox.com/index.php?page=baconianCipher)  
+Vigenere cipher decoder: [http://www.guballa.de/vigenere-solver](http://www.guballa.de/vigenere-solver)  
+
+*Modern*  
+RSA calculator: [https://www.cs.drexel.edu/~introcs/Fa11/notes/10.1_Cryptography/RSA_Express_EncryptDecrypt.html](https://www.cs.drexel.edu/~introcs/Fa11/notes/10.1_Cryptography/RSA_Express_EncryptDecrypt.html)  
+RSA worksheet: [https://www.cs.drexel.edu/~introcs/Fa11/notes/10.1_Cryptography/RSAWorksheetv4d.html](https://www.cs.drexel.edu/~introcs/Fa11/notes/10.1_Cryptography/RSAWorksheetv4d.html)  
+RSA python lib: [https://pypi.python.org/pypi/rsa](https://pypi.python.org/pypi/rsa)  
+Discrete logarithm calculator: [http://www.alpertron.com.ar/DILOG.HTM](http://www.alpertron.com.ar/DILOG.HTM)  
+
+*Hashing*  
+Online Hash database: [https://hashkiller.co.uk/](https://hashkiller.co.uk/)  
+John the Ripper: ubuntu apt tool, use Jumbo version for extra functionality [http://www.openwall.com/john/](http://www.openwall.com/john/)  
+
+```
+MD5 - 32 characters
+SHA1 - 40 characters
+```
+
+**Documentation**  
+
+*Classical*  
+Rail Fence Cipher: [wikipedia](https://en.wikipedia.org/wiki/Rail_fence_cipher)  
+Scytale cipher: [scytale cipher](http://en.wikipedia.org/wiki/Scytale)  
+
+*Modern*  
+
+*Hashing*  
+GOST hashing algorithm:  [http://en.wikipedia.org/wiki/GOST_%28hash_function%29](http://en.wikipedia.org/wiki/GOST_%28hash_function%29)  
+
+**Tips and Tricks**  
+
+
+
+## Steganography
+
+**Tools**  
+
+outguess: ubuntu apt tool  
+steghide: ubuntu apt tool  
+stegdetect: ubuntu apt tool  
+Stegsolve: [https://www.wechall.net/forum/show/thread/527/Stegsolve_1.3/page-1](https://www.wechall.net/forum/show/thread/527/Stegsolve_1.3/page-1)  
+Stereogram Decoder: [http://magiceye.ecksdee.co.uk/](http://magiceye.ecksdee.co.uk/)  
+Pytesser Captcha reader: [https://code.google.com/p/pytesser/](https://code.google.com/p/pytesser/)  
+StegoPNG (Windows): [http://stego-png.soft112.com/](http://stego-png.soft112.com/)  
+
+**Documentation**  
+
+**Tips and Tricks**  
+
+
+
+## Binary/Exploit/Reversing
+
+**Tools**  
+
+objdump: ubuntu apt tool  
+gdb (GNU debugger): ubuntu apt tool  
+IDA (demo): [https://www.hex-rays.com/products/ida/support/download_demo.shtml](https://www.hex-rays.com/products/ida/support/download_demo.shtml)   
+Hopper: [http://www.hopperapp.com/download.html](http://www.hopperapp.com/download.html)  
+ 
+**Documentation**  
+
+ARM instruction set: [http://infocenter.arm.com/help/index.jsp](http://infocenter.arm.com/help/index.jsp)  
+Buffer Overflows 101: [https://www.eecis.udel.edu/~bmiller/cis459/2007s/readings/buff-overflow.html](https://www.eecis.udel.edu/~bmiller/cis459/2007s/readings/buff-overflow.html)  
+Shellcode database: [http://shell-storm.org/shellcode/](http://shell-storm.org/shellcode/)  
+
+
+**Tips and Tricks**  
+
+
+
+
+## Programming
+
+**Tools**  
+
+Scripting online (terminals and IDEs for many languages): [http://www.tutorialspoint.com/codingground.htm](http://www.tutorialspoint.com/codingground.htm)  
+BrainFuck interpreter: [http://esoteric.sange.fi/brainfuck/impl/interp/i.html](http://esoteric.sange.fi/brainfuck/impl/interp/i.html)  
+Deparse (Perl): [http://perldoc.perl.org/B/Deparse.html](http://perldoc.perl.org/B/Deparse.html)  
+
+**Documentation**  
+
+Esoteric programming languages wiki: [http://esolangs.org/wiki/Main_Page](http://esolangs.org/wiki/Main_Page)  
+
+
+**Tips and Tricks**  
+
+Something like
+
+```
+++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.
+```
+
+is Brainfuck.
+
+
+## Web
+
+**Tools**  
+
+Deparse (Perl): [http://perldoc.perl.org/B/Deparse.html](http://perldoc.perl.org/B/Deparse.html)  
+SQL Fiddle: [SQLFiddle](sqlfiddle.com)  
+Unwrap the pl/sql: [http://www.codecrete.net/UnwrapIt/](http://www.codecrete.net/UnwrapIt/)  
+Javascript beautifier (pretty print): [http://jsbeautifier.org/](http://jsbeautifier.org/)  
+
+
+
+**Documentation**  
+
+SQL injection 101: [https://www.owasp.org/index.php/SQL_injection](https://www.owasp.org/index.php/SQL_injection)  
+SQL injection 102: [https://en.wikipedia.org/wiki/SQL_injection](https://en.wikipedia.org/wiki/SQL_injection)  
+
+XSS 101: [https://en.wikipedia.org/wiki/Cross-site_scripting](https://en.wikipedia.org/wiki/Cross-site_scripting)  
+
+
+**Tips and Tricks**  
+
+Firefox: SHIFT+F4 gives scratchpad (javascript fiddle)  
+
+## Network
+
+
+**Tools**  
+
+Wireshark (packet dissection): ubuntu apt tool [https://www.wireshark.org/](https://www.wireshark.org/)  
+
+
+**Documentation**  
+
+**Tips and Tricks**  
+
+Wireshark -> export objects -> HTTP
+
+## Audio
+
+**Tools**  
+
+Audacity: ubuntu apt tool  
+DTMF tone decoder: [http://dialabc.com/sound/detect/index.html](http://dialabc.com/sound/detect/index.html)  
+
+**Documentation**  
+
+**Tips and Tricks**  
+
+Check spectogram in Audacity  
+
+## File Formats
+
+**Tools**  
+
+**Documentation**  
+
+QR-code format description: [http://www.ucreative.com/articles/what-is-a-qr-code-and-how-does-it-work/](http://www.ucreative.com/articles/what-is-a-qr-code-and-how-does-it-work/)  
+
+**Tips and Tricks**  
+
+
+
+
+
+
+
+
+
+
