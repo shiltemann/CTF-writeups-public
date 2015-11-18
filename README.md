@@ -23,7 +23,7 @@ and another list of permanent CTFs is here: [http://captf.com/practice-ctf/](htt
 
 Advent-calendar CTF by [Hacking-Lab](https://www.hacking-lab.com)
 
-**Teaser Challenge**
+*Teaser Challenge*
 
 All you need for this challenge is this image [(link)](resources/santas_leak_new.png):
 
