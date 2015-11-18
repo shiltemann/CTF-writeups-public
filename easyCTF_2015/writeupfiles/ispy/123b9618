@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Image codes: Drawing</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="Keywords" content="free image hosting, forum image hosting, phpbb image mod, phpbb upload mod, image upload mod, image host, sites, forums, picture hosting, photo sharing, image upload" />
+<meta name="Description" content="Provides free image upload and hosting integration for forums. Free picture hosting and photo sharing for websites and blogs." />
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png"/>
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png"/>
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png"/>
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png"/>
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png"/>
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png"/>
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png"/>
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png"/>
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32"/>
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"/>
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16"/>
+<link rel="manifest" href="/manifest.json"/>
+<meta name="apple-mobile-web-app-title" content="Postimage"/>
+<meta name="application-name" content="Postimage"/>
+<meta name="msapplication-TileColor" content="#603cba"/>
+<meta name="msapplication-TileImage" content="/mstile-144x144.png"/>
+<meta name="theme-color" content="#ffffff"/>
+<link rel="stylesheet" type="text/css" href="/style.min.css" />
+<script type="text/javascript">
+<!--
+var text_alert="Please specify content type of your file/files!";
+-->
+</script>
+</head>
+<body>
+<div id="header">
+	<p style="font-size:20px;color:#37587A;letter-spacing:12px"><a style='text-decoration: none;' href='http://postimage.org/'>postimage.org</a></p><br />
+	<p style="font-size:11px;color:#999;">
+		<span id="bmc" bmctext="Add to Favorites" bmctitle="! Postimage.org - free image hosting / image upload" bmcurl="http://postimage.org/"></span><a href="http://postimage.org/register.php">Register</a> |
+		<a href="http://postimage.org/profile.php">Login</a>
+	</p>
+</div>
+<center><br /><br /><p style='font-size: 20px;'>Upload Completed!</p><br /><br /><form method='post' action='/register.php' onsubmit='if(document.getElementById("email").value){return bot_test();}else{return false;}' /><table class='bbcode' style='margin:0px;text-align:center;'><tr><td height='30px'><p>Save and share your media. Sign up with Postimage. Registration is free.</p><br /><br />Email: <input type='text' name='email' id='email' style='width:200px;font: 11px Verdana, Arial, Helvetica, sans-serif;padding:2px; border: 1px solid #888; height:13px;' /><input type='hidden' name='antibot' id='antibot' value='' />&nbsp;<input type='submit' value='Create My Account' style='width:150px;font: 11px Verdana, Arial, Helvetica, sans-serif;height: 19px; background: #F8F8F8; border: 1px solid #888;cursor: pointer; padding:0px;' /></td></tr></table></form><br /><br /><p><a href='http://postimage.org/' target='_blank'>Upload another image</a></p><br /><br />
+<br /><table class='gallery'><tr><td><a href='http://postimg.org/image/ycq0xwzsl/' target='_blank'><img src='http://s10.postimg.org/ycq0xwzsl/Drawing.jpg?noCache=1443468206' alt='Drawing' border='0' id='id_1' /></a><br /><br /><a href='javascript:void(0);' onclick='rotate(0,1,"s10","123b9618","ycq0xwzsl");'><img src='/templates/images/rotate_ccw.png' alt='< rotate' title='< rotate' border='0' /></a>&nbsp;&nbsp;&nbsp;<a href='javascript:void(0);' onclick='rotate(1,1,"s10","123b9618","ycq0xwzsl");'><img src='/templates/images/rotate_cw.png' alt='rotate >' title='rotate >' border='0' /></a><br /><br /><span style='font-size: 10px;' id='ycq0xwzsl_123b9618' class='editText'>Drawing</span></td></tr></table><br /><br /><br /></center><div id="user_center">
+	<div id="user_content">
+
+<table border="0" cellpadding="0" cellspacing="4" class="bbcode">
+<tr>
+	<td><textarea wrap='off' onmouseover='this.focus()' onfocus='this.select()' id="code_1" scrolling="no">http://postimg.org/image/ycq0xwzsl/</textarea></td>
+	<td style="width:170px;"><span id="result_1">Link</span></td>
+	<td><div id="clip_button_1" class="my_clip_button" data-clipboard-target="code_1">copy to clipboard</div></td>
+</tr>
+<tr>
+	<td><textarea wrap='off' onmouseover='this.focus()' onfocus='this.select()' id="code_2" scrolling="no">http://s10.postimg.org/ei3zbskl5/Drawing.png</textarea></td>
+	<td style="width:170px;"><span id="result_2">Direct Link</span></td>
+	<td><div id="clip_button_2" class="my_clip_button" data-clipboard-target="code_2">copy to clipboard</div></td>
+</tr>
+<tr>
+	<td colspan="3" style="padding-top:15px">&nbsp;</td>
+</tr>
+<tr>
+	<td><textarea wrap='off' onmouseover='this.focus()' onfocus='this.select()' id="code_3" scrolling="no">[url=http://postimg.org/image/ycq0xwzsl/][img]http://s10.postimg.org/ycq0xwzsl/Drawing.jpg[/img][/url]</textarea></td>
+	<td><span id="result_3">Thumbnail for Forums (1)</span></td>
+	<td><div id="clip_button_3" class="my_clip_button" data-clipboard-target="code_3">copy to clipboard</div></td>
+</tr>
+<tr>
+	<td><textarea wrap='off' onmouseover='this.focus()' onfocus='this.select()' id="code_4" scrolling="no">[url=http://postimg.org/image/ycq0xwzsl/][img=http://s10.postimg.org/ycq0xwzsl/Drawing.jpg][/url]</textarea></td>
+	<td><span id="result_4">Thumbnail for Forums (2)</span></td>
+	<td><div id="clip_button_4" class="my_clip_button" data-clipboard-target="code_4">copy to clipboard</div></td>
+</tr>
+<tr>
+	<td><textarea wrap='off' onmouseover='this.focus()' onfocus='this.select()' id="code_5" scrolling="no">&lt;a href='http://postimg.org/image/ycq0xwzsl/' target='_blank'&gt;&lt;img src='http://s10.postimg.org/ycq0xwzsl/Drawing.jpg' border='0' alt=&quot;Drawing&quot; /&gt;&lt;/a&gt;</textarea></td>
+	<td><span id="result_5">Thumbnail for Website</span></td>
+	<td><div id="clip_button_5" class="my_clip_button" data-clipboard-target="code_5">copy to clipboard</div></td>
+</tr>
+<tr>
+	<td colspan="3" style="padding-top:15px">&nbsp;</td>
+</tr>
+<tr>
+	<td><textarea wrap='off' onmouseover='this.focus()' onfocus='this.select()' id="code_6" scrolling="no">[url=http://postimage.org/][img]http://s10.postimg.org/ei3zbskl5/Drawing.png[/img][/url]
+[url=http://postimage.org/]picture upload[/url]</textarea></td>
+	<td><span id="result_6">Hotlink for Forums (1)</span></td>
+	<td><div id="clip_button_6" class="my_clip_button" data-clipboard-target="code_6">copy to clipboard</div></td>
+</tr>
+<tr>
+	<td><textarea wrap='off' onmouseover='this.focus()' onfocus='this.select()' id="code_7" scrolling="no">[url=http://postimage.org/][img=http://s10.postimg.org/ei3zbskl5/Drawing.png][/url]
+[url=http://postimage.org/]picture upload[/url]</textarea></td>
+	<td><span id="result_7">Hotlink for Forums (2)</span></td>
+	<td><div id="clip_button_7" class="my_clip_button" data-clipboard-target="code_7">copy to clipboard</div></td>
+</tr>
+<tr>
+	<td><textarea wrap='off' onmouseover='this.focus()' onfocus='this.select()' id="code_8" scrolling="no">&lt;a href='http://postimage.org/' target='_blank'&gt;&lt;img src='http://s10.postimg.org/ei3zbskl5/Drawing.png' border='0' alt=&quot;Drawing&quot; /&gt;&lt;/a&gt;&lt;br /&gt;&lt;a target='_blank' href='http://postimage.org/'&gt;picture upload&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;
+</textarea></td>
+	<td><span id="result_8">Hotlink for Website</span></td>
+	<td><div id="clip_button_8" class="my_clip_button" data-clipboard-target="code_8">copy to clipboard</div></td>
+</tr>
+<tr>
+	<td colspan="3" style="padding-top:10px">&nbsp;</td>
+</tr>
+<tr>
+	<td>&nbsp;</td>
+	<td style="width:170px;">Social Networks</td>
+	<td>
+		<a rel="nofollow" target="_blank" href='http://del.icio.us/post?url=http://postimg.org/image/ycq0xwzsl/' title="Submit to Delicious"><span class="smallsocial smalldelicious"></span></a>
+		<a rel="nofollow" target="_blank" href='https://www.google.com/bookmarks/mark?op=edit&bkmk=http://postimg.org/image/ycq0xwzsl/&annotation=' title="Submit to Google Bookmark"><span class="smallsocial smallgooglebook"></span></a>
+		<a rel="nofollow" target="_blank" href='http://digg.com/submit?phase=2&url=http://postimg.org/image/ycq0xwzsl/' title="Submit to Digg"><span class="smallsocial smalldigg"></span></a>
+		<a rel="nofollow" target="_blank" href='http://www.stumbleupon.com/submit?url=http://postimg.org/image/ycq0xwzsl/' title="Submit to StumbleUpon"><span class="smallsocial smallstumbleupon"></span></a>
+		<a rel="nofollow" target="_blank" href='http://www.reddit.com/submit?url=http://postimg.org/image/ycq0xwzsl/' title="Submit to Reddit"><span class="smallsocial smallreddit"></span></a>
+		<a rel="nofollow" target="_blank" href='http://twitter.com/home/?status=http://postimg.org/image/ycq0xwzsl/' title="Submit to Twitter"><span class="smallsocial smalltwitter"></span></a>
+		<a rel="nofollow" target="_blank" href='http://www.facebook.com/sharer.php?u=http://postimg.org/image/ycq0xwzsl/' title="Submit to Facebook"><span class="smallsocial smallfacebook"></span></a>
+	</td>
+</tr>
+<tr>
+	<td colspan="3" style="padding-top:10px">&nbsp;</td>
+</tr>
+<tr>
+	<td><textarea wrap='off' onmouseover='this.focus()' onfocus='this.select()' id="code_9" scrolling="no">http://postimg.org/delete/vimvkgxmi/</textarea></td>
+	<td style="width:170px;"><span id="result_9">Deletion Link</span></td>
+	<td><div id="clip_button_9" class="my_clip_button" data-clipboard-target="code_9">copy to clipboard</div></td>
+</tr>
+</table>
+		<br />
+	</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js" type="text/javascript"></script>
+	<div id="footer">
+		<p><a href="http://postimage.org/" target="_blank">- Upload <b>your</b> images -</a><br /><br /></p>
+		<p><a href="http://postimage.org/mod.php" target="_blank">- Add image hosting to <b>your</b> forum -</a><br /><br /></p>
+		<ul>
+			<li><a href="http://postimage.org/about.php">About</a> |</li>
+			<li><a href="http://postimage.org/terms.php">Terms of Use</a> |</li>
+			<li><a href="http://postimage.org/privacy.php">Privacy Policy</a> |</li>
+			<li><a href="http://postimage.org/faq.php">FAQ</a> |</li>
+			<li><a href="http://postimage.org/languages.php">Languages</a> |</li>
+			<li><a href="http://postimage.org/contact.php">Contact Us</a></li>
+		</ul>
+		<p>Copyright &copy; Postimage.org</p>
+	</div>
+</div>
+<script type="text/javascript" src="/image.group.js"></script>
+<script>
+$(document).ready(function()
+{
+	$('.editText').editable('/my.php',
+	{
+		maxlength : '48',
+		tooltip : 'Click to edit...',
+		id : 'fieldname',
+        name : 'content',
+		height : 18,
+		width : 140,
+		onblur : 'submit',
+		select : true,
+		submit : '&nbsp;ok&nbsp;'
+	});
+});
+
+function rotate(angle,id,sid,code,v)
+{
+	$.post("/rotate.php",{'sid':encodeURI(sid),'code':encodeURI(code),'v':encodeURI(v),'angle':encodeURI(angle)},function(data)
+	{
+		if(data=='OK')
+		{
+			var date = new Date();
+			
+			var src = $("#id_"+id).attr('src');
+			var pos = src.indexOf('?');
+			
+			if (pos >= 0)
+			{
+				src = src.substr(0, pos);
+			}
+			
+			$("#id_"+id).attr("src",src + '?noCache=' + date.getTime());
+			
+			get_img_size("#id_"+id);
+		}
+	});
+}
+
+function get_img_size(id)
+{
+	var src=$(id).attr('src');
+	
+    var newImg = new Image();
+    newImg.src = src;
+	
+    var height = newImg.height;
+    var width = newImg.width;
+	
+    $(newImg).load(function()
+	{
+		$(id).width(newImg.width);
+		$(id).height(newImg.height);
+    });
+}
+</script>
+<script type="text/javascript">new Image().src = "//counter.yadro.ru/hit?r" + escape(document.referrer) + ((typeof(screen)=="undefined")?"" : ";s"+screen.width+"*"+screen.height+"*" + (screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ";u"+escape(document.URL) + ";h"+escape(document.title.substring(0,80)) + ";" +Math.random();</script>
+</body>
+</html>
