@@ -50,6 +50,8 @@ Ascii table:
 
 *Classical*  
 Geocaching Toolbox (many classic crypto decoders): [http://www.geocachingtoolbox.com/index.php](http://www.geocachingtoolbox.com/index.php)  
+Substitution Cipher Fiddle: http://ba.net/util/cipher2/cipher.html  
+Substitution Cipher Autosolver: http://www.quipqiup.com/index.php  
 ROT cipher (caesar) decoder (outputs all possible rotations): [http://planetcalc.com/1434/](http://planetcalc.com/1434/)  
 Rail fence cipher decoder: [http://rumkin.com/tools/cipher/railfence.php](http://rumkin.com/tools/cipher/railfence.php)  
 Bacon cipher decoder: [http://www.geocachingtoolbox.com/index.php?page=baconianCipher](http://www.geocachingtoolbox.com/index.php?page=baconianCipher)  
