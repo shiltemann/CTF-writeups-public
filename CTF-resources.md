@@ -171,9 +171,12 @@ is Brainfuck.
 
 **Tools**  
 
-Deparse (Perl): [http://perldoc.perl.org/B/Deparse.html](http://perldoc.perl.org/B/Deparse.html)  
+Older versions of websites: [Wayback machine](http://archive.org/web/)  
+
 SQL Fiddle: [SQLFiddle](sqlfiddle.com)  
+PHP Fiddle: [PHPFiddle](http://phpfiddle.org/)  
 Unwrap the pl/sql: [http://www.codecrete.net/UnwrapIt/](http://www.codecrete.net/UnwrapIt/)  
+Deparse (Perl): [http://perldoc.perl.org/B/Deparse.html](http://perldoc.perl.org/B/Deparse.html)  
 Javascript beautifier (pretty print): [http://jsbeautifier.org/](http://jsbeautifier.org/)  
 
 
