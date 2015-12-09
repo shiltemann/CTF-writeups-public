@@ -54,7 +54,7 @@ Substitution Cipher Fiddle: http://ba.net/util/cipher2/cipher.html
 Substitution Cipher Autosolver: http://www.quipqiup.com/index.php  
 ROT cipher (caesar) decoder (outputs all possible rotations): [http://planetcalc.com/1434/](http://planetcalc.com/1434/)  
 Rail fence cipher decoder: [http://rumkin.com/tools/cipher/railfence.php](http://rumkin.com/tools/cipher/railfence.php)  
-Bacon cipher decoder: [http://www.geocachingtoolbox.com/index.php?page=baconianCipher](http://www.geocachingtoolbox.com/index.php?page=baconianCipher)  
+Bacon cipher decoder: [http://rumkin.com/tools/cipher/baconian.php](http://rumkin.com/tools/cipher/baconian.php)  
 Vigenere cipher decoder: [http://www.guballa.de/vigenere-solver](http://www.guballa.de/vigenere-solver)  
 
 *Modern*  
@@ -95,7 +95,7 @@ Exiftool (exifdata viewer): ubuntu apt tool
 strings (view printable characters in files): ubuntu apt tool  
 file (detect file type): ubuntu apt tool  
 
-PDF file extracter: [pdfextract.com](pdfextract.com)  
+PDF file extracter: [extractpdf.com](extractpdf.com)  
 NTFS alternate datastream extracter: [http://www.nirsoft.net/utils/alternate_data_streams.html](http://www.nirsoft.net/utils/alternate_data_streams.html)  
 
 
