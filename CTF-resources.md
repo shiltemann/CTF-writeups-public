@@ -132,6 +132,10 @@ gdb (GNU debugger): ubuntu apt tool
 IDA (demo): [https://www.hex-rays.com/products/ida/support/download_demo.shtml](https://www.hex-rays.com/products/ida/support/download_demo.shtml)   
 Hopper: [http://www.hopperapp.com/download.html](http://www.hopperapp.com/download.html)  
  
+ODA - Online disassembler: https://www.onlinedisassembler.com/odaweb/  
+ILSpy - .NET decompiler: http://ilspy.net/   
+ 
+ 
 **Documentation**  
 
 ARM instruction set: [http://infocenter.arm.com/help/index.jsp](http://infocenter.arm.com/help/index.jsp)  
@@ -149,8 +153,13 @@ Shellcode database: [http://shell-storm.org/shellcode/](http://shell-storm.org/s
 **Tools**  
 
 Scripting online (terminals and IDEs for many languages): [http://www.tutorialspoint.com/codingground.htm](http://www.tutorialspoint.com/codingground.htm)  
+.NET Fiddle: https://dotnetfiddle.net/   
+SQL Fiddle: [SQLFiddle](sqlfiddle.com)  
+PHP Fiddle: [PHPFiddle](http://phpfiddle.org/)  
+
 BrainFuck interpreter: [http://esoteric.sange.fi/brainfuck/impl/interp/i.html](http://esoteric.sange.fi/brainfuck/impl/interp/i.html)  
 Deparse (Perl): [http://perldoc.perl.org/B/Deparse.html](http://perldoc.perl.org/B/Deparse.html)  
+
 
 **Documentation**  
 
