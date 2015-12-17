@@ -38,6 +38,7 @@ Hex/ASCII/Binary/Base64/Decimal/ROT13 conversions: [http://www.asciitohex.com/](
 Base64 decoder for non-ascii outputs: [http://www.motobit.com/util/base64-decoder-encoder.asp](http://www.motobit.com/util/base64-decoder-encoder.asp)  
 Base32 decoder : [http://tomeko.net/online_tools/base32.php?lang=en](http://tomeko.net/online_tools/base32.php?lang=en)  
 Base85 decoder : http://tools.web-max.ca/encode_decode.php  
+Binary-to-text encodings: https://en.wikipedia.org/wiki/Binary-to-text_encoding  
 
 QR-code & other barcodes decoder: [http://www.onlinebarcodereader.com/](http://www.onlinebarcodereader.com/)  
 
@@ -132,6 +133,10 @@ gdb (GNU debugger): ubuntu apt tool
 IDA (demo): [https://www.hex-rays.com/products/ida/support/download_demo.shtml](https://www.hex-rays.com/products/ida/support/download_demo.shtml)   
 Hopper: [http://www.hopperapp.com/download.html](http://www.hopperapp.com/download.html)  
  
+ODA - Online disassembler: https://www.onlinedisassembler.com/odaweb/  
+ILSpy - .NET decompiler: http://ilspy.net/   
+ 
+ 
 **Documentation**  
 
 ARM instruction set: [http://infocenter.arm.com/help/index.jsp](http://infocenter.arm.com/help/index.jsp)  
@@ -149,8 +154,13 @@ Shellcode database: [http://shell-storm.org/shellcode/](http://shell-storm.org/s
 **Tools**  
 
 Scripting online (terminals and IDEs for many languages): [http://www.tutorialspoint.com/codingground.htm](http://www.tutorialspoint.com/codingground.htm)  
+.NET Fiddle: https://dotnetfiddle.net/   
+SQL Fiddle: [SQLFiddle](sqlfiddle.com)  
+PHP Fiddle: [PHPFiddle](http://phpfiddle.org/)  
+
 BrainFuck interpreter: [http://esoteric.sange.fi/brainfuck/impl/interp/i.html](http://esoteric.sange.fi/brainfuck/impl/interp/i.html)  
 Deparse (Perl): [http://perldoc.perl.org/B/Deparse.html](http://perldoc.perl.org/B/Deparse.html)  
+
 
 **Documentation**  
 
