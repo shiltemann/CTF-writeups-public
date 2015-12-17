@@ -228,8 +228,8 @@ Check spectogram in Audacity
 **Documentation**  
 
 QR-code format description: [http://www.ucreative.com/articles/what-is-a-qr-code-and-how-does-it-work/](http://www.ucreative.com/articles/what-is-a-qr-code-and-how-does-it-work/)  
-
-
+QR-code format description [wikipedia](https://en.wikipedia.org/wiki/QR_code)  
+Decoding QR-codes by hand: https://www.youtube.com/watch?v=KA8hDldvfv0  
 
 
 
@@ -238,6 +238,8 @@ QR-code format description: [http://www.ucreative.com/articles/what-is-a-qr-code
 **Tools**  
 
 Morse decoder:  [http://morsecode.scphillips.com/translator.html](http://morsecode.scphillips.com/translator.html)  
+Z3 theorem prover. Great for solving logic challenges: http://research.microsoft.com/en-us/um/redmond/projects/z3/mbqi-tutorial/  
+
 
 **Documentation**  
 
