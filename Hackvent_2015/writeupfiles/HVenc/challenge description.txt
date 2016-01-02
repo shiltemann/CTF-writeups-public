@@ -1,0 +1,1 @@
+todays code was encrypted by our mighty xmas encryptor. you are given the executable and the encrypted key. can you find a vulnerability in our code to decrypt the daily code? 

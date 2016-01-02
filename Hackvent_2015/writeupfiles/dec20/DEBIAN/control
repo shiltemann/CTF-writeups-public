@@ -1,0 +1,10 @@
+Package: com.hacking-lab.hackvent
+Name: HACKvent
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Description: an xmas present from dear santa
+Maintainer: Santa
+Author: Santa
+Section: Tweaks
+Version: 1.0.1-10
+Installed-Size: 16

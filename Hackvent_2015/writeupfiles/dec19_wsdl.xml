@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions 
+	xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:tns="urn:hlserver"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="urn:hlserver">
+
+<message name="sessionRequest">
+</message>
+<message name="sessionResponse">
+  <part name="session" type="xsd:string" />
+</message>
+
+<message name="questRequest">
+  <part name="session" 	type="xsd:string" />
+</message>
+<message name="questResponse">
+  <part name="quest" 	type="xsd:string" />
+</message>
+
+<message name="solutionRequest">
+  <part name="session" 	type="xsd:string" />
+  <part name="solution" type="xsd:string" />
+</message>
+<message name="solutionResponse">
+  <part name="result" 	type="xsd:string" />
+</message>
+  
+<portType name="hlserverPortType">
+  <operation name="getSession">
+    <documentation>Order new Session</documentation>
+    <input 	message="tns:sessionRequest"/>
+    <output message="tns:sessionResponse"/>
+  </operation>
+  <operation name="getQuest">
+    <documentation>Order new Quest to solve</documentation>
+    <input 	message="tns:questRequest"/>
+    <output message="tns:questResponse"/>
+  </operation>
+  <operation name="submitSolution">
+    <documentation>Submit solution for a quest</documentation>
+    <input 	message="tns:solutionRequest"/>
+    <output message="tns:solutionResponse"/>
+  </operation>  
+</portType>
+
+<binding name="hlserverBinding" type="tns:hlserverPortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="getSession">
+    <soap:operation soapAction="urn:hlserver#getSession" style="rpc"/>
+    <input>
+      <soap:body use="encoded" namespace="urn:hlserver" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+    </input>
+    <output>
+      <soap:body use="encoded" namespace="urn:hlserver" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+    </output>
+  </operation>  
+  <operation name="getQuest">
+    <soap:operation soapAction="urn:hlserver#getQuest" style="rpc"/>
+    <input>
+      <soap:body use="encoded" namespace="urn:hlserver" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+    </input>
+    <output>
+      <soap:body use="encoded" namespace="urn:hlserver" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+    </output>
+  </operation>  
+  <operation name="submitSolution">
+    <soap:operation soapAction="urn:hlserver#submitSolution" style="rpc"/>
+    <input>
+      <soap:body use="encoded" namespace="urn:hlserver" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+    </input>
+    <output>
+      <soap:body use="encoded" namespace="urn:hlserver" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+    </output>
+  </operation>  
+</binding>
+<service name="hlserver">
+  <port name="hlserverPort" binding="tns:hlserverBinding">
+    <soap:address location="http://hackvent.org/DailyS04p/server.php"/>
+  </port>
+</service>
+</definitions>
