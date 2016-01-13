@@ -3185,15 +3185,74 @@ murtceps (spectrum spelled backwards) is a wav file. We open the audio file in A
 
 ![](writeupfiles/dec22_part2.png)
 
+the letters still look a bit weird, but when we invert it (like murtceps was) it looks better:
+
+
 ```
-ibiV
+Vjdj
 ```
+
+
 
 *Part3*  
 
 ```
 N=8ED6168915ED61C560B04D212FC032C107B8BA9BF1179B97DEABFA71F111E749
 C=39C9FB8503B3F73BB24069AFE0F2C0416177A40EE60E57134C00ABE8BEDE45BD
+```
+
+This looks like RSA. The RSA cryptosystem is explained [here](http://en.wikipedia.org/wiki/RSA_(cryptosystem)). 
+
+So we first need to factor N into prime factors. `N` is quite large so hard it would be hard to calculate, but luckily there is a database online, factordb.com which knows the prime factors `p` and `q` for our `N`:
+
+```
+N=64606685304927935569594948677404361910558586233909578594144327870534942582601
+p=237024794671302122535260220812153587643 
+q=272573531366295567443756143024197333707
+```
+
+We now let `r=(p-1)(q-1)`, and find two integers, `e` and `d` such that:
+
+
+```
+e*d mod r = 1
+e and N relatively prime
+d and N relatively prime
+e and r relatively prime
+d and r relatively prime
+```
+
+according to the wiki page, `65537` is a commonly used value for e. Using that knowledge we try to find `d` and decrypt the ciphertext using python:
+
+```python
+from Crypto.PublicKey import RSA
+import gmpy2
+ 
+N = 64606685304927935569594948677404361910558586233909578594144327870534942582601L
+C = "39C9FB8503B3F73BB24069AFE0F2C0416177A40EE60E57134C00ABE8BEDE45BD".decode("hex")
+
+# prime factors we found via factordb.com
+p = 237024794671302122535260220812153587643L 
+q = 272573531366295567443756143024197333707L    
+
+r=(p-1)*(q-1)
+
+# find e and d
+# divm(a, b, m) returns x such that b * x == a modulo m. Raises a ZeroDivisionError exception if no such value x exists.
+e = 65537L # our guess for e
+d = long(gmpy2.divm(1, e, r))
+
+rsa = RSA.construct((N,e,d,p,q))
+pt = rsa.decrypt(C)
+
+print "fragment 3:", pt
+
+```
+
+which outputs:
+
+```
+PN0Z
 ```
 
 *Part4*  
