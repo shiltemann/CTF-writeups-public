@@ -3187,11 +3187,12 @@ murtceps (spectrum spelled backwards) is a wav file. We open the audio file in A
 
 the letters still look a bit weird, but when we invert it (like murtceps was) it looks better:
 
+![](writeupfiles/dec22_part2_inverted.png)
+
 
 ```
 Vjdj
 ```
-
 
 
 *Part3*  
@@ -3252,7 +3253,7 @@ print "fragment 3:", pt
 which outputs:
 
 ```
-PN0Z
+fragment 3: PN0Z
 ```
 
 *Part4*  
