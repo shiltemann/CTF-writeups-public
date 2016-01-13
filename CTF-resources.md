@@ -59,7 +59,7 @@ Rail fence cipher decoder: [http://rumkin.com/tools/cipher/railfence.php](http:/
 Bacon cipher decoder: [http://rumkin.com/tools/cipher/baconian.php](http://rumkin.com/tools/cipher/baconian.php)  
 Vigenere cipher decoder: [http://www.guballa.de/vigenere-solver](http://www.guballa.de/vigenere-solver)  
 
-*Modern* 
+*Modern*  
 Prime factorization (using database): [factordb.com](http://factordb.com)  
 RSA calculator: [https://www.cs.drexel.edu/~introcs/Fa11/notes/10.1_Cryptography/RSA_Express_EncryptDecrypt.html](https://www.cs.drexel.edu/~introcs/Fa11/notes/10.1_Cryptography/RSA_Express_EncryptDecrypt.html)  
 RSA worksheet: [https://www.cs.drexel.edu/~introcs/Fa11/notes/10.1_Cryptography/RSAWorksheetv4d.html](https://www.cs.drexel.edu/~introcs/Fa11/notes/10.1_Cryptography/RSAWorksheetv4d.html)  
