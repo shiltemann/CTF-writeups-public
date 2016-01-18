@@ -3179,19 +3179,90 @@ So it appears we need to solve 5 smaller challenges to get the nugget:
 
 *Part1*  
 
+We get a zip file containing two files, `code`, a password-protected archive, and `pass`, a data file.
+
+A closer look at `pass` file shows:
+
+```
+000eccd0  70 61 77 73 70 61 77 73  70 61 77 73 70 61 77 73  |pawspawspawspaws|
+000ecce0  78 56 34 12 78 56 34 12  78 56 34 12 78 56 34 12  |xV4.xV4.xV4.xV4.|
+000eccf0  34 33 32 31 38 37 36 35  34 33 32 31 38 37 36 35  |4321876543218765|
+```
+
+do we need to swap the bytes order?
+
+```python
+from array import array
+
+filename = 'dec22/Hackvent-cd/part1/pass'
+outfile = 'dec22_part1_output'
+
+a = array("I", open(filename, "rb").read())
+a.byteswap()
+open(outfile, "wb").write(a.tostring())
+```
+
+and we see we get an [mp3 file](writeupfiles/dec22_part1_output):
+
+```bash
+$ file dec22_part1_output
+dec22_part1_output: Audio file with ID3 version 2.3.0, contains: MPEG ADTS, layer III, v1, 128 kbps, 44.1 kHz, Stereo
+
+$ exiftool dec22_part1_output
+ExifTool Version Number         : 10.00
+File Name                       : dec22_part1_output
+Directory                       : ../../..
+File Size                       : 947 kB
+File Modification Date/Time     : 2016:01:14 16:43:16+01:00
+File Access Date/Time           : 2016:01:14 16:43:14+01:00
+File Inode Change Date/Time     : 2016:01:14 16:43:16+01:00
+File Permissions                : rw-rw-r--
+File Type                       : MP3
+File Type Extension             : mp3
+MIME Type                       : audio/mpeg
+MPEG Audio Version              : 1
+Audio Layer                     : 3
+Audio Bitrate                   : 128 kbps
+Sample Rate                     : 44100
+Channel Mode                    : Stereo
+MS Stereo                       : Off
+Intensity Stereo                : Off
+Copyright Flag                  : False
+Original Media                  : False
+Emphasis                        : None
+ID3 Size                        : 1024
+Comment                         : pw=songtitle - walking on "x_x_x"
+Genre                           : HACKvent
+Duration                        : 0:01:00 (approx)
+
+```
+
+So we see a hint to the archive password in the exifdata of this file:
+
+```
+pw=songtitle - walking on "x_x_x"
+```
+
+Hmm, it's just the intro to the song and I don't recognize it.. 
+
+
+```
+fragment 1:
+```
+
 *Part2*  
 
 murtceps (spectrum spelled backwards) is a wav file. We open the audio file in Audacity and find the nugget fragment in the spectogram view:
 
 ![](writeupfiles/dec22_part2.png)
 
-the letters still look a bit weird, but when we invert it (like murtceps was) it looks better:
+the letters still look a bit weird, but when we invert it (like the word murtceps was) it looks better:
 
 ![](writeupfiles/dec22_part2_inverted.png)
 
 
 ```
-Vjdj
+fragment 2: Vjdj
 ```
 
 
@@ -3258,6 +3329,34 @@ fragment 3: PN0Z
 
 *Part4*  
 
+we have a [`.pkg` file](writeupfiles/dec22/Hackvent-cd/part4.pkg). Opening in a hexeditor we see:
+
+![](writeupfiles/dec22_part4.png)
+
+Google tells us `EP0001` signifies a Playstation package. We find a tool that can extract this ([rar file](writeupfiles/dec22/Hackvent-cd/PSN.PKG.Decryptor.&.Extractor.v1.30-LMAN-ConsoleCrunch.rar))
+
+after extraction we get a file named `play` with the following content:
+
+```
+print BCES01175[8]+BLES01403[0]+BLES00158[0]+BLES00314[6]
+```
+
+Googling again tells us those are identifiers for other Playstation packages:
+
+```
+BCES01175 - Uncharted 3: Drake's Deception
+BLES01403 - Hitman Absolution
+BLES00158 - Assassins Creed
+BLES00314 - FIFA 09
+```
+
+we now get the appropriate character from each string to form our fragment:
+
+```
+fragment 4: dHA9
+```
+
+
 *Part5*  
 
 the suffix `_uu` hints that this is uu encoded data, we decode in python:
@@ -3282,13 +3381,13 @@ TmZjTg==
 which is base64 encoding of the following nugget fragment
 
 ```
-NfcN
+fragment 5: NfcN
 ```
 
 **Nugget**
 
 ```
-HV15-part1-ibiV-part3-part4-NfcN
+HV15-part1-Vjdj-PN0Z-dHA9-NfcN
 ```
 
 
