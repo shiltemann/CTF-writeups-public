@@ -21,6 +21,33 @@ and another list of permanent CTFs is here: [http://captf.com/practice-ctf/](htt
 
 ### Writeups in this repository:
 
+#### Hacky Easter 2016
+
+On March 14th, another edition of [Hacking-Lab](https://www.hacking-lab.com)'s annual easter egg hunt CTF will take place. 
+
+*They recently released a teaser challenge:*
+
+![](writeupfiles/he2016teaser.png)
+
+On March 14, the third Hacky Easter competition is going to start! 
+
+In order to shorten the waiting time, we are providing a teaser challenge in advance. Download the [presentation](HackyEaster_2016/writeupfiles/HackyEaster2016.odp) about Hacky Easter 2016. It shows information about the upcoming event, and gives a glimpse at the event's challenges. 
+
+An easter egg is hidden somewhere in the file. Can you find it? You'll need to find hidden content in the file, and perform some operations on it, in order to get the egg.
+
+GOAL:
+
+1. Find the hidden content in the presentation.
+2. Perform the necessary operations on it. You don't need to be a super h4XOR for this!
+3. HINT: When extracting things from the presentation, do it from the original file, and not from within PowerPoint!
+4. Get the easter egg
+5. Submit the solution code which is written on the easter egg. Writing a solution document / hacking journal, is optional for this case.
+
+The presentation file: [HackyEaster2016.odp](HackyEaster_2016/writeupfiles/HackyEaster2016.odp)
+
+
+(will post writeups after the event is over)
+
 
 #### HackVent 2015
 
@@ -39,10 +66,6 @@ HV15-XXXX-XXXX-XXXX-XXXX-XXXX
 ```
 
 To check your answer and claim your points, signup and submit [here](https://www.hacking-lab.com/cases/8891-santas-leak/8891-santas-leak-wargame.html?event=979&case=1283) 
-
-
-(will post writeups after Christmas)
-
 
 
 #### EasyCTF 2015
