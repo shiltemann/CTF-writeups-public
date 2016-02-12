@@ -27,7 +27,7 @@ On March 14th, another edition of [Hacking-Lab](https://www.hacking-lab.com)'s a
 
 *They recently released a teaser challenge:*
 
-![](writeupfiles/he2016teaser.png)
+![](HackyEaster_2016/writeupfiles/he2016teaser.png)
 
 On March 14, the third Hacky Easter competition is going to start! 
 
