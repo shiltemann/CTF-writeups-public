@@ -250,7 +250,7 @@ Decoding QR-codes by hand: https://www.youtube.com/watch?v=KA8hDldvfv0
 
 Morse decoder:  [http://morsecode.scphillips.com/translator.html](http://morsecode.scphillips.com/translator.html)  
 Morse code explorer if you don't know where the spaces are: http://www.jbowman.com/remorse/  
-Morse code explorer if you don't know where the spaces are: http://www.ericharshbarger.org/cgi-bin/epp9_unmorser.cgi  
+Morse code explorer if you don't know where the spaces are: http://www.ericharshbarger.org/epp/2010/unmorser.html  
 Z3 theorem prover. Great for solving logic challenges: http://research.microsoft.com/en-us/um/redmond/projects/z3/mbqi-tutorial/  
 
 
