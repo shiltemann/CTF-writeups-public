@@ -1313,9 +1313,7 @@ This gives the following image:
 
 ![](writeupfiles/whomademe.png)
 
-so now we just have to guess the flag from this? ..sigh ..not fun ..not how a good CTF challenge should be 
-
-Seems to be Calvin from Calvin and Hobbes (which I only knew because of the previous challenge), the title suggests the flag
+Seems to be Calvin from Calvin and Hobbes, the title suggests the flag
 could be the creator of this comic, Bill Watterson, so now just try all uppercase,lowercase,space,nospace combos until we get it
 ..if you're not going to have a flag format, at least accept multiple formattings of the right answer!!
 
