@@ -160,6 +160,7 @@ SQL Fiddle: [SQLFiddle](sqlfiddle.com)
 PHP Fiddle: [PHPFiddle](http://phpfiddle.org/)  
 
 BrainFuck interpreter: [http://esoteric.sange.fi/brainfuck/impl/interp/i.html](http://esoteric.sange.fi/brainfuck/impl/interp/i.html)  
+Ook interpreter: http://www.splitbrain.org/services/ook  
 Deparse (Perl): [http://perldoc.perl.org/B/Deparse.html](http://perldoc.perl.org/B/Deparse.html)  
 
 
@@ -178,6 +179,20 @@ Something like
 
 is Brainfuck.
 
+
+Something like
+
+```
+Ook. Ook! Ook? Ook! Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook.
+```
+
+or in shorthand
+
+```
+. ! ? ! ! . ? . . . 
+```
+
+is Ook! (http://www.dangermouse.net/esoteric/ook.html)
 
 ## Web
 
