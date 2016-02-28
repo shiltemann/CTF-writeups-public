@@ -28,7 +28,7 @@ Symphony                         Misc                 100     es0l@ngs
 Breaking Bar                     Misc                 100     
 Vault                            Reverse Engineering  50      keygen
 Smart Ass Bad Add Great Ass :P   Reverse Engineering  50
-Harry Potter                     Steganography        30
+Harry Potter                     Steganography        30      bydelta
 Calvin Meets a Hitchhiker        Steganography        30      f0rtytw0f0r3v3r
 Look at these colours!           Steganography        40      sTegan0graphy
 Who made me?                     Steganography        100     billwatterson
@@ -1169,9 +1169,32 @@ wherE ShOUld onE ReaLly lOoK fOr tHis flag
 
 ```
 
+A hint came out after a while:
+
+```
+Hint! A bacon sandwich is somewhat of a comfort food for Ron Weasley
+```
+
+So maybe a baconian cipher.. if we interpret lowercase as A's and uppercase as B's we get:
+
+```
+wherE ShOUld onE ReaLly lOoK fOr tHis flag
+aaaab babbaa aab baabaa abab aba abaa aaaa
+```
+
+which we can decode [here](http://rumkin.com/tools/cipher/baconian.php), giving us the flag
+
+```
+bydelta
+```
+
+if we use the setting `I=J and U=V`
 
 **Flag**  
 
+```
+bydelta
+```
 
 ## Steganography 30: Calvin Meets a Hitchhiker
 
