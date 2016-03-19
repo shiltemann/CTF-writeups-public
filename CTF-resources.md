@@ -58,6 +58,7 @@ ROT cipher (caesar) decoder (outputs all possible rotations): [http://planetcalc
 Rail fence cipher decoder: [http://rumkin.com/tools/cipher/railfence.php](http://rumkin.com/tools/cipher/railfence.php)  
 Bacon cipher decoder: [http://rumkin.com/tools/cipher/baconian.php](http://rumkin.com/tools/cipher/baconian.php)  
 Vigenere cipher decoder: [http://www.guballa.de/vigenere-solver](http://www.guballa.de/vigenere-solver)  
+Polybius cipher breaker: http://www.dcode.fr/polybius-cipher  
 
 *Modern*  
 Prime factorization (using database): [factordb.com](http://factordb.com)  
