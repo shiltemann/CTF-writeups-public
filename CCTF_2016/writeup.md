@@ -6,6 +6,7 @@ high school students.
 
 ## Overview
 
+**URL:** http://play.camsctf.com/ (site will remain online)  
 **Organisors:** CAMS CSC (http://www.camscsc.org/)  
 **Duration:** 7 days  
 **Team mates:** Liblor  
