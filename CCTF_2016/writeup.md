@@ -13,8 +13,8 @@ high school students.
 
 ```
 Title                         Category     Points  Flag
------------------------------ ------------ ------- -----------------------------
-Askey I                       Crypto       50
+----------------------------- ------------ ------- ---------------------------------------
+Askey I                       Crypto       50      {utf-8anyone?no?fine}
 Basic Decryption              Crypto       25      {b45ic_fl4g}
 Black and White               Crypto       75
 Dizziness                     Crypto       30
@@ -34,30 +34,30 @@ Eden 7                        Eden         500
 Eden 8                        Eden         100
 Eden 9                        Eden         1500
 Meow                          Exploitation 25      {scr4tch_c4t}
-Overflow                      Exploitation 35
-Web 1                         Exploitation 10
-Web 2                         Exploitation 30
-Web 3                         Exploitation 30      {variables_n_functionz}
-Web 4                         Exploitation 50
+Overflow                      Exploitation 35      {0veRf1000000000000000000000000000000000000000000000w}
+Web 1                         Exploitation 10      {butit'snotvisible}
+Web 2                         Exploitation 30      {all_in_the_c0de}
+Web 3                         Exploitation 30      {nev3r_use_123456}
+Web 4                         Exploitation 50      {variables_n_functionz}
 Web 5                         Exploitation 50
-Web 6                         Exploitation 50
+Web 6                         Exploitation 50      {digital_cookies_go0o0o0d}
 Web 7                         Exploitation 50
 Web 8                         Exploitation 100
-Web 9                         Exploitation 100
-Web A                         Exploitation 100
+Web 9                         Exploitation 100     {zip_z_internet}
+Web A                         Exploitation 100     {americans_and_sweet_things}
 Web B                         Exploitation 100
 Web C                         Exploitation 200
 Web D                         Exploitation 200
 Web E                         Exploitation 250
 Web F                         Exploitation 250
 Cropped                       Forensics    100
-HI                            Forensics    25
+HI                            Forensics    25      {StRinGzH}
 Hideous                       Forensics    500
-Huehuehue                     Forensics    25
+Huehuehue                     Forensics    25      {SWAG_5w4g_wh47_c0uld_g0_b4d?}
 Just a Bit                    Forensics    75
 Numbers                       Forensics    25
 Ocular Waves                  Forensics    200
-Reversing 1                   Forensics    30       {not_encrypted_string_flag_whoooo}
+Reversing 1                   Forensics    30      {not_encrypted_string_flag_whoooo}
 Reversing 2                   Forensics    50
 Reversing 3                   Forensics    75
 Reversing 4                   Forensics    100
@@ -81,14 +81,14 @@ Windows 9                     Forensics    50
 Follow Directions             Misc         -5
 Miscellaneous                 Misc         15
 Trivia 1                      Misc         10
-Trivia 2                      Misc         10
-Trivia 3                      Misc         10
-Trivia 4                      Misc         10
-Trivia 5                      Misc         10
+Trivia 2                      Misc         10      Mcafee
+Trivia 3                      Misc         10      Iceweasel
+Trivia 4                      Misc         10      Alibaba
+Trivia 5                      Misc         10      Crytek
 True CTF Player               Misc         100
 Endianness                    Programming  25      {BIG_4nd_little_3nd14n}
 La Strange                    Programming  100
-Photo Synthesis 1             Programming  75
+Photo Synthesis 1             Programming  75      {C6H12O6}
 Photo Synthesis 2             Programming  125
 Photo Synthesis 3             Programming  150
 Pure Evil                     Programming  100     {19473563648}
@@ -107,7 +107,34 @@ Ask and ye shall receive. ASCII and ye shall d13.
 [askey.txt](writeupfiles/askey.txt)
 
 **Solution**  
+
+[askey.txt](writeupfiles/askey.txt) contains characters that are too large for standard ASCII (>127).
+The challenge text says "ye shall d13", 0x0d is 13 in decimal. Probably a simple
+ASCII transposition cipher by 13.  
+Let's try:
+
+    #!/usr/bin/env python3
+    #
+    # CCTF - Askey I
+    #
+
+    flag = ""
+    with open("askey.txt", 'rb') as f:
+        askey = f.read()
+
+    for i in askey:
+        flag += chr(i-13)
+
+    print(flag)
+
+Bingo, this prints the flag.
+
 **Flag**
+
+```
+{utf-8anyone?no?fine}
+```
+
 
 
 ## Crypto 25: Basic Decyption  
@@ -729,7 +756,13 @@ exchange for his secret flags. Note that all web flags are submitted in the form
 http://web.camsctf.com/1
 
 **Solution**  
+
+The flag is a HTML comment. All we have to do is *viewing* the source of the page.
+
 **Flag**
+
+```{butit'snotvisible}```
+
 
 ## Exploitation 30: Web 2  
 
@@ -740,7 +773,17 @@ You're probably thinking too hard about this.
 http://web.camsctf.com/2
 
 **Solution**  
+
+We must know the password in order to get the flag. We inspect the source again and we find:
+```<input name="password" password="password" type="password">```
+
+The password is `password`.
+
 **Flag**
+
+```
+{all_in_the_c0de}
+```
 
 ## Exploitation 30: Web 3  
 
@@ -751,7 +794,17 @@ You're probably thinking even harder about this one.
 http://web.camsctf.com/3
 
 **Solution**  
+
+The site says
+> "This one is extremely difficult. Don't think too hard." - C4pt4in Troll
+
+After thinking a bit to hard, we enter weak passwords... `12346` it is!
+
 **Flag**
+
+```
+{nev3r_use_123456}
+```
 
 ## Exploitation 50: Web 4  
 
@@ -820,7 +873,16 @@ My sugar tooth is pinging.
 http://web.camsctf.com/6
 
 **Solution**  
+
+We simply have to change the `authorized` cookie to `true`. In Firefox you could do this with
+Cookie Manager+. Afterwards a password is show, if we enter it, we'll get the flag.
+
 **Flag**
+
+```
+{digital_cookies_go0o0o0d}
+```
+
 
 ## Exploitation 50: Web 7    
 
@@ -864,7 +926,47 @@ Quite a lengthy way to do one thing.
 http://web.camsctf.com/10
 
 **Solution**  
+
+Firstly I thought, we have to undo the steps, therefore work backwards, but it wasn't the case.
+
+    #!/usr/bin/env python3
+    #
+    # CamsCTF - web10
+    # Liblor
+    #
+
+    from base64 import b64decode
+    import zlib
+
+
+    def gzinflate(base64_value):
+        # compressed_data = b64decode(base64_value)
+        compressed_data = base64_value
+        return zlib.decompress(compressed_data, -15)
+
+
+    # It's encode, and gzencode, and encode, and gzdeflate, and encode,
+    # and gzcompress, and encode.
+
+    start = "eJwFwdEOgiAUANAP8gEzGfbgwx20StBpsLZ8pa4jI2O2TL6+c4oI791L7wEzWL1BGBMyzy6MfMGpCKuEFlMeH/J5F85z475qIKJCVkx1pJ3bEtldfU1Y6pQN1jGqoYdG5Zkh+mP18JPiFBpYc1Fz3io83I5qk7SsWpYLFWeAsvwDZNoqeQ=="
+
+    password = b64decode(start)
+    password = zlib.decompress(password)
+    password = b64decode(password)
+    password = gzinflate(password)
+    password = b64decode(password)
+    password = zlib.decompress(password, 16 + zlib.MAX_WBITS)
+    password = b64decode(password)
+
+    print(password.decode())
+
+We get `$password = "gzip_bzip_7zip_zip"; echo $password;`, with the password, we obtain the flag.
+
 **Flag**
+
+```
+{zip_z_internet}
+```
 
 ## Exploitation 100: Web B    
 
@@ -874,8 +976,16 @@ There is nothing sweet about a Jelly and Sandwich cookie.
 
 http://web.camsctf.com/11
 
-**Solution**  
+**Solution** 
+
+We set the `auth` cookie to `1`, afterwards we'll see the password page. The password is *hidden* in a cookie:
+`such_js_cookiez`
+ 
 **Flag**
+
+```
+{americans_and_sweet_things}
+```
 
 ## Exploitation 200: Web C    
 
@@ -931,7 +1041,27 @@ No one solved this challenge the way it was intended last year. Did I know that 
 ![cropped.jpg](writeupfiles/cropped.jpg)
 
 **Solution**  
+
+```
+$ strings HI
+/lib64/ld-linux-x86-64.so.2
+libc.so.6
+puts
+__libc_start_main
+__gmon_start__
+GLIBC_2.2.5
+{StRinGzH
+AWAVA
+AUATL
+[]A\A]A^A_
+[...]
+```
+
 **Flag**
+
+```
+{StRinGzH}
+```
 
 ## Forensics 25: HI    
 
@@ -965,7 +1095,18 @@ What can you find before he finds a place in your heart?
 ![Swagswag.png](writeupfiles/Swagswag.png)
 
 **Solution**  
+
+If you look closely, you'll see a QR-code in the picture. We change the threshold with gimp, until it's readable by a QR-scanner.
+
+![QR-Code of flag](writeupfiles/Swagswag_extracted.png)
+
+Now we can scan the QR-code and we have the flag :)
+
 **Flag**
+
+```
+{SWAG_5w4g_wh47_c0uld_g0_b4d?}
+```
 
 
 ## Forensics 75: Just a Bit 
@@ -1329,7 +1470,15 @@ What is the instruction set that was first to be 32 bit?
 What is the antivirus software that Adobe tries to install when downloading Flash?
 
 **Solution**  
+
+McAfee
+
 **Flag**
+
+```
+Mcafee
+```
+
 
 ## Miscellaneous 10: Trivia 3  
 
@@ -1337,8 +1486,16 @@ What is the antivirus software that Adobe tries to install when downloading Flas
 
 What is the default Kali web browser?
 
-**Solution**  
+**Solution** 
+
+Iceweasel
+ 
 **Flag**
+
+```
+Iceweasel
+```
+
 
 ## Miscellaneous 10: Trivia 4    
 
@@ -1347,7 +1504,15 @@ What is the default Kali web browser?
 What ecommerce site from China recently started trading on the NYSE?
 
 **Solution**  
+
+Alibaba
+
 **Flag**
+
+```
+Alibaba
+```
+
 
 ## Miscellaneous 10: Trivia 5    
 
@@ -1356,7 +1521,14 @@ What ecommerce site from China recently started trading on the NYSE?
 Who develops the CryEngine?
 
 **Solution**  
+
+Crytek
+
 **Flag**
+
+```
+Crytek
+```
 
 
 ## Miscellaneous 100: True CTF Player     
