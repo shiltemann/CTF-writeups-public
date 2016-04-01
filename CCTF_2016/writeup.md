@@ -58,9 +58,9 @@ Just a Bit                    Forensics    75
 Numbers                       Forensics    25
 Ocular Waves                  Forensics    200
 Reversing 1                   Forensics    30      {not_encrypted_string_flag_whoooo}
-Reversing 2                   Forensics    50
-Reversing 3                   Forensics    75
-Reversing 4                   Forensics    100
+Reversing 2                   Forensics    50      {cheating_out_101}
+Reversing 3                   Forensics    75      {i_can_use_a_debugger_;)}
+Reversing 4                   Forensics    100     {advanced_cheater_101}
 Reversing 5                   Forensics    150
 Reversing 6                   Forensics    200
 Reversing 7                   Forensics    250
@@ -1219,6 +1219,11 @@ Make 42424242 bigger.
 
 [2.exe](writeupfiles/2.exe)
 
+**Flag**  
+
+```
+{cheating_out_101}
+```
 
 ## Forensics 50: Reversing 3    
 
@@ -1231,6 +1236,10 @@ It's easy, but easy if often hard.
 **Solution**  
 **Flag**
 
+```
+{i_can_use_a_debugger_;)}
+```
+
 ## Forensics 50: Reversing 4  
 
 **Challenge**  
@@ -1241,6 +1250,10 @@ It responds well to debugging. Maybe it also wants something larger than 424242.
 
 **Solution**  
 **Flag**
+
+```
+{advanced_cheater_101}
+```
 
 ## Forensics 50: Reversing 5  
 
