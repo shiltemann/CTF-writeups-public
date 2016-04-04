@@ -61,10 +61,10 @@ Reversing 1                   Forensics    30      {not_encrypted_string_flag_wh
 Reversing 2                   Forensics    50      {cheating_out_101}
 Reversing 3                   Forensics    75      {i_can_use_a_debugger_;)}
 Reversing 4                   Forensics    100     {advanced_cheater_101}
-Reversing 5                   Forensics    150
-Reversing 6                   Forensics    200
-Reversing 7                   Forensics    250
-Reversing 8                   Forensics    300
+Reversing 5                   Forensics    150     {did_u_use_jmp_or_nop?}
+Reversing 6                   Forensics    200     {jumping_is_fun_o_fun}
+Reversing 7                   Forensics    250     {confus1ng_l0g1c}
+Reversing 8                   Forensics    300     {mem_is_beyond_good}
 Reversing 9                   Forensics    400
 Steggy                        Forensics    25
 The Key                       Forensics    50
@@ -1266,6 +1266,11 @@ The suffering begins here.
 **Solution**  
 **Flag**
 
+```
+{did_u_use_jmp_or_nop?}
+```
+
+
 ## Forensics 50: Reversing 6  
 
 **Challenge**  
@@ -1277,6 +1282,10 @@ The suffering begins here.
 **Solution**  
 **Flag**
 
+```
+{jumping_is_fun_o_fun}
+```
+
 ## Forensics 50: Reversing 7  
 
 **Challenge**  
@@ -1286,7 +1295,18 @@ This is going to be fun.
 [7.exe](writeupfiles/7.exe)
 
 **Solution**  
+
+We open the file in IDA Pro demo and set a breakpoint at the end of the sub_51190 call.
+When we run the program it decrypts the flag and stores it somewhere on the stack.
+We find it near `ebp-0x28`.
+
+
 **Flag**
+
+```
+{confus1ng_l0g1c}
+```
+
 
 ## Forensics 50: Reversing 8  
 
@@ -1298,6 +1318,11 @@ Pain, times 100.
 
 **Solution**  
 **Flag**
+
+```
+{mem_is_beyond_good}
+```
+
 
 ## Forensics 50: Reversing 9  
 
