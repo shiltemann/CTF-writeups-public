@@ -58,13 +58,13 @@ Just a Bit                    Forensics    75
 Numbers                       Forensics    25
 Ocular Waves                  Forensics    200
 Reversing 1                   Forensics    30      {not_encrypted_string_flag_whoooo}
-Reversing 2                   Forensics    50
-Reversing 3                   Forensics    75
-Reversing 4                   Forensics    100
-Reversing 5                   Forensics    150
-Reversing 6                   Forensics    200
-Reversing 7                   Forensics    250
-Reversing 8                   Forensics    300
+Reversing 2                   Forensics    50      {cheating_out_101}
+Reversing 3                   Forensics    75      {i_can_use_a_debugger_;)}
+Reversing 4                   Forensics    100     {advanced_cheater_101}
+Reversing 5                   Forensics    150     {did_u_use_jmp_or_nop?}
+Reversing 6                   Forensics    200     {jumping_is_fun_o_fun}
+Reversing 7                   Forensics    250     {confus1ng_l0g1c}
+Reversing 8                   Forensics    300     {mem_is_beyond_good}
 Reversing 9                   Forensics    400
 Steggy                        Forensics    25
 The Key                       Forensics    50
@@ -1219,6 +1219,20 @@ Make 42424242 bigger.
 
 [2.exe](writeupfiles/2.exe)
 
+**Solution**  
+
+We don't have to understand much to get the flag. We have to increase the value 42424242
+in the executable, so that's bigger than 42465202.
+We can also simply use a debugger to change the EIP register before the comparison (offset 0x0653) or rather the jump.
+
+![Screenshot of 2.exe Disassembly](writeupfiles/disass_2_exe.jpg)
+
+
+**Flag**  
+
+```
+{cheating_out_101}
+```
 
 ## Forensics 50: Reversing 3    
 
@@ -1229,7 +1243,15 @@ It's easy, but easy if often hard.
 [3.exe](writeupfiles/3.exe)
 
 **Solution**  
+
+Run the executable in a debugger.
+
+
 **Flag**
+
+```
+{i_can_use_a_debugger_;)}
+```
 
 ## Forensics 50: Reversing 4  
 
@@ -1242,6 +1264,10 @@ It responds well to debugging. Maybe it also wants something larger than 424242.
 **Solution**  
 **Flag**
 
+```
+{advanced_cheater_101}
+```
+
 ## Forensics 50: Reversing 5  
 
 **Challenge**  
@@ -1252,6 +1278,11 @@ The suffering begins here.
 
 **Solution**  
 **Flag**
+
+```
+{did_u_use_jmp_or_nop?}
+```
+
 
 ## Forensics 50: Reversing 6  
 
@@ -1264,6 +1295,10 @@ The suffering begins here.
 **Solution**  
 **Flag**
 
+```
+{jumping_is_fun_o_fun}
+```
+
 ## Forensics 50: Reversing 7  
 
 **Challenge**  
@@ -1273,7 +1308,18 @@ This is going to be fun.
 [7.exe](writeupfiles/7.exe)
 
 **Solution**  
+
+We open the file in IDA Pro demo and set a breakpoint at the end of the sub_51190 call.
+When we run the program it decrypts the flag and stores it somewhere on the stack.
+We find it near `ebp-0x28`.
+
+
 **Flag**
+
+```
+{confus1ng_l0g1c}
+```
+
 
 ## Forensics 50: Reversing 8  
 
@@ -1285,6 +1331,11 @@ Pain, times 100.
 
 **Solution**  
 **Flag**
+
+```
+{mem_is_beyond_good}
+```
+
 
 ## Forensics 50: Reversing 9  
 
