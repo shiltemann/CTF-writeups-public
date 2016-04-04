@@ -1219,6 +1219,15 @@ Make 42424242 bigger.
 
 [2.exe](writeupfiles/2.exe)
 
+**Solution**  
+
+We don't have to understand much to get the flag. We have to increase the value 42424242
+in the executable, so that's bigger than 42465202.
+We can also simply use a debugger to change the EIP register before the comparison (offset 0x0653) or rather the jump.
+
+![Screenshot of 2.exe Disassembly](writeupfiles/disass_2_exe.jpg)
+
+
 **Flag**  
 
 ```
@@ -1234,6 +1243,10 @@ It's easy, but easy if often hard.
 [3.exe](writeupfiles/3.exe)
 
 **Solution**  
+
+Run the executable in a debugger.
+
+
 **Flag**
 
 ```
