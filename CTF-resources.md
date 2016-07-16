@@ -213,6 +213,7 @@ Javascript beautifier (pretty print): [http://jsbeautifier.org/](http://jsbeauti
 
 SQL injection 101: [https://www.owasp.org/index.php/SQL_injection](https://www.owasp.org/index.php/SQL_injection)  
 SQL injection 102: [https://en.wikipedia.org/wiki/SQL_injection](https://en.wikipedia.org/wiki/SQL_injection)  
+Union based sql injection: [http://securityidiots.com/Web-Pentest/SQL-Injection/Basic-Union-Based-SQL-Injection.html](http://securityidiots.com/Web-Pentest/SQL-Injection/Basic-Union-Based-SQL-Injection.html)  
 
 XSS 101: [https://en.wikipedia.org/wiki/Cross-site_scripting](https://en.wikipedia.org/wiki/Cross-site_scripting)  
 
