@@ -5,10 +5,10 @@
 ```
 Title                         Country?       Points  Category   Flag
 ----------------------------- -------------- ------  ---------- -----------------------------
-Crypt0P1xels                  Algeria        250     $tego
+Crypt0P1xels                  Algeria        250     $tego      1NF0RM$T10N_1$_N0T_$3CUR3_4NYM0R3
 Interceptor                   Portugal       95      Crypt0
 Ninja Scheme                  Chad           195     Crypt0
-T3legr4m                      United States  50      J0y
+T3legr4m                      United States  50      J0y        h4ck1t{fr33_4nd_$ecur3!}
 Crypt00perator                Ethiopia       95      Rever$e
 Hex0gator                     Paraguay       250     PPC
 PhParanoid                    Malaysia       225     Rever$e
