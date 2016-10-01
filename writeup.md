@@ -39,3 +39,50 @@ p13c3 0f c4k3                 Argentina      100     Network
 **Flag**
 ```
 ```
+
+
+
+## Challenge Template
+
+**Challenge**
+We have received pictures from the enemy companion of the unknown before
+planet. And we haven't thought up anything better, than to construct
+DeathStarV3 (the general was a fan of "Star Wars") and to absorb energy of the
+whole planet! And again we are pursued by problems: that we don't know
+coordinate! Your task is to determine coordinates of this unique planet (which
+according to our spy are ciphered in the image). Also he could steal one of the
+scripts intended for embedding of coordinates. All hope only for you!
+tasks.zip:CryptoPixels_473e51e6e53cfc47b8f87b8a65a8d542.zip
+
+**Solution**
+They give you the python code used to encrypt it, pretty simple to reverse the
+process and decrypt the key
+
+```python
+from PIL import Image
+
+img = Image.open('encrypted.png')
+i = img.convert('RGB')
+
+(flag_length, x, y) = i.getpixel((0, 0))
+
+flag = ''
+
+while True:
+    (flag_char, new_x, new_y) = i.getpixel((x, y))
+    flag += chr(flag_char)
+    x = new_x
+    y = new_y
+
+    if len(flag) >= flag_length:
+        print flag
+        break
+```
+
+**Flag**
+```
+1NF0RM$T10N_1$_N0T_$3CUR3_4NYM0R3
+```
+
+
+
