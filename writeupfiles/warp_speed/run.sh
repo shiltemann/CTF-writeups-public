@@ -19,10 +19,13 @@ done;
 
 # Stitch them back together
 convert 3-{0..31}.jpg +append 4.jpg;
-#convert 3-0.jpg 3-1.jpg 3-2.jpg +append output.jpg
+# for documentation
+convert 4.jpg doc-1.png
 
+# Crop into 3 evenish sections of 512x500
 convert -crop 512x500  +repage +adjoin 4.jpg 5.png
 
+# Remove white so we can composite them
 for i in {0..2}; do
 	convert 5-$i.png -fuzz 3% -transparent white 5-${i}a.png
 done;

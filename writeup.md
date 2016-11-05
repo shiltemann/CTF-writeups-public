@@ -27,7 +27,7 @@ Old Tech                Exploitation   300
 Tetrump Ultimate        Exploitation   400
 ctrscript               Exploitation   500
 OracleVote              Exploitation   500
-Warp Speed              Forensics      150
+Warp Speed              Forensics      150     flag{1337_ph0t0_5k1ll5}
 Electioneering          Forensics      250
 Trump like colors       Forensics      250
 More Suspicious Traffic Forensics      300
@@ -149,4 +149,25 @@ flag{T0o0o0o0o0P______1m_h4V1nG_FuN_r1gHt_n0W_4R3_y0u_h4v1ng_fun______K3K!!!}
 **Flag**
 ```
 flag{T0o0o0o0o0P______1m_h4V1nG_FuN_r1gHt_n0W_4R3_y0u_h4v1ng_fun______K3K!!!}
+```
+
+
+## Challenge 42: Title
+**Challenge**
+Our Trump advertising campaign is incredible, it's skyrocketing! It's astronomical! Wait stop!! SLOW DOWN!!!
+
+**Solution**
+The image was clearly chewed up and re-assembled with different offsets. Splitting into strips 8 pixels wide, and shifting them down + right 8 pixels (based on manually aligning the first two slices in gimp), made this clear:
+
+![](./writeupfiles/warp_speed/doc-1.png)
+
+Once this was done, it was only a matter of cutting the three sections, and overlaying them. The middle section needed a -8x0 offset though, in order to line up correctly:
+
+![](./writeupfiles/warp_speed/out.png)
+
+Obviously not perfect, but good-enough for our purposes.
+
+**Flag**
+```
+flag{1337_ph0t0_5k1ll5}
 ```
