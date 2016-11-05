@@ -154,10 +154,16 @@ flag{T0o0o0o0o0P______1m_h4V1nG_FuN_r1gHt_n0W_4R3_y0u_h4v1ng_fun______K3K!!!}
 
 ## Challenge 42: Title
 **Challenge**
+
 Our Trump advertising campaign is incredible, it's skyrocketing! It's astronomical! Wait stop!! SLOW DOWN!!!
 
 **Solution**
-The image was clearly chewed up and re-assembled with different offsets. Splitting into strips 8 pixels wide, and shifting them down + right 8 pixels (based on manually aligning the first two slices in gimp), made this clear:
+
+The image was clearly chewed up and re-assembled with different offsets.
+
+![](./writeupfiles/warp_speed/warp_speed.5978d1405660e365872cf72dddc7515603f657f12526bd61e56feacf332cccad.jpg)
+
+Splitting into strips 8 pixels wide, and shifting them down + right 8 pixels (based on manually aligning the first two slices in gimp), made this clear:
 
 ![](./writeupfiles/warp_speed/doc-1.png)
 
@@ -168,6 +174,7 @@ Once this was done, it was only a matter of cutting the three sections, and over
 Obviously not perfect, but good-enough for our purposes.
 
 **Flag**
+
 ```
 flag{1337_ph0t0_5k1ll5}
 ```
