@@ -152,7 +152,7 @@ flag{T0o0o0o0o0P______1m_h4V1nG_FuN_r1gHt_n0W_4R3_y0u_h4v1ng_fun______K3K!!!}
 ```
 
 
-## Challenge 42: Title
+## Forensics 150: Warp Speed
 **Challenge**
 
 Our Trump advertising campaign is incredible, it's skyrocketing! It's astronomical! Wait stop!! SLOW DOWN!!!
@@ -177,4 +177,26 @@ Obviously not perfect, but good-enough for our purposes.
 
 ```
 flag{1337_ph0t0_5k1ll5}
+```
+
+
+## Forensics 250: Electioneering
+**Challenge**
+
+We confiscated this poster that was being handed out at polling places. It doesn't appear to be supporting a candidate, but we'd like you to take a look just to be sure.
+
+**Solution**
+
+I poked at this a bit, not sure what to make of it. There are some odd smudges visible when you look at out_3 or so.
+
+I wrote a script to try and pull out images by filtering their significant bits.
+
+![](writeupfiles/electioneering/out_3.png)
+
+They form sort of a cross over the image. not sure what to make of it.
+
+
+**Flag**
+
+```
 ```
