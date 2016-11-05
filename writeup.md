@@ -4,6 +4,9 @@
 
 **Team:** Galaxians
 
+![](writeupfiles/challenges.png)
+
+
 ## Overview
 
 ```
@@ -45,7 +48,7 @@ BabyHands               Crypto         300
 SMTPresident            Crypto         400
 ```
 
-![](writeupfiles/challenges.png)
+
 
 ## Vote 1: Sanity
 **Challenge**  
