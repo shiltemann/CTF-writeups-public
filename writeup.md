@@ -383,7 +383,9 @@ uktVsuNNyPVQarmXTuYU
 
 Are you able to answer this question and find the (real) egg?
 
-![](writeupfiles/10.svg)
+![](writeupfiles/10.png)
+
+(original svg verson [here](writeupfies/10.svg))
 
 **Solution**  
 The QR code is made of individual dots. Some are doubled up, I think we remove the doubles.
@@ -402,7 +404,9 @@ for i in q:
         haveSeen[k] = True
 ```
 
-![](writeupfiles/10.b.svg)
+![](writeupfiles/10.b.png)
+
+(original svg verson [here](writeupfies/10.b.svg))
 
 **Flag**  
 
