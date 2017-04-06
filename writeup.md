@@ -9,7 +9,7 @@ Title                                    Category  Flag
 Teaser                                             one do3s not simply s0lve a tea3er 0f hacky easter
 Challenge 01: Puzzle This!               Easy      C5LHYOifJSLOnYmKjBmS
 Challenge 02: Lots of Dots               Easy      pJ94m6jt3AYbogL2gv9i
-Challenge 05: Key Strokes                Easy
+Challenge 05: Key Strokes                Easy      2MmSpjmlU6NPAhCUVyUP
 Challenge 06: Message Ken                Easy      uktVsuNNyPVQarmXTuYU
 Challenge 10: An egg or not...           Medium    UALYyPlhy2aYfYpzcJHA
 ```
@@ -281,6 +281,12 @@ Shuffled, looks like no rotations.
 
 ![](./writeupfiles/egg01_unshuffled.png)
 
+**Flag**
+
+```
+C5LHYOifJSLOnYmKjBmS
+```
+
 ## Challenge 02: Lots of Dots
 
 **Challenge**
@@ -300,6 +306,11 @@ Pop into the egg-o-matic:
 
 ![](./writeupfiles/dots_egg.png)
 
+**Flag**
+
+```
+pJ94m6jt3AYbogL2gv9i
+```
 
 ## Challenge 05: Key Strokes
 
@@ -320,6 +331,12 @@ Oh my gosh this is VIM! That's awesome :D
 Entering the keystrokes as they provide spells out: magicwandfrankfoxy
 
 ![](./writeupfiles/egg5.png)
+
+**Flag**
+
+```
+2MmSpjmlU6NPAhCUVyUP
+```
 
 ## Challenge 06: Message to Ken
 
@@ -348,6 +365,15 @@ norm: abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789
 
 'Beloved KenM The secret password is lipglosspartycocktailM Barbie xx'
 
+put the password into the egg-o-matic:
+
+![](writeupfiles/egg6.png)
+
+**Flag**
+
+```
+uktVsuNNyPVQarmXTuYU
+```
 
 ## Challenge 10: An egg or not ...
 
@@ -356,6 +382,8 @@ norm: abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789
 ... an egg, that's the question!
 
 Are you able to answer this question and find the (real) egg?
+
+![](writeupfiles/10.svg)
 
 **Solution**  
 The QR code is made of individual dots. Some are doubled up, I think we remove the doubles.
@@ -374,7 +402,10 @@ for i in q:
         haveSeen[k] = True
 ```
 
-**Nugget**  
+![](writeupfiles/10.b.svg)
+
+**Flag**  
+
 ```
 UALYyPlhy2aYfYpzcJHA
 ```
