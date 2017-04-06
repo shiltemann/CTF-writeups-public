@@ -1,0 +1,1101 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="480" height="480">
+	<title>Hackyeaster 2017</title>
+	<desc>HackyEaster 2017 - Egg 10</desc>
+	<defs>
+		<rect id="b" style="fill:rgb(0, 0, 0);fill-opacity:1" x="0" y="0" width="6" height="6" shape-rendering="crispEdges"/>
+		<rect id="w" style="fill:rgb(255, 255, 255);fill-opacity:1" x="0" y="0" width="6" height="6" shape-rendering="crispEdges"/>
+	</defs>
+		<image id="egg10" x="0" y="0"  width="480" height="480" preserveAspectRatio="none"
+	       xlink:href="data:image/png;base64,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
+e44fQURERERERERERERERERERERERERERERERERERERERERERERERERERsS3vvX/A7Y/n014BQSe
+AAAAAElFTkSuQmCC" />
+	<use x="273" y="289" xlink:href="#b"/>
+	<use x="309" y="301" xlink:href="#b"/>
+	<use x="267" y="277" xlink:href="#w"/>
+	<use x="219" y="337" xlink:href="#b"/>
+	<use x="207" y="235" xlink:href="#w"/>
+	<use x="303" y="313" xlink:href="#b"/>
+	<use x="297" y="235" xlink:href="#b"/>
+	<use x="255" y="313" xlink:href="#w"/>
+	<use x="249" y="337" xlink:href="#w"/>
+	<use x="285" y="301" xlink:href="#w"/>
+	<use x="297" y="217" xlink:href="#b"/>
+	<use x="177" y="271" xlink:href="#b"/>
+	<use x="267" y="253" xlink:href="#w"/>
+	<use x="267" y="241" xlink:href="#w"/>
+	<use x="177" y="295" xlink:href="#b"/>
+	<use x="213" y="247" xlink:href="#b"/>
+	<use x="273" y="331" xlink:href="#w"/>
+	<use x="255" y="277" xlink:href="#b"/>
+	<use x="273" y="223" xlink:href="#b"/>
+	<use x="177" y="277" xlink:href="#b"/>
+	<use x="231" y="319" xlink:href="#w"/>
+	<use x="225" y="223" xlink:href="#w"/>
+	<use x="189" y="265" xlink:href="#b"/>
+	<use x="285" y="247" xlink:href="#w"/>
+	<use x="291" y="307" xlink:href="#w"/>
+	<use x="303" y="319" xlink:href="#b"/>
+	<use x="219" y="313" xlink:href="#w"/>
+	<use x="225" y="217" xlink:href="#w"/>
+	<use x="207" y="361" xlink:href="#w"/>
+	<use x="219" y="247" xlink:href="#w"/>
+	<use x="177" y="283" xlink:href="#w"/>
+	<use x="249" y="271" xlink:href="#w"/>
+	<use x="213" y="229" xlink:href="#w"/>
+	<use x="177" y="283" xlink:href="#b"/>
+	<use x="309" y="229" xlink:href="#b"/>
+	<use x="267" y="337" xlink:href="#b"/>
+	<use x="201" y="217" xlink:href="#b"/>
+	<use x="285" y="265" xlink:href="#w"/>
+	<use x="255" y="313" xlink:href="#b"/>
+	<use x="243" y="295" xlink:href="#b"/>
+	<use x="303" y="343" xlink:href="#b"/>
+	<use x="195" y="331" xlink:href="#w"/>
+	<use x="273" y="277" xlink:href="#b"/>
+	<use x="219" y="325" xlink:href="#w"/>
+	<use x="309" y="223" xlink:href="#b"/>
+	<use x="219" y="295" xlink:href="#w"/>
+	<use x="189" y="337" xlink:href="#b"/>
+	<use x="183" y="337" xlink:href="#b"/>
+	<use x="231" y="259" xlink:href="#w"/>
+	<use x="237" y="361" xlink:href="#b"/>
+	<use x="303" y="301" xlink:href="#b"/>
+	<use x="171" y="295" xlink:href="#b"/>
+	<use x="195" y="259" xlink:href="#w"/>
+	<use x="291" y="277" xlink:href="#b"/>
+	<use x="213" y="349" xlink:href="#b"/>
+	<use x="189" y="253" xlink:href="#b"/>
+	<use x="297" y="325" xlink:href="#w"/>
+	<use x="237" y="295" xlink:href="#b"/>
+	<use x="273" y="271" xlink:href="#w"/>
+	<use x="261" y="277" xlink:href="#w"/>
+	<use x="303" y="277" xlink:href="#b"/>
+	<use x="195" y="307" xlink:href="#w"/>
+	<use x="243" y="337" xlink:href="#w"/>
+	<use x="189" y="217" xlink:href="#b"/>
+	<use x="291" y="337" xlink:href="#w"/>
+	<use x="297" y="343" xlink:href="#w"/>
+	<use x="291" y="217" xlink:href="#b"/>
+	<use x="183" y="235" xlink:href="#b"/>
+	<use x="279" y="223" xlink:href="#w"/>
+	<use x="183" y="229" xlink:href="#b"/>
+	<use x="195" y="283" xlink:href="#w"/>
+	<use x="177" y="259" xlink:href="#w"/>
+	<use x="261" y="265" xlink:href="#b"/>
+	<use x="183" y="289" xlink:href="#b"/>
+	<use x="165" y="259" xlink:href="#w"/>
+	<use x="297" y="223" xlink:href="#w"/>
+	<use x="273" y="361" xlink:href="#b"/>
+	<use x="219" y="355" xlink:href="#w"/>
+	<use x="165" y="343" xlink:href="#b"/>
+	<use x="237" y="331" xlink:href="#w"/>
+	<use x="177" y="277" xlink:href="#w"/>
+	<use x="243" y="331" xlink:href="#w"/>
+	<use x="267" y="313" xlink:href="#b"/>
+	<use x="291" y="301" xlink:href="#w"/>
+	<use x="189" y="241" xlink:href="#b"/>
+	<use x="195" y="301" xlink:href="#b"/>
+	<use x="297" y="241" xlink:href="#b"/>
+	<use x="177" y="241" xlink:href="#b"/>
+	<use x="225" y="289" xlink:href="#w"/>
+	<use x="249" y="325" xlink:href="#w"/>
+	<use x="273" y="325" xlink:href="#b"/>
+	<use x="303" y="241" xlink:href="#w"/>
+	<use x="303" y="247" xlink:href="#w"/>
+	<use x="207" y="217" xlink:href="#w"/>
+	<use x="273" y="247" xlink:href="#b"/>
+	<use x="171" y="271" xlink:href="#b"/>
+	<use x="195" y="337" xlink:href="#w"/>
+	<use x="189" y="271" xlink:href="#w"/>
+	<use x="213" y="337" xlink:href="#b"/>
+	<use x="285" y="337" xlink:href="#b"/>
+	<use x="261" y="259" xlink:href="#w"/>
+	<use x="219" y="361" xlink:href="#b"/>
+	<use x="291" y="343" xlink:href="#b"/>
+	<use x="249" y="229" xlink:href="#w"/>
+	<use x="285" y="277" xlink:href="#w"/>
+	<use x="195" y="307" xlink:href="#b"/>
+	<use x="213" y="217" xlink:href="#w"/>
+	<use x="171" y="235" xlink:href="#w"/>
+	<use x="279" y="259" xlink:href="#w"/>
+	<use x="309" y="253" xlink:href="#b"/>
+	<use x="261" y="319" xlink:href="#b"/>
+	<use x="213" y="307" xlink:href="#b"/>
+	<use x="219" y="277" xlink:href="#b"/>
+	<use x="273" y="259" xlink:href="#w"/>
+	<use x="297" y="337" xlink:href="#w"/>
+	<use x="207" y="247" xlink:href="#w"/>
+	<use x="279" y="253" xlink:href="#b"/>
+	<use x="255" y="337" xlink:href="#b"/>
+	<use x="207" y="343" xlink:href="#w"/>
+	<use x="165" y="319" xlink:href="#w"/>
+	<use x="255" y="355" xlink:href="#b"/>
+	<use x="255" y="349" xlink:href="#w"/>
+	<use x="225" y="241" xlink:href="#b"/>
+	<use x="243" y="235" xlink:href="#w"/>
+	<use x="225" y="277" xlink:href="#w"/>
+	<use x="177" y="337" xlink:href="#b"/>
+	<use x="249" y="241" xlink:href="#w"/>
+	<use x="279" y="229" xlink:href="#w"/>
+	<use x="267" y="319" xlink:href="#w"/>
+	<use x="291" y="325" xlink:href="#w"/>
+	<use x="249" y="259" xlink:href="#w"/>
+	<use x="195" y="295" xlink:href="#b"/>
+	<use x="195" y="241" xlink:href="#w"/>
+	<use x="231" y="229" xlink:href="#b"/>
+	<use x="267" y="247" xlink:href="#w"/>
+	<use x="291" y="325" xlink:href="#b"/>
+	<use x="219" y="235" xlink:href="#b"/>
+	<use x="267" y="259" xlink:href="#w"/>
+	<use x="189" y="247" xlink:href="#w"/>
+	<use x="309" y="331" xlink:href="#b"/>
+	<use x="171" y="259" xlink:href="#w"/>
+	<use x="255" y="229" xlink:href="#w"/>
+	<use x="225" y="283" xlink:href="#b"/>
+	<use x="207" y="301" xlink:href="#b"/>
+	<use x="183" y="331" xlink:href="#w"/>
+	<use x="201" y="307" xlink:href="#w"/>
+	<use x="303" y="235" xlink:href="#w"/>
+	<use x="261" y="253" xlink:href="#b"/>
+	<use x="273" y="253" xlink:href="#b"/>
+	<use x="297" y="313" xlink:href="#b"/>
+	<use x="231" y="301" xlink:href="#w"/>
+	<use x="177" y="265" xlink:href="#b"/>
+	<use x="213" y="283" xlink:href="#b"/>
+	<use x="255" y="307" xlink:href="#b"/>
+	<use x="171" y="277" xlink:href="#b"/>
+	<use x="291" y="283" xlink:href="#w"/>
+	<use x="195" y="265" xlink:href="#w"/>
+	<use x="213" y="289" xlink:href="#b"/>
+	<use x="183" y="355" xlink:href="#w"/>
+	<use x="219" y="253" xlink:href="#w"/>
+	<use x="279" y="295" xlink:href="#b"/>
+	<use x="237" y="271" xlink:href="#w"/>
+	<use x="177" y="223" xlink:href="#w"/>
+	<use x="273" y="241" xlink:href="#b"/>
+	<use x="249" y="223" xlink:href="#w"/>
+	<use x="213" y="265" xlink:href="#b"/>
+	<use x="231" y="271" xlink:href="#w"/>
+	<use x="291" y="337" xlink:href="#b"/>
+	<use x="303" y="259" xlink:href="#w"/>
+	<use x="183" y="265" xlink:href="#b"/>
+	<use x="249" y="265" xlink:href="#b"/>
+	<use x="279" y="319" xlink:href="#w"/>
+	<use x="261" y="349" xlink:href="#w"/>
+	<use x="225" y="343" xlink:href="#b"/>
+	<use x="171" y="319" xlink:href="#w"/>
+	<use x="237" y="301" xlink:href="#w"/>
+	<use x="297" y="301" xlink:href="#w"/>
+	<use x="243" y="217" xlink:href="#b"/>
+	<use x="177" y="229" xlink:href="#b"/>
+	<use x="183" y="217" xlink:href="#b"/>
+	<use x="273" y="217" xlink:href="#b"/>
+	<use x="249" y="331" xlink:href="#b"/>
+	<use x="219" y="349" xlink:href="#w"/>
+	<use x="183" y="223" xlink:href="#w"/>
+	<use x="213" y="283" xlink:href="#w"/>
+	<use x="261" y="241" xlink:href="#b"/>
+	<use x="165" y="283" xlink:href="#w"/>
+	<use x="297" y="295" xlink:href="#b"/>
+	<use x="213" y="319" xlink:href="#b"/>
+	<use x="309" y="361" xlink:href="#b"/>
+	<use x="219" y="361" xlink:href="#w"/>
+	<use x="201" y="361" xlink:href="#b"/>
+	<use x="231" y="283" xlink:href="#b"/>
+	<use x="243" y="247" xlink:href="#w"/>
+	<use x="201" y="241" xlink:href="#b"/>
+	<use x="183" y="259" xlink:href="#w"/>
+	<use x="279" y="247" xlink:href="#w"/>
+	<use x="309" y="337" xlink:href="#b"/>
+	<use x="225" y="319" xlink:href="#b"/>
+	<use x="201" y="337" xlink:href="#b"/>
+	<use x="237" y="349" xlink:href="#w"/>
+	<use x="225" y="307" xlink:href="#w"/>
+	<use x="279" y="265" xlink:href="#b"/>
+	<use x="177" y="235" xlink:href="#b"/>
+	<use x="207" y="289" xlink:href="#w"/>
+	<use x="207" y="253" xlink:href="#w"/>
+	<use x="225" y="265" xlink:href="#b"/>
+	<use x="195" y="319" xlink:href="#w"/>
+	<use x="183" y="253" xlink:href="#b"/>
+	<use x="171" y="265" xlink:href="#b"/>
+	<use x="291" y="235" xlink:href="#b"/>
+	<use x="297" y="355" xlink:href="#w"/>
+	<use x="231" y="295" xlink:href="#w"/>
+	<use x="165" y="313" xlink:href="#b"/>
+	<use x="189" y="319" xlink:href="#w"/>
+	<use x="279" y="217" xlink:href="#b"/>
+	<use x="243" y="229" xlink:href="#w"/>
+	<use x="213" y="241" xlink:href="#w"/>
+	<use x="225" y="331" xlink:href="#w"/>
+	<use x="189" y="235" xlink:href="#b"/>
+	<use x="303" y="283" xlink:href="#b"/>
+	<use x="255" y="259" xlink:href="#w"/>
+	<use x="303" y="355" xlink:href="#w"/>
+	<use x="243" y="223" xlink:href="#b"/>
+	<use x="261" y="355" xlink:href="#b"/>
+	<use x="261" y="325" xlink:href="#b"/>
+	<use x="207" y="331" xlink:href="#w"/>
+	<use x="201" y="253" xlink:href="#b"/>
+	<use x="267" y="265" xlink:href="#b"/>
+	<use x="291" y="331" xlink:href="#w"/>
+	<use x="165" y="229" xlink:href="#b"/>
+	<use x="231" y="325" xlink:href="#b"/>
+	<use x="255" y="319" xlink:href="#w"/>
+	<use x="291" y="259" xlink:href="#w"/>
+	<use x="237" y="229" xlink:href="#w"/>
+	<use x="213" y="355" xlink:href="#b"/>
+	<use x="237" y="307" xlink:href="#b"/>
+	<use x="219" y="337" xlink:href="#w"/>
+	<use x="285" y="235" xlink:href="#b"/>
+	<use x="219" y="241" xlink:href="#w"/>
+	<use x="255" y="319" xlink:href="#b"/>
+	<use x="303" y="361" xlink:href="#b"/>
+	<use x="237" y="247" xlink:href="#w"/>
+	<use x="285" y="301" xlink:href="#b"/>
+	<use x="171" y="253" xlink:href="#b"/>
+	<use x="291" y="271" xlink:href="#w"/>
+	<use x="249" y="349" xlink:href="#b"/>
+	<use x="255" y="253" xlink:href="#w"/>
+	<use x="291" y="241" xlink:href="#b"/>
+	<use x="189" y="271" xlink:href="#b"/>
+	<use x="219" y="283" xlink:href="#b"/>
+	<use x="237" y="217" xlink:href="#w"/>
+	<use x="237" y="313" xlink:href="#b"/>
+	<use x="273" y="307" xlink:href="#b"/>
+	<use x="165" y="271" xlink:href="#w"/>
+	<use x="189" y="223" xlink:href="#w"/>
+	<use x="165" y="325" xlink:href="#b"/>
+	<use x="255" y="235" xlink:href="#b"/>
+	<use x="177" y="289" xlink:href="#w"/>
+	<use x="261" y="247" xlink:href="#w"/>
+	<use x="177" y="253" xlink:href="#b"/>
+	<use x="201" y="283" xlink:href="#w"/>
+	<use x="165" y="247" xlink:href="#b"/>
+	<use x="195" y="313" xlink:href="#b"/>
+	<use x="297" y="229" xlink:href="#b"/>
+	<use x="195" y="223" xlink:href="#w"/>
+	<use x="201" y="223" xlink:href="#b"/>
+	<use x="303" y="265" xlink:href="#b"/>
+	<use x="309" y="217" xlink:href="#b"/>
+	<use x="177" y="319" xlink:href="#w"/>
+	<use x="285" y="361" xlink:href="#b"/>
+	<use x="225" y="253" xlink:href="#b"/>
+	<use x="291" y="283" xlink:href="#b"/>
+	<use x="183" y="295" xlink:href="#w"/>
+	<use x="291" y="313" xlink:href="#w"/>
+	<use x="309" y="307" xlink:href="#b"/>
+	<use x="267" y="283" xlink:href="#w"/>
+	<use x="279" y="349" xlink:href="#b"/>
+	<use x="225" y="325" xlink:href="#b"/>
+	<use x="183" y="271" xlink:href="#b"/>
+	<use x="273" y="265" xlink:href="#w"/>
+	<use x="303" y="331" xlink:href="#w"/>
+	<use x="267" y="289" xlink:href="#b"/>
+	<use x="165" y="253" xlink:href="#b"/>
+	<use x="231" y="247" xlink:href="#w"/>
+	<use x="237" y="223" xlink:href="#b"/>
+	<use x="201" y="325" xlink:href="#b"/>
+	<use x="237" y="319" xlink:href="#w"/>
+	<use x="225" y="331" xlink:href="#b"/>
+	<use x="207" y="283" xlink:href="#b"/>
+	<use x="165" y="223" xlink:href="#b"/>
+	<use x="201" y="349" xlink:href="#b"/>
+	<use x="171" y="325" xlink:href="#b"/>
+	<use x="279" y="355" xlink:href="#w"/>
+	<use x="171" y="301" xlink:href="#w"/>
+	<use x="261" y="259" xlink:href="#b"/>
+	<use x="249" y="223" xlink:href="#b"/>
+	<use x="165" y="265" xlink:href="#b"/>
+	<use x="261" y="289" xlink:href="#b"/>
+	<use x="279" y="355" xlink:href="#b"/>
+	<use x="207" y="241" xlink:href="#w"/>
+	<use x="207" y="295" xlink:href="#w"/>
+	<use x="309" y="265" xlink:href="#w"/>
+	<use x="261" y="331" xlink:href="#b"/>
+	<use x="249" y="217" xlink:href="#w"/>
+	<use x="195" y="247" xlink:href="#w"/>
+	<use x="309" y="277" xlink:href="#b"/>
+	<use x="177" y="343" xlink:href="#b"/>
+	<use x="273" y="229" xlink:href="#b"/>
+	<use x="177" y="289" xlink:href="#b"/>
+	<use x="249" y="271" xlink:href="#b"/>
+	<use x="231" y="343" xlink:href="#w"/>
+	<use x="249" y="295" xlink:href="#w"/>
+	<use x="201" y="319" xlink:href="#w"/>
+	<use x="291" y="253" xlink:href="#b"/>
+	<use x="207" y="307" xlink:href="#w"/>
+	<use x="225" y="355" xlink:href="#w"/>
+	<use x="195" y="301" xlink:href="#w"/>
+	<use x="249" y="313" xlink:href="#b"/>
+	<use x="273" y="295" xlink:href="#w"/>
+	<use x="243" y="355" xlink:href="#b"/>
+	<use x="165" y="349" xlink:href="#b"/>
+	<use x="165" y="283" xlink:href="#b"/>
+	<use x="243" y="361" xlink:href="#w"/>
+	<use x="237" y="259" xlink:href="#b"/>
+	<use x="309" y="289" xlink:href="#b"/>
+	<use x="291" y="295" xlink:href="#b"/>
+	<use x="303" y="253" xlink:href="#b"/>
+	<use x="279" y="295" xlink:href="#w"/>
+	<use x="171" y="289" xlink:href="#b"/>
+	<use x="249" y="253" xlink:href="#b"/>
+	<use x="297" y="259" xlink:href="#w"/>
+	<use x="177" y="313" xlink:href="#w"/>
+	<use x="243" y="259" xlink:href="#w"/>
+	<use x="255" y="361" xlink:href="#w"/>
+	<use x="249" y="355" xlink:href="#w"/>
+	<use x="309" y="259" xlink:href="#w"/>
+	<use x="309" y="307" xlink:href="#w"/>
+	<use x="201" y="295" xlink:href="#w"/>
+	<use x="309" y="355" xlink:href="#b"/>
+	<use x="267" y="349" xlink:href="#b"/>
+	<use x="231" y="289" xlink:href="#b"/>
+	<use x="195" y="325" xlink:href="#b"/>
+	<use x="261" y="235" xlink:href="#w"/>
+	<use x="207" y="355" xlink:href="#w"/>
+	<use x="225" y="313" xlink:href="#w"/>
+	<use x="237" y="253" xlink:href="#b"/>
+	<use x="285" y="271" xlink:href="#w"/>
+	<use x="231" y="355" xlink:href="#w"/>
+	<use x="195" y="277" xlink:href="#w"/>
+	<use x="255" y="223" xlink:href="#b"/>
+	<use x="195" y="271" xlink:href="#b"/>
+	<use x="237" y="265" xlink:href="#b"/>
+	<use x="171" y="361" xlink:href="#b"/>
+	<use x="243" y="319" xlink:href="#w"/>
+	<use x="243" y="241" xlink:href="#b"/>
+	<use x="279" y="235" xlink:href="#w"/>
+	<use x="213" y="313" xlink:href="#b"/>
+	<use x="213" y="235" xlink:href="#b"/>
+	<use x="303" y="217" xlink:href="#b"/>
+	<use x="273" y="319" xlink:href="#w"/>
+	<use x="303" y="325" xlink:href="#b"/>
+	<use x="219" y="331" xlink:href="#w"/>
+	<use x="207" y="349" xlink:href="#w"/>
+	<use x="297" y="289" xlink:href="#w"/>
+	<use x="255" y="217" xlink:href="#b"/>
+	<use x="207" y="277" xlink:href="#w"/>
+	<use x="309" y="319" xlink:href="#b"/>
+	<use x="195" y="349" xlink:href="#w"/>
+	<use x="255" y="241" xlink:href="#w"/>
+	<use x="285" y="313" xlink:href="#b"/>
+	<use x="231" y="337" xlink:href="#b"/>
+	<use x="285" y="253" xlink:href="#b"/>
+	<use x="177" y="355" xlink:href="#w"/>
+	<use x="303" y="349" xlink:href="#w"/>
+	<use x="195" y="253" xlink:href="#b"/>
+	<use x="189" y="295" xlink:href="#w"/>
+	<use x="177" y="331" xlink:href="#w"/>
+	<use x="177" y="349" xlink:href="#b"/>
+	<use x="183" y="319" xlink:href="#w"/>
+	<use x="279" y="361" xlink:href="#b"/>
+	<use x="261" y="349" xlink:href="#b"/>
+	<use x="225" y="235" xlink:href="#w"/>
+	<use x="261" y="283" xlink:href="#w"/>
+	<use x="291" y="301" xlink:href="#b"/>
+	<use x="231" y="331" xlink:href="#b"/>
+	<use x="267" y="355" xlink:href="#w"/>
+	<use x="171" y="337" xlink:href="#w"/>
+	<use x="225" y="259" xlink:href="#w"/>
+	<use x="219" y="217" xlink:href="#b"/>
+	<use x="297" y="337" xlink:href="#b"/>
+	<use x="201" y="229" xlink:href="#b"/>
+	<use x="249" y="235" xlink:href="#b"/>
+	<use x="255" y="331" xlink:href="#w"/>
+	<use x="195" y="343" xlink:href="#w"/>
+	<use x="309" y="319" xlink:href="#w"/>
+	<use x="189" y="355" xlink:href="#w"/>
+	<use x="243" y="289" xlink:href="#w"/>
+	<use x="201" y="247" xlink:href="#b"/>
+	<use x="207" y="223" xlink:href="#w"/>
+	<use x="303" y="289" xlink:href="#w"/>
+	<use x="249" y="301" xlink:href="#b"/>
+	<use x="267" y="361" xlink:href="#b"/>
+	<use x="249" y="307" xlink:href="#w"/>
+	<use x="189" y="259" xlink:href="#w"/>
+	<use x="171" y="217" xlink:href="#b"/>
+	<use x="279" y="271" xlink:href="#w"/>
+	<use x="189" y="295" xlink:href="#b"/>
+	<use x="267" y="301" xlink:href="#w"/>
+	<use x="261" y="247" xlink:href="#b"/>
+	<use x="297" y="277" xlink:href="#w"/>
+	<use x="261" y="223" xlink:href="#b"/>
+	<use x="165" y="295" xlink:href="#b"/>
+	<use x="267" y="277" xlink:href="#b"/>
+	<use x="225" y="295" xlink:href="#b"/>
+	<use x="183" y="361" xlink:href="#b"/>
+	<use x="267" y="301" xlink:href="#b"/>
+	<use x="201" y="271" xlink:href="#w"/>
+	<use x="303" y="289" xlink:href="#b"/>
+	<use x="219" y="229" xlink:href="#b"/>
+	<use x="309" y="313" xlink:href="#b"/>
+	<use x="177" y="325" xlink:href="#b"/>
+	<use x="261" y="301" xlink:href="#b"/>
+	<use x="201" y="289" xlink:href="#b"/>
+	<use x="213" y="295" xlink:href="#b"/>
+	<use x="183" y="271" xlink:href="#w"/>
+	<use x="261" y="313" xlink:href="#b"/>
+	<use x="237" y="343" xlink:href="#b"/>
+	<use x="171" y="241" xlink:href="#w"/>
+	<use x="225" y="229" xlink:href="#b"/>
+	<use x="219" y="349" xlink:href="#b"/>
+	<use x="225" y="343" xlink:href="#w"/>
+	<use x="165" y="289" xlink:href="#w"/>
+	<use x="291" y="355" xlink:href="#w"/>
+	<use x="273" y="313" xlink:href="#b"/>
+	<use x="237" y="283" xlink:href="#w"/>
+	<use x="285" y="349" xlink:href="#w"/>
+	<use x="279" y="301" xlink:href="#w"/>
+	<use x="261" y="265" xlink:href="#w"/>
+	<use x="237" y="235" xlink:href="#w"/>
+	<use x="255" y="289" xlink:href="#b"/>
+	<use x="189" y="343" xlink:href="#b"/>
+	<use x="165" y="307" xlink:href="#b"/>
+	<use x="267" y="235" xlink:href="#w"/>
+	<use x="225" y="271" xlink:href="#w"/>
+	<use x="309" y="271" xlink:href="#b"/>
+	<use x="213" y="343" xlink:href="#b"/>
+	<use x="207" y="313" xlink:href="#w"/>
+	<use x="237" y="289" xlink:href="#w"/>
+	<use x="213" y="271" xlink:href="#b"/>
+	<use x="189" y="229" xlink:href="#b"/>
+	<use x="189" y="361" xlink:href="#b"/>
+	<use x="213" y="307" xlink:href="#w"/>
+	<use x="189" y="349" xlink:href="#b"/>
+	<use x="183" y="325" xlink:href="#b"/>
+	<use x="261" y="217" xlink:href="#b"/>
+	<use x="297" y="319" xlink:href="#b"/>
+	<use x="285" y="289" xlink:href="#b"/>
+	<use x="243" y="265" xlink:href="#w"/>
+	<use x="291" y="229" xlink:href="#b"/>
+	<use x="207" y="307" xlink:href="#b"/>
+	<use x="291" y="319" xlink:href="#b"/>
+	<use x="213" y="223" xlink:href="#b"/>
+	<use x="249" y="277" xlink:href="#w"/>
+	<use x="201" y="277" xlink:href="#b"/>
+	<use x="225" y="349" xlink:href="#w"/>
+	<use x="219" y="313" xlink:href="#b"/>
+	<use x="165" y="331" xlink:href="#b"/>
+	<use x="183" y="307" xlink:href="#b"/>
+	<use x="273" y="277" xlink:href="#w"/>
+	<use x="285" y="295" xlink:href="#w"/>
+	<use x="231" y="241" xlink:href="#w"/>
+	<use x="309" y="325" xlink:href="#b"/>
+	<use x="231" y="313" xlink:href="#w"/>
+	<use x="303" y="337" xlink:href="#b"/>
+	<use x="297" y="331" xlink:href="#w"/>
+	<use x="225" y="337" xlink:href="#b"/>
+	<use x="285" y="319" xlink:href="#b"/>
+	<use x="237" y="241" xlink:href="#b"/>
+	<use x="225" y="337" xlink:href="#w"/>
+	<use x="213" y="313" xlink:href="#w"/>
+	<use x="261" y="337" xlink:href="#b"/>
+	<use x="171" y="343" xlink:href="#w"/>
+	<use x="297" y="253" xlink:href="#b"/>
+	<use x="243" y="313" xlink:href="#w"/>
+	<use x="231" y="361" xlink:href="#w"/>
+	<use x="309" y="271" xlink:href="#w"/>
+	<use x="291" y="223" xlink:href="#w"/>
+	<use x="291" y="319" xlink:href="#w"/>
+	<use x="183" y="307" xlink:href="#w"/>
+	<use x="255" y="325" xlink:href="#b"/>
+	<use x="213" y="295" xlink:href="#w"/>
+	<use x="177" y="217" xlink:href="#b"/>
+	<use x="309" y="349" xlink:href="#b"/>
+	<use x="261" y="295" xlink:href="#b"/>
+	<use x="267" y="295" xlink:href="#w"/>
+	<use x="273" y="283" xlink:href="#w"/>
+	<use x="213" y="277" xlink:href="#b"/>
+	<use x="255" y="361" xlink:href="#b"/>
+	<use x="195" y="235" xlink:href="#w"/>
+	<use x="195" y="229" xlink:href="#w"/>
+	<use x="267" y="283" xlink:href="#b"/>
+	<use x="225" y="361" xlink:href="#b"/>
+	<use x="249" y="247" xlink:href="#w"/>
+	<use x="255" y="217" xlink:href="#w"/>
+	<use x="207" y="259" xlink:href="#w"/>
+	<use x="267" y="355" xlink:href="#b"/>
+	<use x="225" y="247" xlink:href="#b"/>
+	<use x="297" y="283" xlink:href="#w"/>
+	<use x="201" y="301" xlink:href="#b"/>
+	<use x="285" y="331" xlink:href="#b"/>
+	<use x="267" y="325" xlink:href="#w"/>
+	<use x="243" y="283" xlink:href="#w"/>
+	<use x="219" y="265" xlink:href="#b"/>
+	<use x="297" y="343" xlink:href="#b"/>
+	<use x="219" y="343" xlink:href="#w"/>
+	<use x="165" y="277" xlink:href="#w"/>
+	<use x="291" y="265" xlink:href="#b"/>
+	<use x="297" y="247" xlink:href="#w"/>
+	<use x="189" y="289" xlink:href="#b"/>
+	<use x="297" y="307" xlink:href="#w"/>
+	<use x="255" y="301" xlink:href="#b"/>
+	<use x="177" y="247" xlink:href="#w"/>
+	<use x="273" y="307" xlink:href="#w"/>
+	<use x="291" y="289" xlink:href="#w"/>
+	<use x="195" y="271" xlink:href="#w"/>
+	<use x="243" y="253" xlink:href="#w"/>
+	<use x="219" y="223" xlink:href="#b"/>
+	<use x="285" y="355" xlink:href="#w"/>
+	<use x="219" y="355" xlink:href="#b"/>
+	<use x="237" y="355" xlink:href="#b"/>
+	<use x="273" y="349" xlink:href="#b"/>
+	<use x="171" y="247" xlink:href="#w"/>
+	<use x="267" y="217" xlink:href="#w"/>
+	<use x="165" y="361" xlink:href="#b"/>
+	<use x="267" y="349" xlink:href="#w"/>
+	<use x="273" y="235" xlink:href="#b"/>
+	<use x="171" y="349" xlink:href="#w"/>
+	<use x="183" y="313" xlink:href="#w"/>
+	<use x="303" y="223" xlink:href="#w"/>
+	<use x="243" y="271" xlink:href="#w"/>
+	<use x="231" y="235" xlink:href="#b"/>
+	<use x="201" y="355" xlink:href="#b"/>
+	<use x="291" y="361" xlink:href="#b"/>
+	<use x="279" y="283" xlink:href="#w"/>
+	<use x="189" y="325" xlink:href="#b"/>
+	<use x="243" y="235" xlink:href="#b"/>
+	<use x="201" y="235" xlink:href="#b"/>
+	<use x="297" y="349" xlink:href="#w"/>
+	<use x="279" y="241" xlink:href="#w"/>
+	<use x="177" y="361" xlink:href="#b"/>
+	<use x="219" y="319" xlink:href="#b"/>
+	<use x="273" y="355" xlink:href="#w"/>
+	<use x="183" y="277" xlink:href="#w"/>
+	<use x="219" y="289" xlink:href="#b"/>
+	<use x="255" y="259" xlink:href="#b"/>
+	<use x="303" y="271" xlink:href="#w"/>
+	<use x="267" y="331" xlink:href="#w"/>
+	<use x="285" y="283" xlink:href="#b"/>
+	<use x="165" y="301" xlink:href="#b"/>
+	<use x="303" y="229" xlink:href="#w"/>
+	<use x="189" y="277" xlink:href="#b"/>
+	<use x="231" y="265" xlink:href="#w"/>
+	<use x="309" y="313" xlink:href="#w"/>
+	<use x="285" y="307" xlink:href="#b"/>
+	<use x="207" y="277" xlink:href="#b"/>
+	<use x="297" y="361" xlink:href="#b"/>
+	<use x="231" y="253" xlink:href="#w"/>
+	<use x="249" y="283" xlink:href="#b"/>
+	<use x="207" y="337" xlink:href="#w"/>
+	<use x="201" y="331" xlink:href="#b"/>
+	<use x="195" y="361" xlink:href="#b"/>
+	<use x="171" y="313" xlink:href="#w"/>
+	<use x="165" y="355" xlink:href="#b"/>
+	<use x="237" y="325" xlink:href="#b"/>
+	<use x="267" y="223" xlink:href="#w"/>
+	<use x="267" y="307" xlink:href="#b"/>
+	<use x="273" y="337" xlink:href="#b"/>
+	<use x="243" y="223" xlink:href="#w"/>
+	<use x="255" y="283" xlink:href="#b"/>
+	<use x="189" y="301" xlink:href="#b"/>
+	<use x="231" y="277" xlink:href="#b"/>
+	<use x="219" y="343" xlink:href="#b"/>
+	<use x="183" y="247" xlink:href="#w"/>
+	<use x="285" y="217" xlink:href="#b"/>
+	<use x="285" y="241" xlink:href="#b"/>
+	<use x="243" y="349" xlink:href="#b"/>
+	<use x="279" y="271" xlink:href="#b"/>
+	<use x="195" y="217" xlink:href="#b"/>
+	<use x="243" y="307" xlink:href="#b"/>
+	<use x="225" y="313" xlink:href="#b"/>
+	<use x="267" y="343" xlink:href="#b"/>
+	<use x="285" y="343" xlink:href="#b"/>
+	<use x="273" y="349" xlink:href="#w"/>
+	<use x="207" y="271" xlink:href="#b"/>
+	<use x="207" y="313" xlink:href="#b"/>
+	<use x="279" y="313" xlink:href="#b"/>
+	<use x="165" y="235" xlink:href="#b"/>
+	<use x="309" y="235" xlink:href="#b"/>
+	<use x="183" y="277" xlink:href="#b"/>
+	<use x="285" y="307" xlink:href="#w"/>
+	<use x="267" y="271" xlink:href="#b"/>
+	<use x="213" y="271" xlink:href="#w"/>
+	<use x="201" y="343" xlink:href="#b"/>
+	<use x="255" y="325" xlink:href="#w"/>
+	<use x="189" y="313" xlink:href="#w"/>
+	<use x="249" y="247" xlink:href="#b"/>
+	<use x="213" y="325" xlink:href="#b"/>
+	<use x="261" y="271" xlink:href="#b"/>
+	<use x="219" y="307" xlink:href="#w"/>
+	<use x="213" y="259" xlink:href="#w"/>
+	<use x="255" y="343" xlink:href="#b"/>
+	<use x="279" y="331" xlink:href="#w"/>
+	<use x="249" y="289" xlink:href="#w"/>
+	<use x="231" y="217" xlink:href="#w"/>
+	<use x="303" y="319" xlink:href="#w"/>
+	<use x="225" y="301" xlink:href="#b"/>
+	<use x="279" y="343" xlink:href="#w"/>
+	<use x="261" y="229" xlink:href="#w"/>
+	<use x="303" y="307" xlink:href="#b"/>
+	<use x="309" y="283" xlink:href="#b"/>
+	<use x="249" y="343" xlink:href="#b"/>
+	<use x="207" y="265" xlink:href="#b"/>
+	<use x="213" y="253" xlink:href="#b"/>
+	<use x="243" y="271" xlink:href="#b"/>
+	<use x="237" y="277" xlink:href="#b"/>
+	<use x="285" y="283" xlink:href="#w"/>
+	<use x="255" y="265" xlink:href="#w"/>
+	<use x="285" y="259" xlink:href="#w"/>
+	<use x="255" y="295" xlink:href="#w"/>
+	<use x="231" y="223" xlink:href="#b"/>
+	<use x="255" y="247" xlink:href="#b"/>
+	<use x="297" y="271" xlink:href="#b"/>
+	<use x="261" y="361" xlink:href="#w"/>
+	<use x="297" y="265" xlink:href="#w"/>
+	<use x="267" y="229" xlink:href="#w"/>
+	<use x="225" y="301" xlink:href="#w"/>
+	<use x="183" y="283" xlink:href="#b"/>
+	<use x="183" y="343" xlink:href="#b"/>
+	<use x="231" y="307" xlink:href="#w"/>
+	<use x="171" y="223" xlink:href="#w"/>
+	<use x="267" y="307" xlink:href="#w"/>
+	<use x="219" y="271" xlink:href="#b"/>
+	<use x="243" y="277" xlink:href="#w"/>
+	<use x="273" y="355" xlink:href="#b"/>
+	<use x="213" y="331" xlink:href="#w"/>
+	<use x="309" y="241" xlink:href="#b"/>
+	<use x="183" y="313" xlink:href="#b"/>
+	<use x="261" y="343" xlink:href="#b"/>
+	<use x="309" y="295" xlink:href="#b"/>
+	<use x="255" y="283" xlink:href="#w"/>
+	<use x="279" y="301" xlink:href="#b"/>
+	<use x="183" y="349" xlink:href="#b"/>
+	<use x="309" y="343" xlink:href="#b"/>
+	<use x="207" y="229" xlink:href="#w"/>
+	<use x="207" y="325" xlink:href="#w"/>
+	<use x="273" y="343" xlink:href="#b"/>
+	<use x="309" y="247" xlink:href="#b"/>
+	<use x="213" y="361" xlink:href="#b"/>
+	<use x="207" y="319" xlink:href="#w"/>
+	<use x="261" y="301" xlink:href="#w"/>
+	<use x="171" y="283" xlink:href="#b"/>
+	<use x="171" y="283" xlink:href="#w"/>
+	<use x="189" y="331" xlink:href="#w"/>
+	<use x="297" y="271" xlink:href="#w"/>
+	<use x="171" y="307" xlink:href="#w"/>
+	<use x="279" y="337" xlink:href="#b"/>
+	<use x="183" y="289" xlink:href="#w"/>
+	<use x="249" y="319" xlink:href="#w"/>
+	<use x="261" y="307" xlink:href="#w"/>
+	<use x="279" y="343" xlink:href="#b"/>
+	<use x="171" y="229" xlink:href="#w"/>
+	<use x="291" y="247" xlink:href="#w"/>
+	<use x="225" y="361" xlink:href="#w"/>
+	<use x="183" y="241" xlink:href="#b"/>
+	<use x="279" y="361" xlink:href="#w"/>
+	<use x="267" y="271" xlink:href="#w"/>
+	<use x="297" y="289" xlink:href="#b"/>
+	<use x="303" y="307" xlink:href="#w"/>
+	<use x="243" y="325" xlink:href="#w"/>
+	<use x="249" y="361" xlink:href="#b"/>
+	<use x="303" y="271" xlink:href="#b"/>
+	<use x="201" y="259" xlink:href="#w"/>
+	<use x="279" y="289" xlink:href="#b"/>
+	<use x="171" y="331" xlink:href="#w"/>
+	<use x="189" y="307" xlink:href="#w"/>
+	<use x="279" y="325" xlink:href="#w"/>
+	<use x="309" y="289" xlink:href="#w"/>
+	<use x="165" y="337" xlink:href="#b"/>
+	<use x="177" y="301" xlink:href="#w"/>
+	<use x="171" y="355" xlink:href="#w"/>
+	<use x="213" y="301" xlink:href="#b"/>
+	<use x="255" y="229" xlink:href="#b"/>
+	<use x="219" y="259" xlink:href="#w"/>
+	<use x="183" y="301" xlink:href="#b"/>
+	<use x="165" y="241" xlink:href="#b"/>
+	<use x="165" y="289" xlink:href="#b"/>
+	<use x="177" y="307" xlink:href="#b"/>
+	<use x="189" y="283" xlink:href="#w"/>
+	<use x="261" y="343" xlink:href="#w"/>
+	<use x="201" y="313" xlink:href="#b"/>
+	<use x="279" y="289" xlink:href="#w"/>
+	<use x="231" y="349" xlink:href="#w"/>
+	<use x="255" y="271" xlink:href="#w"/>
+	<use x="177" y="307" xlink:href="#w"/>
+	<use x="243" y="265" xlink:href="#b"/>
+	<use x="285" y="325" xlink:href="#b"/>
+	<use x="291" y="289" xlink:href="#b"/>
+	<use x="309" y="295" xlink:href="#w"/>
+	<use x="177" y="313" xlink:href="#b"/>
+	<use x="255" y="331" xlink:href="#b"/>
+	<use x="195" y="355" xlink:href="#w"/>
+	<use x="189" y="283" xlink:href="#b"/>
+	<use x="243" y="301" xlink:href="#b"/>
+	<use x="279" y="307" xlink:href="#w"/>
+	<use x="255" y="265" xlink:href="#b"/>
+	<use x="297" y="295" xlink:href="#w"/>
+	<use x="219" y="319" xlink:href="#w"/>
+	<use x="285" y="229" xlink:href="#b"/>
+	<use x="237" y="337" xlink:href="#w"/>
+	<use x="201" y="265" xlink:href="#b"/>
+	<use x="165" y="277" xlink:href="#b"/>
+	<use x="189" y="307" xlink:href="#b"/>
+	<use x="189" y="277" xlink:href="#w"/>
+	<use x="195" y="289" xlink:href="#w"/>
+	<use x="309" y="283" xlink:href="#w"/>
+	<use x="279" y="277" xlink:href="#b"/>
+	<use x="279" y="277" xlink:href="#w"/>
+	<use x="219" y="301" xlink:href="#b"/>
+	<use x="303" y="295" xlink:href="#w"/>
+	<use x="297" y="319" xlink:href="#w"/>
+	<use x="195" y="289" xlink:href="#b"/>
+	<use x="285" y="223" xlink:href="#w"/>
+	<use x="219" y="301" xlink:href="#w"/>
+	<use x="291" y="349" xlink:href="#b"/>
+	<use x="243" y="343" xlink:href="#b"/>
+	<use x="273" y="301" xlink:href="#b"/>
+	<use x="273" y="301" xlink:href="#w"/>
+	<use x="165" y="217" xlink:href="#b"/>
+</svg>
