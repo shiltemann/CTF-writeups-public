@@ -375,6 +375,31 @@ put the password into the egg-o-matic:
 uktVsuNNyPVQarmXTuYU
 ```
 
+## Challenge 07: Crypto for Rookies
+
+**Challenge**  
+
+This crypto is not hard to crack.
+
+![](writeupfiles/7_challenge.png)
+
+**Solution**
+
+line 1: dancing men cipher:   
+line 2: base64 decode:     `BONTEAOK`  
+line 3: alphabet position: `BONTEBRK`  
+line 4:  
+line 5: pigpen cipher: `CONTEBOK`  
+line 6:  
+line 7:  
+line 8: hex: `BONYEBOK`
+
+![](writeupfiles/pigpen.png)
+
+final solution: changed letters per line?
+
+**Flag**
+
 ## Challenge 10: An egg or not ...
 
 
@@ -500,9 +525,9 @@ print r.text
 
 # hmm, how to format our path string?
 payload = {
-    'path': '8'
+    'path': [1]
 }
-r = s.post(url, headers=headers, data=payload)
+r = s.post(url, headers=headers, params=payload)
 print r.text
 
 ```
