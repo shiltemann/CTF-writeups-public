@@ -236,6 +236,7 @@ chunks= ['A2DBM','ZXGID','XIZLS','VYGY6','EBQSA','JAOMY','NVXSI','GY5TF',
          '5DFME','A43JN','N5XGK','ON52C','ZWK4R','AGBTC','IDEN4','DFMFZ']
 
 print "solving.."
+extend_solution('',chunks)
 ```
 
 this outputs various possible solutions:
