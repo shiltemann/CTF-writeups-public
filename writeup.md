@@ -395,6 +395,7 @@ line 7:
 line 8: hex: `BONYEBOK`
 
 ![](writeupfiles/pigpen.png)
+![](writeupfiles/dancingmen.jpeg)
 
 final solution: changed letters per line?
 
