@@ -9,6 +9,7 @@ Title                                    Category  Flag
 Teaser                                             one do3s not simply s0lve a tea3er 0f hacky easter
 Challenge 01: Puzzle This!               Easy      C5LHYOifJSLOnYmKjBmS
 Challenge 02: Lots of Dots               Easy      pJ94m6jt3AYbogL2gv9i
+Challenge 03: Favourite Letters          Easy      Sf2MF6QPqpTrB7Eh2is7
 Challenge 05: Key Strokes                Easy      2MmSpjmlU6NPAhCUVyUP
 Challenge 06: Message Ken                Easy      uktVsuNNyPVQarmXTuYU
 Challenge 07: Crypto for Rookies         Easy      2owhVG07plVCwLD1Ggmn
@@ -311,6 +312,57 @@ Pop into the egg-o-matic:
 
 ```
 pJ94m6jt3AYbogL2gv9i
+```
+
+## Challenge 03: Favourite Letters
+
+```
+Francesca's favourite letter is s
+Riley's favourite letter is o
+Ellie's favourite letter is a
+Vince's favourite letter is p
+Quintain's favourite letter is r
+Otto's favourite letter is i
+David's favourite letter is p
+Tom's favourite letter is l
+Paul's favourite letter is e
+Ulrich's favourite letter is y
+Henry's favourite letter is w
+Norman's favourite letter is h
+Louis' favourite letter is i
+Zane's favourite letter is s
+York's favourite letter is c
+Bob's favourite letter is h
+Meave's favourite letter is s
+Ian's favourite letter is o
+Sidney's favourite letter is g
+George's favourite letter is s
+Kitty's favourite letter is d
+Wilbert's favourite letter is h
+Adam's favourite letter is t
+Xander's favourite letter is i
+Callum's favourite letter is e
+Jack's favourite letter is r
+```
+
+**Solution**
+
+All names start with different letter and there are 26 of them, so lets take the
+first letter of the name as a hint for the positioning of the favourite letters:
+
+```
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+thepasswordishieroglyphics
+```
+
+put `hieroglyphics` into the egg-o-matic to get our egg5
+
+![](writeupfiles/egg03.png)
+
+**Flag**
+
+```
+Sf2MF6QPqpTrB7Eh2is7
 ```
 
 ## Challenge 05: Key Strokes
