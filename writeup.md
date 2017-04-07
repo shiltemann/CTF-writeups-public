@@ -573,9 +573,7 @@ lol, "dollars to doughnuts" til
 
 opened with wireshark, extracted the objects transferred, seems like two versions of that image, and two webpages:
 
-R05h4L.jpg:
-
-![](writeupfiles/pcap/R05h4L.jpg)
+[R05h4L.jpg](writeupfiles/pcap/R05h4L.jpg) (incomplete)
 
 R05h4L(1).jpg:
 
