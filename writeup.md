@@ -569,6 +569,37 @@ What about a little P cap?
 **Solution**  
 Lotsa SMB traffic, looks like a file named R05h4L.jpg is tranferred. Dollars to doughnuts that's an egg.
 
+lol, "dollars to doughnuts" til
+
+opened with wireshark, extracted the objects transferred, seems like two versions of that image, and two webpages:
+
+R05h4L.jpg:
+
+![](writeupfiles/pcap/R05h4L.jpg)
+
+R05h4L(1).jpg:
+
+![](writeupfiles/pcap/R05h4L(1).jpg)
+
+perdu.com [file](writeupfiles/pcap/perdu.com.html) [site](http://perdu.com):
+
+```html
+<html>
+    <head>
+        <title>Vous Etes Perdu ?</title>
+    </head>
+    <body>
+        <h1>Perdu sur l'Internet ?</h1>
+        <h2>Pas de panique, on va vous aider</h2>
+        <strong><pre>    * <----- vous &ecirc;tes ici</pre></strong>
+    </body>
+</html>
+```
+
+nothinghere.pl [file](writeupfiles/pcap/nothinghere.pl.html) [site](http://nothinghere.pl):
+
+--> find login credentials to this site in pcap and log in?
+
 **Nugget**
 
 ## Challenge 16: Pathfinder
