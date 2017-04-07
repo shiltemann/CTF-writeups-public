@@ -399,9 +399,11 @@ Line | Cipher              | Result
 ![](writeupfiles/pigpen.png)
 ![](writeupfiles/dancingmen.jpeg)
 
-final solution: changed letters per line? If so: EABRAOCOBAPKNY
+- final solution: changed letters per line? If so: EABRAOCOBAPKNY
+- Update: not working. Maybe I copied them wrong? Or somethnig else? :S
+- Odd one out: CAPYBARA
 
-Update: not working. Maybe I copied them wrong? Or somethnig else? :S
+![](writeupfiles/egg7.png)
 
 **Flag**
 
