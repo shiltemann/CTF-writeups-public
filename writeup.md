@@ -4,16 +4,33 @@
 
 
 ```
-Title                                    Category  Flag
----------------------------------------- --------- -----------------------------
-Teaser                                             one do3s not simply s0lve a tea3er 0f hacky easter
-Challenge 01: Puzzle This!               Easy      C5LHYOifJSLOnYmKjBmS
-Challenge 02: Lots of Dots               Easy      pJ94m6jt3AYbogL2gv9i
-Challenge 03: Favourite Letters          Easy      Sf2MF6QPqpTrB7Eh2is7
-Challenge 05: Key Strokes                Easy      2MmSpjmlU6NPAhCUVyUP
-Challenge 06: Message Ken                Easy      uktVsuNNyPVQarmXTuYU
-Challenge 07: Crypto for Rookies         Easy      2owhVG07plVCwLD1Ggmn
-Challenge 10: An egg or not...           Medium    UALYyPlhy2aYfYpzcJHA
+Title                                    Difficulty  Flag
+---------------------------------------- ---------- -----------------------------
+Teaser                                              one do3s not simply s0lve a tea3er 0f hacky easter
+Challenge 01: Puzzle This!               Easy       C5LHYOifJSLOnYmKjBmS
+Challenge 02: Lots of Dots               Easy       pJ94m6jt3AYbogL2gv9i
+Challenge 03: Favourite Letters          Easy       Sf2MF6QPqpTrB7Eh2is7
+Challenge 04: Cool Car                   Easy
+Challenge 05: Key Strokes                Easy       2MmSpjmlU6NPAhCUVyUP
+Challenge 06: Message Ken                Easy       uktVsuNNyPVQarmXTuYU
+Challenge 07: Crypto for Rookies         Easy       2owhVG07plVCwLD1Ggmn
+Challenge 08: Snd Mny                    Easy
+Challenge 09: Microscope                 Easy
+Challenge 10: An egg or not...           Medium     UALYyPlhy2aYfYpzcJHA
+Challenge 11: Tweaked Tweet              Medium
+Challenge 12: Once Upon a File           Medium
+Challenge 13: Lost the Thread            Medium
+Challenge 14: Shards                     Medium
+Challenge 15: P Cap                      Medium
+Challenge 16: Pathfinder                 Medium
+Challenge 17: Monster Party              Medium
+Challenge 18: Nitwit's Doormat Key       Medium
+Challenge 19: Disco Time                 Hard
+Challenge 20: Spaghetti Hash             Hard
+Challenge 21: MonKey                     Hard
+Challenge 22: Game, Set and Hash         Hard
+Challenge 23: Lovely Vase                Hard
+Challenge 24: Your Passport, please      Hard  
 ```
 
 ## Teaser
@@ -136,7 +153,7 @@ for i in range(0,len(a),2):
 print out
 ```
 
-`xor: XOR IS FUN! ON52C`
+xor: `XOR IS FUN! ON52C`
 
 *Riddle 13*
 
@@ -369,19 +386,19 @@ Sf2MF6QPqpTrB7Eh2is7
 
 **Challenge**  
 
-05 - Key Strokes
-
+```
 esc i c e l a n d esc a y a n k e e space f o x
 space esc o f l o w e r up esc $ esc i y esc e esc a
 y esc / l a return esc r w esc right right right
 right esc x i f r esc e esc X x x : s / c e / a g i
 c / return esc down d d esc i m esc Z Z
+```
 
 **Solution**  
 
 Oh my gosh this is VIM! That's awesome :D
 
-Entering the keystrokes as they provide spells out: magicwandfrankfoxy
+Entering the keystrokes as they provide spells out: `magicwandfrankfoxy`
 
 ![](./writeupfiles/egg5.png)
 
@@ -397,10 +414,11 @@ Entering the keystrokes as they provide spells out: magicwandfrankfoxy
 
 Barbie has written a secret message for her sweetheart Ken. Can you decrypt it?
 
+```
 Fabrgal JaeM Hsa faonah uiff;rnl tf btuxbrffuinhzoroyhitbM Fincta dd
+```
 
-Hint:
-Shift+Lock+1
+Hint: `Shift+Lock+1`
 
 **Solution**  
 Holy crap this is AWESOME. This relies on you knowing about the barbie typewriters made in the 90s that had a secret code mechanism.
