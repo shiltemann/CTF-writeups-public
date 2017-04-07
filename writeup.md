@@ -579,9 +579,9 @@ R05h4L.jpg:
 
 R05h4L(1).jpg:
 
-![](writeupfiles/pcap/R05h4L(1).jpg)
+![](writeupfiles/pcap/R05h4L_1.jpg)
 
-perdu.com [file](writeupfiles/pcap/perdu.com.html) [site](http://perdu.com):
+perdu.com ([html file](writeupfiles/pcap/perdu.com.html)) ([site](http://perdu.com)):
 
 ```html
 <html>
@@ -596,7 +596,7 @@ perdu.com [file](writeupfiles/pcap/perdu.com.html) [site](http://perdu.com):
 </html>
 ```
 
-nothinghere.pl [file](writeupfiles/pcap/nothinghere.pl.html) [site](http://nothinghere.pl):
+nothinghere.pl ([html file](writeupfiles/pcap/nothinghere.pl.html)) ([site](http://nothinghere.pl)):
 
 --> find login credentials to this site in pcap and log in?
 
