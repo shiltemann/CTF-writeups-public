@@ -385,19 +385,23 @@ This crypto is not hard to crack.
 
 **Solution**
 
-line 1: dancing men cipher:   
-line 2: base64 decode:     `BONTEAOK`  
-line 3: alphabet position: `BONTEBRK`  
-line 4:  
-line 5: pigpen cipher: `CONTEBOK`  
-line 6:  
-line 7:  
-line 8: hex: `BONYEBOK`
+Line | Cipher              | Result
+---- | ------------------- | ------
+1:   | dancing men cipher  | `BONTBBOK`
+2:   | base64 decode       | `BONTEAOK`
+3:   | alphabet position   | `BONTEBRK`
+4:   | rot13               | `BANTEBOK`
+5:   | pigpen cipher       | `CONTEBOK`
+6:   | reversed?           | `BONTEBOA`
+7:   | rot23?              | `BOPTEBOK`
+8:   | hex:                | `BONYEBOK`
 
 ![](writeupfiles/pigpen.png)
 ![](writeupfiles/dancingmen.jpeg)
 
-final solution: changed letters per line?
+final solution: changed letters per line? If so: EABRAOCOBAPKNY
+
+Update: not working. Maybe I copied them wrong? Or somethnig else? :S
 
 **Flag**
 
