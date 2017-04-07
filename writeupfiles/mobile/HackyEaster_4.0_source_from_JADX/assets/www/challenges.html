@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Hacky Easter 2017</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Hacky Easter 2017 is a free white-hat hacking competition" />
+    <meta name="keywords" content="Hacking Competition White-Hat Hacking-Lab Compass Free Fun CEH" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.dropotron.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+      function onUserDataInjected() {}
+    </script>
+  </head>
+  
+	<body class="no-sidebar">
+    
+    <div id="header-wrapper"></div>
+    <script>addHeader('challenges');</script>
+		
+    <!-- Main -->
+    <div id="main-wrapper">
+      <div class="container">
+        <section>
+          <div class="row">
+            <div class="8u">
+              <article class="box" id="egglist">
+                <header>
+                  <h3>Challenges</h3>
+                </header>
+                <p>
+                  This page only shows the <span style="font-weight:bold;">mobile</span> challenges. To get the list of all challenges,
+                  check out the <a href="https://hackyeaster.hacking-lab.com/hackyeaster/challenges.html">web site</a>!<br/>
+                </p>
+              </article>
+            </div>
+          </div>
+          <div class="row" id="challenge_row_1"></div>
+          <script>
+          addChallenge(4, 1);
+          addChallenge(8, 1);
+          addChallenge(9, 1);
+          addChallenge(11, 1);
+          </script>
+        </section>
+      </div>
+    </div>
+    
+    <div id="footer-wrapper"></div>
+    <script>addFooter();</script>
+    
+	</body>
+</html>

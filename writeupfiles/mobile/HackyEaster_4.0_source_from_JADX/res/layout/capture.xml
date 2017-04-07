@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:paddingRight="8dp" android:paddingBottom="8dp" android:layout_width="-1" android:layout_height="-1">
+    <SurfaceView android:id="@id/preview_view" android:layout_width="-1" android:layout_height="-1" />
+    <ps.hacking.zxing.client.android.ViewfinderView android:id="@id/viewfinder_view" android:layout_width="-1" android:layout_height="-1" />
+    <LinearLayout android:orientation="1" android:id="@id/result_view" android:background="@color/result_view" android:visibility="2" android:layout_width="-1" android:layout_height="-1" android:baselineAligned="false" />
+    <TextView android:textColor="@color/status_text" android:gravity="11" android:id="@id/status_view" android:background="@color/transparent" android:paddingLeft="8dp" android:paddingTop="8dp" android:layout_width="-1" android:layout_height="-2" />
+</FrameLayout>

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Hacky Easter 2017</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Hacky Easter 2017 is a free white-hat hacking competition" />
+    <meta name="keywords" content="Hacking Competition White-Hat Hacking-Lab Compass Free Fun CEH" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.dropotron.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>var showBar=false;</script>
+    <script>
+      function onUserDataInjected() {}
+    </script>
+  </head>
+  
+  <body class="no-sidebar">    
+    <div id="header-wrapper"></div>
+    <script>addHeader('scores');</script>
+    <div id="main-wrapper">
+      <div class="container">
+        <section>
+          <div class="row">
+            <div class="4u">
+              <article class="box">
+                <header>
+                  <h3>Scores</h3>
+                </header>
+                <p id="statistics" style="display:none;">
+                  <span class="statsTitle">Hackers Total:</span><span id="statsHackers" class="statsText"></span><br/>
+                  <span class="statsTitle">Solutions Total:</span><span id="statsSolutions" class="statsText"></span><br/>
+                  <span class="statsTitle">Points Total:</span><span id="statsPoints" class="statsText"></span><br/>
+                  <span class="statsTitle">Average Points:</span><span id ="statsPointsPerHacker" class="statsText"></span><br/>
+                  <span class="statsTitle">Nations:</span><span id="statsNations" class="statsText"></span>
+                </p>
+                <p>
+                  <div id="scores">loading...</div>
+                  <input id="showAllButton" style="display:none; margin-top: 20px;" type="button" class="button" onClick="javascript:addScores(false);" value="Show All" />
+                  <script>addScores(true);</script>
+                </p>
+              </article>
+            </div>
+	      </div>
+        </section>
+      </div>
+    </div>
+    
+    <div id="footer-wrapper"></div>
+    <script>addFooter();</script>
+    
+	</body>
+</html>
