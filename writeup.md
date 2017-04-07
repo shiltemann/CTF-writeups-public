@@ -15,7 +15,7 @@ Challenge 05: Key Strokes                Easy       2MmSpjmlU6NPAhCUVyUP
 Challenge 06: Message Ken                Easy       uktVsuNNyPVQarmXTuYU
 Challenge 07: Crypto for Rookies         Easy       2owhVG07plVCwLD1Ggmn
 Challenge 08: Snd Mny                    Easy
-Challenge 09: Microscope                 Easy
+Challenge 09: Microscope                 Easy       rcwuXWsHjUcU7BbOLC18
 Challenge 10: An egg or not...           Medium     UALYyPlhy2aYfYpzcJHA
 Challenge 11: Tweaked Tweet              Medium
 Challenge 12: Once Upon a File           Medium
@@ -483,6 +483,99 @@ pop this in egg-o-matic and get our egg:
 
 ```
 2owhVG07plVCwLD1Ggmn
+```
+
+## Challenge 09: Microscope
+
+**Challenge**  
+
+(Mobile Challenge)
+
+In order to see this easter egg, you have to look closely!
+
+[button with whos microscope showing a page with a tiny tiny egg on it]
+
+**Solution**  
+
+We look at the source for the challenge from the decompiled apk
+
+```java
+package ps.hacking.hackyeaster.android;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
+import android.webkit.HttpAuthHandler;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+
+public class MicroscopeActivity extends Activity {
+
+    /* renamed from: ps.hacking.hackyeaster.android.MicroscopeActivity.1 */
+    class C00841 extends WebViewClient {
+        C00841() {
+        }
+
+        public void onReceivedHttpAuthRequest(WebView view, HttpAuthHandler handler, String host, String realm) {
+            handler.proceed("he2017", "egggghunthackinglab");
+        }
+
+        public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+            view.loadDataWithBaseURL(null, "<html>&#128048;</html>", "text/html", "utf-8", null);
+        }
+    }
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(1);
+        getWindow().setFlags(AccessibilityNodeInfoCompat.ACTION_NEXT_HTML_ELEMENT, AccessibilityNodeInfoCompat.ACTION_NEXT_HTML_ELEMENT);
+        setContentView(C0085R.layout.activity_microscope);
+        WebView webview = (WebView) findViewById(C0085R.id.microscopeWebView);
+        webview.getSettings().setJavaScriptEnabled(true);
+        webview.setWebViewClient(new C00841());
+        webview.loadUrl("https://hackyeaster.hacking-lab.com/hackyeaster/challenge09_su6z47IoTT7.html".replace('6', '5'));
+    }
+}
+```
+
+we see the microscipe butten opens this webpage: https://hackyeaster.hacking-lab.com/hackyeaster/challenge09_su5z47IoTT7.html
+
+We open this page:
+
+```html
+<html>
+  <head>
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+  </head>
+  <body style="background: url('images/background.jpg') no-repeat center center fixed;  -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+  <table width=100% height=100% border="0">
+    <tr>
+        <td style="text-align: center; vertical-align: middle;">
+          <div style="padding: 20px; width: 180px; height: 180px; position: absolute; left: 50%; top: 50%; margin-top: -110px; margin-left: -110px;">
+            <img src="images/challenge/egg09_fs0sYle2SN.png" style="width: 12px; height: 12px;" />
+          </div>
+        </td>
+    </tr>
+  </table>
+  </body>
+</html>
+```
+
+and find the location of the egg image
+
+![](writeupfiles/egg09_fs0sYle2SN.png)
+
+
+**Flag**  
+
+```
+rcwuXWsHjUcU7BbOLC18
 ```
 
 ## Challenge 10: An egg or not ...
