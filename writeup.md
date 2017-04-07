@@ -11,6 +11,7 @@ Challenge 01: Puzzle This!               Easy      C5LHYOifJSLOnYmKjBmS
 Challenge 02: Lots of Dots               Easy      pJ94m6jt3AYbogL2gv9i
 Challenge 05: Key Strokes                Easy      2MmSpjmlU6NPAhCUVyUP
 Challenge 06: Message Ken                Easy      uktVsuNNyPVQarmXTuYU
+Challenge 07: Crypto for Rookies         Easy      2owhVG07plVCwLD1Ggmn
 Challenge 10: An egg or not...           Medium    UALYyPlhy2aYfYpzcJHA
 ```
 
@@ -397,15 +398,22 @@ Line | Cipher              | Result
 8:   | hex:                | `BONYEBOK`
 
 ![](writeupfiles/pigpen.png)
+
 ![](writeupfiles/dancingmen.jpeg)
 
 - final solution: changed letters per line? If so: EABRAOCOBAPKNY
 - Update: not working. Maybe I copied them wrong? Or somethnig else? :S
-- Odd one out: CAPYBARA
+- Odd one out per position: `CAPYBARA`
+
+pop this in egg-o-matic and get our egg:
 
 ![](writeupfiles/egg7.png)
 
 **Flag**
+
+```
+2owhVG07plVCwLD1Ggmn
+```
 
 ## Challenge 10: An egg or not ...
 
