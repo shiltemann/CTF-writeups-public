@@ -764,7 +764,7 @@ curl hackyeaster.hacking-lab.com:9999 --user-agent 'PathFinder'
 ```
 
 Ok, looks like we need to find our way in a maze of some sort. After trying many
-things, it turned out to be url path, let't choose path `1` by adding `/1` to url
+things, it turned out to be url path, let's choose path `1` by adding `/1` to url
 
 ```
 curl hackyeaster.hacking-lab.com:9999/1 --user-agent 'PathFinder'
