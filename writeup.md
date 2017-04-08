@@ -683,7 +683,7 @@ qemu-system-x86_64 -drive format=raw,file=disk.img
 
 ![](./writeupfiles/12.png)
 
-Not sure where to go from here. tcpdump where it's pixieing to?
+Not sure where to go from here. tcpdump where it's pixieing to? EDIT: apparently this is standard qemu/seabios behaviour. Whoops. No idea. Tried `photorec` on the disk image with no luck.
 
 **Nugget**
 
