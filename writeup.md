@@ -390,7 +390,7 @@ Sf2MF6QPqpTrB7Eh2is7
 
 ![](writeupfiles/egg4_challenge.jpg)
 
-Borat wants to impres the girls. Can you help him find a cool car for his purpose?
+Borat wants to impress the girls. Can you help him find a cool car for his purpose?
 
 
 **Solution**
@@ -605,7 +605,7 @@ t10fBcKFNKShxwos5g0e
 
 In order to see this easter egg, you have to look closely!
 
-[button with whos microscope showing a page with a tiny tiny egg on it]
+[button with leads to microscope showing a page with a tiny tiny egg on it]
 
 **Solution**  
 
@@ -735,7 +735,7 @@ UALYyPlhy2aYfYpzcJHA
 
 (Mobile Challenge)
 
-Blue little birdie craete a fancy message, please tweet it!
+Blue little birdie create a fancy message, please tweet it!
 
 [button to tweet a message]
 
@@ -860,8 +860,6 @@ What about a little P cap?
 
 **Solution**  
 Lotsa SMB traffic, looks like a file named R05h4L.jpg is tranferred. Dollars to doughnuts that's an egg.
-
-lol, "dollars to doughnuts" til
 
 opened with wireshark, extracted the objects transferred, seems like two versions of that image, and two webpages:
 
@@ -1130,6 +1128,122 @@ v312f239ab11ab792bbc638880cef0016 = v06b9e817c4ddcf60fbd82113f8c1f49b[9](v06b9e8
 	</body>
 </html>
 
+```
+
+Let's try to deobfuscate a bit:
+
+
+```javascript
+my_function_array = [
+    //0
+    function(my_var) {
+        return '1407c2b75f43d3691c240e28204533da74ee4054f5f2538e87b69ec590b04de2c2bd190b';
+    },
+    //1
+    function(my_var) {
+        return charlie.createElement(my_var);
+    },
+    //2
+    function(my_var) {
+        return my_var[0].getContext(my_var[1]);
+    },
+    //3
+    function(my_var) {
+        return my_var[0].text = my_var[1];
+    },
+    //4
+    function(my_var) {
+        return null;
+    },
+    //5
+    function(my_var) {
+        '6d363479c97439b921ad2bcba054992d8eda9a0c971df8f80920b84ab4eeae83cae6b76c';
+    },
+    //6
+    function(my_var) {
+        return 'e77a763321d6cf825534ab228e1dfa33e71447c1637dc3b97dcf2d564e2003f67e7c26aa';
+    },
+    //7
+    function(my_var) {
+        my_var.style.display = 'none';
+        return my_var;
+    },
+    //8
+    function(my_var) {
+        foxtrot.onload = my_var
+    },
+    //9
+    function(my_var) {
+        foxtrot.src = my_var;
+    },
+    //10
+    new Function("my_var",
+        "return unescape(decodeURIComponent(window.atob(my_var)))"),
+
+    //11
+    function(my_var) {
+        my_new_function = new Function('my_var',
+            my_function_array[10]( my_data_array[my_var] ));
+        return my_new_function;
+    }
+];
+
+my_list = [0, 255, 0];
+my_data_array = [
+    'return 'canvas';',
+    'return 'none';',
+    "return '2d';",
+    "return 'script';",
+    '',
+    'tango',
+    'v6b31cf3f4c1305942d60342286cd09c5',
+    '<png image, see writeupfiles/chall18.png>',
+    'return document',
+    '<just data? see writeupfiles/chall18_justdata>',
+    'return new Image();',
+    'return String.fromCharCode(my_var);'
+];
+
+charlie = my_function_array[11](11)();
+hotel = new Function('my_var', my_function_array[10](my_data_array[10]));
+foxtrot = my_function_array[7](my_function_array[11](13)());
+my_function_array[8](function() {
+    kilo = hotel(my_data_array[5]);
+    bravo = my_function_array[1](my_function_array[11](0)());
+    bravo.width = foxtrot.width;
+    bravo.height = foxtrot.height;
+    bravo.style.display = my_function_array[11](1)();
+
+    lima = my_data_array[4];
+    alpha = my_function_array[2]([bravo, my_function_array[11](2)()]);
+    mike = new Function('my_var', my_function_array[10](my_data_array[14]));
+    alpha.drawImage(foxtrot, my_list[0], my_list[0]);
+    romeo = alpha.getImageData(my_list[0], my_list[0], bravo.width, bravo.height);
+    sierra = my_function_array[11](12)();
+
+    (new Function(my_function_array[10](lima)))();
+
+    tango = my_function_array[4](alpha);
+    foxtrot = my_function_array[4](tango);
+    bravo = my_function_array[4](bravo);
+    alpha = my_function_array[4](romeo);
+    romeo = my_function_array[4](alpha);
+    uniform = my_function_array[4](alpha);
+    lima = my_function_array[4](alpha);
+
+    victor = my_function_array[4](alpha);
+    yankee = my_function_array[4](alpha);
+    tango = my_function_array[4](alpha);
+    zulu = my_function_array[4](alpha);
+    charlie = my_function_array[4](alpha);
+    sierra = my_function_array[4](alpha);
+    my_data_array = my_function_array[4](alpha);
+    my_list = my_function_array[4](alpha);
+    my_var = my_function_array[4](alpha);
+    my_var = my_function_array[4](kilo);
+    my_function_array = my_function_array[4](alpha);
+});
+sierra = my_function_array[9](my_function_array[11](7)() + my_data_array[9]);
 ```
 
 ## Challenge 20: Spaghetti hash
