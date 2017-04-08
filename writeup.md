@@ -14,7 +14,7 @@ Challenge 04: Cool Car                   Easy       MuxlR4DSDdQDUeyKhKnT
 Challenge 05: Key Strokes                Easy       2MmSpjmlU6NPAhCUVyUP
 Challenge 06: Message Ken                Easy       uktVsuNNyPVQarmXTuYU
 Challenge 07: Crypto for Rookies         Easy       2owhVG07plVCwLD1Ggmn
-Challenge 08: Snd Mny                    Easy
+Challenge 08: Snd Mny                    Easy       t10fBcKFNKShxwos5g0e
 Challenge 09: Microscope                 Easy       rcwuXWsHjUcU7BbOLC18
 Challenge 10: An egg or not...           Medium     UALYyPlhy2aYfYpzcJHA
 Challenge 11: Tweaked Tweet              Medium
@@ -578,10 +578,23 @@ public class SndActivity extends Activity {
 
 send this string to the app somehow?
 
+ah, we notice there is now a new entry in the share menu to share to the hackyeaster `SndActivity` app.
+
+we share something random and get the following:
+
+![](writeupfiles/egg8_wrong.jpg)
+
+we presumably need to send just the string `money` downloaded an app called *Clipboard Actions* which
+lets you share anything on your clipboard
+
+![](writeupfiles/egg8_share.jpg)
+
+![](writeupfiles/egg8_right.jpg)
+
 **Flag**
 
 ```
-
+t10fBcKFNKShxwos5g0e
 ```
 
 ## Challenge 09: Microscope
