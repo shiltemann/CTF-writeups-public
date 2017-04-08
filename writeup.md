@@ -536,6 +536,54 @@ pop this in egg-o-matic and get our egg:
 2owhVG07plVCwLD1Ggmn
 ```
 
+## Challenge 08: Snd Mny
+
+**Challenge**
+
+(Mobile Challenge)
+
+Please, I'm begging you!
+
+**Solution**
+
+find the relevant code in decompiled apk:
+
+```java
+public class SndActivity extends Activity {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(1);
+        getWindow().setFlags(AccessibilityNodeInfoCompat.ACTION_NEXT_HTML_ELEMENT, AccessibilityNodeInfoCompat.ACTION_NEXT_HTML_ELEMENT);
+        setContentView(C0085R.layout.activity_snd);
+        Intent intent = getIntent();
+        String action = intent.getAction();
+        String type = intent.getType();
+        if ("android.intent.action.SEND".equals(action) && type != null && HTTP.PLAIN_TEXT_TYPE.equals(type)) {
+            String text = intent.getStringExtra("android.intent.extra.TEXT");
+            if (text != null && "c95259de1fd719814daef8f1dc4bd64f9d885ff0".equals(sha1(text.toLowerCase()))) {
+                ((TextView) findViewById(C0085R.id.sndTextView)).setText("Thank you!!");
+                ImageView image = (ImageView) findViewById(C0085R.id.sndImageView);
+                byte[] decodedString = Base64.decode(new StringBuilder(getString(C0085R.string.f16e) + "ROBVi").reverse().toString(), 0);
+                image.setImageBitmap(BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length));
+            }
+        }
+    }
+
+[..]
+
+}
+```
+
+`c95259de1fd719814daef8f1dc4bd64f9d885ff0` is the SHA-1 hash for the string `money`
+
+send this string to the app somehow?
+
+**Flag**
+
+```
+
+```
+
 ## Challenge 09: Microscope
 
 **Challenge**  
