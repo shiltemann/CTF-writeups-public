@@ -1190,8 +1190,8 @@ my_function_array = [
 
 my_list = [0, 255, 0];
 my_data_array = [
-    'return 'canvas';',
-    'return 'none';',
+    "return 'canvas';",
+    "return 'none';",
     "return '2d';",
     "return 'script';",
     '',
