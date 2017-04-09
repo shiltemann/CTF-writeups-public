@@ -542,6 +542,8 @@ pop this in egg-o-matic and get our egg:
 
 (Mobile Challenge)
 
+![](writeupfiles/egg8_chall.jpg)
+
 Please, I'm begging you!
 
 **Solution**
@@ -603,13 +605,17 @@ t10fBcKFNKShxwos5g0e
 
 (Mobile Challenge)
 
-In order to see this easter egg, you have to look closely!
+![](writeupfiles/egg9_chall.jpg)
 
-[button with leads to microscope showing a page with a tiny tiny egg on it]
+In order to see this easter egg, you have to look closely!
 
 **Solution**  
 
-We look at the source for the challenge from the decompiled apk
+When we click the button, we see a page with a tiny tiny egg on it
+
+![](writeupfiles/egg9_tiny.jpg)
+
+We look at the source for the challenge from the decompiled APK
 
 ```java
 package ps.hacking.hackyeaster.android;
@@ -652,7 +658,7 @@ public class MicroscopeActivity extends Activity {
 }
 ```
 
-we see the microscipe butten opens this webpage: https://hackyeaster.hacking-lab.com/hackyeaster/challenge09_su5z47IoTT7.html
+We see the webpage the app opens with the tiny egg on it: https://hackyeaster.hacking-lab.com/hackyeaster/challenge09_su5z47IoTT7.html
 
 We open this page:
 
@@ -679,7 +685,7 @@ We open this page:
 </html>
 ```
 
-and find the location of the egg image
+and find the location of the egg image and can view it full-size:
 
 ![](writeupfiles/egg09_fs0sYle2SN.png)
 
@@ -735,11 +741,15 @@ UALYyPlhy2aYfYpzcJHA
 
 (Mobile Challenge)
 
+![](writeupfiles/egg11_chall.jpg)
+
 Blue little birdie create a fancy message, please tweet it!
 
-[button to tweet a message]
-
 **Solution**  
+
+When we click the button, it prepares a tweet for us:
+
+![](writeupfiles/egg11_tweet.jpg)
 
 We check the decompiled sources and see the code to generate the tweet:
 
@@ -753,7 +763,7 @@ private void startTweakedTweet() {
 }
 ```
 
-The tweet in ascii:
+The tweet text:
 
 ```
 #ＨaｃｋyΕａsteｒ 201７ ⅰｓ a lｏｔ οf ｆun！ #сtf #ｈａϲking-lab
