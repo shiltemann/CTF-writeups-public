@@ -1615,7 +1615,7 @@ h: You win! Solution is: !stan-the_marth0n$m4n
 
 we put the string `!stan-the_marth0n$m4n` into the egg-o-matic to get our egg:
 
-[](egg22.png)
+[](writeupfiles/egg22.png)
 
 **Flag**
 
