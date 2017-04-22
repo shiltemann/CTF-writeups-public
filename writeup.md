@@ -28,7 +28,7 @@ Challenge 18: Nitwit's Doormat Key       Medium
 Challenge 19: Disco Time                 Hard
 Challenge 20: Spaghetti Hash             Hard       ICBXMH6GJqMqYDsjkaCn
 Challenge 21: MonKey                     Hard
-Challenge 22: Game, Set and Hash         Hard
+Challenge 22: Game, Set and Hash         Hard       fl3uB75EGl1sadBNycvx
 Challenge 23: Lovely Vase                Hard
 Challenge 24: Your Passport, please      Hard  
 ```
@@ -1614,6 +1614,8 @@ h: You win! Solution is: !stan-the_marth0n$m4n
 ```
 
 we put the string `!stan-the_marth0n$m4n` into the egg-o-matic to get our egg:
+
+[](egg22.png)
 
 **Flag**
 
