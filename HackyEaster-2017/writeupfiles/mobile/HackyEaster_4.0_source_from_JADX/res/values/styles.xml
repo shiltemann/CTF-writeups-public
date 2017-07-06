@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="zxing_CaptureTheme" parent="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+    <style name="AppBaseTheme" parent="@android:style/Theme.Light" />
+    <style name="AppTheme" parent="@style/AppBaseTheme" />
+</resources>

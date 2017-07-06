@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Hacky Easter 2017</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Hacky Easter 2017 is a free white-hat hacking competition" />
+    <meta name="keywords" content="Hacking Competition White-Hat Hacking-Lab Compass Free Fun CEH" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.dropotron.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/scripts.js"></script>
+	<script>
+      function onUserDataInjected() {
+    	  if (!userName || userName === "") {
+    		  $('#divUnregistered').show();
+    		  $('#div1').hide();
+    	  }
+		  $('#main-wrapper').show();
+      }    
+    
+      function submitSolution(code) {
+    	  $('#div1').hide();
+    	  $('#div2').show();
+    	  $('#div3').hide();
+    	  submitEgg(userName, ticket, code);
+      }
+
+      function scanResult(json) {
+    	  var jsonRes = JSON.parse(json);
+    	  if (jsonRes.rc == 0) {
+    	    submitSolution(jsonRes.egg);
+    	  } else if (jsonRes.rc == 1) {
+    		  showAlert('Error', 'Nope! That\'s not an egg!'); 
+    	  } else if (jsonRes.rc == 2) {
+    		  showAlert('Error', 'No egg scanned!'); 
+    	  }
+      }
+      function scanAgain() {
+    	  $('#div1').show();
+    	  $('#div2').hide();
+    	  $('#div3').hide();
+      }
+    </script>
+  </head>
+  
+   <body onTouch="javascript:void();">
+    <div id="header-wrapper"></div>  
+    <script>addHeader('home');</script>
+
+    <div id="main-wrapper" style="display:block;">
+        <div class="row">
+          <div class="4u">
+            <section class="box">
+              <header>
+                <h3>Scanner</h3>
+              </header>
+              <p id="divUnregistered" style="display:none;">
+                You're not registered yet. Do so by clicking <a href="register.html">here</a>.
+              </p>
+              <p id="div1" style="display:block;">
+			    Found an easter egg? This is the place to catch it! Make sure you're online,
+                and scan the egg's QR code. The solution is sent to the HackyEaster server automatically.
+ 			    <br/><br/>
+                <input type="button" class="button scanButton" value="Scan" onClick="document.location='ps://scan'; return false;" />
+			  </p>
+              <p id="div2" style="display:none;">
+			    Submitting your egg...
+			  </p>
+              <p id="div3" style="display:none;">
+			    CONGRATS! The easter egg was submitted successfully!
+			    <br/><br/>
+		        <input type="button" class="button" onClick="scanAgain();" value="Scan again" />&#160;
+                <input type="button" class="button" onClick="document.location='eggs.html';" value="My Eggs" />
+      		  </p>
+            </section>
+          </div>			
+	    </div>
+      </div>
+    </div>
+    
+    <div id="footer-wrapper"></div>
+    <script>addFooter();</script>
+    
+	</body>
+</html>

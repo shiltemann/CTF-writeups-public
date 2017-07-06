@@ -1,0 +1,1466 @@
+Signature-Version: 1.0
+X-Android-APK-Signed: 2
+SHA1-Digest-Manifest: XQxklncscHf8Vc0DZoYHbq0PwRg=
+Created-By: 1.0 (Android)
+
+Name: assets/www/fonts/EOT/SourceSansPro-Regular.eot
+SHA1-Digest: ijYP4HxcinztRTgncb0brDYDwUM=
+
+Name: assets/www/images/flags/hk.png
+SHA1-Digest: 27GtvUxpu559QkRPqa2MeDszzaw=
+
+Name: assets/www/images/flags/ba.png
+SHA1-Digest: TVsbSR1jd94NpQsKw3oOADZBMIE=
+
+Name: assets/www/fonts/WOFF/OTF/SourceSansPro-Bold.otf.woff
+SHA1-Digest: WbRzl7iKrsLGp2kARGiht8U/uVA=
+
+Name: assets/www/fonts/FontAwesome.otf
+SHA1-Digest: RhmDIfkWqyqobArVHgqsqnN4O9c=
+
+Name: assets/www/images/flags/mw.png
+SHA1-Digest: XpmtxQYSZQPlLA82byr3man40tg=
+
+Name: org/apache/commons/codec/language/bm/gen_approx_hungarian.txt
+SHA1-Digest: kpJ0pEDOyFBEu6wl4QdynsUq6jE=
+
+Name: assets/www/images/flags/sk.png
+SHA1-Digest: JXFgjKhPqXmmAjc1NjgFeO1/PlM=
+
+Name: org/apache/commons/codec/language/bm/gen_exact_common.txt
+SHA1-Digest: u/mGD68aVPmhFiWBCiQdju9UoVw=
+
+Name: org/apache/commons/codec/language/bm/sep_exact_common.txt
+SHA1-Digest: yMn8iqUiPF5RM7J9xhj6gb3A6E4=
+
+Name: assets/www/images/flags/ke.png
+SHA1-Digest: zSFQLhAbbQCwHLRPZqFXoChfEzU=
+
+Name: assets/www/images/flags/ly.png
+SHA1-Digest: 62Ckaspswxt4TyErn/Q938VwDDQ=
+
+Name: assets/www/images/flags/sd.png
+SHA1-Digest: oclH4RvnpeILcKcbhYN7zW3Ym+k=
+
+Name: org/apache/commons/codec/language/bm/ash_approx_russian.txt
+SHA1-Digest: k/nguda0I1ot8kuzX5C5xNb+MhY=
+
+Name: assets/www/js/init.js
+SHA1-Digest: fyX3aabmacsALxjYrlN7x3AQPsw=
+
+Name: assets/www/js/jquery.ui.touch-punch.min.js
+SHA1-Digest: DOJBApTi+BFh2CxeQIKJbbKHzdc=
+
+Name: org/apache/commons/codec/language/bm/gen_rules_french.txt
+SHA1-Digest: CrDzmQQb/nDj6G9KGuej8e+uHIU=
+
+Name: assets/www/images/flags/bw.png
+SHA1-Digest: C+v8aG/DMDuoI5Xn5ZjEoPaFwe4=
+
+Name: org/apache/commons/codec/language/bm/gen_exact_greeklatin.txt
+SHA1-Digest: T0MDehullcH0uAY9slGJMUAhTkQ=
+
+Name: assets/www/images/flags/gt.png
+SHA1-Digest: Qa4hmMtMksw3cjnts8b9pMGtEF0=
+
+Name: assets/www/images/flags/bh.png
+SHA1-Digest: VgejXDytlgcITaneXAro2vHjTjg=
+
+Name: assets/www/images/banner.jpg
+SHA1-Digest: xiU4NyWY2NSmUfIl6SYHuhAyZug=
+
+Name: assets/www/images/flags/ve.png
+SHA1-Digest: RB0tg7iTaNBh3Af1Pc6TEf6+gKA=
+
+Name: org/apache/commons/codec/language/bm/gen_exact_german.txt
+SHA1-Digest: 3GlHgMBkvi2mEoFnPYxoBXIh4No=
+
+Name: assets/www/images/flags/lc.png
+SHA1-Digest: p9dT4UE7Z1WiavhBUE9oGybVGD4=
+
+Name: assets/www/images/egg_hard.png
+SHA1-Digest: BiZcErRGhwbM9moIyWMLupCpjuw=
+
+Name: org/apache/commons/codec/language/bm/sep_rules_french.txt
+SHA1-Digest: B8soq3ODQdgyws77pmFOVzo66uI=
+
+Name: resources.arsc
+SHA1-Digest: FQlgy2lj5hb4Vzy0trrP2HtUjyQ=
+
+Name: assets/www/images/flags/gm.png
+SHA1-Digest: BmBHwCsdrfF/iHZdMp7tFmdXEbs=
+
+Name: org/apache/commons/codec/language/bm/gen_approx_czech.txt
+SHA1-Digest: ZK+AVLklo2cJUK6apOygqti1wRM=
+
+Name: assets/www/images/flags/ar.png
+SHA1-Digest: jQQehnKWwoCh6Af5PCK34S8zf3U=
+
+Name: org/apache/commons/codec/language/bm/gen_exact_approx_common.txt
+SHA1-Digest: Hxjkq50d1HJRTfhnGsjVmtUwQ38=
+
+Name: assets/www/images/flags/qa.png
+SHA1-Digest: OriWGtSOBe6YD5YlQtVLlA2O5so=
+
+Name: org/apache/commons/codec/language/bm/sep_rules_italian.txt
+SHA1-Digest: 4OtvhiYVCX6Pngy4UP1SKrIDoro=
+
+Name: assets/www/images/flags/dk.png
+SHA1-Digest: TUOnbAiJvSD4iQXPatdrTgzNhZc=
+
+Name: assets/www/fonts/WOFF/TTF/SourceSansPro-Black.ttf.woff
+SHA1-Digest: UnFmxb5nS2L5K0CukBbrbYsDMIA=
+
+Name: assets/www/images/flags/sy.png
+SHA1-Digest: bxuQ4KmN9ihqs+Vtu1D9i/DzDoU=
+
+Name: assets/www/challenge04.html
+SHA1-Digest: xDubPO1/j3jlWgttCxWaTodzIsI=
+
+Name: assets/www/fonts/OTF/SourceSansPro-SemiboldIt.otf
+SHA1-Digest: ksZQWt7NHu0+XnykMQDX/9ktAHU=
+
+Name: assets/www/fonts/EOT/SourceSansPro-BlackIt.eot
+SHA1-Digest: ue0PoNwpFDueTvKxv8B+uhJhutY=
+
+Name: assets/www/images/flags/tw.png
+SHA1-Digest: UGq0T3YCI5ezqpaC6JcteURwPVQ=
+
+Name: org/apache/commons/codec/language/bm/ash_languages.txt
+SHA1-Digest: x5ijgzijaJwexI8tGvYq1Ys8W0o=
+
+Name: assets/www/fonts/EOT/SourceSansPro-ExtraLight.eot
+SHA1-Digest: E1fbfprjrCtm/1gqAh3TXeaDGeE=
+
+Name: assets/www/images/flags/cm.png
+SHA1-Digest: VAVC1PSEd9S5hzL/sJLSdFSGH+w=
+
+Name: assets/www/images/egg_easy.png
+SHA1-Digest: vnTfHBliVg+KvPg5AIS5yxXr7fQ=
+
+Name: assets/www/images/flags/sr.png
+SHA1-Digest: qyMmi5fmADZAR1lXgHzSJpCCZ1I=
+
+Name: assets/www/fonts/TTF/SourceSansPro-LightIt.ttf
+SHA1-Digest: TEtkaRlBUqEsV8ZZVnZRYixRKn0=
+
+Name: assets/www/images/flags/cf.png
+SHA1-Digest: A/SoqwDYyddnTboxrlQ+Q70cNa0=
+
+Name: assets/www/images/flags/fo.png
+SHA1-Digest: EtDFvAzy5zxsEcvlUZ1VjV+epBw=
+
+Name: assets/www/images/flags/ec.png
+SHA1-Digest: ACflol3k8eNqPcWzhaZNyImbO1I=
+
+Name: org/apache/commons/codec/language/bm/gen_hebrew_common.txt
+SHA1-Digest: U+3sGtHvTz+ZqpSe1f7MYHB2TsQ=
+
+Name: assets/www/fonts/OTF/SourceSansPro-Light.otf
+SHA1-Digest: TDhbw+rqnIp9i6oFpI3tHiSqtlY=
+
+Name: assets/www/images/flags/tj.png
+SHA1-Digest: tvel/1iEabMZOxI/sbNJlLcqckQ=
+
+Name: org/apache/commons/codec/language/bm/sep_hebrew_common.txt
+SHA1-Digest: pLUCmc4T/RjuklQ1aIULtSUwHKI=
+
+Name: assets/www/images/flags/kz.png
+SHA1-Digest: +hCngaehQQi6WUaXzd/yvps6YJc=
+
+Name: assets/www/images/appstore_ios.png
+SHA1-Digest: gjBeuLRG+B+aUXVeyl61AB7fmAE=
+
+Name: org/apache/commons/codec/language/bm/ash_exact_common.txt
+SHA1-Digest: 4KUii83+gs6HZqsqdVTJKWmbKLE=
+
+Name: assets/www/images/flags/re.png
+SHA1-Digest: XGpUlpoFL+Nl9gyi0cF4rLcfYfA=
+
+Name: org/apache/commons/codec/language/bm/gen_approx_russian.txt
+SHA1-Digest: ln5mpI7m/dYz8po1m2pe5V1t//k=
+
+Name: org/apache/commons/codec/language/bm/ash_approx_romanian.txt
+SHA1-Digest: 8dJCy93UqGPxUAM5qiwy8UeOCpA=
+
+Name: assets/www/fonts/TTF/SourceSansPro-It.ttf
+SHA1-Digest: vesxTOJyxIXr/MbQuqmsVJ5vX88=
+
+Name: assets/www/fonts/TTF/SourceSansPro-ExtraLightIt.ttf
+SHA1-Digest: cUqhsejrEqzId7Z/MNsU2BbR1hg=
+
+Name: assets/www/images/flags/py.png
+SHA1-Digest: B9roxFDp5lDapTigMHmw2X1oQM8=
+
+Name: assets/www/images/flags/mx.png
+SHA1-Digest: JYOnAuu8ahvHCoX/weE2xtVF9UM=
+
+Name: assets/www/images/flags/iq.png
+SHA1-Digest: MuRn40PJ4P9GfcRtmib9XIt4Cps=
+
+Name: assets/www/buddies.html
+SHA1-Digest: og0E3euJcQGMNHw5PKJ4Wwuxhlo=
+
+Name: org/apache/commons/codec/language/bm/gen_exact_hebrew.txt
+SHA1-Digest: KmHuQHLS9h1anGqkGCPCCtXC9QI=
+
+Name: assets/www/images/flags/mo.png
+SHA1-Digest: eyMQCwmJXn6hyCaF4wJ9RGG0QxU=
+
+Name: assets/www/images/flags/se.png
+SHA1-Digest: OrCrrz02Li9ZKElJ8/Ynea9dvt0=
+
+Name: assets/www/images/flags/ge.png
+SHA1-Digest: VNzTFAedZm8vT0L8PZxNCUEnYhI=
+
+Name: assets/www/fonts/EOT/SourceSansPro-ExtraLightIt.eot
+SHA1-Digest: QK3Bd7Arel/FxvqVcgWQWd/kSO8=
+
+Name: assets/www/js/crypto-js/core-min.js
+SHA1-Digest: T+UaevuVPWCcOfY3wm2sxY1eP9s=
+
+Name: assets/www/news.html
+SHA1-Digest: yQVjHnUpLA7j1C7Y6H+G+sxNsJM=
+
+Name: org/apache/commons/codec/language/bm/gen_approx_greek.txt
+SHA1-Digest: ZK+AVLklo2cJUK6apOygqti1wRM=
+
+Name: assets/www/images/flags/gn.png
+SHA1-Digest: yyZ7J4q1D4SzTkpaCa6fGlmdZug=
+
+Name: assets/www/fonts/TTF/SourceSansPro-Black.ttf
+SHA1-Digest: dqdOxGj8Z0goOWfwogzKvk+nLgo=
+
+Name: assets/www/images/flags/ng.png
+SHA1-Digest: k+FAJljVyD+xWmLjpre4rcd5/N8=
+
+Name: assets/www/images/hand.png
+SHA1-Digest: O4MZPK6GLLRTu6V6prZNSz4/DBA=
+
+Name: assets/www/images/flags/bo.png
+SHA1-Digest: EAoLmHUUrz/rXe+AHkFu7p0vFPE=
+
+Name: org/apache/commons/codec/language/bm/sep_exact_spanish.txt
+SHA1-Digest: KmHuQHLS9h1anGqkGCPCCtXC9QI=
+
+Name: assets/www/images/flags/jm.png
+SHA1-Digest: R8+dHgtZwUe9FOTPlplHl428r9M=
+
+Name: assets/www/fonts/WOFF/OTF/SourceSansPro-BoldIt.otf.woff
+SHA1-Digest: OjBjaY3iGqbQks7gwgX09wje/TM=
+
+Name: assets/www/images/flags/bg.png
+SHA1-Digest: 8tKreyt6hFPQgD/rtzV5RdhmVTA=
+
+Name: assets/www/images/flags/li.png
+SHA1-Digest: H3ob/LXza3u0MdxAtEGIas+DNbE=
+
+Name: org/apache/commons/codec/language/bm/gen_rules_romanian.txt
+SHA1-Digest: 9XU05+EK41PC/HwRw9zxny5awCw=
+
+Name: assets/www/eggs.html
+SHA1-Digest: MfC1FxAkmbKp/EXPPcLaClAPXOE=
+
+Name: assets/www/fonts/OTF/SourceSansPro-Semibold.otf
+SHA1-Digest: dE/oiJLytAZ6lBe17TMg4len1Nk=
+
+Name: org/apache/http/version.properties
+SHA1-Digest: cP72so+s5NcUzBkJ4sA3t1wGkvQ=
+
+Name: assets/www/images/flags/no.png
+SHA1-Digest: bK3bbI50npxbeGo5hLt727orr8U=
+
+Name: org/apache/commons/codec/language/bm/gen_rules_hungarian.txt
+SHA1-Digest: w312gpWjUSsWx0VAK7N26JpOv3E=
+
+Name: res/layout/splash.xml
+SHA1-Digest: jmAx/dMSSs8NTCoitDrQthaMZMU=
+
+Name: assets/www/images/flags/lr.png
+SHA1-Digest: 9NN7JhmASv/dISBjlrKi3KhsxHU=
+
+Name: res/layout/activity_microscope.xml
+SHA1-Digest: 4A8w3tr/jZMAdLJd8R9LFMx7nxY=
+
+Name: assets/www/images/flags/fi.png
+SHA1-Digest: uSDthAy6f6MC1ebso7UafGQJX2Q=
+
+Name: assets/www/fonts/fontawesome-webfont.svg
+SHA1-Digest: La6Acl3jHbt4297ZOoqeqfmI5Ao=
+
+Name: assets/www/images/flags/as.png
+SHA1-Digest: YefAMFCxywhVsNIZbOhwbtK1gKU=
+
+Name: assets/www/fonts/TTF/SourceSansPro-Bold.ttf
+SHA1-Digest: IG3jHs4XwvM2mzIh7GpkOeGMef4=
+
+Name: assets/www/images/flags/vu.png
+SHA1-Digest: FniZSGsMABThonr7zvHUUL+9fdg=
+
+Name: assets/www/fonts/TTF/SourceSansPro-ExtraLight.ttf
+SHA1-Digest: Mdca5f2k42OszENuG/xJqqr8Y6o=
+
+Name: assets/www/images/flags/cl.png
+SHA1-Digest: 8NxlMAH8i5lAp4oVJQZfuOZagqY=
+
+Name: assets/www/images/flags/to.png
+SHA1-Digest: LE7kV/v39yFj8TNgxXjs4vlke/E=
+
+Name: assets/www/images/flags/cg.png
+SHA1-Digest: osfbRR3bX3SqHwx+fQ8bZXDMRDw=
+
+Name: org/apache/commons/codec/language/bm/sep_rules_any.txt
+SHA1-Digest: tBhirNuraiANjlje0HNzz2Rd8XY=
+
+Name: assets/www/images/flags/er.png
+SHA1-Digest: lrua8E2nT5DWpYNxyLYv1kMyA60=
+
+Name: org/apache/commons/codec/language/bm/gen_exact_english.txt
+SHA1-Digest: 00E7VR452tbgGSDvaN2vH71JXd0=
+
+Name: assets/www/images/flags/cu.png
+SHA1-Digest: hGuQp6+IHmEU6Fs20ZCme3/dZe8=
+
+Name: assets/www/images/flags/km.png
+SHA1-Digest: 36/eyKoKDwsPJzn3bOqlRUsUFeE=
+
+Name: org/apache/commons/codec/language/bm/ash_exact_german.txt
+SHA1-Digest: w4DMVKfl4a7tpge4d91vRsE09Uc=
+
+Name: assets/www/images/flags/dz.png
+SHA1-Digest: fpUXrqQqm40SBXFcygbOLZYMDqQ=
+
+Name: assets/www/images/flags/bb.png
+SHA1-Digest: h2/PIi9FZW4EcBxIiEllMSQ3pZo=
+
+Name: org/apache/commons/codec/language/bm/gen_rules_greek.txt
+SHA1-Digest: /j/A9h8+FfAazMODJJHekOCQB5c=
+
+Name: assets/www/images/flags/ht.png
+SHA1-Digest: IMvx4VwPev9jPesiSIFBA7Mgt0o=
+
+Name: assets/www/fonts/EOT/SourceSansPro-BoldIt.eot
+SHA1-Digest: W7DZYaz1xokzy6GSgQ3VBIFzdiI=
+
+Name: assets/www/images/flags/ug.png
+SHA1-Digest: Kj7M94Sp28PSVrs8V5yyyZ0V+sY=
+
+Name: assets/www/images/flags/ma.png
+SHA1-Digest: FCm71oxg59+XtCaD32AHs1/R63w=
+
+Name: org/apache/commons/codec/language/bm/gen_exact_any.txt
+SHA1-Digest: jWl5fcYklf5KZQOVQOhWuWwoUAM=
+
+Name: assets/www/images/flags/ky.png
+SHA1-Digest: pdTktOY6fz9Vy1fGBdQKspj2SM4=
+
+Name: res/layout/capture.xml
+SHA1-Digest: OTO8+5+O83zUhgh/yTqPnoIc0Wg=
+
+Name: org/apache/commons/codec/language/bm/gen_approx_french.txt
+SHA1-Digest: fG8iHIY7dmE+dzMnRN1V8U+CAWs=
+
+Name: assets/www/images/flags/sb.png
+SHA1-Digest: 52bVVtMdjvMn4VYdAigc3YUKaR8=
+
+Name: assets/www/images/flags/sm.png
+SHA1-Digest: 7echuaHgk+YpYNcdZ0CB6U75FJU=
+
+Name: assets/www/images/flags/ch.png
+SHA1-Digest: 0xiCQjuacnsK07vYlaRg27ikuSs=
+
+Name: assets/www/images/flags/st.png
+SHA1-Digest: p7ot6NbeqiO6KfOlhA0u0i5O/IA=
+
+Name: assets/www/fonts/OTF/SourceSansPro-BlackIt.otf
+SHA1-Digest: OcB5KGFnheJW5Dyt+twEh+1ovu0=
+
+Name: assets/www/fonts/WOFF/TTF/SourceSansPro-ExtraLightIt.ttf.woff
+SHA1-Digest: 1gu38eNHi9JZGdpxciVowcSOu0M=
+
+Name: org/apache/commons/codec/language/bm/ash_rules_russian.txt
+SHA1-Digest: T4ZqaaGytR6k0txV4R9HaAMRd8M=
+
+Name: assets/www/css/font-awesome.min.css
+SHA1-Digest: USx9eQM+MCipvmG1QM8aaHDIlvg=
+
+Name: org/apache/commons/codec/language/bm/gen_rules_greeklatin.txt
+SHA1-Digest: epTnnPkJV3kP2U6NeMgMH2hMESs=
+
+Name: assets/www/images/flags/kn.png
+SHA1-Digest: iJIGAfaujxjb7EsGC0Ko+7mfOk8=
+
+Name: org/apache/commons/codec/language/bm/ash_rules_english.txt
+SHA1-Digest: xDM5Kj+RvDu2y5bXf+6seM3O0Ww=
+
+Name: org/apache/commons/codec/language/bm/gen_approx_arabic.txt
+SHA1-Digest: 8LPDBpkhGMPrbgNH/3GMv5DW2Vs=
+
+Name: assets/www/images/flags/la.png
+SHA1-Digest: MeBg37zFWqfwfuJtCEfI9FUaIw8=
+
+Name: assets/www/images/flags/cz.png
+SHA1-Digest: iC8C3uYQTfzahE5Ga0ro3R4/acU=
+
+Name: assets/www/images/flags/bn.png
+SHA1-Digest: OYVm57ZmZ4Pw4BaR+Enw3sK1KRw=
+
+Name: assets/www/images/flags/tr.png
+SHA1-Digest: SXD2EqDoYQDPB2Kdo7nqEq+IkeU=
+
+Name: assets/www/images/flags/kg.png
+SHA1-Digest: 4ehT4lknCFBFZBO1ZZUac8X0I+s=
+
+Name: assets/www/images/flags/ca.png
+SHA1-Digest: Y58oalyXlEL3UawuZ6cd/SB1G4M=
+
+Name: org/apache/commons/codec/language/bm/gen_exact_turkish.txt
+SHA1-Digest: KmHuQHLS9h1anGqkGCPCCtXC9QI=
+
+Name: org/apache/commons/codec/language/bm/ash_exact_polish.txt
+SHA1-Digest: YtjlwefN2I0RWdC2euL3eS1iTgQ=
+
+Name: assets/www/images/flags/gd.png
+SHA1-Digest: fuPnBxp7oYQNshiemrW5ChqRlDY=
+
+Name: assets/www/images/buddies.jpg
+SHA1-Digest: Sma9xLJKCbq7HXTmgSdYynWkeqc=
+
+Name: assets/www/images/flags/dm.png
+SHA1-Digest: i9E7HIYIE94xoSSKtdE9gJJyJ/g=
+
+Name: assets/www/images/flags/ls.png
+SHA1-Digest: gwDaCb9giiYNMpTPCjawmwK/wHo=
+
+Name: org/apache/commons/codec/language/bm/sep_rules_spanish.txt
+SHA1-Digest: uTGxICniFcGE+85pnK+pGH1Xzt8=
+
+Name: assets/www/fonts/TTF/SourceSansPro-Semibold.ttf
+SHA1-Digest: e4oDnwMRVzsRv3yxHyV3+go3d44=
+
+Name: org/apache/commons/codec/language/bm/gen_exact_romanian.txt
+SHA1-Digest: KmHuQHLS9h1anGqkGCPCCtXC9QI=
+
+Name: org/apache/commons/codec/language/bm/gen_exact_cyrillic.txt
+SHA1-Digest: 00E7VR452tbgGSDvaN2vH71JXd0=
+
+Name: assets/www/images/flags/ne.png
+SHA1-Digest: nhem36GY1na9STRFuS6LFM4YkGg=
+
+Name: assets/www/images/howto.jpg
+SHA1-Digest: 5J3erKMevIJAtPbDkPKe4gbPrBQ=
+
+Name: assets/www/fonts/fontawesome-webfont.ttf
+SHA1-Digest: xZeSwKBaTaH5ICo5Cifi1QDDZ1I=
+
+Name: assets/www/images/banner/challenge_04.jpg
+SHA1-Digest: Xggw7ayZPqYaCJr6BaQe5IbFsog=
+
+Name: org/apache/commons/codec/language/bm/gen_rules_italian.txt
+SHA1-Digest: fpEQsllQFifzCfJ/dp1xEwvBVdg=
+
+Name: res/drawable/background.png
+SHA1-Digest: nbnT47PVb/D8p3g6i4jalgxC6ps=
+
+Name: org/apache/commons/codec/language/bm/gen_exact_greek.txt
+SHA1-Digest: KmHuQHLS9h1anGqkGCPCCtXC9QI=
+
+Name: assets/www/images/flags/tg.png
+SHA1-Digest: OQCXNQL44eQvh1ze/9th/knbsHc=
+
+Name: assets/www/fonts/WOFF/OTF/SourceSansPro-Black.otf.woff
+SHA1-Digest: qgLcntCrjC8UCA22lnv9p5ih024=
+
+Name: assets/www/images/flags/mg.png
+SHA1-Digest: OWMTnIeTa/A8ndXPnYblUF4qcDg=
+
+Name: assets/www/images/flags/id.png
+SHA1-Digest: tX+4qPIH1uvSMMFIZeRT8Kb4nWQ=
+
+Name: org/apache/commons/codec/language/bm/ash_hebrew_common.txt
+SHA1-Digest: lhqN1L0rc6oqNcToAM5w5eXc69k=
+
+Name: assets/www/images/flags/es.png
+SHA1-Digest: lLoPjU2ww1wSRqVfy9bg7zzX8OI=
+
+Name: assets/www/images/flags/my.png
+SHA1-Digest: gGdYzEr6FdtccMxTMAMaJn1Jcjc=
+
+Name: assets/www/fonts/WOFF/TTF/SourceSansPro-It.ttf.woff
+SHA1-Digest: Ua1ukKGz5NYWY/AY0HPDNDX0ZCE=
+
+Name: assets/www/challenge11.html
+SHA1-Digest: ZBNZhtQ2pGu4dsEmsGMFzNhBgBo=
+
+Name: assets/www/images/flags/ai.png
+SHA1-Digest: 22elXVKWoEuDuTr9HbLxoZL6hGU=
+
+Name: assets/www/images/flags/nl.png
+SHA1-Digest: 7M8UFStrom/op9AveVhpkr5A2yA=
+
+Name: assets/www/fonts/OTF/SourceSansPro-Bold.otf
+SHA1-Digest: avm8Yd0uPwfa5n2kaoEhRRKsGLI=
+
+Name: assets/www/fonts/WOFF/TTF/SourceSansPro-SemiboldIt.ttf.woff
+SHA1-Digest: 61nilnr1BbddSffI0FCwpPGAjhA=
+
+Name: assets/www/images/flags/ro.png
+SHA1-Digest: eCwZKBHqcwnUO5pCWXP9hQMNycs=
+
+Name: org/apache/commons/codec/language/bm/ash_exact_any.txt
+SHA1-Digest: 31+z+V5I9I/BsRgZo688C7Nmz5c=
+
+Name: org/apache/commons/codec/language/bm/gen_approx_any.txt
+SHA1-Digest: 5FHNYWkE/iE9uhTrfBSWz2fh4rI=
+
+Name: assets/www/images/flags/mr.png
+SHA1-Digest: 6hOjBk8rBNCql04kjkXwLRVQTzY=
+
+Name: assets/www/fonts/WOFF/TTF/SourceSansPro-Semibold.ttf.woff
+SHA1-Digest: RBLHEm9+7w0b2YERjvxsT3A6h3c=
+
+Name: org/apache/commons/codec/language/bm/ash_rules_polish.txt
+SHA1-Digest: bnV3hR/TM8/nCLUXvfXHWUmvShI=
+
+Name: org/apache/commons/codec/language/bm/sep_approx_common.txt
+SHA1-Digest: VLGwCVv3uxq8eYkWPr7gmtHLOnU=
+
+Name: org/apache/commons/codec/language/bm/gen_rules_english.txt
+SHA1-Digest: CHRv59odKbwWuNzWNtwmYNxOEH4=
+
+Name: assets/www/images/flags/sl.png
+SHA1-Digest: IrUbJ6jWw2TcPkH1Jf1vU+V3bqg=
+
+Name: org/apache/commons/codec/language/bm/ash_exact_approx_common.txt
+SHA1-Digest: c9AqKhHVO0VPlbeLnJTrKdy/gSs=
+
+Name: assets/www/fonts/EOT/SourceSansPro-Semibold.eot
+SHA1-Digest: NvMF17zttqw3dRpD1pJua9TiriQ=
+
+Name: org/apache/commons/codec/language/bm/sep_exact_portuguese.txt
+SHA1-Digest: KmHuQHLS9h1anGqkGCPCCtXC9QI=
+
+Name: org/apache/commons/codec/language/bm/gen_exact_polish.txt
+SHA1-Digest: C2oXvKtemOA5+wbuURYYZrRXawk=
+
+Name: org/apache/commons/codec/language/bm/ash_exact_english.txt
+SHA1-Digest: QN+UL/Br/fToWzAZVM6R8yBU8uA=
+
+Name: assets/www/images/flags/ci.png
+SHA1-Digest: lhYoRxs23wHNXXiyTHQIcSyZHug=
+
+Name: assets/www/images/flags/gl.png
+SHA1-Digest: WXH/yrayoBwI2LdcSuVAt3tZSCo=
+
+Name: assets/www/images/flags/sc.png
+SHA1-Digest: iyAmlOTNGD4eUzAlHXu5ZM0xRuw=
+
+Name: assets/www/images/flags/bm.png
+SHA1-Digest: OGlADS9hRnOo8s5bjCzesdgk1G4=
+
+Name: assets/www/images/flags/de.png
+SHA1-Digest: MEbNC1FyHxgMLcdVE/1L/TFrRbU=
+
+Name: assets/www/images/flags/pe.png
+SHA1-Digest: /Btetvl8wGHMcayrTjL7RUrI+bQ=
+
+Name: org/apache/commons/codec/language/bm/gen_exact_italian.txt
+SHA1-Digest: KmHuQHLS9h1anGqkGCPCCtXC9QI=
+
+Name: assets/www/images/flags/th.png
+SHA1-Digest: MJjUC3yv4H8cZXny7W/8yftldFo=
+
+Name: org/apache/commons/codec/language/bm/sep_exact_italian.txt
+SHA1-Digest: KmHuQHLS9h1anGqkGCPCCtXC9QI=
+
+Name: assets/www/scores.html
+SHA1-Digest: A1vOlRSFq0D/+b1VOVNnVXmcdUo=
+
+Name: assets/www/fonts/fontawesome-webfont.eot
+SHA1-Digest: rQwFE6L7tzJqxeEffJS5WqI7AuA=
+
+Name: org/apache/commons/codec/language/bm/ash_rules_cyrillic.txt
+SHA1-Digest: EsR+HI42mjkQMSRBChc6UJMNHnk=
+
+Name: org/apache/commons/codec/language/bm/ash_rules_romanian.txt
+SHA1-Digest: c2FG81GO6lTa5eTZpNvoIjKLPfw=
+
+Name: org/apache/commons/codec/language/bm/sep_exact_hebrew.txt
+SHA1-Digest: KmHuQHLS9h1anGqkGCPCCtXC9QI=
+
+Name: assets/www/fonts/WOFF/TTF/SourceSansPro-Regular.ttf.woff
+SHA1-Digest: Tdi0rRefP5tk7JgEGPLJ01SpmD0=
+
+Name: assets/www/images/flags/lt.png
+SHA1-Digest: fKtZqDz0ioHndaGUv3SrYNc0hUE=
+
+Name: assets/www/images/flags/gu.png
+SHA1-Digest: Krqt8t7sdSuLvsVOwsUKOrkZ2uo=
+
+Name: res/drawable-xhdpi-v4/ic_launcher.png
+SHA1-Digest: jAkYkq54ajS41VMppAZBisSYIc4=
+
+Name: assets/www/images/flags/pw.png
+SHA1-Digest: csp4dzi99HCMpkQJlNbgaSIA4UU=
+
+Name: org/apache/commons/codec/language/bm/sep_languages.txt
+SHA1-Digest: N9Nby7yZl/CNB4XLYMOy4NPkDns=
+
+Name: assets/www/images/flags/cr.png
+SHA1-Digest: AJtk2wn6oq2vG/y1Zy45Km6RyL0=
+
+Name: assets/www/challenge08.html
+SHA1-Digest: IIMQhOfls5D85MaaCV7tjWBJ8ds=
+
+Name: assets/www/images/flags/tz.png
+SHA1-Digest: T5+lEq3u7UhgCjCOPK091VhxxIU=
+
+Name: org/apache/commons/codec/language/bm/ash_approx_polish.txt
+SHA1-Digest: d7PswPXB40uZY4D8wXcuG7osFGk=
+
+Name: res/layout/activity_snd.xml
+SHA1-Digest: gl9S/b3vUkNhwvhFXD2bdFBX0Ag=
+
+Name: assets/www/images/flags/lk.png
+SHA1-Digest: GWZsZhehSYYMxR64j+QkbZ//S8Y=
+
+Name: assets/www/images/flags/lb.png
+SHA1-Digest: 396jTuJoxNNqgyodbgIiz2+Lnaw=
+
+Name: org/apache/commons/codec/language/bm/gen_rules_turkish.txt
+SHA1-Digest: rN+fxuizg39UWtnHiV1G1d2AaVY=
+
+Name: org/apache/commons/codec/language/bm/gen_exact_dutch.txt
+SHA1-Digest: KmHuQHLS9h1anGqkGCPCCtXC9QI=
+
+Name: assets/www/scanner.html
+SHA1-Digest: cU8Ng4XGPgHc6If7IdNuTC89Jss=
+
+Name: assets/www/fonts/OTF/SourceSansPro-BoldIt.otf
+SHA1-Digest: i2BTjUGcgr9cPSMDQsvpb+aA7BY=
+
+Name: assets/www/images/flags/in.png
+SHA1-Digest: rGrhT2cxOtCIwnPDN2jN9ZJWDrw=
+
+Name: assets/www/css/images/bg.png
+SHA1-Digest: 4/L8hOCl26WMYfUadVITetdTAV0=
+
+Name: assets/www/images/flags/mq.png
+SHA1-Digest: K+iaEnnkWapqLXT8THW5bn+3U78=
+
+Name: assets/www/images/banner/challenge_11.jpg
+SHA1-Digest: WEhy7PgU4eQuMmE8eEWuUoJKN/I=
+
+Name: res/drawable-hdpi-v4/ic_launcher.png
+SHA1-Digest: 2zj/QM7WwfehMs35tjvCXmi0skw=
+
+Name: org/apache/commons/codec/language/bm/gen_rules_spanish.txt
+SHA1-Digest: T+njbAJy1Bqc9+cbiIJMwcI9HrU=
+
+Name: assets/www/images/flags/mh.png
+SHA1-Digest: Bdtuu7a/JGUxqUABK6sIamr7qEU=
+
+Name: org/apache/commons/codec/language/bm/lang.txt
+SHA1-Digest: H+gJtZUsHsM9QHoCyS/cdT9yjaQ=
+
+Name: assets/www/register.html
+SHA1-Digest: SZLokxk6qZuen0XC9JpyyO72AYE=
+
+Name: assets/www/js/jquery-ui.min.js
+SHA1-Digest: h74zbjqGZC32D1DjhsNJ2V7vLVc=
+
+Name: org/apache/commons/codec/language/bm/gen_approx_spanish.txt
+SHA1-Digest: lGrj01vFVhIZq42vqijMqqlw+eo=
+
+Name: org/apache/commons/codec/language/bm/sep_approx_hebrew.txt
+SHA1-Digest: KmHuQHLS9h1anGqkGCPCCtXC9QI=
+
+Name: assets/www/images/twitter_white.png
+SHA1-Digest: id/M/giJcY4VgVKy3V86xFuUnR0=
+
+Name: org/apache/commons/codec/language/bm/gen_approx_turkish.txt
+SHA1-Digest: ZK+AVLklo2cJUK6apOygqti1wRM=
+
+Name: assets/www/images/flags/hr.png
+SHA1-Digest: emq3z8VaEjnedeBzQwyWNNXBh0Y=
+
+Name: assets/www/images/flags/do.png
+SHA1-Digest: TZ7zBK54+deYrMvun44YRKhydlA=
+
+Name: org/apache/commons/codec/language/bm/ash_approx_any.txt
+SHA1-Digest: 54nb4ON7/wkHOr32PrSKqoszAGk=
+
+Name: assets/www/images/flags/bd.png
+SHA1-Digest: 8Rx2R6qctY5gM9R56wIWguARV9k=
+
+Name: assets/www/images/flags/zm.png
+SHA1-Digest: 8G4LuBE+BvDX6r19/K+M6TCtIDA=
+
+Name: org/apache/commons/codec/language/bm/gen_approx_hebrew.txt
+SHA1-Digest: KmHuQHLS9h1anGqkGCPCCtXC9QI=
+
+Name: org/apache/commons/codec/language/bm/gen_approx_english.txt
+SHA1-Digest: WdrL/vp21NUtryKaVCYaAfnUY9U=
+
+Name: assets/www/fonts/EOT/SourceSansPro-It.eot
+SHA1-Digest: lC2CNvtll9h4GyLaXoOPg0nk2FY=
+
+Name: assets/www/images/flags/az.png
+SHA1-Digest: AOZ7EGOaPf875ZoaH8wpPgILs20=
+
+Name: assets/www/images/flags/va.png
+SHA1-Digest: FKqJ1JrZxOFMAUIBQvOVD976rHE=
+
+Name: assets/www/images/flags/mz.png
+SHA1-Digest: +hJ2Q/hfve+x7uN1DqdinYuHR+I=
+
+Name: org/apache/commons/codec/language/bm/gen_languages.txt
+SHA1-Digest: Wd+YcHRM0F23bj/qZsPhOjYOa+4=
+
+Name: assets/www/images/flags/aq.png
+SHA1-Digest: phfJsPaenVwKRymNIvu3fsSBedA=
+
+Name: assets/www/images/flags/et.png
+SHA1-Digest: AWqwY62HqHlaFIevXheAhh07Nyc=
+
+Name: org/apache/commons/codec/language/bm/sep_approx_portuguese.txt
+SHA1-Digest: wGpv/4nTHPd+c4HkTvDnN2PUYOU=
+
+Name: assets/www/fonts/OTF/SourceSansPro-It.otf
+SHA1-Digest: NbPXhXlk1hodrtiAGg66IyWECCM=
+
+Name: org/apache/commons/codec/language/bm/gen_rules_dutch.txt
+SHA1-Digest: ubXAOlBgTG6cluGh9Yg9omLd9gY=
+
+Name: org/apache/commons/codec/language/bm/gen_approx_greeklatin.txt
+SHA1-Digest: KM44dvGlJjA1G1+QMxAorjQfVZo=
+
+Name: assets/www/images/flags/tt.png
+SHA1-Digest: FFMW33ziNxmLfIXDxTPlqZgPy+M=
+
+Name: assets/www/images/flags/sv.png
+SHA1-Digest: ewU4CyEpvxualqm2v2Of6ovV5Bk=
+
+Name: assets/www/fonts/WOFF/OTF/SourceSansPro-ExtraLight.otf.woff
+SHA1-Digest: aA3hnSQnQdfUgYr3zc92sSpJ8xM=
+
+Name: assets/www/images/flags/ml.png
+SHA1-Digest: Oyee9TtsKjuUXf1MqpFYLwn2YFQ=
+
+Name: assets/www/fonts/OTF/SourceSansPro-ExtraLight.otf
+SHA1-Digest: swGCSjbEUeMq5thb6zJgbFLKMfY=
+
+Name: org/apache/commons/codec/language/bm/ash_rules_german.txt
+SHA1-Digest: YO+2+bquWxcrjLHWD06sQ4ycQYc=
+
+Name: assets/www/images/flags/it.png
+SHA1-Digest: pFg74+V5ppoDoNHwmZX9ttEkT30=
+
+Name: org/apache/commons/codec/language/bm/ash_approx_common.txt
+SHA1-Digest: padRPYJ0BaElGjLugFZoVeiaNRQ=
+
+Name: org/apache/commons/codec/language/bm/sep_rules_hebrew.txt
+SHA1-Digest: G0Yn8vlBmcqKqvsNdi9pfDl8Mbs=
+
+Name: assets/www/fonts/WOFF/OTF/SourceSansPro-It.otf.woff
+SHA1-Digest: gZi4VL2fUubi2TJDXsmaqNigkiQ=
+
+Name: org/apache/commons/codec/language/bm/sep_approx_french.txt
+SHA1-Digest: KmHuQHLS9h1anGqkGCPCCtXC9QI=
+
+Name: assets/www/images/flags/an.png
+SHA1-Digest: EDbxetrTfYXLtnjCJMPseS/+eEU=
+
+Name: res/layout/zxing_capture.xml
+SHA1-Digest: DKA22mwYtPP4fyMKPT/RR27EASo=
+
+Name: assets/www/images/flags/gb.png
+SHA1-Digest: 1MNv/wbcfZILEOsTtY6pzZMhtDA=
+
+Name: org/apache/commons/codec/language/bm/ash_approx_english.txt
+SHA1-Digest: WdrL/vp21NUtryKaVCYaAfnUY9U=
+
+Name: org/apache/commons/codec/language/bm/gen_exact_russian.txt
+SHA1-Digest: lulM+eX+omlYPVagYcZ7S+1OOAg=
+
+Name: assets/www/images/flags/kw.png
+SHA1-Digest: YVyadVS3L2ftL5zY14+F/ikuU+c=
+
+Name: assets/www/images/flags/me.png
+SHA1-Digest: 6umxQa94Ln0Jr0frMfyUlaoSXXU=
+
+Name: assets/www/fonts/fontawesome-webfont.woff
+SHA1-Digest: fy88VcLeGSOHw1G5lRFfa3ngkXM=
+
+Name: assets/www/images/flags/lu.png
+SHA1-Digest: pg+hOE8aUlidkE1yGFjJREW/PWg=
+
+Name: assets/www/images/egg_gray.png
+SHA1-Digest: bq3ATqlIwTCUkLY6SLJujc5k0jE=
+
+Name: assets/www/fonts/WOFF/TTF/SourceSansPro-LightIt.ttf.woff
+SHA1-Digest: YSlMIPxWF+dxIJ13OPEzZtduDNw=
+
+Name: res/drawable-xxxhdpi-v4/ic_launcher.png
+SHA1-Digest: hNdnCE0vqQwcpZQMlUyT+WkI4b4=
+
+Name: assets/www/js/scripts.js
+SHA1-Digest: 6yfoPRMyqcmCCgwZbzT4D+v3xpc=
+
+Name: org/apache/commons/codec/language/bm/sep_exact_any.txt
+SHA1-Digest: vokBnqDrzgh7ubmg4N5ltqYJsgY=
+
+Name: assets/www/images/flags/ki.png
+SHA1-Digest: qe9spdFahwJu/ZVcZEVJD1rXK00=
+
+Name: assets/www/images/flags/so.png
+SHA1-Digest: jXiBdqTs+wd44yHHW002YspWFfU=
+
+Name: assets/www/images/flags/pf.png
+SHA1-Digest: NcigGPHfWmr3nKWgoiZZSJ+YGwg=
+
+Name: org/apache/commons/codec/language/bm/gen_rules_polish.txt
+SHA1-Digest: BKwAayJJNnmipd/rFV3jPkaErSE=
+
+Name: assets/www/fonts/WOFF/OTF/SourceSansPro-LightIt.otf.woff
+SHA1-Digest: CpQxhwo0YUpgrjxO52yLG+IhBlE=
+
+Name: mozilla/public-suffix-list.txt
+SHA1-Digest: WrDYeUhZs/zhEh6UwFrcY8KeBv8=
+
+Name: assets/www/images/flags/kp.png
+SHA1-Digest: Xy4klypaoh8ft3Bq96FPKX7ECC4=
+
+Name: assets/www/images/flags/za.png
+SHA1-Digest: XngEKT4MSAuQYNQageevPJ2Mpzs=
+
+Name: assets/www/fonts/EOT/SourceSansPro-SemiboldIt.eot
+SHA1-Digest: 2/o/zXnoqrDD35qCOU9G0Meq+Ns=
+
+Name: assets/www/images/flags/au.png
+SHA1-Digest: a1gVbwwWdh0CeiL/XYdHYfglEMA=
+
+Name: org/apache/commons/codec/language/bm/ash_exact_spanish.txt
+SHA1-Digest: QN+UL/Br/fToWzAZVM6R8yBU8uA=
+
+Name: AndroidManifest.xml
+SHA1-Digest: DiyMA7MgtmxbgdqOafsZdycV/C8=
+
+Name: assets/www/images/flags/sg.png
+SHA1-Digest: lGFXPAD51tuQtDAu77h8pDV4tUU=
+
+Name: org/apache/commons/codec/language/bm/gen_rules_cyrillic.txt
+SHA1-Digest: Yg5q1pDwdRE2199a3lBn//aVSZ0=
+
+Name: assets/www/fonts/TTF/SourceSansPro-BlackIt.ttf
+SHA1-Digest: k6Wgqx1RwOhLp2FVH2txor2ANyA=
+
+Name: assets/www/images/flags/ag.png
+SHA1-Digest: TzEB1VBhLsYn2/ZYtShsgquyRuQ=
+
+Name: org/apache/commons/codec/language/bm/sep_approx_any.txt
+SHA1-Digest: 0mWytx3QfDcxQYesfSLfKaaiPGc=
+
+Name: assets/www/images/flags/gp.png
+SHA1-Digest: +YlRYFXzdwslH9Eyp8rVEa3fmzY=
+
+Name: assets/www/images/flags/be.png
+SHA1-Digest: V1MqSeTKej6vV+7aJ0Qbf+Qbogg=
+
+Name: assets/www/fonts/WOFF/TTF/SourceSansPro-ExtraLight.ttf.woff
+SHA1-Digest: omBNhu5f1mrJEnzcZPajxWAQGZU=
+
+Name: assets/www/images/flags/im.png
+SHA1-Digest: J+w3W61iDzDxhnmejtrwDDt00w8=
+
+Name: assets/www/fonts/OTF/SourceSansPro-LightIt.otf
+SHA1-Digest: rGk1Yd4m5FxhpIMTqa2CbDqPvI0=
+
+Name: assets/www/images/flags/hn.png
+SHA1-Digest: 7c5gVpuTEUVCJf1FXtR3WVtyYLk=
+
+Name: assets/www/images/flags/pt.png
+SHA1-Digest: 8yXJ0nrLHT4Do0gessJANoroRg8=
+
+Name: assets/www/images/flags/bz.png
+SHA1-Digest: x/SpkTr/jYtAe/oCq3AVuYU37cc=
+
+Name: assets/www/fonts/source-sans-pro.css
+SHA1-Digest: N7CUmrWq7i60IATo7dhBElRGP3g=
+
+Name: assets/www/js/jquery.touchSwipe.min.js
+SHA1-Digest: azZw9ZGGkjV240PmuLjapkXRTbw=
+
+Name: assets/www/images/flags/nc.png
+SHA1-Digest: URR4/MTkaxwRc1KusljQAeuCbVM=
+
+Name: assets/www/images/appstore_android.png
+SHA1-Digest: huAyMrvekqvMia5qBEcNNmVk3PM=
+
+Name: assets/www/images/flags/uz.png
+SHA1-Digest: KMslKRVzt0RnrgdHwCy5KXlRbok=
+
+Name: assets/www/fonts/TTF/SourceSansPro-BoldIt.ttf
+SHA1-Digest: uUYYORSZTwtNYPrrmK+B9X4ANm4=
+
+Name: assets/www/images/flags/bs.png
+SHA1-Digest: KJax6ODMS+hYfJ/nD6/87ZRT5t0=
+
+Name: assets/www/images/flags/lv.png
+SHA1-Digest: 6KYAMItqRRZacbetexELOkkWrZI=
+
+Name: assets/www/images/flags/tl.png
+SHA1-Digest: Clu0KPvtr+p1l8vhBf62VZolqvc=
+
+Name: assets/www/images/flags/vi.png
+SHA1-Digest: c3pukamMuuUHDJj/8ZfsbHIydg8=
+
+Name: assets/www/images/egg_medium.png
+SHA1-Digest: 107NFKBK641KBrRhGLoBnzK3WbQ=
+
+Name: org/apache/commons/codec/language/bm/sep_approx_spanish.txt
+SHA1-Digest: wGpv/4nTHPd+c4HkTvDnN2PUYOU=
+
+Name: assets/www/images/flags/zw.png
+SHA1-Digest: UzhJik1qUbyQ3V58Ori8m7yPHpc=
+
+Name: org/apache/commons/codec/language/bm/gen_approx_german.txt
+SHA1-Digest: 0/CejklscQ18lQIcpLZ4h2ZwsQ0=
+
+Name: org/apache/commons/codec/language/bm/ash_approx_german.txt
+SHA1-Digest: MxrOjj0j10k/YbNQybQuDJBum3c=
+
+Name: org/apache/commons/codec/language/bm/gen_approx_common.txt
+SHA1-Digest: LdAHq1Uf7ZJObFLplHkMBg62o8g=
+
+Name: org/apache/commons/codec/language/bm/ash_rules_hungarian.txt
+SHA1-Digest: KxrQuSBewEePK/XN5khH0PWw7yE=
+
+Name: assets/www/images/egg_error.png
+SHA1-Digest: av08H6v5bnkY2+QYZ3Qqn/kUSmg=
+
+Name: assets/www/images/flags/gi.png
+SHA1-Digest: PhUmCJmiA/msLRnvl7yG1QxN7Ek=
+
+Name: assets/www/css/style-mobile.css
+SHA1-Digest: 5zMO6nyf3a0Bgb3wdO4XooxeXkc=
+
+Name: org/apache/commons/codec/language/bm/gen_rules_hebrew.txt
+SHA1-Digest: 80bIa465/ozUslfQBb84wPL42nY=
+
+Name: org/apache/commons/codec/language/bm/sep_exact_french.txt
+SHA1-Digest: FzpQ+GbWmzaOeTszrpAHMAbmuII=
+
+Name: res/drawable/egg_error.png
+SHA1-Digest: YC8hxPXbU7k0bgWbq7bCtN4Db4Y=
+
+Name: org/apache/commons/codec/language/bm/ash_approx_hebrew.txt
+SHA1-Digest: KmHuQHLS9h1anGqkGCPCCtXC9QI=
+
+Name: assets/www/images/flags/pg.png
+SHA1-Digest: gTOUV+ZYbJLqNoLtHISK0/5M90s=
+
+Name: assets/www/fonts/WOFF/OTF/SourceSansPro-BlackIt.otf.woff
+SHA1-Digest: CQEjZJKR80p/RX2H5pzz0H6t5qo=
+
+Name: assets/www/images/flags/hu.png
+SHA1-Digest: e8mGVJwGrLXxPBd69nk74Vn3xIA=
+
+Name: assets/www/fonts/WOFF/TTF/SourceSansPro-BlackIt.ttf.woff
+SHA1-Digest: ilyOiGsJGXBUekWtuBjIHz1nutU=
+
+Name: res/drawable-mdpi-v4/ic_launcher.png
+SHA1-Digest: C8UxCxIzXhTyNgLkfZfpnSNTN/k=
+
+Name: org/apache/commons/codec/language/bm/ash_exact_russian.txt
+SHA1-Digest: rXaMJ4HIP1dVq2JA4YDx9goSHNo=
+
+Name: assets/www/images/flags/rw.png
+SHA1-Digest: sgPmePtswtJHUifmiCSNe12FXLk=
+
+Name: assets/www/images/flags/mk.png
+SHA1-Digest: t7mxyy5+M/JOEIwdM7DSolVqB7Q=
+
+Name: assets/www/images/flags/gw.png
+SHA1-Digest: IYDUmVQMU1PMJK+IHf5tZSDnhKg=
+
+Name: assets/www/images/flags/mt.png
+SHA1-Digest: 7zw+FrcmtK0SEsbETKVf3SNpxN0=
+
+Name: assets/www/images/flags/ee.png
+SHA1-Digest: NXbKpjNNBh/Ia08xQJaKmJ4H4Yk=
+
+Name: org/apache/commons/codec/language/bm/gen_exact_spanish.txt
+SHA1-Digest: v/X501bGOhAvKUt41xXerI3WFvE=
+
+Name: assets/www/images/flags/at.png
+SHA1-Digest: tGBEku8tOwnXmIxfeEoII02ur0w=
+
+Name: assets/www/images/flags/kh.png
+SHA1-Digest: MdYfz5wjWpIbewIxDR5TmObmQsI=
+
+Name: assets/www/images/flags/il.png
+SHA1-Digest: L82gqjoKUcz03sxz11GvMHrFYz4=
+
+Name: assets/www/images/flags/ck.png
+SHA1-Digest: 2xQMDqyjGy/Vn65T8084A+l+9DQ=
+
+Name: assets/www/css/skel.css
+SHA1-Digest: UCgC5VJqhZF8irrEQjcSg1ioDK0=
+
+Name: org/apache/commons/codec/language/bm/sep_approx_italian.txt
+SHA1-Digest: sQ1CrX8M+aYXtqb+FaAQJlodnx0=
+
+Name: assets/www/js/skel.min.js
+SHA1-Digest: 6VzQ9mHNmU3y20F0WOr781HPfv4=
+
+Name: assets/www/images/flags/fr.png
+SHA1-Digest: DfokRUhDUFO769LtWRTieF8PPcM=
+
+Name: assets/www/images/flags/sn.png
+SHA1-Digest: v4mwINIzcPp14pkSilPya22czPM=
+
+Name: assets/www/images/flags/fj.png
+SHA1-Digest: KHEueYRquUBjtZx6NoShMGpZTrM=
+
+Name: assets/www/images/flags/bf.png
+SHA1-Digest: YedMv7qeGTu7oovL6jEFzjCErJI=
+
+Name: assets/www/images/flags/pl.png
+SHA1-Digest: 4K0sDFupmVPULfr94DuBKJ4YAWg=
+
+Name: assets/www/fonts/WOFF/OTF/SourceSansPro-SemiboldIt.otf.woff
+SHA1-Digest: YpX/DiPfBPbEPjgR+aK5o+OmbNY=
+
+Name: assets/www/images/flags/by.png
+SHA1-Digest: Pho7xUZmuP5jsgZGquHSg5Wfi2c=
+
+Name: assets/www/images/flags/vc.png
+SHA1-Digest: +RDRUpK+1/1lqNJpN7zhKw1aTIw=
+
+Name: assets/www/fonts/WOFF/TTF/SourceSansPro-Bold.ttf.woff
+SHA1-Digest: ccB0BYkR4pxHREJV/j5O9Od787I=
+
+Name: assets/www/images/flags/cy.png
+SHA1-Digest: M056heOEl+Vj5V7WuyAX4JC2j/U=
+
+Name: org/apache/commons/codec/language/bm/ash_rules_spanish.txt
+SHA1-Digest: jxaPlVZm4rC0Egc7UWeCEFaLVsQ=
+
+Name: assets/www/fonts/OTF/SourceSansPro-Regular.otf
+SHA1-Digest: NR2MH74V58P+a+CXd5FyKPg2MQI=
+
+Name: assets/www/images/flags/af.png
+SHA1-Digest: JglLzbnlA2MXhzqgO3Cuor0QxXM=
+
+Name: res/drawable-xxhdpi-v4/ic_launcher.png
+SHA1-Digest: sR23WkBD4V0+WaY5//7u8IPqJzo=
+
+Name: org/apache/commons/codec/language/bm/ash_exact_hungarian.txt
+SHA1-Digest: QN+UL/Br/fToWzAZVM6R8yBU8uA=
+
+Name: assets/www/fonts/WOFF/OTF/SourceSansPro-ExtraLightIt.otf.woff
+SHA1-Digest: aGcRyKEeJafzZPYpwqtZDymWNZU=
+
+Name: assets/www/fonts/TTF/SourceSansPro-Regular.ttf
+SHA1-Digest: FFENO5ZIFuFy+cJ0E5+avkGG6iY=
+
+Name: assets/www/images/flags/ao.png
+SHA1-Digest: qusIX06lfNPvD1ccLJ43JqHVu5w=
+
+Name: res/layout/main.xml
+SHA1-Digest: uPCTxODXzRX11tAxU0S5Gc8nbsA=
+
+Name: assets/www/images/flags/ms.png
+SHA1-Digest: MtNUFvK2g75FahKmV2HbnjgAaYQ=
+
+Name: org/apache/commons/codec/language/bm/gen_approx_italian.txt
+SHA1-Digest: kpJ0pEDOyFBEu6wl4QdynsUq6jE=
+
+Name: assets/www/images/flags/uy.png
+SHA1-Digest: KeY8TNkTNvSLiLzbTUFq+kNxcFQ=
+
+Name: assets/www/images/flags/ga.png
+SHA1-Digest: KkVbFH3KL10gZwt1HJm1/Ya+wfM=
+
+Name: assets/www/images/background.jpg
+SHA1-Digest: jz6yY02vvTJ+/p46U7YEwJphWRU=
+
+Name: assets/www/images/flags/sa.png
+SHA1-Digest: Ap3WRck/DhMWG5ce+o/O50HUH7U=
+
+Name: assets/www/images/flags/bt.png
+SHA1-Digest: EV9W54Gyti3e1qprxddimQZrmxU=
+
+Name: assets/www/images/twitter.png
+SHA1-Digest: id/M/giJcY4VgVKy3V86xFuUnR0=
+
+Name: org/apache/commons/codec/language/bm/gen_rules_german.txt
+SHA1-Digest: ASWiPOCybslDsqdqSYrJCczwNBA=
+
+Name: org/apache/commons/codec/language/bm/sep_rules_portuguese.txt
+SHA1-Digest: t/2/p6TUuJNClF3XDM5XMY3oNJ8=
+
+Name: org/apache/commons/codec/language/bm/ash_approx_cyrillic.txt
+SHA1-Digest: zhdfuG3lpctSYxuUJ7xTMIjSPNs=
+
+Name: assets/www/images/flags/vg.png
+SHA1-Digest: 8ijaTexook27vJhMV65TmkkhdTg=
+
+Name: assets/www/images/banner/challenge_08.jpg
+SHA1-Digest: 6EUHvs3VWoqECRZjiYIg54pOkNM=
+
+Name: assets/www/images/flags/na.png
+SHA1-Digest: hf47qDpivFOIIwOZij6N0h9kA4I=
+
+Name: org/apache/commons/codec/language/bm/ash_exact_french.txt
+SHA1-Digest: QN+UL/Br/fToWzAZVM6R8yBU8uA=
+
+Name: org/apache/commons/codec/language/bm/gen_approx_polish.txt
+SHA1-Digest: e4PksIbpzRqmyfXiE+gxLVhuVNA=
+
+Name: assets/www/images/flags/ir.png
+SHA1-Digest: xt4JspeR/NPYBBvBh4SYSYf/QcA=
+
+Name: assets/www/images/flags/mu.png
+SHA1-Digest: p5Q8J0d/VhHt492Jh8asyftGzEY=
+
+Name: assets/www/images/flags/bj.png
+SHA1-Digest: /IPAyj7n5YlTbXW7XAf608EZojw=
+
+Name: assets/www/fonts/EOT/SourceSansPro-LightIt.eot
+SHA1-Digest: 08UkoSj7M4VgXCqJpj1YL+gzD0Y=
+
+Name: assets/www/images/flags/jp.png
+SHA1-Digest: 8G2DT3aJfy6EF6cLWbR0Ga1mis4=
+
+Name: assets/www/images/flags/fm.png
+SHA1-Digest: aKMp+VK7UdfdjngMpc21UHyCLMU=
+
+Name: org/apache/commons/codec/language/bm/ash_rules_any.txt
+SHA1-Digest: dLYj+QzWWMV1HWCtEJPX4xYg2q0=
+
+Name: org/apache/commons/codec/language/bm/gen_exact_portuguese.txt
+SHA1-Digest: KmHuQHLS9h1anGqkGCPCCtXC9QI=
+
+Name: assets/www/images/flags/ph.png
+SHA1-Digest: T6byyolEjtzMqmR8toH9vJ3rR9U=
+
+Name: org/apache/commons/codec/language/bm/gen_approx_romanian.txt
+SHA1-Digest: h57+YZWPX1cnEcSdoXhfGLuta3s=
+
+Name: org/apache/commons/codec/language/bm/ash_exact_romanian.txt
+SHA1-Digest: QN+UL/Br/fToWzAZVM6R8yBU8uA=
+
+Name: assets/www/images/flags/mc.png
+SHA1-Digest: tX+4qPIH1uvSMMFIZeRT8Kb4nWQ=
+
+Name: assets/www/images/flags/aw.png
+SHA1-Digest: YWilFWfcTFqANvKOUgsFAvrSlCg=
+
+Name: assets/www/images/flags/je.png
+SHA1-Digest: V+PsPApWV2p+1OhUFg2flGlB+ao=
+
+Name: assets/www/images/flags/kr.png
+SHA1-Digest: +BigeCBHwVntjlzQQa1/Cej+Uvs=
+
+Name: assets/www/index.html
+SHA1-Digest: 0Cl563RIKd3IyJKU8aseW3u9MUc=
+
+Name: org/apache/commons/codec/language/bm/ash_approx_hungarian.txt
+SHA1-Digest: 604dJC1I4/8Oy3q/B/iDaSTWh7Y=
+
+Name: assets/www/js/jquery.min.js
+SHA1-Digest: T74FY5F9b2KJ5OG0oKh1jk5Dvak=
+
+Name: assets/www/images/flags/vn.png
+SHA1-Digest: jrAvUrvgdLXdaBuVxhlokOSWUfo=
+
+Name: assets/www/images/flags/ye.png
+SHA1-Digest: 9gpZhNq/2P5Fhx+wesmY9Xm7UYo=
+
+Name: assets/www/images/flags/eh.png
+SHA1-Digest: bDy8ppHojwkRhPcKrqBq5l3ARsA=
+
+Name: assets/www/fonts/EOT/SourceSansPro-Light.eot
+SHA1-Digest: ZIcOZAMYeB9MOwoiyzGbTFpwdnI=
+
+Name: assets/www/images/flags/ae.png
+SHA1-Digest: dneQ6B7S630lsUFoJOyZamlp/DU=
+
+Name: org/apache/commons/codec/language/bm/gen_approx_portuguese.txt
+SHA1-Digest: ZK+AVLklo2cJUK6apOygqti1wRM=
+
+Name: assets/www/js/jquery.dropotron.min.js
+SHA1-Digest: zuwPJmvcFPwDHHDIMsWrzZdW4OY=
+
+Name: org/apache/commons/codec/language/bm/gen_approx_cyrillic.txt
+SHA1-Digest: T3Kwm8H/aw/kkF6SaYfagX9J1mw=
+
+Name: assets/www/images/flags/mn.png
+SHA1-Digest: CNbIVCdto6uG++xi92RokVAVWD0=
+
+Name: assets/www/images/flags/al.png
+SHA1-Digest: T2rm2Qe0lTA4rd1rJmUje9Qstqs=
+
+Name: org/apache/commons/codec/language/bm/ash_exact_cyrillic.txt
+SHA1-Digest: QN+UL/Br/fToWzAZVM6R8yBU8uA=
+
+Name: assets/www/fonts/EOT/SourceSansPro-Black.eot
+SHA1-Digest: zLKtmFs2o9/dws7SN4lUfvwHhQk=
+
+Name: org/apache/commons/codec/language/bm/gen_rules_any.txt
+SHA1-Digest: s7KvcfwD+yZtsux5sF8HC7SSwKw=
+
+Name: res/drawable/logo.png
+SHA1-Digest: qeOduH06dWDHfLnNcgLIYxfv3SM=
+
+Name: assets/www/fonts/WOFF/OTF/SourceSansPro-Semibold.otf.woff
+SHA1-Digest: VhacJF8EGAQQ5nrcORwMFJ7OTcQ=
+
+Name: assets/www/images/flags/cd.png
+SHA1-Digest: Ubn2Qc5nMp6PV7iFTwARKwlugGE=
+
+Name: assets/www/images/flags/np.png
+SHA1-Digest: lwjSaJ3xv39wr76NaKmOcYwUak4=
+
+Name: org/apache/commons/codec/language/bm/gen_exact_hungarian.txt
+SHA1-Digest: KmHuQHLS9h1anGqkGCPCCtXC9QI=
+
+Name: assets/www/images/flags/rs.png
+SHA1-Digest: YTDlTQoRh0EJp7m+gvoV6OLZP8c=
+
+Name: assets/www/images/flags/gr.png
+SHA1-Digest: usUlECRSS7n1w5U1y5m+JNEMkvc=
+
+Name: assets/www/images/flags/co.png
+SHA1-Digest: epMybfzHy7WSzqlP2vjEWm+uxuE=
+
+Name: assets/www/images/flags/nz.png
+SHA1-Digest: W0wu6REhHL06a5lZi+GLLfenbPs=
+
+Name: assets/www/images/flags/tn.png
+SHA1-Digest: NxLXsh8l3G8k/ENwPzlDmYma+38=
+
+Name: assets/www/images/flags/pk.png
+SHA1-Digest: 05/ap9Ty7/KWSM4q2bYmw3O7UDo=
+
+Name: assets/www/js/crypto-js/sha1.js
+SHA1-Digest: Hnz/BD33/3f93+3tMwa8EajiLsI=
+
+Name: assets/www/images/flags/ws.png
+SHA1-Digest: kREKvOOXNcGB1oFqQphlTkkAcDM=
+
+Name: assets/www/images/flags/gg.png
+SHA1-Digest: XgEcWABV1AOSEBRg4nzUeOdtdbA=
+
+Name: org/apache/commons/codec/language/bm/ash_approx_spanish.txt
+SHA1-Digest: 604dJC1I4/8Oy3q/B/iDaSTWh7Y=
+
+Name: assets/www/images/flags/om.png
+SHA1-Digest: LYJJ/raLg19a4DEIOalVaNLUMKM=
+
+Name: lib/armeabi/libglues.so
+SHA1-Digest: hla5fDgBUMvzr3SWkNH8N8SfxzY=
+
+Name: assets/www/images/flags/tc.png
+SHA1-Digest: 8LZqPRNGQGsfkWRSIXVGgnjiM8A=
+
+Name: org/apache/commons/codec/language/bm/ash_exact_hebrew.txt
+SHA1-Digest: KmHuQHLS9h1anGqkGCPCCtXC9QI=
+
+Name: org/apache/commons/codec/language/bm/ash_rules_french.txt
+SHA1-Digest: o5S4BN9+movhRfKv/CPmwVWMk0s=
+
+Name: assets/www/images/flags/gy.png
+SHA1-Digest: sD5OCjJs1qlR5deUtyzs8Tftkw8=
+
+Name: assets/www/images/flags/cv.png
+SHA1-Digest: +s/9olQ5NfOPQS5ieQDnWiaS97w=
+
+Name: assets/www/images/flags/si.png
+SHA1-Digest: l14uyVksugjOZ6jVKWt4t35MKNc=
+
+Name: org/apache/commons/codec/language/bm/gen_rules_czech.txt
+SHA1-Digest: iPK8bJaVzSZc5K5rvtJ99cdrL3g=
+
+Name: lib/armeabi-v7a/libglues.so
+SHA1-Digest: yKNwt4cvBpSul68qV2jFsUhHOmw=
+
+Name: org/apache/commons/codec/language/bm/sep_exact_approx_common.txt
+SHA1-Digest: 2wGOF99LQlKr0epBg2LDfgg5c/k=
+
+Name: assets/www/images/flags/pr.png
+SHA1-Digest: YqjjBQ8I+yrNI3UwHjF72AjY1ak=
+
+Name: res/raw/zxing_beep.ogg
+SHA1-Digest: GlIsg8mvi6v0saqDdV7ZN0KoFcY=
+
+Name: assets/www/images/flags/mv.png
+SHA1-Digest: r+bebA5GEGeUzq1nwRSZF1aPQDs=
+
+Name: assets/www/fonts/WOFF/TTF/SourceSansPro-BoldIt.ttf.woff
+SHA1-Digest: Kk3QNmUfMDdCKdauWH+gIHiwUx8=
+
+Name: assets/www/images/flags/is.png
+SHA1-Digest: y8B8Mk6IQCbx71q/xrgIn47mJZM=
+
+Name: assets/www/images/flags/am.png
+SHA1-Digest: cLEswofoQTS5WYAHN2bMSiZlK/M=
+
+Name: assets/www/challenges.html
+SHA1-Digest: kOp7/Q06QxQpZQ2fE4GHE15HLF8=
+
+Name: assets/www/images/flags/us.png
+SHA1-Digest: dbCmExHIpCHny8tzS3HysL0cV0E=
+
+Name: org/apache/commons/codec/language/bm/gen_rules_russian.txt
+SHA1-Digest: i18jgMcJnz+/whRVChudyvXR6bQ=
+
+Name: org/apache/commons/codec/language/bm/ash_rules_hebrew.txt
+SHA1-Digest: 1d23tX+8Zs6txZql1HQugopK6Dw=
+
+Name: org/apache/commons/codec/language/bm/gen_exact_french.txt
+SHA1-Digest: KmHuQHLS9h1anGqkGCPCCtXC9QI=
+
+Name: assets/www/css/style.css
+SHA1-Digest: b22+KYlD1BB3KXpJJZ6bHUkC6iw=
+
+Name: assets/www/fonts/TTF/SourceSansPro-SemiboldIt.ttf
+SHA1-Digest: GsRPcJ+hn1CqxPLAKCyvVCXDzGg=
+
+Name: org/apache/http/client/version.properties
+SHA1-Digest: ojqTKVa3FtIPVHPph6uLJ5aLXQQ=
+
+Name: assets/www/images/eggbasket.jpg
+SHA1-Digest: UPLFBOuAjdiojiIT64BKV1lvPA4=
+
+Name: assets/www/images/flags/ua.png
+SHA1-Digest: GS2YxdXVs0Ej6HF8OLZzPY9+Vkg=
+
+Name: assets/www/images/banner/challenge_09.jpg
+SHA1-Digest: YUShd2XKAkHc+BqWtx+gAbQCQyc=
+
+Name: assets/www/js/crypto-js/aes.js
+SHA1-Digest: pW/wyyyvqkG8Woksx4C7v9XYRSo=
+
+Name: assets/www/fonts/TTF/SourceSansPro-Light.ttf
+SHA1-Digest: BDxFG7RtpCkhHm8J00ELX/A8c98=
+
+Name: org/apache/commons/codec/language/bm/gen_exact_arabic.txt
+SHA1-Digest: 6qj8otnCUSRgzzY1XsPSLprI8l4=
+
+Name: assets/www/images/flags/bi.png
+SHA1-Digest: x52omWV2as9pmEEsj3ky0/vapxo=
+
+Name: assets/www/images/flags/ru.png
+SHA1-Digest: WB+p7MYJoaB/yiBbbJdR6MKPHrs=
+
+Name: assets/www/fonts/WOFF/OTF/SourceSansPro-Regular.otf.woff
+SHA1-Digest: Ys6ZNXzK7DuwrHA+7kRYqard+Zo=
+
+Name: assets/www/images/flags/jo.png
+SHA1-Digest: WsxnM191MQ07EM1o6AUwZylA08w=
+
+Name: assets/www/images/flags/nr.png
+SHA1-Digest: xEIIrZAJF+oV7id1r5uXsRZeMgY=
+
+Name: assets/www/images/flags/ia.png
+SHA1-Digest: MYPVoOXh4zDW6cYk/U0BXk1ae+A=
+
+Name: assets/www/images/scores.jpg
+SHA1-Digest: azQGLkq87pF264V6P2yLD2M5e5E=
+
+Name: assets/www/images/flags/md.png
+SHA1-Digest: 86Br6TC7h3jWYpcp2K65pbDjxV4=
+
+Name: assets/www/images/flags/ni.png
+SHA1-Digest: CtIBH3VsJ9ZYlkIyJMWk/qg6U7U=
+
+Name: assets/www/fonts/OTF/SourceSansPro-Black.otf
+SHA1-Digest: 4akWX3mJPveax5yDVL0E4HRgFrU=
+
+Name: assets/www/images/flags/mm.png
+SHA1-Digest: fguOe0qA6VBAC3NOL/CueTdYcbM=
+
+Name: org/apache/commons/codec/language/bm/ash_approx_french.txt
+SHA1-Digest: q9sgIysKftSjudOa4wXU3BLc/4Y=
+
+Name: assets/www/fonts/WOFF/TTF/SourceSansPro-Light.ttf.woff
+SHA1-Digest: urZ8yTQ2/jriVVbZR+yTUwCZAiA=
+
+Name: assets/www/fonts/WOFF/OTF/SourceSansPro-Light.otf.woff
+SHA1-Digest: OnpGSxcbFMU7IRKNqbJwTlmVoVg=
+
+Name: assets/www/images/flags/eg.png
+SHA1-Digest: 3EHGr3GM+H25t/PJPQZvFS0W+6c=
+
+Name: assets/www/images/flags/ad.png
+SHA1-Digest: 7MIyyWz2LHSOySIVzHVZRrB+AYI=
+
+Name: org/apache/commons/codec/language/bm/gen_rules_arabic.txt
+SHA1-Digest: yt4PLY35eX3omtnfi8cYJAdUwDA=
+
+Name: assets/www/images/flags/sz.png
+SHA1-Digest: UmETstxF6ZO8rFc/YIfmgoYDvsE=
+
+Name: assets/www/images/flags/gh.png
+SHA1-Digest: KxKSaHkFdwK4hryynkeITr2e54A=
+
+Name: assets/www/css/source-sans-pro.css
+SHA1-Digest: R2i9XRhoBaswnVzSwFwYozTBD1g=
+
+Name: org/apache/commons/codec/language/bm/gen_rules_portuguese.txt
+SHA1-Digest: ZyRdA9Y1nTUQmmRm1z2kwmyl9Xk=
+
+Name: org/apache/commons/codec/language/bm/gen_approx_dutch.txt
+SHA1-Digest: ZK+AVLklo2cJUK6apOygqti1wRM=
+
+Name: assets/www/fonts/OTF/SourceSansPro-ExtraLightIt.otf
+SHA1-Digest: fzpVI0/y2HNCZx6fJDoYcRCMbGg=
+
+Name: res/layout/zxing_barcode_scanner.xml
+SHA1-Digest: 2aVvfV87w8RAvPScPZ7s7Rvm97U=
+
+Name: assets/www/challenge09.html
+SHA1-Digest: ibrgDTzliRPWpcPBW2QLHh4+ysk=
+
+Name: assets/www/images/flags/dj.png
+SHA1-Digest: Y7zhj4x5QxHoLK9+xJPn3czS18k=
+
+Name: assets/www/images/flags/br.png
+SHA1-Digest: PRLDTbS4o4ohmrKlydk23aYyOjg=
+
+Name: org/apache/commons/codec/language/bm/gen_exact_czech.txt
+SHA1-Digest: 00E7VR452tbgGSDvaN2vH71JXd0=
+
+Name: assets/www/images/flags/tv.png
+SHA1-Digest: AEnqGFyCJHbvrRp1cfsMY5oT94I=
+
+Name: assets/www/images/flags/ps.png
+SHA1-Digest: 8bv+kLSoihNx3KqQE+lYDaZvJ6U=
+
+Name: assets/www/images/flags/pa.png
+SHA1-Digest: 5tH4767OHGvCHAfncEpKNi+hQJQ=
+
+Name: assets/www/images/flags/td.png
+SHA1-Digest: Ye55ys6TOA0w0c/wMmco2eaFDaY=
+
+Name: assets/www/images/flags/gq.png
+SHA1-Digest: Trp2148Y7awoQNKeUWW20vr4gzM=
+
+Name: classes.dex
+SHA1-Digest: HYzXR/Zfr2ubYD2Sdw6H9IOI9bs=
+
+Name: assets/www/js/crypto-js/enc-base64-min.js
+SHA1-Digest: szwqcTNq3ms0uMeQGvO1E3G2qzc=
+
+Name: assets/www/images/flags/tm.png
+SHA1-Digest: hJbBs/WBEIPr3FPyIsEjj7q0jrU=
+
+Name: assets/www/fonts/EOT/SourceSansPro-Bold.eot
+SHA1-Digest: SoCBcteBsx4JtKO1d5SgBF2CThU=
+
+Name: assets/www/images/flags/cn.png
+SHA1-Digest: axWy4Dy4ZEQbh7oWRaDhGrFspMU=
+

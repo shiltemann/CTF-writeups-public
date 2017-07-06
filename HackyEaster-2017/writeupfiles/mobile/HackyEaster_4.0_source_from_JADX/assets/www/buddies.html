@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Hacky Easter 2017</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Hacky Easter 2017 is a free white-hat hacking competition" />
+    <meta name="keywords" content="Hacking Competition White-Hat Hacking-Lab Compass Free Fun CEH" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.dropotron.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>var showBar=false;</script>
+    <script>
+      function onUserDataInjected() {
+        if (userName && userName != "" && ticket && ticket != "") {
+          addBuddies(userName, ticket);
+          $("#buddyform").show();
+        } else {
+            $("#buddies").hide();
+            $("#noUser").show();
+        }
+      }
+
+      function buddy(add) {
+  	    var buddy = $("#inputBuddy").val();
+  	    if (!buddy || buddy=='') {
+  	      return;
+  	    }
+  	    if (add) {
+  	      addBuddy(userName, ticket, buddy);
+  	    } else {
+  	      removeBuddy(userName,ticket, buddy);
+  	    }
+      }
+    </script>
+  </head>
+
+  <body class="no-sidebar">
+  <div id="header-wrapper"></div>
+  <script>addHeader('buddies');</script>
+  <div id="main-wrapper">
+    <div class="container">
+      <section>
+        <div class="row">
+          <div class="8u">
+            <article class="box">
+              <header>
+                <h3>Buddies</h3>
+              </header>
+              <p>
+              <div id="noUser" style="display:none;">
+                This page is not available unless you <a href="register.html">register</a>.
+              </div>
+              <div id="buddies">loading...</div>
+              </p>
+            </article>
+            <article class="box">
+              <header>
+                <h3>Add your buddies!</h3>
+              </header>
+              <p>
+                Your friends and colleagues are playing Hacky Easter, too?
+                Add them to your buddy list, and check out who's the best
+                easter hacker in your group!
+              <form action="#" onsubmit="return false;" id="buddyform" style="display:none;">
+                <input type="text" value="" class="input-text" id="inputBuddy" placeholder="name of buddy" autocapitalize="off" autocorrect="off" autocomplete="off"></input><br/>
+                <input type="button" class="button" onClick="javascript:buddy(true);" value="Add" />
+                &#160;&#160;
+                <input type="button" class="button" onClick="javascript:buddy(false);" value="Remove" />
+              </form>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div id="footer-wrapper"></div>
+  <script>addFooter();</script>
+
+  </body>
+</html>

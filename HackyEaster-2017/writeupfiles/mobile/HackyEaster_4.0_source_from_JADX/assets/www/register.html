@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Hacky Easter 2017</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Hacky Easter 2017 is a free white-hat hacking competition" />
+    <meta name="keywords" content="Hacking Competition White-Hat Hacking-Lab Compass Free Fun CEH" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.dropotron.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/scripts.js"></script>
+	<script>
+      function onUserDataInjected() {
+    	  if (!userName || userName === "") {
+    		  $('#main-wrapper').show();
+    	  } else {
+    	      document.location = "index.html";
+    	  }
+      }
+      
+      function register() {
+    	  var email = document.getElementById('inputEmail').value;
+    	  var pass = document.getElementById('inputPass').value;
+		  $('#rowUnregistered').hide();
+		  $('#rowRegistering').show();
+	  setTimeout(function() {
+            document.location = "ps://auth?email=" + encodeURIComponent(email) + "&pass=" + encodeURIComponent(pass);
+          }, 100);
+      }
+      
+      function authFeedback(json) {
+          var jsonResp = JSON.parse(json);
+    	  if (jsonResp.rc == 0) {
+    	      var name = jsonResp.name;
+    	      var nation = jsonResp.nation;
+
+             if (name != null && name.length > 0) {
+                 registerUser(name, nation, 'easter');
+                 return;
+             }
+          }
+          $('#rowUnregistered').show();
+          $('#rowRegistering').hide();
+          showAlert('Error', 'Verification of Hacking-Lab account failed.');
+     }
+
+      function registrationFeedback(name, json) {
+	  $('#rowRegistering').hide();
+      	  var jsonResp = JSON.parse(json);
+    	  if (jsonResp.status == 0) {
+    		  $('#rowRegistered').show();
+    		  // User check ok, store ticket in app
+    		  var ticket = jsonResp.ticket;
+    		  document.location = "ps://store?name=" + encodeURIComponent(name) + "&ticket=" + encodeURIComponent(ticket);
+    		  return;
+    	  } else if (jsonResp.status == 1) {
+    		  showAlert('Error', 'Internal error');
+    	  } else if (jsonResp.status == 2) {
+    		  showAlert('Error', 'Communication error, could not reach mama bunny.');
+    	  } else if (jsonResp.status == 3) {
+    		  showAlert('Error', 'Sorry, the competition is over.');
+    	  } else if (jsonResp.status == -1) {
+    		  showAlert('Error', 'Internal error while registering. Try again later.')
+    	  }
+		  $('#rowUnregistered').show();
+      }
+      
+      function storeFeedback(json) {
+    	  var jsonResp = JSON.parse(json);
+    	  if (jsonResp.status == 0) {
+    		  $("#registrationRow").hide();
+        	  $("#registeredRow").show();    		  
+    	  } else {
+    		  showAlert('Error', 'Couldn\'t store data in app.');
+    	  }
+      }
+      
+    </script>
+  </head>
+  <body onTouch="javascript:void();">
+    <div id="header-wrapper"></div>  
+    <script>addHeader('home');</script>
+
+    <div id="main-wrapper" style="display:block;">
+      <div class="container">
+        <div class="row">
+          <div class="4u">
+            <section class="box">
+              <header>
+                <h3>Register app</h3>
+              </header>
+              <div id="rowUnregistered" style="display:block;">
+                <ol class="default">
+                  <li>Create an account on <a href="https://www.hacking-lab.com">Hacking Lab</a>, if you don't have one yet (it's free!).</li>
+                  <li>Make sure you have Internet connectivity</li>
+                  <li>Enter Hacking-Lab <b>e-mail</b> and password below</li>
+                  <li>Click on "Register app"</li>
+                </ol>
+                <form action="#" onsubmit="return false;">
+                  <input type="text" class="input-text" id="inputEmail" placeholder="HL E-Mail" autocapitalize="off" autocorrect="off" autocomplete="off"></input><br/>
+                  <input type="password" class="input-text" id="inputPass" placeholder="HL Password" autocapitalize="off" autocorrect="off" autocomplete="off"></input><br/>
+                  <input type="button" class="button" onClick="javascript:register();" value="Register app" />
+                </form>
+              </div>
+              <div id="rowRegistering" style="display:none;">Please wait...</div>
+	      <div id="rowRegistered" style="display:none;">
+                It's done!<br/><br/>
+                You may now use this app to solve challenges and submit solutions.<br/><br/>
+                If you want, you can register additional devices, for the same account.<br/><br/>
+                <div style="text-align: left; width: 100%; padding-top: 30px; padding-bottom: 10px;">
+                  <input type="button" class="button" onClick="javascript:document.location='challenges.html'" value="Go to challenges" />
+                </div>	
+              </div>		  
+            </section>
+          </div>
+	</div>
+      </div>
+    </div>
+    
+    <div id="footer-wrapper"></div>
+    <script>addFooter();</script>
+    
+	</body>
+</html>

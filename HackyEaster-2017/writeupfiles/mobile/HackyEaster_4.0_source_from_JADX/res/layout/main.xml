@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="1" android:id="@id/relativeLayout" android:background="#ffffff" android:layout_width="-2" android:layout_height="-2">
+    <android.webkit.WebView android:id="@id/appView" android:layout_width="-1" android:layout_height="-1" />
+</RelativeLayout>

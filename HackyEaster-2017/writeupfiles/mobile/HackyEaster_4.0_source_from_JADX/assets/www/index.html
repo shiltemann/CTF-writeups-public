@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Hacky Easter 2017</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Hacky Easter 2017 is a free white-hat hacking competition" />
+    <meta name="keywords" content="Hacking Competition White-Hat Hacking-Lab Compass Free Fun CEH" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.dropotron.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/scripts.js"></script>
+	<script>
+    function onUserDataInjected() {
+    	if (userName && !userName == "") {
+    		$("#userName").html(userName);
+    		$("#rowRegistered").show();
+    	} else {
+    		$("#rowUnregistered").show();
+    	}
+    	ping();
+    }
+    </script>
+  </head>
+  <body class="homepage" onTouch="javascript:void();">
+  
+    <div id="header-wrapper"></div>
+    <script>addHeader('home');</script>
+
+    <div id="main-wrapper">
+      <div class="container">
+        <div class="row" id="rowUnregistered" style="display:none;">
+          <div class="4u">
+            <section class="box">
+              <header>
+                <h3>Welcome to the Hacky Easter app!</h3>
+              </header>
+              <p>This is a hacking contest for both education and fun! In order to participate, 
+                you need to register this app first. Visit
+                <a target="_blank" href="https://hackyeaster.hacking-lab.com">hackyeaster.hacking-lab.com</a>
+                for information. Have fun! <a target="_blank" href="https://www.hacking-lab.com/user/profile/PS/">PS</a></p>
+                <div style="text-align: left; width: 100%; padding-top: 20px; padding-bottom: 10px;">
+                  <input type="button" class="button" onClick="javascript:document.location='register.html'" value="Register app" />
+                </div>
+		      </p>
+            </section>
+          </div>
+		</div>
+        <div class="row" id="rowRegistered" style="display:none;">
+          <div class="4u">
+            <section class="box">
+              <header>
+                <h3>Welcome, <span id="userName"></span>!</h3>
+              </header>
+			  <p>This app is registered. You may solve challenges here in the <a href="challenges.html">app</a>
+              and on the server. Good luck and have fun!</p>			  
+            </section>
+          </div>
+		</div>
+        <div class="row">
+            <div class="4u" style="margin-top:-10px;">
+                <section class="box">
+                    <div class="12u" style="margin-top:10px; margin-bottom:0;">
+                        <img src="images/hand.png" style="height: 24px; margin: -4px 4px -12px 0px; position: relative; top: -7px; left:0;" />
+                        Tell a friend about Hacky Easter!<br/><br/>
+                        <input type="button" class="button" onClick="javascript:window.location = 'ps://share';" value="Share Link" />
+                    </div>
+                </section>
+            </div>
+      </div>
+    </div>
+    
+    <div id="footer-wrapper"></div>
+    <script>addFooter();</script>
+    
+	</body>
+</html>

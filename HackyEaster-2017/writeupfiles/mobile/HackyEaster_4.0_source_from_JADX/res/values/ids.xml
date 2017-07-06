@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="decode" />
+    <item type="id" name="decode_failed" />
+    <item type="id" name="decode_succeeded" />
+    <item type="id" name="launch_product_query" />
+    <item type="id" name="quit" />
+    <item type="id" name="restart_preview" />
+    <item type="id" name="return_scan_result" />
+    <item type="id" name="zxing_back_button" />
+    <item type="id" name="zxing_camera_error" />
+    <item type="id" name="zxing_decode" />
+    <item type="id" name="zxing_decode_failed" />
+    <item type="id" name="zxing_decode_succeeded" />
+    <item type="id" name="zxing_possible_result_points" />
+    <item type="id" name="zxing_prewiew_size_ready" />
+    <item type="id" name="microscopeWebView">false</item>
+    <item type="id" name="sndTitleView">false</item>
+    <item type="id" name="sndTextView">false</item>
+    <item type="id" name="sndImageView">false</item>
+    <item type="id" name="preview_view">false</item>
+    <item type="id" name="viewfinder_view">false</item>
+    <item type="id" name="result_view">false</item>
+    <item type="id" name="status_view">false</item>
+    <item type="id" name="relativeLayout">false</item>
+    <item type="id" name="appView">false</item>
+    <item type="id" name="backgroundImage">false</item>
+    <item type="id" name="splashImage">false</item>
+    <item type="id" name="zxing_barcode_surface">false</item>
+    <item type="id" name="zxing_viewfinder_view">false</item>
+    <item type="id" name="zxing_status_view">false</item>
+    <item type="id" name="zxing_barcode_scanner">false</item>
+</resources>

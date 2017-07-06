@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Hacky Easter 2017</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Hacky Easter 2017 is a free white-hat hacking competition" />
+    <link rel="icon" type="image/ico" href="images/favicon.ico">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.dropotron.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+      var query = getQueryParams(document.location.search);
+      var userToShow = query.name;
+
+      function onUserDataInjected() {
+        if (userToShow) {
+          $("#userName").html('Egg Basket of ' + userToShow);
+          addEggs(userToShow);
+        } else {
+          if (userName && userName != "") {
+            $("#userName").html('Your Egg Basket, ' + userName + '.');
+            addEggs(userName);
+          } else {
+            $("#userName").text('Not registered.');
+            $('#eggs').html('You\'re not registered yet. Do so by clicking <a href="register.html">here</a>');
+          }
+        }
+        $('#main-wrapper').show();
+      }
+
+     function shareTwitter() {
+        lvl = $("#userLevel").text();
+        score = $("#totalScore").text();
+        window.location = 'ps://mystatus?level=' + encodeURI(lvl) + '&score=' + encodeURI(score);
+      }
+    </script>
+  </head>
+  
+  <body class="no-sidebar">    
+    <div id="header-wrapper"></div>
+    <script>addHeader('eggs');</script>
+    <div id="main-wrapper">
+      <div class="container">
+        <section>
+          <div class="row">
+            <div class="8u">
+              <article class="box">
+                <header>
+                  <h3><span id="userName">Egg Basket</span></h3>
+                </header>
+                <p>
+                  <div id="noUser" style="display:none;">
+                    This page is not available unless you <a href="register.html">register this browser</a>.
+                  </div>
+                  <div id="eggs">loading...</div>
+                </p>  
+              </article>
+            </div>
+            <div class="4u" id="sidebar">
+              <section class="box">
+                <a href="#" class="image featured challenge"><img src="images/eggbasket.jpg"></a>
+                <header>
+                  <h3>Statistics</h3>
+                </header>
+                <p id="statistics" style="display:none;">
+                  <span class="statsTitle">Level:</span><span id="userLevel"></span><br/>
+                  <span class="statsTitle">Total Score:</span><span id="totalScore"></span><br/>
+                  <span class="statsTitle">Total Eggs:</span><span id="totalEggs"></span><br/>
+                  <span class="statsTitle">Easy Eggs:</span><span id="easyEggs"></span><br/>
+                  <span class="statsTitle">Medium Eggs:</span><span id ="mediumEggs"></span><br/>
+                  <span class="statsTitle">Hard Eggs:</span><span id="hardEggs"></span><br/><br/>
+                  <input id="tweetButton" type="button" class="button" style="display:none; background-image:url('images/twitter_white.png'); background-repeat:no-repeat; background-size: 32px; background-position: 16px;" onClick="javascript:shareTwitter();" value="tweet my status" />
+                </p>
+              </section>
+              <section class="box" id="manualCode" style="display:none;">
+                <h3 style="padding-bottom: 10px;">Manual Code Submission</h3>
+                <p>
+                Trouble scanning an easter egg / QR code, with the Hacky Easter mobile app?
+                <br/>
+                Use another app or online service, and enter the code here:
+                </p>
+                <p>
+                <form action="#" onsubmit="return false;">
+                  <input type="text" value="" class="input-text" id="inputCode" placeholder="easter egg code" autocapitalize="off" autocorrect="off" autocomplete="off"></input><br/>
+                  <input type="button" class="button" onClick="javascript:submitCode();" value="Submit code" />
+                </form>
+                </p>
+              </section>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+	</body>
+</html>

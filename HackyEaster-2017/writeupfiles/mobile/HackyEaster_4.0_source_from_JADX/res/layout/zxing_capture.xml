@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+    <com.journeyapps.barcodescanner.CompoundBarcodeView app:id="@id/zxing_barcode_scanner" app:layout_width="-1" app:layout_height="-1" app:zxing_use_texture_view="false" app:zxing_preview_scaling_strategy="1" />
+</merge>
