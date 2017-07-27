@@ -137,7 +137,8 @@ Hopper: [http://www.hopperapp.com/download.html](http://www.hopperapp.com/downlo
  
 ODA - Online disassembler: https://www.onlinedisassembler.com/odaweb/  
 ILSpy - .NET decompiler: http://ilspy.net/   
- 
+
+Snowman -  native code to C/C++ decompiler: https://derevenets.com/ 
  
 **Documentation**  
 
