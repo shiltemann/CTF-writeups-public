@@ -10,7 +10,7 @@ Title                                    Category  Points  Flag
 ---------------------------------------- --------- ------- -----------------------------
 Dec 1: 5th Anniversary                    Easy      2/1     HV17-5YRS-4evr-IJHy-oXP1-c6Lw
 Dec 2: Wishlist                           Easy      2/1     HV17-Th3F-1fth-Pow3-r0f2-is32
-
+Dec 3: Strange Logcat Entry               Easy      2/1     HV17-th1s-isol-dsch-00lm-agic
 
 Hidden 1:  Header                         Hidden    1       HV17-4llw-aysL-00ki-nTh3-H34d
 Hidden 2:
@@ -19,7 +19,6 @@ Hidden 4:
 Hidden 5:
 
 ```
-
 
 
 There were 5  hidden balls this year.
@@ -193,17 +192,74 @@ HV17-Th3F-1fth-Pow3-r0f2-is32%
 HV17-Th3F-1fth-Pow3-r0f2-is32
 ```
 
-## Dec 3: Title  
-*hint*
+## Dec 3: Strange Logcat Entry  
+*Lost in messages*
 
 **Challenge**  
 
+I found those strange entries in my Android logcat, but I don't know what it's all about... I just want to read my messages!
+
+[Get the logcat](writeupfiles/logcat.txt)
+
 **Solution**  
+
+This is a long logcat file, but we notice that only two lines have raw tabs,
+suggesting they were manually added for the challenge:
+
+![](writeupfiles/logcat1.jpg)
+
+![](writeupfiles/logcat2.jpg)
+
+which are the following lines:
+
+```
+11-13 20:40:13.542	 137   137 I DEBUG	 : 			FAILED TO SEND RAW PDU MESSAGE
+
+[..]
+
+11-13 20:40:24.044	137	  137  DEBUG: I 07914400000000F001000B913173317331F300003AC7F79B0C52BEC52190F37D07D1C3EB32888E2E838CECF05907425A63B7161D1D9BB7D2F337BB459E8FD12D188CDD6E85CFE931
+```
+
+This seems to be a raw SMS format, which we can decode here:
+
+https://www.diafaan.com/sms-tutorials/gsm-modem-tutorial/online-sms-pdu-decoder/
+
+```
+Text message
+To:         +13371337133
+Message:    Good Job! Now take the Flag: HV17-th1s-isol-dsch-00lm-agic
+
+Additional information
+PDU type:      SMS-SUBMIT
+Reference:     0
+SMSC:          +44000000000
+Val. format:   None
+Data coding:   SMS Default Alphabet
+
+Original Encoded PDU fields
+SMSC:           07914400000000F0
+PDU header:     01
+TP-MTI:         01
+TP-RD:          00
+TP-VPF:         00
+TP-SRR:         00
+TP-UDHI:        00
+TP-RP:          00
+TP-MR:          00
+TP-DA:          0B913173317331F3
+TP-PID:         00
+TP-DCS:         00
+TP-UDL:         3A
+TP-UD:          C7F79B0C52BEC52190F37D07D1C3EB32888E2E838CECF05907425A63B7161D1D9BB7
+```
+
+So the flag is in the SMS!
+
 
 **Nugget**
 
 ```
-HV17-
+HV17-th1s-isol-dsch-00lm-agic
 ```
 
 ## Dec 4: Title  
