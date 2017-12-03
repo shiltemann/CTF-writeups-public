@@ -36,7 +36,7 @@ Dec 24:
 Hidden 1:  Header                         Hidden    1       HV17-4llw-aysL-00ki-nTh3-H34d
 Hidden 2:
 Hidden 3:  Robots                         Hidden    1       HV17-bz7q-zrfD-XnGz-fQos-wr2A
-Hidden 4:
+Hidden 4:  CSS                            Hidden    1       HE17-W3ll-T00E-arly-forT-his!
 Hidden 5:
 
 ```
@@ -141,10 +141,14 @@ HV17-bz7q-zrfD-XnGz-fQos-wr2A
 
 **Solution**
 
+This one was hiding in the css folder `/css/egg.png`, it's an egg from Hacky Easter!
+
+![](writeupfiles/egg.png)
+
 **Nugget**
 
 ```
-HV17-
+HE17-W3ll-T00E-arly-forT-his!
 ```
 
 ## Hidden ball 5:
