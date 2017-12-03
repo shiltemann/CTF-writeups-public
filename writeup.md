@@ -195,7 +195,7 @@ Something happened to my wishlist, please help me.
 
 **Solution**  
 
-This is clearly base-64 encoded, we decode, and still looks base64 endoded, taking the hint
+This is clearly base-64 encoded, we decode, and still looks base64 endoded. Taking the hint
 into account, we decode 32 times:
 
 ```bash
