@@ -195,7 +195,8 @@ Something happened to my wishlist, please help me.
 
 **Solution**  
 
-This appears to be repeatedly base-64 encoded
+This is clearly base-64 encoded, we decode, and still looks base64 endoded, taking the hint
+into account, we decode 32 times:
 
 ```bash
 $ cat Wishlist.txt | base64 -d | base64 -d | base64 -d | base64 -d | base64 -d |
