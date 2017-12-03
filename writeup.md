@@ -8,9 +8,30 @@ Another edition of Hacking-Lab's annual advent calender CTF. Every day between D
 ```
 Title                                    Category  Points  Flag
 ---------------------------------------- --------- ------- -----------------------------
-Dec 1: 5th Anniversary                    Easy      2/1     HV17-5YRS-4evr-IJHy-oXP1-c6Lw
-Dec 2: Wishlist                           Easy      2/1     HV17-Th3F-1fth-Pow3-r0f2-is32
-Dec 3: Strange Logcat Entry               Easy      2/1     HV17-th1s-isol-dsch-00lm-agic
+Dec  1: 5th Anniversary                  Easy      2/1     HV17-5YRS-4evr-IJHy-oXP1-c6Lw
+Dec  2: Wishlist                         Easy      2/1     HV17-Th3F-1fth-Pow3-r0f2-is32
+Dec  3: Strange Logcat Entry             Easy      2/1     HV17-th1s-isol-dsch-00lm-agic
+Dec  4:
+Dec  5:
+Dec  6:
+Dec  7:
+Dec  8:
+Dec  9:
+Dec 10:
+Dec 11:
+Dec 12:
+Dec 13:
+Dec 14:
+Dec 15:
+Dec 16:
+Dec 17:
+Dec 18:
+Dec 19:
+Dec 20:
+Dec 21:
+Dec 22:
+Dec 23:
+Dec 24:
 
 Hidden 1:  Header                         Hidden    1       HV17-4llw-aysL-00ki-nTh3-H34d
 Hidden 2:
@@ -27,11 +48,11 @@ There were 5  hidden balls this year.
 
 **Solution**
 
-challenges are accessed by url like `https://hackvent.hacking-lab.com/challenge.php?day=2`
+Challenges are accessed by url like `https://hackvent.hacking-lab.com/challenge.php?day=2`
 
-let's see what happens when we try to skip ahead to Christmas `?day=25`
+Let's see what happens when we try to skip ahead to Christmas `?day=25`
 
-we get:
+We get:
 
 ```
 The resource (#1959) you are trying to access, is not (yet) for your eyes.
@@ -220,7 +241,7 @@ which are the following lines:
 11-13 20:40:24.044	137	  137  DEBUG: I 07914400000000F001000B913173317331F300003AC7F79B0C52BEC52190F37D07D1C3EB32888E2E838CECF05907425A63B7161D1D9BB7D2F337BB459E8FD12D188CDD6E85CFE931
 ```
 
-This seems to be a raw SMS format, which we can decode here:
+This seems to be a raw SMS format, which we can decoded here:
 
 https://www.diafaan.com/sms-tutorials/gsm-modem-tutorial/online-sms-pdu-decoder/
 
