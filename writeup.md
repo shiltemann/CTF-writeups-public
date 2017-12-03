@@ -224,33 +224,33 @@ This seems to be a raw SMS format, which we can decode here:
 
 https://www.diafaan.com/sms-tutorials/gsm-modem-tutorial/online-sms-pdu-decoder/
 
+or using a python script:
+
+```bash
+$ pip install python-gsmmodem
 ```
-Text message
-To:         +13371337133
-Message:    Good Job! Now take the Flag: HV17-th1s-isol-dsch-00lm-agic
 
-Additional information
-PDU type:      SMS-SUBMIT
-Reference:     0
-SMSC:          +44000000000
-Val. format:   None
-Data coding:   SMS Default Alphabet
+```python
+import gsmmodem
+import json
 
-Original Encoded PDU fields
-SMSC:           07914400000000F0
-PDU header:     01
-TP-MTI:         01
-TP-RD:          00
-TP-VPF:         00
-TP-SRR:         00
-TP-UDHI:        00
-TP-RP:          00
-TP-MR:          00
-TP-DA:          0B913173317331F3
-TP-PID:         00
-TP-DCS:         00
-TP-UDL:         3A
-TP-UD:          C7F79B0C52BEC52190F37D07D1C3EB32888E2E838CECF05907425A63B7161D1D9BB7
+PDU='07914400000000F001000B913173317331F300003AC7F79B0C52BEC52190F37D07D1C3EB32888E2E838CECF05907425A63B7161D1D9BB7D2F337BB459E8FD12D188CDD6E85CFE931'
+
+decoded = gsmmodem.pdu.decodeSmsPdu(PDU)
+print json.dumps(decoded, indent=4)
+
+```
+
+```
+{
+    "reference": 0,
+    "protocol_id": 0,
+    "text": "Good Job! Now take the Flag: HV17-th1s-isol-dsch-00lm-agic",
+    "smsc": "+44000000000",
+    "number": "+13371337133",
+    "type": "SMS-SUBMIT",
+    "tpdu_length": 64
+}
 ```
 
 So the flag is in the SMS!
