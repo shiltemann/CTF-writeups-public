@@ -299,14 +299,16 @@ Santa has hidden something for you [here](writeupfiles/HoHoHo_medium.pdf)
 
 It's a pdf file, opening in okular popped up that ther was an embedded font file
 
-used `fontforge` to extract font from pdf and view it
+We used [fontforge](https://fontforge.github.io/overview.html) to extract the font from the pdf file and view it
 
 ![](writeupfiles/dec4-fontforge-before.png)
 
-..but I don't see any character in the boxes, so we select `view->fit to bounding box`, looks like they were just tiny
-and being enlarged in the pdf to create the visible text. 
+but, we don't see any character in the boxes, so we select `view->fit to bounding box`, looks like they were just tiny
+and being enlarged in the pdf to create the visible text.
 
 ![](writeupfiles/dec4-fontforge.png)
+
+And there is our flag!
 
 **Nugget**
 
