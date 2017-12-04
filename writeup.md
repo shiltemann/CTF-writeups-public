@@ -11,7 +11,7 @@ Title                                    Category  Points  Flag
 Dec  1: 5th Anniversary                  Easy      2/1     HV17-5YRS-4evr-IJHy-oXP1-c6Lw
 Dec  2: Wishlist                         Easy      2/1     HV17-Th3F-1fth-Pow3-r0f2-is32
 Dec  3: Strange Logcat Entry             Easy      2/1     HV17-th1s-isol-dsch-00lm-agic
-Dec  4:
+Dec  4: HoHoHo                           Medium    3/2     HV17-RP7W-DU6t-Z3qA-jwBz-jItj
 Dec  5:
 Dec  6:
 Dec  7:
@@ -288,17 +288,30 @@ So the flag is in the SMS!
 HV17-th1s-isol-dsch-00lm-agic
 ```
 
-## Dec 4: Title  
+## Dec 4: HoHoHo  
 *hint*
 
 **Challenge**  
 
+Santa has hidden something for you [here](writeupfiles/HoHoHo_medium.pdf)
+
 **Solution**  
+
+It's a pdf file, opening in okular popped up that ther was an embedded font file
+
+used `fontforge` to extract font from pdf and view it
+
+![](writeupfiles/dec4-fontforge-before.png)
+
+..but I don't see any character in the boxes, so we select `view->fit to bounding box`, looks like they were just tiny
+and being enlarged in the pdf to create the visible text. 
+
+![](writeupfiles/dec4-fontforge.png)
 
 **Nugget**
 
 ```
-HV17-
+HV17-RP7W-DU6t-Z3qA-jwBz-jItj
 ```
 
 ## Dec 5: Title  
