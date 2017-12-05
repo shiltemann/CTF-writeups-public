@@ -12,7 +12,7 @@ Dec  1: 5th Anniversary                  Easy      2/1     HV17-5YRS-4evr-IJHy-o
 Dec  2: Wishlist                         Easy      2/1     HV17-Th3F-1fth-Pow3-r0f2-is32
 Dec  3: Strange Logcat Entry             Easy      2/1     HV17-th1s-isol-dsch-00lm-agic
 Dec  4: HoHoHo                           Medium    3/2     HV17-RP7W-DU6t-Z3qA-jwBz-jItj
-Dec  5: Only One hint                    Medium    3/3
+Dec  5: Only One hint                    Medium    3/2     HV17-7pKs-whyz-o6wF-h4rp-Qlt6
 Dec  6:
 Dec  7:
 Dec  8:
@@ -349,8 +349,9 @@ try to bruteforce?
 import binascii
 import itertools
 import string
+from array import array
 
-alphabet=string.ascii_letters + string.digits
+alphabet=string.printable
 
 ct=[0x69355f71,
 0xc2c8c11c,
@@ -359,21 +360,34 @@ ct=[0x69355f71,
 0xb1b827f4,
 0x97d1acf4]
 
-perms = list(itertools.permutations(alphabet, 4))
+perms = list(itertools.product(alphabet, repeat=4))
 
 for p in perms:
     tst = ''.join(p)
-    if binascii.crc32(tst) in ct:
-        print ("bingo! "+ tst +" ("+hex(binascii.crc32(tst))+")")
+    out = binascii.crc32(tst) & 0xffffffff
+
+    if out in ct:
+        print ("bingo! "+ tst +" ("+hex(out)+")")
 
 ```
 
-..hmm, only comes up with the solution to the first part, the `HV17`, there is a bit more to it but must be on the right track
+which gives the following output:
+
+```
+bingo! 7pKs (0xc2c8c11c)
+bingo! h4rp (0xb1b827f4)
+bingo! o6wF (0x9d26aaff)
+bingo! whyz (0xdf45873c)
+bingo! HV17 (0x69355f71)
+bingo! Qlt6 (0x97d1acf4)
+```
+
+whoo!
 
 **Nugget**
 
 ```
-HV17-
+HV17-7pKs-whyz-o6wF-h4rp-Qlt6
 ```
 
 ## Dec 6: Title  
