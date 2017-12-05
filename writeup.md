@@ -349,7 +349,6 @@ try to bruteforce?
 import binascii
 import itertools
 import string
-from array import array
 
 alphabet=string.printable
 
@@ -363,8 +362,8 @@ ct=[0x69355f71,
 perms = list(itertools.product(alphabet, repeat=4))
 
 for p in perms:
-    tst = ''.join(p)
-    out = binascii.crc32(tst) & 0xffffffff
+    # the & 0xffffffff only needed in python2
+    out = binascii.crc32( ''.join(p) ) & 0xffffffff
 
     if out in ct:
         print ("bingo! "+ tst +" ("+hex(out)+")")
