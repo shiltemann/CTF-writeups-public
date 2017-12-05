@@ -13,7 +13,7 @@ Dec  2: Wishlist                         Easy      2/1     HV17-Th3F-1fth-Pow3-r
 Dec  3: Strange Logcat Entry             Easy      2/1     HV17-th1s-isol-dsch-00lm-agic
 Dec  4: HoHoHo                           Medium    3/2     HV17-RP7W-DU6t-Z3qA-jwBz-jItj
 Dec  5: Only One hint                    Medium    3/2     HV17-7pKs-whyz-o6wF-h4rp-Qlt6
-Dec  6:
+Dec  6: Santa's journey                  Medium    3/2     HV17-eCFw-J4xX-buy3-8pzG-kd3M
 Dec  7:
 Dec  8:
 Dec  9:
@@ -316,7 +316,6 @@ HV17-RP7W-DU6t-Z3qA-jwBz-jItj
 ```
 
 ## Dec 5: Only One Hint  
-*hint*
 
 **Challenge**  
 
@@ -343,7 +342,7 @@ and the one and only hint:
 
 `crc32('HV17')` is `0x69355f71`
 
-try to bruteforce?
+Let's try to bruteforce the other parts:
 
 ```python
 import binascii
@@ -389,17 +388,87 @@ whoo!
 HV17-7pKs-whyz-o6wF-h4rp-Qlt6
 ```
 
-## Dec 6: Title  
-*hint*
+## Dec 6: Santa's Journey
+*Make sure Santa visits every country*
 
 **Challenge**  
 
+Follow Santa Claus as he makes his journey around the world.
+
+http://challenges.hackvent.hacking-lab.com:4200/
+
 **Solution**  
+
+when we click on the link we get a QR code image, it decodes to `Iceland`. If we refresch we get `Angola`.
+Ok, let's automate this, hope we get the flag if we try often enough:
+
+```python
+import requests
+from qrtools import QR
+
+
+while True:
+    # download image
+    url = "http://challenges.hackvent.hacking-lab.com:4200/"
+    r = requests.get(url)
+
+    with open("qrcode.png", "wb") as qrimage:
+        qrimage.write(r.content)
+
+    # read QR code
+    myCode = QR(filename='qrcode.png')
+    if myCode.decode():
+        print myCode.data_to_string()
+    if 'HV17' in myCode.data_to_string():
+        break;
+```
+
+This outputs:
+
+```
+Saint-Martin
+Lebanon
+Anguilla
+Nepal
+New Zealand
+Marshall Islands
+Western Sahara
+Chile
+Yemen
+Antarctica
+Lithuania
+Czech Republic
+Panama
+Saudi Arabia
+Mali
+
+[..]
+
+China
+Christmas Island
+Pitcairn
+Slovakia
+Pitcairn
+Bahrain
+Cape Verde
+Angola
+Malawi
+Ecuador
+Turkmenistan
+Jamaica
+Mozambique
+American Samoa
+HV17-eCFw-J4xX-buy3-8pzG-kd3M
+```
+
+whoo! we got our flag
+
+![](writeupfiles/dec6_qrcode.png)
 
 **Nugget**
 
 ```
-HV17-
+HV17-eCFw-J4xX-buy3-8pzG-kd3M
 ```
 
 ## Dec 7: Title  
