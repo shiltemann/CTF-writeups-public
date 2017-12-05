@@ -12,7 +12,7 @@ Dec  1: 5th Anniversary                  Easy      2/1     HV17-5YRS-4evr-IJHy-o
 Dec  2: Wishlist                         Easy      2/1     HV17-Th3F-1fth-Pow3-r0f2-is32
 Dec  3: Strange Logcat Entry             Easy      2/1     HV17-th1s-isol-dsch-00lm-agic
 Dec  4: HoHoHo                           Medium    3/2     HV17-RP7W-DU6t-Z3qA-jwBz-jItj
-Dec  5:
+Dec  5: Only One hint                    Medium    3/3
 Dec  6:
 Dec  7:
 Dec  8:
@@ -315,12 +315,60 @@ And there is our flag! ..looks like the characters were just tiny and being sele
 HV17-RP7W-DU6t-Z3qA-jwBz-jItj
 ```
 
-## Dec 5: Title  
+## Dec 5: Only One Hint  
 *hint*
 
 **Challenge**  
 
+Here is your flag:
+
+```
+0x69355f71
+0xc2c8c11c
+0xdf45873c
+0x9d26aaff
+0xb1b827f4
+0x97d1acf4
+```
+
+and the one and only hint:
+
+```
+0xFE8F9017 XOR 0x13371337
+```    
+
 **Solution**  
+
+`0xFE8F9017 XOR 0x13371337` is `0xedb88320` which is a polynomial involved in CRC32, and indeed
+
+`crc32('HV17')` is `0x69355f71`
+
+try to bruteforce?
+
+```python
+import binascii
+import itertools
+import string
+
+alphabet=string.ascii_letters + string.digits
+
+ct=[0x69355f71,
+0xc2c8c11c,
+0xdf45873c,
+0x9d26aaff,
+0xb1b827f4,
+0x97d1acf4]
+
+perms = list(itertools.permutations(alphabet, 4))
+
+for p in perms:
+    tst = ''.join(p)
+    if binascii.crc32(tst) in ct:
+        print ("bingo! "+ tst +" ("+hex(binascii.crc32(tst))+")")
+
+```
+
+..hmm, only comes up with the solution to the first part, the `HV17`, there is a bit more to it but must be on the right track
 
 **Nugget**
 
