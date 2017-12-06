@@ -542,6 +542,22 @@ $ strings SANTA.IMA | grep HV17
 Y*C:\Hackvent\HV17-UCyz-0yEU-d90O-vSqS-Sd64.exe
 ```
 
+Note: There was also a ROT-13 version of the flag, which is probably the way the
+challenge was designed to be solved:
+
+```bash
+$ strings SANTA.IMA |grep -4 HV17
+-+/D
+&xNsb
+GameDVR_GameGUID
+TitleIdr
+Y*C:\Hackvent\HV17-UCyz-0yEU-d90O-vSqS-Sd64.exe
+Typey=
+Revision
+P:\Unpxirag\UI17-HPlm-0lRH-q90B-iFdF-Fq64.rkr
+969343ecc7b246e8426e573c30fd94c4ffa050c2
+```
+
 **Nugget**
 
 ```
