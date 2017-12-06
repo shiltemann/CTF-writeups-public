@@ -14,7 +14,7 @@ Dec  3: Strange Logcat Entry             Easy      2/1     HV17-th1s-isol-dsch-0
 Dec  4: HoHoHo                           Medium    3/2     HV17-RP7W-DU6t-Z3qA-jwBz-jItj
 Dec  5: Only One hint                    Medium    3/2     HV17-7pKs-whyz-o6wF-h4rp-Qlt6
 Dec  6: Santa's journey                  Medium    3/2     HV17-eCFw-J4xX-buy3-8pzG-kd3M
-Dec  7:
+Dec  7: I know..                         Medium    3/2     HV17-UCyz-0yEU-d90O-vSqS-Sd64
 Dec  8:
 Dec  9:
 Dec 10:
