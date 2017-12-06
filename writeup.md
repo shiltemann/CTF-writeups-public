@@ -37,7 +37,7 @@ Hidden 1:  Header                         Hidden    1       HV17-4llw-aysL-00ki-
 Hidden 2:
 Hidden 3:  Robots                         Hidden    1       HV17-bz7q-zrfD-XnGz-fQos-wr2A
 Hidden 4:  CSS                            Hidden    1       HE17-W3ll-T00E-arly-forT-his!
-Hidden 5:
+Hidden 5:  Telnet                         Hidden    1       HV17-UH4X-PPLE-ANND-IH4X-T1ME
 
 ```
 
@@ -155,10 +155,53 @@ HE17-W3ll-T00E-arly-forT-his!
 
 **Solution**
 
+we scan the challenge server for open ports
+
+```bash
+$ nmap challenges.hackvent.hacking-lab.com
+
+Starting Nmap 7.01 ( https://nmap.org ) at 2017-12-06 22:59 CET
+Nmap scan report for challenges.hackvent.hacking-lab.com (80.74.140.188)
+Host is up (0.56s latency).
+rDNS record for 80.74.140.188: urb80-74-140-188.ch-meta.net
+Not shown: 996 filtered ports
+PORT    STATE  SERVICE
+22/tcp  open   ssh
+23/tcp  open   telnet
+80/tcp  closed http
+443/tcp closed https
+
+Nmap done: 1 IP address (1 host up) scanned in 67.94 seconds
+```
+
+so, there's a telnet service running, we connect, and are greeted by santa:
+
+
+```bash
+$ telnet challenges.hackvent.hacking-lab.com
+
+__.----.                                                
+              _.'        '-.                                             
+             /    _____     '-.                                          
+            /_.-""     ""-._   \                 HO, HO, HO...           
+           ."   _......._   ".  \                                        
+           ; .-' _ ))) _ '-. ;   |                                       
+           '/  ." _   _ ".  \'.  /                                       
+           _|  .-.^ ) ^.-.  |_ \/-.                                      
+           \ '"==-.(_).-=="' //    \                                     
+            '.____.-^-.____.' \    /                                     
+             |    ( - )   |   '--'                                       
+              \           /                                              
+      _________\_________/_______________________________________________
+
+```
+
+He keeps talking for a minute, and then gives us the flag
+
 **Nugget**
 
 ```
-HV17-
+HV17-UH4X-PPLE-ANND-IH4X-T1ME
 ```
 
 
@@ -399,7 +442,7 @@ http://challenges.hackvent.hacking-lab.com:4200/
 
 **Solution**  
 
-when we click on the link we get a QR code image, it decodes to `Iceland`. If we refresch we get `Angola`.
+When we click on the link we get a QR code image, it decodes to `Iceland`. If we refresh we get `Angola`.
 Ok, let's automate this, hope we get the flag if we try often enough:
 
 ```python
