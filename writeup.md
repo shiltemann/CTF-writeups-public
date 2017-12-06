@@ -514,17 +514,38 @@ whoo! we got our flag
 HV17-eCFw-J4xX-buy3-8pzG-kd3M
 ```
 
-## Dec 7: Title  
-*hint*
+## Dec 7: I know ...
+*... what you did last xmas*
 
 **Challenge**  
 
+We were able to steal a file from santas computer. We are sure, he prepared a gift and there are traces for it in this file.
+
+Please help us to recover it: [SANTA.FILE](writeupfiles/SANTA.FILE)
+
 **Solution**  
+
+I have a feeling this wasn't intended to be this easy, but..
+
+```bash
+$ file SANTA.FILE
+SANTA.FILE: Zip archive data, at least v1.0 to extract
+
+$ unzip SANTA.FILE
+Archive:  SANTA.FILE
+  inflating: SANTA.IMA   
+
+$ file SANTA.IMA
+SANTA.IMA: DOS/MBR boot sector, code offset 0x58+2, OEM-ID "WINIMAGE", sectors/cluster 4, root entries 16, sectors 3360 (volumes <=32 MB) , sectors/FAT 3, sectors/track 21, serial number 0x2b523d5, label: "           ", FAT (12 bit), followed by FAT
+
+$ strings SANTA.IMA | grep HV17
+Y*C:\Hackvent\HV17-UCyz-0yEU-d90O-vSqS-Sd64.exe
+```
 
 **Nugget**
 
 ```
-HV17-
+HV17-UCyz-0yEU-d90O-vSqS-Sd64
 ```
 
 ## Dec 8: Title  
