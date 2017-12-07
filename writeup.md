@@ -527,17 +527,53 @@ HV17-eCFw-J4xX-buy3-8pzG-kd3M
 HV17-
 ```
 
-## Dec 8: Title  
-*hint*
+## Dec 8: True 1337s
+... can read this instantly
 
 **Challenge**  
 
+I found this obfuscated code on a public FTP-Server. But I don't understand what it's doing...
+
 **Solution**  
+
+Obfuscated python.
+
+```
+for i in `seq 1 200`; do
+	echo $i;
+	q=$(python -c "print('+'.join(['True'] * $i))")
+	sed -i "s/($q)/($i)/g" True.1337
+	q=$(python -c "print('+'.join(['1337'] * $i))")
+	sed -i "s/($q)/($i)/g" True.1337
+done
+```
+
+Cleans up the code significantly. This leaves us with two functions, one on
+each line, calling a bunch of chrs. Replacing that with a `print()` call on
+each, we can see the original code:
+
+
+```
+A=chr
+SANTA=input
+FUN=print
+C=SANTA("?")
+if C=="1787569":FUN(''.join(chr(ord(a) ^ ord(b)) for a,b in zip("{gMZF_MC_X\ERF[X","31415926535897932384626433832")))
+```
+
+(Not preceisely the original, some things already deleted / cleaned up).
+
+Running it (or the original) with py3k + the magic number results in our flag:
+
+```
+?1787569
+HV17-th1s-ju5t-l1k3-j5sf-uck!
+```
 
 **Nugget**
 
 ```
-HV17-
+HV17-th1s-ju5t-l1k3-j5sf-uck!
 ```
 
 ## Dec 9: Title  
