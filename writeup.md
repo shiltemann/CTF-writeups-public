@@ -15,7 +15,7 @@ Dec  4: HoHoHo                           Medium    3/2     HV17-RP7W-DU6t-Z3qA-j
 Dec  5: Only One hint                    Medium    3/2     HV17-7pKs-whyz-o6wF-h4rp-Qlt6
 Dec  6: Santa's journey                  Medium    3/2     HV17-eCFw-J4xX-buy3-8pzG-kd3M
 Dec  7: I know..                         Medium    3/2     HV17-UCyz-0yEU-d90O-vSqS-Sd64
-Dec  8:
+Dec  8: True 1337s                       Medium    3/2     HV17-th1s-ju5t-l1k3-j5sf-uck!
 Dec  9:
 Dec 10:
 Dec 11:
@@ -571,11 +571,13 @@ HV17-UCyz-0yEU-d90O-vSqS-Sd64
 
 I found this obfuscated code on a public FTP-Server. But I don't understand what it's doing...
 
+[File](writeupfiles/True.1337)
+
 **Solution**  
 
-Obfuscated python.
+Obfuscated python. The following snippet cleans up the code significantly:
 
-```
+```bash
 for i in `seq 1 200`; do
 	echo $i;
 	q=$(python -c "print('+'.join(['True'] * $i))")
@@ -585,7 +587,7 @@ for i in `seq 1 200`; do
 done
 ```
 
-Cleans up the code significantly. This leaves us with two functions, one on
+This leaves us with two functions, one on
 each line, calling a bunch of chrs. Replacing that with a `print()` call on
 each, we can see the original code:
 
@@ -598,7 +600,7 @@ C=SANTA("?")
 if C=="1787569":FUN(''.join(chr(ord(a) ^ ord(b)) for a,b in zip("{gMZF_MC_X\ERF[X","31415926535897932384626433832")))
 ```
 
-(Not preceisely the original, some things already deleted / cleaned up).
+(Not precisely the original, some things already deleted / cleaned up).
 
 Running it (or the original) with py3k + the magic number results in our flag:
 
