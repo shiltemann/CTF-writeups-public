@@ -590,12 +590,12 @@ done
 
 This leaves us with two functions, one on each line, calling a bunch of chrs.
 
-```
+```python
 exec(chr(10)+chr(65)+chr(61)+chr(99)+chr(104)+chr(114)+     [..]
 __1337(_1337(10)+_1337(67)+_1337(61)+_1337(83)+_1337(65)+   [..]
 ```
 
-Replacing that with a `print()` call on each, we can see the original code:
+Replacing that with a `print()` call on each, and cleaning up more, we can see the original code:
 
 ```bash
 sed -i "s/exec/print/g" True.1337
