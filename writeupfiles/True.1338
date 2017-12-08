@@ -1,5 +1,8 @@
-A=chr
-SANTA=input
-FUN=print
+
+A=chr;__1337=exec;SANTA=input;FUN=print
+def _1337(B):return A(B//1337)
+
+
 C=SANTA("?")
 if C=="1787569":FUN(''.join(chr(ord(a) ^ ord(b)) for a,b in zip("{gMZF_MC_X\ERF[X","31415926535897932384626433832")))
+
