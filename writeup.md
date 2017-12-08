@@ -174,7 +174,7 @@ PORT    STATE  SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 67.94 seconds
 ```
 
-so, there's a telnet service running, we connect, and are greeted by santa:
+so, there's a telnet service running, we connect, and are greeted by Santa:
 
 
 ```bash
@@ -242,7 +242,7 @@ Something happened to my wishlist, please help me.
 
 **Solution**  
 
-This is clearly base-64 encoded, we decode, and still looks base64 endoded. Taking the hint
+This is clearly base-64 encoded, we decode, and still looks base64 encoded. Taking the hint
 into account, we decode 32 times:
 
 ```bash
@@ -394,21 +394,15 @@ import string
 
 alphabet=string.printable
 
-ct=[0x69355f71,
-0xc2c8c11c,
-0xdf45873c,
-0x9d26aaff,
-0xb1b827f4,
-0x97d1acf4]
+ct = [0x69355f71, 0xc2c8c11c, 0xdf45873c, 0x9d26aaff, 0xb1b827f4, 0x97d1acf4]
 
 perms = list(itertools.product(alphabet, repeat=4))
 
 for p in perms:
-    # the & 0xffffffff only needed in python2
-    out = binascii.crc32( ''.join(p) ) & 0xffffffff
+    out = binascii.crc32( ''.join(p) ) & 0xffffffff # & 0xffffffff only needed in python2
 
     if out in ct:
-        print ("bingo! "+ tst +" ("+hex(out)+")")
+        print("bingo! "+ tst +" ("+hex(out)+")")
 
 ```
 
@@ -461,7 +455,7 @@ while True:
     # read QR code
     myCode = QR(filename='qrcode.png')
     if myCode.decode():
-        print myCode.data_to_string()
+        print(myCode.data_to_string())
     if 'HV17' in myCode.data_to_string():
         break;
 ```
