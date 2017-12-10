@@ -1018,7 +1018,7 @@ b=0x88589F79D4129AB83923722E4FB6DD5E20C88FDD283AE5724F6A3697DD97
 # solve the equation
 a = gmpy2.divm(c, b, p)
 
-print int2Text(a,1000)
+print(int2Text(a,1000))
 ```
 
 **Nugget**
