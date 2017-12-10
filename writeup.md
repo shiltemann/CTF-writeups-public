@@ -18,7 +18,7 @@ Dec  7: I know..                         Medium    3/2     HV17-UCyz-0yEU-d90O-v
 Dec  8: True 1337s                       Medium    3/2     HV17-th1s-ju5t-l1k3-j5sf-uck!
 Dec  9: JSONion                          Medium    3/2     HV17-Ip11-9CaB-JvCf-d5Nq-ffyi
 Dec 10: Just play the game               Medium    3/2     HV17-y0ue-kn0w-7h4t-g4me-sure
-Dec 11:
+Dec 11: Crypt-o-Math                     Hard      4/3     HV17-XtDw-0DzO-YRgB-2b2e-UWNz
 Dec 12:
 Dec 13:
 Dec 14:
@@ -985,17 +985,46 @@ Press enter to start again
 HV17-y0ue-kn0w-7h4t-g4me-sure
 ```
 
-## Dec 11: Title  
-*hint*
+## Dec 11: Crypt-o-Math 2.0
 
 **Challenge**  
 
+you bruteforced last years math lessions? This time you cant escape!
+
+```
+c = (a * b) % p
+c=0x423EDCDCDCD928DD43EAEEBFE210E694303C695C20F42A27F10284215E90
+p=0xB1FF12FF85A3E45F722B01BF3135ED70A552251030B114B422E390471633
+b=0x88589F79D4129AB83923722E4FB6DD5E20C88FDD283AE5724F6A3697DD97
+```
+
+find `a` to get your flag.
+
 **Solution**  
+
+All we need to do is solve the modular equation, the `divm` function in `gmpy2` does exactly that:
+
+```python
+import gmpy2
+
+def int2Text(number, size):
+    return( "".join([chr((number >> j) & 0xff) for j in reversed(range(0, size << 3, 8))]) )
+
+# c = (a * b) % p
+c=0x423EDCDCDCD928DD43EAEEBFE210E694303C695C20F42A27F10284215E90
+p=0xB1FF12FF85A3E45F722B01BF3135ED70A552251030B114B422E390471633
+b=0x88589F79D4129AB83923722E4FB6DD5E20C88FDD283AE5724F6A3697DD97
+
+# solve the equation
+a = gmpy2.divm(c, b, p)
+
+print int2Text(a,1000)
+```
 
 **Nugget**
 
 ```
-HV17-
+HV17-XtDw-0DzO-YRgB-2b2e-UWNz
 ```
 
 ## Dec 12: Title  
