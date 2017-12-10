@@ -989,7 +989,7 @@ HV17-y0ue-kn0w-7h4t-g4me-sure
 
 **Challenge**  
 
-you bruteforced last years math lessions? This time you cant escape!
+You bruteforced last years math lessons? This time you cant escape!
 
 ```
 c = (a * b) % p
@@ -1007,7 +1007,7 @@ All we need to do is solve the modular equation, the `divm` function in `gmpy2` 
 ```python
 import gmpy2
 
-def int2Text(number, size):
+def int2Text(number, size=1000):
     return( "".join([chr((number >> j) & 0xff) for j in reversed(range(0, size << 3, 8))]) )
 
 # c = (a * b) % p
@@ -1018,7 +1018,7 @@ b=0x88589F79D4129AB83923722E4FB6DD5E20C88FDD283AE5724F6A3697DD97
 # solve the equation
 a = gmpy2.divm(c, b, p)
 
-print(int2Text(a,1000))
+print(int2Text(a))
 ```
 
 **Nugget**
