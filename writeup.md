@@ -1010,7 +1010,7 @@ import gmpy2
 
 
 def int_to_text(number):
-    return codecs.decode(format(number, 'x'), 'hex').decode('ascii')
+    return codecs.decode(format(number, 'x'), 'hex').decode('utf-8')
 
 
 # c = (a * b) % p
