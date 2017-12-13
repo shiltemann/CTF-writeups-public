@@ -1139,6 +1139,8 @@ How about some custom asm to obsfucate the codez?
 
 **Solution**  
 
+It is a python program, running a simple asm-like program:
+
 ```python
 #!/usr/bin/env python
 
@@ -1181,20 +1183,20 @@ print 'muffinx: Did you ever codez asm?'
 run('\x04\x00\x00\x04\x01\x01\x04\x02\x02\x04\x03\x03\x05\x02\xbd\x00\x02\x00\x00 [..] \x01\x03\x00\x01')
 ```
 
-Interesting, ok, lets run it ..we are asked for a flag and told no when we enter it incorrectly
+Interesting, ok, lets run it.. We are asked for a flag and are told "nope" when we enter it incorrectly:
 
 ```bash
 $ python muffin_asm.py
 [ muffin asm ]
 muffinx: Did you ever codez asm?
 << flag_getter v1.0 >>
-ohai, gimmeh flag: bla
+ohai, gimmeh flag: tardis
 [-] nope!
 ```
 
 We could try to reverse the program, but if the program checks the flag one character
 at a time and exits upon the first mismatch, we might be able to determine the flag
-by brute-forcing each subsequent character and determine the correct on from the number
+by brute-forcing each subsequent character and determine the correct one from the number
 of cycles it takes before failure.
 
 We adjust the program a bit to count the number of instructions and build the flag
