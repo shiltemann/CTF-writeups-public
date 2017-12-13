@@ -1213,7 +1213,10 @@ ohai, gimmeh flag: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 HV17-mUff!n-4sm-!s-cr4zY[+] valid! by muffinx :D if you liked the challenge, troll me @ twitter.com/muffiniks =D
 ```
 
+Whoo! we have our flag `HV17-mUff!n-4sm-!s-cr4zY`
 
+
+------
 NOTE: below is my initial, overly complex solution:
 
 We could try to reverse the program, but if the program checks the flag one character
