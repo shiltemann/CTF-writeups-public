@@ -1194,6 +1194,28 @@ ohai, gimmeh flag: tardis
 [-] nope!
 ```
 
+The program likely checks the string one character at a time with the `cmp` function, so we simply check what it is
+checking against by changing one line:
+
+```python
+# def _cmp(r1, r2): f[0] = (r[r1] == r[r2])  # old
+def _cmp(r1, r2): sys.stdout.write(chr(r[r2])); f[0] = (r[r2] == r[r2]);
+```
+
+Now we run the program, and give it a random string at least as long as the flag, and it just prints out the flag for us :D
+
+```
+$ python muffin_asm.py
+[ muffin asm ]
+muffinx: Did you ever codez asm?
+<< flag_getter v1.0 >>
+ohai, gimmeh flag: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+HV17-mUff!n-4sm-!s-cr4zY[+] valid! by muffinx :D if you liked the challenge, troll me @ twitter.com/muffiniks =D
+```
+
+
+NOTE: below is my initial, overly complex solution:
+
 We could try to reverse the program, but if the program checks the flag one character
 at a time and exits upon the first mismatch, we might be able to determine the flag
 by brute-forcing each subsequent character and determine the correct one from the number
