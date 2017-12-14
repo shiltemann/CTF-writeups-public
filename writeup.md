@@ -1584,12 +1584,47 @@ this prints our flag.
 HV17-5BMu-mgD0-G7Su-EYsp-Mg0b
 ```
 
-## Dec 15: Title  
-*hint*
+## Dec 15: Unsafe Gallery  
+*See pictures you shouldn't see*
 
 **Challenge**  
 
+
+The List of all Users of the Unsafe Gallery was leaked (See account list).
+With this list the URL to each gallery can be constructed. E.g. you find Danny's gallery here.
+
+Now find the flag in Thumper's gallery.
+
+[account list](writeupfiles/accounts.csv)
+
+like to Danny's gallery: http://challenges.hackvent.hacking-lab.com:3958/gallery/bncqYuhdQVey9omKA6tAFi4rep1FDRtD4H8ftWiw
+
 **Solution**  
+
+The file is a csv file with user information:
+
+```
+id,prename,name,address,zip,city,email,crmId,memberType,pictureCount,galleryCount,mbUsed,logCorrelationId,advertisingId,state
+0,Ethan,McCullough,1259 Arborwood Circle,27299,Manchester,Ethan.McCullough@mccullough.com,12739789,silver,26,1,77,19591907,1,disabled
+1,Vivian,Parsons,1222 Basin Way,49195,Byromville,Vivian.Parsons@gmx.com,24818112,platin,25,1,71,14903484,7,active
+2,Kaitlyn,Wells,1547 Kinzel Station,44404,Gibson,K.Wells@sunflower.org,2024240,platin,28,1,77,98402385,14,active
+3,Dakota,Hayes,1709 Akron Trail,3063,Morrow,Dakota.Hayes@sunflower.org,98938964,gold,29,1,76,60973407,21,active
+4,Tristan,Clarke,581 Stephens Terrace,62095,Alamo,T.Clarke@sunflower.org,32237218,gold,13,1,38,68087773,28,active
+```
+
+The gallery id could be some hash of this information?
+
+There are 3 Dannys in the list:
+
+```
+28,Danny,Gomez,446 Richards Ridge,67398,Dudley,Danny.Gomez@sunflower.org,4334991,silver,16,1,47,37880231,139,active
+981,Danny,Head,1783 Layton Crescent,10838,Hartwell,Danny.Head@head.com,8090609,platin,7,1,17,96695095,3988,active
+1411,Danny,Brewer,827 Emily Way,85285,Ochlocknee,Danny.Brewer@brewer.com,64452336,platin,17,1,46,58734130,5718,active
+```
+
+And one of these would appear to translate to `bncqYuhdQVey9omKA6tAFi4rep1FDRtD4H8ftWiw` as the Gallery ID.
+
+But how?
 
 **Nugget**
 
