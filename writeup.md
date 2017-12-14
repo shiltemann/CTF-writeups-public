@@ -21,7 +21,7 @@ Dec 10: Just play the game               Medium    3/2     HV17-y0ue-kn0w-7h4t-g
 Dec 11: Crypt-o-Math                     Hard      4/3     HV17-XtDw-0DzO-YRgB-2b2e-UWNz
 Dec 12: giftlogistics                    Hard      4/3     HV17-eUOF-mPJY-ruga-fUFq-EhOx
 Dec 13: muffin_asm                       Hard      4/3     HV17-mUff!n-4sm-!s-cr4zY
-Dec 14: Happy Cryptmas                   Hard      4/3
+Dec 14: Happy Cryptmas                   Hard      4/3     HV17-5BMu-mgD0-G7Su-EYsp-Mg0b
 Dec 15:
 Dec 16:
 Dec 17:
@@ -1550,16 +1550,39 @@ loc_100000de4:
 }
 ```
 
-This looks like RSA maybe? `e=65537, N=F66.. `
+This looks like RSA, with exponent `e=65537` and `N=0xF66EB887F2B8A620FD03C7D0633791CB4804739CE7FE001C81E6E02783737CA21DB2A0D8AF2D10B200006D10737A0872C667AD142F90407132EFABF8E5D6BD51`
 
-..but that doesnt quite work ..endanness orso?
+We get the prime factors of `N` (`p` and `q`)using factordb.com
 
+```python
+from Crypto.PublicKey import RSA
+import gmpy2
+
+def int2Text(number, size):
+    text = "".join([chr((number >> j) & 0xff) for j in reversed(range(0, size << 3, 8))])
+    return text.lstrip("\x00")
+
+N=0xF66EB887F2B8A620FD03C7D0633791CB4804739CE7FE001C81E6E02783737CA21DB2A0D8AF2D10B200006D10737A0872C667AD142F90407132EFABF8E5D6BD51L
+C=0x7A9FDCA5BB061D0D638BE1442586F3488B536399BA05A14FCAE3F0A2E5F268F2F3142D1956769497AE677A12E4D44EC727E255B391005B9ADCF53B4A74FFC34CL
+p=18132985757038135691L
+q=711781150511215724435363874088486910075853913118425049972912826148221297483065007967192431613422409694054064755658564243721555532535827L
+e=65537L
+r=(p-1)*(q-1)
+d = long(gmpy2.divm(1, e, r))
+rsa = RSA.construct((N,e,d,p,q))
+pt = rsa.decrypt(C)
+
+print(int2Text(pt,1000))
+
+```
+
+this prints our flag.
 
 
 **Nugget**
 
 ```
-HV17-
+HV17-5BMu-mgD0-G7Su-EYsp-Mg0b
 ```
 
 ## Dec 15: Title  
