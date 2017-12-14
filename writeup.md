@@ -1338,7 +1338,7 @@ Flag: 7A9FDCA5BB061D0D638BE1442586F3488B536399BA05A14FCAE3F0A2E5F268F2F3142D1956
 
 **Solution**  
 
-This is a Mach-O executable which we disassemble the file with Hopper: 
+This is a Mach-O executable which we disassemble the file with Hopper:
 
 ```
 ================ B E G I N N I N G   O F   P R O C E D U R E ================
@@ -1511,6 +1511,50 @@ loc_100000cf1:
     goto loc_100000e32;
 }
 ```
+
+or
+
+```
+int _main(int arg0, int arg1) {
+    var_8 = **___stack_chk_guard;
+    var_70 = arg1;
+    if (arg0 != 0x1) goto loc_100000cfd;
+
+loc_100000e32:
+    var_B0 = 0x0;
+    if (**___stack_chk_guard == var_8) {
+            rax = var_B0;
+    }
+    else {
+            rax = __stack_chk_fail();
+    }
+    return rax;
+
+loc_100000cfd:
+    __gmpz_init(&var_50);
+    __gmpz_init(&var_60);
+    __gmpz_init_set_str(&var_20, "F66EB887F2B8A620FD03C7D0633791CB4804739CE7FE001C81E6E02783737CA21DB2A0D8AF2D10B200006D10737A0872C667AD142F90407132EFABF8E5D6BD51", 0x10);
+    __gmpz_init_set_str(&var_40, "65537", 0xa);
+    __gmpz_import(&var_50, strlen(*(var_70 + 0x8)), 0x1, 0x1, 0x0, 0x0, *(var_70 + 0x8));
+    if (__gmpz_cmp(&var_50, &var_20) <= 0x0) goto loc_100000de4;
+
+loc_100000ddf:
+    rax = abort();
+    return rax;
+
+loc_100000de4:
+    __gmpz_powm(&var_60, &var_50, &var_40, &var_20);
+    __gmp_printf("Crypted: %ZX\n", &var_60);
+    __gmpz_clears(&var_50, &var_60, &var_20, &var_40, 0x0);
+    goto loc_100000e32;
+}
+```
+
+This looks like RSA maybe? `e=65537, N=F66.. `
+
+..but that doesnt quite work ..endanness orso?
+
+
 
 **Nugget**
 
