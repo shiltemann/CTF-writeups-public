@@ -1670,7 +1670,9 @@ import csv
 import hashlib
 import requests
 
-infile='thumper.csv'
+
+infile = 'thumper.csv'
+
 with open(infile, 'rb') as csvfile:
      reader = csv.reader(csvfile)
      userinfo = list(reader)
@@ -1681,24 +1683,21 @@ for user in userinfo:
     # sha
     m = hashlib.sha256()
     m.update(email)
-
-    #h = m.hexdigest().upper()
     sha = m.digest()
 
     # b64
     b = base64.b64encode(sha)
-
-    # remove non-alphanumeric
+    # remove non-alphanumeric characters
     b2 = b.replace('=','').replace('+','').replace('/','')
 
-    # test if link exists
+    # test link
     url = 'http://challenges.hackvent.hacking-lab.com:3958/gallery/'+b2
     r = requests.get(url)
     if 'HV17' in r.text:
         print(r.text)
 ```
 
-which finds us a hit at http://challenges.hackvent.hacking-lab.com:3958/gallery/37qKYVMANnIdJ2V2EDberGmMz9JzS1pfRLVWaIKuBDw :
+This finds us a hit at http://challenges.hackvent.hacking-lab.com:3958/gallery/37qKYVMANnIdJ2V2EDberGmMz9JzS1pfRLVWaIKuBDw :
 
 ```html
 [..]
