@@ -86,7 +86,7 @@ Content-Type: text/html; charset=UTF-8
 
 There is our flag!
 
-**Nugget**
+**Flag**
 
 ```
 HV17-4llw-aysL-00ki-nTh3-H34d
@@ -96,7 +96,7 @@ HV17-4llw-aysL-00ki-nTh3-H34d
 
 **Solution**
 
-**Nugget**
+**Flag**
 
 ```
 HV17-
@@ -131,7 +131,7 @@ HV17-bz7q-zrfD-XnGz-fQos-wr2A
 
 whoo, theres a flag!
 
-**Nugget**
+**Flag**
 
 ```
 HV17-bz7q-zrfD-XnGz-fQos-wr2A
@@ -145,7 +145,7 @@ This one was hiding in the css folder `/css/egg.png`, it's an egg from Hacky Eas
 
 ![](writeupfiles/egg.png)
 
-**Nugget**
+**Flag**
 
 ```
 HE17-W3ll-T00E-arly-forT-his!
@@ -198,7 +198,7 @@ __.----.
 
 He keeps talking for a minute, and then gives us the flag
 
-**Nugget**
+**Flag**
 
 ```
 HV17-UH4X-PPLE-ANND-IH4X-T1ME
@@ -224,7 +224,7 @@ Looks like we need the solutions from previous years, good thing I kept writeups
 
 Putting the fragments together gives our nugget
 
-**Nugget**
+**Flag**
 
 ```
 HV17-5YRS-4evr-IJHy-oXP1-c6Lw
@@ -255,7 +255,7 @@ base64 -d | base64 -d | base64 -d | base64 -d | base64 -d | base64 -d
 HV17-Th3F-1fth-Pow3-r0f2-is32%   
 ```
 
-**Nugget**
+**Flag**
 
 ```
 HV17-Th3F-1fth-Pow3-r0f2-is32
@@ -325,7 +325,7 @@ print json.dumps(decoded, indent=4)
 So the flag is in the SMS!
 
 
-**Nugget**
+**Flag**
 
 ```
 HV17-th1s-isol-dsch-00lm-agic
@@ -352,7 +352,7 @@ hmm, we don't see any characters in the boxes, so we select `view->fit to boundi
 
 And there is our flag! ..looks like the characters were just tiny and being selectively enlarged in the pdf to create the visible text.
 
-**Nugget**
+**Flag**
 
 ```
 HV17-RP7W-DU6t-Z3qA-jwBz-jItj
@@ -419,7 +419,7 @@ bingo! Qlt6 (0x97d1acf4)
 
 whoo!
 
-**Nugget**
+**Flag**
 
 ```
 HV17-7pKs-whyz-o6wF-h4rp-Qlt6
@@ -502,7 +502,7 @@ whoo! we got our flag
 
 ![](writeupfiles/dec6_qrcode.png)
 
-**Nugget**
+**Flag**
 
 ```
 HV17-eCFw-J4xX-buy3-8pzG-kd3M
@@ -552,7 +552,7 @@ P:\Unpxirag\UI17-HPlm-0lRH-q90B-iFdF-Fq64.rkr
 969343ecc7b246e8426e573c30fd94c4ffa050c2
 ```
 
-**Nugget**
+**Flag**
 
 ```
 HV17-UCyz-0yEU-d90O-vSqS-Sd64
@@ -623,7 +623,7 @@ $ python3 True.1338
 HV17-th1s-ju5t-l1k3-j5sf-uck!
 ```
 
-**Nugget**
+**Flag**
 
 ```
 HV17-th1s-ju5t-l1k3-j5sf-uck!
@@ -801,7 +801,7 @@ None
 ```
 
 
-**Nugget**
+**Flag**
 
 ```
 HV17-Ip11-9CaB-JvCf-d5Nq-ffyi
@@ -979,7 +979,7 @@ HV17-y0ue-kn0w-7h4t-g4me-sure
 Press enter to start again
 ```
 
-**Nugget**
+**Flag**
 
 ```
 HV17-y0ue-kn0w-7h4t-g4me-sure
@@ -1024,7 +1024,7 @@ a = gmpy2.divm(c, b, p)
 print(int_to_text(a))
 ```
 
-**Nugget**
+**Flag**
 
 ```
 HV17-XtDw-0DzO-YRgB-2b2e-UWNz
@@ -1120,7 +1120,7 @@ Date: Mon, 11 Dec 2017 23:34:09 GMT
 {"sub":"HV17-eUOF-mPJY-ruga-fUFq-EhOx","name":"Reginald Thumblewood","preferred_username":"santa"}
 ```
 
-**Nugget**
+**Flag**
 
 ```
 HV17-eUOF-mPJY-ruga-fUFq-EhOx
@@ -1317,7 +1317,7 @@ HV17-mUff!n-4sm-!s-cr4zY
 
 -----
 
-**Nugget**
+**Flag**
 
 ```
 HV17-mUff!n-4sm-!s-cr4zY
@@ -1578,7 +1578,7 @@ print(int2Text(pt,1000))
 this prints our flag.
 
 
-**Nugget**
+**Flag**
 
 ```
 HV17-5BMu-mgD0-G7Su-EYsp-Mg0b
@@ -1719,7 +1719,7 @@ This finds us a hit at http://challenges.hackvent.hacking-lab.com:3958/gallery/3
 
 ![](writeupfiles/day15.png)
 
-**Nugget**
+**Flag**
 
 ```
 HV17-el2S-0Td5-XcFi-6Wjg-J5aB
@@ -1732,7 +1732,7 @@ HV17-el2S-0Td5-XcFi-6Wjg-J5aB
 
 **Solution**  
 
-**Nugget**
+**Flag**
 
 ```
 HV17-
@@ -1745,7 +1745,7 @@ HV17-
 
 **Solution**  
 
-**Nugget**
+**Flag**
 
 ```
 HV17-
@@ -1758,7 +1758,7 @@ HV17-
 
 **Solution**  
 
-**Nugget**
+**Flag**
 
 ```
 HV17-
@@ -1771,7 +1771,7 @@ HV17-
 
 **Solution**  
 
-**Nugget**
+**Flag**
 
 ```
 HV17-
@@ -1784,7 +1784,7 @@ HV17-
 
 **Solution**  
 
-**Nugget**
+**Flag**
 
 ```
 HV17-
@@ -1797,7 +1797,7 @@ HV17-
 
 **Solution**  
 
-**Nugget**
+**Flag**
 
 ```
 HV17-
@@ -1810,7 +1810,7 @@ HV17-
 
 **Solution**  
 
-**Nugget**
+**Flag**
 
 ```
 HV17-
@@ -1823,7 +1823,7 @@ HV17-
 
 **Solution**  
 
-**Nugget**
+**Flag**
 
 ```
 HV17-
@@ -1836,7 +1836,7 @@ HV17-
 
 **Solution**  
 
-**Nugget**
+**Flag**
 
 ```
 HV17-
