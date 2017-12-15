@@ -1698,7 +1698,7 @@ for user in userinfo:
         print(r.text)
 ```
 
-which finds us a hit:
+which finds us a hit at http://challenges.hackvent.hacking-lab.com:3958/gallery/37qKYVMANnIdJ2V2EDberGmMz9JzS1pfRLVWaIKuBDw :
 
 ```html
 [..]
