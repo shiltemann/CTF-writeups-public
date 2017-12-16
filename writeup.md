@@ -1798,6 +1798,7 @@ Denied
 
 ..seems like certain characters are forbidden
 
+possibly useful [link](https://wapiflapi.github.io/2013/04/22/plaidctf-pyjail-story-of-pythons-escape/)
 
 **Flag**
 
