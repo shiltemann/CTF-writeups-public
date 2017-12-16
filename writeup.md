@@ -23,7 +23,7 @@ Dec 12: giftlogistics                    Hard      4/3     HV17-eUOF-mPJY-ruga-f
 Dec 13: muffin_asm                       Hard      4/3     HV17-mUff!n-4sm-!s-cr4zY
 Dec 14: Happy Cryptmas                   Hard      4/3     HV17-5BMu-mgD0-G7Su-EYsp-Mg0b
 Dec 15: Unsafe Gallery                   Hard      4/3     HV17-el2S-0Td5-XcFi-6Wjg-J5aB
-Dec 16:
+Dec 16: Try to escape ..                 Hard      4/3     
 Dec 17:
 Dec 18:
 Dec 19:
@@ -1725,12 +1725,79 @@ This finds us a hit at http://challenges.hackvent.hacking-lab.com:3958/gallery/3
 HV17-el2S-0Td5-XcFi-6Wjg-J5aB
 ```
 
-## Dec 16: Title  
-*hint*
+## Dec 16: Try to escape ...  
+*... from the snake cage*
 
 **Challenge**  
 
+Santa programmed a secure jail to give his elves access from remote. Sadly the jail is not as secure as expected.
+
+`nc challenges.hackvent.hacking-lab.com 1034`
+
 **Solution**  
+
+```
+$ nc challenges.hackvent.hacking-lab.com 1034
+                        _____
+                    .-'`     '.
+                 __/  __       \\
+                /  \ /  \       |    ___
+               | /`\| /`\|      | .-'  /^\/^\\
+               | \(/| \(/|      |/     |) |)|
+              .-\__/ \__/       |      \_/\_/__..._
+      _...---'-.                /   _              '.
+     /,      ,             \   '|  `\                \\
+    | ))     ))           /`|   \    `.       /)  /) |
+    | `      `          .'       |     `-._         /
+    \                 .'         |     ,_  `--....-'
+     `.           __.' ,         |     / /`'''`
+       `'-.____.-' /  /,         |    / /
+           `. `-.-` .'  \        /   / |
+             `-.__.'|    \      |   |  |-.
+                _.._|     |     /   |  |  `'.
+          .-''``    |     |     |   /  |     `-.
+       .'`         /      /     /  |   |        '.
+     /`           /      /     |   /   |\         \\
+    /            |      |      |   |   /\          |
+   ||            |      /      |   /     '.        |
+   |\            \      |      /   |       '.      /
+   \ `.           '.    /      |    \        '---'/
+    \  '.           `-./        \    '.          /
+     '.  `'.            `-._     '.__  '-._____.'--'''''--.
+       '-.  `'--._          `.__     `';----`              \\
+          `-.     `-.          `."'```                     ;
+             `'-..,_ `-.         `'-.                     /
+                    '.  '.           '.                 .'
+
+Challenge by pyth0n33. Have fun!
+
+
+
+The flag is stored super secure in the function SANTA!
+>>> a =
+```
+
+Looks like a python jail. We poke around a bit
+
+```
+>>> a = SANTA()
+name 'santa' is not defined
+>>> a = 2
+>>> a = print(a)
+2
+>>> a = 1
+Denied
+>>> a = eval('2+2')
+>>> print(a)
+4
+>>> a = 'b'
+Denied
+>>> a = 'a'
+>>> a =
+```
+
+..seems like certain characters are forbidden
+
 
 **Flag**
 
