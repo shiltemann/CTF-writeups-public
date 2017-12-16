@@ -1800,6 +1800,20 @@ Denied
 
 possibly useful [link](https://wapiflapi.github.io/2013/04/22/plaidctf-pyjail-story-of-pythons-escape/)
 
+We try inputting all printables to see which are allowed and which aren't:
+
+```
+allowed:
+['0', '1', '2', '3', '7', '9', 'a', 'c', 'd', 'e', 'i', 'l', 'n', 'o', 'p', 'r',
+'s', 't', 'v', 'A', 'C', 'D', 'E', 'I', 'L', 'N', 'O', 'P', 'R', 'S', 'T', 'V',
+'_','"', "'", '(', ')', '+', '.', '[', ']', '\n', '\r']
+disallowed:
+['4', '5', '6', '8', 'b', 'f', 'g', 'h', 'j', 'k', 'm', 'q', 'u', 'w', 'x', 'y',
+'z', 'B', 'F', 'G', 'H', 'J', 'K', 'M', 'Q', 'U', 'W', 'X', 'Y', 'Z', '!', '#',
+'$', '%', '&', '*', ',', '-', '/', ':', ';', '<', '=', '>', '?', '@', '\\', '^',
+'`', '{', '|', '}', '~', ' ', '\t', '\x0b', '\x0c']
+```
+
 **Flag**
 
 ```
