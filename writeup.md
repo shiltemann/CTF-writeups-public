@@ -1814,6 +1814,32 @@ disallowed:
 '`', '{', '|', '}', '~', ' ', '\t', '\x0b', '\x0c']
 ```
 
+functions we can use:
+
+```
+eval()
+all()
+repr()
+print()
+
+
+disallowed:
+['abs', 'any', 'apply', 'basestring', 'bin', 'bool', 'buffer', 'bytearray', 'bytes', 'callable', 'chr',
+'classmethod', 'cmp', 'compile', 'complex', 'copyright', 'divmod', 'enumerate', 'execfile', 'exit',
+'file', 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help',
+'hex', 'input', 'issubclass', 'long', 'map', 'max',  'memoryview', 'min', 'next', 'object', 'open',
+'pow', 'property', 'quit', 'range', 'raw_input', 'reduce', 'round', 'staticmethod', 'sum', 'super',
+'tuple', 'type', 'unichr', 'unicode', 'xrange', 'zip']
+undefined:
+['coerce', 'credits', 'delattr', 'dict', 'dir', 'id', 'int', 'intern', 'isinstance', 'iter', 'len',
+'license', 'list', 'locals', 'oct', 'ord', 'reload', 'reversed', 'set', 'setattr', 'slice', 'sorted',
+'str', 'vars']
+other:
+['all', 'eval', 'print', 'repr']
+
+```
+
+
 **Flag**
 
 ```
