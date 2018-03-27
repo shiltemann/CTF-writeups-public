@@ -73,9 +73,42 @@ Hidden Egg #3
 
 **Challenge**
 
+Your fellow inmate secretly passed you an old cell phone and a weird origami. The only thing on the phone are two stored numbers.
+
+```
+555-7747663 Link
+555-7475464 Sara
+```
+
+Find the password and enter it in the Egg-o-Matic below. lowercase only, no spaces!
+
+![](writeupfiles/chall01/origami.png)
+
 **Solution**
 
+![](writeupfiles/chall01/t9.png)
+
+Combine the telephone numbers with the dots on the origami and a T9 pad:
+
+```
+7747663
+1334322
+prisone
+
+7475464
+3342321
+risking
+
+```
+
+this reads `prisonerisking`, enter this into egg-o-matic to get our egg
+
+
 **Egg**
+
+
+![](writeupfiles/chall01/egg.png)
+
 
 
 ## Challenge 02:
