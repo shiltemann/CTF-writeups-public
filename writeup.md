@@ -190,9 +190,13 @@ Hidden Egg #3
 
 **Egg**
 
-## Challenge 16:
+## Challenge 16: git cloak --hard
 
 **Challenge**
+
+This one requires your best Git-Fu! Find the hidden egg in the repository.
+
+[repo.zip](writeupfiles/chall16/repo.zip)
 
 **Solution**
 
