@@ -247,6 +247,8 @@ The zip files contains a git repo with a number of images in it:
 <img src="writeupfiles/chall16/images/10.jpg" alt="image" width="100px"/>
 <img src="writeupfiles/chall16/images/11.png" alt="image" width="100px"/>
 
+The egg with the QR code translates to `7dUDQDhMQkLYsQTMJq62`, but this is not a valid egg of course.
+
 ```bash
 $ git log
 commit b9e860f47fe6990cbda4ac5bb3d2829d2191f1eb (HEAD -> master)
@@ -282,7 +284,7 @@ we see that image 2 was modified and another image deleted
 ![](writeupfiles/chall16/images/02-2.png)
 ![](writeupfiles/chall16/images/04.png)
 
-but alas, this different egg is still not what we are looking for..
+but alas, this different egg (QRcode reads `qdUX0sgDVjWxiFNifHKE`) is still not what we are looking for..
 
 
 ```bash
@@ -323,6 +325,16 @@ b9820d55ce59799992648672a5a43fff4effd56b 9d7c9b5a1c8773ea48caac90d05401679b0a889
 3839c14d2863fd850794661677352305ea798eb6 9a29769663d029f1b3ad83fec7e7f19ca1cf8e78 PS <ps@hacking-lab.com> 1516704195 -0500      commit: branch created
 9a29769663d029f1b3ad83fec7e7f19ca1cf8e78 3839c14d2863fd850794661677352305ea798eb6 PS <ps@hacking-lab.com> 1516704196 -0500      checkout: moving from branch to master
 3839c14d2863fd850794661677352305ea798eb6 b9e860f47fe6990cbda4ac5bb3d2829d2191f1eb PS <ps@hacking-lab.com> 1516704196 -0500      commit: even more funny images added
+
+$ git log --all --branches --remotes --tags --reflog --oneline --graph
+* b9e860f (HEAD -> master) even more funny images added
+| * 9a29769 (branch) branch created
+|/
+* 3839c14 more funny images added
+| * 9d7c9b5 added one more image
+| * b9820d5 temp branch created
+|/
+* 228b603 created the funny git meme repo
 ```
 
 ```
