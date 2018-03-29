@@ -86,17 +86,17 @@ Find the password and enter it in the Egg-o-Matic below. lowercase only, no spac
 
 **Solution**
 
-![](writeupfiles/chall01/t9.png)
-
 Combine the telephone numbers with the dots on the origami and a T9 pad:
 
+![](writeupfiles/chall01/t9.png)
+
 ```
-7747663
-1334322
+7747663 (Link)
+1334322 (number of dots)
 prisone
 
-7475464
-3342321
+7475464 (Sara)
+3342321 (number of dots)
 risking
 
 ```
@@ -235,16 +235,16 @@ This one requires your best Git-Fu! Find the hidden egg in the repository.
 
 The zip files contains a git repo with a number of images in it:
 
-<img src="writeupfiles/chall16/images/01.jpg" alt="image" style="width: 100px;"/>
-<img src="writeupfiles/chall16/images/02.png" alt="image" style="width: 100px;"/>
-<img src="writeupfiles/chall16/images/03.jpg" alt="image" style="width: 100px;"/>
-<img src="writeupfiles/chall16/images/05.jpg" alt="image" style="width: 100px;"/>
-<img src="writeupfiles/chall16/images/06.jpg" alt="image" style="width: 100px;"/>
-<img src="writeupfiles/chall16/images/07.png" alt="image" style="width: 100px;"/>
-<img src="writeupfiles/chall16/images/08.png" alt="image" style="width: 100px;"/>
-<img src="writeupfiles/chall16/images/09.jpg" alt="image" style="width: 100px;"/>
-<img src="writeupfiles/chall16/images/10.jpg" alt="image" style="width: 100px;"/>
-<img src="writeupfiles/chall16/images/11.png" alt="image" style="width: 100px;"/>
+<img src="writeupfiles/chall16/images/01.jpg" alt="image" style="width: 50px !important;"/>
+<img src="writeupfiles/chall16/images/02.png" alt="image" style="width: 50px !important;"/>
+<img src="writeupfiles/chall16/images/03.jpg" alt="image" style="width: 50px !important;"/>
+<img src="writeupfiles/chall16/images/05.jpg" alt="image" style="width: 50px !important;"/>
+<img src="writeupfiles/chall16/images/06.jpg" alt="image" style="width: 50px !important;"/>
+<img src="writeupfiles/chall16/images/07.png" alt="image" style="width: 50px !important;"/>
+<img src="writeupfiles/chall16/images/08.png" alt="image" style="width: 50px !important;"/>
+<img src="writeupfiles/chall16/images/09.jpg" alt="image" style="width: 50px !important;"/>
+<img src="writeupfiles/chall16/images/10.jpg" alt="image" style="width: 50px !important;"/>
+<img src="writeupfiles/chall16/images/11.png" alt="image" style="width: 50px !important;"/>
 
 ```bash
 $ git log
@@ -328,9 +328,9 @@ b9820d55ce59799992648672a5a43fff4effd56b 9d7c9b5a1c8773ea48caac90d05401679b0a889
 git checkout 9d7c9b5a1c8773ea48caac90d05401679b0a8897
 ```
 
-gives us another image, `tree.jpg` and another version of `02.png`:
+gives us another image, `tree.jpg` and yet another version of `02.png`:
 
-![](writeupfiles/chall16/imgages/02-3.png)
+![](writeupfiles/chall16/images/02-3.png)
 ![](writeupfiles/chall16/images/tree.jpg)
 
 **Egg**
