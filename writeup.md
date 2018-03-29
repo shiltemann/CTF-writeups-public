@@ -235,16 +235,17 @@ This one requires your best Git-Fu! Find the hidden egg in the repository.
 
 The zip files contains a git repo with a number of images in it:
 
-<img src="writeupfiles/chall16/images/01.jpg" alt="image" style="width: 50px !important;"/>
-<img src="writeupfiles/chall16/images/02.png" alt="image" style="width: 50px !important;"/>
-<img src="writeupfiles/chall16/images/03.jpg" alt="image" style="width: 50px !important;"/>
-<img src="writeupfiles/chall16/images/05.jpg" alt="image" style="width: 50px !important;"/>
-<img src="writeupfiles/chall16/images/06.jpg" alt="image" style="width: 50px !important;"/>
-<img src="writeupfiles/chall16/images/07.png" alt="image" style="width: 50px !important;"/>
-<img src="writeupfiles/chall16/images/08.png" alt="image" style="width: 50px !important;"/>
-<img src="writeupfiles/chall16/images/09.jpg" alt="image" style="width: 50px !important;"/>
-<img src="writeupfiles/chall16/images/10.jpg" alt="image" style="width: 50px !important;"/>
-<img src="writeupfiles/chall16/images/11.png" alt="image" style="width: 50px !important;"/>
+<table>
+<img src="writeupfiles/chall16/images/01.jpg" alt="image" width="100px"/>
+<img src="writeupfiles/chall16/images/02.png" alt="image" width="100px"/>
+<img src="writeupfiles/chall16/images/03.jpg" alt="image" width="100px"/>
+<img src="writeupfiles/chall16/images/05.jpg" alt="image" width="100px"/>
+<img src="writeupfiles/chall16/images/06.jpg" alt="image" width="100px"/>
+<img src="writeupfiles/chall16/images/07.png" alt="image" width="100px"/>
+<img src="writeupfiles/chall16/images/08.png" alt="image" width="100px"/>
+<img src="writeupfiles/chall16/images/09.jpg" alt="image" width="100px"/>
+<img src="writeupfiles/chall16/images/10.jpg" alt="image" width="100px"/>
+<img src="writeupfiles/chall16/images/11.png" alt="image" width="100px"/>
 
 ```bash
 $ git log
