@@ -22,7 +22,7 @@ Challenge 12: Patience                   Medium
 Challenge 13: Sagittarius...             Medium
 Challenge 14: Same same...               Medium
 Challenge 15: Manile greetings           Medium
-Challenge 16: git cloak --hard           Medium
+Challenge 16: git cloak --hard           Medium     he18-k4oU-OEar-n9Sr-ULi0
 Challenge 17: Space Invaders             Medium
 Challenge 18: Egg Factory                Medium
 Challenge 19: Virtual Hen                Hard
@@ -438,7 +438,21 @@ gives us another image, `tree.jpg` and yet another version of `02.png`:
 ![](writeupfiles/chall16/images/02-3.png)
 ![](writeupfiles/chall16/images/tree.jpg)
 
+Eventually discovered `git fsck` notes a dangling blob which is apparently some
+piece of data that was included at one point but the commit was later removed or backed out.
+
+```console
+$ git fsck
+Prüfe Objekt-Verzeichnisse: 100% (256/256), Fertig.
+dangling blob dbab6618f6dc00a18b4195fb1bec5353c51b256f
+$ git cat-file -p dbab6618f6dc00a18b4195fb1bec5353c51b256f > tmp.png
+$ file tmp.png
+tmp: PNG image data, 480 x 480, 8-bit colormap, non-interlaced
+```
+
 **Egg**
+
+![](writeupfiles/chal16/tmp.png)
 
 ## Challenge 17:
 
