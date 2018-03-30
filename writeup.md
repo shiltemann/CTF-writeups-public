@@ -11,7 +11,7 @@ Challenge 01: Prison Break               Easy       he18-gx8L-AJUw-DSMH-6aUI
 Challenge 02: Babylon                    Easy
 Challenge 03: Pony Coder                 Easy
 Challenge 04: Memeory                    Easy       he18-cGoS-a2tz-BD2w-zXH8
-Challenge 05: sloppy & Paste             Easy
+Challenge 05: sloppy & Paste             Easy       he18-2yTc-bJ1f-raIQ-gKc6
 Challenge 06: Cooking for Hackers        Easy
 Challenge 07: Jigsaw                     Easy
 Challenge 08: Disco Egg                  Easy
@@ -35,6 +35,19 @@ Hidden Egg #1
 Hidden Egg #2
 Hidden Egg #3
 ```
+
+## General
+
+Some challenges are mobile challenges that need to be solved with the Hacky Easter app
+
+We get the [apk](writeupfiles/HackyEaster_9_5.0.1.apk) for the app (e.g. with the GetAPK app)
+and decode it using `apktool`
+
+```bash
+$ sudo apt-get install apktool
+$ apktool decode HackyEaster_9_5.0.1.ap
+```
+
 
 ## Teaser
 
@@ -135,7 +148,7 @@ he18-gx8L-AJUw-DSMH-6aUI
 
 Fancy a round of memeory?
 
-!()[writeupfiles/chall04/cover.jpg]
+![](writeupfiles/chall04/cover.jpg)
 
 Click here to play.
 
@@ -180,7 +193,7 @@ We inspect the html, and can see the images on each of the cards:
 
 so we just find the pairs and play the game to get our egg:
 
-!()[writeupfiles/chall04/completed.png]
+![](writeupfiles/chall04/completed.png)
 
 **Egg**
 
@@ -191,13 +204,36 @@ he18-cGoS-a2tz-BD2w-zXH8
 ```
 
 
-## Challenge 05:
+## Challenge 05: Sloppy & Paste
 
 **Challenge**
 
+This was a mobille challenge.
+
+![](writeupfiles/chall05/screenshot.jpg)
+
 **Solution**
 
+When we try to copy the text shown, it copies a different text
+
+
+
+so we get the apk of the mobile app and decode it
+
+```
+apktool decode HackyEaster_9_5.0.1.apk
+```
+
+and find the string we are looking for in `assets/www/challenge05.html`
+
+
 **Egg**
+
+![](writeupfiles/chall05/egg.png)
+
+```
+he18-2yTc-bJ1f-raIQ-gKc6
+```
 
 ## Challenge 06:
 
