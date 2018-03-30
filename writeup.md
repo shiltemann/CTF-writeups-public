@@ -318,11 +318,34 @@ We convert it to [wav file](writeupfiles/chall09/dial.wav) and decode the DTMF t
 
 **Egg**
 
-## Challenge 11:
+## Challenge 11: De egg you must
 
 **Challenge**
 
+
+Who was first, the cat or the egg?
+
+![](writeupfiles/chall11/cover.jpg)
+
+[basket.zip](writeupfiles/chall11/basket.zip)
+
 **Solution**
+
+The zip file is password protected but easily cracked with fcrackzip and this [wordllist](http://mirrors.kernel.org/openwall/wordlists/passwords/)
+
+```bash
+$ fcrackzip -v --use-unzip -D -p dictionaries/password basket.zip
+found file 'egg1', (size cp/uc 1389653/1433600, flags 9, chk 4f21)
+found file 'egg2', (size cp/uc 1426168/1433600, flags 9, chk 4f21)
+found file 'egg3', (size cp/uc 1425557/1433600, flags 9, chk 4f21)
+found file 'egg4', (size cp/uc 1425787/1433600, flags 9, chk 4f21)
+found file 'egg5', (size cp/uc 1423266/1433600, flags 9, chk 4f21)
+found file 'egg6', (size cp/uc 362705/384584, flags 9, chk 4f21)
+
+
+PASSWORD FOUND!!!!: pw == thumper
+
+```
 
 **Egg**
 
