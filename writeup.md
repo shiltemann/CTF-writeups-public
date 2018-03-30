@@ -239,6 +239,35 @@ he18-2yTc-bJ1f-raIQ-gKc6
 
 **Challenge**
 
+```
+You've found this recipe online:
+
+    1 pinch: c2FsdA==
+
+    2 tablesspoons: b2ls
+
+    1 teaspoon: dDd3Mmc=
+
+    50g: bnRkby4=
+
+    2 medium, chopped: b25pb24=
+
+But you need one more secret ingredient! Find it!
+```
+
+These b64 decode to
+
+```
+1 pinch: salt
+2 tablesspoons: oil
+1 teaspoon: t7w2g
+50g: ntdo.
+2 medium, chopped: onion
+
+But you need one more secret ingredient! Find it!
+```
+
+
 **Solution**
 
 **Egg**
@@ -295,7 +324,20 @@ he18-2yTc-bJ1f-raIQ-gKc6
 
 **Challenge**
 
+13 - Sagittarius...
+
+... is playing with his pila again.
+
+Can you find the Easter egg QR code he has hidden from you?
+
 **Solution**
+
+I loaded pila.kmz into a KMZ viewer and saw this:
+
+![](writeupfiles/chal13/Auswahl_398.png)
+
+So obviously the wrong projection.
+
 
 **Egg**
 
