@@ -565,11 +565,35 @@ Decrypt the message, and save the planet!!
 
 **Egg**
 
-## Challenge 21:
+## Challenge 21: Hot Dog
 
 **Challenge**
 
+or: how to solve this darn crypto challenge to get your sleep back.
+
+Enter the flag found, into the Egg-o-Matic below, without brackets.
+
+[hotdog.zip](writeupfiles/chall21/hotdog.zip)
+
+
 **Solution**
+
+The zipfile contains a tiff file
+
+![](writeupfiles/chall21/hotdog.tiff)
+
+with binwalk we find a png image embedded
+
+![](writeupfiles/chall21/egg-almost.png)
+
+```bash
+$ zbarimg egg-almost.png
+QR-Code:Arf3ThIY8VQg2GUd249wzDYi7CXqTST+9g4Q7bbT2eF+mD2KB+6oi3rVSY/eZ6/onNBNYPo2BPqIVEbL35G62pIHvabGcrYosGCpYhiz6EYnamnNPrHdzmEOs8lCRw1c2Pe8kl41FH0ud7tBn6qD/stnZfGkcbeIrjaSiIYSveHS
+
+scanned 1 barcode symbols from 1 images in 0.02 seconds
+
+
+```
 
 **Egg**
 
