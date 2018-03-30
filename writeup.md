@@ -615,6 +615,28 @@ Decrypt the message, and save the planet!!
 
 **Solution**
 
+we find some hidden text in the pdf file using extractpdf.com:
+
+```
+Composition
+
+No Name Yet
+
+�Okay, let’s do the information exchange as we coordinated. First let me
+tell you: hiding informations in a MIDI file will be popular soon! We should
+only do it this way to stay covered. MIDI hiding is just next level – wow! So,
+here are all informations you need to find the secret: Trackline: Can’t remember now,
+but you’ll find it. It’s kinda quiet this time, because of the doubled protection
+algorithm! Characters: 0 - 127 (by the way: we won‘t need the higher ones
+ever…)Let’s go!�
+I‘m very exited for the lyrics that you will create
+for this masterpiece.
+Best wishes, your friend
+
+LuckyTail
+
+```
+
 **Egg**
 
 ## Challenge 21: Hot Dog
