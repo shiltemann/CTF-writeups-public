@@ -7,7 +7,7 @@
 Title                                    Difficulty  Flag
 ---------------------------------------- ---------- -----------------------------
 Teaser
-Challenge 01: Prison Break               Easy
+Challenge 01: Prison Break               Easy       he18-gx8L-AJUw-DSMH-6aUI
 Challenge 02: Babylon                    Easy
 Challenge 03: Pony Coder                 Easy
 Challenge 04: Memeory                    Easy       he18-cGoS-a2tz-BD2w-zXH8
@@ -109,7 +109,9 @@ this reads `prisonerisking`, enter this into egg-o-matic to get our egg
 
 ![](writeupfiles/chall01/egg.png)
 
-
+```
+he18-gx8L-AJUw-DSMH-6aUI
+```
 
 ## Challenge 02:
 
