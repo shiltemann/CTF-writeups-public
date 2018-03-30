@@ -20,7 +20,7 @@ Challenge 10: Level Two                  Medium
 Challenge 11: De Egg you must            Medium
 Challenge 12: Patience                   Medium
 Challenge 13: Sagittarius...             Medium
-Challenge 14: Same same...               Medium
+Challenge 14: Same same...               Medium     he18-D76U-PvxZ-7Icy-mkF1
 Challenge 15: Manile greetings           Medium
 Challenge 16: git cloak --hard           Medium     he18-k4oU-OEar-n9Sr-ULi0
 Challenge 17: Space Invaders             Medium
@@ -345,9 +345,38 @@ So obviously the wrong projection.
 
 **Challenge**
 
+Same same...
+...but different!
+Upload the right files and make the server return an Easter egg!
+
+The PHP code seems to require that we upload two files which are QR codes with
+the word 'Hackvent' in one and 'Hacky Easter' in the other, and that those
+files should have identical sha1sums.
+
+I just assumed it would accept PDFs without looking since the sha1 collision
+for pdfs was pretty recently big news. Found
+https://github.com/nneonneo/sha1collider as one of the top results in a search.
+
 **Solution**
 
+```
+$ qrencode 'Hackvent' -o a.png
+$ qrencode 'Hacky Easter' -o b.png
+$ convert a.png a.pdf
+$ convert b.png b.pdf
+$ python3 sha1collider/collide.py a.pdf b.pdf --progressive
+```
+
+and got out two PDFs with identical hashes in under a second! Neat.
+
+```
+bdece875ca36c6505b0728cbeca7495db1a30246  out-a.pdf
+bdece875ca36c6505b0728cbeca7495db1a30246  out-b.pdf
+```
+
 **Egg**
+
+![](./writeupfiles/chall14/egg.png)
 
 ## Challenge 15:
 
