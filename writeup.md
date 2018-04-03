@@ -12,7 +12,7 @@ Challenge 02: Babylon                    Easy
 Challenge 03: Pony Coder                 Easy
 Challenge 04: Memeory                    Easy       he18-cGoS-a2tz-BD2w-zXH8
 Challenge 05: sloppy & Paste             Easy       he18-2yTc-bJ1f-raIQ-gKc6
-Challenge 06: Cooking for Hackers        Easy
+Challenge 06: Cooking for Hackers        Easy       he18-MdVx-nSgb-wzYT-TtoE 
 Challenge 07: Jigsaw                     Easy
 Challenge 08: Disco Egg                  Easy
 Challenge 09: Dial Trial                 Easy
@@ -255,6 +255,8 @@ You've found this recipe online:
 But you need one more secret ingredient! Find it!
 ```
 
+**Solution**
+
 These b64 decode to
 
 ```
@@ -267,10 +269,21 @@ These b64 decode to
 But you need one more secret ingredient! Find it!
 ```
 
+The period at the end of the fourth part is the hint, this is a url!
 
-**Solution**
+```
+saltoilt7w2gntdo.onion
+```
+
+open it with a tor browser to get the egg
 
 **Egg**
+
+![](writeupfiles/chall06/egg.png)
+
+```
+he18-MdVx-nSgb-wzYT-TtoE
+```
 
 ## Challenge 07:
 
