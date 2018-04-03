@@ -12,7 +12,7 @@ Challenge 02: Babylon                    Easy
 Challenge 03: Pony Coder                 Easy
 Challenge 04: Memeory                    Easy       he18-cGoS-a2tz-BD2w-zXH8
 Challenge 05: sloppy & Paste             Easy       he18-2yTc-bJ1f-raIQ-gKc6
-Challenge 06: Cooking for Hackers        Easy       he18-MdVx-nSgb-wzYT-TtoE 
+Challenge 06: Cooking for Hackers        Easy       he18-MdVx-nSgb-wzYT-TtoE
 Challenge 07: Jigsaw                     Easy
 Challenge 08: Disco Egg                  Easy
 Challenge 09: Dial Trial                 Easy
@@ -235,7 +235,7 @@ and find the string we are looking for in `assets/www/challenge05.html`
 he18-2yTc-bJ1f-raIQ-gKc6
 ```
 
-## Challenge 06:
+## Challenge 06: Cooking for Hackers
 
 **Challenge**
 
