@@ -13,7 +13,7 @@ Challenge 03: Pony Coder                 Easy
 Challenge 04: Memeory                    Easy       he18-cGoS-a2tz-BD2w-zXH8
 Challenge 05: sloppy & Paste             Easy       he18-2yTc-bJ1f-raIQ-gKc6
 Challenge 06: Cooking for Hackers        Easy       he18-MdVx-nSgb-wzYT-TtoE
-Challenge 07: Jigsaw                     Easy
+Challenge 07: Jigsaw                     Easy       he18-jFsP-AXNB-GUXu-dkms
 Challenge 08: Disco Egg                  Easy       he18-Qox7-xFIw-cljk-ySdF
 Challenge 09: Dial Trial                 Easy
 Challenge 10: Level Two                  Medium
@@ -285,13 +285,39 @@ open it with a tor browser to get the egg
 he18-MdVx-nSgb-wzYT-TtoE
 ```
 
-## Challenge 07:
+## Challenge 07: Jigsaw
 
 **Challenge**
 
+Thumper was probably under time pressure and jumped around a bit too wild. As a result, his picture has broken.
+
+Can you write a program to put it back together
+
+![](writeupfiles/chall07/jigsaw.png)
+
 **Solution**
 
+This tool is pure magic and solved this challenge for us using a genetic algorithm: https://github.com/nemanja-m/gaps
+
+```bash
+$ gaps --image=../jigsaw.png --generations=30 --population=600 --save
+```
+
+![](writeupfiles/chall07/solved.jpg)
+
+```
+goodsheepdontalwayswearwhite
+```
+
+We put this phrase into the egg-o-matic to get our egg
+
 **Egg**
+
+![](writeupfiles/chall07/egg.png)
+
+```
+he18-jFsP-AXNB-GUXu-dkms
+```
 
 ## Challenge 08: Disco Egg
 
