@@ -15,7 +15,7 @@ Challenge 05: sloppy & Paste             Easy       he18-2yTc-bJ1f-raIQ-gKc6
 Challenge 06: Cooking for Hackers        Easy       he18-MdVx-nSgb-wzYT-TtoE
 Challenge 07: Jigsaw                     Easy       he18-jFsP-AXNB-GUXu-dkms
 Challenge 08: Disco Egg                  Easy       he18-Qox7-xFIw-cljk-ySdF
-Challenge 09: Dial Trial                 Easy
+Challenge 09: Dial Trial                 Easy       he18-Yuk0-9zPD-l8Di-aL1i
 Challenge 10: Level Two                  Medium
 Challenge 11: De Egg you must            Medium
 Challenge 12: Patience                   Medium
@@ -390,7 +390,23 @@ We convert it to [wav file](writeupfiles/chall09/dial.wav) and decode the DTMF t
 472612252336262636253412
 ```
 
+This looks like it could be similar to the first challenge, each pair of number representing a
+letter, `47` means 4 times number 7 (letter `s` in T9)
+
+```
+47 26 12 25 23 36 26 26 36 25 34 12
+s  n  a  k  e  o  n  n  o  k  i  a
+```
+
+Whoo! we enter `snakeonnokia` in the egg-o-matic to get our egg
+
 **Egg**
+
+![](writeupfiles/chall09/egg.png)
+
+```
+he18-Yuk0-9zPD-l8Di-aL1i
+```
 
 ## Challenge 10:
 
