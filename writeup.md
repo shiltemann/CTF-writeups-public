@@ -33,7 +33,7 @@ Challenge 23: Rapbid Learning            Hard
 Challenge 24: ELF                        Hard
 Hidden Egg #1
 Hidden Egg #2
-Hidden Egg #3
+Hidden Egg #3                                       he18-yeCd-TI6g-nSrz-WgZX
 ```
 
 ## General
@@ -86,7 +86,7 @@ at `build/apk/res/drawable/jc_launcher.png`
 
 **Egg**
 
-![](writeupfiles/hidden2/jc_launcher.png)
+![](writeupfiles/hidden3/jc_launcher.png)
 
 ```
 he18-yeCd-TI6g-nSrz-WgZX
