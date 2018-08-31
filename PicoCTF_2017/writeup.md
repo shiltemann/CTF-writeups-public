@@ -34,6 +34,26 @@ Level 2
 ## General
 
 
+## Misc: Internet Kitties
+
+**Challenge**
+
+I was told there was something at IP shell2017.picoctf.com with port 40660. How do I get there? Do I need a ship for the port?
+
+**Solution**
+
+```
+$ nc shell2017.picoctf.com 40660
+Yay! You made it!
+Take a flag!
+fba9c41f9f0326b53919a2ab1ff20a69
+```
+
+**Flag**
+
+```
+fba9c41f9f0326b53919a2ab1ff20a69
+```
 
 ## Challenge
 
@@ -43,4 +63,84 @@ Level 2
 
 **Flag**
 
+
+## Challenge
+
+**Challenge**
+
+**Solution**
+
+**Flag**
+
+
+## Challenge
+
+**Challenge**
+
+**Solution**
+
+**Flag**
+
+
+## Challenge
+
+**Challenge**
+
+**Solution**
+
+**Flag**
+
+
+## Challenge
+
+**Challenge**
+
+**Solution**
+
+**Flag**
+
+
+## Challenge
+
+**Challenge**
+
+**Solution**
+
+**Flag**
+
+
+## Challenge
+
+**Challenge**
+
+**Solution**
+
+**Flag**
+
+
+## Challenge
+
+**Challenge**
+
+**Solution**
+
+**Flag**
+
+
+## Challenge
+
+**Challenge**
+
+**Solution**
+
+**Flag**
+
+
+## Challenge
+
+**Challenge**
+
+**Solution**
+
+**Flag**
 
