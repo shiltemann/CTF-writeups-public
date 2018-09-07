@@ -29,7 +29,7 @@ Rabbit Hole                    Steganography  400
 Poke-A-Mango                   Reversing      250
 Passworded!                    Reversing      400
 
-Hello World!                   Misc           9      IceCTF{this_is_a_flag}
+Hello World!                   Misc           10      IceCTF{this_is_a_flag}
 anticaptcha                    Misc           250
 ilovebees                      Misc           199
 Secret Recipe                  Misc           290
