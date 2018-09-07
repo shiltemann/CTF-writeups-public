@@ -18,7 +18,8 @@ Hard Shells                    Forensics      200
 Lost in the Forest             Forensics      300
 
 Drumbone                       Steganography  150
-Rabbit Hole                    Steganography  250
+Hot or Not                     Steganography  300
+Rabbit Hole                    Steganography  400
 
 garfield                       Cryptography   100    IceCTF{I_DONT_THINK_GRONSFELD_LIKES_MONDAYS}
 Think outside the key!         Cryptography   200
@@ -27,40 +28,25 @@ Ancient Foreign Communications Cryptography   300
 Poke-A-Mango                   Reversing      250
 Passworded!                    Reversing      400
 
-Hello World!                   Misc           10      IceCTF{this_is_a_flag}
-ilovebees                      Misc           200
-Secret Recipe                  Misc           300
+Hello World!                   Misc           9      IceCTF{this_is_a_flag}
+anticaptcha                    Misc           250
+ilovebees                      Misc           199
+Secret Recipe                  Misc           290
 ```
 
-## Challenge 42: Title
+
+## Web 50: Toke Relaunch
+
 **Challenge**
+
 **Solution**
+
 **Flag**
 ```
 flag
 ```
 
-## Misc 10: Hello World!
 
-**Challenge**
-
-Welcome to the competition! To get you started we decided to give you your first flag. The flags all start with the "IceCTF" and have some secret message contained with in curly braces "{" and "}".
-
-Within this platform, the challenges will be shown inside a frame to the right. For example purposes the download interface is shown on the right now. For static challenges you will need to click the large button in order to receive your challenge. For non static challenges, the lab itself will be shown on the right.
-
-To submit the flag you can click the blue flag button in the bottom right hand corner.
-
-Your flag is `IceCTF{this_is_a_flag}`
-
-**Solution**
-
-`CTRL+C, CTRL+V`
-
-**Flag**
-
-```
-IceCTF{this_is_a_flag}
-```
 
 ## Web 75: Ligths out
 
@@ -138,6 +124,27 @@ gives a gif that slowly builds up the flag:
 IceCTF{wow_fast}
 ```
 
+## Forensics 200: Hard Shells
+
+**Challenge**
+
+**Solution**
+
+**Flag**
+```
+flag
+```
+
+## Forensics 300: Lost in the Forest
+
+**Challenge**
+
+**Solution**
+
+**Flag**
+```
+flag
+```
 
 ## Cryptography 100: garfeld
 
@@ -167,9 +174,67 @@ we later realized that the `07271978` at the top of the image is a hint for this
 IceCTF{I_DONT_THINK_GRONSFELD_LIKES_MONDAYS}
 ```
 
+## Cryptography 200: Think outside the key
+
+**Challenge**
+
+**Solution**
+
+**Flag**
+```
+flag
+```
+
+## Cryptography 300: Ancient Foreign Communications
+
+**Challenge**
+
+**Solution**
+
+**Flag**
+```
+flag
+```
+
+## Steganography 150: Drumbone
+
+**Challenge**
+
+**Solution**
+
+**Flag**
+```
+flag
+```
+
+
+## Steganography 300: Hot or Not
+
+**Challenge**
+
+**Solution**
+
+**Flag**
+```
+flag
+```
+
+
+## Steganography 400: Rabbit Hole
+
+**Challenge**
+
+**Solution**
+
+**Flag**
+```
+flag
+```
+
 ## Reverse Engineering: Poke-A-Mango
 
 **Challenge**
+
 I love these new AR games that have been coming out recently, so I decided that I would make my own with my favorite fruit! The Mango!
 
 Can you poke 151 mangos?
@@ -190,4 +255,78 @@ We decompile the app:
 apktool decode pokemango.apk
 ```
 
+**Flag**
+```
+
+```
+
+## Reverse Engineering 400: Passworded!
+
+**Challenge**
+
+**Solution**
+
+**Flag**
+```
+flag
+```
+
+
+
+## Misc 10: Hello World!
+
+**Challenge**
+
+Welcome to the competition! To get you started we decided to give you your first flag. The flags all start with the "IceCTF" and have some secret message contained with in curly braces "{" and "}".
+
+Within this platform, the challenges will be shown inside a frame to the right. For example purposes the download interface is shown on the right now. For static challenges you will need to click the large button in order to receive your challenge. For non static challenges, the lab itself will be shown on the right.
+
+To submit the flag you can click the blue flag button in the bottom right hand corner.
+
+Your flag is `IceCTF{this_is_a_flag}`
+
+**Solution**
+
+`CTRL+C, CTRL+V`
+
+**Flag**
+
+```
+IceCTF{this_is_a_flag}
+```
+
+## Misc 250: anticaptcha
+
+**Challenge**
+
+**Solution**
+
+**Flag**
+```
+flag
+```
+
+
+## Misc 200: ilovebees
+
+**Challenge**
+
+**Solution**
+
+**Flag**
+```
+flag
+```
+
+
+## Misc 300: Secret Recipe
+
+**Challenge**
+
+**Solution**
+
+**Flag**
+```
+flag
+```
 
