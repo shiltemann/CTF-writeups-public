@@ -130,7 +130,7 @@ convert picasso.gif -transparent white picasso_transparent.gif
 
 gives a gif that slowly builds up the flag:
 
-![](writeupfiles/picasso_transparant.gif)
+![](writeupfiles/picasso_transparent.gif)
 
 **Flag**
 
