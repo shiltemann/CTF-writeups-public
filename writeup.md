@@ -129,7 +129,33 @@ IceCTF{wow_fast}
 
 **Challenge**
 
+After a recent hack, a laptop was seized and subsequently analyzed. The victim of the hack? An innocent mexican restaurant. During the investigation they found this suspicous file. Can you find any evidence that the owner of this laptop is the culprit?
+
+[file](writeupfiles/hardshells)
+
 **Solution**
+
+the file is an encrypted zip file.
+
+we use fcrackzip with the crackstation wordlist to find the password
+
+```bash
+$ fcrackzip -v --use-unzip  -D -p wordlist hardshells.zip
+'hardshells/' is not encrypted, skipping
+found file 'hardshells/d', (size cp/uc 309500/5242880, flags 9, chk 91d0)
+checking pw TILIGUL'S
+
+PASSWORD FOUND!!!!: pw == tacos
+```
+
+the [file we get](writeupfiles/d) now is a Minix filesystem
+
+```bash
+$ file d
+d: Minix filesystem, V1, 30 char names, 20 zones
+```
+
+
 
 **Flag**
 ```
