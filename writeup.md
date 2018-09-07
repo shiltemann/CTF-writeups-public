@@ -13,7 +13,7 @@ Title                          Category       Points Flag
 Toke Relaunch                  Web            50
 Lights out                     Web            75     IceCTF{styles_turned_the_lights}
 
-Modern Picasso                 Forensics      150
+Modern Picasso                 Forensics      150    IceCTF{wow_fast}
 Hard Shells                    Forensics      200
 Lost in the Forest             Forensics      300
 
@@ -111,6 +111,33 @@ Some fiddling with the css yields the flag
 ```
 IceCTF{styles_turned_the_lights}
 ```
+
+## Forensics 150: Modern Picasso
+
+**Challenge**
+
+Here's a rendition of some modern digital abstract art. Is it more than art though?
+
+![](writeupfiles/picasso.gif)
+
+**Solution**
+
+Using imagemagick to convert the white background in each frame to transparant:
+
+```
+convert picasso.gif -transparent white picasso_transparent.gif
+```
+
+gives a gif that slowly builds up the flag:
+
+![](writeupfiles/picasso_transparant.gif)
+
+**Flag**
+
+```
+IceCTF{wow_fast}
+```
+
 
 ## Cryptography 100: garfeld
 
