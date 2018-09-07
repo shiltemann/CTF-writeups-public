@@ -20,7 +20,7 @@ Lost in the Forest             Forensics      300
 Drumbone                       Steganography  150
 Rabbit Hole                    Steganography  250
 
-garfield                       Cryptography   100
+garfield                       Cryptography   100    IceCTF{I_DONT_THINK_GRONSFELD_LIKES_MONDAYS}
 Think outside the key!         Cryptography   200
 Ancient Foreign Communications Cryptography   300
 
@@ -126,6 +126,14 @@ The image reads:
 `IjgJUO{P_LOUV_AIRUS_GYQUTOLTD_SKRFB_TWNKCFT}`
 
 
+Looks like the flag but encrypted somehow
+
+Turns out to be vigenere with key `ahchbjhi`
+
+
 **Flag**
 
+```
+IceCTF{I_DONT_THINK_GRONSFELD_LIKES_MONDAYS}
+```
 
