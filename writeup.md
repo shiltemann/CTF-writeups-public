@@ -111,3 +111,21 @@ Some fiddling with the css yields the flag
 ```
 IceCTF{styles_turned_the_lights}
 ```
+
+## Cryptography 100: garfeld
+
+**Challenge**
+You found the marketing campaign for a brand new sitcom. Garfeld! It has a secret message engraved on it. Do you think you can figure out what they're trying to say?
+
+![](writeupfiles/garfeld.png)
+
+**Solution**
+
+The image reads:
+
+`IjgJUO{P_LOUV_AIRUS_GYQUTOLTD_SKRFB_TWNKCFT}`
+
+
+**Flag**
+
+
