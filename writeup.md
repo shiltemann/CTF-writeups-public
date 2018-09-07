@@ -17,13 +17,14 @@ Modern Picasso                 Forensics      150    IceCTF{wow_fast}
 Hard Shells                    Forensics      200
 Lost in the Forest             Forensics      300
 
+garfield                       Cryptography   100    IceCTF{I_DONT_THINK_GRONSFELD_LIKES_MONDAYS}
+Think outside the key!         Cryptography   200
+Ancient Foreign Communications Cryptography   300
+
 Drumbone                       Steganography  150
 Hot or Not                     Steganography  300
 Rabbit Hole                    Steganography  400
 
-garfield                       Cryptography   100    IceCTF{I_DONT_THINK_GRONSFELD_LIKES_MONDAYS}
-Think outside the key!         Cryptography   200
-Ancient Foreign Communications Cryptography   300
 
 Poke-A-Mango                   Reversing      250
 Passworded!                    Reversing      400
