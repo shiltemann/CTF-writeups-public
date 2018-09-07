@@ -11,6 +11,7 @@ Team: Galaxians
 Title                          Category       Points Flag
 ------------------------------ -------------- ------ -----------------------------
 Toke Relaunch                  Web            50
+Lights out                     Web            75     IceCTF{styles_turned_the_lights}
 
 Modern Picasso                 Forensics      150
 Hard Shells                    Forensics      200
@@ -61,4 +62,52 @@ Your flag is `IceCTF{this_is_a_flag}`
 IceCTF{this_is_a_flag}
 ```
 
+## Web 75: Ligths out
 
+**Challenge**
+
+Help! We're scared of the dark!
+
+https://static.icec.tf/lights_out
+
+**Solution**
+
+We see a black page
+
+![](writeupfiles/lights_out_screenshot_before.png)
+
+with source:
+
+```html
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Lights out!</title>
+        <link rel="stylesheet" href="main.css" />
+    </head>
+    <body>
+        <div class="alert alert-danger">Who turned out the lights?!?!</div>
+        <summary>
+        <div class="clearfix">
+            <i data-hide="true"></i>
+            <strong data-show="true">
+            <small></small>
+            </strong>
+            <small></small>
+        </div>
+        </summary>
+    </body>
+</html>
+
+```
+
+Some fiddling with the css yields the flag
+
+![](writeupfiles/lights_out_screenshot.png)
+
+**Flag**
+
+```
+IceCTF{styles_turned_the_lights}
+```
