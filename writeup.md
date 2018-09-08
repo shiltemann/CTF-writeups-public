@@ -434,6 +434,10 @@ flag
 
 **Challenge**
 
+I found this secret recipe when I was digging around in my Icelandic grandmother's attic. I have a feeling that she might have been a part of some secret organization. Can you see if there are any other secrets hidden in the recipe?
+
+![](writeupfiles/recipe.png)
+
 **Solution**
 
 **Flag**
