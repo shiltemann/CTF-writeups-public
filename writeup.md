@@ -250,8 +250,22 @@ flag
 ## Cryptography 300: Ancient Foreign Communications
 
 **Challenge**
+We got word from a friend of ours lost in the depths of the Andorran jungles! Help us figure out what he is trying to tell us before its too late!
+
+Note: The flag here is non-standard, in the result you should end up with some words! The flag is IceCTF{<words, lowercase, including spaces>}
 
 **Solution**
+We're given a file with hex bytes, we can use `xxd` to covnert that into the appropriate characters/bytes:
+
+```
+xxd -r -p comms.txt > out.txt
+```
+
+Which is full of some fun symbols?
+
+```
+⨅]]⌞⌞⌟[⨆]⌟]]]⨆⨆⨆⌜[[[⌝⌝⌝⌞⌝⌝⌝⌝⨆⌝⌝⌝⌞⌞⌝⌝⌝⌝⌟⌝⌝⨅⨅⌞⌞⨆[]]]⌝⌝⌝⌝]]⌟[[[⌝⌝⌝⌝⌟⌝⌝⌝⌝]]]⌞⌞⌞⌝⌝⌝⨆]⌞⌞
+```
 
 **Flag**
 ```
