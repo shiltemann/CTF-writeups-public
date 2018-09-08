@@ -12,7 +12,7 @@ def encode(filename):
                     for x in range(len(s))
                 ])
             ).encode('utf-8')
-        ).decode('utf-8') #[::-1]*5
+        ).decode('utf-8')[::-1]*5
 
 
 def decode(filename):
