@@ -10,7 +10,7 @@ Team: Galaxians
 ```
 Title                          Category       Points Flag
 ------------------------------ -------------- ------ -----------------------------
-Toke Relaunch                  Web            50
+Toke Relaunch                  Web            50     IceCTF{what_are_these_robots_doing_here}
 Lights out                     Web            75     IceCTF{styles_turned_the_lights}
 
 Modern Picasso                 Forensics      150    IceCTF{wow_fast}
@@ -40,11 +40,30 @@ Secret Recipe                  Misc           290
 
 **Challenge**
 
+We've relaunched our famous website, Toke! Hopefully no one will hack it again and take it down like the last time.
+
+
 **Solution**
+
+The link leads to some marijuna website
+
+![](writeupfiles/toke_screenshot.jpg)
+
+Last edition the toke challenge had the flag hidden in a cookie, but no cookies are set this time, so we have to look elsewhere
+
+We check the robots.txt file and see:
+
+```
+User-agent: *
+Disallow: /secret_xhrznylhiubjcdfpzfvejlnth.html
+
+```
+
+the disallowed file contains our flag.
 
 **Flag**
 ```
-flag
+IceCTF{what_are_these_robots_doing_here}
 ```
 
 
