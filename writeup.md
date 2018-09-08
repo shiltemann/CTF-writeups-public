@@ -19,7 +19,7 @@ Lost in the Forest             Forensics      300    IceCTF{good_ol_history_less
 
 garfield                       Cryptography   100    IceCTF{I_DONT_THINK_GRONSFELD_LIKES_MONDAYS}
 Think outside the key!         Cryptography   200
-Ancient Foreign Communications Cryptography   300
+Ancient Foreign Communications Cryptography   300    IceCTF{squeamish ossifrage}
 
 Drumbone                       Steganography  150
 Hot or Not                     Steganography  300
@@ -286,17 +286,25 @@ Which is full of some fun symbols?
 ⨅]]⌞⌞⌟[⨆]⌟]]]⨆⨆⨆⌜[[[⌝⌝⌝⌞⌝⌝⌝⌝⨆⌝⌝⌝⌞⌞⌝⌝⌝⌝⌟⌝⌝⨅⨅⌞⌞⨆[]]]⌝⌝⌝⌝]]⌟[[[⌝⌝⌝⌝⌟⌝⌝⌝⌝]]]⌞⌞⌞⌝⌝⌝⨆]⌞⌞
 ```
 
-I think those are supposed to be parts of boxes, so ... pigpen? have to use some imagination that the ] and ] are extended.
+combining pigpen cipher with T9 we translate this to:
+
+![](writeupfiles/pigpen.png)
+![](writeupfiles/T9.jpeg)
 
 ```
-hddccafbdadddbbbifffgggcggggbgggccggggagghhccbfdddggggddafffggggaggggdddcccgggbdcc
+⨅ ]] ⌞⌞ ⌟ [ ⨆ ] ⌟ ]]] ⨆⨆⨆ ⌜ [[[ ⌝⌝⌝ ⌞ ⌝⌝⌝⌝ ⨆ ⌝⌝⌝ ⌞⌞ ⌝⌝⌝⌝ ⌟ ⌝⌝ ⨅⨅ ⌞⌞ ⨆ [ ]]] ⌝⌝⌝⌝ ]] ⌟ [[[ ⌝⌝⌝⌝ ⌟ ⌝⌝⌝⌝ ]]] ⌞⌞⌞ ⌝⌝⌝ ⨆ ] ⌞⌞
+t h  e  _ m a g _ i   c   w o   r   d s    a r   e  s    _ q  u  e  a m i   s    h  _ o   s    _ s    i   f   r   a g e
 ```
 
-But that doesn't look super useful? There's no full box (`e`) used but maybe that's a coincidence?
+```
+the magic words are squeamish ossifrage
+```
+
+Which was the solution to a challenge ciphertext set by the inventor of RSA in 1977 ([link](https://en.wikipedia.org/wiki/The_Magic_Words_are_Squeamish_Ossifrage))
 
 **Flag**
 ```
-flag
+IceCTF{squeamish ossifrage}
 ```
 
 ## Steganography 150: Drumbone
@@ -414,7 +422,18 @@ flag
 
 **Challenge**
 
+I stumbled on to this strange website. It seems like a website made by a flower enthusiast, but it appears to have been taken over by someone... or something.
+
+Can you figure out what it's trying to tell us?
+
+https://static.icec.tf/iloveflowers/
+
 **Solution**
+
+website:
+
+![](writeupfiles/ilovebees_screenshot.png)
+
 
 **Flag**
 ```
@@ -425,6 +444,10 @@ flag
 ## Misc 300: Secret Recipe
 
 **Challenge**
+
+I found this secret recipe when I was digging around in my Icelandic grandmother's attic. I have a feeling that she might have been a part of some secret organization. Can you see if there are any other secrets hidden in the recipe?
+
+![](writeupfiles/recipe.png)
 
 **Solution**
 
