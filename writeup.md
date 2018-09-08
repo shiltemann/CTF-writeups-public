@@ -267,6 +267,14 @@ Which is full of some fun symbols?
 ⨅]]⌞⌞⌟[⨆]⌟]]]⨆⨆⨆⌜[[[⌝⌝⌝⌞⌝⌝⌝⌝⨆⌝⌝⌝⌞⌞⌝⌝⌝⌝⌟⌝⌝⨅⨅⌞⌞⨆[]]]⌝⌝⌝⌝]]⌟[[[⌝⌝⌝⌝⌟⌝⌝⌝⌝]]]⌞⌞⌞⌝⌝⌝⨆]⌞⌞
 ```
 
+I think those are supposed to be parts of boxes, so ... pigpen? have to use some imagination that the ] and ] are extended.
+
+```
+hddccafbdadddbbbifffgggcggggbgggccggggagghhccbfdddggggddafffggggaggggdddcccgggbdcc
+```
+
+But that doesn't look super useful? There's no full box (`e`) used but maybe that's a coincidence?
+
 **Flag**
 ```
 flag
