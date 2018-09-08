@@ -4,42 +4,35 @@ from fractions import gcd as _gcd
 import math
 import re
 import sys
+from itertools import count, islice
+from math import sqrt
 
-URL = sys.argv[1]
-
-
+URL = "https://gg4ugw5xbsr2myw-anticaptcha.labs.icec.tf/"
 
 def isprime(n):
     n = int(n)
-    if n % 2 == 0 and n > 2:
-        return False
-    return all([n % i for i in range(3, int(math.sqrt(n)) + 1, 2)])
-
+    return n > 1 and all(n%i for i in islice(count(2), int(sqrt(n)-1)))
 
 def gcd(a, b):
     return _gcd(int(a), int(b))
 
-
 def nthword(a, b):
-    return b.split(' ')[int(a) - 1]
+    return b.replace('.',' ').replace('  ',' ').split(' ')[int(a)]
 
 
 asdf = {
     'What is the greatest common divisor of (?P<a>[0-9]+) and (?P<b>[0-9]+)?': gcd,
     'Is (?P<a>[0-9]+) a prime number?': isprime,
     'What is the (?P<a>[0-9]+).. word in the following line:(?P<b>.*)': nthword,
-
-
-    'What is the tallest mountain on Earth?': lambda: "Everest",
+    'What is the tallest mountain on Earth?': lambda: "Mount Everest",
     'What is the capital of Hawaii?': lambda: "Honolulu",
     'What color is the sky?': lambda: "blue",
     'What year is it?': lambda: "2018",
     'Who directed the movie Jaws?': lambda: "Steven Spielberg",
-    'What is the capital of Germany?': lambda: "berlin",
-    'Which planet is closest to the sun?': lambda: "mercury",
+    'What is the capital of Germany?': lambda: "Berlin",
+    'Which planet is closest to the sun?': lambda: "Mercury",
     'How many strings does a violin have?': lambda: "4",
     'How many planets are between Earth and the Sun?': lambda: "2",
-
 }
 
 
@@ -47,7 +40,7 @@ data = requests.get(URL)
 
 answers = []
 
-html_doc = open('index.html', 'r').read()
+html_doc = data.text
 soup = BeautifulSoup(html_doc, 'html.parser')
 for idx, td in enumerate(soup.find_all('td')):
     if idx % 2 == 1:
@@ -67,5 +60,5 @@ for idx, td in enumerate(soup.find_all('td')):
 
 
 
-r = requests.post(URL, headers={'Content-type': 'application/x-www-form-urlencoded'}, data={'answers': answers})
-print(r.text)
+r = requests.post(URL, headers={'Content-type': 'application/x-www-form-urlencoded'}, data={'answer': answers})
+print(r.text[:1000])
