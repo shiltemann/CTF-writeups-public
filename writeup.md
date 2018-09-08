@@ -19,7 +19,7 @@ Lost in the Forest             Forensics      300    IceCTF{good_ol_history_less
 
 garfield                       Cryptography   100    IceCTF{I_DONT_THINK_GRONSFELD_LIKES_MONDAYS}
 Think outside the key!         Cryptography   200
-Ancient Foreign Communications Cryptography   300
+Ancient Foreign Communications Cryptography   300    IceCTF{squeamish ossifrage}
 
 Drumbone                       Steganography  150
 Hot or Not                     Steganography  300
@@ -288,7 +288,7 @@ Which is full of some fun symbols?
 
 combining pigpen cipher with T9 we translate this to:
 
-![](writeupfiles/pipgen.png)
+![](writeupfiles/pigpen.png)
 ![](writeupfiles/T9.jpeg)
 
 ```
@@ -297,14 +297,14 @@ t h  e  _ m a g _ i   c   w o   r   d s    a r   e  s    _ q  u  e  a m i   s   
 ```
 
 ```
-the mag icwordsares quemish os sifrage
+the magic words are squeamish ossifrage
 ```
 
-but how to format the flag exactly?
+Which was the solution to a challenge ciphertext set by the inventor of RSA in 1977 ([link](https://en.wikipedia.org/wiki/The_Magic_Words_are_Squeamish_Ossifrage))
 
 **Flag**
 ```
-IceCTF{}
+IceCTF{squeamish ossifrage}
 ```
 
 ## Steganography 150: Drumbone
