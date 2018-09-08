@@ -422,7 +422,18 @@ flag
 
 **Challenge**
 
+I stumbled on to this strange website. It seems like a website made by a flower enthusiast, but it appears to have been taken over by someone... or something.
+
+Can you figure out what it's trying to tell us?
+
+https://static.icec.tf/iloveflowers/
+
 **Solution**
+
+website:
+
+![](writeupfiles/ilovebees_screenshot.png)
+
 
 **Flag**
 ```
