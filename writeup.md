@@ -343,7 +343,7 @@ First we split the image up into all its subimages with imagemagick
 $ convert -crop 224x224 +repage hotdogs/out%04d.jpg
 ```
 
-Next, we can use [Clarifai](https://clarifai.com) to do the image recognition to determine whether the subimages are dogs or hotdogs. Clarifai gives you 5000 free operations per month, so we needed two accounts to analyze all the subimages.
+Next, we can use [Clarifai](https://clarifai.com) to do the image recognition to determine whether the subimages are dogs or hotdogs. Clarifai gives you 5000 free operations per month, but since we have a little over 7500 subimages, we needed two accounts to perform this analysis.
 
 ```python
 import os
@@ -357,8 +357,6 @@ model = app.models.get('general-v1.3')
 
 # detect image contents for all subimages
 pixels = []
-allresponses = ""
-
 for i in range(0,87*87):
     image = ClImage(file_obj=open("hotdogs/out"+str(i).zfill(4)+".jpg", 'rb'))
     response = model.predict([image])
