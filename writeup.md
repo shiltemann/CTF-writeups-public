@@ -155,11 +155,18 @@ $ file d
 d: Minix filesystem, V1, 30 char names, 20 zones
 ```
 
+Running `strings`, we found `IHDR` indicating it might be a PNG file. Comparing
+the file (in vim) to a normal PNG file we discovered they'd changed PNG to PUG
+and the file became valid.
+
+This gives us a nice screenshot of someone's desktop, with the flag.
+
+![](./writeupfiles/dat.png)
 
 
 **Flag**
 ```
-flag
+IceCTF{look_away_i_am_hacking}
 ```
 
 ## Forensics 300: Lost in the Forest
