@@ -422,7 +422,7 @@ looks like we will have to answer these questions to get the flag. We automate t
 
 ```python
 
-m bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
 import requests
 from fractions import gcd as _gcd
 import math
