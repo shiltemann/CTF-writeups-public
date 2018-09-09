@@ -12,6 +12,10 @@ Title                          Category       Points Flag
 ------------------------------ -------------- ------ -----------------------------
 Toke Relaunch                  Web            50     IceCTF{what_are_these_robots_doing_here}
 Lights out                     Web            75     IceCTF{styles_turned_the_lights}
+Friðfinnur                     Web            200
+
+Simple Overflow                Binary         250
+Twitter                        Binary         800
 
 Modern Picasso                 Forensics      150    IceCTF{wow_fast}
 Hard Shells                    Forensics      200    IceCTF{look_away_i_am_hacking}
@@ -25,7 +29,7 @@ Drumbone                       Steganography  150
 Hot or Not                     Steganography  300    IceCTF{h0td1gg1tyd0g}
 Rabbit Hole                    Steganography  400
 
-
+Locked Out                     Reversing      200
 Poke-A-Mango                   Reversing      250
 Passworded!                    Reversing      400
 
@@ -117,6 +121,113 @@ Some fiddling with the css yields the flag
 ```
 IceCTF{styles_turned_the_lights}
 ```
+
+## Web 200: Friðfinnur
+
+**Challenge**
+
+Eve wants to make the hottest new website for job searching on the market! An avid PHP developer she decided to use the hottest new framework, Laravel! I don't think she knew how to deploy websites at this scale however....
+
+https://gg4ugw5xbsr2myw-fridfinnur.labs.icec.tf/
+
+**Solution**
+
+**Flag**
+
+## Binary Exploit 200: Simple Overflow
+
+**Challenge**
+
+In programming, a buffer overflow is a case where a program, while it is writing data somewhere, overruns the boundary and begins overwriting adjacent memory. This is one of the first vulnerabilities used to exploit software. Modern programming languages tend to provide protection against this type of vulnerability, but it is still observed commonly in low-level software.
+
+Buffer overflows can be a complex vulnerability to understand and exploit due to their low-level nature. To assist you in your training, we have provided a memory simulation in the middle to help you understand what happens when your input in the textbox is passed to the program on the left. The simulation shows you the memory layout of the underlying process, where your buffer is red, and the secret value is green. Try entering values into the box and observe how the values that the program sees change on the left.
+
+In this case, the buffer sits on top of the stack memory, with the variable secret sitting just below it. As you will observe, the size limitation placed on buffer is not enforced, allowing you to write more than 16 characters. Get a feel for buffer overflows by exploring the above code.
+
+Once you are comfortable with buffer overflows, exploit the program to grant you the flag.
+
+[overflow.c](writeupfiles/overflow.c)
+
+**Instructions**
+1. Hello world!
+In the textbox in the middle, try entering Hello World!. Observe which variable within the code takes the value.
+
+2. Overflow!
+What happens if you write more than 16 characters into the buffer? Can you make the secret change?
+
+3. Take control
+Can you make secret take the value 1633771873 (0x61616161). Note that strings are stored in ASCII, and in ASCII, character number 0x61 is a.
+
+4. Little endian
+In most architectures, integers are read in reverse byte order from memory, in a method which is called Little endian. Can you make the secret take the value 1633837924 (0x61626364)?
+
+5. Escape from ASCII
+As you may see in the code, to get past the restrictions and retrieve the flag, secret needs to have a value of 0xcafebabe. However not all these characters are in ASCII! What will you do?
+
+
+**Solution**
+
+We examine the source code
+
+```c
+#define _GNU_SOURCE
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+
+const char* FLAG = "<REDACTED>"
+
+void flag() {
+    printf("FLAG: %s\n", FLAG);
+}
+
+void message(char *input) {
+
+    char buf[16] = "";
+
+
+
+    int secret = 0;
+
+    strcpy(buf, input);
+
+    printf("You said: %s\n", buf);
+
+    if (secret == 0xcafebabe) {
+        flag();
+    } else {
+        printf("The secret is 0x%x\n", secret);
+    }
+}
+
+int main(int argc, char **argv) {
+    if (argc > 1){
+        message(argv[1]);
+    } else {
+        printf("Usage: ./overflow <message>\n");
+    }
+    return 0;
+}
+```
+
+**Flag**
+
+## Binary Exploit 800: Twitter
+
+**Challenge**
+
+Someone left a time machine in the basement with classic games from the 1970s. Let me play these on the job, nothing can go wrong.
+
+```
+ssh -p 2222 ssh.icec.tf -l gg4ugw5xbsr2myw-twitter
+```
+
+**Solution**
+
+**Flag**
+
 
 ## Forensics 150: Modern Picasso
 
@@ -259,7 +370,17 @@ IceCTF{I_DONT_THINK_GRONSFELD_LIKES_MONDAYS}
 
 **Challenge**
 
+Estelle was messing around with her computer and she ended up outputting some garbage! Could you figure out what this means?!
+
+Note: The flag is of the format `IceCTF{<text>}` where `<text>` is the decrypted text.
+
+[mess.txt](writeupfiles/mess.txt)
+
 **Solution**
+
+```
+iâ‡§fjag8â‡§qvâ‡§qy4â‡§dag8k0qâ‡§ptag86â‡§sâ‡§hecâ‡§lâ‡§c4ag8z3ssag8â‡§q7y66b
+```
 
 **Flag**
 ```
@@ -310,6 +431,10 @@ IceCTF{squeamish ossifrage}
 ## Steganography 150: Drumbone
 
 **Challenge**
+
+I joined a couple of hacking channels on IRC and I started recieving these strange messages. Someone sent me this image. Can you figure out if there's anything suspicous hidden in it?
+
+![](writeupfiles/drumbone.png)
 
 **Solution**
 
@@ -407,12 +532,29 @@ IceCTF{h0td1gg1tyd0g}
 
 **Challenge**
 
+Here's a picture of my favorite vegetable. I hope it doesn't make you cry.
+
+![](writeupfiles/rabbithole.jpg)
+
 **Solution**
 
 **Flag**
 ```
 flag
 ```
+
+## Reverse Engineering 200: Locked out
+
+**Challenge**
+This is a fancy looking lock, I wonder what would happen if you broke it open?
+
+```
+ssh -p 2222 ssh.icec.tf -l gg4ugw5xbsr2myw-lockedout
+```
+
+**Solution**
+
+**Flag**
 
 ## Reverse Engineering: Poke-A-Mango
 
@@ -447,7 +589,16 @@ apktool decode pokemango.apk
 
 **Challenge**
 
+Alice loves to cause mayhem, and recently she sent this message to Bob! Bob is nothing but confused, leading to him asking for your help. Don't let the world descend into chaos!
+
+Note: The flag is of the format `IceCTF{<text>}` where `<text>` is the string the program accepts.
+
+
 **Solution**
+
+```
+(((())|}|}|}|(][)||(}[}||(){[)|(<}|||}|(){[)|(<}(())))|}|{(((}[)||<{(}[)|<(}<(}>|>|||||}||<{(}[)|<>(}>||||}|||}(())))|})|<((}[)||<{(}[)|<(}[))))|>|>|||}||<{(}[)|<>(}>||||}||())|{(}[)|<(}[((((())|}|}|}|}|}(((())|}|}|}|}))))||(}<())[)||||{((}>|[)|<<({<(}[)|||>(}|>|}><}||||||}((((((((((((((((((((())|}|}|}|}|}|}|}|}|}|}|}|}|}|}|}|}|}|}|}|}((((((((((((((((((())|}|}|}|}|}|}|}|}|}|}|}|}|}|}|}|}|}|}|}((((((((((((((((())|}|}|}|}|}|}|}|}|}|}|}|}|}|}|}|}|}(((((((((((((((())|}|}|}|}|}|}|}|}|}|}|}|}|}|}|}|}((((((((((((((())|}|}|}|}|}|}|}|}|}|}|}|}|}|}|}((((((((((((())|}|}|}|}|}|}|}|}|}|}|}|}|}((((((((((())|}|}|}|}|}|}|}|}|}|}|}(((((((((())|}|}|}|}|}|}|}|}|}|}((((((((())|}|}|}|}|}|}|}|}|}(((((((())|}|}|}|}|}|}|}|}((((((())|}|}|}|}|}|}|}|(}[}||(){[)|(<}|||}|(){[)|(<}(((((())|}|}|}|}|}[()))|}))||(}(>||>([)|)[)|{)<<((}||{(}[)||>|}|||}><}}||(){[)|(<}((}|()||{(}[)|<([}|)||||}(){[)|(<}|||}|((}(}||[(}[}||||(((((())|}|}|}|}|}[(())|}|}))))||(}[}||(){[)|(<}|||}|({<}|}((<)||||<}}||(){[)|(<}(()))|})|((}(}||[(}[}||||(}(>||>([)|{)<((}||{(}[)||>|}||}><}}||(()))))|}|(}[}||(){[)|(<}|||}|(){[)|(<}(())|}|({)(}[)|||}))|({)(}[)|||}|(}[}||(){[)|(<}|||}|(){[)|(<}((((}||||(()))))|}|(()))))|}|(}>|({<(}[)|||>(}|>|}><}||((}(}||[(}[}||||(}(>||>{((}||{(}[)||>|}|}>([})|}|([}|}|(()))))|}|(()))))|}|(}>|({<(}[)|||>(}|>|}><}||((}(}||[(}[}||||(}(>||>([)|{)<((}||{(}[)||>|}||}><}}||()|(}[}||(){[)|(<}|||}|((}(}||[(}[}||||(()))))|}|((}(}||[(}[}||||(}(>||>{((}||{(}[)||>|}|}>([})|}|()|(}[}||(){[)|(<}|||}|({<}|}((<)||||<}}||((}||((}((}(}||[(}[}|||||[(}[}||||(}[}||(()))))|}|((}(}||[(}[}||||(}(>||>([)|{)<((}||{(}[)||>|}||}><}}||(()))))|}|((}(}||[(}[}||||(}(>||>{((}||{(}[)||>|}|}>([})|}|({<}|}((<)||||<}}||(){[)|(<}())|())[)[))||[)||(}>|({<(}[)|||>(}|>|}><}||(())|})|()))))|(}>|({<(}[)|||>(}|>|}><}||(}>|({<(}[)|||>(}|>|}><}||(}[}||(){[)|(<}|||}|(){[)|(<}((())|}|}|({(}|(}|(}[)|||}|(()))))|}|([}|}|(}[}||(){[)|(<}|||}|(){[)|(<}()>|>|||}|{}((<(]|{(}[)|<}|||}||||}|||}|{}((<(]|{(}[)|<}|||}||||}|||}|{}((<(]|{(}[)|<}|||}||||}|||}|{}((<(]|{(}[)|<}|||}||||}|||}|{}((<(]|{(}[)|<}|||}||||}|||}|{}((<(]|{(}[)|<}|||}||||}|||}|{}((<(]|{(}[)|<}|||}||||}|||}|{}((<(]|{(}[)|<}|||}||||}|||}(>{<}|}((<)||||<}}|>||||}|{}((<(]|{(}[)|<}|||}||||}
+```
 
 **Flag**
 ```
