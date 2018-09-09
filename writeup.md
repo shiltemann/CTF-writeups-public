@@ -187,8 +187,6 @@ void message(char *input) {
 
     char buf[16] = "";
 
-
-
     int secret = 0;
 
     strcpy(buf, input);
