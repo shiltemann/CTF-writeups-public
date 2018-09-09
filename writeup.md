@@ -222,8 +222,6 @@ Someone left a time machine in the basement with classic games from the 1970s. L
 ssh -p 2222 ssh.icec.tf -l gg4ugw5xbsr2myw-twitter
 ```
 
-Note: the binary is [here](writeupfiles/lock)
-
 **Solution**
 
 **Flag**
@@ -551,6 +549,8 @@ This is a fancy looking lock, I wonder what would happen if you broke it open?
 ```
 ssh -p 2222 ssh.icec.tf -l gg4ugw5xbsr2myw-lockedout
 ```
+
+Note: the binary is [here](writeupfiles/lock)
 
 **Solution**
 
