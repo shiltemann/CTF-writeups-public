@@ -593,6 +593,7 @@ Alice loves to cause mayhem, and recently she sent this message to Bob! Bob is n
 
 Note: The flag is of the format `IceCTF{<text>}` where `<text>` is the string the program accepts.
 
+[](writeupfiles/password.txt)
 
 **Solution**
 
