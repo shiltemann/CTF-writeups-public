@@ -3,6 +3,7 @@ import sys
 
 def extract_lsb(inputimage):
     img = Image.open(inputimage)
+    img = img.convert('RGB')
     pixels = img.load()
 
     (w,h) = img.size
