@@ -12,7 +12,7 @@ Title                          Category       Points Flag
 ------------------------------ -------------- ------ -----------------------------
 Toke Relaunch                  Web            50     IceCTF{what_are_these_robots_doing_here}
 Lights out                     Web            75     IceCTF{styles_turned_the_lights}
-Friðfinnur                     Web            200
+Friðfinnur                     Web            200    IceCTF{you_found_debug}
 History of Computing           Web            350
 
 Simple Overflow                Binary         250
@@ -134,7 +134,16 @@ https://gg4ugw5xbsr2myw-fridfinnur.labs.icec.tf/
 
 **Solution**
 
+Not sure if this was the intended solution, but requesting an url for a nonexistant job listing lead to an error message containing the flag:
+
+https://29nd70ux6kr7ala-fridfinnur.labs.icec.tf/jobs/galaxian
+
+![](writeupfiles/errorpagewithflag.png)
+
 **Flag**
+```
+IceCTF{you_found_debug}
+```
 
 ## Web 350: History of Computing
 
