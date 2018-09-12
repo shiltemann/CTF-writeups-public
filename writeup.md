@@ -670,12 +670,14 @@ whoo! contents of the file `address.txt` is:
 wsqxiyhn23zdi6ia
 ```
 
-might be an `.onion` link? Opening `http://wsqxiyhn23zdi6ia.onion` with a tor browser gives (or via https://onion.link/):
+might be an `.onion` link? Opening `http://wsqxiyhn23zdi6ia.onion` with a tor browser (or via https://onion.link/) gives:
 
 [rabbithole.html](writeupfiles/rabbithole.html)
 
+![](writeupfiles/rabbithole_screenshot.png)
+
 ```html
-CTYPE HTML>
+<!DOCTYPE HTML>
 <html>
     <head>
         <title>Rabbit Hole</title>
