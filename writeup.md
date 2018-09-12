@@ -13,6 +13,7 @@ Title                          Category       Points Flag
 Toke Relaunch                  Web            50     IceCTF{what_are_these_robots_doing_here}
 Lights out                     Web            75     IceCTF{styles_turned_the_lights}
 Friðfinnur                     Web            200
+History of Computing           Web            350
 
 Simple Overflow                Binary         250
 Twitter                        Binary         800
@@ -22,6 +23,7 @@ Hard Shells                    Forensics      200    IceCTF{look_away_i_am_hacki
 Lost in the Forest             Forensics      300    IceCTF{good_ol_history_lesson}
 
 garfield                       Cryptography   100    IceCTF{I_DONT_THINK_GRONSFELD_LIKES_MONDAYS}
+Posted!                        Cryptography   250
 Think outside the key!         Cryptography   200
 Ancient Foreign Communications Cryptography   300    IceCTF{squeamish ossifrage}
 
@@ -134,6 +136,33 @@ https://gg4ugw5xbsr2myw-fridfinnur.labs.icec.tf/
 
 **Flag**
 
+## Web 350: History of Computing
+
+**Challenge**
+
+One of the authors of IceCTF made this page but I don't think it's very accurate. Can you take hack it before the IceCTF team gets sued?
+
+**Solution**
+
+A blogging website with registration/login forms and comment submission
+
+![](writeupfiles/historyofcomputing_screenshot.png)
+
+If we log in we get a cookie
+
+```
+token:   eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJ1c2VybmFtZSI6InRlc3R1c2VyIiwiZmxhZyI6IkljZUNURntob3BlIHlvdSBkb24ndCB0aGluayB0aGlzIGlzIGEgcmVhbCBmbGFnfSJ9.
+session: eyJ1c2VyIjozfQ.DnrHzA.T60QwnNSuvq2HH0VSnNqqzFZ-24
+```
+
+which base64 decode to:
+
+```
+token: {"typ":"JWT","alg":"none"}.{"username":"testuser","flag":"IceCTF{hope you don't think this is a real flag}"}
+session: {"user":3}.?.?
+```
+
+**Flag**
 ## Binary Exploit 200: Simple Overflow
 
 **Challenge**
@@ -364,7 +393,26 @@ we later realized that the `07271978` at the top of the image is a hint for this
 IceCTF{I_DONT_THINK_GRONSFELD_LIKES_MONDAYS}
 ```
 
-## Cryptography 200: Think outside the key
+## Cryptography 250: Posted!
+
+**Challenge**
+
+Apparently some bitwise boi is posting flags all over the place. He gave us a hint, though.
+
+```
+DychGDZJRRsEUTI0JDViVlxeZyFIBCM7MwosGRQCMCgZJCIrGCsoRkFIajcSKhBTGx9XeTV4MDlZB1Y=
+```
+
+He also gave us another hint: 41
+
+
+**Solution**
+
+base64 decode, then probably one or more bitwise operation (due to mention of 'bitwise boi' in description), likely involving the number 41
+
+**Flag**
+
+## Cryptography 400: Think outside the key
 
 **Challenge**
 
@@ -607,6 +655,78 @@ Here's a picture of my favorite vegetable. I hope it doesn't make you cry.
 ![](writeupfiles/rabbithole.jpg)
 
 **Solution**
+
+After a lot of experimenting, we find out we can uncover a hidden message from the image using steghide:
+
+```bash
+$ steghide extract -sf rabbithole.jpg
+Enter passphrase: <onion>
+wrote extracted data to "address.txt".
+```
+
+whoo! contents of the file `address.txt` is:
+
+```
+wsqxiyhn23zdi6ia
+```
+
+might be an `.onion` link? Opening `http://wsqxiyhn23zdi6ia.onion` with a tor browser gives (or via https://onion.link/):
+
+[rabbithole.html](writeupfiles/rabbithole.html)
+
+```html
+CTYPE HTML>
+<html>
+    <head>
+        <title>Rabbit Hole</title>
+	<meta charset="UTF-8">
+        <style>
+            body {
+                background: black;
+            }
+
+            p {
+                max-width: 750px;
+                text-align: center;
+                color: #00ff00;
+                margin: 0px auto;
+            }
+
+            #header {
+                max-width: 989px;
+                margin: 0px auto;
+            }
+
+            #footer {
+                margin: 100px 0;
+                text-align: center;
+            }
+
+            #error {
+                max-width: 350px;
+            }
+
+            #eyes {
+                max-width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <img id="error" src="error.gif"/>
+        </div>
+        <p>聐㠃㐊㐀㐀膜舕㐀㐀㐀㐀㐀㐀㐵㐜ꕳ𓅡𔕨𓁯𓅤   [..] </p>
+
+         <div id="footer">
+             <img id="eyes" src="eyes.gif"/>
+         </div>
+    </body>
+</html>
+
+```
+
+![](writeupfiles/rabbithole_error.gif)
+![](writeupfiles/rabbithole_eyes.gif)
 
 **Flag**
 ```
