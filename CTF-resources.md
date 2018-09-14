@@ -4,30 +4,25 @@ List of useful tools and online resources for CTF challenges. WIP.
 
 ## CTFs
 
-List of past and upcoming CTF events:
+List of past and upcoming CTF events: [https://ctftime.org/](https://ctftime.org/)
 
-[https://ctftime.org/](https://ctftime.org/)
-
-Collection of writeups of past events (for large number of events and teams):
-
-[https://github.com/ctfs/](https://github.com/ctfs/)
-
+Collection of writeups of past events (for large number of events and teams): [https://github.com/ctfs/](https://github.com/ctfs/)
 
 ## Overview
 
 This document contains links to tools, documentation, and tips and tricks for each of the following categories:
 
-- General
-- Forensics
-- Cryptography
-- Steganography
-- Binary Exploit/Reversing
-- Programming
-- Web
-- Network
-- Audio
-- File Formats
-- Misc
+- [General](#general)
+- [Forensics](#forensics)
+- [Cryptography](#cryptography)
+- [Steganography](#steganography)
+- [Binary/Exploit/Reversing](#binaryexploitreversing)
+- [Programming](#programming)
+- [Web](#web)
+- [Network](#network)
+- [Audio](#audio)
+- [File Formats](#file-formats)
+- [Misc](#misc)
 
 
 ## General
@@ -51,7 +46,9 @@ zbarimg myqrimage.png
 |Binary-to-text encodings| https://en.wikipedia.org/wiki/Binary-to-text_encoding |
 |QR-code & other barcodes decoder | [http://www.onlinebarcodereader.com/](http://www.onlinebarcodereader.com/) |
 
-[Ascii table](_resources/ascii.jpg)
+ASCII table:
+
+![Ascii table](_resources/ascii.jpg)
 
 
 ## Cryptography
