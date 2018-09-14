@@ -30,7 +30,7 @@ Ancient Foreign Communications Cryptography   300    IceCTF{squeamish ossifrage}
 
 Drumbone                       Steganography  150    IceCTF{Elliot_has_been_mapping_bits_all_day}
 Hot or Not                     Steganography  300    IceCTF{h0td1gg1tyd0g}
-Rabbit Hole                    Steganography  400
+Rabbit Hole                    Steganography  400    IceCTF{if_you_see_this_youve_breached_my_privacy}
 
 Locked Out                     Reversing      200
 Poke-A-Mango                   Reversing      250
@@ -799,9 +799,32 @@ might be an `.onion` link? Opening `http://wsqxiyhn23zdi6ia.onion` with a tor br
 ![](writeupfiles/rabbithole_error.gif)
 ![](writeupfiles/rabbithole_eyes.gif)
 
+We find nothing in the images, but after some hints we find that the chinese characters are [base65536]()
+
+[file with just the characters](writeupfiles/rabbithole_characters.txt)
+
+```python
+# pip install base65536
+
+import base65536
+
+with open('rabbithole_characters.txt','r') as f:
+    ct = f.readline().rstrip().replace(' ','')
+
+with open('rabbithole_out','wb') as f2:
+    f2.write(base65536.decode(ct))
+```
+
+which turns out to be an [epub](writeupfiles/rabbithole_out.epub) on cell phone hacking. Searching the contents for the flag gives it to us
+
+
+![](writeupfiles/rabbithole_cover.png)
+![](writeupfiles/rabbithole_flag.png)
+
+
 **Flag**
 ```
-flag
+IceCTF{if_you_see_this_youve_breached_my_privacy}
 ```
 
 ## Reverse Engineering 200: Locked out
