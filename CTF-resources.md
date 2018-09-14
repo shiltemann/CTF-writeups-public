@@ -144,7 +144,7 @@ GOST hashing algorithm:  [http://en.wikipedia.org/wiki/GOST_%28hash_function%29]
 
 **Tips and Tricks**
 
-
+Extract LSB of each channel of RGB image: [script](_resources/code/extractlsb.py)
 
 ## Binary/Exploit/Reversing
 
