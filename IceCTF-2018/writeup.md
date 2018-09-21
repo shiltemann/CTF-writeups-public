@@ -524,6 +524,7 @@ Which is full of some fun symbols?
 
 combining pigpen cipher with T9 we translate this to:
 
+
 ![](writeupfiles/pigpen.png)
 ![](writeupfiles/T9.jpeg)
 
@@ -531,6 +532,15 @@ combining pigpen cipher with T9 we translate this to:
 ⨅ ]] ⌞⌞ ⌟ [ ⨆ ] ⌟ ]]] ⨆⨆⨆ ⌜ [[[ ⌝⌝⌝ ⌞ ⌝⌝⌝⌝ ⨆ ⌝⌝⌝ ⌞⌞ ⌝⌝⌝⌝ ⌟ ⌝⌝ ⨅⨅ ⌞⌞ ⨆ [ ]]] ⌝⌝⌝⌝ ]] ⌟ [[[ ⌝⌝⌝⌝ ⌟ ⌝⌝⌝⌝ ]]] ⌞⌞⌞ ⌝⌝⌝ ⨆ ] ⌞⌞
 t h  e  _ m a g _ i   c   w o   r   d s    a r   e  s    _ q  u  e  a m i   s    h  _ o   s    _ s    i   f   r   a g e
 ```
+
+method explained:
+
+- `⨅` in pigpen would signify `H`, when we instead combine this with T9, it would mean the letter `t` (one press on the number `8`)
+- `]]` would be the `dd` in classic pigpen, but now signifies 2 presses on the number `4`, which would be an `h`
+- `⌞⌞` is two presses on the 3, so a letter `e`
+- etc
+
+This gives us the sentence
 
 ```
 the magic words are squeamish ossifrage
@@ -1023,15 +1033,15 @@ website:
 
 ![](writeupfiles/ilovebees_screenshot.png)
 
-we download the [entire website](writeupfiles/static.icec.tf/iloveflowers/)
+The website seems to be a reference to Halo (https://en.wikipedia.org/wiki/I_Love_Bees)
+
+We download the [entire website](writeupfiles/static.icec.tf/iloveflowers/)
 
 ```
 wget -m https://static.icec.tf/iloveflowers/
 ```
 
-The website itself seems to be a reference to Halo (https://en.wikipedia.org/wiki/I_Love_Bees)
-
-After much searching, it turns out to be the favicon gif file:
+After much searching, the flag turns out to be the favicon gif file:
 
 ![](writeupfiles/static.icec.tf/iloveflowers/favicon.gif)
 
