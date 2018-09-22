@@ -10,7 +10,7 @@ Title                          Category       Points Flag
 XORnigma                       Junior         1
 Multiple Flags                 Junior         1
 World of Internet              Junior         1
-Sniff                          Junior         1
+Sniff                          Junior         1      DCTF{0751867b2cb4e601e2cd94aa5eb485f4552790e7a348cb20fd610c741c8fc978}
 SimplePassword                 Junior         1
 EagleEye                       Junior         1
 PasswordPolicy                 Junior         1
@@ -69,7 +69,34 @@ CGJDCTF
 
 apart from the two `DCTF`s in there not sure what to make of it
 
-## Junior: RobotsVSHumans
+## Junior 1: Sniff
+
+**Challenge**
+Sniff!
+[pcap file](./writeupfiles/Sniff.pcap)
+
+**Solution**
+
+We open it in Wireshark and do:
+
+1. File
+2. Object Export
+3. HTTP
+4. All
+
+Putting them into the expected `asd/` directory and opening the `/` file in a browser shows lots of garbage except for the 001-020.jpg which when put together with imagemagick:
+
+```
+montage -mode concatenate -tile x1 asd/0* out.jpg
+```
+
+Shows the flag:
+
+
+![](./writeupfiles/sniff.jpg)
+
+
+## Junior 1: RobotsVSHumans
 
 **Challenge**
 
