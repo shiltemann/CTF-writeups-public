@@ -250,7 +250,7 @@ f = open('./FlagDCTF.pdf', 'r')
 buf = f.read()
 f.close()
 allchar = string.ascii_letters + string.punctuation + string.digits
-password = ('').join((choice(allchar) for OOO0OO0OO00OO0000 in range(randint(60, 60))))
+password = ('').join((choice(allchar) for _ in range(randint(60, 60))))
 buf = caesar_cipher(buf, password)
 f = open('./youfool!.exe', 'w')
 buf = f.write(buf)
@@ -258,4 +258,25 @@ f.close()
 ```
 
 
+So this XORs an input PDF against a randomly chosen 60 character password, and
+then saves it as 'youfool!.exe'
+
+We know that the first bytes MUST be %PDF-1 (ok, not strictly. %PDF only needs
+to appear in the first like 2048 bytes, xref PoC||GTFO)
+
+So we can make some guesses about the key based on the input, using the
+properties of XOR to guess and check. Checking various places throughout the
+PDF we sometimes get lucky and see partial overlaps with known substrings that
+appear in PDFs (like endstream/endobj/ImageI/etc)
+
+![](./writeupfiles/ransomware-progress.jpg)
+
+Eventually we can reconstruct the [original PDF](./writeupfiles/FlagDCTF.pdf)
+
 **Flag**
+
+This is the string in the PDF but it doesn't work?
+
+```
+DCTF{d915b5e076215c3efb92e5844ac20d0620d19b15d427e207fae6a3b894f91333}
+```
