@@ -7,7 +7,7 @@ Team: Galaxians
 ```
 Title                          Category       Points Flag
 ------------------------------ -------------- ------ -----------------------------
-XORnigma                       Junior         1
+XORnigma                       Junior         1      DCTF{fcc34eaae8bd3614dd30324e932770c3ed139cc2c3250c5b277cb14ea33f77a0}
 Multiple Flags                 Junior         1      DCTFSPECIALFLAG00AA00AA00991337DCTF
 World of Internet              Junior         1
 Sniff                          Junior         1      DCTF{0751867b2cb4e601e2cd94aa5eb485f4552790e7a348cb20fd610c741c8fc978}
