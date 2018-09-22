@@ -166,3 +166,37 @@ Location: Bcharest, Romania
 ```
 DCTF{1091d2144edbffaf5dd265cb7c93e799c4659eb16ee79735b3bd6e09dd6e791f}
 ```
+
+## Reverse: Ransomware
+
+**Challenge**
+
+Someone encrypted my homework with [this rude script](writeupfiles/ransomware.zip). HELP!
+
+**Solution**
+
+The zip file contains a compile python file and a `.exe` file. We decompile the `.pyc` file with [uncompyle](https://github.com/gstarnberger/uncompyle)
+
+```python
+import string
+from random import *
+import itertools
+
+def caesar_cipher(OOO0O0O00OOO0O0OO, O0O0O0O0OOOO0OOOO):
+    O0O0O0O0OOOO0OOOO = O0O0O0O0OOOO0OOOO * (len(OOO0O0O00OOO0O0OO) / len(O0O0O0O0OOOO0OOOO) + 1)
+    return ('').join((chr(ord(O0O0O00O0000O00O0) ^ ord(OO0000000O0OO00OO)) for O0O0O00O0000O00O0, OO0000000O0OO00OO in itertools.izip(OOO0O0O00OOO0O0OO, O0O0O0O0OOOO0OOOO)))
+
+
+f = open('./FlagDCTF.pdf', 'r')
+buf = f.read()
+f.close()
+allchar = string.ascii_letters + string.punctuation + string.digits
+password = ('').join((choice(allchar) for OOO0OO0OO00OO0000 in range(randint(60, 60))))
+buf = caesar_cipher(buf, password)
+f = open('./youfool!.exe', 'w')
+buf = f.write(buf)
+f.close()
+```
+
+
+**Flag**
