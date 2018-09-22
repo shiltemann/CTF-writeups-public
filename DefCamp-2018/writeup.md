@@ -275,8 +275,6 @@ Eventually we can reconstruct the [original PDF](./writeupfiles/FlagDCTF.pdf)
 
 **Flag**
 
-This is the string in the PDF but it doesn't work?
-
 ```
 DCTF{d915b5e076215c3efb92e5844ac20d0620d19b15d427e207fae6a3b894f91333}
 ```
