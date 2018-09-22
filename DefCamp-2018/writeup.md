@@ -34,8 +34,42 @@ Voices                         Misc
 Exfil                          Misc
 ```
 
+## Junior: XORnigma
 
-## Junior 1: RobotsVSHumans
+**Challenge**
+
+Obtain the flag from the given [file](writeupfiles/xornigma.py).
+
+**Solution**
+
+**Flag**
+
+## Junior: Multiple Flags
+
+**Challenge**
+
+Look, flags everywhere!
+
+![](writeupfiles/multiple-flags.png)
+
+**Solution**
+
+This is [semaphore flag signalling system](https://www.anbg.gov.au/flags/semaphore.html)
+
+![](../_resources/sema.jpg)
+
+```
+JDCTFSP
+ECIHLZL
+AG?KKJA
+A?KKJAA
+?KKIIAC
+CGJDCTF
+```
+
+apart from the two `DCTF`s in there not sure what to make of it
+
+## Junior: RobotsVSHumans
 
 **Challenge**
 
