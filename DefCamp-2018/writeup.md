@@ -198,5 +198,28 @@ buf = f.write(buf)
 f.close()
 ```
 
+we deobfuscate a bit:
+
+```python
+import string
+from random import *
+import itertools
+
+def caesar_cipher(a, b):
+    b = b * (len(a) / len(b) + 1)
+    return ('').join((chr(ord(c) ^ ord(d)) for c,d in itertools.izip(a, b)))
+
+
+f = open('./FlagDCTF.pdf', 'r')
+buf = f.read()
+f.close()
+allchar = string.ascii_letters + string.punctuation + string.digits
+password = ('').join((choice(allchar) for OOO0OO0OO00OO0000 in range(randint(60, 60))))
+buf = caesar_cipher(buf, password)
+f = open('./youfool!.exe', 'w')
+buf = f.write(buf)
+f.close()
+```
+
 
 **Flag**
