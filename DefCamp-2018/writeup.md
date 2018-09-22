@@ -40,11 +40,47 @@ Exfil                          Misc
 
 Obtain the flag from the given [file](writeupfiles/xornigma.py).
 
+```python
+import itertools
+def xor_two_str(s, key):
+	key = key * (len(s) / len(key) + 1)
+	return ''.join(chr(ord(x) ^ ord(y)) for (x,y) in itertools.izip(s, key))
+
+flag = ""
+flag_key = "DCTF"
+x = xor_two_str(flag, flag_key)
+print x.encode("hex")
+# 000000003f2537257777312725266c24207062777027307574706672217a67747374642577263077777a3725762067747173377326716371272165722122677522746327743e
+```
+
 **Solution**
+
+We get the encoded flag as a comment in the python file, so we simply reverse the process
+
+We see that bytes are XOR'ed, and since the flag starts with `DCTF` and the encoded string starts with `00000000`, we know that
+the `flag_key` also starts with `DCTF` (and turns out to be the entire key)
+
+```python
+import itertools
+import binascii
+
+x = "000000003f2537257777312725266c24207062777027307574706672217a67747374642577263077777a3725762067747173377326716371272165722122677522746327743e"
+flag_key="DCTF"
+
+c = binascii.unhexlify(x)
+pt = ''.join( [chr( ord(c[i]) ^ ord(flag_key[i%len(flag_key)]) ) for i in range(0,len(c))] )
+
+print(pt)
+```
 
 **Flag**
 
+```
+DCTF{fcc34eaae8bd3614dd30324e932770c3ed139cc2c3250c5b277cb14ea33f77a0}
+```
+
 ## Junior: Multiple Flags
+
 
 **Challenge**
 
