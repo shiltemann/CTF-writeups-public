@@ -12,7 +12,7 @@ Multiple Flags                 Junior         1      DCTFSPECIALFLAG00AA00AA0099
 World of Internet              Junior         1
 Sniff                          Junior         1      DCTF{0751867b2cb4e601e2cd94aa5eb485f4552790e7a348cb20fd610c741c8fc978}
 SimplePassword                 Junior         1
-EagleEye                       Junior         1
+EagleEye                       Junior         1      DCTF{912c07726142de12943b76a89d40847028330f0a1a0be1ac24503c57242404ab}}
 PasswordPolicy                 Junior         1
 RobotsVSHumans                 Junior         1      DCTF{1091d2144edbffaf5dd265cb7c93e799c4659eb16ee79735b3bd6e09dd6e791f}
 Security through obscurity     Junior         1
@@ -109,6 +109,25 @@ Shows the flag:
 
 ![](./writeupfiles/sniff.jpg)
 
+## Junior: Eagle Eye
+
+**Challenge**
+
+Do you see it?
+
+![](writeupfiles/chall.png)
+
+**Solution**
+
+We crank up the contrast and brightness and can see the flag in top left corner
+
+![](writeupfiles/chall_solved.png)
+
+
+**Flag**
+```
+DCTF{912c07726142de12943b76a89d40847028330f0a1a0be1ac24503c57242404ab}}
+```
 
 ## Junior 1: RobotsVSHumans
 
