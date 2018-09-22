@@ -1,7 +1,7 @@
 # uncompyle6 version 3.2.3
 # Python bytecode 2.7 (62211)
-# Decompiled from: Python 3.5.2 (default, Nov 23 2017, 16:37:01) 
-# [GCC 5.4.0 20160609]
+# Decompiled from: Python 3.6.6 (default, Sep 12 2018, 18:26:19) 
+# [GCC 8.0.1 20180414 (experimental) [trunk revision 259383]]
 # Embedded file name: ransomware.py
 # Compiled at: 2018-09-04 15:35:11
 import string
