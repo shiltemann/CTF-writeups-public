@@ -60,14 +60,16 @@ This is [semaphore flag signalling system](https://www.anbg.gov.au/flags/semapho
 
 ```
 JDCTFSP
-ECIHLZL
-AG?KKJA
-A?KKJAA
-?KKIIAC
+ECIALFL
+AG-KKJA
+A-KKJAA
+-KKIIAC
 CGJDCTF
 ```
 
-apart from the two `DCTF`s in there not sure what to make of it
+We see two `DCTF`s in ther and the word `SPECIALFLAG` but unsure how to format flag
+
+JDCTFSPECIALFLAG-KKJAA-KKJAA-KKIIACCGJDCTF
 
 ## Junior 1: Sniff
 
