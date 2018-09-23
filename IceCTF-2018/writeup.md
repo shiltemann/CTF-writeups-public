@@ -1,4 +1,4 @@
-# IceCTF 2016
+# IceCTF 2018
 
 2-Week-long Icelandic CTF in September 2018
 
