@@ -5,19 +5,19 @@ Team: Galaxians
 
 ## Overview
 ```
-Title                          Category       Points Flag
------------------------------- -------------- ------ -----------------------------
-XORnigma                       Junior         1      DCTF{fcc34eaae8bd3614dd30324e932770c3ed139cc2c3250c5b277cb14ea33f77a0}
-Multiple Flags                 Junior         1      DCTFSPECIALFLAG00AA00AA00991337DCTF
-World of Internet              Junior         1      DCTF{06d54ba96e9661d71e8b716b52914cd675e5fca46cb5ca2f80c1c9e67a56701f}
-Sniff                          Junior         1      DCTF{0751867b2cb4e601e2cd94aa5eb485f4552790e7a348cb20fd610c741c8fc978}
-SimplePassword                 Junior         1
-EagleEye                       Junior         1      DCTF{912c07726142de12943b76a89d40847028330f0a1a0be1ac24503c57242404ab}}
-PasswordPolicy                 Junior         1
-RobotsVSHumans                 Junior         1      DCTF{1091d2144edbffaf5dd265cb7c93e799c4659eb16ee79735b3bd6e09dd6e791f}
-Security through obscurity     Junior         1
-Passport                       Junior         1
-chat                           Web            330
+Title                          Category       Flag
+------------------------------ -------------- -----------------------------
+XORnigma                       Junior         DCTF{fcc34eaae8bd3614dd30324e932770c3ed139cc2c3250c5b277cb14ea33f77a0}
+Multiple Flags                 Junior         DCTFSPECIALFLAG00AA00AA00991337DCTF
+World of Internet              Junior         DCTF{06d54ba96e9661d71e8b716b52914cd675e5fca46cb5ca2f80c1c9e67a56701f}
+Sniff                          Junior         DCTF{0751867b2cb4e601e2cd94aa5eb485f4552790e7a348cb20fd610c741c8fc978}
+SimplePassword                 Junior
+EagleEye                       Junior         DCTF{912c07726142de12943b76a89d40847028330f0a1a0be1ac24503c57242404ab}}
+PasswordPolicy                 Junior
+RobotsVSHumans                 Junior         DCTF{1091d2144edbffaf5dd265cb7c93e799c4659eb16ee79735b3bd6e09dd6e791f}
+Security through obscurity     Junior
+Passport                       Junior
+chat                           Web
 Get Admin                      Web
 secops                         Web
 Vulture                        Web
@@ -29,7 +29,7 @@ Lucky?                         Exploit
 Even more lucky?               Exploit
 Online linter                  Exploit
 Broken TV                      Misc
-Message                        Misc
+Message                        Misc           DCTF{B66ECAAA90AD05DF5DAB33D71A8F70934408F3A5847A4C5C38DB75891B0F0E32}
 Voices                         Misc
 Exfil                          Misc
 ```
@@ -550,10 +550,70 @@ wsxcvasdfghrfvbnhytqwertymnbvcdrtghuzxcvbnwsxcdeasdfghzaqwdrtgbzxcvbn qwertywsxq
 [..]
 ```
 
-is this writing pattern on the keyboard? nothing obvious, chinese/japanes characters? swipe keyboard?
+is this writing pattern on the keyboard? looking at sequences of letter that are adjacent on a keyboard we
+see tht `wsxcv` could be an `L` shape? `rfvbnhyt` an `O`?
+
+
+```python
+replacements = [('mnbvcdrtghu','R'),
+                ('efvgywdcft','W'),
+                ('nbvcxswefr','P'),('mnbvccdertg','P'),('nbvcxswerf','P'),
+                ('zaqwdrtgb','M'),('xsweftynh','M'),('xsweftyhn','M'),
+                ('xsweftgb','N'),('zaqwdvfr','N'),('xsweftbg','N'),
+                ('rfvbnhyt','O'),('qazxcdew','O'),('wsxcvfre','O'),
+                ('rfvgyhn','H'),('edcftgb','H'),('wsxdrfv','H'),
+                ('iuyhnbv','S'),('ytrfvcx','S'),
+                ('rtyuihn','T'),('wertyfv','T'),
+                ('wsxcvfr','U'),('edcvbgt','U'),
+                ('grdxcvb','A'),('zsefvcx','A'),('xcvbgrd','A'),
+                ('rfvbhg','B'),('wsxcfd','B'),('qazxds','B'),
+                ('wsxcde','E'),('edcvrf','E'),('tgbnhy','E'),
+                ('wsxcfe','D'),('yhnmku','D'),('edcvgr','D'),
+                ('cvgred','G'),('cvrged','G'),('redcvg','G'),
+                ('edcfby','K'),('qazsce','K'),('wsxdvr','K'),
+                ('rgnygc','X'),('wdvtdz','X'),
+                ('ewsxc','C'),('redcv','C'),('trfvb','C'),
+                ('redcf','F'),('trfvg','F'),('ewsxd','F'),
+                ('wsxcv','L'), ('edcvb','L'), ('rfvbn','L'),
+                ('wdcft','V'),('efvgy','V'),
+                ('efvt', 'Y'),('jmyi','Y'),
+                ('wsx','I'),('edc','I'),('rfv','I'),
+                ('qwerty',''),('asdfgh',''),('zxcvbn','')]
+
+with open('message.txt','r') as f:
+    m = f.readline()
+
+for i in replacements:
+    m = m.replace(i[0],i[1])
+
+print(m)
+```
+
+outputs the text:
+
+```
+LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE PRINTING AND TYPESETTING INDUSTRY.
+LOREM IPSUM HAS BEEN THE INDUSTRY'S STANDARD DUMMY TEXT EVER SINCE THE 1500S,
+WHEN AN UNKNOWN PRINTER TOOK A GALLEY OF TYPE AND SCRAMBLED IT TO MAKE A TYPE
+SPECIMEN BOOK. IT HAS SURVIVED NOT ONLY FIVE CENTURIES, BUT ALSO THE LEAP INTO
+ELECTRONIC TYPESETTING, REMAINING ESSENTIALLY UNCHANGED. IT WAS POPULARISED IN THE
+1960S WITH THE RELEASE OF LETRASET SHEETS CONTAINING LOREM IPSUM PASSAGES, AND MORE
+RECENTLY WITH DESKTOP PUBLISHING SOFTWARE LIKE ALDUS PAGEMAKER INCLUDING VERSIONS OF
+LOREM IPSUM.
+DCTF{B66ECAAA90AD05DF5DAB33D71A8F70934408F3A5847A4C5C38Dqazxds75891B0F0E32}LOREM
+IPSUM IS SIMPLY DUMMY TEXT OF THE PRINTING AND TYPESETTING INDUSTRY. LOREM IPSUM HAS
+qazxdsEEN THE INDUSTRY'S STANDARD DUMMY TEXT EVER SINCE THE 1500S, WHEN AN UNKNOWN
+PRINTER TOOK A GALLEY OF TYPE AND SCRAMBLED IT TO MAKE A TYPE SPECIMEN BOOK. IT HAS
+SURVIVED NOT ONLY FIVE CENTURIES, BUT ALSO THE LEAP INTO ELECTRONIC TYPESETTING,
+REMAINING ESSENTIALLY UNCHANGED. IT WAS POPULARISED IN THE 1960S WITH THE RELEASE OF
+LETRASET SHEETS CONTAINING LOREM IPSUM PASSAGES, AND MORE RECENTLY WITH DESKTOP
+PUBLISHING SOFTWARE LIKE ALDUS PAGEMAKER INCLUDING VERSIONS OF LOREM IPSUM.
+```
 
 **Flag**
-
+```
+DCTF{B66ECAAA90AD05DF5DAB33D71A8F70934408F3A5847A4C5C38DB75891B0F0E32}
+```
 
 ## Misc: Broken TV
 
