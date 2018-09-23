@@ -127,7 +127,9 @@ Do you know WelCOrpe Severus?
 **Solution**
 
 After some googling turned up nothing we decided to search on twitter, and found
-an account by that name.
+an [account by that name](https://twitter.com/welcorpe).
+
+The first tweet from that account contains our flag:
 
 ![](writeupfiles/tweet.png)
 
@@ -162,6 +164,20 @@ Shows the flag:
 
 ![](./writeupfiles/sniff.jpg)
 
+
+## Junior: SimplePassword
+
+**Challenge**
+
+Can you guess what is wrong with the password?
+
+[SimplePass](writeupfiles/SimplePass)
+
+**Solution**
+
+**Flag**
+
+
 ## Junior: Eagle Eye
 
 **Challenge**
@@ -182,7 +198,67 @@ We crank up the contrast and brightness and can see the flag in top left corner
 DCTF{912c07726142de12943b76a89d40847028330f0a1a0be1ac24503c57242404ab}}
 ```
 
-## Junior 1: RobotsVSHumans
+## Junior: PasswordPolicy
+
+**Challenge**
+
+Can you guess this extreme password?
+
+Target: https://password-policy.dctfq18.def.camp/
+
+**Solution**
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="css/theme.css" type="text/css">
+</head>
+<body>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"> </div>
+        <div class="col-md-6">
+          <div class="card text-white p-5 bg-dark">
+            <div class="card-body">
+              <h1 class="mb-4">Login form</h1>
+              <form action="" method="POST">
+                <div class="form-group">
+                  <label>Email address</label>
+                  <input name="user" type="email" class="form-control" placeholder="Enter email" value="admin@leftover.dctf"></div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input name="pass" type="password" class="form-control" placeholder="Password"> </div>
+                <button name="btn-login" type="submit" class="btn btn-secondary">Login</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $('form').submit(function(e) {
+      if($('input[name="pass"]').val().length < 1337) {
+          alert('Minimum length for password is 1337 characters.');
+          e.preventDefault();
+          return false;
+      }
+  });
+  </script>
+</body>
+</html>
+```
+
+**Flag**
+
+
+## Junior: RobotsVSHumans
 
 **Challenge**
 
@@ -219,6 +295,85 @@ Location: Bcharest, Romania
 ```
 DCTF{1091d2144edbffaf5dd265cb7c93e799c4659eb16ee79735b3bd6e09dd6e791f}
 ```
+
+
+## Junior: Security through obscurity
+
+**Challenge**
+
+I have a very secure internal login.
+
+Target: https://security-through-obscurity.dctfq18.def.camp/
+
+**Solution**
+
+**Flag**
+
+
+## Junior: Passport
+
+**Challenge**
+
+Provide valid passport file in order to pass.
+
+Target: http://passport.dctfq18.def.camp
+
+**Solution**
+
+**Flag**
+
+
+## Web: chat
+
+**Challenge**
+
+We received a new gig. Our goal is to review this application written in nodejs and see if we can get the flag from this system. Are you up for this?
+
+The target: https://chat.dctfq18.def.camp
+
+The code: [chat](writeupfiles/chat/)
+
+**Solution**
+
+**Flag**
+
+## Web: Get Admin
+
+**Challenge**
+
+This is a very unexpected gig for me. However, I'm busy with other projects so can you please give me a hand to test this. For free, of course. :-)
+
+Files: [get-admin](writeupfiles/get-admin/)
+
+Target: https://admin.dctfq18.def.camp/
+
+**Solution**
+
+**Flag**
+
+## Web: secops
+
+**Challenge**
+Firewalls proved to be very useful in our hosting environment as it protects against attacks on vulnerable sites of our clients.
+
+Target: https://secops.dctfq18.def.camp/
+
+**Solution**
+
+**Flag**
+
+## Web: Vulture
+
+**Challenge**
+
+We created an online service where you can upload pictures of vultures (or other birds). Each user has a feed so you can privately enjoy the photos you took of this majestic killing machines :)
+
+Target: https://vulture.dctfq18.def.camp/
+
+**Solution**
+
+**Flag**
+
 
 ## Reverse: Ransomware
 
@@ -295,3 +450,186 @@ Eventually we can reconstruct the [original PDF](./writeupfiles/FlagDCTF.pdf)
 ```
 DCTF{d915b5e076215c3efb92e5844ac20d0620d19b15d427e207fae6a3b894f91333}
 ```
+
+## Reverse: Memsome
+
+**Challenge**
+
+I can not find my license file. Can you help me?
+
+Target: [memsome](writeupfiles/memsom)
+
+
+**Solution**
+
+**Flag**
+
+
+## Reverse: Validator
+
+**Challenge**
+
+Like any good admin, we don't store the flag, we validate that it can be generated.
+
+Target: [validator](writeupfiles/validator)
+
+**Solution**
+
+**Flag**
+
+
+## Exploit: Lucky?
+
+**Challenge**
+
+How lucky are you?
+
+Target: 167.99.143.206 65031
+
+Bin: [lucky](writeupfiles/lucky)
+
+**Solution**
+
+**Flag**
+
+
+## Exploit: Even more lucky?
+
+**Challenge**
+
+We have updated the lucky game just for you! Now the executable is lighter and more efficient.
+
+Target: 167.99.143.206 65032
+
+Bin: [lucky2](writeupfiles/lucky2)
+
+**Solution**
+
+**Flag**
+
+
+## Exploit: Online linter
+
+**Challenge**
+
+An old service for online php code linting has been fixed and brought back to life. This time the admins are pretty sure it's unhackable!
+
+Target: https://online-linter.dctfq18.def.camp/
+
+**Solution**
+
+**Flag**
+
+
+## Exploit: Sweet
+
+**Challenge**
+
+I don't really trust those shady binaries but I have to use them. Can you at least make sure it has no evil parts?
+
+Target: https://sweet.dctfq18.def.camp/
+
+File: [sweet.so](writeupfiles/sweet.so)
+
+**Solution**
+
+**Flag**
+
+
+## Misc: Message
+
+**Challenge**
+
+I just typed this secret [message](writeupfiles/message.txt) with my new encoding algorithm.
+
+
+**Solution**
+
+```
+wsxcvasdfghrfvbnhytqwertymnbvcdrtghuzxcvbnwsxcdeasdfghzaqwdrtgbzxcvbn qwertywsxqwertynbvcxswefrqwertyiuyhnbvqwertywsxcvfrasdfghzaqwdrtgbzxcvbn qwertywsxasdfghiuyhnbvasdfgh zxcvbnytrfvcxqwertywsxasdfghzaqwdrtgbqwertymnbvccdertgzxcvbnedcvbasdfghefvtzxcvbn asdfghwsxcfezxcvbnedcvbgtasdfghzaqwdrtgbqwertyxsweftynhzxcvbnjmyizxcvbn zxcvbnrtyuihnzxcvbnwsxcdeasdfghrgnygcqwertyrtyuihnasdfgh qwertyqazxcdewzxcvbnredcfzxcvbn zxcvbnwertyfvzxcvbnrfvgyhnasdfghwsxcdeqwerty qwertynbvcxswefrzxcvbnmnbvcdrtghuzxcvbnrfvqwertyxsweftgbqwertyrtyuihnqwertywsxasdfghxsweftgbzxcvbncvgredasdfgh
+[..]
+```
+
+is this writing pattern on the keyboard? nothing obvious, chinese/japanes characters? swipe keyboard?
+
+**Flag**
+
+
+## Misc: Broken TV
+
+**Challenge**
+
+Guys, I've asked Google for this flag! But my only monitor is this Broken TV...
+
+![](writeupfiles/blur-orig.png)
+
+**Solution**
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="css/theme.css" type="text/css"> </head>
+<body>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-8 offset-2">
+          <div class="embed-responsive">
+            <img src="loading.gif" style="max-width: 100%;" class="tv">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery-3.2.1.slim.min.js"></script>
+  <script>
+    const reload = () => {
+      $('.tv').attr('src', 'blur.png?r=' + Date.now());
+      setInterval(reload, 60 * 1000);
+    };
+    reload();
+  </script>
+</body>
+</html>
+```
+
+looks like the image is scrambled based on a parameter given (the current date)
+
+image of just the contents of the screen is [here](writeupfiles/blur.png)
+
+**Flag**
+
+
+## Misc: Voices
+
+**Challenge**
+
+Listen. Can you hear the voices? They are there. Somehow.
+
+[voices.wav](writeupfiles/voices.wav)
+
+**Solution**
+
+**Flag**
+
+
+## Misc: Exfil
+
+**Challenge**
+
+An experienced hacker gained unauthorised access into a facility with limited options to exfiltrate data but he managed to launch a backdoor to solve this issue. However, he got arrested before intercepting the confidential data. Can you recover the information and maybe do some profits on his behalf? Flag format: `DCTF\{[A-Za-z0-9\-]+\}`
+
+For this challenge you are allowed to scan using nmap, but it won't help you too much :)
+
+Target: 104.248.38.191
+
+**Solution**
+
+**Flag**
+
+
+
