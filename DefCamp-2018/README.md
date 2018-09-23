@@ -486,6 +486,9 @@ with open('./FlagDCTF.pdf', 'w') as handle:
 
 Eventually we can reconstruct the [original PDF](./writeupfiles/FlagDCTF.pdf)
 
+![](writeupfiles/ransomware_pdf_screenshot.png)
+
+
 **Flag**
 
 ```
