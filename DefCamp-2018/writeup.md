@@ -9,7 +9,7 @@ Title                          Category       Points Flag
 ------------------------------ -------------- ------ -----------------------------
 XORnigma                       Junior         1      DCTF{fcc34eaae8bd3614dd30324e932770c3ed139cc2c3250c5b277cb14ea33f77a0}
 Multiple Flags                 Junior         1      DCTFSPECIALFLAG00AA00AA00991337DCTF
-World of Internet              Junior         1
+World of Internet              Junior         1      DCTF{06d54ba96e9661d71e8b716b52914cd675e5fca46cb5ca2f80c1c9e67a56701f}
 Sniff                          Junior         1      DCTF{0751867b2cb4e601e2cd94aa5eb485f4552790e7a348cb20fd610c741c8fc978}
 SimplePassword                 Junior         1
 EagleEye                       Junior         1      DCTF{912c07726142de12943b76a89d40847028330f0a1a0be1ac24503c57242404ab}}
@@ -118,6 +118,23 @@ DCTFSPECIALFLAG00AA00AA00991337DCTF
 DCTFSPECIALFLAG00AA00AA00991337DCTF
 ```
 
+## Junior: World of Internet
+
+**Challenge**
+
+Do you know WelCOrpe Severus?
+
+**Solution**
+
+After some googling turned up nothing we decided to search on twitter, and found
+an account by that name.
+
+![](writeupfiles/tweet.png)
+
+**Flag**
+```
+DCTF{06d54ba96e9661d71e8b716b52914cd675e5fca46cb5ca2f80c1c9e67a56701f}
+```
 
 ## Junior 1: Sniff
 
