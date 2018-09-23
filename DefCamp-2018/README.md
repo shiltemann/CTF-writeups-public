@@ -21,7 +21,7 @@ chat                           Web
 Get Admin                      Web
 secops                         Web
 Vulture                        Web
-Ransomware                     Reversing
+Ransomware                     Reversing      DCTF{d915b5e076215c3efb92e5844ac20d0620d19b15d427e207fae6a3b894f91333}
 Memsome                        Reversing
 KitKat                         Reversing
 Validator                      Reversing
