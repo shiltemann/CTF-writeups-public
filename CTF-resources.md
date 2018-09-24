@@ -132,6 +132,7 @@ GOST hashing algorithm:  [http://en.wikipedia.org/wiki/GOST_%28hash_function%29]
 
 |What|Link|
 |----|----|
+|StegoVeritas|https://github.com/bannsec/stegoVeritas|
 |outguess| ubuntu apt tool|
 |steghide| ubuntu apt tool|
 |stegdetect| ubuntu apt tool|
