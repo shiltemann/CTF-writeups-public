@@ -1,5 +1,11 @@
 # PicoCTF 2018
 
+Two-week long competition in Sept/October 2018
+
+Had a fun little game environment for the challenges as well as text based
+
+![](writeupfiles/screenshot_categories.png)
+
 ## Overview
 
 
@@ -17,9 +23,11 @@ Reversing Warmup 2           Reversing        50      picoCTF{th4t_w4s_s1mpL3i}
 Crypto Warmup 1              Cryptography     75      picoCTF{SECRETMESSAGE}
 Crypto Warmup 2              Cryptography     75      picoCTF{this_is_crypto!}
 grep 1                       General Skills   75      picoCTF{grep_and_you_will_find_c709fa94}
-net cat                      General Skills   75
-HEEEEEEERE'S Johnny!         Cryptography     100
-Inspect Me                   Web              125
+net cat                      General Skills   75      picoCTF{NEtcat_iS_a_NEcESSiTy_8b6a1fbc}
+HEEEEEEERE'S Johnny!         Cryptography     100     picoCTF{J0hn_1$_R1pp3d_1b25af80}
+strings 1                    General Skills   100     picoCTF{sTrIngS_sAVeS_Time_d3ffa29c}
+pipe                         General Skills   110     picoCTF{almost_like_mario_b797f2b3}
+Inspect Me                   Web              125     picoCTF{ur_4_real_1nspect0r_g4dget_b4887011}
 Desrouleaux                  Forensics        150
 Logon                        Web              150
 admin panel                  Forensics        150
@@ -268,7 +276,7 @@ u'picoCTF{this_is_crypto!}'
 
 **Flag**
 ```
-picoCTF{this_is_crypto!coCTF{this_is_crypto!}}
+picoCTF{this_is_crypto!}
 ```
 
 ## General Skills 75: grep 1
@@ -280,36 +288,135 @@ Can you find the flag in [file](writeupfiles/file)? This would be really obnoxio
 **Solution**
 
 ```bash
-$ grep "picoCTF" file                                                                                                        [28-09-18 23:15:19]
+$ grep "picoCTF" file
 picoCTF{grep_and_you_will_find_c709fa94}
 ```
 
 **Flag**
 ```
-
+picoCTF{grep_and_you_will_find_c709fa94}
 ```
 
 ## General Skills 75: net cat
 
 **Challenge**
 
+Using netcat (nc) will be a necessity throughout your adventure. Can you connect to `2018shell1.picoctf.com` at port `49387` to get the flag?
+
 **Solution**
+
+```bash
+$ nc 2018shell1.picoctf.com 49387
+That wasn't so hard was it?
+picoCTF{NEtcat_iS_a_NEcESSiTy_8b6a1fbc}
+```
 
 **Flag**
 ```
-
+picoCTF{NEtcat_iS_a_NEcESSiTy_8b6a1fbc}
 ```
 
 ## Cryptography 100: HEEEEEEERE'S Johnny!
 
 **Challenge**
 
+Okay, so we found some important looking files on a linux computer. Maybe they can be used to get a password to the process.
+Connect with `nc 2018shell1.picoctf.com 40157`. Files can be found here: [passwd](writeupfiles/passwd) [shadow](writeupfiles/shadow).
+
 **Solution**
+
+We use a combination of unshadow and john the ripper to find the password
+
+```
+$ unshadow passwd shadow > crackme
+$ john crackme
+Created directory: /home/saskia/.john
+Loaded 1 password hash (crypt, generic crypt(3) [?/64])
+Press 'q' or Ctrl-C to abort, almost any other key for status
+password1        (root)
+1g 0:00:00:01 100% 2/3 0.5102g/s 469.3p/s 469.3c/s 469.3C/s 123456..pepper
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed
+```
+
+So we know the password for the root user is `password1`. We use that to log into the server
+
+```bash
+$ nc 2018shell1.picoctf.com 40157
+Username: root
+Password: password1
+picoCTF{J0hn_1$_R1pp3d_1b25af80}
+
+```
 
 **Flag**
 ```
-
+picoCTF{J0hn_1$_R1pp3d_1b25af80}
 ```
+
+## General Skills 100: strings
+
+**Challenge**
+
+Can you find the flag in [this file](writeupfiles/strings) without actually running it? You can also find the file
+in `/problems/strings_4_40d221755b4a0b134c2a7a2e825ef95f` on the shell server.
+
+**Solution**
+
+```bash
+$ strings strings | grep picoCTF
+picoCTF{sTrIngS_sAVeS_Time_d3ffa29c}
+```
+
+**Flag**
+```
+picoCTF{sTrIngS_sAVeS_Time_d3ffa29c}
+```
+
+## GEneral Skills 110: pipe
+
+**Challenge**
+
+During your dventure, you will likely encounter a situation where you need to process
+data that you receive over the network rather than through a file. Can you find a way
+to save the output from this program and search for the flag?
+Connect with `2018shell1.picoctf.com 34532`.
+
+**Solution**
+
+We connect via netcat and are flooded with messages
+
+```bash
+$ nc 2018shell1.picoctf.com 34532
+Unfortunately this is also not a flag
+This is not a flag
+This is not a flag
+I'm sorry you're going to have to look at another line
+I'm sorry you're going to have to look at another line
+I'm sorry you're going to have to look at another line
+Unfortunately this is also not a flag
+I'm sorry you're going to have to look at another line
+I'm sorry you're going to have to look at another line
+I'm sorry you're going to have to look at another line
+Unfortunately this is also not a flag
+I'm sorry you're going to have to look at another line
+Unfortunately this is also not a flag
+This is not a flag
+[..]
+```
+
+So we do a grep:
+
+```bash
+$ nc 2018shell1.picoctf.com 34532 | grep picoCTF
+picoCTF{almost_like_mario_b797f2b3}
+```
+
+**Flag**
+```
+picoCTF{almost_like_mario_b797f2b3}
+```
+
 
 ## Web Exploitation 125: Inspect Me
 
@@ -317,9 +424,135 @@ picoCTF{grep_and_you_will_find_c709fa94}
 
 **Solution**
 
-**Flag**
+We check the source:
+
+```html
+<!doctype html>
+<html>
+  <head>
+    <title>My First Website :)</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="mycss.css">
+    <script type="application/javascript" src="myjs.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+	<h1>My First Website</h1>
+      </header>
+
+      <button class="tablink" onclick="openTab('tabintro', this, '#222')" id="defaultOpen">Intro</button>
+      <button class="tablink" onclick="openTab('tababout', this, '#222')">About</button>
+
+      <div id="tabintro" class="tabcontent">
+	<h3>Intro</h3>
+	<p>This is my first website!</p>
+      </div>
+
+      <div id="tababout" class="tabcontent">
+	<h3>About</h3>
+	<p>These are the web skills I've been practicing: <br/>
+	  HTML <br/>
+	  CSS <br/>
+	  JS (JavaScript)
+	</p>
+	<!-- I learned HTML! Here's part 1/3 of the flag: picoCTF{ur_4_real_1nspe -->
+      </div>
+
+    </div>
+
+  </body>
+</html>
 ```
 
+Looks like only 1/3 of the flag, we keep looking
+
+mycss.css
+
+```css
+div.container {
+    width: 100%;
+}
+
+header {
+    background-color: #c9d8ef;
+    padding: 1em;
+    color: white;
+    clear: left;
+    text-align: center;
+}
+
+body {
+    font-family: Roboto;
+}
+
+h1 {
+    color: #222;
+}
+
+p {
+    font-family: "Open Sans";
+}
+
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 50%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+.tabcontent {
+    color: #111;
+    display: none;
+    padding: 50px;
+    text-align: center;
+}
+
+#tabintro { background-color: #ccc; }
+#tababout { background-color: #ccc; }
+
+/* I learned CSS! Here's part 2/3 of the flag: ct0r_g4dget_b4887011} */
+```
+
+`myjs.js`:
+
+```js
+function openTab(tabName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+	tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+	tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(tabName).style.display = "block";
+    if(elmnt.style != null) {
+	elmnt.style.backgroundColor = color;
+    }
+}
+
+window.onload = function() {
+    openTab('tabintro', this, '#222');
+}
+
+/* I learned JavaScript! Here's part 3/3 of the flag:  */
+```
+
+**Flag**
+```
+picoCTF{ur_4_real_1nspect0r_g4dget_b4887011}
 ```
 
 ## Forensics 150: Desrouleaux
