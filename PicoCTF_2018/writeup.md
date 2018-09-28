@@ -6,7 +6,7 @@
 ```
 Title                        Category         Points  Flag
 ---------------------------- ---------------- ------  -----------------------------
-Forensics Warmup 1           Forensics        50
+Forensics Warmup 1           Forensics        50      picoCTF{welcome_to_forensics}
 Forensics Warmup 2           Forensics        50
 Resources                    General Skills   50
 Reversing Warmup 1           Reversing        50
@@ -37,11 +37,17 @@ echooo                       Binary Exploit   300
 
 **Challenge**
 
+Can you unzip [this file](writeupfiles/flag.zip) for me and retreive the flag?
+
 **Solution**
+
+we unzip to find an image:
+
+![](writeupfiles/flag.jpg)
 
 **Flag**
 ```
-
+picoCTF{welcome_to_forensics}
 ```
 
 ##  50: Forensics Warmup 2
