@@ -7,10 +7,13 @@
 Title                        Category         Points  Flag
 ---------------------------- ---------------- ------  -----------------------------
 Forensics Warmup 1           Forensics        50      picoCTF{welcome_to_forensics}
-Forensics Warmup 2           Forensics        50
-Resources                    General Skills   50
-Reversing Warmup 1           Reversing        50
-Reversing Warmup 2           Reversing        50
+Forensics Warmup 2           Forensics        50      picoCTF{extensions_are_a_lie}
+General Skills Warmup 1      General Skills   50      picoCTF{A}
+General Skills Warmup 2      General Skills   50      picoCTF{11011}
+General Skills Warmup 3      General Skills   50      picoCTF{61}
+Resources                    General Skills   50      picoCTF{xiexie_ni_lai_zheli}
+Reversing Warmup 1           Reversing        50      picoCTF{welc0m3_t0_r3VeRs1nG}
+Reversing Warmup 2           Reversing        50      picoCTF{th4t_w4s_s1mpL3i}
 Crypto Warmup 1              Cryptography     75
 Crypto Warmup 2              Cryptography     75
 grep 1                       General Skills   75
@@ -50,48 +53,157 @@ we unzip to find an image:
 picoCTF{welcome_to_forensics}
 ```
 
-##  50: Forensics Warmup 2
+## Forensics 50: Forensics Warmup 2
+
+**Challenge**
+
+Hmm for some reason I can't open [this PNG](writeupfiles/flag.png)? Any ideas?
+
+**Solution**
+
+Turns out the file isn't actually a png file (though gimp will open it even with
+the wrong extension)
+
+```bash
+$ file flag.png
+flag.png: JPEG image data, JFIF standard 1.01, resolution (DPI), density 75x75, segment length 16, baseline, precision 8, 909x190, frames 3
+```
+
+![](writeupfiles/flag2.jpg)
+
+**Flag**
+```
+picoCTF{extensions_are_a_lie}
+```
+
+## General Skills 50: Warmup 1
+
+**Challenge**
+
+If I told you your grade was `0x41` in hexadecimal, what would it be in ASCII?
+
+**Solution**
+
+```python
+>>> chr(int('41',16))
+'A'
+```
+
+**Flag**
+```
+picoCTF{A}
+```
+
+## General Skills 50: Warmup 2
 
 **Challenge**
 
 **Solution**
 
-**Flag**
+```python
+>>> bin(27)
+'0b11011'
 ```
 
+**Flag**
+```
+picoCTF{11011}
+```
+
+
+## General Skills 50: Warmup 3
+
+**Challenge**
+
+What is 0x3D (base 16) in decimal (base 10).
+
+**Solution**
+
+```python
+>>> int('3D',16)
+61
+```
+
+**Flag**
+```
+picoCTF{61}
 ```
 
 ## General Skills 50: Resources
 
 **Challenge**
 
+We put together a bunch of resources to help you out on our website! If you go over there,
+you might even find a flag! https://picoctf.com/resources
+
 **Solution**
+
+flag was just written on the page
 
 **Flag**
 ```
-
+picoCTF{xiexie_ni_lai_zheli}
 ```
 
 ## Reversing 50: Reversing Warmup 1
 
 **Challenge**
 
+ Throughout your journey you will have to run many programs. Can you navigate to
+`/problems/reversing-warmup-1_0_f99f89de33522c93964bdec49fb2b838` on the shell server
+and run [this program](writeupfiles/run) to retreive the flag?
+
+
+
 **Solution**
+
+```bash
+$ ssh ysje@2018shell1.picoctf.com
+picoCTF{who_n33ds_p4ssw0rds_38dj21}
+Welcome ysje!
+Your shell server account has been created.
+Please press enter and reconnect.
+```
+
+We see a flag there but its not for this challenge
+
+```bash
+$ cd /problems/reversing-warmup-1_0_f99f89de33522c93964bdec49fb2b838
+$ ./run
+picoCTF{welc0m3_t0_r3VeRs1nG}
+```
+
+or
+
+```bash
+$ strings run | grep picoCTF
+picoCTF{welc0m3_t0_r3VeRs1nG}
+```
+
 
 **Flag**
 ```
-
+picoCTF{welc0m3_t0_r3VeRs1nG}
 ```
 
 ## Reversing 50: Reversing Warmup 2
 
 **Challenge**
 
+Can you decode the following string `dGg0dF93NHNfczFtcEwz` from base64 format to ASCII?
+
 **Solution**
+
+```python
+>>> import base64
+>>> base64.b64decode('dGg0dF93NHNfczFtcEwz')
+'th4t_w4s_s1mpL3'
+```
+
 
 **Flag**
 ```
-
+picoCTF{th4t_w4s_s1mpL3}
 ```
 
 ## Cryptography 75: Crypto Warmup 1
