@@ -14,9 +14,9 @@ General Skills Warmup 3      General Skills   50      picoCTF{61}
 Resources                    General Skills   50      picoCTF{xiexie_ni_lai_zheli}
 Reversing Warmup 1           Reversing        50      picoCTF{welc0m3_t0_r3VeRs1nG}
 Reversing Warmup 2           Reversing        50      picoCTF{th4t_w4s_s1mpL3i}
-Crypto Warmup 1              Cryptography     75
-Crypto Warmup 2              Cryptography     75
-grep 1                       General Skills   75
+Crypto Warmup 1              Cryptography     75      picoCTF{SECRETMESSAGE}
+Crypto Warmup 2              Cryptography     75      picoCTF{this_is_crypto!}
+grep 1                       General Skills   75      picoCTF{grep_and_you_will_find_c709fa94}
 net cat                      General Skills   75
 HEEEEEEERE'S Johnny!         Cryptography     100
 Inspect Me                   Web              125
@@ -210,29 +210,79 @@ picoCTF{th4t_w4s_s1mpL3}
 
 **Challenge**
 
+Crpyto can often be done by hand, here's a message you got from a friend, `llkjmlmpadkkc` with the key of `thisisalilkey`. Can you use this table to solve it?.
+
+```
+    A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+   +----------------------------------------------------
+A | A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+B | B C D E F G H I J K L M N O P Q R S T U V W X Y Z A
+C | C D E F G H I J K L M N O P Q R S T U V W X Y Z A B
+D | D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
+E | E F G H I J K L M N O P Q R S T U V W X Y Z A B C D
+F | F G H I J K L M N O P Q R S T U V W X Y Z A B C D E
+G | G H I J K L M N O P Q R S T U V W X Y Z A B C D E F
+H | H I J K L M N O P Q R S T U V W X Y Z A B C D E F G
+I | I J K L M N O P Q R S T U V W X Y Z A B C D E F G H
+J | J K L M N O P Q R S T U V W X Y Z A B C D E F G H I
+K | K L M N O P Q R S T U V W X Y Z A B C D E F G H I J
+L | L M N O P Q R S T U V W X Y Z A B C D E F G H I J K
+M | M N O P Q R S T U V W X Y Z A B C D E F G H I J K L
+N | N O P Q R S T U V W X Y Z A B C D E F G H I J K L M
+O | O P Q R S T U V W X Y Z A B C D E F G H I J K L M N
+P | P Q R S T U V W X Y Z A B C D E F G H I J K L M N O
+Q | Q R S T U V W X Y Z A B C D E F G H I J K L M N O P
+R | R S T U V W X Y Z A B C D E F G H I J K L M N O P Q
+S | S T U V W X Y Z A B C D E F G H I J K L M N O P Q R
+T | T U V W X Y Z A B C D E F G H I J K L M N O P Q R S
+U | U V W X Y Z A B C D E F G H I J K L M N O P Q R S T
+V | V W X Y Z A B C D E F G H I J K L M N O P Q R S T U
+W | W X Y Z A B C D E F G H I J K L M N O P Q R S T U V
+X | X Y Z A B C D E F G H I J K L M N O P Q R S T U V W
+Y | Y Z A B C D E F G H I J K L M N O P Q R S T U V W X
+Z | Z A B C D E F G H I J K L M N O P Q R S T U V W X Y
+```
+
 **Solution**
+
+Looks like vigenere,
+
 
 **Flag**
 ```
-
+picoCTF{SECRETMESSAGE}
 ```
 
 ## Cryptography 75: Crypto Warmup 2
 
 **Challenge**
 
+Cryptography doesn't have to be complicated, have you ever heard of something called rot13? `cvpbPGS{guvf_vf_pelcgb!}`
+
 **Solution**
+
+```python
+>>> 'cvpbPGS{guvf_vf_pelcgb!}'.decode('rot13')
+u'picoCTF{this_is_crypto!}'
+```
 
 **Flag**
 ```
-
+picoCTF{this_is_crypto!coCTF{this_is_crypto!}}
 ```
 
 ## General Skills 75: grep 1
 
 **Challenge**
 
+Can you find the flag in [file](writeupfiles/file)? This would be really obnoxious to look through by hand, see if you can find a faster way.
+
 **Solution**
+
+```bash
+$ grep "picoCTF" file                                                                                                        [28-09-18 23:15:19]
+picoCTF{grep_and_you_will_find_c709fa94}
+```
 
 **Flag**
 ```
