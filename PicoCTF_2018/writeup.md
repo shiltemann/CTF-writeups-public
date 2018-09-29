@@ -911,12 +911,14 @@ picoCTF{eNv1r0nM3nT_v4r14Bl3_fL4g_3758492}
 ## Forensics 150: hex editor
 
 **Challenge**
+This cat has a secret to teach you.
 
 **Solution**
+Flag was appended to end of [the jpeg](./writeupfiles/hex_editor.jpg)
 
 **Flag**
 ```
-
+picoCTF{and_thats_how_u_edit_hex_kittos_3E03e57d}
 ```
 
 ## Web Exploitation 200: Irish Name Repo
