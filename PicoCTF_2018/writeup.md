@@ -44,7 +44,7 @@ hex editor                   Forensics        150
 ssh-keyz                     General Skills   150     picoCTF{who_n33ds_p4ssw0rds_38dj21}
 Irish Name Repo              Web              200     picoCTF{con4n_r3411y_1snt_1r1sh_f58843c5}
 Mr. Robots                   Web              200     picoCTF{th3_w0rld_1s_4_danger0us_pl4c3_3lli0t_30de1}
-No Login                     Web              200
+No Login                     Web              200     picoCTF{n0l0g0n_n0_pr0bl3m_50e16a5c}
 Secret Agent                 Web              200
 Truly an Artist              Forensics        200
 be-quick-or-be-dead-1        Reversing        200
@@ -1062,6 +1062,22 @@ Checking /robots.txt we see a disallow rule for /30de1.html which includes the f
 **Flag**
 ```
 picoCTF{th3_w0rld_1s_4_danger0us_pl4c3_3lli0t_30de1}
+```
+
+## Web 200: No login
+
+**Challenge**
+
+Looks like someone started making a website but never got around to making a login, but I heard there
+was a flag if you were the admin. http://2018shell1.picoctf.com:39670
+
+**Solution**
+
+create a cooke named `admin` and set value to `True` gives the flag
+
+**Flag**
+```
+picoCTF{n0l0g0n_n0_pr0bl3m_50e16a5c}
 ```
 
 ## Forensics 200: Truly an Artist
