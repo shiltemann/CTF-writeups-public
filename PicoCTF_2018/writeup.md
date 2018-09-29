@@ -45,11 +45,32 @@ Mr. Robots                   Web              200     picoCTF{th3_w0rld_1s_4_dan
 No Login                     Web              200
 Secret Agent                 Web              200
 Truly an Artist              Forensics        200
+be-quick-or-be-dead-1        Reversing        200
+leak-me                      Binary Exploit   200
 now you don't                Forensics        200
 shellcode                    Binary Exploit   200
 what base is this?           General Skills   200
+you can't see me             General Skills   200
 Buttons                      Web              250
-echooo                       Binary Exploit   300
+Ext Super Magic              Forensics        250
+Lying Out                    Forensics        250
+absolutely relative          General Skills   250
+rsa-madlibs                  Cryptography     250
+in out error                 General Skills   275
+Artisinal Handcrafted HTTP   Web              300
+echooo                       Binary           300
+learn gdb                    General Skills   300
+Flaskcards                   Web              350
+Malware Shops                Forensics        400
+fancy-alive-monitoring       Web              400
+store                        General Skills   400
+Secure Logon                 Web              500
+script me                    General Skills   500
+LoadSomeBits                 Forensics        550
+Help Me Reset                Web              600
+A Simple Question            Web              650
+
+
 ```
 
 ## Forensics 50: Forensics Warmup 1
