@@ -29,7 +29,7 @@ strings 1                    General Skills   100     picoCTF{sTrIngS_sAVeS_Time
 pipe                         General Skills   110     picoCTF{almost_like_mario_b797f2b3}
 Inspect Me                   Web              125     picoCTF{ur_4_real_1nspect0r_g4dget_b4887011}
 grep 2                       General Skills   125     picoCTF{grep_r_and_you_will_find_8eb84049}
-Aca-Shell-A                  General Skills   150
+Aca-Shell-A                  General Skills   150     picoCTF{CrUsHeD_It_4e355279}
 Client Side is still Bad     Web              150     picoCTF{client_is_bad_040594}
 Desrouleaux                  Forensics        150
 Logon                        Web              150
@@ -693,12 +693,6 @@ dontLookHere
 ~/executables$ ls
 dontLookHere
 ~/executables$ cd ..
-~/$ ls
-blackmail
-executables
-passwords
-photos
-secret
 ~/$ cp /tmp/TopSecret passwords
 Server shutdown in 10 seconds...
 Quick! go read the file before we lose our connection!
@@ -713,7 +707,7 @@ picoCTF{CrUsHeD_It_4e355279}
 
 **Flag**
 ```
-
+picoCTF{CrUsHeD_It_4e355279coCTF{CrUsHeD_It_4e355279}}
 ```
 
 ## Web Exploitation 150: Client Side is Still Bad
