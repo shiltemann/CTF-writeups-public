@@ -33,6 +33,8 @@ Aca-Shell-A                  General Skills   150     picoCTF{CrUsHeD_It_4e35527
 Client Side is still Bad     Web              150     picoCTF{client_is_bad_040594}
 Desrouleaux                  Forensics        150     picoCTF{J4y_s0n_d3rUUUULo_b6cacd6c}
 Logon                        Web              150     picoCTF{l0g1ns_ar3nt_r34l_2a968c11}
+Reading between the eyes     Forensics        150
+Recovering from the snap     Forensics        150     picoCTF{th3_5n4p_happ3n3d}
 admin panel                  Forensics        150     picoCTF{n0ts3cur3_894a6546}
 buffer overflow 0            Binary Exploit   150
 caesar cipher 1              Cryptography     150     picoCTF{justagoodoldcaesarcipherwoyolfpu}
@@ -880,13 +882,56 @@ We change `admin` cookie to `True` and refresh the page to get the flag
 picoCTF{l0g1ns_ar3nt_r34l_2a968c11}
 ```
 
+## Forensics 150: Recovering from the snap
+
+**Challenge**
+
+
+There used to be a bunch of [animals](writeupfiles/animals) here, what did Dr. Xernon do to them?
+
+
+**Solution**
+
+```bash
+$ binwalk animals.dd
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+39424         0x9A00          JPEG image data, JFIF standard 1.01
+39454         0x9A1E          TIFF image data, big-endian, offset of first image directory: 8
+672256        0xA4200         JPEG image data, JFIF standard 1.01
+1165824       0x11CA00        JPEG image data, JFIF standard 1.01
+1556992       0x17C200        JPEG image data, JFIF standard 1.01
+1812992       0x1BAA00        JPEG image data, JFIF standard 1.01
+1813022       0x1BAA1E        TIFF image data, big-endian, offset of first image directory: 8
+2136576       0x209A00        JPEG image data, JFIF standard 1.01
+2136606       0x209A1E        TIFF image data, big-endian, offset of first image directory: 8
+2607616       0x27CA00        JPEG image data, JFIF standard 1.01
+2607646       0x27CA1E        TIFF image data, big-endian, offset of first image directory: 8
+3000832       0x2DCA00        JPEG image data, JFIF standard 1.01
+3000862       0x2DCA1E        TIFF image data, big-endian, offset of first image directory: 8
+
+$ binwalk --dd='jpeg:jpg' animals.dd
+
+```
+
+this gave us a bunch of animal images, and one image with the flag:
+
+![](writeupfiles/animalsflag.jpg)
+
+**Flag**
+```
+picoCTF{th3_5n4p_happ3n3d}
+```
 
 ## Forensics 150: admin panel
 
 **Challenge**
+
 We captured some traffic logging into the admin panel, can you find the password?
 
 **Solution**
+
 They've provided a [pcap file](./writeupfiles/data.pcap), there's a POST to
 /login which looks obvious. Following the stream as HTTP shows the password
 quite clearly.
@@ -929,9 +974,11 @@ picoCTF{justagoodoldcaesarcipherwoyolfpu}
 ## Cryptography 150: environ
 
 **Challenge**
+
 Sometimes you have to configure environment variables before executing a program. Can you find the flag we've hidden in an environment variable on the shell server?
 
 **Solution**
+
 logging into the shell:
 
 ```
@@ -1077,7 +1124,7 @@ picoCTF{look_in_image_788a182e}
 ## General Skills: 200: you can't see me
 
 **Challenge**
-'...reading transmission... Y.O.U. .C.A.N.'.T. .S.E.E. .M.E. ...transmission ended...' Maybe something lies in /problems/you-can-t-see-me_4_8bd1412e56df49a3c3757ebeb7ead77f. 
+'...reading transmission... Y.O.U. .C.A.N.'.T. .S.E.E. .M.E. ...transmission ended...' Maybe something lies in /problems/you-can-t-see-me_4_8bd1412e56df49a3c3757ebeb7ead77f.
 
 **Solution**
 
@@ -1106,7 +1153,7 @@ picoCTF{j0hn_c3na_paparapaaaaaaa_paparapaaaaaa_22f627d9}
 ## Web Exploitation 250: Buttons
 
 **Challenge**
- There is a website running at http://2018shell1.picoctf.com:21579 (link). Try to see if you can push their buttons. 
+ There is a website running at http://2018shell1.picoctf.com:21579 (link). Try to see if you can push their buttons.
 
 **Solution**
 The first button is a form and the second is an `a href`. Clicking the second
@@ -1121,7 +1168,7 @@ picoCTF{button_button_whose_got_the_button_ed306c10}
 ## Forensics 250: Lying out
 
 **Challenge**
-Some odd [traffic](./writeupfiles/traffic.png) has been detected on the network, can you identify it? More info here. Connect with nc 2018shell1.picoctf.com 50875 to help us answer some questions. 
+Some odd [traffic](./writeupfiles/traffic.png) has been detected on the network, can you identify it? More info here. Connect with nc 2018shell1.picoctf.com 50875 to help us answer some questions.
 
 **Solution**
 
@@ -1156,7 +1203,7 @@ picoCTF{w4y_0ut_ff5bd19c}
 ## General Skills 250: absolutely relative
 
 **Challenge**
-In a filesystem, everything is relative ¯\_(ツ)_/¯. Can you find a way to get a flag from this program? You can find it in /problems/absolutely-relative_1_15eb86fcf5d05ec169cc417d24e02c87 on the shell server. Source. 
+In a filesystem, everything is relative ¯\_(ツ)_/¯. Can you find a way to get a flag from this program? You can find it in /problems/absolutely-relative_1_15eb86fcf5d05ec169cc417d24e02c87 on the shell server. Source.
 
 **Solution**
 They provide the [source](./writeupfiles/absoluterelative.c) of absolutely-relative, it checks for a file named `./permission.txt` with the contents `yes`.
@@ -1190,7 +1237,7 @@ picoCTF{3v3r1ng_1$_r3l3t1v3_a97be50e}
 ## General Skills 400: Store
 
 **Challenge**
-We started a little store, can you buy the flag? [Source.](./writeupfiles/store.c) Connect with 2018shell1.picoctf.com 5795. 
+We started a little store, can you buy the flag? [Source.](./writeupfiles/store.c) Connect with 2018shell1.picoctf.com 5795.
 
 **Solution**
 
