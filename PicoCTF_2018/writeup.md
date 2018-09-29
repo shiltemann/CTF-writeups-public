@@ -45,11 +45,32 @@ Mr. Robots                   Web              200     picoCTF{th3_w0rld_1s_4_dan
 No Login                     Web              200
 Secret Agent                 Web              200
 Truly an Artist              Forensics        200
+be-quick-or-be-dead-1        Reversing        200
+leak-me                      Binary Exploit   200
 now you don't                Forensics        200
 shellcode                    Binary Exploit   200
 what base is this?           General Skills   200
-Buttons                      Web              250
-echooo                       Binary Exploit   300
+you can't see me             General Skills   200     picoCTF{j0hn_c3na_paparapaaaaaaa_paparapaaaaaa_22f627d9}
+Buttons                      Web              250     picoCTF{button_button_whose_got_the_button_ed306c10}
+Ext Super Magic              Forensics        250
+Lying Out                    Forensics        250
+absolutely relative          General Skills   250
+rsa-madlibs                  Cryptography     250
+in out error                 General Skills   275
+Artisinal Handcrafted HTTP   Web              300
+echooo                       Binary           300
+learn gdb                    General Skills   300
+Flaskcards                   Web              350
+Malware Shops                Forensics        400
+fancy-alive-monitoring       Web              400
+store                        General Skills   400
+Secure Logon                 Web              500
+script me                    General Skills   500
+LoadSomeBits                 Forensics        550
+Help Me Reset                Web              600
+A Simple Question            Web              650
+
+
 ```
 
 ## Forensics 50: Forensics Warmup 1
@@ -1053,15 +1074,48 @@ picoCTF{look_in_image_788a182e}
 
 ```
 
-## Web Exploitation 250: Buttons
+## General Skills: 200: you can't see me
 
 **Challenge**
+'...reading transmission... Y.O.U. .C.A.N.'.T. .S.E.E. .M.E. ...transmission ended...' Maybe something lies in /problems/you-can-t-see-me_4_8bd1412e56df49a3c3757ebeb7ead77f. 
 
 **Solution**
 
-**Flag**
+```
+hxr@pico-2018-shell-1:~$ ls -al /problems/you-can-t-see-me_4_8bd1412e56df49a3c3757ebeb7ead77f
+total 60
+drwxr-xr-x   2 root       root        4096 Sep 28 08:29 .
+-rw-rw-r--   1 hacksports hacksports    57 Sep 28 08:29 .
+drwxr-x--x 556 root       root       53248 Sep 28 08:29 ..
 ```
 
+there's no easy way to access that
+
+```
+hxr@pico-2018-shell-1:~$ cat /problems/you-can-t-see-me_4_8bd1412e56df49a3c3757ebeb7ead77f/.*
+cat: /problems/you-can-t-see-me_4_8bd1412e56df49a3c3757ebeb7ead77f/.: Is a directory
+picoCTF{j0hn_c3na_paparapaaaaaaa_paparapaaaaaa_22f627d9}
+cat: /problems/you-can-t-see-me_4_8bd1412e56df49a3c3757ebeb7ead77f/..: Permission denied
+```
+
+**Flag**
+```
+picoCTF{j0hn_c3na_paparapaaaaaaa_paparapaaaaaa_22f627d9}
+```
+
+## Web Exploitation 250: Buttons
+
+**Challenge**
+ There is a website running at http://2018shell1.picoctf.com:21579 (link). Try to see if you can push their buttons. 
+
+**Solution**
+The first button is a form and the second is an `a href`. Clicking the second
+link gives a message about being denied. Changing the second button to a form
+(so it will POST) result in success.
+
+**Flag**
+```
+picoCTF{button_button_whose_got_the_button_ed306c10}
 ```
 
 ## Binary Exploitation 300: echooo
