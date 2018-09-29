@@ -31,8 +31,8 @@ Inspect Me                   Web              125     picoCTF{ur_4_real_1nspect0
 grep 2                       General Skills   125     picoCTF{grep_r_and_you_will_find_8eb84049}
 Aca-Shell-A                  General Skills   150     picoCTF{CrUsHeD_It_4e355279}
 Client Side is still Bad     Web              150     picoCTF{client_is_bad_040594}
-Desrouleaux                  Forensics        150
-Logon                        Web              150
+Desrouleaux                  Forensics        150     picoCTF{J4y_s0n_d3rUUUULo_b6cacd6c}
+Logon                        Web              150     picoCTF{l0g1ns_ar3nt_r34l_2a968c11}
 admin panel                  Forensics        150     picoCTF{n0ts3cur3_894a6546}
 buffer overflow 0            Binary Exploit   150
 caesar cipher 1              Cryptography     150
@@ -835,19 +835,27 @@ dfd6f5d416878f69        231.208.216.227
 
 **Flag**
 ```
-
+picoCTF{J4y_s0n_d3rUUUULo_b6cacd6ccoCTF{J4y_s0n_d3rUUUULo_b6cacd6c}}
 ```
 
 ## Web Exploitation 150: Logon
 
 **Challenge**
 
+I made a website so now you can log on to! I don't seem to have the admin password. See if you can't get to the flag. http://2018shell1.picoctf.com:57252 (link)
+
 **Solution**
+
+It only checks password for user `admin`. We can log in as any other username, then get 3 cookies:
+
+
+We change `admin` cookie to `True` and refresh the page to get the flag
 
 **Flag**
 ```
-
+picoCTF{l0g1ns_ar3nt_r34l_2a968c11}
 ```
+
 
 ## Forensics 150: admin panel
 
@@ -889,7 +897,7 @@ picoCTF{n0ts3cur3_894a6546}
 ## Cryptography 150: environ
 
 **Challenge**
-Sometimes you have to configure environment variables before executing a program. Can you find the flag we've hidden in an environment variable on the shell server? 
+Sometimes you have to configure environment variables before executing a program. Can you find the flag we've hidden in an environment variable on the shell server?
 
 **Solution**
 logging into the shell:
