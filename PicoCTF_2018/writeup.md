@@ -39,6 +39,7 @@ caesar cipher 1              Cryptography     150
 environ                      General Skills   150     picoCTF{eNv1r0nM3nT_v4r14Bl3_fL4g_3758492}
 hertz                        Cryptography     150
 hex editor                   Forensics        150
+ssh-keyz                     General Skills   150     picoCTF{who_n33ds_p4ssw0rds_38dj21}
 Irish Name Repo              Web              200
 Truly an Artist              Forensics        200
 now you don't                Forensics        200
@@ -919,6 +920,19 @@ Flag was appended to end of [the jpeg](./writeupfiles/hex_editor.jpg)
 **Flag**
 ```
 picoCTF{and_thats_how_u_edit_hex_kittos_3E03e57d}
+```
+
+## General Skills 150: ssh-keyz
+
+**Challenge**
+As nice as it is to use our webshell, sometimes its helpful to connect directly to our machine. To do so, please add your own public key to ~/.ssh/authorized_keys, using the webshell. The flag is in the ssh banner which will be displayed when you login remotely with ssh to with your username.
+
+**Solution**
+Added a key to ~/.ssh/authorized_keys. Hardest part was finding the ip address with `curl icanhazip.com`
+
+**Flag**
+```
+picoCTF{who_n33ds_p4ssw0rds_38dj21}
 ```
 
 ## Web Exploitation 200: Irish Name Repo
