@@ -28,6 +28,9 @@ HEEEEEEERE'S Johnny!         Cryptography     100     picoCTF{J0hn_1$_R1pp3d_1b2
 strings 1                    General Skills   100     picoCTF{sTrIngS_sAVeS_Time_d3ffa29c}
 pipe                         General Skills   110     picoCTF{almost_like_mario_b797f2b3}
 Inspect Me                   Web              125     picoCTF{ur_4_real_1nspect0r_g4dget_b4887011}
+grep 2                       General Skills   125     picoCTF{grep_r_and_you_will_find_8eb84049}
+Aca-Shell-A                  General Skills   150
+Client Side is still Bad     Web              150     picoCTF{client_is_bad_040594}
 Desrouleaux                  Forensics        150
 Logon                        Web              150
 admin panel                  Forensics        150
@@ -553,6 +556,108 @@ window.onload = function() {
 **Flag**
 ```
 picoCTF{ur_4_real_1nspect0r_g4dget_b4887011}
+```
+
+## General Skills 125: grep 2
+
+**Challenge**
+
+This one is a little bit harder. Can you find the flag in `/problems/grep-2_2_413a577106278d0711d28a98f4f6ac28/files`
+on the shell server? Remember, grep is your friend.
+
+**Solution**
+
+```bash
+$ cd /problems/grep-2_2_413a577106278d0711d28a98f4f6ac28/files
+$ ls
+files0  files1  files2  files3  files4  files5  files6  files7  files8  files9
+$ grep -r "picoCTF"
+files2/file16:picoCTF{grep_r_and_you_will_find_8eb84049}
+```
+
+**Flag**
+```
+picoCTF{grep_r_and_you_will_find_8eb84049}
+```
+
+
+## General Skills 150: Aca-Shell-A
+
+**Challenge**
+It's never a bad idea to brush up on those linux skills or even learn some new ones
+before you set off on this adventure! Connect with `nc 2018shell1.picoctf.com 58422`.
+
+**Solution**
+
+**Flag**
+```
+
+```
+
+## Web Exploitation 150: Client Side is Still Bad
+
+**Challenge**
+I forgot my password again, but this time there doesn't seem to be a reset,
+can you help me? http://2018shell1.picoctf.com:53990 (link)
+
+**Solution**
+
+we check the source
+
+```html
+<html>
+<head>
+<title>Super Secure Log In</title>
+</head>
+<body bgcolor="#000000">
+<!-- standard MD5 implementation -->
+<script type="text/javascript" src="md5.js"></script>
+
+<script type="text/javascript">
+  function verify() {
+    checkpass = document.getElementById("pass").value;
+    split = 4;
+    if (checkpass.substring(split*7, split*8) == '}') {
+      if (checkpass.substring(split*6, split*7) == '0594') {
+        if (checkpass.substring(split*5, split*6) == 'd_04') {
+         if (checkpass.substring(split*4, split*5) == 's_ba') {
+          if (checkpass.substring(split*3, split*4) == 'nt_i') {
+            if (checkpass.substring(split*2, split*3) == 'clie') {
+              if (checkpass.substring(split, split*2) == 'CTF{') {
+                if (checkpass.substring(0,split) == 'pico') {
+                  alert("You got the flag!")
+                  }
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+    else {
+      alert("Incorrect password");
+    }
+  }
+</script>
+<div style="position:relative; padding:5px;top:50px; left:38%; width:350px; height:140px; background-color:red">
+<div style="text-align:center">
+<p>Welcome to the Secure Login Server.</p>
+<p>Please enter your credentials to proceed</p>
+<form action="index.html" method="post">
+<input type="password" id="pass" size="8" />
+<br/>
+<input type="submit" value="Log in" onclick="verify(); return false;" />
+</form>
+</div>
+</div>
+</body>
+</html>
+```
+
+**Flag**
+```
+picoCTF{client_is_bad_040594}
 ```
 
 ## Forensics 150: Desrouleaux
