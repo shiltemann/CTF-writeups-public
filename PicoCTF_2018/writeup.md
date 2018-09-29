@@ -36,6 +36,7 @@ Logon                        Web              150
 admin panel                  Forensics        150     picoCTF{n0ts3cur3_894a6546}
 buffer overflow 0            Binary Exploit   150
 caesar cipher 1              Cryptography     150
+environ                      General Skills   150     picoCTF{eNv1r0nM3nT_v4r14Bl3_fL4g_3758492}
 hertz                        Cryptography     150
 hex editor                   Forensics        150
 Irish Name Repo              Web              200
@@ -876,6 +877,24 @@ picoCTF{n0ts3cur3_894a6546}
 **Flag**
 ```
 
+```
+
+## Cryptography 150: environ
+
+**Challenge**
+Sometimes you have to configure environment variables before executing a program. Can you find the flag we've hidden in an environment variable on the shell server? 
+
+**Solution**
+logging into the shell:
+
+```
+hxr@pico-2018-shell-1:~$ env | grep pico
+SECRET_FLAG=picoCTF{eNv1r0nM3nT_v4r14Bl3_fL4g_3758492}
+```
+
+**Flag**
+```
+picoCTF{eNv1r0nM3nT_v4r14Bl3_fL4g_3758492}
 ```
 
 ## Cryptography 150: hertz
