@@ -41,6 +41,9 @@ hertz                        Cryptography     150
 hex editor                   Forensics        150
 ssh-keyz                     General Skills   150     picoCTF{who_n33ds_p4ssw0rds_38dj21}
 Irish Name Repo              Web              200
+Mr. Robots                   Web              200     picoCTF{th3_w0rld_1s_4_danger0us_pl4c3_3lli0t_30de1}
+No Login                     Web              200
+Secret Agent                 Web              200
 Truly an Artist              Forensics        200
 now you don't                Forensics        200
 shellcode                    Binary Exploit   200
@@ -835,7 +838,7 @@ dfd6f5d416878f69        231.208.216.227
 
 **Flag**
 ```
-picoCTF{J4y_s0n_d3rUUUULo_b6cacd6ccoCTF{J4y_s0n_d3rUUUULo_b6cacd6c}}
+picoCTF{J4y_s0n_d3rUUUULo_b6cacd6c}
 ```
 
 ## Web Exploitation 150: Logon
@@ -958,6 +961,19 @@ picoCTF{who_n33ds_p4ssw0rds_38dj21}
 **Flag**
 ```
 
+```
+
+## Web Exploitation 200: Mr. Robots
+
+**Challenge**
+Do you see the same things I see? The glimpses of the flag hidden away? http://2018shell1.picoctf.com:40064 (link)
+
+**Solution**
+Checking /robots.txt we see a disallow rule for /30de1.html which includes the flag.
+
+**Flag**
+```
+picoCTF{th3_w0rld_1s_4_danger0us_pl4c3_3lli0t_30de1}
 ```
 
 ## Forensics 200: Truly an Artist
