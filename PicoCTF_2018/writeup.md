@@ -33,7 +33,7 @@ Aca-Shell-A                  General Skills   150
 Client Side is still Bad     Web              150     picoCTF{client_is_bad_040594}
 Desrouleaux                  Forensics        150
 Logon                        Web              150
-admin panel                  Forensics        150
+admin panel                  Forensics        150     picoCTF{n0ts3cur3_894a6546}
 buffer overflow 0            Binary Exploit   150
 caesar cipher 1              Cryptography     150
 hertz                        Cryptography     150
@@ -685,12 +685,16 @@ picoCTF{client_is_bad_040594}
 ## Forensics 150: admin panel
 
 **Challenge**
+We captured some traffic logging into the admin panel, can you find the password?
 
 **Solution**
+They've provided a [pcap file](./writeupfiles/data.pcap), there's a POST to
+/login which looks obvious. Following the stream as HTTP shows the password
+quite clearly.
 
 **Flag**
 ```
-
+picoCTF{n0ts3cur3_894a6546}
 ```
 
 ## Binary Exploitation 150: buffer overflow 0
