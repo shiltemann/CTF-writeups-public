@@ -1832,6 +1832,164 @@ You can find the file in `/problems/learn-gdb_2_32e08c18932eb88649e9b97f3020b9f5
 
 ```
 
+
+## Web Exploitation 350: Flaskcards
+
+**Challenge**
+
+We found [this fishy website](http://2018shell1.picoctf.com:51878/) for flashcards that we think may be sending secrets. Could you take a look?
+
+
+**Solution**
+
+**Flag**
+```
+
+```
+
+
+## Binary Exploitation 350: got-shell?
+
+**Challenge**
+
+Can you authenticate to [this service](writeupfiles/auth2) and get the flag?
+
+Connect to it with `nc 2018shell1.picoctf.com 54664`.
+
+[Source](writeupfiles/auth2.c)
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <string.h>
+#include <sys/types.h>
+
+void win() {
+  system("/bin/sh");
+}
+
+int main(int argc, char **argv) {
+
+  setvbuf(stdout, NULL, _IONBF, 0);
+
+  char buf[256];
+
+  unsigned int address;
+  unsigned int value;
+
+  puts("I'll let you write one 4 byte value to memory. Where would you like to write this 4 byte value?");
+
+  scanf("%x", &address);
+
+  sprintf(buf, "Okay, now what value would you like to write to 0x%x", address);
+  puts(buf);
+
+  scanf("%x", &value);
+
+  sprintf(buf, "Okay, writing 0x%x to 0x%x", value, address);
+  puts(buf);
+
+  *(unsigned int *)address = value;
+
+  puts("Okay, exiting now...\n");
+  exit(1);
+
+}
+```
+
+**Solution**
+
+**Flag**
+```
+
+```
+
+
+## General Skills 350: roulette
+
+**Challenge**
+
+This Online [Roulette Service](writeupfiles/roulette) is in Beta. Can you find a way to win $1,000,000,000 and get the flag? Source.
+
+Connect with `nc 2018shell1.picoctf.com 48312`
+
+**Solution**
+
+**Flag**
+```
+
+```
+
+
+## Forensics 400: Malware Shops
+
+**Challenge**
+
+There has been some malware detected, can you help with the analysis?
+
+![](writeupfiles/plot.png)
+
+Connect with `nc 2018shell1.picoctf.com 46168`.
+
+More info:
+
+```
+You've been given a dataset of about 500 malware binary files that have
+been found on your organization's computers. Whenever you find more malware,
+you want to be able to tell if you've seen a file like this before.
+
+Binary files are hard to understand. When code is written, there are several
+more steps before it becomes software. Some parts of this process are:
+i.  Compiling, which turns human-readable source code into assembly code.
+    Assembly code is difficult for humans to read, but it closely mimics the most
+    basic raw instructions that a computer needs in order to run a program.
+ii. Assembling, which turns assembly code into machine code. Machine code is
+    impossible for humans to read, but this representation is what a computer
+    actually needs to execute.
+
+The malware binary files that were given to you to analyze are all in machine
+code, but luckily, you were able to run a program called a disassembler to
+turn them back into assembly code.
+
+Assembly code contains *instructions* which tell a computer how to update
+its own internal memory, and its progress through reading the assembly code
+itself. For instance, the `jmp` instruction means "jump to executing a
+different instruction", and the `add` instruction means "add two numbers and
+store the result in memory".
+
+Your dataset contains data about all the malware files, including their
+file hash, which serves as a name, and the counts of all of the `jmp` and `add`
+instructions.
+
+Malware attackers often release many slightly different versions of the same
+malware over time. These different versions always have totally different
+hashes, but they are likely to have similar numbers of `jmp` and `add`
+instructions.
+```
+
+**Solution**
+
+**Flag**
+```
+
+```
+
+
+## Web Exploitation 400: fancy-alive-monitoring
+
+**Challenge**
+
+One of my school mate developed an alive monitoring tool. Can you get a flag from http://2018shell1.picoctf.com:56517 ?
+
+**Solution**
+
+**Flag**
+```
+
+```
+
+
 ## General Skills 400: Store
 
 **Challenge**
@@ -1880,3 +2038,200 @@ YOUR FLAG IS: picoCTF{numb3r3_4r3nt_s4f3_dbd42a50}
 picoCTF{numb3r3_4r3nt_s4f3_dbd42a50}
 ```
 
+
+
+## Web Exploitation 500: Secure Logon
+
+**Challenge**
+
+Uh oh, the login page is more secure... I think. http://2018shell1.picoctf.com:46026 (link).
+
+[Source](writeupfiles/server_noflag.py)
+
+
+```python
+from flask import Flask, render_template, request, url_for, redirect, make_response, flash
+import json
+from hashlib import md5
+from base64 import b64decode
+from base64 import b64encode
+from Crypto import Random
+from Crypto.Cipher import AES
+
+app = Flask(__name__)
+app.secret_key = 'seed removed'
+flag_value = 'flag removed'
+
+BLOCK_SIZE = 16  # Bytes
+pad = lambda s: s + (BLOCK_SIZE - len(s) % BLOCK_SIZE) * \
+                chr(BLOCK_SIZE - len(s) % BLOCK_SIZE)
+unpad = lambda s: s[:-ord(s[len(s) - 1:])]
+
+
+@app.route("/")
+def main():
+    return render_template('index.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.form['user'] == 'admin':
+        message = "I'm sorry the admin password is super secure. You're not getting in that way."
+        category = 'danger'
+        flash(message, category)
+        return render_template('index.html')
+    resp = make_response(redirect("/flag"))
+
+    cookie = {}
+    cookie['password'] = request.form['password']
+    cookie['username'] = request.form['user']
+    cookie['admin'] = 0
+    print(cookie)
+    cookie_data = json.dumps(cookie, sort_keys=True)
+    encrypted = AESCipher(app.secret_key).encrypt(cookie_data)
+    print(encrypted)
+    resp.set_cookie('cookie', encrypted)
+    return resp
+
+@app.route('/logout')
+def logout():
+    resp = make_response(redirect("/"))
+    resp.set_cookie('cookie', '', expires=0)
+    return resp
+
+@app.route('/flag', methods=['GET'])
+def flag():
+  try:
+      encrypted = request.cookies['cookie']
+  except KeyError:
+      flash("Error: Please log-in again.")
+      return redirect(url_for('main'))
+  data = AESCipher(app.secret_key).decrypt(encrypted)
+  data = json.loads(data)
+
+  try:
+     check = data['admin']
+  except KeyError:
+     check = 0
+  if check == 1:
+      return render_template('flag.html', value=flag_value)
+  flash("Success: You logged in! Not sure you'll be able to see the flag though.", "success")
+  return render_template('not-flag.html', cookie=data)
+
+class AESCipher:
+    """
+    Usage:
+        c = AESCipher('password').encrypt('message')
+        m = AESCipher('password').decrypt(c)
+    Tested under Python 3 and PyCrypto 2.6.1.
+    """
+
+    def __init__(self, key):
+        self.key = md5(key.encode('utf8')).hexdigest()
+
+    def encrypt(self, raw):
+        raw = pad(raw)
+        iv = Random.new().read(AES.block_size)
+        cipher = AES.new(self.key, AES.MODE_CBC, iv)
+        return b64encode(iv + cipher.encrypt(raw))
+
+    def decrypt(self, enc):
+        enc = b64decode(enc)
+        iv = enc[:16]
+        cipher = AES.new(self.key, AES.MODE_CBC, iv)
+        return unpad(cipher.decrypt(enc[16:])).decode('utf8')
+
+if __name__ == "__main__":
+    app.run()
+```
+
+
+**Solution**
+
+**Flag**
+```
+
+```
+
+## Genral Skills 500: script me
+
+Can you understand the language and answer the questions to retrieve the flag?
+
+Connect to the service with `nc 2018shell1.picoctf.com 1542`
+
+**Solution**
+
+**Flag**
+```
+
+```
+
+## Forensics 550: LoadSomeBits
+
+**Challenge**
+
+Can you find the flag encoded inside this image? You can also find the file in /problems/loadsomebits_1_5ccf71e5726692c713405bb17da5cb37 on the shell server.
+
+![](writeupfiles/pico2018-special-logo.bmp)
+
+**Solution**
+
+**Flag**
+```
+
+```
+
+## Web Exploitation 600: Help Me Reset
+
+**Challenge**
+
+There is a website running at http://2018shell1.picoctf.com:54584 (link). We need to get into any user for a flag!
+
+**Solution**
+
+**Flag**
+```
+
+```
+
+
+## Web Exploitation 650: A Simple Question
+
+**Challenge**
+
+There is a website running at http://2018shell1.picoctf.com:36052 (link). Try to see if you can answer its question.
+
+**Solution**
+
+**Flag**
+```
+
+```
+
+## Web Exploitation 800: LambDash 3
+
+**Challenge**
+
+C? Who uses that anymore. If we really want to be secure, we should all start learning lambda calculus. http://2018shell1.picoctf.com:43607 (link)
+
+**Solution**
+
+**Flag**
+```
+
+```
+
+## General Skills 900: Dog or Frog
+
+
+**Challenge**
+
+Dressing up dogs are kinda the new thing, see if you can get this lovely girl ready for her costume party.
+
+[Dog Or Frog](http://2018shell1.picoctf.com:18466/)
+
+**Solution**
+
+**Flag**
+```
+
+```
