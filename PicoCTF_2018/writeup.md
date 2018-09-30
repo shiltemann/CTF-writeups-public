@@ -36,6 +36,7 @@ Logon                        Web              150     picoCTF{l0g1ns_ar3nt_r34l_
 Reading between the eyes     Forensics        150
 Recovering from the snap     Forensics        150     picoCTF{th3_5n4p_happ3n3d}
 admin panel                  Forensics        150     picoCTF{n0ts3cur3_894a6546}
+assembly-0                   Reversing        150
 buffer overflow 0            Binary Exploit   150
 caesar cipher 1              Cryptography     150     picoCTF{justagoodoldcaesarcipherwoyolfpu}
 environ                      General Skills   150     picoCTF{eNv1r0nM3nT_v4r14Bl3_fL4g_3758492}
@@ -48,6 +49,7 @@ No Login                     Web              200     picoCTF{n0l0g0n_n0_pr0bl3m
 Secret Agent                 Web              200
 Truly an Artist              Forensics        200
 be-quick-or-be-dead-1        Reversing        200
+blaise's cipher              Cryptography     200
 leak-me                      Binary Exploit   200
 now you don't                Forensics        200
 shellcode                    Binary Exploit   200
@@ -58,12 +60,16 @@ Ext Super Magic              Forensics        250
 Lying Out                    Forensics        250     picoCTF{w4y_0ut_ff5bd19c}
 The Vault                    Web              250     picoCTF{w3lc0m3_t0_th3_vau1t_e4ca2258}
 absolutely relative          General Skills   250
+caesar cipher 2              Cryptography     250
+got-2-learn-libc             Binary Exploit   250
 rsa-madlibs                  Cryptography     250
 in out error                 General Skills   275     picoCTF{p1p1ng_1S_4_7h1ng_b6f5a788}
 Artisinal Handcrafted HTTP   Web              300
 echooo                       Binary           300
 learn gdb                    General Skills   300
 Flaskcards                   Web              350
+got-shell?                   Binary           350
+roulette                     General Skills   350
 Malware Shops                Forensics        400
 fancy-alive-monitoring       Web              400
 store                        General Skills   400
@@ -72,8 +78,8 @@ script me                    General Skills   500
 LoadSomeBits                 Forensics        550
 Help Me Reset                Web              600
 A Simple Question            Web              650
-
-
+LambDash 3                   Web              800
+Dog or Frog                  General Skills   900
 ```
 
 ## Forensics 50: Forensics Warmup 1
@@ -883,6 +889,23 @@ We change `admin` cookie to `True` and refresh the page to get the flag
 picoCTF{l0g1ns_ar3nt_r34l_2a968c11}
 ```
 
+
+## Forensics 150: Reading between the Eyes
+
+**Challenge**
+
+Stego-Saurus hid a message for you in this image, can you retreive it?
+
+![](writeupfiles/husky.png)
+
+**Solution**
+
+**Flag**
+```
+
+```
+
+
 ## Forensics 150: Recovering from the snap
 
 **Challenge**
@@ -942,9 +965,74 @@ quite clearly.
 picoCTF{n0ts3cur3_894a6546}
 ```
 
+## Reversing 150: assembly-0
+
+**Challenge**
+
+What does `asm0(0xd8,0x7a)` return? Submit the flag as a hexadecimal value (starting with `0x`).
+
+NOTE: Your submission for this question will NOT be in the normal flag format. [Source](writeupfiles/intro_asm_rev.S)
+located in the directory at `/problems/assembly-0_1_fc43dbf0079fd5aab87236bf3bf4ac63`.
+
+**Solution**
+
+**Flag**
+```
+
+```
+
 ## Binary Exploitation 150: buffer overflow 0
 
 **Challenge**
+
+Let's start off simple, can you overflow the right buffer in this [program](writeupfiles/vuln) to get the flag?
+You can also find it in `/problems/buffer-overflow-0_4_ab1efebbee9446039487c64b88d38631` on the shell server.
+
+[Source](writeupfiles/vuln.c)
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <signal.h>
+
+#define FLAGSIZE_MAX 64
+
+char flag[FLAGSIZE_MAX];
+
+void sigsegv_handler(int sig) {
+  fprintf(stderr, "%s\n", flag);
+  fflush(stderr);
+  exit(1);
+}
+
+void vuln(char *input){
+  char buf[16];
+  strcpy(buf, input);
+}
+
+int main(int argc, char **argv){
+
+  FILE *f = fopen("flag.txt","r");
+  if (f == NULL) {
+    printf("Flag File is Missing. Problem is Misconfigured, please contact an Admin if you are running this on the shell server.\n");
+    exit(0);
+  }
+  fgets(flag,FLAGSIZE_MAX,f);
+  signal(SIGSEGV, sigsegv_handler);
+
+  gid_t gid = getegid();
+  setresgid(gid, gid, gid);
+
+  if (argc > 1) {
+    vuln(argv[1]);
+    printf("Thanks! Received: %s", argv[1]);
+  }
+  else
+    printf("This program takes 1 argument.\n");
+  return 0;
+}
+```
 
 **Solution**
 
@@ -995,6 +1083,8 @@ picoCTF{eNv1r0nM3nT_v4r14Bl3_fL4g_3758492}
 ## Cryptography 150: hertz
 
 **Challenge**
+
+Here's another simple cipher for you where we made a bunch of substitutions. Can you decrypt it? Connect with `nc 2018shell1.picoctf.com 43324`.
 
 **Solution**
 
@@ -1081,6 +1171,19 @@ create a cooke named `admin` and set value to `True` gives the flag
 picoCTF{n0l0g0n_n0_pr0bl3m_50e16a5c}
 ```
 
+## Web Exploitation 200: Secret Agent
+
+**Challenge**
+
+Here's a little website that hasn't fully been finished. But I heard google gets all your info anyway. http://2018shell1.picoctf.com:53383
+
+**Solution**
+
+**Flag**
+```
+
+```
+
 ## Forensics 200: Truly an Artist
 
 **Challenge**
@@ -1117,9 +1220,139 @@ Megapixels                      : 0.756
 picoCTF{look_in_image_788a182e}
 ```
 
+
+## Reversing 200: be-quick-or-be-dead-1
+
+**Challenge**
+
+ You find [this](https://www.youtube.com/watch?v=CTt1vk9nM9c) when searching for some music, which leads you to [be-quick-or-be-dead-1](writeupfiles/be-quick-or-be-dead-1). Can you run it fast enough?
+
+You can also find the executable in `/problems/be-quick-or-be-dead-1_3_aeb48854203a88fb1da963f41ae06a1c`.
+
+
+**Solution**
+
+**Flag**
+```
+
+```
+
+
+## Cryptography 200: blaise's cipher
+
+**Challenge**
+
+My buddy Blaise told me he learned about this cool cipher invented by a guy also named Blaise! Can you figure out what it says?
+
+Connect with `nc 2018shell1.picoctf.com 46966`
+
+
+**Solution**
+
+**Flag**
+```
+
+```
+
+## Binary Exploitation 200: leak-me
+
+**Challenge**
+
+Can you authenticate to [this service](writeupfiles/auth) and get the flag? Connect with nc 2018shell1.picoctf.com 31045.
+
+[Source](writeupfiles)
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+
+int flag() {
+  char flag[48];
+  FILE *file;
+  file = fopen("flag.txt", "r");
+  if (file == NULL) {
+    printf("Flag File is Missing. Problem is Misconfigured, please contact an Admin if you are running this on the shell server.\n");
+    exit(0);
+  }
+
+  fgets(flag, sizeof(flag), file);
+  printf("%s", flag);
+  return 0;
+}
+
+
+int main(int argc, char **argv){
+
+  setvbuf(stdout, NULL, _IONBF, 0);
+
+  // Set the gid to the effective gid
+  gid_t gid = getegid();
+  setresgid(gid, gid, gid);
+
+  // real pw:
+  FILE *file;
+  char password[64];
+  char name[256];
+  char password_input[64];
+
+  memset(password, 0, sizeof(password));
+  memset(name, 0, sizeof(name));
+  memset(password_input, 0, sizeof(password_input));
+
+  printf("What is your name?\n");
+
+  fgets(name, sizeof(name), stdin);
+  char *end = strchr(name, '\n');
+  if (end != NULL) {
+    *end = '\x00';
+  }
+
+  strcat(name, ",\nPlease Enter the Password.");
+
+  file = fopen("password.txt", "r");
+  if (file == NULL) {
+    printf("Password File is Missing. Problem is Misconfigured, please contact an Admin if you are running this on the shell server.\n");
+    exit(0);
+  }
+
+  fgets(password, sizeof(password), file);
+
+  printf("Hello ");
+  puts(name);
+
+  fgets(password_input, sizeof(password_input), stdin);
+  password_input[sizeof(password_input)] = '\x00';
+
+  if (!strcmp(password_input, password)) {
+    flag();
+  }
+  else {
+    printf("Incorrect Password!\n");
+  }
+  return 0;
+}
+
+```
+
+**Solution**
+
+**Flag**
+```
+
+```
+
+
 ## Forensics 200: now you don't
 
 **Challenge**
+
+We heard that there is something hidden in this picture. Can you find it?
+
+![](writeupfiles/nowYouDont.png)
+
 
 **Solution**
 
@@ -1132,23 +1365,71 @@ picoCTF{look_in_image_788a182e}
 
 **Challenge**
 
+This [program](writeupfiles/vuln2) executes any input you give it. Can you get a shell?
+
+You can find the program in `/problems/shellcode_0_48532ce5a1829a772b64e4da6fa58eed` on the shell server.
+
+[Source](writeupfiles/vuln2.c)
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+
+#define BUFSIZE 148
+#define FLAGSIZE 128
+
+void vuln(char *buf){
+  gets(buf);
+  puts(buf);
+}
+
+int main(int argc, char **argv){
+
+  setvbuf(stdout, NULL, _IONBF, 0);
+
+  // Set the gid to the effective gid
+  // this prevents /bin/sh from dropping the privileges
+  gid_t gid = getegid();
+  setresgid(gid, gid, gid);
+
+  char buf[BUFSIZE];
+
+  puts("Enter a string!");
+  vuln(buf);
+
+  puts("Thanks! Executing now...");
+
+  ((void (*)())buf)();
+
+  return 0;
+}
+```
+
 **Solution**
 
 **Flag**
 ```
 
 ```
+
 
 ## General Skills 200: what base is this?
 
 **Challenge**
 
+
+To be successful on your mission, you must be able read data represented in different ways, such as hexadecimal or binary. Can you get the flag from this program to prove you are ready? Connect with `nc 2018shell1.picoctf.com 14390`.
+
 **Solution**
 
 **Flag**
 ```
 
 ```
+
 
 ## General Skills: 200: you can't see me
 
@@ -1193,6 +1474,24 @@ link gives a message about being denied. Changing the second button to a form
 ```
 picoCTF{button_button_whose_got_the_button_ed306c10}
 ```
+
+
+## Forensics 250: Ext Super Magic
+
+**Challenge**
+
+We salvaged a ruined Ext SuperMagic II-class mech recently and pulled the [filesystem](writeupfiles/ext-super-magic.img) out of the black box. It looks a bit corrupted, but maybe there's something interesting in there.
+
+You can also find it in `/problems/ext-super-magic_4_f196e59a80c3fdac37cc2f331692ef13` on the shell server.
+
+**Solution**
+
+**Flag**
+```
+
+```
+
+
 
 ## Forensics 250: Lying out
 
@@ -1318,9 +1617,113 @@ picoCTF{3v3r1ng_1$_r3l3t1v3_a97be50e}
 picoCTF{3v3r1ng_1$_r3l3t1v3_a97be50e}
 ```
 
+## Cryptography 250: caesar cipher 2
+
+**Challenge**
+
+Can you help us decrypt [this message](writeupfiles/ciphertext2)? We believe it is a form of a caesar cipher.
+
+You can find the ciphertext in `/problems/caesar-cipher-2_3_4a1aa2a4d0f79a1f8e9a29319250740a` on the shell server.
+
+```
+4-'3evh?'c)7%t#e-r,g6u#.9uv#%tg2v#7g'w6gA
+```
+
+
+**Solution**
+
+**Flag**
+```
+
+```
+
+## Binary Exploitation 250: got-2-learn-libc
+
+**Challenge**
+
+This [program](writeupfiles/vuln3) gives you the address of some system calls. Can you get a shell?
+
+You can find the program in `/problems/got-2-learn-libc_2_2d4a9f3ed6bf71e90e938f1e020fb8ee` on the shell server.
+
+[Source](writeupfiles)
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+
+#define BUFSIZE 148
+#define FLAGSIZE 128
+
+char useful_string[16] = "/bin/sh"; /* Maybe this can be used to spawn a shell? */
+
+
+void vuln(){
+  char buf[BUFSIZE];
+  puts("Enter a string:");
+  gets(buf);
+  puts(buf);
+  puts("Thanks! Exiting now...");
+}
+
+int main(int argc, char **argv){
+
+  setvbuf(stdout, NULL, _IONBF, 0);
+
+  // Set the gid to the effective gid
+  // this prevents /bin/sh from dropping the privileges
+  gid_t gid = getegid();
+  setresgid(gid, gid, gid);
+
+
+  puts("Here are some useful addresses:\n");
+
+  printf("puts: %p\n", puts);
+  printf("fflush %p\n", fflush);
+  printf("read: %p\n", read);
+  printf("write: %p\n", write);
+  printf("useful_string: %p\n", useful_string);
+
+  printf("\n");
+
+  vuln();
+
+
+  return 0;
+}
+```
+
+**Solution**
+
+**Flag**
+```
+
+```
+
+
+## Cryptography 250: rsa-madlibs
+
+**Challenge**
+
+We ran into some weird puzzles we think may mean something, can you help me solve one?
+
+Connect with `nc 2018shell1.picoctf.com 40440`
+
+**Solution**
+
+**Flag**
+```
+
+```
+
+
+
 ## General Skills 275: in out error
 
 **Challenge**
+
 Can you utlize stdin, stdout, and stderr to get the flag from this program?
 You can also find it in `/problems/in-out-error_2_c33e2a987fbd0f75e78481b14bfd15f4` on the shell server
 
@@ -1338,9 +1741,71 @@ picoCTF{p1p1ng_1S_4_7h1ng_b6f5a788}
 ```
 
 
+## Web Exploitation 300: Artisinal Handcrafted HTTP 3
+
+**Challenge**
+
+We found a hidden flag server hiding behind a proxy, but the proxy has some... _interesting_ ideas of what qualifies someone to make HTTP requests. Looks like you'll have to do this one by hand.
+
+Try connecting via `nc 2018shell1.picoctf.com 26431`, and use the proxy to send HTTP requests to `flag.local`. We've also recovered a username and a password for you to use on the login page: `realbusinessuser`/`potoooooooo`.
+
+**Solution**
+
+**Flag**
+```
+
+```
+
 ## Binary Exploitation 300: echooo
 
 **Challenge**
+
+This program prints any input you give it. Can you [leak](writeupfiles/leak) the flag? Connect with `nc 2018shell1.picoctf.com 23397`.
+
+[Source](writeupfiles/echo.c)
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+
+int main(int argc, char **argv){
+
+  setvbuf(stdout, NULL, _IONBF, 0);
+
+  char buf[64];
+  char flag[64];
+  char *flag_ptr = flag;
+
+  // Set the gid to the effective gid
+  gid_t gid = getegid();
+  setresgid(gid, gid, gid);
+
+  memset(buf, 0, sizeof(flag));
+  memset(buf, 0, sizeof(buf));
+
+  puts("Time to learn about Format Strings!");
+  puts("We will evaluate any format string you give us with printf().");
+  puts("See if you can get the flag!");
+
+  FILE *file = fopen("flag.txt", "r");
+  if (file == NULL) {
+    printf("Flag File is Missing. Problem is Misconfigured, please contact an Admin if you are running this on the shell server.\n");
+    exit(0);
+  }
+
+  fgets(flag, sizeof(flag), file);
+
+  while(1) {
+    printf("> ");
+    fgets(buf, sizeof(buf), stdin);
+    printf(buf);
+  }
+  return 0;
+}
+```
 
 **Solution**
 
@@ -1350,9 +1815,27 @@ picoCTF{p1p1ng_1S_4_7h1ng_b6f5a788}
 ```
 
 
+## General Skills 300: learn gdb
+
+**Challenge**
+
+Using a debugging tool will be extremely useful on your missions. Can you run [this program](writeupfiles/run2) in gdb and find the flag?
+
+You can find the file in `/problems/learn-gdb_2_32e08c18932eb88649e9b97f3020b9f5` on the shell server.
+
+**Solution**
+
+
+
+**Flag**
+```
+
+```
+
 ## General Skills 400: Store
 
 **Challenge**
+
 We started a little store, can you buy the flag? [Source.](./writeupfiles/store.c) Connect with 2018shell1.picoctf.com 5795.
 
 **Solution**
