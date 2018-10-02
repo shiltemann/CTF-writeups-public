@@ -46,7 +46,7 @@ ssh-keyz                     General Skills   150     picoCTF{who_n33ds_p4ssw0rd
 Irish Name Repo              Web              200     picoCTF{con4n_r3411y_1snt_1r1sh_f58843c5}
 Mr. Robots                   Web              200     picoCTF{th3_w0rld_1s_4_danger0us_pl4c3_3lli0t_30de1}
 No Login                     Web              200     picoCTF{n0l0g0n_n0_pr0bl3m_50e16a5c}
-Secret Agent                 Web              200
+Secret Agent                 Web              200     picoCTF{s3cr3t_ag3nt_m4n_134ecd62}
 Truly an Artist              Forensics        200
 be-quick-or-be-dead-1        Reversing        200
 blaise's cipher              Cryptography     200
@@ -1179,9 +1179,82 @@ Here's a little website that hasn't fully been finished. But I heard google gets
 
 **Solution**
 
-**Flag**
+The website contains a big button with the word `Flag` on it. When we click it we get the message `You're not google! Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0`.
+
+![](writeupfiles/secretagent.png)
+
+Looks like it checks our user agent string to decide whether we get the flag. Changing the user agent string to something custom like `google` is not enough, so we look up the user agent strings used by the Google crawlers [link](https://support.google.com/webmasters/answer/1061943?hl=en)
+
+
+```python
+import requests
+
+headers = {'User-Agent':'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'}
+r=requests.get("http://2018shell1.picoctf.com:53383/flag", headers=headers)
+
+print r.text
 ```
 
+which gives us the web page containing the flag:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My New Website</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/3.3/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="/">Home</a>
+                    </li>
+                    <li role="presentation"><a href="/unimplemented">Sign In</a>
+                    </li>
+                    <li role="presentation"><a href="/unimplemented">Sign Out</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">My New Website</h3>
+        </div>
+
+       <!-- Categories: success (green), info (blue), warning (yellow), danger (red) -->
+
+       <div class="alert alert-success alert-dismissible" role="alert" id="myAlert">
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         <!-- <strong>Title</strong> --> Googlebot!
+           </div>
+
+        <div class="jumbotron">
+            <p class="lead"></p>
+            <p style="text-align:center; font-size:30px;"><b>Flag</b>: <code>picoCTF{s3cr3t_ag3nt_m4n_134ecd62}</code></p>
+            <!-- <p><a class="btn btn-lg btn-success" href="admin" role="button">Click here for the flag!</a> -->
+            <!-- </p> -->
+        </div>
+        <footer class="footer">
+            <p>&copy; PicoCTF 2018</p>
+        </footer>
+    </div>
+    <script>
+    $(document).ready(function(){
+        $(".close").click(function(){
+            $("myAlert").alert("close");
+        });
+    });
+    </script>
+</body>
+</html>
+```
+
+
+**Flag**
+```
+picoCTF{s3cr3t_ag3nt_m4n_134ecd62}
 ```
 
 ## Forensics 200: Truly an Artist
