@@ -51,7 +51,7 @@ Truly an Artist              Forensics        200
 be-quick-or-be-dead-1        Reversing        200
 blaise's cipher              Cryptography     200     picoCTF{v1gn3r3_c1ph3rs_ar3n7_bad_cdf08bf0}
 leak-me                      Binary Exploit   200
-now you don't                Forensics        200
+now you don't                Forensics        200     picoCTF{n0w_y0u_533_m3}
 shellcode                    Binary Exploit   200
 what base is this?           General Skills   200
 you can't see me             General Skills   200     picoCTF{j0hn_c3na_paparapaaaaaaa_paparapaaaaaa_22f627d9}
@@ -1465,9 +1465,15 @@ We heard that there is something hidden in this picture. Can you find it?
 
 **Solution**
 
+We extract the LSB of each of the colour channels using [this script](../../_resources/code/extractlsb.py)
+and find the flag in the red channel:
+
+![](writeupfiles/nowyouseeme.png)
+
+
 **Flag**
 ```
-
+picoCTF{n0w_y0u_533_m3}
 ```
 
 ## Binary Exploitation 200: shellcode
