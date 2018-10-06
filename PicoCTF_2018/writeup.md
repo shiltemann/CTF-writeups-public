@@ -51,6 +51,7 @@ Truly an Artist              Forensics        200
 be-quick-or-be-dead-1        Reversing        200
 blaise's cipher              Cryptography     200     picoCTF{v1gn3r3_c1ph3rs_ar3n7_bad_cdf08bf0}
 buffer overflow 1            Binary Exploit   200     picoCTF{addr3ss3s_ar3_3asy56a7b196}
+hertz 2                      Cryptography     200     picoCTF{substitution_ciphers_are_too_easy_sgsgtnpibo}
 leak-me                      Binary Exploit   200
 now you don't                Forensics        200     picoCTF{n0w_y0u_533_m3}
 shellcode                    Binary Exploit   200
@@ -1572,6 +1573,34 @@ It works!!!
 ```
 picoCTF{addr3ss3s_ar3_3asy56a7b196}Segmentation fault
 ```
+
+## Cryptography 200: hertz 2
+
+**Challenge**
+
+This flag has been encrypted with some kind of cipher, can you decrypt it? Connect with `nc 2018shell1.picoctf.com 12521`.
+
+**Solution**
+
+When we connect we are given a ciphertext
+
+```
+Yln mvsfi ugbxe abj tvkow bcng yln qrzd pbh. S fre'y unqsncn ylsw sw wvfl re nrwd ogbuqnk se Osfb. Sy'w rqkbwy rw sa S wbqcnp r ogbuqnk rqgnrpd! Bird, asen. Lngn'w yln aqrh: osfbFYA{wvuwysyvysbe_fsolngw_rgn_ybb_nrwd_whwhyeosub}
+```
+
+we input this to https://quipqiup.com/ and it decodes to
+
+```
+The quick brown fox jumps over the lazy dog. I can't believe this is such an easy problem in Pico. It's almost as if I solved a problem already! Okay, fine. Here's the flag: picoCTF{substitution_ciphers_are_too_easy_sgsgtnpibo}
+```
+
+
+**Flag**
+```
+picoCTF{substitution_ciphers_are_too_easy_sgsgtnpibo}
+```
+
+
 
 ## Binary Exploitation 200: leak-me
 
