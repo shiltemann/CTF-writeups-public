@@ -64,7 +64,7 @@ The Vault                    Web              250     picoCTF{w3lc0m3_t0_th3_vau
 What's My Name?              Forensics        250     picoCTF{w4lt3r_wh1t3_2d6d3c6c75aa3be7f42debed8ad16e3b}
 absolutely relative          General Skills   250
 buffer overflow 2            Binary Exploit   250
-caesar cipher 2              Cryptography     250
+caesar cipher 2              Cryptography     250     picoCTF{cAesaR_CiPhErS_juST_aREnT_sEcUrE}
 got-2-learn-libc             Binary Exploit   250
 rsa-madlibs                  Cryptography     250
 in out error                 General Skills   275     picoCTF{p1p1ng_1S_4_7h1ng_b6f5a788}
@@ -2109,9 +2109,36 @@ You can find the ciphertext in `/problems/caesar-cipher-2_3_4a1aa2a4d0f79a1f8e9a
 
 **Solution**
 
+Looks like caesar shift cipher but with a larger alphabet. Since we know the flag
+format, we can deduce the shift amount (e.g. `4` should become `p`). The most likely candidate is the ascii table
+
+```python
+import string
+
+alphabet=""
+
+for i in range(32,126):
+    alphabet += chr(i)
+
+print(alphabet)
+
+shift=alphabet.find('p')-alphabet.find('4')
+print(shift)
+
+ct="4-'3evh?'c)7%t#e-r,g6u#.9uv#%tg2v#7g'w6gA"
+
+pt=''
+for c in ct:
+    pt += alphabet[ (alphabet.find(c)+shift)%len(alphabet) ]
+
+print(pt)
+
+```
+And this outputs the flag for us
+
 **Flag**
 ```
-
+picoCTF{cAesaR_CiPhErS_juST_aREnT_sEcUrE}
 ```
 
 ## Binary Exploitation 250: got-2-learn-libc
