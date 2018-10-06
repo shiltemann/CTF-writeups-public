@@ -36,7 +36,7 @@ Logon                        Web              150     picoCTF{l0g1ns_ar3nt_r34l_
 Reading between the eyes     Forensics        150
 Recovering from the snap     Forensics        150     picoCTF{th3_5n4p_happ3n3d}
 admin panel                  Forensics        150     picoCTF{n0ts3cur3_894a6546}
-assembly-0                   Reversing        150
+assembly-0                   Reversing        150     0x7a
 buffer overflow 0            Binary Exploit   150     picoCTF{ov3rfl0ws_ar3nt_that_bad_b49d36d2}
 caesar cipher 1              Cryptography     150     picoCTF{justagoodoldcaesarcipherwoyolfpu}
 environ                      General Skills   150     picoCTF{eNv1r0nM3nT_v4r14Bl3_fL4g_3758492}
@@ -977,9 +977,29 @@ located in the directory at `/problems/assembly-0_1_fc43dbf0079fd5aab87236bf3bf4
 
 **Solution**
 
-**Flag**
+```asm
+.intel_syntax noprefix
+.bits 32
+
+.global asm0
+
+asm0:
+	push	ebp
+	mov	ebp,esp
+	mov	eax,DWORD PTR [ebp+0x8]
+	mov	ebx,DWORD PTR [ebp+0xc]
+	mov	eax,ebx
+	mov	esp,ebp
+	pop	ebp
+	ret
 ```
 
+we can deduce the output manually. `ret` will return the value of `eax`, which was set to the value of `ebx` (`mov eax ebx`), and ebx was set do the second argument we passed to the program (`mov	ebx,DWORD PTR [ebp+0xc]`), which in this case was `0x7a`
+
+
+**Flag**
+```
+0x7a
 ```
 
 ## Binary Exploitation 150: buffer overflow 0
