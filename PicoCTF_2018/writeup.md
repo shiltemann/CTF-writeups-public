@@ -82,7 +82,7 @@ Secure Logon                 Web              500
 script me                    General Skills   500
 LoadSomeBits                 Forensics        550
 Help Me Reset                Web              600
-A Simple Question            Web              650
+A Simple Question            Web              650     picoCTF{qu3stions_ar3_h4rd_d3850719}
 LambDash 3                   Web              800
 Dog or Frog                  General Skills   900
 ```
@@ -3017,10 +3017,20 @@ letter found! 41andsixsixths
 
 but now what..? this is not the flag, nor the answer to put in the form. Nor is `42`
 
+turns out the query wasn't case sensitive, and the answer we are looking for is
+`41AndSixSixths`. When we put that in the form we get the flag:
+
+```
+SQL query: SELECT * FROM answers WHERE answer='41AndSixSixths'
+
+Perfect!
+
+Your flag is: picoCTF{qu3stions_ar3_h4rd_d3850719}
+```
 
 **Flag**
 ```
-
+picoCTF{qu3stions_ar3_h4rd_d3850719}
 ```
 
 ## Web Exploitation 800: LambDash 3
