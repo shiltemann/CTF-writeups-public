@@ -82,7 +82,7 @@ Secure Logon                 Web              500
 script me                    General Skills   500
 LoadSomeBits                 Forensics        550
 Help Me Reset                Web              600
-A Simple Question            Web              650
+A Simple Question            Web              650     picoCTF{qu3stions_ar3_h4rd_d3850719}
 LambDash 3                   Web              800
 Dog or Frog                  General Skills   900
 ```
@@ -2420,11 +2420,25 @@ picoCTF{0nLY_Us3_n0N_GmO_xF3r_pR0tOcol5_72f2}
 ## Cryptography 300: SpyFi
 
 **Challenge**
- James Brahm, James Bond's less-franchised cousin, has left his secure communication with HQ running, but we couldn't find a way to steal his agent identification code. Can you? Conect with nc 2018shell1.picoctf.com 31123. [Source.](writeupfiles/spy_terminal_no_flag.py)
+ James Brahm, James Bond's less-franchised cousin, has left his secure communication with HQ running, but we couldn't find a way to steal his agent identification code. Can you? Conect with `nc 2018shell1.picoctf.com 31123`. [Source.](writeupfiles/spy_terminal_no_flag.py)
 
 **Solution**
 
-After some experimentation, 11z's pads the first bit of text nicely to 64 characters, then every other section are 16 character sections.
+When we connect, we are asked for our situation report, and are given and encrypted string (different depending on our input)
+
+```bash
+$ nc 2018shell1.picoctf.com 31123
+Welcome, Agent 006!
+Please enter your situation report: bla
+4d6276d172d79a9b7da9098f69e9b403024a64082b1f2cdfa32d27d78ca83236e30cf5302c3f000ff2cb7b8a7106351c3fbf30cac64b016bb3fd112a28ed5478da62ea7c24a6c2956c96fbaaa3097dee75e268403189f06f1250226d6d557f9dcbadccc3485faa80ca8c04ff845819b5fb49b0414a48d3cb4993e15d5c9a05a7935360d079133605136cd91c3a85559adf26219527ad17f80a6fece062d71d6f
+
+$ nc 2018shell1.picoctf.com 31123
+Welcome, Agent 006!
+Please enter your situation report: zzzzzzzzzzzzzzz
+4d6276d172d79a9b7da9098f69e9b403024a64082b1f2cdfa32d27d78ca83236e30cf5302c3f000ff2cb7b8a7106351cc71a0b099baa79288b88380b6e1176093062f7a7751b1cd658a5bd1068c1e66da61b6aa76648777223b15da96a1f249e4ea96647c833ab65e5ec4ed409fe3414af4759f13ad15cc038b0084cdd2f7440456b962fdff9ae64e7a083561b1fda1a8e456864e71843a630207321a2728d26d94dd9b0159dce7368382298d639b818
+```
+
+Looks like the beginning is always the same.. After some experimentation, 11z's pads the first bit of text nicely to 64 characters, then every other section are 16 character sections.
 
 ```
 $ python -c 'print("z" * 11 + "a" * 64 + "b" * 64)' | nc 2018shell1.picoctf.com 31123 | sed 's/Please enter your situation report: //g' | fold -w 32
@@ -3072,14 +3086,25 @@ letter found! 41andsixsi
 letter found! 41andsixsix
 letter found! 41andsixsixt
 letter found! 41andsixsixth
+letter found! 41andsixsixths
 ```
 
 but now what..? this is not the flag, nor the answer to put in the form. Nor is `42`
 
+turns out the query wasn't case sensitive, and the answer we are looking for is
+`41AndSixSixths`. When we put that in the form we get the flag:
+
+```
+SQL query: SELECT * FROM answers WHERE answer='41AndSixSixths'
+
+Perfect!
+
+Your flag is: picoCTF{qu3stions_ar3_h4rd_d3850719}
+```
 
 **Flag**
 ```
-
+picoCTF{qu3stions_ar3_h4rd_d3850719}
 ```
 
 ## Web Exploitation 800: LambDash 3
