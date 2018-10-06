@@ -68,7 +68,7 @@ caesar cipher 2              Cryptography     250
 got-2-learn-libc             Binary Exploit   250
 rsa-madlibs                  Cryptography     250
 in out error                 General Skills   275     picoCTF{p1p1ng_1S_4_7h1ng_b6f5a788}
-Artisinal Handcrafted HTTP   Web              300
+Artisinal Handcrafted HTTP 3 Web              300     picoCTF{0nLY_Us3_n0N_GmO_xF3r_pR0tOcol5_72f2}
 echooo                       Binary           300
 learn gdb                    General Skills   300
 Flaskcards                   Web              350
@@ -2227,9 +2227,106 @@ Try connecting via `nc 2018shell1.picoctf.com 26431`, and use the proxy to send 
 
 **Solution**
 
-**Flag**
+
+```
+GET /
+Host: flag.local
+
+HTTP/1.1 200 OK
+x-powered-by: Express
+content-type: text/html; charset=utf-8
+content-length: 321
+etag: W/"141-LuTf9ny9p1l454tuA3Un+gDFLWo"
+date: Sat, 06 Oct 2018 16:53:46 GMT
+connection: close
+
+<snip>
+/login
 ```
 
+So we access login:
+
+
+```
+GET /login
+Host: flag.local
+
+HTTP/1.1 200 OK
+x-powered-by: Express
+content-type: text/html; charset=utf-8
+content-length: 498
+etag: W/"1f2-UE5AGAqbLVQn1qrfKFRIqanxl9I"
+date: Sat, 06 Oct 2018 16:54:08 GMT
+connection: close
+
+
+                <html>
+                        <head>
+                                <link rel="stylesheet" type="text/css" href="main.css" />
+                        </head>
+                        <body>
+                                <header>
+                                        <h1>Real Business Internal Flag Server</h1>
+                                        <a href="/login">Login</a>
+                                </header>
+                                <main>
+                                        <h2>Log In</h2>
+
+                                        <form method="POST" action="login">
+                                                <input type="text" name="user" placeholder="Username" />
+                                                <input type="password" name="pass" placeholder="Password" />
+                                                <input type="submit" />
+                                        </form>
+                                </main>
+                        </body>
+                </html>
+```
+
+So let's post the user/pass to that:
+
+```
+POST /login
+Host: flag.local
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 38
+
+user=realbusinessuser&pass=potoooooooo
+HTTP/1.1 302 Found
+x-powered-by: Express
+set-cookie: real_business_token=PHNjcmlwdD5hbGVydCgid2F0Iik8L3NjcmlwdD4%3D; Path=/
+location: /
+vary: Accept
+content-type: text/plain; charset=utf-8
+content-length: 23
+date: Sat, 06 Oct 2018 16:59:49 GMT
+connection: close
+
+Found. Redirecting to /%
+```
+
+And let's fetch index with that cookie:
+
+```
+GET /
+Host: flag.local
+Cookie: real_business_token=PHNjcmlwdD5hbGVydCgid2F0Iik8L3NjcmlwdD4%3D
+
+HTTP/1.1 200 OK
+x-powered-by: Express
+content-type: text/html; charset=utf-8
+content-length: 438
+etag: W/"1b6-W7vAFWOkYXQgrhkzGj6dgZ9sfsg"
+date: Sat, 06 Oct 2018 17:01:15 GMT
+connection: close
+
+<snip>
+<p>Hello <b>Real Business Employee</b>!  Today's flag is: <code>picoCTF{0nLY_Us3_n0N_GmO_xF3r_pR0tOcol5_72f2}</code>.</p>
+```
+
+
+**Flag**
+```
+picoCTF{0nLY_Us3_n0N_GmO_xF3r_pR0tOcol5_72f2}
 ```
 
 ## Binary Exploitation 300: echooo
