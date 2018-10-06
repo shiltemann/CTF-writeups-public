@@ -61,6 +61,7 @@ Buttons                      Web              250     picoCTF{button_button_whos
 Ext Super Magic              Forensics        250
 Lying Out                    Forensics        250     picoCTF{w4y_0ut_ff5bd19c}
 The Vault                    Web              250     picoCTF{w3lc0m3_t0_th3_vau1t_e4ca2258}
+What's My Name?              Forensics        250     picoCTF{w4lt3r_wh1t3_2d6d3c6c75aa3be7f42debed8ad16e3b}
 absolutely relative          General Skills   250
 buffer overflow 2            Binary Exploit   250
 caesar cipher 2              Cryptography     250
@@ -1971,6 +1972,19 @@ Your flag is: picoCTF{w3lc0m3_t0_th3_vau1t_e4ca2258}
 **Flag**
 ```
 picoCTF{w3lc0m3_t0_th3_vau1t_e4ca2258}
+```
+
+## Forensics 250: What's My Name?
+
+**Chalenge**
+ Say my name, say [my name.](./writeupfiles/myname.pcap)
+
+**Solution**
+Open the pcap file in wireshark, use `dns` as a packet filter, we look in the response section and there's a TXT record with the flag.
+
+**Flag**
+```
+picoCTF{w4lt3r_wh1t3_2d6d3c6c75aa3be7f42debed8ad16e3b}
 ```
 
 ## General Skills 250: absolutely relative
