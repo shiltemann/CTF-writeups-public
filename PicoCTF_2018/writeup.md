@@ -56,7 +56,7 @@ hertz 2                      Cryptography     200     picoCTF{substitution_ciphe
 leak-me                      Binary Exploit   200     picoCTF{aLw4y5_Ch3cK_tHe_bUfF3r_s1z3_d1667872}
 now you don't                Forensics        200     picoCTF{n0w_y0u_533_m3}
 shellcode                    Binary Exploit   200
-what base is this?           General Skills   200
+what base is this?           General Skills   200     picoCTF{delusions_about_finding_values_602fd280}
 you can't see me             General Skills   200     picoCTF{j0hn_c3na_paparapaaaaaaa_paparapaaaaaa_22f627d9}
 Buttons                      Web              250     picoCTF{button_button_whose_got_the_button_ed306c10}
 Ext Super Magic              Forensics        250
@@ -1915,9 +1915,30 @@ To be successful on your mission, you must be able read data represented in diff
 
 **Solution**
 
-**Flag**
+we connect and are asked to convert some numbers to ascii:
+
+```bash
+$ nc 2018shell1.picoctf.com 14390                                                                                                  [07-10-18 18:39:56]
+We are going to start at the very beginning and make sure you understand how data is stored.
+turtle
+Please give me the 01110100 01110101 01110010 01110100 01101100 01100101 as a word.
+To make things interesting, you have 30 seconds.
+Input:
+turtle
+Please give me the 636f756368 as a word.
+Input:
+couch
+Please give me the  154 141 155 160 160 157 163 164 as a word.
+Input:
+lamppost
+You got it! You're super quick!
+Flag: picoCTF{delusions_about_finding_values_602fd280}
 ```
 
+
+**Flag**
+```
+picoCTF{delusions_about_finding_values_602fd280}
 ```
 
 
