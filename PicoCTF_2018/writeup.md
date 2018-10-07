@@ -75,7 +75,7 @@ learn gdb                    General Skills   300
 Flaskcards                   Web              350
 got-shell?                   Binary           350
 roulette                     General Skills   350
-Malware Shops                Forensics        400
+Malware Shops                Forensics        400     picoCTF{w4y_0ut_dea1794b}
 fancy-alive-monitoring       Web              400
 store                        General Skills   400
 Secure Logon                 Web              500
@@ -2794,10 +2794,39 @@ instructions.
 ```
 
 **Solution**
+```
+You'll need to consult the file `clusters.png` to answer the following questions.
+
+
+How many attackers created the malware in this dataset?
+5
+Correct!
+
+
+In the following sample of files from the larger dataset, which file was made by the same attacker who made the file 628e79cf? Indicate your answer by entering that file's hash.
+       hash  jmp_count  add_count
+0  628e79cf       17.0       18.0
+1  1f2c7915       18.0       60.0
+2  6e7d554a       10.0       42.0
+3  a55f572c       30.0       37.0
+4  f118fcd7       36.0       13.0
+5  97b1425e       35.0       30.0
+6  a163e543       18.0       71.0
+7  ebaf5ccd       11.0       18.0
+8  9059414f       38.0       13.0
+9  c30ea3fe       18.0       37.0
+ebaf5ccd
+Correct!
+
+
+Great job. You've earned the flag: picoCTF{w4y_0ut_dea1794b}
+```
+
+I do not know how they got 5. I saw three peaks and one spurious point at 0, 0. I guessed until I got past the first one and then ebaf5ccd was the only thing remotely close in terms of jmp/adds.
 
 **Flag**
 ```
-
+picoCTF{w4y_0ut_dea1794b}
 ```
 
 
