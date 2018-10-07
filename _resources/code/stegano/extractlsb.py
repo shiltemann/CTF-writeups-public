@@ -15,7 +15,7 @@ def int2bytes(i):
     return binascii.unhexlify(hex_string.zfill(n + (n & 1)))
 
 
-def extract_lsb(inputimage, text, invert, decode):
+def extract_lsb(inputimage, text, invert, decode, resize):
     outfilename = Path(inputimage).resolve().stem
     img = Image.open(inputimage)
     img = img.convert('RGB')  # TODO: add support for alpha channel?
@@ -55,6 +55,12 @@ def extract_lsb(inputimage, text, invert, decode):
                 pixels_txt[1] += str(g & 1) if not invert else str((g & 1) ^ 1)
                 pixels_txt[2] += str(b & 1) if not invert else str((b & 1) ^ 1)
 
+    if resize:
+        r=int(resize)
+        outimg_r = outimg_r.resize((r * w, r * h))
+        outimg_g = outimg_g.resize((r * w, r * h))
+        outimg_b = outimg_b.resize((r * w, r * h))
+
     outimg_r.save(outfilename + "_lsb_r.png")
     outimg_g.save(outfilename + "_lsb_g.png")
     outimg_b.save(outfilename + "_lsb_b.png")
@@ -80,6 +86,7 @@ if __name__ == '__main__':
     parser.add_argument('--text', action='store_true', help='also output textual format')
     parser.add_argument('--invert', action='store_true', help='invert colours')
     parser.add_argument('--decode', action='store_true', help='try to decode bitstring')
+    parser.add_argument('--resize', help='resize output image by this factor')
     args = vars(parser.parse_args())
 
-    extract_lsb(args['input'], args['text'], args['invert'], args['decode'])
+    extract_lsb(args['input'], args['text'], args['invert'], args['decode'], args['resize'])
