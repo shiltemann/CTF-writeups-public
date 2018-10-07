@@ -905,6 +905,21 @@ Stego-Saurus hid a message for you in this image, can you retreive it?
 
 **Solution**
 
+If we extract the LSB of each channel, we see something hidden in the first row of pixels
+
+![](writeupfiles/husky_lsb_r.png)
+![](writeupfiles/husky_lsb_g.png)
+![](writeupfiles/husky_lsb_b.png)
+
+
+in textual format:
+
+```
+r: 01011110 00110101 00111110 01100011 01011011 01110010 01110110 01111001 01111010 01110010 01100110 0100000000000000000..
+g: 10010001 11100010 10010011 00111000 00111001 11110011 00111011 00111011 00110011 11110010 00110011 1110000000000000000..
+b: 10000101 11001100 01011100 10010100 10001101 01001001 11011001 10001111 11000001 01001111 11011101 1100000000000000000..
+```
+
 **Flag**
 ```
 
