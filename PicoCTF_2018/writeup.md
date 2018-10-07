@@ -48,6 +48,7 @@ Mr. Robots                   Web              200     picoCTF{th3_w0rld_1s_4_dan
 No Login                     Web              200     picoCTF{n0l0g0n_n0_pr0bl3m_50e16a5c}
 Secret Agent                 Web              200     picoCTF{s3cr3t_ag3nt_m4n_134ecd62}
 Truly an Artist              Forensics        200
+assembly-1                   Reversing        200     0x73
 be-quick-or-be-dead-1        Reversing        200
 blaise's cipher              Cryptography     200     picoCTF{v1gn3r3_c1ph3rs_ar3n7_bad_cdf08bf0}
 buffer overflow 1            Binary Exploit   200     picoCTF{addr3ss3s_ar3_3asy56a7b196}
@@ -1404,6 +1405,7 @@ picoCTF{s3cr3t_ag3nt_m4n_134ecd62}
 ## Forensics 200: Truly an Artist
 
 **Challenge**
+
 Can you help us find the flag in this [Meta-Material](./writeupfiles/2018.png)?
 
 **Solution**
@@ -1437,6 +1439,100 @@ Megapixels                      : 0.756
 picoCTF{look_in_image_788a182e}
 ```
 
+
+## Reversing 200: assembly-1
+
+**Challenge**
+
+What does `asm1(0x76)` return? Submit the flag as a hexadecimal value (starting with `0x`).
+
+NOTE: Your submission for this question will NOT be in the normal flag format.
+Source located in the directory at `/problems/assembly-1_0_cfb59ef3b257335ee403035a6e42c2ed`.
+
+[asm1](writeupfiles/eq_asm_rev.S)
+
+**Solution**
+
+```asm
+intel_syntax noprefix
+.bits 32
+
+.global asm1
+
+asm1:
+	push	ebp
+	mov	ebp,esp
+	cmp	DWORD PTR [ebp+0x8],0x98
+	jg 	part_a
+	cmp	DWORD PTR [ebp+0x8],0x8
+	jne	part_b
+	mov	eax,DWORD PTR [ebp+0x8]
+	add	eax,0x3
+	jmp	part_d
+part_a:
+	cmp	DWORD PTR [ebp+0x8],0x16
+	jne	part_c
+	mov	eax,DWORD PTR [ebp+0x8]
+	sub	eax,0x3
+	jmp	part_d
+part_b:
+	mov	eax,DWORD PTR [ebp+0x8]
+	sub	eax,0x3
+	jmp	part_d
+	cmp	DWORD PTR [ebp+0x8],0xbc
+	jne	part_c
+	mov	eax,DWORD PTR [ebp+0x8]
+	sub	eax,0x3
+	jmp	part_d
+part_c:
+	mov	eax,DWORD PTR [ebp+0x8]
+	add	eax,0x3
+part_d:
+	pop	ebp
+	ret
+```
+
+we manually parse this code:
+
+```
+asm1:                              # 1: we start here
+	push	ebp
+	mov	ebp,esp
+	cmp	DWORD PTR [ebp+0x8],0x98   # 2: we compare our input value (`0x76`) to `0x98`
+	jg 	part_a	                   # 3: not greater than `0x98` so we do not jump
+	cmp	DWORD PTR [ebp+0x8],0x8    # 4: now compare to `0x8`
+	jne	part_b                     # 5: not equal so we jump to part_b
+	mov	eax,DWORD PTR [ebp+0x8]
+	add	eax,0x3
+	jmp	part_d
+part_a:
+	cmp	DWORD PTR [ebp+0x8],0x16
+	jne	part_c
+	mov	eax,DWORD PTR [ebp+0x8]
+	sub	eax,0x3
+	jmp	part_d
+part_b:
+	mov	eax,DWORD PTR [ebp+0x8]   # 6: load our input value (`0x76`) to eax
+	sub	eax,0x3                   # 7: subtract 3, eax now contains `0x73`
+	jmp	part_d                    # 8: we jump to part_d
+	cmp	DWORD PTR [ebp+0x8],0xbc
+	jne	part_c
+	mov	eax,DWORD PTR [ebp+0x8]
+	sub	eax,0x3
+	jmp	part_d
+part_c:
+	mov	eax,DWORD PTR [ebp+0x8]
+	add	eax,0x3
+part_d:
+	pop	ebp
+	ret                          # 9: return value in eax (`0x73`)
+```
+
+
+**Flag**
+```
+0x73
+```
 
 ## Reversing 200: be-quick-or-be-dead-1
 
