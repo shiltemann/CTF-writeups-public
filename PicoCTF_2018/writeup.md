@@ -2217,8 +2217,10 @@ Connect with `nc 2018shell1.picoctf.com 40440`
 
 **Solution**
 
+We connect and are asked to do some RSA calculations. We get some parameters, and have to calculate a target RSA parameter, or answer that it is not feasible to do so. The complete exchange went as follows:
+
+
 ```
-0x7069636f4354467b64305f755f6b6e30775f7468335f7740795f325f5253405f35643338336531307dL <type 'long'>
 Hello, Welcome to RSA Madlibs
 Keeping young children entertained, since, well, nev3r
 Tell us how to fill in the blanks, or if it's even possible to do so
@@ -2325,6 +2327,8 @@ If you convert the last plaintext to a hex number, then ascii, you'll find what 
 
 ```
 
+so we convert the last answer to the flag:
+
 ```
 >>> flag = 240109877286251840533272915662757983981706320845661471802585807564915966910384301849411666983334013
 >>> hex(flag)
@@ -2333,6 +2337,8 @@ If you convert the last plaintext to a hex number, then ascii, you'll find what 
 'picoCTF{d0_u_kn0w_th3_w@y_2_RS@_5d383e10}'
 ```
 
+Below is some pseudocode of how parameters may be calculated given a set of
+other ones
 
 ```python
 # pseudocode to show how the rsa calculations were done
