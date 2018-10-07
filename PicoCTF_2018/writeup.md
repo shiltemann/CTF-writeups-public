@@ -61,6 +61,7 @@ you can't see me             General Skills   200     picoCTF{j0hn_c3na_paparapa
 Buttons                      Web              250     picoCTF{button_button_whose_got_the_button_ed306c10}
 Ext Super Magic              Forensics        250
 Lying Out                    Forensics        250     picoCTF{w4y_0ut_ff5bd19c}
+Safe RSA                     Cryptography     250     picoCTF{e_w4y_t00_sm411_81b6559f}
 The Vault                    Web              250     picoCTF{w3lc0m3_t0_th3_vau1t_e4ca2258}
 What's My Name?              Forensics        250     picoCTF{w4lt3r_wh1t3_2d6d3c6c75aa3be7f42debed8ad16e3b}
 absolutely relative          General Skills   250
@@ -2037,6 +2038,54 @@ Great job. You've earned the flag: picoCTF{w4y_0ut_ff5bd19c}
 **Flag**
 ```
 picoCTF{w4y_0ut_ff5bd19c}
+```
+
+### Cryptography 250: Safe RSA
+
+**Challenge**
+
+Now that you know about RSA can you help us decrypt [this ciphertext](writeupfiles/safe_rsa_ciphertext)?
+
+We don't have the decryption key but something about those values looks funky..
+
+```
+N: 374159235470172130988938196520880526947952521620932362050308663243595788308583992120881359
+365258949723819911758198013202644666489247987314025169670926273213367237020188587742716017314
+320191350666762541039238241984934473188656610615918474673963331992408750047451253205158436452
+814354564283003696666945950908549197175404580533132142111356931324330631843602412540295482841
+975783884766801266552337129105407869020730226041538750535628619717708838029286366761470986056
+335230171148734027536820544543251801093230809186222940806718221638845816521738601843083746103
+374974120575519418797642878012234163709518203946599836959811
+
+e: 3
+
+ciphertext (c): 22053164139311340310464407676205419848010912163512227891805825645573287624554
+227213680295313600767299722114122360729215773172647154249508230913822034354894605220946891495
+95951010342662368347987862878338851038892082799389023900415351164773
+```
+
+**Solution**
+
+since `e` is so small, and message likely much smaller than our N, we can easily compute the plaintext by taking the cube root of c:
+
+
+```python
+# ct = pt^3 mod N
+# pt = root(ct,3)
+
+>>> import binascii
+>>> import gmpy2
+>>> gmpy2.get_context().precision=200000
+>>> pt = gmpy2.root(ct,3)
+>>> binascii.unhexlify(hex(int(pt))[2:])
+b'picoCTF{e_w4y_t00_sm411_81b6559f}'
+```
+
+[xref](http://cacr.uwaterloo.ca/techreports/2004/cacr2004-01.pdf)
+
+**Flag**
+```
+picoCTF{e_w4y_t00_sm411_81b6559f}
 ```
 
 ### Web 250: The Vault
