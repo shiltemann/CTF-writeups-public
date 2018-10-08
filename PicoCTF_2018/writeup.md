@@ -33,7 +33,7 @@ Aca-Shell-A                  General Skills   150     picoCTF{CrUsHeD_It_4e35527
 Client Side is still Bad     Web              150     picoCTF{client_is_bad_040594}
 Desrouleaux                  Forensics        150     picoCTF{J4y_s0n_d3rUUUULo_b6cacd6c}
 Logon                        Web              150     picoCTF{l0g1ns_ar3nt_r34l_2a968c11}
-Reading between the eyes     Forensics        150
+Reading between the eyes     Forensics        150     picoCTF{r34d1ng_b37w33n_7h3_by73s}
 Recovering from the snap     Forensics        150     picoCTF{th3_5n4p_happ3n3d}
 admin panel                  Forensics        150     picoCTF{n0ts3cur3_894a6546}
 assembly-0                   Reversing        150     0x7a
@@ -922,9 +922,27 @@ g: 10010001 11100010 10010011 00111000 00111001 11110011 00111011 00111011 00110
 b: 10000101 11001100 01011100 10010100 10001101 01001001 11011001 10001111 11000001 01001111 11011101 1100000000000000000..
 ```
 
-**Flag**
+hmm, this doesnt look like it encodes ascii ..what now?
+
+Let's think about what we know about the text that is hidden:
+
+```
+picoCTF{ : 01110000 01101001 01100011 01101111 01000011 01010100 01000110 01111011
 ```
 
+Aha! so the three channels are interlaced! the full string becomes:
+
+```
+0111000001101001011000110110111101000011010101000100011001111011011100100011001100110100011
+0010000110001011011100110011101011111011000100011001100110111011101110011001100110011011011
+100101111100110111011010000011001101011111011000100111100100110111001100110111001101111101
+```
+
+and translates to our flag
+
+**Flag**
+```
+picoCTF{r34d1ng_b37w33n_7h3_by73s}
 ```
 
 
