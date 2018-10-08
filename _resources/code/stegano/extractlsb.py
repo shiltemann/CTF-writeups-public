@@ -1,7 +1,8 @@
 import argparse
 import binascii
 from pathlib import Path
-from PIL import Image
+from PIL import Image, ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 
 def text_from_bits(bits):
@@ -15,7 +16,7 @@ def int2bytes(i):
     return binascii.unhexlify(hex_string.zfill(n + (n & 1)))
 
 
-def extract_lsb(inputimage, text, invert, decode, resize, interlace):
+def extract_lsb(inputimage, text, invert, decode, resize, interlace, bit):
     outfilename = Path(inputimage).resolve().stem
     img = Image.open(inputimage)
     img = img.convert('RGB')  # TODO: add support for alpha channel?
@@ -44,11 +45,11 @@ def extract_lsb(inputimage, text, invert, decode, resize, interlace):
                 pixels_txt[i] += '\n'
         for i in range(0, w):
             (r, g, b) = pixels[i, j]
-            if r & 1:
+            if r & (2 ** bit):
                 pixels_r[i, j] = foreground
-            if g & 1:
+            if g & (2 ** bit):
                 pixels_g[i, j] = foreground
-            if b & 1:
+            if b & (2 ** bit):
                 pixels_b[i, j] = foreground
             if text or decode:
                 pixels_txt[0] += str(r & 1) if not invert else str((r & 1) ^ 1)
@@ -61,9 +62,9 @@ def extract_lsb(inputimage, text, invert, decode, resize, interlace):
         outimg_g = outimg_g.resize((r * w, r * h))
         outimg_b = outimg_b.resize((r * w, r * h))
 
-    outimg_r.save(outfilename + "_lsb_r.png")
-    outimg_g.save(outfilename + "_lsb_g.png")
-    outimg_b.save(outfilename + "_lsb_b.png")
+    outimg_r.save(outfilename + "_lsb_r.%s.png" % bit)
+    outimg_g.save(outfilename + "_lsb_g.%s.png" % bit)
+    outimg_b.save(outfilename + "_lsb_b.%s.png" % bit)
 
     if text:
         with open(outfilename + '_lsb_r.txt', 'w') as fr, open(outfilename + '_lsb_g.txt', 'w') as fg, open(outfilename + '_lsb_b.txt', 'w') as fb:
@@ -100,12 +101,13 @@ def extract_lsb(inputimage, text, invert, decode, resize, interlace):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Extract LSB from each channel of an image')
-    parser.add_argument('-i', '--input', help='Input image', required=True)
+    parser.add_argument('-i', '--inputimage', help='Input image', required=True)
     parser.add_argument('--text', action='store_true', help='also output textual format')
     parser.add_argument('--interlace', action='store_true', help='interlace channels for text/bin output')
     parser.add_argument('--invert', action='store_true', help='invert colours')
     parser.add_argument('--decode', action='store_true', help='try to decode bitstring')
     parser.add_argument('--resize', help='resize output image by this factor')
+    parser.add_argument('--bit', type=int, default=0, help='Which bit to extract (0 = LSB, 1 = next)')
     args = vars(parser.parse_args())
 
-    extract_lsb(args['input'], args['text'], args['invert'], args['decode'], args['resize'], args['interlace'])
+    extract_lsb(**args)
