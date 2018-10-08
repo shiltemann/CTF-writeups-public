@@ -15,7 +15,7 @@ def int2bytes(i):
     return binascii.unhexlify(hex_string.zfill(n + (n & 1)))
 
 
-def extract_lsb(inputimage, text, invert, decode, resize):
+def extract_lsb(inputimage, text, invert, decode, resize, interlace):
     outfilename = Path(inputimage).resolve().stem
     img = Image.open(inputimage)
     img = img.convert('RGB')  # TODO: add support for alpha channel?
@@ -70,23 +70,42 @@ def extract_lsb(inputimage, text, invert, decode, resize):
             fr.write(pixels_txt[0].lstrip())
             fg.write(pixels_txt[1].lstrip())
             fb.write(pixels_txt[2].lstrip())
+        if interlace:
+            with open(outfilename + '_lsb_rgb.txt', 'w') as fi:
+                for i in range(0, len(pixels_txt[0])):
+                    fi.write(pixels_txt[0][i].lstrip())
+                    fi.write(pixels_txt[1][i].lstrip())
+                    fi.write(pixels_txt[2][i].lstrip())
+
 
     # convert the bitstring to bytes and save
+    # TODO needs work on: padding, encodings
     if decode:
-        # padsize = 8 - len(pixels_txt[0].replace('\n', '')) % 8
+        #padsize = 8 - len(pixels_txt[0].replace('\n', '')) % 8
+        pixels_txt[0] = pixels_txt[0].replace('\n', '')
+        pixels_txt[1] = pixels_txt[1].replace('\n', '')
+        pixels_txt[2] = pixels_txt[2].replace('\n', '')
         with open(outfilename + '_lsb_r.bin', 'wb') as fr, open(outfilename + '_lsb_g.bin', 'wb') as fg, open(outfilename + '_lsb_b.bin', 'wb') as fb:
-            fr.write(text_from_bits(pixels_txt[0].replace('\n', '')))
-            fg.write(text_from_bits(pixels_txt[1].replace('\n', '')))
-            fb.write(text_from_bits(pixels_txt[2].replace('\n', '')))
+            fr.write(text_from_bits(pixels_txt[0]))
+            fg.write(text_from_bits(pixels_txt[1]))
+            fb.write(text_from_bits(pixels_txt[2]))
+        if interlace:
+            pixels_interlaced = ''
+            for i in range(0, len(pixels_txt[0])):
+                pixels_interlaced += pixels_txt[0][i].lstrip() + pixels_txt[1][i].lstrip() + pixels_txt[2][i].lstrip()
+            print("oi: "+ pixels_interlaced)
+            with open(outfilename + '_lsb_rgb.bin', 'wb') as fi:
+                fi.write(text_from_bits(pixels_interlaced)[:])
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Extract LSB from each channel of an image')
     parser.add_argument('-i', '--input', help='Input image', required=True)
     parser.add_argument('--text', action='store_true', help='also output textual format')
+    parser.add_argument('--interlace', action='store_true', help='interlace channels for text/bin output')
     parser.add_argument('--invert', action='store_true', help='invert colours')
     parser.add_argument('--decode', action='store_true', help='try to decode bitstring')
     parser.add_argument('--resize', help='resize output image by this factor')
     args = vars(parser.parse_args())
 
-    extract_lsb(args['input'], args['text'], args['invert'], args['decode'], args['resize'])
+    extract_lsb(args['input'], args['text'], args['invert'], args['decode'], args['resize'], args['interlace'])
