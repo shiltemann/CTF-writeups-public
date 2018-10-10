@@ -1882,6 +1882,8 @@ You can find the program in `/problems/shellcode_0_48532ce5a1829a772b64e4da6fa58
 
 [Source](writeupfiles/vuln2.c)
 
+**Solution**
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -1921,7 +1923,8 @@ int main(int argc, char **argv){
 
 This code executes whatever machine instructions we give it.
 
-We connect to the
+We connect to the remote shell and have a look:
+
 ```bash
 $ cd /problems/shellcode_0_48532ce5a1829a772b64e4da6fa58eed
 $ ll
@@ -1934,13 +1937,14 @@ drwxr-x--x 576 root       root         53248 Sep 30 03:45 ../
 -rw-rw-r--   1 hacksports hacksports     562 Sep 28 08:11 vuln.c
 ```
 
-So we want to read the file `flag.txt` but do not have the right permissions.
-Because the executabla `vuln` has the sgid bit set, we need to get it to
+So we want to read the file `flag.txt`, but do not have the right permissions.
+Because the executable `vuln` has the `sgid bit` set, we need to get it to
 read the contents for us.
 
-Since it execute any assembly code we give it, we can make it spawn us a
-shell, so that we can read the flag. There are many online collections of
-such shellcode. We find a shellcode on [Shellstorm](http://shell-storm.org/shellcode/).
+Since the program executes any assembly code we give it, we can make it spawn us a
+shell, retaining its escalated permissions, so that we can read the flag. There are
+many online collections of such shellcode. We find a shellcode on
+[Shellstorm](http://shell-storm.org/shellcode/).
 
 We first need to find the architecture of the remote machine
 
@@ -1980,8 +1984,6 @@ cat flag.txt
 picoCTF{shellc0de_w00h00_9ee0edd0}
 ```
 
-
-**Solution**
 
 **Flag**
 ```
