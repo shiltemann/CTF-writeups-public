@@ -2096,7 +2096,7 @@ We need to write the value `0xef53` at bytes 56 and 57 of the superblock. It als
 starts 1024 bytes from the start (`0x400`). So we open the .img file in a hex editor, and change the
 bytes at position (`0x438`) to `0xef53` in little endian format:
 
-![](writeupfiles/ext-super-magic-ss.png)
+![](writeupfiles/ext-super-magic-ss.jpg)
 
 Let's see if it worked:
 
@@ -2115,7 +2115,7 @@ $ sudo mount ext-super-magic-fixed.img tst
 The mounted volume contains a bunch of images, including
 one named `flag.jpg` which contains our flag:
 
-![](writeupfiles/ext-super-magic-flag.png)
+![](writeupfiles/ext-super-magic-flag.jpg)
 
 **Flag**
 ```
