@@ -78,6 +78,8 @@ Flaskcards                   Web              350
 got-shell?                   Binary           350
 roulette                     General Skills   350
 Malware Shops                Forensics        400     picoCTF{w4y_0ut_dea1794b}
+Radix's Terminal             Reversing        400     picoCTF{bAsE_64_eNCoDiNg_iS_EAsY_41799451}
+eleCTRic                     Cryptography     400
 fancy-alive-monitoring       Web              400
 store                        General Skills   400
 Secure Logon                 Web              500
@@ -3316,6 +3318,34 @@ I do not know how they got 5. I saw three peaks and one spurious point at 0, 0. 
 picoCTF{w4y_0ut_dea1794b}
 ```
 
+## Reversing 400: Radix's Terminal
+
+**Challenge**
+ Can you find the password to [Radix's login?](./writeupfiles/radix) You can also find the executable in /problems/radix-s-terminal_0_b6b476e9952f39511155a2e64fb75248?
+
+**Solution**
+Run strings on the binary and find the string:
+
+```
+cGljb0NURntiQXNFXzY0X2VOQ29EaU5nX2lTX0VBc1lfNDE3OTk0NTF9
+```
+
+The hint suggests base64 encoding, base64 decode this for the flag.
+
+**Flag**
+
+```
+picoCTF{bAsE_64_eNCoDiNg_iS_EAsY_41799451}
+```
+
+## Cryptography 400: eleCTRic
+
+**Challenge**
+ You came across a custom server that Dr Xernon's company eleCTRic Ltd uses. It seems to be storing some encrypted files. Can you get us the flag? Connect with nc 2018shell1.picoctf.com 56215. [Source.](./writeupfiles/eleCTRic.py)
+
+**Solution**
+
+**Flag**
 
 ## Web Exploitation 400: fancy-alive-monitoring
 
