@@ -59,7 +59,7 @@ shellcode                    Binary Exploit   200
 what base is this?           General Skills   200     picoCTF{delusions_about_finding_values_602fd280}
 you can't see me             General Skills   200     picoCTF{j0hn_c3na_paparapaaaaaaa_paparapaaaaaa_22f627d9}
 Buttons                      Web              250     picoCTF{button_button_whose_got_the_button_ed306c10}
-Ext Super Magic              Forensics        250
+Ext Super Magic              Forensics        250     picoCTF{a7DB29eCf7dB9960f0A19Fdde9d00Af0}
 Lying Out                    Forensics        250     picoCTF{w4y_0ut_ff5bd19c}
 Safe RSA                     Cryptography     250     picoCTF{e_w4y_t00_sm411_81b6559f}
 The Vault                    Web              250     picoCTF{w3lc0m3_t0_th3_vau1t_e4ca2258}
@@ -2016,9 +2016,48 @@ You can also find it in `/problems/ext-super-magic_4_f196e59a80c3fdac37cc2f33169
 
 **Solution**
 
-**Flag**
+
+```
+$ file ext-super-magic.img
+ext-super-magic.img: data
+
+$ debugfs ext-super-magic.img
+debugfs 1.44.1 (24-Mar-2018)
+Checksum errors in superblock!  Retrying...
+ext-super-magic.img: Bad magic number in super-block while opening filesystem
 ```
 
+Ok, so there is a bad magic  number in the superblock. We look up what the magic
+number for the superblock should be [here](https://wiki.osdev.org/Ext2#Superblock)
+
+We need to write the value `0xef53` at bytes 56 and 57 of the superblock. It also says the superblock always
+starts 1024 bytes from the start (`0x400`). So we open the .img file in a hex editor, and change the
+bytes at position (`0x438`) to `0xef53` in little endian format:
+
+![](writeupfiles/ext-super-magic-ss.png)
+
+Let's see if it worked:
+
+```
+$ file ext-super-magic-fixed.img
+ext-super-magic-fixed.img: Linux rev 1.0 ext2 filesystem data (mounted or unclean), UUID=f2b57e6b-c9bc-4026-932f-03d8e69575db (large files)
+```
+
+whoo! it recognizes it as a valid file system, let's try to mount it:
+
+```
+$ mkdir tst
+$ sudo mount ext-super-magic-fixed.img tst
+```
+
+The mounted volume contains a bunch of images, including
+one named `flag.jpg` which contains our flag:
+
+![](writeupfiles/ext-super-magic-flag.png)
+
+**Flag**
+```
+picoCTF{a7DB29eCf7dB9960f0A19Fdde9d00Af0}
 ```
 
 
