@@ -41,13 +41,13 @@ buffer overflow 0            Binary Exploit   150     picoCTF{ov3rfl0ws_ar3nt_th
 caesar cipher 1              Cryptography     150     picoCTF{justagoodoldcaesarcipherwoyolfpu}
 environ                      General Skills   150     picoCTF{eNv1r0nM3nT_v4r14Bl3_fL4g_3758492}
 hertz                        Cryptography     150     substitution_ciphers_are_solvable_mwettfesvn
-hex editor                   Forensics        150
+hex editor                   Forensics        150     picoCTF{and_thats_how_u_edit_hex_kittos_3E03e57d}
 ssh-keyz                     General Skills   150     picoCTF{who_n33ds_p4ssw0rds_38dj21}
 Irish Name Repo              Web              200     picoCTF{con4n_r3411y_1snt_1r1sh_f58843c5}
 Mr. Robots                   Web              200     picoCTF{th3_w0rld_1s_4_danger0us_pl4c3_3lli0t_30de1}
 No Login                     Web              200     picoCTF{n0l0g0n_n0_pr0bl3m_50e16a5c}
 Secret Agent                 Web              200     picoCTF{s3cr3t_ag3nt_m4n_134ecd62}
-Truly an Artist              Forensics        200
+Truly an Artist              Forensics        200     picoCTF{look_in_image_788a182e}
 assembly-1                   Reversing        200     0x73
 be-quick-or-be-dead-1        Reversing        200
 blaise's cipher              Cryptography     200     picoCTF{v1gn3r3_c1ph3rs_ar3n7_bad_cdf08bf0}
@@ -64,7 +64,7 @@ Lying Out                    Forensics        250     picoCTF{w4y_0ut_ff5bd19c}
 Safe RSA                     Cryptography     250     picoCTF{e_w4y_t00_sm411_81b6559f}
 The Vault                    Web              250     picoCTF{w3lc0m3_t0_th3_vau1t_e4ca2258}
 What's My Name?              Forensics        250     picoCTF{w4lt3r_wh1t3_2d6d3c6c75aa3be7f42debed8ad16e3b}
-absolutely relative          General Skills   250
+absolutely relative          General Skills   250     picoCTF{3v3r1ng_1$_r3l3t1v3_a97be50e}
 buffer overflow 2            Binary Exploit   250
 caesar cipher 2              Cryptography     250     picoCTF{cAesaR_CiPhErS_juST_aREnT_sEcUrE}
 got-2-learn-libc             Binary Exploit   250
@@ -1260,9 +1260,11 @@ substitution_ciphers_are_solvable_mwettfesvn
 ## Forensics 150: hex editor
 
 **Challenge**
+
 This cat has a secret to teach you.
 
 **Solution**
+
 Flag was appended to end of [the jpeg](./writeupfiles/hex_editor.jpg)
 
 **Flag**
@@ -2291,9 +2293,11 @@ picoCTF{w4lt3r_wh1t3_2d6d3c6c75aa3be7f42debed8ad16e3b}
 ## General Skills 250: absolutely relative
 
 **Challenge**
+
 In a filesystem, everything is relative ¯\_(ツ)_/¯. Can you find a way to get a flag from this program? You can find it in /problems/absolutely-relative_1_15eb86fcf5d05ec169cc417d24e02c87 on the shell server. Source.
 
 **Solution**
+
 They provide the [source](./writeupfiles/absoluterelative.c) of absolutely-relative, it checks for a file named `./permission.txt` with the contents `yes`.
 
 ```
