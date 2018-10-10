@@ -49,7 +49,7 @@ No Login                     Web              200     picoCTF{n0l0g0n_n0_pr0bl3m
 Secret Agent                 Web              200     picoCTF{s3cr3t_ag3nt_m4n_134ecd62}
 Truly an Artist              Forensics        200     picoCTF{look_in_image_788a182e}
 assembly-1                   Reversing        200     0x73
-be-quick-or-be-dead-1        Reversing        200
+be-quick-or-be-dead-1        Reversing        200     picoCTF{why_bother_doing_unnecessary_computation_27f28e71}
 blaise's cipher              Cryptography     200     picoCTF{v1gn3r3_c1ph3rs_ar3n7_bad_cdf08bf0}
 buffer overflow 1            Binary Exploit   200     picoCTF{addr3ss3s_ar3_3asy56a7b196}
 hertz 2                      Cryptography     200     picoCTF{substitution_ciphers_are_too_easy_sgsgtnpibo}
@@ -1566,9 +1566,54 @@ You can also find the executable in `/problems/be-quick-or-be-dead-1_3_aeb488542
 
 **Solution**
 
-**Flag**
+```
+$ ./be-quick-or-be-dead-1
+Be Quick Or Be Dead 1
+=====================
+
+Calculating key...
+You need a faster machine. Bye bye.
 ```
 
+ok, sounds like we need to speed up the execution of the program. We examine it with objdump and find
+this functions that wastes a lot of time:
+
+```asm
+0000000000400706 <calculate_key>:
+  400706:       55                      push   %rbp
+  400707:       48 89 e5                mov    %rsp,%rbp
+  40070a:       c7 45 fc 3c 7e d4 6f    movl   $0x6fd47e3c,-0x4(%rbp)
+  400711:       83 45 fc 01             addl   $0x1,-0x4(%rbp)
+  400715:       81 7d fc 78 fc a8 df    cmpl   $0xdfa8fc78,-0x4(%rbp)
+  40071c:       75 f3                   jne    400711 <calculate_key+0xb>
+  40071e:       8b 45 fc                mov    -0x4(%rbp),%eax
+  400721:       5d                      pop    %rbp
+  400722:       c3                      retq
+```
+
+This function sets a value of `0x6fd47e3c`, then repeatedly adds 1 to this value until
+it becomes equal to `0xdfa8fc78` ..if we edit the intial value to be `0xdfa8fc77` it
+will be much faster while still reaching the same final state. We can do this with
+a hex editor
+
+![](writeupfiles/be-quick-hex.png)
+
+we save, and run the program again:
+
+```
+$ ./be-quick-or-be-dead-1
+Be Quick Or Be Dead 1
+=====================
+
+Calculating key...
+Done calculating key
+Printing flag:
+picoCTF{why_bother_doing_unnecessary_computation_27f28e71}
+```
+
+**Flag**
+```
+picoCTF{why_bother_doing_unnecessary_computation_27f28e71}
 ```
 
 
