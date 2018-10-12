@@ -3431,6 +3431,46 @@ The hint suggests base64 encoding, base64 decode this for the flag.
 picoCTF{bAsE_64_eNCoDiNg_iS_EAsY_41799451}
 ```
 
+## Reversing 400: assembly-3
+
+**Challenge**
+What does asm3(0xf238999b,0xda0f9ac5,0xcc85310c) return? Submit the flag as a hexadecimal value (starting with '0x').
+
+NOTE: Your submission for this question will NOT be in the normal flag format.
+Source located in the directory at /problems/assembly-3_2_504fe35f4236db611941d162e2abc6b9.
+
+
+
+**Solution**
+
+```
+
+.intel_syntax noprefix
+.bits 32
+
+.global asm3
+
+# call: asm3(0xf238999b,     0xda0f9ac5,     0xcc85310c)
+#              f2  38  99  9b  da  0f  9a  c5  cc  85  31  0c
+#         ebp+  8   a   b   c   d   e   f  10  12  14  16  18
+
+asm3:
+        push    ebp
+        mov     ebp,esp
+        mov     eax,0xb6               # eax = 0x000000b6
+        xor     al,al                  # eax = 0x00000000
+        mov     ah,BYTE PTR [ebp+0x8]  # eax = 0x0000f2b6
+        sal     ax,0x10                # eax = 0x00f200b6   # UNSURE
+        sub     al,BYTE PTR [ebp+0xf]  # eax = ^ - 0x9a     # 0x00f2b566 # Does this apply only to AL or does it affect the parent?
+        add     ah,BYTE PTR [ebp+0xd]  # eax = ^ + 0xda00   # 0x00f38f66 # But maybe likewise shouldn't flow into parent register?
+        xor     ax,WORD PTR [ebp+0x12] # eax = ^ xor 0xcc85 # 0x00f343e3 # at least this one is easy
+        mov     esp, ebp
+        pop     ebp
+        ret
+```
+
+
+
 ## Cryptography 400: eleCTRic
 
 **Challenge**
