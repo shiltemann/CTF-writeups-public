@@ -2380,21 +2380,21 @@ Source located in the directory at `/problems/assembly-2_4_f8bfecf223768f4cac035
 .global asm2
 
 asm2:
-	push   	ebp
-	mov    	ebp,esp
-	sub    	esp,0x10
-	mov    	eax,DWORD PTR [ebp+0xc]
-	mov 	DWORD PTR [ebp-0x4],eax
-	mov    	eax,DWORD PTR [ebp+0x8]
-	mov 	DWORD PTR [ebp-0x8],eax
-	jmp    	part_b
+	push	ebp
+	mov	ebp,esp
+	sub	esp,0x10
+	mov	eax,DWORD PTR [ebp+0xc]
+	mov	DWORD PTR [ebp-0x4],eax
+	mov	eax,DWORD PTR [ebp+0x8]
+	mov	DWORD PTR [ebp-0x8],eax
+	jmp	part_b
 part_a:
-	add    	DWORD PTR [ebp-0x4],0x1
-	add  	DWORD PTR [ebp+0x8],0x76
+	add	DWORD PTR [ebp-0x4],0x1
+	add	DWORD PTR [ebp+0x8],0x76
 part_b:
-	cmp    	DWORD PTR [ebp+0x8],0xa1de
-	jle    	part_a
-	mov    	eax,DWORD PTR [ebp-0x4]
+	cmp	DWORD PTR [ebp+0x8],0xa1de
+	jle	part_a
+	mov	eax,DWORD PTR [ebp-0x4]
 	mov	esp,ebp
 	pop	ebp
 	ret
@@ -2413,21 +2413,21 @@ Let's manually walk through the code and write down what happens:
                                         # call: asm2(0x7,0x28)
 
 asm2:
-	push   	ebp
-	mov    	ebp,esp
-	sub    	esp,0x10
-	mov    	eax,DWORD PTR [ebp+0xc]     # eax = 0x28
-	mov 	DWORD PTR [ebp-0x4],eax     # var1 = 0x28
-	mov    	eax,DWORD PTR [ebp+0x8]     # eax = 0x7
-	mov	    DWORD PTR [ebp-0x8],eax     # var2 = 0x7
-	jmp    	part_b                      # jump to part_b
+	push	ebp
+	mov	ebp,esp
+	sub	esp,0x10
+	mov	eax,DWORD PTR [ebp+0xc]     # eax = 0x28
+	mov	DWORD PTR [ebp-0x4],eax     # var1 = 0x28
+	mov	eax,DWORD PTR [ebp+0x8]     # eax = 0x7
+	mov	DWORD PTR [ebp-0x8],eax     # var2 = 0x7
+	jmp	part_b                      # jump to part_b
 part_a:
-	add    	DWORD PTR [ebp-0x4],0x1         # var1 += 1
-	add	    DWORD PTR [ebp+0x8],0x76        # var2 += 0x76
+	add	DWORD PTR [ebp-0x4],0x1         # var1 += 1
+	add	DWORD PTR [ebp+0x8],0x76        # var2 += 0x76
 part_b:
-	cmp    	DWORD PTR [ebp+0x8],0xa1de  # var2 > 0xa1de?  Y: return var1
-	jle    	part_a                      #                 N: add x076 to var2 and 1 to var1 (part_a)
-	mov    	eax,DWORD PTR [ebp-0x4]     # return var1
+	cmp	DWORD PTR [ebp+0x8],0xa1de  # var2 > 0xa1de?  Y: return var1
+	jle	part_a                      #                 N: add x076 to var2 and 1 to var1 (part_a)
+	mov	eax,DWORD PTR [ebp-0x4]     # return var1
 	mov	esp,ebp
 	pop	ebp
 	ret
@@ -3512,6 +3512,46 @@ The hint suggests base64 encoding, base64 decode this for the flag.
 ```
 picoCTF{bAsE_64_eNCoDiNg_iS_EAsY_41799451}
 ```
+
+## Reversing 400: assembly-3
+
+**Challenge**
+What does asm3(0xf238999b,0xda0f9ac5,0xcc85310c) return? Submit the flag as a hexadecimal value (starting with '0x').
+
+NOTE: Your submission for this question will NOT be in the normal flag format.
+Source located in the directory at /problems/assembly-3_2_504fe35f4236db611941d162e2abc6b9.
+
+
+
+**Solution**
+
+```
+
+.intel_syntax noprefix
+.bits 32
+
+.global asm3
+
+# call: asm3(0xf238999b,     0xda0f9ac5,     0xcc85310c)
+#              f2  38  99  9b  da  0f  9a  c5  cc  85  31  0c
+#         ebp+  8   a   b   c   d   e   f  10  12  14  16  18
+
+asm3:
+        push    ebp
+        mov     ebp,esp
+        mov     eax,0xb6               # eax = 0x000000b6
+        xor     al,al                  # eax = 0x00000000
+        mov     ah,BYTE PTR [ebp+0x8]  # eax = 0x0000f2b6
+        sal     ax,0x10                # eax = 0x00f200b6   # UNSURE
+        sub     al,BYTE PTR [ebp+0xf]  # eax = ^ - 0x9a     # 0x00f2b566 # Does this apply only to AL or does it affect the parent?
+        add     ah,BYTE PTR [ebp+0xd]  # eax = ^ + 0xda00   # 0x00f38f66 # But maybe likewise shouldn't flow into parent register?
+        xor     ax,WORD PTR [ebp+0x12] # eax = ^ xor 0xcc85 # 0x00f343e3 # at least this one is easy
+        mov     esp, ebp
+        pop     ebp
+        ret
+```
+
+
 
 ## Cryptography 400: eleCTRic
 
