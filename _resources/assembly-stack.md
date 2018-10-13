@@ -106,7 +106,7 @@ $163 = 0xffffcf88
 $164 = 0x08048402
 ```
 
-Which is exactly after `call` in the disassembly.
+Which is exactly after` call` in the disassembly.
 
 And our stack should look like
 
@@ -130,14 +130,14 @@ esp automatically decreases by 4.
 
 Stack becomes:
 
-addr       | addr       | contents   | use
----------  | -----      | -----      | -----
-ebp        | 0xffffcf98 | 0          |
-esp + 0x10 | 0xffffcf94 | 5          | arg 3
-esp + 0xc  | 0xffffcf90 | 4          | arg 2
-esp + 0x8  | 0xffffcf8c | 3          | arg 1
-esp + 0x4  | 0xffffcf88 | 0x08048402 | return
-esp        | 0xffffcf84 | 0xffffcf98 | previous ebp
+addr         | addr         | contents     | use
+---------    | -----        | -----        | -----
+`ebp`        | `0xffffcf98` | `0`          |
+`esp + 0x10` | `0xffffcf94` | `5`          | arg 3
+`esp + 0xc`  | `0xffffcf90` | `4`          | arg 2
+`esp + 0x8`  | `0xffffcf8c` | `3`          | arg 1
+`esp + 0x4`  | `0xffffcf88` | `0x08048402` | return
+`esp`        | `0xffffcf84` | `0xffffcf98` | previous ebp
 
 ebp is still unchanged, esp is down 4.
 
@@ -150,14 +150,14 @@ mov ebp, esp
 This should set ebp to value of esp
 
 
-addr       | addr       | contents   | use
----------  | -----      | -----      | -----
-           | 0xffffcf98 | 0          |
-ebp + 0x10 | 0xffffcf94 | 5          | arg 3
-ebp + 0xc  | 0xffffcf90 | 4          | arg 2
-ebp + 0x8  | 0xffffcf8c | 3          | arg 1
-ebp + 0x4  | 0xffffcf88 | 0x08048402 | return
-ebp = esp  | 0xffffcf84 | 0xffffcf98 | previous ebp;
+addr          | addr         | contents     | use
+---------     | -----        | -----        | -----
+              | `0xffffcf98` | `0`          |
+`ebp + 0x10`  | `0xffffcf94` | `5`          | arg 3
+`ebp + 0xc`   | `0xffffcf90` | `4`          | arg 2
+`ebp + 0x8`   | `0xffffcf8c` | `3`          | arg 1
+`ebp + 0x4`   | `0xffffcf88` | `0x08048402` | return
+`ebp = esp`   | `0xffffcf84` | `0xffffcf98` | previous ebp; esp
 
 
 ## Step 3
@@ -169,16 +169,16 @@ sub esp,0x10
 Pushes stack pointer down 16 bytes.
 
 
-addr        | addr       | contents   | use
----------   | -----      | -----      | -----
-            | 0xffffcf98 | 0          |
-ebp + 0x10  | 0xffffcf94 | 5          | arg 3
-ebp + 0xc   | 0xffffcf90 | 4          | arg 2
-ebp + 0x8   | 0xffffcf8c | 3          | arg 1
-ebp + 0x4   | 0xffffcf88 | 0x08048402 | return
-ebp         | 0xffffcf84 | 0xffffcf98 |
-ebp - 0x4   | 0xffffcf80 | garbage?   |
-ebp - 0x8   | 0xffffcf7c | garbage?   |
-ebp - 0xc   | 0xffffcf78 | garbage?   |
-ebp - 0x10  | 0xffffcf74 | garbage?   | esp
+addr          | addr         | contents     | use
+---------     | -----        | -----        | -----
+              | `0xffffcf98` | `0`          |
+`ebp + 0x10`  | `0xffffcf94` | `5`          | arg 3
+`ebp + 0xc`   | `0xffffcf90` | `4`          | arg 2
+`ebp + 0x8`   | `0xffffcf8c` | `3`          | arg 1
+`ebp + 0x4`   | `0xffffcf88` | `0x08048402` | return
+`ebp`         | `0xffffcf84` | `0xffffcf98` |
+`ebp - 0x4`   | `0xffffcf80` | garbage?     |
+`ebp - 0x8`   | `0xffffcf7c` | garbage?     |
+`ebp - 0xc`   | `0xffffcf78` | garbage?     |
+`ebp - 0x10`  | `0xffffcf74` | garbage?     | esp
 
