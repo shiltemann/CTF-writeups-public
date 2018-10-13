@@ -1,8 +1,35 @@
+# How the stack works
 
-# C Code
+When entering/exiting a function.
+
+## C Code
+
+```
+int blah(int a, int b, int c){
+	int d = a * b * c;
+	return d;
+}
 
 
-# Disassembly
+int main(){
+	blah(3, 4, 5);
+	return 0;
+}
+```
+
+This can be compiled to x32 with:
+
+```
+gcc -m32 -pedantic-errors -std=c89 -Wall tmp.c
+```
+
+you may need:
+
+```
+sudo apt install gcc-multilib lib32gcc-5-dev
+```
+
+## Disassembly
 
 ```
 (gdb) disas main
@@ -32,7 +59,7 @@ Dump of assembler code for function blah:
    0x080483f3 <+24>:    ret
 ```
 
-# Step -1 - Before entering
+## Step -1 - Before entering
 
 In the disassembly we push numbers before calling, in reverse order.
 
@@ -51,7 +78,7 @@ $161 = 0xffffcf8c
 $162 = 0x3
 ```
 
-# Step 0 - Entering function
+## Step 0 - Entering function
 
 So we enter the function
 
@@ -93,7 +120,7 @@ esp       | 0xffffcf88 | 0x8048402 | esp
 
 `ebp` is still set to some old value (So accessing args from there will be ebp - 0x4/8/c)
 
-# Step 1
+## Step 1
 
 ```
 push ebp
@@ -114,7 +141,7 @@ esp        | 0xffffcf84 | 0xffffcf98 | previous ebp
 
 ebp is still unchanged, esp is down 4.
 
-# Step 2
+## Step 2
 
 ```
 mov ebp, esp
@@ -133,7 +160,7 @@ ebp + 0x4  | 0xffffcf88 | 0x08048402 | return
 ebp = esp  | 0xffffcf84 | 0xffffcf98 | previous ebp;
 
 
-# Step 3
+## Step 3
 
 ```
 sub esp,0x10
