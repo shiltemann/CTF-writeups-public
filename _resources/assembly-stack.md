@@ -110,13 +110,13 @@ Which is exactly after` call` in the disassembly.
 
 And our stack should look like
 
-addr      | addr       | contents  | use
---------- | -----      | -----     | -----
-ebp       | 0xffffcf98 | 0         | arg1? argv count?
-esp + 0xc | 0xffffcf94 | 5         | arg 3
-esp + 0x8 | 0xffffcf90 | 4         | arg 2
-esp + 0x4 | 0xffffcf8c | 3         | arg 1
-esp       | 0xffffcf88 | 0x8048402 | esp
+addr        | addr         | contents    | use
+----------- | ------------ | ----------- | -----
+`ebp`       | `0xffffcf98` | `0`         | arg1? argv count?
+`esp + 0xc` | `0xffffcf94` | `5`         | arg 3
+`esp + 0x8` | `0xffffcf90` | `4`         | arg 2
+`esp + 0x4` | `0xffffcf8c` | `3`         | arg 1
+`esp`       | `0xffffcf88` | `0x8048402` | esp
 
 `ebp` is still set to some old value (So accessing args from there will be ebp - 0x4/8/c)
 
@@ -150,14 +150,14 @@ mov ebp, esp
 This should set ebp to value of esp
 
 
-addr          | addr         | contents     | use
----------     | -----        | -----        | -----
-              | `0xffffcf98` | `0`          |
-`ebp + 0x10`  | `0xffffcf94` | `5`          | arg 3
-`ebp + 0xc`   | `0xffffcf90` | `4`          | arg 2
-`ebp + 0x8`   | `0xffffcf8c` | `3`          | arg 1
-`ebp + 0x4`   | `0xffffcf88` | `0x08048402` | return
-`ebp = esp`   | `0xffffcf84` | `0xffffcf98` | previous ebp; esp
+addr         | addr         | contents     | use
+------------ | ------------ | ------------ | -----
+             | `0xffffcf98` | `0`          |
+`ebp + 0x10` | `0xffffcf94` | `5`          | arg 3
+`ebp + 0xc`  | `0xffffcf90` | `4`          | arg 2
+`ebp + 0x8`  | `0xffffcf8c` | `3`          | arg 1
+`ebp + 0x4`  | `0xffffcf88` | `0x08048402` | return
+`ebp = esp`  | `0xffffcf84` | `0xffffcf98` | previous ebp; esp
 
 
 ## Step 3
@@ -170,7 +170,7 @@ Pushes stack pointer down 16 bytes.
 
 
 addr          | addr         | contents     | use
----------     | -----        | -----        | -----
+------------- | ------------ | ------------ | -----
               | `0xffffcf98` | `0`          |
 `ebp + 0x10`  | `0xffffcf94` | `5`          | arg 3
 `ebp + 0xc`   | `0xffffcf90` | `4`          | arg 2
