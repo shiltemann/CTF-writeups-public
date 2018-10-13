@@ -1915,6 +1915,14 @@ We heard that there is something hidden in this picture. Can you find it?
 We extract the LSB of each of the colour channels using [this script](https://github.com/shiltemann/CTF-writeups-public/blob/master/_resources/code/stegano/extractlsb.py)
 and find the flag in the red channel:
 
+```bash
+$ python3 extractlsb.py -i nowYouDont.png
+```
+
+This script outputs a black and white image signifyint the least significat bit in each or the 3 RGB channels
+
+outputfile `nowYouDont_lsb_r.png` is:
+
 ![](writeupfiles/nowyouseeme.png)
 
 
