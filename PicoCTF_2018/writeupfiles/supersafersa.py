@@ -2,6 +2,7 @@ import string
 import sys
 import time
 import socket
+from netcat import Netcat
 
 class Netcat:
     """
