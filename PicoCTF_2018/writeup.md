@@ -43,7 +43,7 @@ Title                                                                      | Cat
 [hex editor                  ](#forensics-150-hex-editor)                  | Forensics        | 150    | `picoCTF{and_thats_how_u_edit_hex_kittos_3E03e57d}`
 [ssh-keyz                    ](#general-skills-150-ssh-keyz)               | General Skills   | 150    | `picoCTF{who_n33ds_p4ssw0rds_38dj21}`
 [Irish Name Repo             ](#web-200-irish-name-repo)                   | Web              | 200    | `picoCTF{con4n_r3411y_1snt_1r1sh_f58843c5}`
-[Mr. Robots                  ](#web-200-mr.-robots)                        | Web              | 200    | `picoCTF{th3_w0rld_1s_4_danger0us_pl4c3_3lli0t_30de1}`
+[Mr. Robots                  ](#web-200-mr-robots)                         | Web              | 200    | `picoCTF{th3_w0rld_1s_4_danger0us_pl4c3_3lli0t_30de1}`
 [No Login                    ](#web-200-no-login)                          | Web              | 200    | `picoCTF{n0l0g0n_n0_pr0bl3m_50e16a5c}`
 [Secret Agent                ](#web-200-secret-agent)                      | Web              | 200    | `picoCTF{s3cr3t_ag3nt_m4n_134ecd62}`
 [Truly an Artist             ](#forensics-200-truly-an-artist)             | Forensics        | 200    | `picoCTF{look_in_image_788a182e}`
