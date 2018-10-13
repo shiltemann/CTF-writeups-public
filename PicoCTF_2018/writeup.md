@@ -3396,6 +3396,34 @@ End of assembler dump.
 0x80610f0:      "abb6a3b2603654804ed357322c760510"
 ```
 
+We work backwards here, it will call printf with two arguments (the two
+`push`es before the `call`). Printing out the second `push` we see the format
+string. The first push just pushes eax, so whatever is in `eax` is being passed
+to the format string.
+
+We cannot print out `eax` because it isn't set yet (and trying to step/continue
+causes an immediate crash,) so we need to calculate what value will be in eax.
+
+The relevant lines are:
+
+```
+mov    DWORD PTR [ebp-0xc],0x539
+mov    eax,DWORD PTR [ebp-0xc]
+mov    eax,DWORD PTR [eax*4+0x804a080]
+```
+
+Which can be translated as
+
+```
+var1 = 0x539
+eax = var1
+eax = eax * 4 + 0x804a080
+```
+
+So whatever value is in the address `0x539 * 4 + 0x804a080` will be the string
+that's printed out. We can do this with `x/s *(0x539 * 4 + 0x804a080)`
+
+
 **Flag**
 
 ```
