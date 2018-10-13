@@ -4,24 +4,24 @@ Various alphabets / encodings that are commonly used
 
 ## ASCII
 
-![](./images/gascii.jpg)
+![](./images/ascii.jpg)
 
 ## Braille
 
-![](./images/gbraille.jpg)
+![](./images/braille.jpg)
 
 ## Dancing Men
 
-![](./images/gdancingmen.png)
+![](./images/dancingmen.png)
 
 ## Morse code
 
-![](./images/gmorsecode.png)
+![](./images/morsecode.png)
 
 ## Semaphore
 
-![](./images/gsema.png)
+![](./images/sema.png)
 
 ## Windings
 
-![](./images/gwindings-alphabet.gif)
+![](./images/windings-alphabet.gif)
