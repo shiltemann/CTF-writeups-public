@@ -22,7 +22,7 @@ For a collection of links and resources for CTFs, see [here](CTF-resources.md)
 | Hacky Easter  | [2015](HackyEaster_2015/writeup.md) [2016](HackyEaster_2016/writeup.md) [2017](HackyEaster_2017/writeup.md) [2018](HackyEaster_2018/writeup.md) |
 | Hackvent      | [2014](Hackvent_2014/writeup.md) [2015](Hackvent_2015/writeup.md) [2016](Hackvent_2016/writeup.md) [2017](Hackvent_2017/writeup.md) |
 | IceCTF        | [2016](IceCTF-2016/writeup.md) [2018](IceCTF-2018/writeup.md) |
-| PicoCTF       | [2017](PicoCTF_2017/writeup.md) |
+| PicoCTF       | [2017](PicoCTF_2017/writeup.md) [2018](PicoCTF_2018/writeup.md) |
 | poliCTF       | [2017](poliCTF-2017/writeup.md) |
 | Pragyan       | [2016](Pragyan_2016/writeup.md) |
 | TAMUCTF       | [2017](TAMUCTF-2017/writeup.md) |
