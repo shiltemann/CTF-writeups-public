@@ -3573,7 +3573,10 @@ We manually walk through the program:
 
 .global asm3
 
-# call: asm3(0xf238999b,     0xda0f9ac5,     0xcc85310c)
+# call: asm3(0xf238999b,    0xda0f9ac5,    0xcc85310c)
+#            0xf2 38 99 9b  0xda 0f 9a c5  0xcc 85 31 0c
+#   ebp+        b  a  9  8     f  e  d  c    13 12 11 10
+# OR:
 #         9b  99  38  f2  c5  9a  0f  da  0c  31  85  cc
 #   ebp+  8   9   a   b   c   d   e   f   10  11  12  13
 
