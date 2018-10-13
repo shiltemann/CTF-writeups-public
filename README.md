@@ -13,7 +13,7 @@ I like to participate in *Capture The Flag* events; computer security/hacking co
 
 For a list of upcoming events and more writeups, see [CTFtime](https://ctftime.org/).
 
-For a collection of links and resources for CTFs, see [here](CTF-resources.md)
+For a collection of links and resources for CTFs, see [here](./_resources/)
 
 ### Overview
 
