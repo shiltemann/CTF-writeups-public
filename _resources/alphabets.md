@@ -20,7 +20,7 @@ Various alphabets / encodings that are commonly used
 
 ## Semaphore
 
-![](./images/sema.png)
+![](./images/sema.jpg)
 
 ## Windings
 
