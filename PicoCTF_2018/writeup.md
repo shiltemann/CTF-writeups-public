@@ -80,6 +80,7 @@ got-shell?                   Binary           350
 roulette                     General Skills   350
 Malware Shops                Forensics        400     picoCTF{w4y_0ut_dea1794b}
 Radix's Terminal             Reversing        400     picoCTF{bAsE_64_eNCoDiNg_iS_EAsY_41799451}
+assembly-3                   Reversing        400     0x56a3
 eleCTRic                     Cryptography     400
 fancy-alive-monitoring       Web              400
 store                        General Skills   400
@@ -3533,42 +3534,91 @@ picoCTF{bAsE_64_eNCoDiNg_iS_EAsY_41799451}
 ## Reversing 400: assembly-3
 
 **Challenge**
-What does asm3(0xf238999b,0xda0f9ac5,0xcc85310c) return? Submit the flag as a hexadecimal value (starting with '0x').
+
+What does `asm3(0xf238999b,0xda0f9ac5,0xcc85310c)` return?
+
+Submit the flag as a hexadecimal value (starting with '0x').
 
 NOTE: Your submission for this question will NOT be in the normal flag format.
-Source located in the directory at /problems/assembly-3_2_504fe35f4236db611941d162e2abc6b9.
+Source located in the directory at `/problems/assembly-3_2_504fe35f4236db611941d162e2abc6b9`.
 
+```asm
+.intel_syntax noprefix
+.bits 32
 
+.global asm3
+
+asm3:
+        push    ebp
+        mov     ebp,esp
+        mov     eax,0xb6
+        xor     al,al
+        mov     ah,BYTE PTR [ebp+0x8]
+        sal     ax,0x10
+        sub     al,BYTE PTR [ebp+0xf]
+        add     ah,BYTE PTR [ebp+0xd]
+        xor     ax,WORD PTR [ebp+0x12]
+        mov     esp, ebp
+        pop     ebp
+        ret
+```
 
 **Solution**
 
-```
+We manually walk through the program:
 
+```asm
 .intel_syntax noprefix
 .bits 32
 
 .global asm3
 
 # call: asm3(0xf238999b,     0xda0f9ac5,     0xcc85310c)
-#              f2  38  99  9b  da  0f  9a  c5  cc  85  31  0c
-#         ebp+  8   9   a   b   c   d   e   f  10  11  12  13
+#         9b  99  38  f2  c5  9a  0f  da  0c  31  85  cc
+#   ebp+  8   9   a   b   c   d   e   f   10  11  12  13
 
 asm3:
         push    ebp
         mov     ebp,esp
         mov     eax,0xb6               ;
         xor     al,al                  ;
-        mov     ah,BYTE PTR [ebp+0x8]  ; 0xf2
+        mov     ah,BYTE PTR [ebp+0x8]  ; 0x9b
         sal     ax,0x10                ;
-        sub     al,BYTE PTR [ebp+0xf]  ; 0xc5  # Only applies to lowest register + sets carry bit.
-        add     ah,BYTE PTR [ebp+0xd]  ; 0x0f  # But maybe likewise shouldn't flow into parent register?
-        xor     ax,WORD PTR [ebp+0x12] ; 0x310c  # at least this one is easy
+        sub     al,BYTE PTR [ebp+0xf]  ; 0xda
+        add     ah,BYTE PTR [ebp+0xd]  ; 0x9a
+        xor     ax,WORD PTR [ebp+0x12] ; 0xcc85
         mov     esp, ebp
         pop     ebp
         ret
 ```
 
+We can try to do this by hand, but much easier to use [this emulator](http://carlosrafaelgn.com.br/asm86/)
 
+We put the following program into the emulator and step through the program and keep an eye on the
+value of eax (comments show value of eax at each step):
+
+```asm
+asm3:
+        push    ebp
+        mov     ebp,esp
+        mov     eax,0xb6        ; eax = 0x000000B6
+        xor     al,al           ; eax = 0x00000000
+        mov     ah,0x9b         ; eax = 0x00009b00
+        sal     ax,0x10         ; eax = 0x00000000
+        sub     al,0xda         ; eax = 0x00000026
+        add     ah,0x9a         ; eax = 0x00009a26
+        xor     ax,0xcc85       ; eax = 0x000056a3
+        mov     esp, ebp
+        pop     ebp
+        ret                     ; return eax
+```
+
+so final value is `0x56a3`, which is our flag
+
+**Flag**
+```
+0x56a3
+```
 
 ## Cryptography 400: eleCTRic
 
