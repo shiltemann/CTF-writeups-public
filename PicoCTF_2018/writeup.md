@@ -1919,9 +1919,9 @@ and find the flag in the red channel:
 $ python3 extractlsb.py -i nowYouDont.png
 ```
 
-This script outputs a black and white image signifyint the least significat bit in each or the 3 RGB channels
+This script outputs 3 black-and-white images, each signifying the least significant bit of each of the 3 RGB channels.
 
-outputfile `nowYouDont_lsb_r.png` is:
+the outputfile for the red channel, `nowYouDont_lsb_r.png`, contained the flag:
 
 ![](writeupfiles/nowyouseeme.png)
 
