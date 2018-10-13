@@ -1912,7 +1912,7 @@ We heard that there is something hidden in this picture. Can you find it?
 
 **Solution**
 
-We extract the LSB of each of the colour channels using [this script](../../_resources/code/stegano/extractlsb.py)
+We extract the LSB of each of the colour channels using [this script](https://github.com/shiltemann/CTF-writeups-public/blob/master/_resources/code/stegano/extractlsb.py)
 and find the flag in the red channel:
 
 ![](writeupfiles/nowyouseeme.png)
