@@ -1519,13 +1519,13 @@ part_d:
 we manually parse this code:
 
 ```
-asm1:                              # 1: we start here
+asm1:                              ; 1: we start here
 	push	ebp
 	mov	ebp,esp
-	cmp	DWORD PTR [ebp+0x8],0x98   # 2: we compare our input value (`0x76`) to `0x98`
-	jg 	part_a	                   # 3: not greater than `0x98` so we do not jump
-	cmp	DWORD PTR [ebp+0x8],0x8    # 4: now compare to `0x8`
-	jne	part_b                     # 5: not equal so we jump to part_b
+	cmp	DWORD PTR [ebp+0x8],0x98   ; 2: we compare our input value (`0x76`) to `0x98`
+	jg 	part_a	                   ; 3: not greater than `0x98` so we do not jump
+	cmp	DWORD PTR [ebp+0x8],0x8    ; 4: now compare to `0x8`
+	jne	part_b                     ; 5: not equal so we jump to part_b
 	mov	eax,DWORD PTR [ebp+0x8]
 	add	eax,0x3
 	jmp	part_d
@@ -1536,9 +1536,9 @@ part_a:
 	sub	eax,0x3
 	jmp	part_d
 part_b:
-	mov	eax,DWORD PTR [ebp+0x8]   # 6: load our input value (`0x76`) to eax
-	sub	eax,0x3                   # 7: subtract 3, eax now contains `0x73`
-	jmp	part_d                    # 8: we jump to part_d
+	mov	eax,DWORD PTR [ebp+0x8]   ; 6: load our input value (`0x76`) to eax
+	sub	eax,0x3                   ; 7: subtract 3, eax now contains `0x73`
+	jmp	part_d                    ; 8: we jump to part_d
 	cmp	DWORD PTR [ebp+0x8],0xbc
 	jne	part_c
 	mov	eax,DWORD PTR [ebp+0x8]
@@ -1549,7 +1549,7 @@ part_c:
 	add	eax,0x3
 part_d:
 	pop	ebp
-	ret                          # 9: return value in eax (`0x73`)
+	ret                          ; 9: return value in eax (`0x73`)
 ```
 
 
@@ -2410,24 +2410,24 @@ Let's manually walk through the code and write down what happens:
 
 .global asm2
 
-                                        # call: asm2(0x7,0x28)
+; call: asm2(0x7,0x28)
 
 asm2:
 	push	ebp
 	mov	ebp,esp
 	sub	esp,0x10
-	mov	eax,DWORD PTR [ebp+0xc]     # eax = 0x28
-	mov	DWORD PTR [ebp-0x4],eax     # var1 = 0x28
-	mov	eax,DWORD PTR [ebp+0x8]     # eax = 0x7
-	mov	DWORD PTR [ebp-0x8],eax     # var2 = 0x7
-	jmp	part_b                      # jump to part_b
+	mov	eax,DWORD PTR [ebp+0xc]     ; eax = 0x28
+	mov	DWORD PTR [ebp-0x4],eax     ; var1 = 0x28
+	mov	eax,DWORD PTR [ebp+0x8]     ; eax = 0x7
+	mov	DWORD PTR [ebp-0x8],eax     ; var2 = 0x7
+	jmp	part_b                      ; jump to part_b
 part_a:
-	add	DWORD PTR [ebp-0x4],0x1         # var1 += 1
-	add	DWORD PTR [ebp+0x8],0x76        # var2 += 0x76
+	add	DWORD PTR [ebp-0x4],0x1         ; var1 += 1
+	add	DWORD PTR [ebp+0x8],0x76        ; var2 += 0x76
 part_b:
-	cmp	DWORD PTR [ebp+0x8],0xa1de  # var2 > 0xa1de?  Y: return var1
-	jle	part_a                      #                 N: add x076 to var2 and 1 to var1 (part_a)
-	mov	eax,DWORD PTR [ebp-0x4]     # return var1
+	cmp	DWORD PTR [ebp+0x8],0xa1de  ; var2 > 0xa1de?  Y: return var1
+	jle	part_a                      ;                 N: add x076 to var2 and 1 to var1 (part_a)
+	mov	eax,DWORD PTR [ebp-0x4]     ; return var1
 	mov	esp,ebp
 	pop	ebp
 	ret
@@ -3534,18 +3534,18 @@ Source located in the directory at /problems/assembly-3_2_504fe35f4236db611941d1
 
 # call: asm3(0xf238999b,     0xda0f9ac5,     0xcc85310c)
 #              f2  38  99  9b  da  0f  9a  c5  cc  85  31  0c
-#         ebp+  8   a   b   c   d   e   f  10  12  14  16  18
+#         ebp+  8   9   a   b   c   d   e   f  10  11  12  13
 
 asm3:
         push    ebp
         mov     ebp,esp
-        mov     eax,0xb6               # eax = 0x000000b6
-        xor     al,al                  # eax = 0x00000000
-        mov     ah,BYTE PTR [ebp+0x8]  # eax = 0x0000f2b6
-        sal     ax,0x10                # eax = 0x00f200b6   # UNSURE
-        sub     al,BYTE PTR [ebp+0xf]  # eax = ^ - 0x9a     # 0x00f2b566 # Does this apply only to AL or does it affect the parent?
-        add     ah,BYTE PTR [ebp+0xd]  # eax = ^ + 0xda00   # 0x00f38f66 # But maybe likewise shouldn't flow into parent register?
-        xor     ax,WORD PTR [ebp+0x12] # eax = ^ xor 0xcc85 # 0x00f343e3 # at least this one is easy
+        mov     eax,0xb6               ;
+        xor     al,al                  ;
+        mov     ah,BYTE PTR [ebp+0x8]  ; 0xf2
+        sal     ax,0x10                ;
+        sub     al,BYTE PTR [ebp+0xf]  ; 0xc5  # Only applies to lowest register + sets carry bit.
+        add     ah,BYTE PTR [ebp+0xd]  ; 0x0f  # But maybe likewise shouldn't flow into parent register?
+        xor     ax,WORD PTR [ebp+0x12] ; 0x310c  # at least this one is easy
         mov     esp, ebp
         pop     ebp
         ret
