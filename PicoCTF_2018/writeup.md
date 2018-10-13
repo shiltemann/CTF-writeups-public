@@ -3597,6 +3597,18 @@ asm3:
 
 We can try to do this by hand, but much easier to use [this emulator](http://carlosrafaelgn.com.br/asm86/). Since we cannot use that to calculate the values of `BYTE PTR [ebp+...]` we need to be careful how we're doing that by hand. Normally we see `DBL WORD PTR[ebp + 0x8/0xc/...]` which are nicely aligned, but this one includes access that is not aligned to integer boundaries. The numbers are stored in a little endian format in memory, so when we're accessing them we need to be careful about that.
 
+The eax/ax/al/ah registers are as in [this documentation](https://wiki.skullsecurity.org/index.php?title=Registers).
+
+```
+       |-------------------|
+32-bit |        eax        |
+       |-------------------|
+16-bit |         |   ax    |
+       |-------------------|
+ 8-bit |    |    | ah | al |
+       |-------------------|
+```
+
 We put the following program into the emulator and step through the program and keep an eye on the
 value of eax (comments show value of eax at each step):
 
