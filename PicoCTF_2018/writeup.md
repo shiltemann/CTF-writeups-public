@@ -50,11 +50,11 @@ Title                                                                      | Cat
 [assembly-1                  ](#reversing-200-assembly-1)                  | Reversing        | 200    | `0x73`
 [be-quick-or-be-dead-1       ](#reversing-200-be-quick-or-be-dead-1)       | Reversing        | 200    | `picoCTF{why_bother_doing_unnecessary_computation_27f28e71}`
 [blaise's cipher             ](#cryptography-200-blaises-cipher)           | Cryptography     | 200    | `picoCTF{v1gn3r3_c1ph3rs_ar3n7_bad_cdf08bf0}`
-[buffer overflow 1           ](#binary-exploit-200-buffer-overflow-1)      | Binary Exploit   | 200    | `picoCTF{addr3ss3s_ar3_3asy56a7b196}`
+[buffer overflow 1           ](#binary-exploitation-200-buffer-overflow-1)      | Binary Exploit   | 200    | `picoCTF{addr3ss3s_ar3_3asy56a7b196}`
 [hertz 2                     ](#cryptography-200-hertz-2)                  | Cryptography     | 200    | `picoCTF{substitution_ciphers_are_too_easy_sgsgtnpibo}`
-[leak-me                     ](#binary-exploit-200-leak-me)                | Binary Exploit   | 200    | `picoCTF{aLw4y5_Ch3cK_tHe_bUfF3r_s1z3_d1667872}`
+[leak-me                     ](#binary-exploitation-200-leak-me)                | Binary Exploit   | 200    | `picoCTF{aLw4y5_Ch3cK_tHe_bUfF3r_s1z3_d1667872}`
 [now you don't               ](#forensics-200-now-you-dont)                | Forensics        | 200    | `picoCTF{n0w_y0u_533_m3}`
-[shellcode                   ](#binary-exploit-200-shellcode)              | Binary Exploit   | 200    | `picoCTF{shellc0de_w00h00_9ee0edd0}`
+[shellcode                   ](#binary-exploitation-200-shellcode)         | Binary Exploit   | 200    | `picoCTF{shellc0de_w00h00_9ee0edd0}`
 [what base is this?          ](#general-skills-200-what-base-is-this)      | General Skills   | 200    | `picoCTF{delusions_about_finding_values_602fd280}`
 [you can't see me            ](#general-skills-200-you-cant-see-me)        | General Skills   | 200    | `picoCTF{j0hn_c3na_paparapaaaaaaa_paparapaaaaaa_22f627d9}`
 [Buttons                     ](#web-exploitation-250-buttons)              | Web              | 250    | `picoCTF{button_button_whose_got_the_button_ed306c10}`
@@ -65,18 +65,18 @@ Title                                                                      | Cat
 [What's My Name?             ](#forensics-250-whats-my-name)               | Forensics        | 250    | `picoCTF{w4lt3r_wh1t3_2d6d3c6c75aa3be7f42debed8ad16e3b}`
 [absolutely relative         ](#general-skills-250-absolutely-relative)    | General Skills   | 250    | `picoCTF{3v3r1ng_1$_r3l3t1v3_a97be50e}`
 [assembly-2                  ](#reversing-250-assembly-2)                  | Reversing        | 250    | `0x188`
-[buffer overflow 2           ](#binary-exploit-250-buffer-overflow-2)      | Binary Exploit   | 250    |
+[buffer overflow 2           ](#binary-exploitation-250-buffer-overflow-2) | Binary Exploit   | 250    |
 [caesar cipher 2             ](#cryptography-250-caesar-cipher-2)          | Cryptography     | 250    | `picoCTF{cAesaR_CiPhErS_juST_aREnT_sEcUrE}`
-[got-2-learn-libc            ](#binary-exploit-250-got-2-learn-libc)       | Binary Exploit   | 250    |
+[got-2-learn-libc            ](#binary-exploitation-250-got-2-learn-libc)  | Binary Exploit   | 250    |
 [rsa-madlibs                 ](#cryptography-250-rsa-madlibs)              | Cryptography     | 250    | `picoCTF{d0_u_kn0w_th3_w@y_2_RS@_5d383e10}`
 [in out error                ](#general-skills-275-in-out-error)           | General Skills   | 275    | `picoCTF{p1p1ng_1S_4_7h1ng_b6f5a788}`
-[Artisinal Handcrafted HTTP 3](#web-exploitation -300-artisinal-handcrafted-http-3) | Web     | 300    | `picoCTF{0nLY_Us3_n0N_GmO_xF3r_pR0tOcol5_72f2}`
+[Artisinal Handcrafted HTTP 3](#web-exploitation-300-artisinal-handcrafted-http-3) | Web     | 300    | `picoCTF{0nLY_Us3_n0N_GmO_xF3r_pR0tOcol5_72f2}`
 [SpyFi                       ](#cryptography-300-spyfi)                    | Cryptography     | 300    | `picoCTF{@g3nt6_1$_th3_c00l3$t_3355197}`
-[echooo                      ](#binary-300-echooo)                         | Binary           | 300    | `picoCTF{foRm4t_stRinGs_aRe_DanGer0us_254148ae}`
+[echooo                      ](#binary-exploitation-300-echooo)            | Binary           | 300    | `picoCTF{foRm4t_stRinGs_aRe_DanGer0us_254148ae}`
 [learn gdb                   ](#general-skills-300-learn-gdb)              | General Skills   | 300    | `picoCTF{gDb_iS_sUp3r_u53fuL_66d5464d}`
 [Flaskcards                  ](#web-exploitation-350-flaskcards)           | Web              | 350    |
 [core                        ](#forensics-350-core)                        | Forensics        | 350    | `picoCTF{abb6a3b2603654804ed357322c760510}`
-[got-shell?                  ](#binary-350-got-shell)                      | Binary           | 350    |
+[got-shell?                  ](#binary-exploitation-350-got-shell)         | Binary           | 350    |
 [roulette                    ](#general-skills-350-roulette)               | General Skills   | 350    |
 [Malware Shops               ](#forensics-400-malware-shops)               | Forensics        | 400    | `picoCTF{w4y_0ut_dea1794b}`
 [Radix's Terminal            ](#reversing-400-radixs-terminal)             | Reversing        | 400    | `picoCTF{bAsE_64_eNCoDiNg_iS_EAsY_41799451}`
@@ -3901,7 +3901,7 @@ if __name__ == "__main__":
 
 ```
 
-## Genral Skills 500: script me
+## General Skills 500: script me
 
 Can you understand the language and answer the questions to retrieve the flag?
 
