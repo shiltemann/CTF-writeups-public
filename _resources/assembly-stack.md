@@ -152,7 +152,7 @@ This should set ebp to value of esp
 
 addr         | addr         | contents     | use
 ------------ | ------------ | ------------ | -----
-             | `0xffffcf98` | `0`          |
+`ebp + 0x14` | `0xffffcf98` | `0`          |
 `ebp + 0x10` | `0xffffcf94` | `5`          | arg 3
 `ebp + 0xc`  | `0xffffcf90` | `4`          | arg 2
 `ebp + 0x8`  | `0xffffcf8c` | `3`          | arg 1
@@ -171,7 +171,7 @@ Pushes stack pointer down 16 bytes.
 
 addr          | addr         | contents     | use
 ------------- | ------------ | ------------ | -----
-              | `0xffffcf98` | `0`          |
+`ebp + 0x14`  | `0xffffcf98` | `0`          |
 `ebp + 0x10`  | `0xffffcf94` | `5`          | arg 3
 `ebp + 0xc`   | `0xffffcf90` | `4`          | arg 2
 `ebp + 0x8`   | `0xffffcf8c` | `3`          | arg 1
@@ -181,4 +181,3 @@ addr          | addr         | contents     | use
 `ebp - 0x8`   | `0xffffcf7c` | garbage?     |
 `ebp - 0xc`   | `0xffffcf78` | garbage?     |
 `ebp - 0x10`  | `0xffffcf74` | garbage?     | esp
-
