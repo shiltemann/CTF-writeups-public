@@ -87,6 +87,7 @@ store                        General Skills   400
 Secure Logon                 Web              500
 script me                    General Skills   500
 LoadSomeBits                 Forensics        550
+assembly-4                   Reversing        550     picoCTF{1_h0p3_y0u_c0mP1l3d_tH15_94698637}
 Help Me Reset                Web              600
 A Simple Question            Web              650     picoCTF{qu3stions_ar3_h4rd_d3850719}
 LambDash 3                   Web              800
@@ -3859,6 +3860,33 @@ picoCTF{ : 01110000 01101001 01100011 01101111 01000011 01010100 01000110 011110
 ```
 
 ```
+
+## Reversing 550: assembly-4
+
+**Challenge**
+Can you find the flag using the following [assembly source](./writeupfiles/comp.nasm)? WARNING: It is VERY long...
+
+**Solution**
+
+They give us enough to compile it, so, we just do that. Most online compilers
+are x64 for some reason, so compiling locally is a bit easier:
+
+```
+$ nasm -f elf32 comp.nasm
+$ gcc -m32 comp.o -o comp
+$ ./comp
+picoCTF{1_h0p3_y0u_c0mP1l3d_tH15_94698637933
+```
+
+There's some garbage at the end, just add a `}` and remove digits until it goes
+through. I don't know when precisely it went through but it's something like
+that.
+
+**Flag**
+```
+picoCTF{1_h0p3_y0u_c0mP1l3d_tH15_94698637933
+```
+
 
 ## Web Exploitation 600: Help Me Reset
 
