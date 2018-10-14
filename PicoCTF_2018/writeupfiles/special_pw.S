@@ -93,3 +93,8 @@ part_g:
 part_h:
 	leave
 	ret
+
+
+03C7FC74:  37 a1 2a a3 bd 33 22 ba  2f 3c 98 aa b9 2f 39 a4
+03C7FC84:  18 33 aa 9a 2f 39 18 b3  24 3a af 18 99 1c 1c b1
+03C7FC94:  19 b1 98 1b 3e 59 ae a6  00
