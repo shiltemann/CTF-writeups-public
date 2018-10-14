@@ -3943,7 +3943,7 @@ this is using AES in CTR mode without but without changing the value of the coun
 So basically it is XOR'ing every 16 bytes with the same value. And since XOR is reversible, we can find out this value easily by asking it to create a file for us. Since we can choose the file name ourselves, this is a chosen plaintext attack, and we can now:
  - XOR our chosen filename with the share code generated for it to find the encryption key
  - then XOR this key with the name of the flag file to find it's share code
- - Ask service to decrypt and provide share code of the flag file
+ - Ask service to decrypt by providing the share code we found for the flag file
 
 We write a little python script that will find the share code for the flag file, given the name of the flag file, and the share code it gave us when we asked it to create a file named `abcdefghijklmnopqrstuvwxyz.txt`
 
