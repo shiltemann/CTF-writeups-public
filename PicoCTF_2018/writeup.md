@@ -3931,9 +3931,9 @@ We find out through some testing that the share only depends on the name of the 
 We ask it to encrypt 32 a's (64 bits), and see that here the key is repeated twice,
 
 ```
-filename: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa (32 a's)
-share:    wjIPDsHOyoEaAoabEGJUF8IyDw7BzsqBGgKGmxBiVBeNJxYb
-hex:      c2320f0ec1ceca811a02869b10625417 c2320f0ec1ceca811a02869b106254178d27161b
+filename:   aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.txt (32 a's)
+share:      wjIPDsHOyoEaAoabEGJUF8IyDw7BzsqBGgKGmxBiVBeNJxYb
+xor (hex):  c2320f0ec1ceca811a02869b10625417 c2320f0ec1ceca811a02869b106254178d27161b
 ```
 
 this is using AES in CTR mode without but without changing the value of the counter:
@@ -4018,12 +4018,10 @@ Share code:
 VhtSQN/bJkGGTTEqpp3g9UYLQlDPyzZRll10MrOH
 ```
 
-
-
 then we run our decryption script
 
 ```
-$ python3 electric.py flag_9559fe40806eca1c93e4.txt 1YXJ2KnhWEtz69AHX64VMtWFydip4VhLc+vQB1+uFTKakNDN`
+$ python3 electric.py flag_4e2c84b4994eac36bec9.txt VhtSQN/bJkGGTTEqpp3g9UYLQlDPyzZRll10MrOH
 b'URVQQ+WJJBuMH24k/8q2sVIYUheM3yRK1gkuPr8='
 ```
 
