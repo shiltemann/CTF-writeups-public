@@ -3886,7 +3886,11 @@ so final value is `0x56a3`, which is our flag
 
 **Challenge**
 
-You came across a custom server that Dr Xernon's company eleCTRic Ltd uses. It seems to be storing some encrypted files. Can you get us the flag? Connect with nc 2018shell1.picoctf.com 56215. [Source.](./writeupfiles/eleCTRic.py)
+You came across a custom server that Dr Xernon's company eleCTRic Ltd uses. It seems to be storing some encrypted files. Can you get us the flag?
+
+Connect with `nc 2018shell1.picoctf.com 56215`.
+
+[Source.](./writeupfiles/eleCTRic.py)
 
 
 **Solution**
@@ -3936,9 +3940,10 @@ this is using AES in CTR mode without but without changing the value of the coun
 
 ![](writeupfiles/aesctr.jpeg)
 
-So basically it is XOR'ing every 16 bytes with the same value. And since XOR is reversible, we can find out this value easily by asking it to create a file for us. Since we can choose the file name ourselves, we can now:
- - xor the filename with the share code to find the encryption key
- - then xor this key with the name of the flag file to find it's share
+So basically it is XOR'ing every 16 bytes with the same value. And since XOR is reversible, we can find out this value easily by asking it to create a file for us. Since we can choose the file name ourselves, this is a chosen plaintext attack, and we can now:
+ - XOR our chosen filename with the share code generated for it to find the encryption key
+ - then XOR this key with the name of the flag file to find it's share code
+ - Ask service to decrypt and provide share code of the flag file
 
 We write a little python script that will find the share code for the flag file, given the name of the flag file, and the share code it gave us when we asked it to create a file named `abcdefghijklmnopqrstuvwxyz.txt`
 
