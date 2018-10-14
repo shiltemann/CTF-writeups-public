@@ -86,7 +86,7 @@ Title                                                                      | Cat
 [store                       ](#general-skills-400-store)                  | General          | 400    |
 [Secure Logon                ](#web-exploitation-500-secure-logon)         | Web              | 500    |
 [script me                   ](#general-skills-500-script-me)              | General          | 500    |
-[LoadSomeBits                ](#forensics-550-loadsomebits)                | Forensics        | 550    |
+[LoadSomeBits                ](#forensics-550-loadsomebits)                | Forensics        | 550    | `picoCTF{st0r3d_iN_tH3_l345t_s1gn1f1c4nT_b1t5_882756901}`
 [assembly-4                  ](#reversing-550-assembly-4)                  | Reversing        | 550    | `picoCTF{1_h0p3_y0u_c0mP1l3d_tH15_94698637}`
 [Help Me Reset               ](#web-exploitation-600-help-me-reset)        | Web              | 600    |
 [A Simple Question           ](#web-exploitation-650-a-simple-question)    | Web              | 650    | `picoCTF{qu3stions_ar3_h4rd_d3850719}`
@@ -3936,9 +3936,57 @@ target:
 ```
 picoCTF{ : 01110000 01101001 01100011 01101111 01000011 01010100 01000110 01111011
 ```
-**Flag**
+
+We don't know what the ordering or interpretation of these bits is. Turning each string into ascii (with sliding windows) shows no useful interpretation of any single string, therefore these are interleaved.
+
+After trying to decode the various permutations we find that `bgr` is the correct ordering to interleave the bits.
+
+
+```python
+import binascii
+
+# The bytes we found in the image
+r = '0010010000111100011111100000101000001110101000101100111001001110101011100110001001001110101111001000011010000100100011100'
+g = '0001100111011111010111000001111111011000110101111001010111010100100010001101011110010100110110101001100111011011100101110'
+b = '0001001110001000110010101101001111010010001110111011000111010001001100101100101110010010001010100101001100111010000100100'
+
+def rotate(s, offset):
+    if offset == 0:
+        q = '0b' + s
+    else:
+        q = '0b' + ('0' * offset) + s[0:-offset]
+    q = "{0:088x}".format(int(q, 2))
+    return q
+
+def interleave(a, b, c):
+    for i in range(len(a)):
+        yield a[i]
+        yield b[i]
+        yield c[i]
+
+# Convert a1a2a3, b1b2b3, c1c2c3 into a1b1c1a2b2c2a3b3c3
+d = ''.join(interleave(b, g, r))
+
+# Find a rotation (given the hint)
+q = rotate(d, 0)[0:88]
+
+# Convert to string and print out
+w = binascii.unhexlify(q).replace('\n', '').replace('\r', '')
+print(w)
 ```
 
+We don't seem to have grabbed all of the bits of the flag for some reason and only see
+
+```
+r3d_iN_tH3_l345t_s1gn1f1c4nT_b1t5_882756901}
+```
+
+But we can guess that it's 'stored':
+
+
+**Flag**
+```
+picoCTF{st0r3d_iN_tH3_l345t_s1gn1f1c4nT_b1t5_882756901}
 ```
 
 ## Reversing 550: assembly-4

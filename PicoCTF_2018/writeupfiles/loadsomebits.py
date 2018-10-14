@@ -6,16 +6,12 @@ g = '000110011101111101011100000111111101100011010111100101011101010010001000110
 b = '0001001110001000110010101101001111010010001110111011000111010001001100101100101110010010001010100101001100111010000100100'
 
 def rotate(s, offset):
-    q = '0b' + ('0' * i) + s[0:-i]
+    if offset == 0:
+        q = '0b' + s
+    else:
+        q = '0b' + ('0' * offset) + s[0:-offset]
     q = "{0:088x}".format(int(q, 2))
     return q
-
-# for j in (r, g, b):
-    # for i in range(1, 18):
-        # q = rotate(j, i)
-        # print("{0:02d} {1} {2}".format(i, q, binascii.unhexlify(q).replace('\n', '').replace('\r', '')))
-
-import itertools
 
 def interleave(a, b, c):
     for i in range(len(a)):
@@ -23,13 +19,12 @@ def interleave(a, b, c):
         yield b[i]
         yield c[i]
 
-for (a_, b_, c_) in itertools.permutations(list('rgb')):
-    a = locals()[a_]
-    b = locals()[b_]
-    c = locals()[c_]
-    d = ''.join(interleave(a, b, c))[0:360]
+# Convert a1a2a3, b1b2b3, c1c2c3 into a1b1c1a2b2c2a3b3c3
+d = ''.join(interleave(b, g, r))
 
-    for i in range(1, 18):
-        q = rotate(d, i)[0:88]
-        w = binascii.unhexlify(q).replace('\n', '').replace('\r', '')
-        print("{0:02d} {1} {2}".format(i, q, w))
+# Find a rotation (given the hint)
+q = rotate(d, 0)[0:88]
+
+# Convert to string and print out
+w = binascii.unhexlify(q).replace('\n', '').replace('\r', '')
+print(w)
