@@ -3886,7 +3886,11 @@ so final value is `0x56a3`, which is our flag
 
 **Challenge**
 
-You came across a custom server that Dr Xernon's company eleCTRic Ltd uses. It seems to be storing some encrypted files. Can you get us the flag? Connect with nc 2018shell1.picoctf.com 56215. [Source.](./writeupfiles/eleCTRic.py)
+You came across a custom server that Dr Xernon's company eleCTRic Ltd uses. It seems to be storing some encrypted files. Can you get us the flag?
+
+Connect with `nc 2018shell1.picoctf.com 56215`.
+
+[Source.](./writeupfiles/eleCTRic.py)
 
 
 **Solution**
@@ -3927,18 +3931,19 @@ We find out through some testing that the share only depends on the name of the 
 We ask it to encrypt 32 a's (64 bits), and see that here the key is repeated twice,
 
 ```
-filename: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa (32 a's)
-share:    wjIPDsHOyoEaAoabEGJUF8IyDw7BzsqBGgKGmxBiVBeNJxYb
-hex:      c2320f0ec1ceca811a02869b10625417 c2320f0ec1ceca811a02869b106254178d27161b
+filename:   aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.txt (32 a's)
+share:      wjIPDsHOyoEaAoabEGJUF8IyDw7BzsqBGgKGmxBiVBeNJxYb
+xor (hex):  c2320f0ec1ceca811a02869b10625417 c2320f0ec1ceca811a02869b106254178d27161b
 ```
 
 this is using AES in CTR mode without but without changing the value of the counter:
 
 ![](writeupfiles/aesctr.jpeg)
 
-So basically it is XOR'ing every 16 bytes with the same value. And since XOR is reversible, we can find out this value easily by asking it to create a file for us. Since we can choose the file name ourselves, we can now:
- - xor the filename with the share code to find the encryption key
- - then xor this key with the name of the flag file to find it's share
+So basically it is XOR'ing every 16 bytes with the same value. And since XOR is reversible, we can find out this value easily by asking it to create a file for us. Since we can choose the file name ourselves, this is a chosen plaintext attack, and we can now:
+ - XOR our chosen filename with the share code generated for it to find the encryption key
+ - then XOR this key with the name of the flag file to find it's share code
+ - Ask service to decrypt and provide share code of the flag file
 
 We write a little python script that will find the share code for the flag file, given the name of the flag file, and the share code it gave us when we asked it to create a file named `abcdefghijklmnopqrstuvwxyz.txt`
 
@@ -4011,12 +4016,10 @@ Share code:
 VhtSQN/bJkGGTTEqpp3g9UYLQlDPyzZRll10MrOH
 ```
 
-
-
 then we run our decryption script
 
 ```
-$ python3 electric.py flag_9559fe40806eca1c93e4.txt 1YXJ2KnhWEtz69AHX64VMtWFydip4VhLc+vQB1+uFTKakNDN`
+$ python3 electric.py flag_4e2c84b4994eac36bec9.txt VhtSQN/bJkGGTTEqpp3g9UYLQlDPyzZRll10MrOH
 b'URVQQ+WJJBuMH24k/8q2sVIYUheM3yRK1gkuPr8='
 ```
 
