@@ -82,7 +82,7 @@ Title                                                                      | Cat
 [Malware Shops               ](#forensics-400-malware-shops)               | Forensics        | 400    | `picoCTF{w4y_0ut_dea1794b}`
 [Radix's Terminal            ](#reversing-400-radixs-terminal)             | Reversing        | 400    | `picoCTF{bAsE_64_eNCoDiNg_iS_EAsY_41799451}`
 [assembly-3                  ](#reversing-400-assembly-3)                  | Reversing        | 400    | `0x56a3`
-[eleCTRic                    ](#cryptography-400-electric)                 | Crypto           | 400    |
+[eleCTRic                    ](#cryptography-400-electric)                 | Crypto           | 400    | `picoCTF{alw4ys_4lways_Always_check_int3grity_c469e9ba}`
 [fancy-alive-monitoring      ](#web-exploitation-400-fancy-alive-monitoring) | Web            | 400    |
 [store                       ](#general-skills-400-store)                  | General          | 400    |
 [Secure Logon                ](#web-exploitation-500-secure-logon)         | Web              | 500    |
@@ -3771,11 +3771,165 @@ so final value is `0x56a3`, which is our flag
 ## Cryptography 400: eleCTRic
 
 **Challenge**
- You came across a custom server that Dr Xernon's company eleCTRic Ltd uses. It seems to be storing some encrypted files. Can you get us the flag? Connect with nc 2018shell1.picoctf.com 56215. [Source.](./writeupfiles/eleCTRic.py)
+
+You came across a custom server that Dr Xernon's company eleCTRic Ltd uses. It seems to be storing some encrypted files. Can you get us the flag? Connect with nc 2018shell1.picoctf.com 56215. [Source.](./writeupfiles/eleCTRic.py)
+
 
 **Solution**
 
+We connect to the service and find that there is a text file containing the flag, but we must know the "share code" to open it. We can also create files by giving name and content of file, and obtain a share code.
+
+```
+Initializing Problem...
+Welcome to eleCTRic Ltd's Safe Crypto Storage
+---------------------------------------------
+
+Choices:
+  E[n]crypt and store file
+  D[e]crypt file
+  L[i]st files
+  E[x]it
+Please choose: i
+
+Files:
+  flag_27e6d23c575c14ba2ee8.txt
+
+
+Choices:
+  E[n]crypt and store file
+  D[e]crypt file
+  L[i]st files
+  E[x]it
+Please choose: n
+
+Name of file? aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+Data? test
+Share code:
+wjIPDsHOyoEaAoabEGJUF8IyDw7BzsqBGgKGmxBiVBeNJxYb
+```
+
+We find out through some testing that the share only depends on the name of the file, not the contents.
+
+We ask it to encrypt 32 a's (64 bits), and see that here the key is repeated twice,
+
+```
+filename: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa (32 a's)
+share:    wjIPDsHOyoEaAoabEGJUF8IyDw7BzsqBGgKGmxBiVBeNJxYb
+hex:      c2320f0ec1ceca811a02869b10625417 c2320f0ec1ceca811a02869b106254178d27161b
+```
+
+this is using AES in CTR mode without but without changing the value of the counter:
+
+![](writeupfiles/aesctr.jpeg)
+
+So basically it is XOR'ing every 16 bytes with the same value. And since XOR is reversible, we can find out this value easily by asking it to create a file for us. Since we can choose the file name ourselves, we can now:
+ - xor the filename with the share code to find the encryption key
+ - then xor this key with the name of the flag file to find it's share
+
+We write a little python script that will find the share code for the flag file, given the name of the flag file, and the share code it gave us when we asked it to create a file named `abcdefghijklmnopqrstuvwxyz.txt`
+
+
+```python
+import base64
+import sys
+
+
+def xor_bytes(a, b):
+    # if b shorter than a it will be repeated
+    c = bytearray()
+    for i in range(0, len(a)):
+        c.append(a[i] ^ b[i%len(b)])
+    return c
+
+
+def get_share_code(flag_fname, known_share):
+
+    known_pt_string = 'abcdefghijklmnopqrstuvwxyz.txt'
+    known_ct = base64.b64decode(known_share)
+
+    known_pt = bytearray()
+    known_pt.extend(map(ord, known_pt_string))
+    key = xor_bytes(known_ct, known_pt)
+
+    flag = bytearray()
+    flag.extend(map(ord, flag_fname))
+    pt = xor_bytes(flag, key)
+
+    share = base64.b64encode(pt)
+
+    print(share)
+
+if __name__ == "__main__":
+    get_share_code(sys.argv[1], sys.argv[2])
+
+    # flag file: flag_4e2c84b4994eac36bec9.txt
+    # share for abcd..z.txt: VhtSQN/bJkGGTTEqpp3g9UYLQlDPyzZRll10MrOH
+    # share for flag: URVQQ+WJJBuMH24k/8q2sVIYUheM3yRK1gkuPr8=
+```
+
+So we log in to netcat, look up the name of the flag file we want to read
+(different each time we connect), and ask it to encrypt a file named `abcdefghijklmnopqrstyvwxyz`:
+
+```bash
+$ nc 2018shell1.picoctf.com 56215
+Initializing Problem...
+Welcome to eleCTRic Ltd's Safe Crypto Storage
+---------------------------------------------
+
+Choices:
+  E[n]crypt and store file
+  D[e]crypt file
+  L[i]st files
+  E[x]it
+Please choose: i
+
+Files:
+  flag_4e2c84b4994eac36bec9.txt
+
+Choices:
+  E[n]crypt and store file
+  D[e]crypt file
+  L[i]st files
+  E[x]it
+Please choose: n
+
+Name of file? abcdefghijklmnopqrstuvwxyz
+Data? bla
+Share code:
+VhtSQN/bJkGGTTEqpp3g9UYLQlDPyzZRll10MrOH
+```
+
+
+
+then we run our decryption script
+
+```
+$ python3 electric.py flag_9559fe40806eca1c93e4.txt 1YXJ2KnhWEtz69AHX64VMtWFydip4VhLc+vQB1+uFTKakNDN`
+b'URVQQ+WJJBuMH24k/8q2sVIYUheM3yRK1gkuPr8='
+```
+
+So now we know the share code for the flag file and can ask the service to decrypt it:
+
+```
+Choices:
+  E[n]crypt and store file
+  D[e]crypt file
+  L[i]st files
+  E[x]it
+Please choose: e
+
+Share code? URVQQ+WJJBuMH24k/8q2sVIYUheM3yRK1gkuPr8=
+Data:
+picoCTF{alw4ys_4lways_Always_check_int3grity_c469e9ba}
+```
+
+\o/
+
 **Flag**
+```
+picoCTF{alw4ys_4lways_Always_check_int3grity_c469e9ba}
+```
+
 
 ## Web Exploitation 400: fancy-alive-monitoring
 
