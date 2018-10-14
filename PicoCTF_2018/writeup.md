@@ -3961,12 +3961,10 @@ def get_share_code(flag_fname, known_share):
     known_pt_string = 'abcdefghijklmnopqrstuvwxyz.txt'
     known_ct = base64.b64decode(known_share)
 
-    known_pt = bytearray()
-    known_pt.extend(map(ord, known_pt_string))
+    known_pt = bytearray(map(ord, known_pt_string))
     key = xor_bytes(known_ct, known_pt)
 
-    flag = bytearray()
-    flag.extend(map(ord, flag_fname))
+    flag = bytearray(map(ord, flag_fname))
     pt = xor_bytes(flag, key)
 
     share = base64.b64encode(pt)
