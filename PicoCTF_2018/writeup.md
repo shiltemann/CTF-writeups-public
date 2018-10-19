@@ -54,6 +54,7 @@ Title                                                                      | Cat
 [hertz 2                     ](#cryptography-200-hertz-2)                  | Crypto           | 200    | `picoCTF{substitution_ciphers_are_too_easy_sgsgtnpibo}`
 [leak-me                     ](#binary-exploitation-200-leak-me)           | Binary           | 200    | `picoCTF{aLw4y5_Ch3cK_tHe_bUfF3r_s1z3_d1667872}`
 [now you don't               ](#forensics-200-now-you-dont)                | Forensics        | 200    | `picoCTF{n0w_y0u_533_m3}`
+[quackme                     ](#reversing-200-quackme)                     | Reversing        | 200    |
 [shellcode                   ](#binary-exploitation-200-shellcode)         | Binary           | 200    | `picoCTF{shellc0de_w00h00_9ee0edd0}`
 [what base is this?          ](#general-skills-200-what-base-is-this)      | General          | 200    | `picoCTF{delusions_about_finding_values_602fd280}`
 [you can't see me            ](#general-skills-200-you-cant-see-me)        | General          | 200    | `picoCTF{j0hn_c3na_paparapaaaaaaa_paparapaaaaaa_22f627d9}`
@@ -69,6 +70,7 @@ Title                                                                      | Cat
 [caesar cipher 2             ](#cryptography-250-caesar-cipher-2)          | Crypto           | 250    | `picoCTF{cAesaR_CiPhErS_juST_aREnT_sEcUrE}`
 [got-2-learn-libc            ](#binary-exploitation-250-got-2-learn-libc)  | Binary           | 250    |
 [rsa-madlibs                 ](#cryptography-250-rsa-madlibs)              | Crypto           | 250    | `picoCTF{d0_u_kn0w_th3_w@y_2_RS@_5d383e10}`
+[be-quick-or-be-dead-2       ](#reversing-275-be-quick-or-be-dead-2)       | Reversing        | 272    |
 [in out error                ](#general-skills-275-in-out-error)           | General          | 275    | `picoCTF{p1p1ng_1S_4_7h1ng_b6f5a788}`
 [Artisinal Handcrafted HTTP 3](#web-exploitation-300-artisinal-handcrafted-http-3) | Web      | 300    | `picoCTF{0nLY_Us3_n0N_GmO_xF3r_pR0tOcol5_72f2}`
 [SpyFi                       ](#cryptography-300-spyfi)                    | Crypto           | 300    | `picoCTF{@g3nt6_1$_th3_c00l3$t_3355197}`
@@ -76,21 +78,27 @@ Title                                                                      | Cat
 [learn gdb                   ](#general-skills-300-learn-gdb)              | General          | 300    | `picoCTF{gDb_iS_sUp3r_u53fuL_66d5464d}`
 [Flaskcards                  ](#web-exploitation-350-flaskcards)           | Web              | 350    |
 [Super Safe RSA              ](#cryptography-350-super-safe-rsa)           | Crypto           | 350    | `picoCTF{us3_l@rg3r_pr1m3$_1850}`
+[authenticate                ](#binary-exploitation-350-authenticate)      | Binary           | 350    |
 [core                        ](#forensics-350-core)                        | Forensics        | 350    | `picoCTF{abb6a3b2603654804ed357322c760510}`
 [got-shell?                  ](#binary-exploitation-350-got-shell)         | Binary           | 350    |
+[rop chain                   ](#binary-exploitation-350-rop-chain)         | Binary           | 350    |
 [roulette                    ](#general-skills-350-roulette)               | General          | 350    |
 [Malware Shops               ](#forensics-400-malware-shops)               | Forensics        | 400    | `picoCTF{w4y_0ut_dea1794b}`
 [Radix's Terminal            ](#reversing-400-radixs-terminal)             | Reversing        | 400    | `picoCTF{bAsE_64_eNCoDiNg_iS_EAsY_41799451}`
 [assembly-3                  ](#reversing-400-assembly-3)                  | Reversing        | 400    | `0x56a3`
 [eleCTRic                    ](#cryptography-400-electric)                 | Crypto           | 400    | `picoCTF{alw4ys_4lways_Always_check_int3grity_c469e9ba}`
 [fancy-alive-monitoring      ](#web-exploitation-400-fancy-alive-monitoring) | Web            | 400    |
+[keygen-me-1                 ](#reversing-400-keygen-me-1)                 | Reversing        | 400    |
 [store                       ](#general-skills-400-store)                  | General          | 400    |
+[buffer overflow 3           ](#binary-exploitation-450-buffer-overflow-3) | Binary           | 450    |
 [Secure Logon                ](#web-exploitation-500-secure-logon)         | Web              | 500    |
 [script me                   ](#general-skills-500-script-me)              | General          | 500    |
 [LoadSomeBits                ](#forensics-550-loadsomebits)                | Forensics        | 550    | `picoCTF{st0r3d_iN_tH3_l345t_s1gn1f1c4nT_b1t5_882756901}`
 [assembly-4                  ](#reversing-550-assembly-4)                  | Reversing        | 550    | `picoCTF{1_h0p3_y0u_c0mP1l3d_tH15_94698637}`
 [Help Me Reset               ](#web-exploitation-600-help-me-reset)        | Web              | 600    |
+[special-pw                  ](#reversing-600-special-pw)                  | Reversing        | 600    |
 [A Simple Question           ](#web-exploitation-650-a-simple-question)    | Web              | 650    | `picoCTF{qu3stions_ar3_h4rd_d3850719}`
+[James Brahm Returns         ](#cryptography-700-james-brahm-returns)      | Cryptography     | 700    |
 [LambDash 3                  ](#web-exploitation-800-lambdash-3)           | Web              | 800    |
 [Dog or Frog                 ](#general-skills-900-dog-or-frog)            | General          | 900    |
 
@@ -1930,6 +1938,20 @@ the outputfile for the red channel, `nowYouDont_lsb_r.png`, contained the flag:
 picoCTF{n0w_y0u_533_m3}
 ```
 
+## Reversing 200: quackme
+
+**Challenge**
+Can you deal with the Duck Web? Get us the flag from [this program](./writeupfiles/quackme)
+You can also find the program in /problems/quackme_0_29c1eeadf7509d3b370e5d76c6fa54e5.
+
+**Hints**
+Objdump or something similar is probably a good place to start.
+
+**Solution**
+
+**Flag**
+
+
 ## Binary Exploitation 200: shellcode
 
 **Challenge**
@@ -2940,6 +2962,21 @@ picoCTF{d0_u_kn0w_th3_w@y_2_RS@_5d383e10}
 ```
 
 
+## Reversing 275: be-quick-or-be-dead-2
+
+**Challenge**
+As you enjoy [this music](https://www.youtube.com/watch?v=CTt1vk9nM9c) even more, another executable [be-quick-or-be-dead-2](./writeupfiles/be-quick-or-be-dead-2) shows up.
+Can you run this fast enough too? You can also find the executable in /problems/be-quick-or-be-dead-2_4_aeb39eed03c948aec1bf7fa3d03dad0c.
+
+**Hints**
+- Can you call stuff without executing the entire program?
+- What will the key finally be?
+
+**Solution**
+
+**Flag**
+
+
 
 ## General Skills 275: in out error
 
@@ -3528,6 +3565,21 @@ print(hex(m)[2:].decode('hex'))
 picoCTF{us3_l@rg3r_pr1m3$_1850}
 ```
 
+
+## Binary Exploitation 250: authenticate
+
+**Challenge**
+Can you [authenticate](./writeupfiles/authenticate) to this service and get the flag? Connect with nc 2018shell1.picoctf.com 43438. [Source.](./writeupfiles/authenticate.c)
+
+**Hints**
+- What happens if you say something OTHER than yes or no?
+
+
+
+**Solution**
+
+**Flag**
+
 ## Forensics 350: core
 
 **Challenge**
@@ -3658,6 +3710,20 @@ int main(int argc, char **argv) {
 ```
 
 ```
+
+
+## Binary Exploitation 250: rop chain
+
+**Challenge**
+Can you exploit the [following program](./writeupfiles/rop) and get the flag? You can findi the program in /problems/rop-chain_4_6ba0c7ef5029f471fc2d14a771a8e1b9 on the shell server? [Source.](./writeupfiles/rop.c)
+
+**Hints**
+- Try and call the functions in the correct order!
+- Remember, you can always call main() again!
+
+**Solution**
+
+**Flag**
 
 
 ## General Skills 350: roulette
@@ -4059,6 +4125,15 @@ One of my school mate developed an alive monitoring tool. Can you get a flag fro
 
 ```
 
+## Reversing 400: keygen-me-1
+
+**Challenge**
+Can you generate a valid product key for the [validation program](./writeupfiles/keygen-me-1) in /problems/keygen-me-1_0_2b06ee615c1b7021f1eff5829aae5006
+
+**Solution**
+
+**Flag**
+
 
 ## General Skills 400: Store
 
@@ -4108,6 +4183,22 @@ YOUR FLAG IS: picoCTF{numb3r3_4r3nt_s4f3_dbd42a50}
 picoCTF{numb3r3_4r3nt_s4f3_dbd42a50}
 ```
 
+
+## Binary Exploitation 450: buffer overflow 3
+
+**Challenge**
+
+It looks like Dr. Xernon added a stack canary to [this program](./writeupfiles/vuln-buff-overflow-3) to protect against buffer overflows. Do you think you can bypass the protection and get the flag? You can find it in /problems/buffer-overflow-3_2_810c6904c19a0e8b0da0f59eade5b0ce. [Source.](./writeupfiles/vuln-buff-overflow-3.c)
+
+**Hints**
+- Maybe there's a smart way to brute-force the canary?
+
+**Solution**
+I really don't know what to do for this one. That's 4 bytes, large number of
+options. You can't `gdb` this live, I don't think it's possible to do timing
+based attacks to guess digits. So... ???
+
+**Flag**
 
 
 ## Web Exploitation 500: Secure Logon
@@ -4350,6 +4441,19 @@ There is a website running at http://2018shell1.picoctf.com:54584 (link). We nee
 
 ```
 
+## Reversing 600: special-pw
+
+**Challenge**
+Can you figure out the right argument to this program to login? We couldn't manage to get a copy of the binary but we did manage to [dump](writeupfiles/special_pw.S) some machine code and memory from the running process.
+
+**Hints**
+Hmmm maybe if we do the reverse of each operation we can get the password?
+
+**Solution**
+
+**Flag**
+
+
 
 ## Web Exploitation 650: A Simple Question
 
@@ -4438,6 +4542,19 @@ Your flag is: picoCTF{qu3stions_ar3_h4rd_d3850719}
 ```
 picoCTF{qu3stions_ar3_h4rd_d3850719}
 ```
+
+## Cryptography 700: James Brahm Returns
+
+**Challenge**
+Dr. Xernon has finally approved an update to James Brahm's spy terminal. (Someone finally told them that ECB isn't secure.) Fortunately, CBC mode is safe! Right? Connect with nc 2018shell1.picoctf.com 15596. [Source.](writeupfiles/james-brahm-returns.py)
+
+**Hints**
+What killed SSL3?
+
+**Solution**
+
+**Flag**
+
 
 ## Web Exploitation 800: LambDash 3
 
