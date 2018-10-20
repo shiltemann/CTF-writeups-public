@@ -4206,8 +4206,7 @@ e: 11376394003149076634899198125602078382240701942434104587266195449986160326784
 
 This uses an extremely large public exponent (`e`) which is potentially just as bad as using a very small one (like the Super Safe RSA challenge) and might imply a very small private exponent (`d`). If that is the case, we can use [Wiener's attack](https://en.wikipedia.org/wiki/Wiener%27s_attack) to find `d` given `e` and `N`.
 
-We find [this python library](https://github.com/pablocelayes/rsa-wiener-attack)
-that uses Wiener's algorithm to factor N in case where exponent is chosen too small or too large and use its code to find d:
+We find [this python library](https://github.com/pablocelayes/rsa-wiener-attack) that uses some results about continued fractions approximations to infer the private key from public key in the cases the encryption exponent is too small or too large. We use it to find d:
 
 
 (see also [supersafersa2.py](writeupfiles/supersafersa2.py) )
