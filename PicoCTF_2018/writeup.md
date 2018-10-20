@@ -4733,6 +4733,9 @@ What killed SSL3?
 
 **Solution**
 
+> In 2014, SSL 3.0 was found to be vulnerable to the [POODLE attack](https://en.wikipedia.org/wiki/POODLE) that affects all block ciphers in SSL; RC4, the only non-block cipher supported by SSL 3.0, is also feasibly broken as used in SSL 3.0.[17]
+
+
 **Flag**
 
 
