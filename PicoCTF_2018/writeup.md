@@ -98,6 +98,7 @@ Title                                                                      | Cat
 [assembly-4                  ](#reversing-550-assembly-4)                  | Reversing        | 550    | `picoCTF{1_h0p3_y0u_c0mP1l3d_tH15_94698637}`
 [Help Me Reset               ](#web-exploitation-600-help-me-reset)        | Web              | 600    |
 [special-pw                  ](#reversing-600-special-pw)                  | Reversing        | 600    |
+[Super Safe RSA 3            ](#cryptography-600-super-safe-rsa-3)         | Crypto           | 600    | `picoCTF{p_&_q_n0_r_$_t!!_6629910}`
 [A Simple Question           ](#web-exploitation-650-a-simple-question)    | Web              | 650    | `picoCTF{qu3stions_ar3_h4rd_d3850719}`
 [James Brahm Returns         ](#cryptography-700-james-brahm-returns)      | Cryptography     | 700    |
 [LambDash 3                  ](#web-exploitation-800-lambdash-3)           | Web              | 800    |
@@ -4620,6 +4621,65 @@ There is a website running at http://2018shell1.picoctf.com:54584 (link). We nee
 ```
 
 ```
+
+## Crypto 600: Super Safe RSA 3
+
+**Challenge**
+
+The more primes, the safer.. right.?.? Connect with `nc 2018shell1.picoctf.com 54915`.
+
+**Solution**
+
+We connect and get a set of RSA parameters:
+
+```
+c: 798969532868241034262201660820334428498697405198819266351660979640918089698370850085963580823359953106591774105288828682672867652949613335290035360447893613465055031850950614550860391928155270420985614349302804909553389682874636771202896787415532131111854204772669056806821882162359339598288501623562730
+n: 3541776961350756146796799821164868207619475719115743434366890478881578624044753627501375811206039117157906709552318526962375639546716015765226846022541932426874729631398855600887631313842537323018023929885623095650914457879588746735283232366011283028664737579701177211757369241731005141006276936915308803
+e: 65537
+```
+
+Based on the description this probably uses multi-prime RSA. This is identical to regular RSA except for the computation of the totient, which becomes
+
+```
+r = (p1-1) * (p2 - 1) * .. * (pn -1)
+```
+
+
+There is nothing wrong with using multiple primes, except when they become too small. We try to brute force the prime factors to find our flag:
+
+```python
+import gmpy2
+import primefac
+
+
+c = 798969532868241034262201660820334428498697405198819266351660979640918089698370850085963580823359953106591774105288828682672867652949613335290035360447893613465055031850950614550860391928155270420985614349302804909553389682874636771202896787415532131111854204772669056806821882162359339598288501623562730
+n = 3541776961350756146796799821164868207619475719115743434366890478881578624044753627501375811206039117157906709552318526962375639546716015765226846022541932426874729631398855600887631313842537323018023929885623095650914457879588746735283232366011283028664737579701177211757369241731005141006276936915308803
+e = 65537
+
+# find the prime factors
+primes = list(primefac.primefac(n))
+
+# compute totient
+r = 1
+for p in primes:
+    r *= p-1
+
+# decrypt
+d = gmpy2.divm(1, e, r)
+m = gmpy2.powmod(c, d, n)
+
+# print flag
+print("".join([chr((m >> j) & 0xff) for j in reversed(range(0, 1000 << 3, 8))]))
+```
+
+which prints our flag.
+
+
+**Flag**
+```
+picoCTF{p_&_q_n0_r_$_t!!_6629910}
+```
+
 
 ## Reversing 600: special-pw
 
