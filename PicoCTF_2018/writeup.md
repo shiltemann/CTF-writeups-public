@@ -76,7 +76,7 @@ Title                                                                      | Cat
 [SpyFi                       ](#cryptography-300-spyfi)                    | Crypto           | 300    | `picoCTF{@g3nt6_1$_th3_c00l3$t_3355197}`
 [echooo                      ](#binary-exploitation-300-echooo)            | Binary           | 300    | `picoCTF{foRm4t_stRinGs_aRe_DanGer0us_254148ae}`
 [learn gdb                   ](#general-skills-300-learn-gdb)              | General          | 300    | `picoCTF{gDb_iS_sUp3r_u53fuL_66d5464d}`
-[Flaskcards                  ](#web-exploitation-350-flaskcards)           | Web              | 350    |
+[Flaskcards                  ](#web-exploitation-350-flaskcards)           | Web              | 350    | `picoCTF{secret_keys_to_the_kingdom_e8a55760}`
 [Super Safe RSA              ](#cryptography-350-super-safe-rsa)           | Crypto           | 350    | `picoCTF{us3_l@rg3r_pr1m3$_1850}`
 [authenticate                ](#binary-exploitation-350-authenticate)      | Binary           | 350    |
 [core                        ](#forensics-350-core)                        | Forensics        | 350    | `picoCTF{abb6a3b2603654804ed357322c760510}`
@@ -3602,9 +3602,23 @@ We found [this fishy website](http://2018shell1.picoctf.com:51878/) for flashcar
 
 **Solution**
 
+The site lets us create flashcards with answers.
+
+After some googling, we find out this might be vulnerable to SSTI (server side template injection) attacks. We verify this by entering `{{7*'7'}}` as a card's question or answer field, and indeed it outputs `7777777`
+
+Next we try to do something more interesting, we enter `{{ config }}`:
+
+![](writeupfiles/flaskcards_ss2.png)
+
+which gets us the flag:
+
+![](writeupfiles/flaskcards_ss.png)
+
+
+
 **Flag**
 ```
-
+picoCTF{secret_keys_to_the_kingdom_e8a55760}
 ```
 
 
