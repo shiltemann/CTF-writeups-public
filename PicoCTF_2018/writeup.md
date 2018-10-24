@@ -4713,6 +4713,39 @@ that.
 picoCTF{1_h0p3_y0u_c0mP1l3d_tH15_94698637933
 ```
 
+## Web Exploitaion 600: Flaskcards Skeleton key
+
+**Challenge**
+
+Nice! You found out they were sending the Secret_key: `385c16dd09098b011d0086f9e218a0a2`.
+Now, can you find a way to log in as admin? http://2018shell1.picoctf.com:48263
+
+**Solution**
+
+```
+.eJwlj8uKwzAMAP_F5xxsvSL3Z4JsSWwp7ELSnkr_vYa9z8DMuxx5xvVTbs_zFVs57l5uxRwDe6Vahcl2Ms0KXMUoh6I7IgE0HcSufYoKx0DHXcOYwKlPlkRAi-GZqYCcjEkBOVO7GUwOttaWbHtomzarTfLWxapj2cq8zjyef4_4XT0LVhBpwIyqMnqb3HRXRKUBoqQ-Vkwu73XF-T_Ravl8Aa_JPmw.DrIbMQ.mLvNGriozmsC4ufO9lqGP44D340
+```
+
+https://www.kirsle.net/wizards/flask-session.cgi
+
+```
+{
+    "_fresh": true,
+    "_id": "ad3e390400654a74a8f02506a4fb83dd3342218b45d89c6865eb3d378ea542d49c56f323aebdfff8235f53f4e2fcf89aa2c5e5a119c6a7e81cac0ac4d196a0d3",
+    "csrf_token": "5e5826612553886b91c518783384b26848dbb45f",
+    "user_id": "10"
+}
+```
+
+https://stackoverflow.com/questions/22463939/demystify-flask-app-secret-key#22463969
+
+
+tested some stuff in [flaskcards_skeleton_key.py](writeupfiles/flaskcards_skeleton_key.py)
+
+**Flag**
+```
+
+
 
 ## Web Exploitation 600: Help Me Reset
 
