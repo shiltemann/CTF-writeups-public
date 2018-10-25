@@ -96,7 +96,7 @@ Title                                                                      | Cat
 [script me                   ](#general-skills-500-script-me)              | General          | 500    |
 [LoadSomeBits                ](#forensics-550-loadsomebits)                | Forensics        | 550    | `picoCTF{st0r3d_iN_tH3_l345t_s1gn1f1c4nT_b1t5_882756901}`
 [assembly-4                  ](#reversing-550-assembly-4)                  | Reversing        | 550    | `picoCTF{1_h0p3_y0u_c0mP1l3d_tH15_94698637}`
-[Help Me Reset               ](#web-exploitation-600-help-me-reset)        | Web              | 600    |
+[Help Me Reset               ](#web-exploitation-600-help-me-reset)        | Web              | 600    | `picoCTF{i_thought_i_could_remember_those_34745314}`
 [special-pw                  ](#reversing-600-special-pw)                  | Reversing        | 600    |
 [Super Safe RSA 3            ](#cryptography-600-super-safe-rsa-3)         | Crypto           | 600    | `picoCTF{p_&_q_n0_r_$_t!!_6629910}`
 [A Simple Question           ](#web-exploitation-650-a-simple-question)    | Web              | 650    | `picoCTF{qu3stions_ar3_h4rd_d3850719}`
@@ -4713,7 +4713,8 @@ that.
 picoCTF{1_h0p3_y0u_c0mP1l3d_tH15_94698637933
 ```
 
-## Web Exploitaion 600: Flaskcards Skeleton key
+
+## Web Exploitation 600: Flaskcards Skeleton key
 
 **Challenge**
 
@@ -4755,9 +4756,55 @@ There is a website running at http://2018shell1.picoctf.com:54584 (link). We nee
 
 **Solution**
 
-**Flag**
+![](writeupfiles/helpmereset_ss.png)
+
+There is a login page and a password reset page. Judging by the title, this is where we need to look, but it asks for
+a username, and we get an error if we enter a non-existing username. So we need to find a username first, hmm..
+
+We look at the html source for the main page, and find this comment:
+
+```html
+[..]
+        </div>
+    </div>
+</div>
+<!--Proudly maintained by pendleton -->
+
+  </div>
+</section>
+[..]
 ```
 
+So we guess that this user also has an account on the website, and this turns out to be correct. Now that we have a username,
+we can enter this into the "forgot password" menu. We are now presented with a series of security questions,
+
+```
+What is your favorite carmake?
+What is your favorite food?
+What is your favorite color?
+Who is your favorite hero?
+```
+
+After three wrong answers you are locked out of the account (until you clear cookies). It would be too much work to
+guess all of these answers, even if we do get unlimited tries. we also notice that if we refresh the page before answering,
+it will give us another one of these questions randomly. So if we can guess one answer, we can refresh until we get the same
+question, and repeat that until we have answered 4 questions.
+
+Color seems like the easiest to guess, and indeed, it doesn't take us long to find out that `blue` is the correct answer for
+this user. So we refresh questions until we are asked for our fav colour, answer the same questioni 4 times and then we are
+able to reset our password. Once we log into the account with the new password, we get the flag:
+
+![](writeupfiles/helpmereset_flag.png)
+
+
+Fun fact: since the profile page was completely unauth'd, googling the url of the challenge also led us to the flag:
+
+![](writeupfiles/helpmereset_google.jpg)
+
+
+**Flag**
+```
+picoCTF{i_thought_i_could_remember_those_34745314}
 ```
 
 ## Crypto 600: Super Safe RSA 3
