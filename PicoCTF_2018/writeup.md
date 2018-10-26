@@ -91,6 +91,7 @@ Title                                                                      | Cat
 [keygen-me-1                 ](#reversing-400-keygen-me-1)                 | Reversing        | 400    |
 [store                       ](#general-skills-400-store)                  | General          | 400    |
 [Super Safe RSA 2            ](#cryptography-425-super-safe-rsa-2)         | Crypto           | 425    | `picoCTF{w@tch_y0ur_Xp0n3nt$_c@r3fu11y_6498999}`
+[Magic Padding Oracle        ](#cryptography-450-magic-padding-oracle)     | Crypto           | 450    |
 [buffer overflow 3           ](#binary-exploitation-450-buffer-overflow-3) | Binary           | 450    |
 [Secure Logon                ](#web-exploitation-500-secure-logon)         | Web              | 500    |
 [script me                   ](#general-skills-500-script-me)              | General          | 500    |
@@ -4472,6 +4473,84 @@ picoCTF{w@tch_y0ur_Xp0n3nt$_c@r3fu11y_6498999}
 picoCTF{w@tch_y0ur_Xp0n3nt$_c@r3fu11y_6498999}
 ```
 
+## Cryptography 450: Magic Padding Oracle
+
+**Challenge**
+
+Can you help us retreive the flag from this crypto service?
+
+Connect with `nc 2018shell1.picoctf.com 4966`.
+
+We were able to recover some [Source Code](writeupfiles/pkcs7.py).
+
+```python
+#!/usr/bin/python2
+import os
+import json
+import sys
+import time
+
+from Crypto.Cipher import AES
+
+cookiefile = open("cookie", "r").read().strip()
+flag = open("flag", "r").read().strip()
+key = open("key", "r").read().strip()
+
+welcome = """
+Welcome to Secure Encryption Service version 1.1
+"""
+def pad(s):
+  return s + (16 - len(s) % 16) * chr(16 - len(s) % 16)
+
+def isvalidpad(s):
+  return ord(s[-1])*s[-1:]==s[-ord(s[-1]):]
+
+def unpad(s):
+  return s[:-ord(s[len(s)-1:])]
+
+def encrypt(m):
+  IV="This is an IV456"
+  cipher = AES.new(key.decode('hex'), AES.MODE_CBC, IV)
+  return IV.encode("hex")+cipher.encrypt(pad(m)).encode("hex")
+
+def decrypt(m):
+  cipher = AES.new(key.decode('hex'), AES.MODE_CBC, m[0:32].decode("hex"))
+  return cipher.decrypt(m[32:].decode("hex"))
+
+
+# flush output immediately
+sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
+print welcome
+print "Here is a sample cookie: " + encrypt(cookiefile)
+
+# Get their cookie
+print "What is your cookie?"
+cookie2 = sys.stdin.readline()
+# decrypt, but remove the trailing newline first
+cookie2decoded = decrypt(cookie2[:-1])
+
+if isvalidpad(cookie2decoded):
+   d=json.loads(unpad(cookie2decoded))
+   print "username: " + d["username"]
+   print "Admin? " + d["is_admin"]
+   exptime=time.strptime(d["expires"],"%Y-%m-%d")
+   if exptime > time.localtime():
+      print "Cookie is not expired"
+   else:
+      print "Cookie is expired"
+   if d["is_admin"]=="true" and exptime > time.localtime():
+      print "The flag is: " + flag
+else:
+   print "invalid padding"
+```
+
+**Solution**
+
+**Flag**
+```
+
+```
+
 
 ## Binary Exploitation 450: buffer overflow 3
 
@@ -4596,6 +4675,13 @@ if __name__ == "__main__":
 
 
 **Solution**
+
+```
+Cookie:
+plaintext: {'admin': 0, 'password': 'bla', 'username': 'bla'}
+encrypted: A5Y0tWpnSMryBwqyEy/gY1FG3m0xhIr2zQ1slpM7fb6majGgOGjV5I232vc/UGmg5/dWx/fWjJiRf8uoJp3zbtE+ivkZU6v+Guc4hn6rpek=
+```
+
 
 **Flag**
 ```
