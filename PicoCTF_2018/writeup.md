@@ -4683,6 +4683,14 @@ encrypted: A5Y0tWpnSMryBwqyEy/gY1FG3m0xhIr2zQ1slpM7fb6majGgOGjV5I232vc/UGmg5/dWx
 ```
 
 
+```
+curl 'http://2018shell1.picoctf.com:46026/flag' -H 'Cookie: cookie=0dAX+nusd7/rVAVbq0ih0tZaLUn3mZYXOfnyMCJdzzJjvu8cPgiP/3C8CKgAOjblGU1Pijpg2qG0hqDcJ3yaZA==' --silent | grep admin
+<p style="text-align:center;"> Cookie: {&#39;admin&#39;: 0, &#39;password&#39;: &#39;&#39;, &#39;username&#39;: &#39;a&#39;} </p>
+curl 'http://2018shell1.picoctf.com:46026/flag' -H 'Cookie: cookie=0dAX+nusd7/rTAVbq0ih0tZaLUn3mZYXOfnyMCJdzzJjvu8cPgiP/3C8CKgAOjblGU1Pijpg2qG0hqDcJ3yaZA==' --silent | grep admin
+<p style="text-align:center;"> Cookie: {&#39;admin&#39;: 80, &#39;password&#39;: &#39;&#39;, &#39;username&#39;: &#39;a&#39;} </p>
+```
+
+
 **Flag**
 ```
 
