@@ -93,7 +93,7 @@ Title                                                                      | Cat
 [Super Safe RSA 2            ](#cryptography-425-super-safe-rsa-2)         | Crypto           | 425    | `picoCTF{w@tch_y0ur_Xp0n3nt$_c@r3fu11y_6498999}`
 [Magic Padding Oracle        ](#cryptography-450-magic-padding-oracle)     | Crypto           | 450    |
 [buffer overflow 3           ](#binary-exploitation-450-buffer-overflow-3) | Binary           | 450    |
-[Secure Logon                ](#web-exploitation-500-secure-logon)         | Web              | 500    |
+[Secure Logon                ](#web-exploitation-500-secure-logon)         | Web              | 500    | `picoCTF{fl1p_4ll_th3_bit3_a6396679}`
 [script me                   ](#general-skills-500-script-me)              | General          | 500    |
 [LoadSomeBits                ](#forensics-550-loadsomebits)                | Forensics        | 550    | `picoCTF{st0r3d_iN_tH3_l345t_s1gn1f1c4nT_b1t5_882756901}`
 [assembly-4                  ](#reversing-550-assembly-4)                  | Reversing        | 550    | `picoCTF{1_h0p3_y0u_c0mP1l3d_tH15_94698637}`
@@ -4676,24 +4676,54 @@ if __name__ == "__main__":
 
 **Solution**
 
+AES in CBC mode is vulnerable to [bitflipping attacks](https://masterpessimistaa.wordpress.com/2017/05/03/cbc-bit-flipping-attack/).
+
+We log into the site, and get a cookie and its plaintext:
+
 ```
 Cookie:
 plaintext: {'admin': 0, 'password': 'bla', 'username': 'bla'}
-encrypted: A5Y0tWpnSMryBwqyEy/gY1FG3m0xhIr2zQ1slpM7fb6majGgOGjV5I232vc/UGmg5/dWx/fWjJiRf8uoJp3zbtE+ivkZU6v+Guc4hn6rpek=
+encrypted: 0dAX+nusd7/rVAVbq0ih0tZaLUn3mZYXOfnyMCJdzzJjvu8cPgiP/3C8CKgAOjblGU1Pijpg2qG0hqDcJ3yaZA==
 ```
 
+![](writeupfiles/bitflipping1.png)
 
+![](writeupfiles/bitflipping2.jpg)
+
+
+Our goals is to change the `0` in the admin variable to a `1` (in the source code we see that this will get us our flag).
+
+This scheme uses a 16-bit IV, which is prepended to the ciphertext. We want to change the 11th byte of the plaintext, so the 13th byte in the ciphertext.
+After some attempts we find out it is actually the 10th byte we need to edit
+
+We want to change this from a `0` to a `1` so we XOR this byte of the ciphertext with the XOR of these two values:
+
+
+```python
+>>> import base64
+>>> hex(ord('0')^ord('1'))
+'0x1'
+>>> c = '0dAX+nusd7/rVAVbq0ih0tZaLUn3mZYXOfnyMCJdzzJjvu8cPgiP/3C8CKgAOjblGU1Pijpg2qG0hqDcJ3yaZA=='
+>>> d = base64.b64decode(c)
+>>> d
+b'\xd1\xd0\x17\xfa{\xacw\xbf\xebT\x05[\xabH\xa1\xd2\xd6Z-I\xf7\x99\x96\x179\xf9\xf20"]\xcf2c\xbe\xef\x1c>\x08\x8f\xffp\xbc\x08\xa8\x00:6\xe5\x19MO\x8a:`\xda\xa1\xb4\x86\xa0\xdc\'|\x9ad'
+>>> hex(d[10])
+'\x05'
+>>> hex(d[10] ^ 0x01)
+'\x04'
+>>> new = b'\xd1\xd0\x17\xfa{\xacw\xbf\xebT\x04[\xabH\xa1\xd2\xd6Z-I\xf7\x99\x96\x179\xf9\xf20"]\xcf2c\xbe\xef\x1c>\x08\x8f\xffp\xbc\x08\xa8\x00:6\xe5\x19MO\x8a:`\xda\xa1\xb4\x86\xa0\xdc\'|\x9ad'
+>>> base64.b64encode(n)
+b'0dAX+nusd7/rVARbq0ih0tZaLUn3mZYXOfnyMCJdzzJjvu8cPgiP/3C8CKgAOjblGU1Pijpg2qG0hqDcJ3yaZA=='
 ```
-curl 'http://2018shell1.picoctf.com:46026/flag' -H 'Cookie: cookie=0dAX+nusd7/rVAVbq0ih0tZaLUn3mZYXOfnyMCJdzzJjvu8cPgiP/3C8CKgAOjblGU1Pijpg2qG0hqDcJ3yaZA==' --silent | grep admin
-<p style="text-align:center;"> Cookie: {&#39;admin&#39;: 0, &#39;password&#39;: &#39;&#39;, &#39;username&#39;: &#39;a&#39;} </p>
-curl 'http://2018shell1.picoctf.com:46026/flag' -H 'Cookie: cookie=0dAX+nusd7/rTAVbq0ih0tZaLUn3mZYXOfnyMCJdzzJjvu8cPgiP/3C8CKgAOjblGU1Pijpg2qG0hqDcJ3yaZA==' --silent | grep admin
-<p style="text-align:center;"> Cookie: {&#39;admin&#39;: 80, &#39;password&#39;: &#39;&#39;, &#39;username&#39;: &#39;a&#39;} </p>
-```
+
+We change our cookie to this value and get our flag!
+
+![](writeupfiles/securelogon_flag.png)
 
 
 **Flag**
 ```
-
+picoCTF{fl1p_4ll_th3_bit3_a6396679coCTF{fl1p_4ll_th3_bit3_a6396679}}
 ```
 
 ## General Skills 500: script me
