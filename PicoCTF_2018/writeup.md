@@ -4693,10 +4693,10 @@ encrypted: 0dAX+nusd7/rVAVbq0ih0tZaLUn3mZYXOfnyMCJdzzJjvu8cPgiP/3C8CKgAOjblGU1Pi
 
 Our goals is to change the `0` in the admin variable to a `1` (in the source code we see that this will get us our flag).
 
-This scheme uses a 16-bit IV, which is prepended to the ciphertext. We want to change the 11th byte of the plaintext, so the 13th byte in the ciphertext.
-After some attempts we find out it is actually the 10th byte we need to edit
-
-We want to change this from a `0` to a `1` so we XOR this byte of the ciphertext with the XOR of these two values:
+This scheme uses a 16-bit IV, which is prepended to the ciphertext. We want to change the byte in position 10 of the plaintext,
+so the byte in position 12 in the ciphertext. To do this, we need to change the corresponding position in the preceding block
+(byte 10 in ciphertext). We want to change this from a `0` to a `1` so we XOR this byte of the ciphertext with the XOR of these
+two values (`'0' xor '1' = 0x01`):
 
 
 ```python
@@ -4723,7 +4723,7 @@ We change our cookie to this value and get our flag!
 
 **Flag**
 ```
-picoCTF{fl1p_4ll_th3_bit3_a6396679coCTF{fl1p_4ll_th3_bit3_a6396679}}
+picoCTF{fl1p_4ll_th3_bit3_a6396679}
 ```
 
 ## General Skills 500: script me
