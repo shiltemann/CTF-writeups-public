@@ -1,1 +1,0 @@
-../../PicoCTF_2018/writeupfiles/flask_session_cookie_manager.py
