@@ -4693,10 +4693,10 @@ encrypted: 0dAX+nusd7/rVAVbq0ih0tZaLUn3mZYXOfnyMCJdzzJjvu8cPgiP/3C8CKgAOjblGU1Pi
 
 Our goals is to change the `0` in the admin variable to a `1` (in the source code we see that this will get us our flag).
 
-This scheme uses a 16-bit IV, which is prepended to the ciphertext. We want to change the byte in position 10 of the plaintext,
-so the byte in position 12 in the ciphertext. To do this, we need to change the corresponding position in the preceding block
-(byte 10 in ciphertext). We want to change this from a `0` to a `1` so we XOR this byte of the ciphertext with the XOR of these
-two values (`'0' xor '1' = 0x01`):
+We want to change the byte in position 10 (11th character) of the plaintext, which would involve changing the corresponding
+byte in the block before it in the ciphertext (byte number 8), but since this scheme uses a 16-bit IV, which is prepended
+to the ciphertext, we need to edit the byte in position 10 of the ciphertext as well. We want to change this from a `0` to
+a `1`, so we XOR this byte of the ciphertext with the XOR of these two values (`'0' XOR '1' = 0x01`):
 
 
 ```python
