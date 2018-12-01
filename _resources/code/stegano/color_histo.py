@@ -20,7 +20,7 @@ def extract_lsb(inputimage):
             c[rgb] += 1
 
     for k, v in c.most_common(20):
-        print("%03d %03d %03d %d" % (*k, v))
+        print("%03d %03d %03d  %d" % (*k, v))
 
 
 if __name__ == '__main__':
