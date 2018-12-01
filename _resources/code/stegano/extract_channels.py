@@ -17,16 +17,16 @@ def extract_lsb(inputimage):
     outimg_r = Image.new('RGB', (w, h), "white")
     outimg_g = Image.new('RGB', (w, h), "white")
     outimg_b = Image.new('RGB', (w, h), "white")
-    outimg_rg = Image.new('RGB', (w, h), "white")
-    outimg_gb = Image.new('RGB', (w, h), "white")
-    outimg_br = Image.new('RGB', (w, h), "white")
+    outimg_y = Image.new('RGB', (w, h), "white")
+    outimg_c = Image.new('RGB', (w, h), "white")
+    outimg_m = Image.new('RGB', (w, h), "white")
 
     pixels_r = outimg_r.load()
     pixels_g = outimg_g.load()
     pixels_b = outimg_b.load()
-    pixels_rg = outimg_rg.load()
-    pixels_gb = outimg_gb.load()
-    pixels_br = outimg_br.load()
+    pixels_y = outimg_y.load()
+    pixels_c = outimg_c.load()
+    pixels_m = outimg_m.load()
 
     for j in range(0, h):
         for i in range(0, w):
@@ -35,17 +35,17 @@ def extract_lsb(inputimage):
             pixels_g[i, j] = (0, g, 0)
             pixels_b[i, j] = (0, 0, b)
 
-            pixels_rg[i, j] = (r, g, 0)
-            pixels_gb[i, j] = (0, g, b)
-            pixels_br[i, j] = (r, 0, b)
+            pixels_y[i, j] = (r, g, 0)
+            pixels_c[i, j] = (0, g, b)
+            pixels_m[i, j] = (r, 0, b)
 
     print(outfilename)
     outimg_r.save(outfilename + "_r.png")
     outimg_g.save(outfilename + "_g.png")
     outimg_b.save(outfilename + "_b.png")
-    outimg_rg.save(outfilename + "_rg.png")
-    outimg_gb.save(outfilename + "_gb.png")
-    outimg_br.save(outfilename + "_br.png")
+    outimg_y.save(outfilename + "_y.png")
+    outimg_c.save(outfilename + "_c.png")
+    outimg_m.save(outfilename + "_m.png")
 
 
 if __name__ == '__main__':
