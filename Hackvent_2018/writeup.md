@@ -11,7 +11,7 @@ Title                                         | Category    | Points | Flag
 --------------------------------------------- | ----------- | ------ | ------------------------------
 [Teaser     ](#teaser)                        |             |        | ``
 [December 1 ](#day-01-just-another-bar-code)  | Easy        | 2/1    | `HV18-L3ts-5t4r-7Th3-Phun-G33k`
-[December 2 ](#day-02-)                       | Easy        | 2/1    | `HV18-`
+[December 2 ](#day-02-me)                     | Easy        | 2/1    | `HL18-7QTH-JZ1K-JKSD-GPEB-GJPU`
 [December 3 ](#day-03-)                       | Easy        | 2/1    | `HV18-`
 [December 4 ](#day-04-)                       | Easy        | 2/1    | `HV18-`
 [December 5 ](#day-05-)                       | Easy        | 2/1    | `HV18-`
@@ -140,12 +140,24 @@ This outputs:
 
 ```
 output1:  MJRWKZTHGFTTEIDEMVTCAYTDNIQGCYTDMRSWMZZRM4ZCAZZRM4ZCAYLKNQQGCYTDMRSWM3JAMFUWYIDCMNSWMZZRM4ZCAZZRM4ZCAYLCMNSGKIDBMRVGWIDCMNVCAZLGM4YWU3JAM4YWOMRAMFRGGZDFEBSWMZZRNJWSAYLDMRTTE2BAMFRGGZDJNQQGOMLHGIQGCY3EMVTGOMRAMFRGKZTHGFTTEIDBMRSWMZZRM4ZCAYLCMNSGOMTJNQQGOMLHGIQGCY3EMVTGOMRAMFRGGZDFEBQWEZLGM4YWOMRAMJRWIZLGEA======
-output2:  b'bcefg1g2 def bcj abcdefg1g2 g1g2 ajl abcdefm ail bcefg1g2 g1g2 abcde adjk bcj efg1jm g1g2 abcde efg1jm acdg2h abcdil g1g2 acdefg2 abefg1g2 adefg1g2 abcdg2il g1g2 acdefg2 abcde abefg1g2 bcdef '
+output2:  b'BCEFG1G2 DEF BCJ ABCDEFG1G2 G1G2 AJL ABCDEFM AIL BCEFG1G2 G1G2 ABCDE ADJK BCJ EFG1JM G1G2 ABCDE EFG1JM ACDG2H ABCDIL G1G2 ACDEFG2 ABEFG1G2 ADEFG1G2 ABCDG2IL G1G2 ACDEFG2 ABCDE ABEFG1G2 BCDEF '
 ```
+
+This last bit seems to be 14-segment display code, which can be solved with [this tool](https://www.geocachingtoolbox.com/index.php?lang=en&page=segmentDisplay) from the geocaching toolbox:
+
+![](writeupfiles/day02-14segment-decode.jpg)
+
+And [this site](http://kryptografie.de/kryptografie/chiffre/14-segment.htm) decodes to text directly, giving us the flag:
+
+```
+HL18-7QTH-JZ1K-JKSD-GPEB-GJPU
+```
+
+(The HL18 seems to just have been a mistake, and the flag is accepted like this)
 
 **Flag**
 ```
-HV18-
+HL18-7QTH-JZ1K-JKSD-GPEB-GJPU
 ```
 
 ## Day 03:
