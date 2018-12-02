@@ -111,7 +111,7 @@ Can you help Santa decoding these numbers?
 A series of decodings
   - Octal
   - Base32
-  - ?
+  - 14-segment display
 
 Decoding script [day02.py](writeupfiles/day02.py):
 
@@ -131,7 +131,7 @@ print('output1: ', output1)
 # looks like base32
 
 output2 = base64.b32decode(output1)
-print('output2: ', output2)
+print('output2: ', output2.upper())
 
 # now what..?
 ```
@@ -153,7 +153,7 @@ And [this site](http://kryptografie.de/kryptografie/chiffre/14-segment.htm) deco
 HL18-7QTH-JZ1K-JKSD-GPEB-GJPU
 ```
 
-(The HL18 seems to just have been a mistake, and the flag is accepted like this)
+(The `HL18` at the start seems to just have been a mistake, and the flag is accepted like this)
 
 **Flag**
 ```
