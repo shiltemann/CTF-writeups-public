@@ -44,8 +44,6 @@ Title                                         | Category    | Points | Flag
 
 **Solution**
 
-*Stage 1*
-
 The image contains braille code. We translate it to http://bit.ly/2TJvxHt
 
 This gets us the following image:
@@ -56,17 +54,13 @@ this QR decodes to `Rushed by ..`
 
 Turns out the bit.ly link actually translated to https://hackvent.hacking-lab.com/T34s3r_MMXVIII/index.php?flag=UI18-GAUa-lXhq-htyV-w2Wr-0yiV
 
-and the `flag` parameter when ROT13'd gives us the first flag: `HV18-TNHn-yKud-uglI-j2Je-0lvI
-`
+and the `flag` parameter when ROT13'd gives us the first flag: `HV18-TNHn-yKud-uglI-j2Je-0lvI`
 
 when we fill in the correct flag in the url, we get to the next stage:
 
 https://hackvent.hacking-lab.com/T34s3r_MMXVIII/index.php?flag=HV18-TNHn-yKud-uglI-j2Je-0lvI
 
-
-*Stage 2*
-
-Next stage is https://hackvent.hacking-lab.com/T34s3r_MMXVIII/ZOoxjUSe1OVB7OPoVrsX.pdf
+which redirects to https://hackvent.hacking-lab.com/T34s3r_MMXVIII/ZOoxjUSe1OVB7OPoVrsX.pdf
 
 Which is this [pdf file](writeupfiles/teaser/stage2.pdf)
 
