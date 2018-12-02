@@ -75,7 +75,7 @@ Ok, there is lots here, lets get all the elements of the pdf with http://extract
 we get some images:
 
 ![](writeupfiles/teaser/stage2-banner.jpeg)
-![](writeupfiles/teaser/stage2-balll.jpeg)
+![](writeupfiles/teaser/stage2-ball.jpeg)
 ![](writeupfiles/teaser/stage2-stereogram.jpeg)
 
 And some Morse code text:
