@@ -9,7 +9,7 @@ The annual advent calender from Hacking-lab
 
 Title                                         | Category    | Points | Flag
 --------------------------------------------- | ----------- | ------ | ------------------------------
-[Teaser     ](#teaser)                        |             |        | ``
+[Teaser     ](#teaser)                        |             |        | `HV18-TNHn-yKud-uglI-j2Je-0lvI`
 [December 1 ](#day-01-just-another-bar-code)  | Easy        | 2/1    | `HV18-L3ts-5t4r-7Th3-Phun-G33k`
 [December 2 ](#day-02-me)                     | Easy        | 2/1    | `HL18-7QTH-JZ1K-JKSD-GPEB-GJPU`
 [December 3 ](#day-03-)                       | Easy        | 2/1    | `HV18-`
@@ -52,9 +52,13 @@ This gets us the following image:
 
 this QR decodes to `Rushed by ..`
 
+Turns out the bit.ly link actually translated to `https://hackvent.hacking-lab.com/T34s3r_MMXVIII/index.php?flag=UI18-GAUa-lXhq-htyV-w2Wr-0yiV`
+
+and the `flag` parameter when ROT13'd gives us the flag
+
 **Flag**
 ```
-
+HV18-TNHn-yKud-uglI-j2Je-0lvI
 ```
 
 ## Day 01: Just Another Bar Code
