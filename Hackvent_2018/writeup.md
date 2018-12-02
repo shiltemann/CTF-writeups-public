@@ -143,11 +143,18 @@ and an image:
 
 ![](writeupfiles/teaser/_stage2.pdf.extracted/QR3C.png)
 
+Which looks suspiciously like a challenge from HACKvent 2015, my writeup [here](https://github.com/shiltemann/CTF-writeups-galaxians/tree/master/Hackvent_2015#dec-17-santas-quick-response)
+
+TODO
+
 and a [Santa.txt](writeupfiles/teaser/_stage2.pdf.extracted/Santa.txt) file:
 
 ```
 MOPEN TLRHAHB TDTT CDRT ANOEO NFROA NHSYALHET ORAIT AD ONSAH AE RSUTL GI17-OICV-NTNL-EHNE-YIPN-ILBM
 ```
+
+which translates to TODO
+
 
 **Flag**
 ```
