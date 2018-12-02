@@ -107,7 +107,7 @@ A series of decodings
   - Base64
   - ?
 
-[Decoding script](writeupfiles/day02.py):
+Decoding script [day02.py](writeupfiles/day02.py):
 
 ```python
 import base64
@@ -120,14 +120,22 @@ output1 = ""
 for i in input.split(' '):
     output1 += chr(int(i, 8))
 
-print(output1)
+print('output1: ', output1)
 
 # looks like base64
 
 output2 = base64.b64decode(output1)
-print(output2)
+print('output2: ', output2)
 
 # binary data? now what..?
+```
+
+This outputs:
+
+```
+output1:  MJRWKZTHGFTTEIDEMVTCAYTDNIQGCYTDMRSWMZZRM4ZCAZZRM4ZCAYLKNQQGCYTDMRSWM3JAMFUWYIDCMNSWMZZRM4ZCAZZRM4ZCAYLCMNSGKIDBMRVGWIDCMNVCAZLGM4YWU3JAM4YWOMRAMFRGGZDFEBSWMZZRNJWSAYLDMRTTE2BAMFRGGZDJNQQGOMLHGIQGCY3EMVTGOMRAMFRGKZTHGFTTEIDBMRSWMZZRM4ZCAYLCMNSGOMTJNQQGOMLHGIQGCY3EMVTGOMRAMFRGGZDFEBQWEZLGM4YWOMRAMJRWIZLGEA======
+output2:  b'0\x94V)\x94\xc7\x18T\xd3\x10\x80\xc41T\xc2\x01\x84\xc34\x84\x06\t\x84\xc31\x14\x961\x96Q3\x86B\x01\x96Q3\x86B\x01\x82\xca5\x04\x06\t\x84\xc31\x14\x963r@0U\x16`\x80\xc20\xd4\x961\x96Q3\x86B\x01\x96Q3\x86B\x01\x82\xc20\xd4\x86(\x80\xc11\x15FX\x80\xc20\xd5B\x01\x92\xc63\x86\x16Sr@3\x86\x168\xc4@0TF\x19\x90\xc5\x10\x14\x961\x96Q4\x95\x92\x01\x82\xc31\x14\xd3\x13`@0TF\x19\x90\xc95\x04\x068\xc2\xc7\x18\x84\x06\t\x8d\xc41T\xc68\xc4@0TF)\x94\xc7\x18T\xd3\x10\x80\xc11\x14\x961\x96Q3\x86B\x01\x82\xc20\xd4\x868\xc4\xc95\x04\x068\xc2\xc7\x18\x84\x06\t\x8d\xc41T\xc68\xc4@0TF\x19\x90\xc5\x10\x14\x16\x11\x92\xc63\x86\x168\xc4@0\x94V!\x92\xc6\x10'
+
 ```
 
 **Flag**

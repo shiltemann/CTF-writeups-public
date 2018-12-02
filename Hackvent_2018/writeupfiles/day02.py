@@ -8,11 +8,11 @@ output1 = ""
 for i in input.split(' '):
     output1 += chr(int(i, 8))
 
-print(output1)
+print('output1: ', output1)
 
 # looks like base64
 
 output2 = base64.b64decode(output1)
-print(output2)
+print('output2: ', output2)
 
 # binary data? now what..?
