@@ -50,6 +50,8 @@ This gets us the following image:
 
 ![](writeupfiles/teaser/Flag_Stage_1.png)
 
+this QR decodes to `Rushed by ..`
+
 **Flag**
 ```
 
