@@ -122,9 +122,9 @@ for i in input.split(' '):
 
 print('output1: ', output1)
 
-# looks like base64
+# looks like base32
 
-output2 = base64.b64decode(output1)
+output2 = base64.b32decode(output1)
 print('output2: ', output2)
 
 # now what..?
