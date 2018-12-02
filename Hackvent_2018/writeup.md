@@ -9,7 +9,7 @@ The annual advent calender from Hacking-lab
 
 Title                                         | Category    | Points | Flag
 --------------------------------------------- | ----------- | ------ | ------------------------------
-[Teaser     ](#teaser)                        |             |        | `HV18-TNHn-yKud-uglI-j2Je-0lvI`
+[Teaser     ](#teaser)                        |             |        | `Multiple, see below`
 [December 1 ](#day-01-just-another-bar-code)  | Easy        | 2/1    | `HV18-L3ts-5t4r-7Th3-Phun-G33k`
 [December 2 ](#day-02-me)                     | Easy        | 2/1    | `HL18-7QTH-JZ1K-JKSD-GPEB-GJPU`
 [December 3 ](#day-03-)                       | Easy        | 2/1    | `HV18-`
@@ -44,7 +44,9 @@ Title                                         | Category    | Points | Flag
 
 **Solution**
 
-The image contains braille code. We translate it to `http://bit.ly/2TJvxHt`
+*Stage 1*
+
+The image contains braille code. We translate it to http://bit.ly/2TJvxHt
 
 This gets us the following image:
 
@@ -52,13 +54,99 @@ This gets us the following image:
 
 this QR decodes to `Rushed by ..`
 
-Turns out the bit.ly link actually translated to `https://hackvent.hacking-lab.com/T34s3r_MMXVIII/index.php?flag=UI18-GAUa-lXhq-htyV-w2Wr-0yiV`
+Turns out the bit.ly link actually translated to https://hackvent.hacking-lab.com/T34s3r_MMXVIII/index.php?flag=UI18-GAUa-lXhq-htyV-w2Wr-0yiV
 
-and the `flag` parameter when ROT13'd gives us the flag
+and the `flag` parameter when ROT13'd gives us the first flag: `HV18-TNHn-yKud-uglI-j2Je-0lvI
+`
+
+when we fill in the correct flag in the url, we get to the next stage:
+
+https://hackvent.hacking-lab.com/T34s3r_MMXVIII/index.php?flag=HV18-TNHn-yKud-uglI-j2Je-0lvI
+
+
+*Stage 2*
+
+Next stage is https://hackvent.hacking-lab.com/T34s3r_MMXVIII/ZOoxjUSe1OVB7OPoVrsX.pdf
+
+Which is this [pdf file](writeupfiles/teaser/stage2.pdf)
+
+Ok, there is lots here, lets get all the elements of the pdf with http://extractpdf.com
+
+we get some images:
+
+![](writeupfiles/teaser/stage2-banner.jpeg)
+![](writeupfiles/teaser/stage2-balll.jpeg)
+![](writeupfiles/teaser/stage2-stereogram.jpeg)
+
+And some Morse code text:
+
+```
+HACKvent 2018
+
+.... ...- .---- ---.. -....- --. --- .-. .. -....- --.. .-. ... -... -....- ..- ..-. .- . -....- - ... -.... -.-. -....- -.-. ...- - -
+
+```
+
+this decodes to: `HV18-GORI-ZRSB-UFAE-TS6C-CVTT`
+
+Next, we try binwalk:
+
+```bash
+$ binwalk stage2.pdf
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             PDF document, version: "1.7"
+404           0x194           Unix path: /PDF/Text/ImageB/ImageC/ImageI] >>/MediaBox[ 0 0 595.32 841.92] /Contents 4 0 R/Group<</Type/Group/S/Transparency/CS/DeviceRGB>>
+621           0x26D           Zlib compressed data, default compression
+1751          0x6D7           Unix path: /Type/XObject/Subtype/Image/Width 1000/Height 340/ColorSpace/DeviceRGB/BitsPerComponent 8/Filter/DCTDecode/Interpolate true/Leng
+1899          0x76B           JPEG image data, JFIF standard 1.01
+1929          0x789           TIFF image data, big-endian, offset of first image directory: 8
+51778         0xCA42          Unix path: /Type/ExtGState/BM/Normal/ca 1>>
+51831         0xCA77          Unix path: /Type/Font/Subtype/TrueType/Name/F1/BaseFont/BCDEEE+Calibri/Encoding/WinAnsiEncoding/FontDescriptor 8 0 R/FirstChar 32/LastChar
+51998         0xCB1E          Unix path: /Type/FontDescriptor/FontName/BCDEEE+Calibri/Flags 32/ItalicAngle 0/Ascent 750/Descent -250/CapHeight 750/AvgWidth 521/MaxWidth
+52237         0xCC0D          Unix path: /Type/ExtGState/BM/Normal/CA 1>>
+52291         0xCC43          Unix path: /Type/XObject/Subtype/Image/Width 781/Height 781/ColorSpace/DeviceRGB/BitsPerComponent 8/Interpolate false/Filter/FlateDecode/Le
+52442         0xCCDA          Zlib compressed data, default compression
+187860        0x2DDD4         Unix path: /Type/Font/Subtype/TrueType/Name/F2/BaseFont/BCDFEE+Arial-Black/Encoding/WinAnsiEncoding/FontDescriptor 12 0 R/FirstChar 32/Last
+188034        0x2DE82         Unix path: /Type/FontDescriptor/FontName/BCDFEE+Arial-Black/Flags 32/ItalicAngle 0/Ascent 1101/Descent -212/CapHeight 716/AvgWidth 552/MaxW
+188279        0x2DF77         Unix path: /Type/Font/Subtype/TrueType/Name/F3/BaseFont/TimesNewRomanPS-BoldMT/Encoding/WinAnsiEncoding/FontDescriptor 14 0 R/FirstChar 32/
+188456        0x2E028         Unix path: /Type/FontDescriptor/FontName/TimesNewRomanPS-BoldMT/Flags 32/ItalicAngle 0/Ascent 891/Descent -216/CapHeight 677/AvgWidth 427/M
+188698        0x2E11A         Unix path: /Type/XObject/Subtype/Image/Width 200/Height 200/ColorSpace/DeviceRGB/BitsPerComponent 8/Filter/DCTDecode/Interpolate true/Lengt
+188844        0x2E1AC         JPEG image data, JFIF standard 1.01
+188874        0x2E1CA         TIFF image data, big-endian, offset of first image directory: 8
+195577        0x2FBF9         Zlib compressed data, default compression
+196145        0x2FE31         Zlib compressed data, default compression
+215877        0x34B45         Zlib compressed data, default compression
+231310        0x3878E         Unix path: /Type/Metadata/Subtype/XML/Length 3075>>
+231494        0x38846         Unix path: /www.w3.org/1999/02/22-rdf-syntax-ns#">
+231734        0x38936         Unix path: /purl.org/dc/elements/1.1/">
+232171        0x38AEB         Unix path: /ns.adobe.com/xap/1.0/mm/">
+234681        0x394B9         Zlib compressed data, default compression
+236069        0x39A25         RAR archive data, first volume type: MAIN_HEAD
+236135        0x39A67         Zip archive data, encrypted at least v2.0 to extract, compressed size: 210390, uncompressed size: 210378, name: z.zip
+446647        0x6D0B7         End of Zip archive
+
+# we see there are files appended, we extract with:
+$ binwalk -e stage2.pdf
+```
+
+Reveals an [encrypted zip file](writeupfiles/teaser/_stage2.pdf.extracted/final.zip)
+
+and an image:
+
+![](writeupfiles/teaser/_stage2.pdf.extracted/QR3C.png)
+
+and a [Santa.txt](writeupfiles/teaser/_stage2.pdf.extracted/Santa.txt) file:
+
+```
+MOPEN TLRHAHB TDTT CDRT ANOEO NFROA NHSYALHET ORAIT AD ONSAH AE RSUTL GI17-OICV-NTNL-EHNE-YIPN-ILBM
+```
 
 **Flag**
 ```
-HV18-TNHn-yKud-uglI-j2Je-0lvI
+1: HV18-TNHn-yKud-uglI-j2Je-0lvI
+2: HV18-GORI-ZRSB-UFAE-TS6C-CVTT
+3:
 ```
 
 ## Day 01: Just Another Bar Code
