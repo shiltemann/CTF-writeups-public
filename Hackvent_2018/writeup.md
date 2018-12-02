@@ -66,13 +66,7 @@ Which is this [pdf file](writeupfiles/teaser/stage2.pdf)
 
 Ok, there is lots here, lets get all the elements of the pdf with http://extractpdf.com
 
-we get some images:
-
-![](writeupfiles/teaser/stage2-banner.jpeg)
-![](writeupfiles/teaser/stage2-ball.jpeg)
-![](writeupfiles/teaser/stage2-stereogram.jpeg)
-
-And some Morse code text:
+We find some Morse code text in the pdf:
 
 ```
 HACKvent 2018
@@ -81,9 +75,28 @@ HACKvent 2018
 
 ```
 
-this decodes to: `HV18-GORI-ZRSB-UFAE-TS6C-CVTT`
+this decodes to: `HV18-GORI-ZRSB-UFAE-TS6C-CVTT`, which is our second flag
 
-Next, we try binwalk:
+
+We also find some images in the pdf:
+
+![](writeupfiles/teaser/stage2-banner.jpeg)
+![](writeupfiles/teaser/stage2-ball.jpeg)
+![](writeupfiles/teaser/stage2-stereogram.png)
+
+The stereogram image can be decoded [here](http://magiceye.ecksdee.co.uk/) and gives:
+
+![](writeupfiles/teaser/stereogram-decoded.png)
+
+we clean it up a bit with GIMP so that we can scan it:
+
+![](writeupfiles/teaser/stereogram-decoded-cleaned.png)
+
+and this is our 3rd flag: `HV18-p2LK-DNcI-YKw7-T9Ad-mH3v`
+
+
+
+Next, we try binwalk on the pdf:
 
 ```bash
 $ binwalk stage2.pdf
@@ -140,7 +153,7 @@ MOPEN TLRHAHB TDTT CDRT ANOEO NFROA NHSYALHET ORAIT AD ONSAH AE RSUTL GI17-OICV-
 ```
 1: HV18-TNHn-yKud-uglI-j2Je-0lvI
 2: HV18-GORI-ZRSB-UFAE-TS6C-CVTT
-3:
+3: HV18-p2LK-DNcI-YKw7-T9Ad-mH3v
 ```
 
 ## Day 01: Just Another Bar Code
