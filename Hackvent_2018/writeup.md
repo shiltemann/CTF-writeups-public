@@ -44,7 +44,11 @@ Title                                         | Category    | Points | Flag
 
 **Solution**
 
-The image contains braille code. We translate it to `http://bit.ly/`
+The image contains braille code. We translate it to `http://bit.ly/2TJvxHt`
+
+This gets us the following image:
+
+![](writeupfiles/teaser/Flag_Stage_1.png)
 
 **Flag**
 ```
