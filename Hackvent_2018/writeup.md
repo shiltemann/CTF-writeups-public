@@ -157,7 +157,20 @@ TODO
 The zip file also contained a [Santa.txt](writeupfiles/teaser/_stage2.pdf.extracted/Santa.txt) file:
 
 ```
-MOPEN TLRHAHB TDTT CDRT ANOEO NFROA NHSYALHET ORAIT AD ONSAH AE RSUTL GI17-OICV-NTNL-EHNE-YIPN-ILBM
+Santa has caught up with the information age and does not trust
+clear-text commands anymore.
+He has decided that all communications
+have to be encrypted to prevent an unfriendly take-over of his team.
+Santa chooses a simple, secure, and toolless encryption scheme.
+However, his team's memory capacity is limited and so he can only use
+their names (Dasher, Dancer, Prancer, Vixen, Comet, Cupid, Donder and
+Blitzen) as keys.
+
+
+
+Where is the team headed to?
+
+STTYN YATLOEP DNEA ONBL TGNTO MHEHH EISTIARIB FHSRA LD IIONA NL HERUV LN17-PTAA-RTON-RDOE-MCTN-AHCO
 ```
 
 TODO
