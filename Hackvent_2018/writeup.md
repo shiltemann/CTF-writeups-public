@@ -284,7 +284,7 @@ The link led to a website with a button to click to get the flag
 
 But the button moves away as you approach it with the mouse, and if you try using just the keyboard or a touch screen, you get the following message:
 
-![](writeupfiles/day02-screenshot1.png)
+![](writeupfiles/day03-screenshot1.png)
 
 There is some heavily obfuscated javascript on the page, but we cheesed this one a little bit by changing the size of the button in CSS to always fill the screen and make it easy to click
 
