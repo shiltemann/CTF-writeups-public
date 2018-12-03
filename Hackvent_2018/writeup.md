@@ -138,6 +138,7 @@ $ binwalk -e stage2.pdf
 
 Reveals an [encrypted zip file](writeupfiles/teaser/_stage2.pdf.extracted/Final_easy.zip)
 
+TODO
 
 *Stage 5*
 
@@ -159,19 +160,22 @@ The zip file also contained a [Santa.txt](writeupfiles/teaser/_stage2.pdf.extrac
 MOPEN TLRHAHB TDTT CDRT ANOEO NFROA NHSYALHET ORAIT AD ONSAH AE RSUTL GI17-OICV-NTNL-EHNE-YIPN-ILBM
 ```
 
-which translates to TODO
+TODO
 
 
 *Stage 7*
 
 The zip file also contained the following image:
 
-![](writeupfile/teaser/_stage2.pdf.extracted/old_school.jpg)
+![](writeupfiles/teaser/_stage2.pdf.extracted/old_school.jpg)
 
+TODO
 
 *Stage 8*
 
 The zip file also contained the file [teaser.pls](writeupfile/teaser/_stage2.pdf.extracted/teaser.pls)
+
+TODO
 
 **Flag**
 ```
