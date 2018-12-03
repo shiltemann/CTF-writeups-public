@@ -346,11 +346,50 @@ Now we can easily click the button and collect our flag:
 HV18-pFAT-O1Dl-HjVp-jJNE-Zju8
 ```
 
-## Day 04:
+## Day 04: pirating like in the 90ies
+
+*Ahoy, my name is Santa and I want to be a pirate!*
 
 **Challenge**
 
+[Go to the pirates](https://hackvent.hacking-lab.com/Pirates_123/)
+
 **Solution**
+
+It is a website with 12 pirates with a text box beneath them that need to be filled with specific values to decrypt the key
+
+![](writeupfiles/day04-screenshot.png)
+
+```javascript
+function JollyRoger() {
+
+		var elements = document.getElementsByTagName("input")
+		for (var i = 0; i < elements.length; i++) {
+		    if(elements[i].value == "") {
+		        alert('ahoy pirate! \n\nyou want jolly roger? i see empty boxes :-/');
+		        return;
+		    }
+		}
+
+		var a, b;
+		p=document.getElementById('pirate01').value+document.getElementById('pirate02').value+document.getElementById('pirate03').value+
+		document.getElementById('pirate04').value+document.getElementById('pirate05').value+document.getElementById('pirate06').value+
+		document.getElementById('pirate07').value+document.getElementById('pirate08').value+document.getElementById('pirate09').value+
+		document.getElementById('pirate10').value+document.getElementById('pirate11').value+document.getElementById('pirate12').value;
+		s='::)"<.vd]!&a{":r>Qyh 7';
+		f='HV18-';
+		for (i=0; i < s.length;i++) {
+	    	a = s.charCodeAt(i);
+			b = p.substring(i*2, i*2+2);
+			f+=(String.fromCharCode(a ^ b));
+	    }
+	    alert(f);
+	}
+
+```
+
+We do know what certain positions in the flag need to decrypt to (e.g. the dashes), so we can use this to..
+
 
 **Flag**
 ```
