@@ -44,27 +44,23 @@ Title                                         | Category    | Points | Flag
 
 **Solution**
 
-The image contains braille code. We translate it to http://bit.ly/2TJvxHt
+*Stage 1*
 
-This gets us the following image:
+The image contains braille code. We translate it to `http://bit.ly/2TJvxHt`, which leads us the following image:
 
 ![](writeupfiles/teaser/Flag_Stage_1.png)
 
 this QR decodes to `Rushed by ..`
 
-Turns out the bit.ly link actually translated to https://hackvent.hacking-lab.com/T34s3r_MMXVIII/index.php?flag=UI18-GAUa-lXhq-htyV-w2Wr-0yiV
+It turns out the bit.ly link actually translated to `https://hackvent.hacking-lab.com/T34s3r_MMXVIII/index.php?flag=UI18-GAUa-lXhq-htyV-w2Wr-0yiV` but redirected. The `flag` parameter when ROT13'd gives us the first flag: `HV18-TNHn-yKud-uglI-j2Je-0lvI`
 
-and the `flag` parameter when ROT13'd gives us the first flag: `HV18-TNHn-yKud-uglI-j2Je-0lvI`
+When we fill in the correct flag in the url, we get to the next stage: `https://hackvent.hacking-lab.com/T34s3r_MMXVIII/index.php?flag=HV18-TNHn-yKud-uglI-j2Je-0lvI`, which redirects to `https://hackvent.hacking-lab.com/T34s3r_MMXVIII/ZOoxjUSe1OVB7OPoVrsX.pdf`
 
-when we fill in the correct flag in the url, we get to the next stage:
-
-https://hackvent.hacking-lab.com/T34s3r_MMXVIII/index.php?flag=HV18-TNHn-yKud-uglI-j2Je-0lvI
-
-which redirects to https://hackvent.hacking-lab.com/T34s3r_MMXVIII/ZOoxjUSe1OVB7OPoVrsX.pdf
-
-Which is this [pdf file](writeupfiles/teaser/stage2.pdf)
+[pdf file](writeupfiles/teaser/stage2.pdf)
 
 Ok, there is lots here, lets get all the elements of the pdf with http://extractpdf.com
+
+*Stage 2*
 
 We find some Morse code text in the pdf:
 
@@ -77,6 +73,8 @@ HACKvent 2018
 
 this decodes to: `HV18-GORI-ZRSB-UFAE-TS6C-CVTT`, which is our second flag
 
+
+*Stage 3*
 
 We also find some images in the pdf:
 
@@ -95,6 +93,7 @@ we clean it up a bit with GIMP so that we can scan it:
 and this is our 3rd flag: `HV18-p2LK-DNcI-YKw7-T9Ad-mH3v`
 
 
+*Stage 4*
 
 Next, we try binwalk on the pdf:
 
@@ -137,9 +136,12 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 $ binwalk -e stage2.pdf
 ```
 
-Reveals an [encrypted zip file](writeupfiles/teaser/_stage2.pdf.extracted/final.zip)
+Reveals an [encrypted zip file](writeupfiles/teaser/_stage2.pdf.extracted/Final_easy.zip)
 
-and an image:
+
+*Stage 5*
+
+The zip file also contained this QR code image:
 
 ![](writeupfiles/teaser/_stage2.pdf.extracted/QR3C.png)
 
@@ -147,7 +149,11 @@ Which looks suspiciously like a challenge from HACKvent 2015, my writeup [here](
 
 TODO
 
-and a [Santa.txt](writeupfiles/teaser/_stage2.pdf.extracted/Santa.txt) file:
+
+
+*Stage 6*
+
+The zip file also contained a [Santa.txt](writeupfiles/teaser/_stage2.pdf.extracted/Santa.txt) file:
 
 ```
 MOPEN TLRHAHB TDTT CDRT ANOEO NFROA NHSYALHET ORAIT AD ONSAH AE RSUTL GI17-OICV-NTNL-EHNE-YIPN-ILBM
@@ -156,11 +162,29 @@ MOPEN TLRHAHB TDTT CDRT ANOEO NFROA NHSYALHET ORAIT AD ONSAH AE RSUTL GI17-OICV-
 which translates to TODO
 
 
+*Stage 7*
+
+The zip file also contained the following image:
+
+![](writeupfile/teaser/_stage2.pdf.extracted/old_school.jpg)
+
+
+*Stage 8*
+
+The zip file also contained the file [teaser.pls](writeupfile/teaser/_stage2.pdf.extracted/teaser.pls)
+
 **Flag**
 ```
 1: HV18-TNHn-yKud-uglI-j2Je-0lvI
 2: HV18-GORI-ZRSB-UFAE-TS6C-CVTT
 3: HV18-p2LK-DNcI-YKw7-T9Ad-mH3v
+4:
+5:
+6:
+7:
+8:
+9:
+10:
 ```
 
 ## Day 01: Just Another Bar Code
