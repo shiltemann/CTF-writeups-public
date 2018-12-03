@@ -12,7 +12,7 @@ Title                                         | Category    | Points | Flag
 [Teaser     ](#teaser)                        |             |        | `Multiple, see below`
 [December 1 ](#day-01-just-another-bar-code)  | Easy        | 2/1    | `HV18-L3ts-5t4r-7Th3-Phun-G33k`
 [December 2 ](#day-02-me)                     | Easy        | 2/1    | `HL18-7QTH-JZ1K-JKSD-GPEB-GJPU`
-[December 3 ](#day-03-)                       | Easy        | 2/1    | `HV18-`
+[December 3 ](#day-03-catch-me)               | Easy        | 2/1    | `HV18-pFAT-O1Dl-HjVp-jJNE-Zju8`
 [December 4 ](#day-04-)                       | Easy        | 2/1    | `HV18-`
 [December 5 ](#day-05-)                       | Easy        | 2/1    | `HV18-`
 [December 6 ](#day-06-)                       | Easy        | 2/1    | `HV18-`
@@ -266,15 +266,43 @@ HL18-7QTH-JZ1K-JKSD-GPEB-GJPU
 HL18-7QTH-JZ1K-JKSD-GPEB-GJPU
 ```
 
-## Day 03:
+## Day 03: Catch Me
+
+*..if you can*
 
 **Challenge**
 
+To get the flag, just press the button
+
+[Catch me](https://hackvent.hacking-lab.com/C4tchM3_dizzle/)
+
 **Solution**
+
+The link led to a website with a button to click to get the flag
+
+![](writeupfiles/day03-screenshot0.png)
+
+But the button moves away as you approach it with the mouse, and if you try using just the keyboard or a touch screen, you get the following message:
+
+![](writeupfiles/day02-screenshot1.png)
+
+There is some heavily obfuscated javascript on the page, but we cheesed this one a little bit by changing the size of the button in CSS to always fill the screen and make it easy to click
+
+```css
+#button {
+	width: 100% !important;
+	height: 100% !important;
+}
+```
+
+Now we can easily click the button and collect our flag:
+
+![](writeupfiles/day03-screenshot.png)
+
 
 **Flag**
 ```
-HV18-
+HV18-pFAT-O1Dl-HjVp-jJNE-Zju8
 ```
 
 ## Day 04:
