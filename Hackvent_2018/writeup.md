@@ -534,6 +534,11 @@ is called `year`, it looks like we need to enter 4 digits in each box.
 
 some of the faces are a mix of two other faces, could that be a hint? same lower face = same lower half of the year?
 
+do we just associate a year with each place somehow?
+  - Nebraska 1990? https://en.wikipedia.org/wiki/Pirates_of_the_Plain
+  - Then Montserrat should start with 19 as well? 1960, the nylon pirates? https://en.wikipedia.org/wiki/Nicholas_Monsarrat ..seems like a stretch?
+  -
+
 **Flag**
 ```
 HV18-
