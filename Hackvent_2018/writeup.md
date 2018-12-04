@@ -532,14 +532,21 @@ We do know what certain positions in the flag need to decrypt to (e.g. the dashe
 `s` is 22 characthers long, and since `p` expects a length up to `len(s)*2+2`, combined with the fact that the HTML for the names (Jamaica etc)
 is called `year`, it looks like we need to enter 4 digits in each box.
 
-some of the faces are a mix of two other faces, could that be a hint? same lower face = same lower half of the year?
+After some DuckDuckGo'ing, we find out this is a reference to a 90s game called [The Secret of Monkey Island](https://en.wikipedia.org/wiki/The_Secret_of_Monkey_Island),
+with which a cardboard wheel, named "Dial-a-Pirate", was provided, as a form of copy-protection. The player had to match the pirate shown on-screen with that of the wheel.
 
-do we just associate a year with each place somehow?
-  - Nebraska 1990? https://en.wikipedia.org/wiki/Pirates_of_the_Plain
-  - Then Montserrat should start with 19 as well? 1960, the nylon pirates? https://en.wikipedia.org/wiki/Nicholas_Monsarrat ..seems like a stretch?
-  -
+![](writeupfiles/day04-dialapirate-animated.gif)
 
-https://en.wikipedia.org/wiki/List_of_pirates
+Instrunctions from game manual:
+
+*Once you've started a program. a screen will appear displaying pirate's face (actually a combination of two faces). You will be prompted to enter a date that was significant in the pirate's life at a given geographical location. Use your Dial-A-Pirate wheel to match up the top and bottom halves of the pirate face you see on the screen. Then, locate the window on the wheel that matches the geographical location mentiones on the screen. Using the keyboard, type the date you see in the window.
+Don't lose your Dial-A-Pirate wheel! Without it, you won't be able to play the game. If you lose the Wheel, you may purchase another from Lucasfilm Games.*
+
+There is an working version online [here](http://www.oldgames.sk/codewheel/secret-of-monkey-island-dial-a-pirate)
+
+So we simply spin the wheel to match the faces in the challenge, and note the year of the requested place name:
+
+
 
 
 **Flag**
