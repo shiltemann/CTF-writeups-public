@@ -13,7 +13,7 @@ Title                                             | Category    | Points | Flag
 [December 1 ](#day-01-just-another-bar-code)      | Easy        | 2/1    | `HV18-L3ts-5t4r-7Th3-Phun-G33k`
 [December 2 ](#day-02-me)                         | Easy        | 2/1    | `HL18-7QTH-JZ1K-JKSD-GPEB-GJPU`
 [December 3 ](#day-03-catch-me)                   | Easy        | 2/1    | `HV18-pFAT-O1Dl-HjVp-jJNE-Zju8`
-[December 4 ](#day-04-pirating-like-in-the-90ies) | Easy        | 2/1    | `HV18-`
+[December 4 ](#day-04-pirating-like-in-the-90ies) | Easy        | 2/1    | `HV18-5o9x-4geL-7hkJ-wc4A-xp8F`
 [December 5 ](#day-05-)                           | Easy        | 2/1    | `HV18-`
 [December 6 ](#day-06-)                           | Easy        | 2/1    | `HV18-`
 [December 7 ](#day-07-)                           | Easy        | 2/1    | `HV18-`
@@ -546,12 +546,12 @@ There is an working version online [here](http://www.oldgames.sk/codewheel/secre
 
 So we simply spin the wheel to match the faces in the challenge, and note the year of the requested place name:
 
-
+![](writeupfiles/day04-solution.png)
 
 
 **Flag**
 ```
-HV18-
+HV18-5o9x-4geL-7hkJ-wc4A-xp8F
 ```
 
 ## Day 05:
