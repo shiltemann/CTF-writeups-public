@@ -466,6 +466,39 @@ It is a website with 12 pirates with a text box beneath them that need to be fil
 
 ![](writeupfiles/day04-screenshot.png)
 
+```html
+[..]
+
+<div class="divTableRow">
+  <div class="divTableCell" align="center">
+    <img src="pirate01.jpg" width="151" height="151">
+	<div class="year">Nebraska</div>
+	<div class="number"><br><input type="text" id="pirate01" size="2"></div>
+  </div>
+  <div class="divTableCell">
+	<img src="pirate02.jpg" width="151" height="151">
+	<div class="year">Tortuga</div>
+	<div class="number"><br><input type="text" id="pirate02" size="2"></div>
+  </div>
+  <div class="divTableCell">
+	<img src="pirate03.jpg" width="151" height="151">
+	<div class="year">Antigua</div>
+  		<div class="number"><br><input type="text" id="pirate03" size="2"></div>
+  </div>
+    <div class="divTableCell">
+	<img src="pirate04.jpg" width="151" height="151">
+	<div class="year">Jamaica</div>
+	<div class="number"><br><input type="text" id="pirate04" size="2"></div>
+	</div>
+</div>
+
+[..]
+
+```
+
+and a script to produce the flag:
+
+
 ```javascript
 function JollyRoger() {
 
@@ -496,6 +529,10 @@ function JollyRoger() {
 
 We do know what certain positions in the flag need to decrypt to (e.g. the dashes), so we can use this to..
 
+`s` is 22 characthers long, and since `p` expects a length up to `len(s)*2+2`, combined with the fact that the HTML for the names (Jamaica etc)
+is called `year`, it looks like we need to enter 4 digits in each box.
+
+some of the faces are a mix of two other faces, could that be a hint? same lower face = same lower half of the year?
 
 **Flag**
 ```
