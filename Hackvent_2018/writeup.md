@@ -539,6 +539,9 @@ do we just associate a year with each place somehow?
   - Then Montserrat should start with 19 as well? 1960, the nylon pirates? https://en.wikipedia.org/wiki/Nicholas_Monsarrat ..seems like a stretch?
   -
 
+https://en.wikipedia.org/wiki/List_of_pirates
+
+
 **Flag**
 ```
 HV18-
