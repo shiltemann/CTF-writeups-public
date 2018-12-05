@@ -182,7 +182,111 @@ The zip file also contained the following image:
 
 ![](writeupfiles/teaser/_stage2.pdf.extracted/old_school.jpg)
 
-TODO
+This appears to be an IBM-029 punch card by the faint lettering on the right.
+Fortunately [wikipedia](https://en.wikipedia.org/wiki/Keypunch#IBM_029_Card_Punch)
+has a full translation of that format:
+
+![](writeupfiles/Blue-punch-card-front-horiz_top-char-contrast-stretched.png)
+
+I'm arbitrarily going to number the colums to be -2, -1, 0 (the row of 0s), 1 .. 9 because that makes sense to me?
+
+
+Column | Values
+---    | ---
+1      | 6, -1
+2      | 2
+3      | 9 0
+4      | -1
+5      | -2 8
+6      | 4
+7      | 7 -1
+8      | 1 -2
+9      | 3 -1
+10     | 5
+11     | 2
+12     | 90
+13     | 4
+14     | -1
+15     | 3
+16     | 6 -2
+17     | 1
+18     | 9
+19     | -1
+20     | -2 8
+21     | 0 5
+22     | 1
+23     | 8
+24     | -1
+25     | 0
+26     | 3 -1
+27     | 4 -2
+28     | -1 3 8
+29     | -1
+30     | 0 2
+31     | -2 3
+32     | -2 8
+33     | 0
+34     | -1
+35     | 0
+36     | -1 3
+37     | 1
+38     | 0 2
+39     | -1
+40     | 4
+41     | 0 6
+42     | 3
+43     | 02
+44     | -1
+45     | 0
+46     | -1 4
+47     | 3
+48     | 8 2 -1
+49     | -1
+50     | 3
+51     | 1
+52     | 2
+53     | 4 6
+54     | -1
+55     | -2 8
+56     | 9 0
+57     | 3
+58     | 3 -2
+59     | -1
+60     | 5
+61     | 2 4
+62     | 1
+63     | -1 2
+64     | -1
+65     | -2 3
+66     | 3
+67     | -2 0 2 8
+68     | _
+69     | -1
+70     | 0 5
+71     | 0 9
+72     | 3
+73     | 0 6
+74     | -1
+75     | -2 3
+76     | 0 6
+77     | 0 2
+78     | -2 3
+79     | -1
+80     | 1
+
+
+We then use the translation matrix we found to write a [small python script](writeupfiles/ibm-029-decode.py)
+Which will output the following when run:
+
+```
+O2Z-H4PAL52¿4-3F19-HV18-0LD$-SCH0-0L1S-4W3S-0M3!-312¿-HZ3C-5¿1K-C3¿¿-VZ3W-CWSC-1¿
+```
+
+(¿ used when couldn't identify a character correctly, maybe transcription mistakes by me.)
+But the flag is clearly visible in the center: `HV18-0LD$-SCH0-0L1S-4W3S-0M3!`
+
+
+
 
 *Stage 8*
 
@@ -198,7 +302,7 @@ TODO
 4:
 5:
 6:
-7:
+7: HV18-0LD$-SCH0-0L1S-4W3S-0M3!
 8:
 9:
 10:
