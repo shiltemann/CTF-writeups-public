@@ -15,7 +15,7 @@ Title                                             | Category    | Points | Flag
 [December 3 ](#day-03-catch-me)                   | Easy        | 2/1    | `HV18-pFAT-O1Dl-HjVp-jJNE-Zju8`
 [December 4 ](#day-04-pirating-like-in-the-90ies) | Easy        | 2/1    | `HV18-5o9x-4geL-7hkJ-wc4A-xp8F`
 [December 5 ](#day-05-osint-1)                    | Easy        | 2/1    | `HV18-0Sin-tI5S-R34l-lyC0-oo0L`
-[December 6 ](#day-06-)                           | Easy        | 2/1    | `HV18-`
+[December 6 ](#day-06-mondrian)                   | Easy        | 2/1    | `HV18-M4ke-S0m3-R3Al-N1c3-artZ`
 [December 7 ](#day-07-)                           | Easy        | 2/1    | `HV18-`
 [December 8 ](#day-08-)                           | Medium      | 3/2    | `HV18-`
 [December 9 ](#day-09-)                           | Medium      | 3/2    | `HV18-`
@@ -692,15 +692,37 @@ when we visit `osintiscoolisntit.hackvent.org` we are greeted with the flag:
 HV18-0Sin-tI5S-R34l-lyC0-oo0L
 ```
 
-## Day 06:
+## Day 06: Mondrian
 
 **Challenge**
 
+Piet'er just opened his gallery to present his pieces to you, they'd make for a great present :)
+
+[Open Gallery](https://hackvent.hacking-lab.com/Mondrian-Gallery/)
+
+
 **Solution**
+
+The page contained 6 images of abstract art
+
+![](writeupfiles/day06-gallery.png)
+
+[image1](writeupfiles/day06-house.png)
+[image2](writeupfiles/day06-2-trees.png)
+[image3](writeupfiles/day06-3-lake.png)
+[image4](writeupfiles/day06-4-sky.png)
+[image5](writeupfiles/day06-5-sheep.png)
+[image6](writeupfiles/day06-6-snake.png)
+
+We recognize this as esoteric programming language [Piet](http://www.dangermouse.net/esoteric/piet.html) and use the [this interpreter](https://www.bertnase.de/npiet/npiet-execute.php) to translate the images to a flag. Each image contanes 4 characters of the flag.
+
+
+![](writeupfiles/day06-results.png)
+
 
 **Flag**
 ```
-HV18-
+HV18-M4ke-S0m3-R3Al-N1c3-artZ
 ```
 
 ## Day 07:
