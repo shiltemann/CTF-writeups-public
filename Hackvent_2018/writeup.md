@@ -14,7 +14,7 @@ Title                                             | Category    | Points | Flag
 [December 2 ](#day-02-me)                         | Easy        | 2/1    | `HL18-7QTH-JZ1K-JKSD-GPEB-GJPU`
 [December 3 ](#day-03-catch-me)                   | Easy        | 2/1    | `HV18-pFAT-O1Dl-HjVp-jJNE-Zju8`
 [December 4 ](#day-04-pirating-like-in-the-90ies) | Easy        | 2/1    | `HV18-5o9x-4geL-7hkJ-wc4A-xp8F`
-[December 5 ](#day-05-)                           | Easy        | 2/1    | `HV18-`
+[December 5 ](#day-05-osint-1)                    | Easy        | 2/1    | `HV18-0Sin-tI5S-R34l-lyC0-oo0L`
 [December 6 ](#day-06-)                           | Easy        | 2/1    | `HV18-`
 [December 7 ](#day-07-)                           | Easy        | 2/1    | `HV18-`
 [December 8 ](#day-08-)                           | Medium      | 3/2    | `HV18-`
@@ -658,15 +658,38 @@ So we simply spin the wheel to match the faces in the challenge, and note the ye
 HV18-5o9x-4geL-7hkJ-wc4A-xp8F
 ```
 
-## Day 05:
+## Day 05: OSINT 1
+
+*It's all about transparency*
 
 **Challenge**
 
+Santa has hidden your daily present on his server, somewhere on port 443.
+
+Start on https://www.hackvent.org and follow the OSINT traces.
+
+
 **Solution**
+
+We go to the site and see this:
+
+![](writeupfiles/day05-site.png)
+
+Googling leads us to [certificate transparancy]()
+
+And this site where we can find the other vhost referred to in the challenge:
+
+https://transparencyreport.google.com/https/certificates
+
+![](writeupfiles/day05-screenshot.png)
+
+when we visit `osintiscoolisntit.hackvent.org` we are greeted with the flag:
+
+![](writeupfiles/day05-flag.jpg)
 
 **Flag**
 ```
-HV18-
+HV18-0Sin-tI5S-R34l-lyC0-oo0L
 ```
 
 ## Day 06:
