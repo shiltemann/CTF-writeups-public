@@ -16,7 +16,7 @@ Title                                             | Category    | Points | Flag
 [December 4 ](#day-04-pirating-like-in-the-90ies) | Easy        | 2/1    | `HV18-5o9x-4geL-7hkJ-wc4A-xp8F`
 [December 5 ](#day-05-osint-1)                    | Easy        | 2/1    | `HV18-0Sin-tI5S-R34l-lyC0-oo0L`
 [December 6 ](#day-06-mondrian)                   | Easy        | 2/1    | `HV18-M4ke-S0m3-R3Al-N1c3-artZ`
-[December 7 ](#day-07-)                           | Easy        | 2/1    | `HV18-`
+[December 7 ](#day-07-flappy.pl)                  | Easy        | 2/1    | `HV18-bMnF-racH-XdMC-xSJJ-I2fL`
 [December 8 ](#day-08-)                           | Medium      | 3/2    | `HV18-`
 [December 9 ](#day-09-)                           | Medium      | 3/2    | `HV18-`
 [December 10](#day-10-)                           | Medium      | 3/2    | `HV18-`
@@ -725,10 +725,10 @@ We recognize this as esoteric programming language [Piet](http://www.dangermouse
 HV18-M4ke-S0m3-R3Al-N1c3-artZ
 ```
 
-## Day 07:
+## Day 07: flappy.pl
 
 **Challenge**
-
+Time for a little game. It's hardy obfuscated, i promise ... ;-)
 
 **Solution**
 Saving the perl script and running, it turns out to be a copy of flappy bird,
