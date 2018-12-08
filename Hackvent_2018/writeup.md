@@ -811,9 +811,9 @@ In cyberstan there is a big tradition to backe advents snails during advent.
 
 **Solution**
 
-This looks like it is a barcode, we tried adding the markers for a [data matrix](), but this leads nowhere. Given that it is a 25x25 image, it is likely it is a QR code but somehow encrypted or scrambled.
+This looks like it is a barcode, we tried adding the markers for a [data matrix](https://en.wikipedia.org/wiki/Data_Matrix), but this leads nowhere. Given that it is a 25x25 image, it is likely it is a QR code but somehow encrypted or scrambled.
 
-After a lot of searching (including finding out about [this amusing service]()), we realize this is a QR code, but in the shape of a spiral (like the shell of a snail)
+After a lot of searching (including finding out about [this amusing service](http://realsnailmail.net)), we realize this is a QR code, but in the shape of a spiral (like the shell of a snail)
 
 ![](writeupfiles/day08-snail-spiral.jpg)
 ![](writeupfiles/day08-qrcode-spiral.jpg)
