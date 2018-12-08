@@ -17,7 +17,7 @@ Title                                             | Category    | Points | Flag
 [December 5 ](#day-05-osint-1)                    | Easy        | 2/1    | `HV18-0Sin-tI5S-R34l-lyC0-oo0L`
 [December 6 ](#day-06-mondrian)                   | Easy        | 2/1    | `HV18-M4ke-S0m3-R3Al-N1c3-artZ`
 [December 7 ](#day-07-flappy.pl)                  | Easy        | 2/1    | `HV18-bMnF-racH-XdMC-xSJJ-I2fL`
-[December 8 ](#day-08-)                           | Medium      | 3/2    | `HV18-`
+[December 8 ](#day-08-advent-snail)               | Medium      | 3/2    | `HV18-$$nn-@@11-LLr0-B1ne`
 [December 9 ](#day-09-)                           | Medium      | 3/2    | `HV18-`
 [December 10](#day-10-)                           | Medium      | 3/2    | `HV18-`
 [December 11](#day-11-)                           | Medium      | 3/2    | `HV18-`
@@ -801,15 +801,35 @@ And we comment out the checks for if we hit a barrier or a boundary that will 'k
 HV18-bMnF-racH-XdMC-xSJJ-I2fL
 ```
 
-## Day 08:
+## Day 08: Advent Snail
 
 **Challenge**
 
+In cyberstan there is a big tradition to backe advents snails during advent.
+
+![](writeupfiles/day08-4dv3ntSn4il.png)
+
 **Solution**
+
+This looks like it is a barcode, we tried adding the markers for a [data matrix](), but this leads nowhere. Given that it is a 25x25 image, it is likely it is a QR code but somehow encrypted or scrambled.
+
+After a lot of searching (including finding out about [this amusing service]()), we realize this is a QR code, but in the shape of a spiral (like the shell of a snail)
+
+![](writeupfiles/day08-snail-spiral.jpg)
+![](writeupfiles/day08-qrcode-spiral.jpg)
+
+
+```python
+
+```
+
+Which outputs the following QR code:
+
+![](writeupfiles/day08-snail-out.png)
 
 **Flag**
 ```
-HV18-
+HV18-$$nn-@@11-LLr0-B1ne
 ```
 
 ## Day 09:
