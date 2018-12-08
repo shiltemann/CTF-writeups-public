@@ -813,9 +813,12 @@ In cyberstan there is a big tradition to backe advents snails during advent.
 
 This looks like it is a barcode, we tried adding the markers for a [data matrix](https://en.wikipedia.org/wiki/Data_Matrix), but this leads nowhere. Given that it is a 25x25 image, it is likely it is a QR code but somehow encrypted or scrambled.
 
-After a lot of searching (including finding out about [this amusing service](http://realsnailmail.net)), we realize this is a QR code, but in the shape of a spiral (like the shell of a snail)
+After a lot of searching (including finding out about [this amusing service](http://realsnailmail.net)), we realize this is a QR code, but in the shape of a spiral (like the shell of a snail).
 
 ![](writeupfiles/day08-snail-spiral.jpg)
+
+There would be various directions to start from and we could spiral either clockwise or counterclockwise, but reasoning from the central pixel, and knowing we would have to start with 7 black pixels for the QR code corner marker, only one orientation remains:
+
 ![](writeupfiles/day08-qrcode-spiral.jpg)
 
 We write the following script to do the transformation:
