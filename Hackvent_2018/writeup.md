@@ -309,6 +309,79 @@ But the flag is clearly visible in the center: `HV18-0LD$-SCH0-0L1S-4W3S-0M3!`
 
 The zip file also contained the file [teaser.pls](writeupfile/teaser/_stage2.pdf.extracted/teaser.pls)
 
+```
+CREATE OR REPLACE FUNCTION checkHV18teaser wrapped
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+37f 22f
+9bGsDUl+WXOiRvCg6f+CmODMp3UwgwIJ+txqfC9Dgz+VaPwOTWaoKj5jW2QUCQapzabE52vy
+50h+W7xBf1NE2/Fa93pBwUJtOxLvz1WIU75VaGjqH5M6oL4/aHovVUteU3Arw0eLvVRDEvbd
+0mLqbyd4kEtMnI76J3vuLaHC1mkYuwEN6bdmd3GQPBtHV4fWHr5OM5B81yX+kw0560LKdDx8
+mVHJvc7y7vShjsCpFgEUd6sfN3ZbOkjjbg+AJSGuIjZzvT7vkQwM5wcQL73C6+BCiaaEG2ja
+r+3zqCSk6QzcKvIwuBwXf9UHGL4YS47JO3EOmIPOy8VQYfY1M9g6UeieqOftVm/Pr8smR11r
+UWM8kk1WTmMvY13s1Klpr7tFnzwjmnSnTP9Exz/dV5+cU3mlgyjqkAIsWnGqDGKMfVahOHSc
+Bzalmd+HDxxBF39ymrsGHfBUv0gAPtnYVCVWiG0Q9ij5DbBffRrsx4uOYuAqJ4KwT5vNpKon
+MSMAM3ZsIFVQgfnY/sfkB+jfGEuldGYiui7zvIMSHVDfPEE=
+
+/
+```
+
+These are wrapped oracle functions and we can unwrap it using https://www.codecrete.net/UnwrapIt/
+
+
+```sql
+FUNCTION checkHV18teaser(FLAG VARCHAR2) RETURN NUMBER IS
+A VARCHAR2(4);
+B NUMBER(10);
+C NUMBER(10);
+H VARCHAR(40);
+BEGIN
+A := SUBSTR(FLAG,1,4);
+IF NOT (A = 'HV18') THEN
+  RETURN 0;
+END IF;
+
+B := TO_NUMBER(SUBSTR(FLAG,6,2));
+C := TO_NUMBER(SUBSTR(FLAG,8,2));
+IF NOT (((B * C) = 6497) AND (B < C)) THEN
+  RETURN 0;
+END IF;
+
+A := SUBSTR(FLAG,11,4);
+SELECT STANDARD_HASH(A, 'MD5') INTO H FROM DUAL;
+IF NOT (H = 'CF945B5A36D1D3E68FFF78829CC8DBF6') THEN
+  RETURN 0;
+END IF;
+
+IF NOT ((UTL_RAW.CAST_TO_VARCHAR2(UTL_RAW.BIT_XOR (UTL_RAW.CAST_TO_RAW(SUBSTR(FLAG,16,4)), UTL_RAW.CAST_TO_RAW(SUBSTR(FLAG,21,4)))) = 'zvru') AND (TO_NUMBER(SUBSTR(FLAG,21,4)) = SQRT(8814961))) THEN
+  RETURN 0;
+END IF;
+
+IF NOT ( UTL_RAW.CAST_TO_VARCHAR2(UTL_ENCODE.BASE64_ENCODE(UTL_RAW.CAST_TO_RAW(SUBSTR(FLAG,26,4)))) = 'RjBtMA==') THEN
+  RETURN 0;
+END IF;
+
+DBMS_OUTPUT.PUT_LINE(A);
+RETURN 1;
+END;
+```
+
 TODO
 
 **Flag**
@@ -424,7 +497,7 @@ HL18-7QTH-JZ1K-JKSD-GPEB-GJPU
 (The `HL18` at the start seems to just have been a mistake, and the flag is accepted like this)
 
 **Flag**
-```
+```C
 HL18-7QTH-JZ1K-JKSD-GPEB-GJPU
 ```
 
