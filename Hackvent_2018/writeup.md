@@ -18,7 +18,7 @@ Title                                             | Category    | Points | Flag
 [December 6 ](#day-06-mondrian)                   | Easy        | 2/1    | `HV18-M4ke-S0m3-R3Al-N1c3-artZ`
 [December 7 ](#day-07-flappy.pl)                  | Easy        | 2/1    | `HV18-bMnF-racH-XdMC-xSJJ-I2fL`
 [December 8 ](#day-08-advent-snail)               | Medium      | 3/2    | `HV18-$$nn-@@11-LLr0-B1ne`
-[December 9 ](#day-09-)                           | Medium      | 3/2    | `HV18-`
+[December 9 ](#day-09-fake-xmass-balls)           | Medium      | 3/2    | `HV18-PpTR-Qri5-3nOI-n51a-42gJ`
 [December 10](#day-10-)                           | Medium      | 3/2    | `HV18-`
 [December 11](#day-11-)                           | Medium      | 3/2    | `HV18-`
 [December 12](#day-12-)                           | Medium      | 3/2    | `HV18-`
@@ -900,15 +900,33 @@ Which outputs the following QR code:
 HV18-$$nn-@@11-LLr0-B1ne
 ```
 
-## Day 09:
+## Day 09: fake xmass balls
 
 **Challenge**
+A rogue manufacturer is flooding the market with counterfeit yellow xmas balls.They are popping up like everywhere!
+
+Can you tell them apart from the real ones? Perhaps there is some useful information hidden in the fakes...
+
+![](writeupfiles/medium-64.png)
 
 **Solution**
 
+We're given only that ball and the one that's in the header image:
+
+![](writeupfiles/medium-64.png)![](writeupfiles/medium_64.png)
+
+Running `compare` on the two we see this useful image:
+
+![](writeupfiles/medium-compare-small.png)
+
+Scaling the input images up before re-comparing and inverting the colours to
+make the code readable:
+
+![](writeupfiles/medium-compare-big.png)
+
 **Flag**
 ```
-HV18-
+HV18-PpTR-Qri5-3nOI-n51a-42gJ
 ```
 
 ## Day 10:
