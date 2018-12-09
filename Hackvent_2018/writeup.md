@@ -382,7 +382,60 @@ RETURN 1;
 END;
 ```
 
-TODO
+so this is the function that validates the flag, we reverse engineer it to find the flag. Next is the code again, with some comments:
+
+
+```sql
+FUNCTION checkHV18teaser(FLAG VARCHAR2) RETURN NUMBER IS
+A VARCHAR2(4);
+B NUMBER(10);
+C NUMBER(10);
+H VARCHAR(40);
+BEGIN
+
+/* flag starts with "HV18", no surprises there */
+A := SUBSTR(FLAG,1,4);
+IF NOT (A = 'HV18') THEN
+  RETURN 0;
+END IF;
+
+/* "7389"  (73 * 89 = 6497) */
+B := TO_NUMBER(SUBSTR(FLAG,6,2));
+C := TO_NUMBER(SUBSTR(FLAG,8,2));
+IF NOT (((B * C) = 6497) AND (B < C)) THEN
+  RETURN 0;
+END IF;
+
+
+/* "H0b0" has the required md5 hash (found via hashkiller.co.uk) */
+A := SUBSTR(FLAG,11,4);
+SELECT STANDARD_HASH(A, 'MD5') INTO H FROM DUAL;
+IF NOT (H = 'CF945B5A36D1D3E68FFF78829CC8DBF6') THEN
+  RETURN 0;
+END IF;
+
+/* next two segements when XOR'ed must make 'zvru', and
+   second of the two segments is 2969 (square root of 8814961)
+   "HODL-2969" */
+IF NOT ((UTL_RAW.CAST_TO_VARCHAR2(UTL_RAW.BIT_XOR (UTL_RAW.CAST_TO_RAW(SUBSTR(FLAG,16,4)), UTL_RAW.CAST_TO_RAW(SUBSTR(FLAG,21,4)))) = 'zvru') AND (TO_NUMBER(SUBSTR(FLAG,21,4)) = SQRT(8814961))) THEN
+  RETURN 0;
+END IF;
+
+/* "F0m0" (last segment must match the given base64 string) */
+IF NOT ( UTL_RAW.CAST_TO_VARCHAR2(UTL_ENCODE.BASE64_ENCODE(UTL_RAW.CAST_TO_RAW(SUBSTR(FLAG,26,4)))) = 'RjBtMA==') THEN
+  RETURN 0;
+END IF;
+
+DBMS_OUTPUT.PUT_LINE(A);
+RETURN 1;
+END;
+```
+
+
+```
+HV18-7389-H0b0-HODL-2969-F0m0
+```
+
 
 **Flag**
 ```
@@ -393,7 +446,7 @@ TODO
 5: HV18-3I5a-Rnrl-s28r-SRHj-Lhzx  [ball -7]
 6:
 7: HV18-0LD$-SCH0-0L1S-4W3S-0M3!
-8:
+8: HV18-7389-H0b0-HODL-2969-F0m0  [ball -5]
 9:
 10:
 ```
