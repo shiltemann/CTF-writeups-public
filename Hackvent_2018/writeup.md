@@ -154,10 +154,19 @@ Extracting these to their component channels:
 ![](writeupfiles/QR3C_g.png)
 ![](writeupfiles/QR3C_b.png)
 
+These won't scan on their own, because they are missing timing and masking areas, but a lot of the information is there. We use [QRazyBox](https://merricx.github.io/qrazybox/) to restore these missing pieces and are able to find our flag:
 
+```
+red:   HV18-3I5a-
+green: Rnrl-s28r-
+blue:  SRHj-Lhzx
+```
 
-TODO
+So our complete flag is:
 
+```
+HV18-3I5a-Rnrl-s28r-SRHj-Lhzx
+```
 
 
 *Stage 6*
@@ -308,7 +317,7 @@ TODO
 2: HV18-GORI-ZRSB-UFAE-TS6C-CVTT
 3: HV18-p2LK-DNcI-YKw7-T9Ad-mH3v
 4:
-5:
+5: HV18-3I5a-Rnrl-s28r-SRHj-Lhzx  [ball -7]
 6:
 7: HV18-0LD$-SCH0-0L1S-4W3S-0M3!
 8:
