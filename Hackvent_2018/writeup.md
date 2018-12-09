@@ -148,6 +148,14 @@ The zip file also contained this QR code image:
 
 Which looks suspiciously like a challenge from HACKvent 2015, my writeup [here](https://github.com/shiltemann/CTF-writeups-galaxians/tree/master/Hackvent_2015#dec-17-santas-quick-response)
 
+Extracting these to their component channels:
+
+![](writeupfiles/QR3C_r.png)
+![](writeupfiles/QR3C_g.png)
+![](writeupfiles/QR3C_b.png)
+
+
+
 TODO
 
 
