@@ -936,10 +936,10 @@ Running `compare` on the two we see this useful image:
 
 ![](writeupfiles/medium-compare-small.png)
 
-Scaling the input images up before re-comparing and inverting the colours to
-make the code readable:
+Scaling the input images up before re-comparing and inverting the colours and adding a border to make the code readable:
 
 ![](writeupfiles/medium-compare-big.png)
+![](writeupfiles/day09-qrcode.png)
 
 **Flag**
 ```
