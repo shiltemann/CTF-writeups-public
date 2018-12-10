@@ -1253,7 +1253,7 @@ JSON Error (data was "{
 
 **Flag**
 ```
-HV18-
+HV18-YtH3-S4nD-bx5A-Nt4G
 ```
 
 ## Day 11:
