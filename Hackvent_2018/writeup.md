@@ -19,7 +19,7 @@ Title                                             | Category    | Points | Flag
 [December 7 ](#day-07-flappy.pl)                  | Easy        | 2/1    | `HV18-bMnF-racH-XdMC-xSJJ-I2fL`
 [December 8 ](#day-08-advent-snail)               | Medium      | 3/2    | `HV18-$$nn-@@11-LLr0-B1ne`
 [December 9 ](#day-09-fake-xmass-balls)           | Medium      | 3/2    | `HV18-PpTR-Qri5-3nOI-n51a-42gJ`
-[December 10](#day-10-)                           | Medium      | 3/2    | `HV18-`
+[December 10](#day-10-run-node-run)               | Medium      | 3/2    | `HV18-`
 [December 11](#day-11-)                           | Medium      | 3/2    | `HV18-`
 [December 12](#day-12-)                           | Medium      | 3/2    | `HV18-`
 [December 13](#day-13-)                           | Medium      | 3/2    | `HV18-`
@@ -1072,11 +1072,125 @@ Scaling the input images up before re-comparing and inverting the colours and ad
 HV18-PpTR-Qri5-3nOI-n51a-42gJ
 ```
 
-## Day 10:
+## Day 10: >_ Run, Node, Run
 
 **Challenge**
 
+Santa has practiced his nodejs skills and wants his little elves to practice it as well, so the kids can get the web- app they wish for.
+
+He made a little practice- sandbox for his elves. Can you break out?
+
+Location: http://whale.hacking-lab.com:3000/
+
 **Solution**
+
+We can enter some code in a webform and the output is returned to us
+
+![](writeupfiles/day10-screenshot.png)
+
+We are also given the serverside code:
+
+```js
+const {flag, port} = require("./config.json");
+const sandbox = require("sandbox");
+const app = require("express")();
+
+app.use(require('body-parser').urlencoded({ extended: false }));
+
+app.get("/", (req, res) => res.sendFile(__dirname+"/index.html"));
+app.get("/code", (req, res) => res.sendFile(__filename));
+
+app.post("/run", (req, res) => {
+
+	if (!req.body.run) {
+		res.json({success: false, result: "No code provided"});
+		return;
+	}
+
+	let boiler = "const flag_" + require("randomstring").generate(64) + "=\"" + flag + "\";\n";
+
+	new sandbox().run(boiler + req.body.run, (out) => res.json({success: true, result: out.result}));
+
+});
+
+app.listen(port);
+```
+
+So the value we want is in a variable with a random name `flag_<64randomchars>`. So we either need to get it to spit out all variable names, or break out of the sandbox and print `boiler`, hmmm
+
+Some inputs and outputs that might help:
+
+```
+>> eval(6+6)
+12
+
+>> Object.keys(this)
+[ 'print', 'console', 'process', 'postMessage' ]
+
+>> Object.getOwnPropertyNames(this)
+[ 'print',
+'console',
+'process',
+'postMessage',
+'Object',
+'Function',
+'Array',
+'Number',
+'parseFloat',
+'parseInt',
+'Infinity',
+'NaN',
+'undefined',
+'Boolean',
+'String',
+'Symbol',
+'Date',
+'Promise',
+'RegExp',
+'Error',
+'EvalError',
+'RangeError',
+'ReferenceError',
+'SyntaxError',
+'TypeError',
+'URIError',
+'JSON',
+'Math',
+'Intl',
+'ArrayBuffer',
+'Uint8Array',
+'Int8Array',
+'Uint16Array',
+'Int16Array',
+'Uint32Array',
+'Int32Array',
+'Float32Array',
+'Float64Array',
+'Uint8ClampedArray',
+'BigUint64Array',
+'BigInt64Array',
+'DataView',
+'Map',
+'Set',
+'WeakMap',
+'WeakSet',
+'Proxy',
+'Reflect',
+'decodeURI',
+'decodeURIComponent',
+'encodeURI',
+'encodeURIComponent',
+'escape',
+'unescape',
+'eval',
+'isFinite',
+'isNaN',
+'SharedArrayBuffer',
+'Atomics',
+'BigInt',
+'WebAssembly' ]
+```
+
 
 **Flag**
 ```
