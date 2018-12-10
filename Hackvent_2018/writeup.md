@@ -19,7 +19,7 @@ Title                                             | Category    | Points | Flag
 [December 7 ](#day-07-flappy.pl)                  | Easy        | 2/1    | `HV18-bMnF-racH-XdMC-xSJJ-I2fL`
 [December 8 ](#day-08-advent-snail)               | Medium      | 3/2    | `HV18-$$nn-@@11-LLr0-B1ne`
 [December 9 ](#day-09-fake-xmass-balls)           | Medium      | 3/2    | `HV18-PpTR-Qri5-3nOI-n51a-42gJ`
-[December 10](#day-10-run-node-run)               | Medium      | 3/2    | `HV18-YtH3-S4nD-bx5A-Nt4G`
+[December 10](#day-10-_-run-node-run)             | Medium      | 3/2    | `HV18-YtH3-S4nD-bx5A-Nt4G`
 [December 11](#day-11-)                           | Medium      | 3/2    | `HV18-`
 [December 12](#day-12-)                           | Medium      | 3/2    | `HV18-`
 [December 13](#day-13-)                           | Medium      | 3/2    | `HV18-`
