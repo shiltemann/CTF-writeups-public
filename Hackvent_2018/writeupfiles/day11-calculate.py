@@ -13,10 +13,9 @@ b=0x7BBE3A50F28B2BA511A860A0A32AD71D4B5B93A8AE295E83350E68B57E5
 
 a = gmpy2.divm(c,b,p)
 
-found = False
-while not found:
+while True:
     pt = int_to_text(a)
     if pt.startswith('HV18'):
         print(pt)
-        found = True
+        break
     a += p
