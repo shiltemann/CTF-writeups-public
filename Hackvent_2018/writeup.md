@@ -21,8 +21,8 @@ Title                                             | Category    | Points | Flag
 [December 9 ](#day-09-fake-xmass-balls)           | Medium      | 3/2    | `HV18-PpTR-Qri5-3nOI-n51a-42gJ`
 [December 10](#day-10-_-run-node-run)             | Medium      | 3/2    | `HV18-YtH3-S4nD-bx5A-Nt4G`
 [December 11](#day-11-crypt-o-math-30)            | Medium      | 3/2    | `HV18-xLvY-TeNT-YgEh-wBuL-bFfz`
-[December 12](#day-12-)                           | Medium      | 3/2    | `HV18-`
-[December 13](#day-13-)                           | Medium      | 3/2    | `HV18-`
+[December 12](#day-12-smartwishlist)              | Medium      | 3/2    | `HV18-`
+[December 13](#day-13-flappys-revenge)            | Medium      | 3/2    | `HV18-9hYf-LSY1-hWdZ-496n-Mbda`
 [December 14](#day-14-)                           | Medium      | 3/2    | `HV18-`
 [December 15](#day-15-)                           | Hard        | 4/3    | `HV18-`
 [December 16](#day-16-)                           | Hard        | 4/3    | `HV18-`
@@ -1316,26 +1316,42 @@ And this script outputs: `HV18-xLvY-TeNT-YgEh-wBuL-bFfz`
 HV18-xLvY-TeNT-YgEh-wBuL-bFfz
 ```
 
-## Day 12:
+## Day 12: SmartWishList
 
 **Challenge**
 
+Santa's being really innovative this year!
+
+Send your wishes directly over your favorite messenger (telegram): @smartwishlist_bot
+
 **Solution**
+
+Telegram bot vulnerable to sqli
 
 **Flag**
 ```
 HV18-
 ```
 
-## Day 13:
+## Day 13: flappy's revenge
 
 **Challenge**
 
+There were some rumors that you were cheating at our little game a few days ago ... like godmode, huh?
+
+Well, show me that you can do it again - no cheating this time.
+
+Location: telnet whale.hacking-lab.com 4242
+
 **Solution**
+
+This was the same game as in day X, but now running on remote server.
+
+This game wasn't too hard to get the hang of, just control the speed of the dot by hitting space at regular intervals and remember where the gaps are since they are the same every time. We just played it til the end?
 
 **Flag**
 ```
-HV18-
+HV18-9hYf-LSY1-hWdZ-496n-Mbda
 ```
 
 ## Day 14:
