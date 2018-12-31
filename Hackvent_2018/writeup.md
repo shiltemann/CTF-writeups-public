@@ -1358,6 +1358,12 @@ HV18-9hYf-LSY1-hWdZ-496n-Mbda
 
 **Challenge**
 
+seems to be an easy one ... or wait, what?
+
+Encryped flag: `2A4C9AA52257B56837369D5DD7019451C0EC04427EB95EB741D0273D55`
+
+[power.ps1](writeupfiles/power.ps1)
+
 **Solution**
 
 **Flag**
@@ -1365,10 +1371,14 @@ HV18-9hYf-LSY1-hWdZ-496n-Mbda
 HV18-
 ```
 
-## Day 15:
+## Day 15: Watch me
 
 **Challenge**
 
+Turn on your TV! Santa will broadcast todays flag on his member channel. Can you get it without subscription?
+
+[Get it here](writeupfiles/HACKvent-2018_by_the_oneandonly_HaRdLoCk.ipa)
+
 **Solution**
 
 **Flag**
@@ -1376,10 +1386,18 @@ HV18-
 HV18-
 ```
 
-## Day 16:
+## Day 16: Pay 100 Bitcoins
+
+... or find the flag
 
 **Challenge**
 
+It changed the host. Fortunately it doesn't do the full job ... so there's hope. Get the things straight again and find the flag.
+
+The OS is encrypted, but you know the key: IWillNeverGetAVirus
+
+[ova image](writeupfiles/HACKvent_thx_awesome_1n1k.ova)
+
 **Solution**
 
 **Flag**
@@ -1387,10 +1405,22 @@ HV18-
 HV18-
 ```
 
-## Day 17:
+## Day 17: Faster KEy Exchange
 
 **Challenge**
 
+You were somehow able to intercept Santa's traffic.
+
+But it's encrypted. Fortunately, you also intercepted the key exchange and figured out what software he was using.....
+
+```
+a = 175770199681350928919153172460360835780638752174913070111023213228157197096057417384591915694975480999440257710025303691337166219429638532300821869439381645912300207257027550022875895228511722173361505223671525172702506296884059248447500261555471990207802029962005554266521906318372882999990833356499237081758595947502374486405132806838592963676075235 42293538555215282798100455110266565881599829107971869244773384413618546118850868579583095489023778055976570366853411496753062216229293710557686212314300848121614558806328788578096144576605248971916454783615989429937555579437307320472405217413938048149254574677430624
+b = 15228628318558071728245462802366236848375416102820239825350329247148900182647243994904519787528142824353837070194785550898962097219309344881183948914850354340893035399529028331238911753358245357848436203268982345430735846016484221944423499956958406189854969330305125479065873712331269870135028162018087451460656203085824963123310757985362748654204595136594184636862693563510767025800252822776154986386637346156842972134635578534633722315375292616298410141343725683471387328655106920310236007034951004329720717533666052625540760911360823548318810161367913281234234193760867208897459774865037319252137821553407707977377
+message = jqMYIn4fzSqzIXArwJm/kPitNhf4lwhL0yPRKpF+NYXyPmhoEwNG/k2L5vCZqFWNPvTzisnu93/8uK/PZnnCGg==
+```
+
+[FasterKeyExchange.py](writeupfiles/FasterKeyExchange.py)
+
 **Solution**
 
 **Flag**
@@ -1398,10 +1428,18 @@ HV18-
 HV18-
 ```
 
-## Day 18:
+## Day 18: Be Evil
+
+*Only today and for this challenge, please*
 
 **Challenge**
 
+Download [evil.jar](writeupfiles/evil.jar)
+
+`java -jar evil.jar`
+
+Thanks to scal for the artwork!
+
 **Solution**
 
 **Flag**
@@ -1409,10 +1447,16 @@ HV18-
 HV18-
 ```
 
-## Day 19:
+## Day 19: PromoCode
+
+*Get your free flag*
 
 **Challenge**
 
+Santa is in good mood an gives away flags for free.
+
+[Get vour free flag](https://hackvent.hacking-lab.com/Pr0m0C0de_new/promo.html)
+
 **Solution**
 
 **Flag**
@@ -1420,10 +1464,14 @@ HV18-
 HV18-
 ```
 
-## Day 20:
+## Day 20: I want to play a game
 
 **Challenge**
 
+Santa did'nt forget about the games this year! Ready to play?
+
+Get your game [here](writeupfiles/HaRdvent.nro)
+
 **Solution**
 
 **Flag**
@@ -1431,10 +1479,50 @@ HV18-
 HV18-
 ```
 
-## Day 21:
+## Day 21: MuffinCTF
+
+*day 1*
 
 **Challenge**
 
+```
+DAY 1 Services
+    --------------------------------------------
+          _______
+         /       )
+        /_____   | ______
+       (  '   ) / /    __\   _____
+        |.  '| / |     \ |  /     ))
+        |____|/  |`-----'  /_____))
+                  `-----'  `------'
+
+        Name: bakery
+        Description:
+            Simply the best bakery in town!
+            The good smell goes around the streets.
+            Make sure that the thieves of the enemy nations cannot steal our bread!
+            Maybe you have a method where we can get more bread?
+        Creator: muffinx
+
+
+                  / \  _  _  _  / \
+                  | | / \/ \/ \ | |
+              %   | |I| || || |=o | %
+              %   | | j_jj_jj_j | | %     v %
+            V |   | ||_________|| | | .:,>@<%%
+           >@<| ; | | | || || | | | | ~*~ | |%
+           *| |:X:| |I| || || | | | |*'|`\|/||   ~@~   *
+          ,||/|`|'|_| |_||_||_| |_|,||,|/ |,||Vv,`|',v`|v hjw
+
+        Name: garden
+        Description:
+            A very beautiful vegetable/fruit garden.
+            There is even a pond where there are swimming fish and jumping frogs.
+            Fix the defenses, in our past we had attacks with fire arrows.
+            Also we are short in potatoes, please get us some more.
+        Creator: muffinx
+```
+
 **Solution**
 
 **Flag**
@@ -1442,10 +1530,65 @@ HV18-
 HV18-
 ```
 
-## Day 22:
+## Day 22: MuffinCTF
+
+*day 2*
 
 **Challenge**
 
+```
+    DAY 2 Services
+    --------------------------------------------
+
+                    ,-_                  (`  ).
+                    |-_'-,              (     ).
+                    |-_'-'           _(        '`.
+            _        |-_'/        .=(`(      .     )
+            /;-,_     |-_'        (     (.__.:-`-_.'
+            /-.-;,-,___|'          `(       ) )
+            /;-;-;-;_;_/|\_ _ _ _ _   ` __.:'   )
+            x_( __`|_P_|`-;-;-;,|        `--'
+            |\ \    _||   `-;-;-'
+            | \`   -_|.      '-'
+            | /   /-_| `
+            |/   ,'-_|  \
+            /____|'-_|___\
+            _..,____]__|_\-_'|_[___,.._
+            '                          ``'--,..,.
+      Name: mill
+      Description:
+          The wheels are moving all day here.
+          The best flour in the whole city is produced in this mill.
+          Improve the security of the mill.
+          And reduce production rate of food for enemy nations.
+      Creator: xorkiwi
+
+                         __--___
+                       >_'--'__'
+                      _________!__________
+                     /   /   /   /   /   /
+                    /   /   /   /   /   /
+                   |   |   |   |   |   |
+              __^  |   |   |   |   |   |
+            _/@  \  \   \   \   \   \   \
+           S__   |   \   \   \   \   \   \         __
+          (   |  |    \___\___\___\___\___\       /  \
+              |   \             |                |  |\|
+              \    \____________!________________/  /
+               \ _______OOOOOOOOOOOOOOOOOOO________/
+                \________\\\\\\\\\\\\\\\\\\_______/
+      %%%^^^^^%%%%%^^^^!!^%%^^^^%%%%%!!!!^^^^^^!%^^^%%%%!!^^
+      ^^!!!!%%%%^^^^!!^^%%%%%^^!!!^^%%%%%!!!%%%%^^^!!^^%%%!!
+
+      Name: port
+      Description:
+          There are ships coming from a long distance.
+          At the top of the light house you can have a nice view at the sea.
+          Attention, make sure that there are no enemy ships coming into our port.
+          Maybe you want to send some ships of us to remind them of our offensive capabilities.
+      Creator: xorkiwi
+```
+
 **Solution**
 
 **Flag**
@@ -1453,10 +1596,77 @@ HV18-
 HV18-
 ```
 
-## Day 23:
+## Day 23: MuffinCTF
+
+*day 3*
 
 **Challenge**
 
+```
+ DAY 3 Services
+      --------------------------------------------
+            .
+           /:\
+           |:|
+           |:|
+           |:|
+           |:|      __
+         ,_|:|_,   /  )                     *_   _   _   _   _   _   _   *
+           (Oo    / _I_                     | `_' `-' `_' `-' `_' `-' `_'|
+            +\ \  || __|            ^       |                            |       ^
+               \ \||___|            |       |                            |       |
+                 \ /.:.\-\          |  (*)  |_   _   _   _   _   _   _   |  \^/  |
+                  |.:. /-----\      | _<">_ | `_' `-' `_' `-' `_' `-' `_'| _(#)_ |
+                  |___|  oOo  |    o+o \a/ \0                            0/ \a/ (=)
+                  /   |       |     0'\a-a/\/                            \/\a-a/`0
+                 |_____\  :  /        /_^_\ |                            | /_^_\
+                  | |  \ \:/          || || |                            | || ||
+                  | |   | |           d|_|b_T____________________________T_d|_|b
+                  \ /   | \___              /                           /
+                  / |   \_____\         /                              /
+                  `-'               /                                 /
+         ________________________/                                   /___________
+
+        Name: barracks
+        Description:
+            The knights and warriors of the king are here practicing the art of war.
+            These guys are no joke, be respectful when you talk with them.
+            Other nations sent their assassins to poision our warriors, make sure that we thighten our security.
+            Also maybe talk with these guys and to show the enemies our powerful warriors.
+        Creator: xorkiwi
+
+                                  .- ._          *
+                         .       (   ) `) ._,--.
+                  _.-.          (      .' |    }      ._    +
+                .'     )         `(_'-'   |--'"        ))        |
+               (   _.   )                 |           '"       - * -
+              .-.-'  )  _)  .        ["I"I"I"I"}   .             .
+             (  `   .)`'              I_I_I_I_I
+              `-. (   )          [UUUUI_I_I_I_I
+                 `-..'            |[__I_I_[#]_I .        .
+                           +      |__[I_I_I=I_I
+                 .       ._    +  |]_ I_[#]-I_I    ._          ;
+                         |~       |_[ I_I=I_I_[,   |~
+                       uuuuu      |__ I_I_I%I_I  uuuuu
+                       | #_|      |[ _$_I_I%%_I  | _ |
+                       |-  [      | [ %%I_g%%_I  |  -|         __a:f
+                  ---..|_  |.--,,'|]_ %_Ia%%I_I -|_- |.------""
+                       |_-#|  ((  |_[ $%I%%_!^!  | _ |      +
+                       |   |   )) |[_ |%.%I_|"|  |_  |    n Am   n
+                     .-[_A_]_ '/  |_ / _Y_)_|`| -[N__]_        n
+                 ._.'        `- _.--'`'  ' "|\=\ ''    `-.
+                              .'             |\=\`-._     `
+                           .-'                  `:.  `---....__
+                                                   `
+        Name: keep
+        Description:
+            This is the place where the king goes in difficult times.
+            In your last audience it was clear, that the situation is critical.
+            Defend the keep, the enemy troops are pushing more and more.
+            And make sure that they pay for this.
+        Creator: xorkiwi
+```
+
 **Solution**
 
 **Flag**
@@ -1464,10 +1674,21 @@ HV18-
 HV18-
 ```
 
-## Day 24:
+## Day 24: Take the red pill, take the blue pill
 
 **Challenge**
 
+Have you already taken your vitamins today? Here are some pills for your health.
+
+[red pill](writeupfiles/redpill.zip)
+[blue pill](writeupfiles/bluepill.zip)
+
+*Hint:*
+
+it might take a minute or two until the blue pill shows its effect. blue pill manufactury is in GMT+1.
+
+[hint](writeupfiles/hint.mp3)
+
 **Solution**
 
 **Flag**
@@ -1475,13 +1696,3 @@ HV18-
 HV18-
 ```
 
-## Day 25:
-
-**Challenge**
-
-**Solution**
-
-**Flag**
-```
-HV18-
-```
