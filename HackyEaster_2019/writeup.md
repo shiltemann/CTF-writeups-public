@@ -97,6 +97,10 @@ he19-th1s-isju-5tAt-Eazr
 
 **Challenge**
 
+As usual, the first one is very easy - just a little twisted, maybe.
+
+![](writeupfiles/twisted.png)
+
 **Solution**
 
 **Egg**
@@ -106,6 +110,8 @@ he19-th1s-isju-5tAt-Eazr
 
 **Challenge**
 Just watch and read the password.
+
+![](writeupfiles/justWatch.gif)
 
 Then enter it in the egg-o-matic below. Lowercase only, and no spaces!
 
