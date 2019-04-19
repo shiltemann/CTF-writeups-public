@@ -10,7 +10,8 @@ The annual advent calender from Hacking-lab
 Title                                             | Difficulty | Egg
 ------------------------------------------------- | ---------- | ------------------------------
 [Teaser     ](#teaser)                            |            | `he19-th1s-isju-5tAt-Eazr`
-
+[01 - Twisted](#01_twisted)                       |            | `he19-`
+[02 - Just Watch](#02_just_watch)                 |            | `he19-`
 
 ## Teaser
 
@@ -65,3 +66,223 @@ which gives us the following image:
 ```
 he19-th1s-isju-5tAt-Eazr
 ```
+
+## 01 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+
+## 02 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+
+## 03 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 04 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 05 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 06 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 07 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 08 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 09 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 10 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 11 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 12 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 13 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 14 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 15 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 16 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 17 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 18 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 19 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 20 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 21 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 22 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 23 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 24 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 25 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 26 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+## 27 Twisted
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+
