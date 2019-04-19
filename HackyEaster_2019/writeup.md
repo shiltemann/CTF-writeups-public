@@ -127,6 +127,8 @@ I spells out `givemeasign`, which we enter into the egg-o-matic to get our egg.
 
 ![](./writeupfiles/87340bc4296ff0f53b41c5ef2312139e1af818d4.png)
 
+`he19-DwWd-aUU2-yVhE-SbaG`
+
 ## 03 Twisted
 
 **Challenge**
