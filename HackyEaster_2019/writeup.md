@@ -7,36 +7,36 @@ The annual advent calender from Hacking-lab
 
 ## Overview
 
-Title                                             | Difficulty | Egg
-------------------------------------------------- | ---------- | ------------------------------
-[Teaser     ](#teaser)                            |            | `he19-th1s-isju-5tAt-Eazr`
-[01 - Twisted](#01-twisted)                       |            | `he19-`
-[02 - Just Watch](#02-just-watch)                 |            | `he19-`
-[03 - Sloppy Encryption](#03-sloppy-encryption)   |            | `he19-`
-[04 - Disco 2](#04-disco-2) | | `he19-`
-[05 - Call for Papers](#05-call-for-papers) | | `he19-`
-[06 - Dots](#06-rots) | | `he19-`
-[07 - Shell we Argument](#07-shell-we-argument) | | `he19-`
-[08 - Modern Art](#08-modern-art) | | `he19-`
-[09 - rorriM rorriM](#09-rorrim-rorrim) | | `he19-`
-[10 - Stackunderflow](#10-stackunderflow) | | `he19-`
-[11 - Memeory 2.0](#11-memeory-2-0) | | `he19-`
-[12 - Decrypt0r](#12-decrypt0r) | | `he19-`
-[13 - Symphony in HEX](#13-symphony-in-hex) | | `he19-`
-[14 - White Box](#14-white-box) | | `he19-`
-[15 - Seen in Steem](#15-seen-in-steem) | | `he19-`
-[16 - Every-Thing](#16-every-thing) | | `he19-`
-[17 - New Egg Design](#17-new-egg-design) | | `he19-`
-[18 - Egg Storage](#18-egg-storage) | | `he19-`
-[19 - CoUmpact DiAsc](#19-coumpact-diasc) | | `he19-`
-[20 - Scrambled Egg](#20-scrambled-egg) | | `he19-`
-[21 - The Hunt: Misty Jungle](#21-the-hunt-misty-jungle) | | `he19-`
-[22 - The Hunt: Muddy Quagmire](#22-the-hunt-muddy-quagmire) | | `he19-`
-[23 - The Maze](#23-the-maze) | | `he19-`
-[24 - CAPTEG](#24-capteg) | | `he19-`
-[25 - Hidden Egg 1](#25-hidden-egg-1) | | `he19-`
-[26 - Hidden Egg 2](#26-hidden-egg-2) | | `he19-`
-[27 - Hidden Egg 3](#27-hidden-egg-3) | | `he19-`
+Title                                                        | Difficulty | Egg
+-------------------------------------------------            | ---------- | ------------------------------
+[Teaser     ](#teaser)                                       |            | `he19-th1s-isju-5tAt-Eazr`
+[01 - Twisted](#01-twisted)                                  |            | `he19-`
+[02 - Just Watch](#02-just-watch)                            |            | `he19-`
+[03 - Sloppy Encryption](#03-sloppy-encryption)              |            | `he19-`
+[04 - Disco 2](#04-disco-2)                                  |            | `he19-`
+[05 - Call for Papers](#05-call-for-papers)                  |            | `he19-`
+[06 - Dots](#06-rots)                                        |            | `he19-`
+[07 - Shell we Argument](#07-shell-we-argument)              |            | `he19-`
+[08 - Modern Art](#08-modern-art)                            |            | `he19-`
+[09 - rorriM rorriM](#09-rorrim-rorrim)                      |            | `he19-`
+[10 - Stackunderflow](#10-stackunderflow)                    |            | `he19-`
+[11 - Memeory 2.0](#11-memeory-2-0)                          |            | `he19-`
+[12 - Decrypt0r](#12-decrypt0r)                              |            | `he19-`
+[13 - Symphony in HEX](#13-symphony-in-hex)                  |            | `he19-`
+[14 - White Box](#14-white-box)                              |            | `he19-`
+[15 - Seen in Steem](#15-seen-in-steem)                      |            | `he19-`
+[16 - Every-Thing](#16-every-thing)                          |            | `he19-`
+[17 - New Egg Design](#17-new-egg-design)                    |            | `he19-`
+[18 - Egg Storage](#18-egg-storage)                          |            | `he19-`
+[19 - CoUmpact DiAsc](#19-coumpact-diasc)                    |            | `he19-`
+[20 - Scrambled Egg](#20-scrambled-egg)                      |            | `he19-`
+[21 - The Hunt: Misty Jungle](#21-the-hunt-misty-jungle)     |            | `he19-`
+[22 - The Hunt: Muddy Quagmire](#22-the-hunt-muddy-quagmire) |            | `he19-`
+[23 - The Maze](#23-the-maze)                                |            | `he19-`
+[24 - CAPTEG](#24-capteg)                                    |            | `he19-`
+[25 - Hidden Egg 1](#25-hidden-egg-1)                        |            | `he19-`
+[26 - Hidden Egg 2](#26-hidden-egg-2)                        |            | `he19-`
+[27 - Hidden Egg 3](#27-hidden-egg-3)                        |            | `he19-`
 
 
 ## Teaser
