@@ -16,7 +16,7 @@ Title                                                        | Difficulty | Egg
 [04 - Disco 2](#04-disco-2)                                  |            | `he19-`
 [05 - Call for Papers](#05-call-for-papers)                  |            | `he19-`
 [06 - Dots](#06-rots)                                        |            | `he19-`
-[07 - Shell we Argument](#07-shell-we-argument)              |            | `he19-`
+[07 - Shell we Argument](#07-shell-we-argument)              |            | `he19-Bxvs-Vno1-9l9D-49gX`
 [08 - Modern Art](#08-modern-art)                            |            | `he19-`
 [09 - rorriM rorriM](#09-rorrim-rorrim)                      |            | `he19-`
 [10 - Stackunderflow](#10-stackunderflow)                    |            | `he19-`
@@ -171,19 +171,98 @@ K7sAYzGlYx0kZyXIIPrXxK22DkU4Q+rTGfUk9i9vA60C/ZcQOSWNfJLTu4RpIBy/27yK5CBW+UrBhm0=
 
 **Egg**
 
-## 07 Twisted
+## 07 Shell we argument
 
 **Challenge**
+Let's see if you have the right arguments to get the egg.
 
 **Solution**
+It's a bash script in two parts. First half is a series of variables, followed by a series of variable expansions. Extracting the first half into a file and sedding it into a file full of sed's:
+
+```console
+sed -i 's/$ACz/he/g' eggi.sh
+sed -i 's/$CCz/ec/g' eggi.sh
+sed -i 's/$iHz/Gr/g' eggi.sh
+sed -i 's/$vEz/na/g' eggi.sh
+sed -i 's/$LBz/ye/g' eggi.sh
+sed -i 's/$OFz/aw/g' eggi.sh
+sed -i 's/$kDz/ u/g' eggi.sh
+sed -i 's/$lEz/r"/g' eggi.sh
+sed -i 's/$GBz/Pz/g' eggi.sh
+sed -i 's/$sDz/at/g' eggi.sh
+```
+
+and then running that on the eggi.sh script, we can find a [mostly readable shell script](./writeupfiles/eggi2.sh). Some of the replacements didn't work perfectly and it wasn't worth figuring out exactly.
+
+Based on some of the lines:
+
+```
+if [ "$1" != "-R" ]; then
+echo "Sorry, but I don$jDz understand your argument. $1 is rather an esoteric statement, isn$jDz it?"
+
+Czit -1
+fi
+if [ "$3" != "-a" ]; then
+echo "Oh no, not that again. $3 really a very boring type of argument"
+
+Czit -1
+fi
+if [ "$5" != "-b" ]; then
+echo "$UEzm clueless w
+Ez you bring such a strange argument as $5?. I know you can do better"
+
+Czit -1
+fi
+if [ "$7" != "-I" ]; then
+echo "$7 always makes me mad. If you wanna discuss with be, then you should bring the right type of arguments, really!"
+```
+
+We know the odd numbered arguments should be the flags above, and based on
+
+```bash
+function e() {
+	if [[ $1 -lt $2 ]]; then
+		low=$((low + 1))
+	elif [[ $1 -gt $2 ]]; then
+		high=$((high + 1))
+	else
+		match=$((match + 1))
+	fi
+}
+e $2 465
+e $4 333
+e $6 911
+e $8 112
+e ${10} 007
+```
+
+We can construct the final CLI:
+
+```
+$ bash eggi.sh -R 465 -a 333 -b 911 -I 112 -t 007
+Ahhhh, finally! Let's discuss your arguments
+...
+Great, that are the perfect arguments. It took some time, but I'm glad, you see it now, too!
+```
+
+This opens a URL in our browser session with the egg.
 
 **Egg**
 
-## 08 Twisted
+![](./writeupfiles/a61ef3e975acb7d88a127ecd6e156242c74af38c.png)
+
+## 08 Modern Art
 
 **Challenge**
+Do you like modern art?
+
+![](./writeupfiles/modernart.jpg)
 
 **Solution**
+
+The corners all read "remove me". Replacing them the correctly results in a QR code that reads "isn't that a bit too easy?"
+
+![](./writeupfiles/modernart2.jpg)
 
 **Egg**
 
