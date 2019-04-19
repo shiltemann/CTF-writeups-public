@@ -241,11 +241,18 @@ This opens a URL in our browser session with the egg.
 
 ![](./writeupfiles/a61ef3e975acb7d88a127ecd6e156242c74af38c.png)
 
-## 08 Twisted
+## 08 Modern Art
 
 **Challenge**
+Do you like modern art?
+
+![](./writeupfiles/modernart.jpg)
 
 **Solution**
+
+The corners all read "remove me". Replacing them the correctly results in a QR code that reads "isn't that a bit too easy?"
+
+![](./writeupfiles/modernart2.jpg)
 
 **Egg**
 
