@@ -105,11 +105,18 @@ he19-th1s-isju-5tAt-Eazr
 ## 02 Twisted
 
 **Challenge**
+Just watch and read the password.
+
+Then enter it in the egg-o-matic below. Lowercase only, and no spaces!
 
 **Solution**
+It's in ASL finegr spelling! They seem to have even used the hands from the following alphabet chart:
+
+![](./writeupfiles/abc1280x960.png)
 
 **Egg**
 
+![](./writeupfiles/87340bc4296ff0f53b41c5ef2312139e1af818d4.png)
 
 ## 03 Twisted
 
