@@ -11,7 +11,7 @@ Title                                                        | Difficulty | Egg
 -------------------------------------------------            | ---------- | ------------------------------
 [Teaser     ](#teaser)                                       |            | `he19-th1s-isju-5tAt-Eazr`
 [01 - Twisted](#01-twisted)                                  |            | `he19-`
-[02 - Just Watch](#02-just-watch)                            |            | `he19-`
+[02 - Just Watch](#02-just-watch)                            |            | `he19-DwWd-aUU2-yVhE-SbaG`
 [03 - Sloppy Encryption](#03-sloppy-encryption)              |            | `he19-`
 [04 - Disco 2](#04-disco-2)                                  |            | `he19-`
 [05 - Call for Papers](#05-call-for-papers)                  |            | `he19-`
