@@ -129,9 +129,19 @@ I spells out `givemeasign`, which we enter into the egg-o-matic to get our egg.
 
 `he19-DwWd-aUU2-yVhE-SbaG`
 
-## 03 Twisted
+## 03 - Sloppy Encryption
 
 **Challenge**
+
+The easterbunny is not advanced at doing math and also really sloppy.
+
+He lost the encryption script while hiding your challenge. Can you decrypt it?
+
+```
+K7sAYzGlYx0kZyXIIPrXxK22DkU4Q+rTGfUk9i9vA60C/ZcQOSWNfJLTu4RpIBy/27yK5CBW+UrBhm0=
+```
+
+[sloppy.rb](writeupfiles/sloppy.rb)
 
 **Solution**
 
