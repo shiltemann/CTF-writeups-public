@@ -116,9 +116,12 @@ Just watch and read the password.
 Then enter it in the egg-o-matic below. Lowercase only, and no spaces!
 
 **Solution**
-It's in ASL finegr spelling! They seem to have even used the hands from the following alphabet chart:
+
+It's in ASL finger spelling! They seem to have even used the hands from the following alphabet chart:
 
 ![](./writeupfiles/abc1280x960.png)
+
+I spells out `givemeasign`, which we enter into the egg-o-matic to get our egg.
 
 **Egg**
 
