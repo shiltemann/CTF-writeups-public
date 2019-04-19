@@ -185,7 +185,7 @@ $Ax2$xTT "$Az$Bz$z$Cz$Dz$Ez$Fz$Gz$Hz$Ez$Iz$Gz$Jz$Ez$Kz$Gz$Lz$Ez$Mz$Gz$Nz$Ez$Oz$G
 
 **Solution**
 
-It's a bash script in two parts. First half is a series of variables, followed by a series of variable expansions. Extracting the first half into a file and sedding it into a file full of sed's:
+It's a [bash script in two parts](./writeupfiles/eggi.sh). First half is a series of variables, followed by a series of variable expansions. Extracting the first half into a file and sedding it into a file full of sed's:
 
 ```console
 sed -i 's/$ACz/he/g' eggi.sh
