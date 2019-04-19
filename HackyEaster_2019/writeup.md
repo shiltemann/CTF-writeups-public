@@ -167,7 +167,7 @@ I spells out `givemeasign`, which we enter into the egg-o-matic to get our egg.
 Let's see if you have the right arguments to get the egg.
 
 **Solution**
-It's a bash script in two parts. First half is a series of variables, followed by a series of variable expansions. Extracting the first half into a file and sedding it into a file full of sed's:
+It's a [bash script in two parts](./writeupfiles/eggi.sh). First half is a series of variables, followed by a series of variable expansions. Extracting the first half into a file and sedding it into a file full of sed's:
 
 ```console
 sed -i 's/$ACz/he/g' eggi.sh
