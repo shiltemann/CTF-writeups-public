@@ -147,31 +147,52 @@ K7sAYzGlYx0kZyXIIPrXxK22DkU4Q+rTGfUk9i9vA60C/ZcQOSWNfJLTu4RpIBy/27yK5CBW+UrBhm0=
 
 **Egg**
 
-## 04 Twisted
+## 04 - Disco 2
 
 **Challenge**
+
+This year, we dance outside, yeaahh! See here.
+
+https://hackyeaster.hacking-lab.com/hackyeaster/challenges/disco2/disco2.html
 
 **Solution**
 
 **Egg**
 
-## 05 Twisted
+## 05 - Call for Papers
 
 **Challenge**
+
+Please read and review my CFP document, for the upcoming IAPLI Symposium.
+
+I didn't write it myself, but used some artificial intelligence.
+
+What do you think about it?
+
+[IAPLI_Conference.docx](writeupfiles/IAPLI_Conference.docx)
 
 **Solution**
 
 **Egg**
 
-## 06 Twisted
+## 06 - Dots
 
 **Challenge**
+
+Uncover the dots' secret!
+
+Then enter the password in the egg-o-matic below. Uppercase only, and no spaces!
+
+![dots1](writeupfiles/dots1.png)
+
+![dots2](writeupfiles/dots2.png)
+
 
 **Solution**
 
 **Egg**
 
-## 07 Shell we argument
+## 07 - Shell we argument
 
 **Challenge**
 
@@ -259,7 +280,7 @@ This opens a URL in our browser session with the egg.
 
 ![](./writeupfiles/a61ef3e975acb7d88a127ecd6e156242c74af38c.png)
 
-## 08 Modern Art
+## 08 - Modern Art
 
 **Challenge**
 Do you like modern art?
@@ -274,71 +295,145 @@ The corners all read "remove me". Replacing them the correctly results in a QR c
 
 **Egg**
 
-## 09 Twisted
+
+
+## 09 - rorriM rorriM
 
 **Challenge**
+
+Mirror, mirror, on the wall, who's the fairest of them all?
+
+[evihcra.piz](writeupfiles/evihcra.piz)
 
 **Solution**
 
 **Egg**
 
-## 10 Twisted
+
+
+## 10 - Stackunderflow
 
 **Challenge**
 
-**Solution**
+Check out this new Q&A site. They must be hiding something but we don't know where to search.
 
-**Egg**As usual, the first one is very easy - just a little twisted, maybe.
+http://whale.hacking-lab.com:3371/
 
-## 11 Twisted
-
-**Challenge**
-
-**Solution**
-
-**Egg**
-
-## 12 Twisted
-
-**Challenge**
 
 **Solution**
 
 **Egg**
 
-## 13 Twisted
+
+
+
+## 11 -  Memeory 2.0
 
 **Challenge**
+
+We improved Memeory 1.0 and added an insane serverside component. So, no more CSS-tricks. Muahahaha.
+
+Flagbounty for everyone who can solve 10 successive rounds. Time per round is 30 seconds and only 3 missclicks are allowed.
+
+Good game.
+
+![](writeupfiles/meme.png)
+
+http://whale.hacking-lab.com:1111/
+
 
 **Solution**
 
 **Egg**
 
-## 14 Twisted
+
+
+## 12 - Decrypt0r
 
 **Challenge**
+
+Crack the might Decryt0r and make it write a text with a flag.
+
+No Easter egg here. Enter the flag directly on the flag page.
+
+[decryptor.zip](writeupfiles/decryptor.zip)
+
 
 **Solution**
 
 **Egg**
 
-## 15 Twisted
 
-**Challenge**
+## 13 - Symphony in HEX
+
+A lost symphony of the genius has reappeared.
+
+![](writeupfiles/symphonyinhex.png)
+
+Hint: count quavers, read semibreves
+
+Once you found the solution, enter it in the egg-o-matic below. Uppercase only, and no spaces!
+
 
 **Solution**
 
 **Egg**
 
-## 16 Twisted
+
+## 14 - White Box
 
 **Challenge**
+
+Do you know the mighty WhiteBox encryption tool? Decrypt the following cipher text!
+
+```
+9771a6a9aea773a93edc1b9e82b745030b770f8f992d0e45d7404f1d6533f9df348dbccd71034aff88afd188007df4a5c844969584b5ffd6ed2eb92aa419914e
+```
+
+[WhiteBox](writeupfiles/WhiteBox)
+
 
 **Solution**
 
 **Egg**
 
-## 17 Twisted
+
+## 15 - Seen in Steem
+
+**Challenge**
+
+An unknown person placed a secret note about Hacky Easter 2019 in the Steem blockchain. It happend during Easter 2018.
+
+Go find the note, and enter it in the egg-o-matic below. Lowercase only, and no spaces!
+
+
+**Solution**
+
+**Egg**
+
+
+## 16 - Every-Thing
+
+**Challenge**
+
+After the brilliant idea from [here](http://geek-and-poke.com/geekandpoke/2013/7/22/future-proof-your-data-model).
+
+The data model is stable and you can really store Every-Thing.
+
+[EveryThing.zip](writeupfiles/EveryThing.zip)
+
+
+**Solution**
+
+**Egg**
+
+
+
+## 17  - New Egg Design
+
+Thumper is looking for a new design for his eggs. He tried several filters with his graphics program, but unfortunately the QR codes got unreadable. Can you help him?!
+
+![](writeupfiles/eggdesign.png)
 
 **Challenge**
 
