@@ -10,7 +10,7 @@ The annual advent calender from Hacking-lab
 Title                                                        | Difficulty | Egg
 -------------------------------------------------            | ---------- | ------------------------------
 [Teaser     ](#teaser)                                       |            | `he19-th1s-isju-5tAt-Eazr`
-[01 - Twisted](#01-twisted)                                  |            | `he19-`
+[01 - Twisted](#01-twisted)                                  |            | `he19-Eihb-UUVw-nObm-lxaW`
 [02 - Just Watch](#02-just-watch)                            |            | `he19-DwWd-aUU2-yVhE-SbaG`
 [03 - Sloppy Encryption](#03-sloppy-encryption)              |            | `he19-`
 [04 - Disco 2](#04-disco-2)                                  |            | `he19-`
@@ -103,7 +103,11 @@ As usual, the first one is very easy - just a little twisted, maybe.
 
 **Solution**
 
-**Egg**
+We tried and failed to untwist it with gimp (filters → distort → IWarp). So we
+recreated it in [QRazy Box](https://merricx.github.io/qrazybox/), at least
+enough of it that it would decode.
+
+![](writeupfiles/untwisted.png)
 
 
 ## 02 Twisted
