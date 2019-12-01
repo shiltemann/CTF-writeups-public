@@ -36,6 +36,7 @@ Title                                             | Category    | Points | Flag
 
 **Challenge**
 
+Santa is stranded on the Christmas Islands and is desperately trying to reach his trusty companion via cellphone. We've bugged the device with a primitive keylogger and have been able to decode some of the SMS, but couldn't make much sense of the last one. Can you give us a hand?
 
 **Solution**
 
