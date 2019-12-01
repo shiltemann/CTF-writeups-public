@@ -46,7 +46,7 @@ I got this little image, but it looks like the best part got censored on the way
 **Solution**
 
 ```
-exiftool -b -ThumbnailImage > thumbnail.jpg
+exiftool -b -ThumbnailImage f182d5f0-1d10-4f0f-a0c1-7cba0981b6da.jpg > thumbnail.jpg
 ```
 
 Then we read this with QR scanner to get our flag
