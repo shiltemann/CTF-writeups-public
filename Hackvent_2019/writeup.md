@@ -9,7 +9,7 @@ The annual advent calender from Hacking-lab
 
 Title                                             | Category    | Points | Flag
 ------------------------------------------------- | ----------- | ------ | ------------------------------
-[December 1 ](#day-01)                            | Easy        | 2/1    | `HV18-`
+[December 1 ](#day-01)                            | Easy        | 2/1    | `HV19{just-4-PREview!}`
 [December 2 ](#day-02)                            | Easy        | 2/1    | `HL18-`
 [December 3 ](#day-03)                            | Easy        | 2/1    | `HV18-`
 [December 4 ](#day-04)                            | Easy        | 2/1    | `HV18-`
@@ -35,14 +35,25 @@ Title                                             | Category    | Points | Flag
 [December 24](#day-24-)                           | Expert      | 5/4    | `HV18-`
 [December 25](#day-25-)                           | Expert      | 5/4    | `HV18-`
 
-## Day 01
+## Day 01: HV19.01 censored
 
 **Challenge**
 
+I got this little image, but it looks like the best part got censored on the way. Even the tiny preview icon looks clearer than this! Maybe they missed something that would let you restore the original content?
+
+![](writeupfiles/dec01/f182d5f0-1d10-4f0f-a0c1-7cba0981b6da.jpg)
 
 **Solution**
 
+```
+exiftool -b -ThumbnailImage > thumbnail.jpg
+```
+
+Then we read this with QR scanner to get our flag
+
+![](writeupfiles/dec01/thumbnail.jpg)
 
 **Flag**
 ```
+HV19{just-4-PREview!}
 ```
