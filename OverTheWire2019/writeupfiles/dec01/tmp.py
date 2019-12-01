@@ -73,10 +73,10 @@ def decodeMeta(group):
         103: 'down',
         104: 'accept',
         105: 'reject',
-    }.get(group)
+    }.get(group, group)
 
 for group in keys:
-    if sum(group) >= 100:
+    if group[0] >= 100:
         print([decodeMeta(x) for x in group])
         continue
 

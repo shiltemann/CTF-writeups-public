@@ -40,7 +40,65 @@ Santa is stranded on the Christmas Islands and is desperately trying to reach hi
 
 **Solution**
 
+We receive some text messages in txt format that we can easily read:
+
+```
+==> sms1.txt <==
+date: 1999-11-23 03:01:10
+to: 00611015550117
+text: rudolf where are you brrr
+
+==> sms2.txt <==
+date: 1999-11-23 03:04:11
+to: 00611015550117
+text: its too damn cold here and im out of eggnog lul
+
+==> sms3.txt <==
+date: 1999-11-23 03:06:39
+to: 00611015550117
+text: sorry bout my last 2msg but i could really need your help bud :*
+```
+
+And we can write a quick script to decode the keypresses based on the information in the header file:
+
+```
+$ python tmp.py sms1.csv
+['left', 'left', 'left', 'left']
+T9rudolf where are you brrr['left']
+['left']
+0m, .l ,p['left']
+
+$ python tmp.py sms2.csv
+['left', 'left', 'left', 'left']
+T9its fucking['right', 'right', 'right', 'right', 'right', 'right', 'right']
+too damn cold here and im out of eggnog l¿l['left', 'left']
+0m.. .l ,p['left']
+
+$ python tmp.py sms3.csv
+['left', 'left', 'left', 'left']
+T9sorri bout my last 2msg but i could realy need your help bud['up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up']
+l['up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up']
+['right']
+y['down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down']
+ :*['left', 'left']
+0m, .l ,p['left']
+
+$ python tmp.py sms4.csv
+['left', 'left', 'left', 'left']
+T9alright pal hers['up']
+e['down']
+ ye flag go¿d lucj enter['up', 'up', 'up', 'up', 'up', 'up', 'up']
+['down']
+['right']
+k['down', 'down', 'down', 'down', 'down', 'down']
+ing it with those hooves lol its aotw{l3ts_dr1nk¿s0m3_egg¿og['right', 'right']
+0g_y0u_cr4zy_d33r}['left', 'left']
+0m.. .l ,p['left']
+```
+
+And from this we can guess probably made some decoding errors but looks like it is:
 
 **Flag**
 ```
+AOTW{l3ts_dr1nk_s0m3_eggn0g_y0u_cr4zy_d33r}
 ```
