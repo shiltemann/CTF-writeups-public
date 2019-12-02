@@ -35,7 +35,7 @@ Title                                             | Category    | Points | Flag
 [December 24](#day-24-)                           | Expert      | 5/4    | `HV18-`
 [December 25](#day-25-)                           | Expert      | 5/4    | `HV18-`
 
-## Day 01: HV19.01 censored
+## Day 01: Censored
 
 **Challenge**
 
@@ -44,6 +44,8 @@ I got this little image, but it looks like the best part got censored on the way
 ![](writeupfiles/dec01/f182d5f0-1d10-4f0f-a0c1-7cba0981b6da.jpg)
 
 **Solution**
+
+The description sounds like it has something to do with the thumbnail image. Indeed if we download the image we see a QR code in the thumbnail image in our file explorer. We can use exiftool to extract the thumbnail image embedded in the JPEG format:
 
 ```
 exiftool -b -ThumbnailImage f182d5f0-1d10-4f0f-a0c1-7cba0981b6da.jpg > thumbnail.jpg
@@ -56,4 +58,30 @@ Then we read this with QR scanner to get our flag
 **Flag**
 ```
 HV19{just-4-PREview!}
+```
+
+## Day 02: Triangulation
+
+**Description**
+
+Today we give away decorations for your Christmas tree. But be careful and do not break it.
+
+[Triangulation.stl](writeupfiles/dec02/Triangulation.stl)
+
+**Solution**
+
+**Flag**
+```
+HV19{}
+```
+
+## Day X: Title
+
+**Description**
+
+**Solution**
+
+**Flag**
+```
+HV19{}
 ```
