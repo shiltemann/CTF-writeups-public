@@ -70,6 +70,14 @@ Today we give away decorations for your Christmas tree. But be careful and do no
 
 **Solution**
 
+This is a [STL file](https://en.wikipedia.org/wiki/STL_(file_format)) containing a 3D model of a Christmas bauble:
+
+![](writeupfiles/dec02/ball.png)
+
+Nothing obvious there, but if we look at the wireframe view we see that there is more inside:
+
+![](writeupfiles/dec02/ball_wireframe.png)
+
 Cutting through the ball in blender we see an aztec code inside. After cleaning up the image, converting to b/w, removing noise, rotating, we can [read the code](https://www.onlinebarcodereader.com/)
 
 ![code](writeupfiles/dec02/code.png)
