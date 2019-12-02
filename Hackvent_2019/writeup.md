@@ -70,9 +70,13 @@ Today we give away decorations for your Christmas tree. But be careful and do no
 
 **Solution**
 
+Cutting through the ball in blender we see an aztec code inside. After cleaning up the image, converting to b/w, removing noise, rotating, we can [read the code](https://www.onlinebarcodereader.com/)
+
+![code](writeupfiles/dec02/code.png)
+
 **Flag**
 ```
-HV19{}
+HV19{Cr4ck_Th3_B411!}
 ```
 
 ## Day X: Title
