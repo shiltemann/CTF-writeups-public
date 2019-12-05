@@ -11,8 +11,8 @@ Title                                             | Category    | Points | Flag
 ------------------------------------------------- | ----------- | ------ | ------------------------------
 [December 1 ](#day-01-censored)                   | Easy        | 2/1    | `HV19{just-4-PREview!}`
 [December 2 ](#day-02-triangulation)              | Easy        | 2/1    | `HV19{Cr4ck_Th3_B411!}`
-[December 3 ](#day-03)                            | Easy        | 2/1    | `HV19-`
-[December 4 ](#day-04-password policy circumvention) | Easy     | 2/1    | `HV19{R3memb3r, rem3mber - the 24th 0f December}`
+[December 3 ](#day-03-hodor)                      | Easy        | 2/1    | `HV19{h01d-th3-d00r-4204-ld4Y}`
+[December 4 ](#day-04-password-policy-circumvention) | Easy     | 2/1    | `HV19{R3memb3r, rem3mber - the 24th 0f December}`
 [December 5 ](#day-05-santa-parcel-tracking)      | Easy        | 2/1    | `HV19{D1fficult_to_g3t_a_SPT_R3ader}`
 [December 6 ](#day-06)                            | Easy        | 2/1    | `HV19-`
 [December 7 ](#day-07)                            | Easy        | 2/1    | `HV19-`
@@ -87,15 +87,51 @@ Cutting through the ball in blender we see an aztec code inside. After cleaning 
 HV19{Cr4ck_Th3_B411!}
 ```
 
-## Day 03: Title
+## Day 03: Hodor
 
 **Description**
 
+
+![](writeupfiles/dec03/hodor.jpg)
+
+```
+$HODOR: hhodor. Hodor. Hodor!?  = `hodor?!? HODOR!? hodor? Hodor oHodor. hodor? , HODOR!?! ohodor!?  dhodor? hodor odhodor? d HodorHodor  Hodor!? HODOR HODOR? hodor! hodor!? HODOR hodor! hodor? !
+
+hodor?!? Hodor  Hodor Hodor? Hodor  HODOR  rhodor? HODOR Hodor!?  h4Hodor?!? Hodor?!? 0r hhodor?  Hodor!? oHodor?! hodor? Hodor  Hodor! HODOR Hodor hodor? 64 HODOR Hodor  HODOR!? hodor? Hodor!? Hodor!? .
+
+HODOR?!? hodor- hodorHoOodoOor Hodor?!? OHoOodoOorHooodorrHODOR hodor. oHODOR... Dhodor- hodor?! HooodorrHODOR HoOodoOorHooodorrHODOR RoHODOR... HODOR!?! 1hodor?! HODOR... DHODOR- HODOR!?! HooodorrHODOR Hodor- HODORHoOodoOor HODOR!?! HODOR... DHODORHoOodoOor hodor. Hodor! HoOodoOorHodor HODORHoOodoOor 0Hooodorrhodor HoOodoOorHooodorrHODOR 0=`;
+hodor.hod(hhodor. Hodor. Hodor!? );
+```
+
+(also in [hodor.md](writeupfiles/dec03/hodor.md))
+
 **Solution**
+
+This is the esoteric programming language Hodor ([http://www.hodor-lang.org/](http://www.hodor-lang.org/))
+
+We can install hodor language
+
+```bash
+npm install -g hodor-lang
+```
+
+then run our script
+
+```bash
+$ hodor hodor.hd
+HODOR: \-> hodor.hd
+Awesome, you decoded Hodors language!
+
+As sis a real h4xx0r he loves base64 as well.
+
+SFYxOXtoMDFkLXRoMy1kMDByLTQyMDQtbGQ0WX0=
+```
+
+We base64 decode this string to get our flag
 
 **Flag**
 ```
-HV19{}
+HV19{h01d-th3-d00r-4204-ld4Y}
 ```
 
 ## Day 04: password policy circumvention
