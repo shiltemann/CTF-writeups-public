@@ -204,7 +204,7 @@ To handle the huge load of parcels Santa introduced this year a parcel tracking 
 
 Going pixel by pixel from left to right across a single stripe, we extracted the RGB value of every stripe. They were all in ascii range so we converted them to ascii.
 
-```
+```python
 from PIL import Image
 import sys
 
