@@ -102,3 +102,19 @@ And from this we can guess probably made some decoding errors but looks like it 
 ```
 AOTW{l3ts_dr1nk_s0m3_eggn0g_y0u_cr4zy_d33r}
 ```
+
+
+
+## Day 06
+
+**Challenge**
+
+
+**Solution**
+
+
+nc 3.93.128.89 1206
+
+cat tmp | xxd -r -p | zlib-flate -uncompress > tmp.bin
+
+
