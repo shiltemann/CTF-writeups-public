@@ -39,7 +39,6 @@ For a collection of links and resources for CTFs, see the [galaxians-ctf/ctf-man
 Some permanent CTF challenges I'd recommend are:
 - [OverTheWire](http://overthewire.org/wargames/)
 - [SmashTheStack](http://smashthestack.org/)
-- DareYourMind (defunct; the one that got me hooked on CTFs way back when :))
 - [WeChall](http://www.wechall.net/) (aggregates scores from various permanent CTF challenge sites)
 - Comprehensive [list](http://www.wechall.net/active_sites/all/by/site_id/ASC/page-1) of CTF sites from WeChall website
 
