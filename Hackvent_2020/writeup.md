@@ -11,7 +11,7 @@ Title                                             | Category    | Points | Flag
 ------------------------------------------------- | ----------- | ------ | ------------------------------
 [Teaser ](#day--1-twelve-steps-of-christmas)      | Easy        | 2/1    | `HV20{34t-sl33p-haxx-rep34t}`
 [December 1 ](#day-01-happy-hackvent-2020)        | Easy        | 2/1    | `HV20{7vxFXB-ItHnqf-PuGNqZ}`
-[December 2 ](#day-02)                            | Easy        | 2/1    | `HV20-`
+[December 2 ](#day-02-chinese-animals)            | Easy        | 2/1    | `HV20{small-elegant-butterfly-loves-grass-mud-horse}`
 [December 3 ](#day-03)                            | Easy        | 2/1    | `HV20-`
 [December 4 ](#day-04)                            | Easy        | 2/1    | `HV20-`
 [December 5 ](#day-05)                            | Easy        | 2/1    | `HV20-`
@@ -236,7 +236,7 @@ Aha! we can still see the flag on here!
 HV20{7vxFXB-ItHnqf-PuGNqZ}
 ```
 
-## Day 02: Title
+## Day 02: Chinese Animals
 
 **Description**
 
@@ -278,7 +278,7 @@ or the python approach:
 b'small-elegant-butterfly-loves-grass-mud-hors'
 ```
 
-and just add the `e` at the end from the challenge
+and just add the `e` at the end from the original challenge to get the flag:
 
 
 **Flag**
