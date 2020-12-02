@@ -263,10 +263,21 @@ Google Translate gives the following:
 慬氭氭氭歵歵琭琭扵瑴晬晬礭汯猭杲悭猭浵打桯牳
 ```
 
+Congratulations: 恭喜
+Flag collection: 收旗爲
+
+While attempting to convert it into utf16, it turned out that was the solution?
+
+```
+$ iconv -f UTF-8 -t UTF-16LE writeupfiles/dec2.txt
+msla-llegena-tubttrelf-yolev-srgsa-sum-dohsrE
+$ iconv -f UTF-8 -t UTF-16BE writeupfiles/dec2.txt
+small-elegant-butterfly-loves-grass-mud-horsE
+```
 
 **Flag**
 ```
-HV20{}
+HV20{small-elegant-butterfly-loves-grass-mud-horsE}
 ```
 
 ## Day 03: Title
