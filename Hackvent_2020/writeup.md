@@ -258,11 +258,6 @@ Google Translate gives the following:
 
 ![](writeupfiles/dec2-translate.png)
 
-
-```
-慬氭氭氭歵歵琭琭扵瑴晬晬礭汯猭杲悭猭浵打桯牳
-```
-
 Congratulations: 恭喜
 Flag collection: 收旗爲
 
@@ -275,9 +270,20 @@ $ iconv -f UTF-8 -t UTF-16BE writeupfiles/dec2.txt
 small-elegant-butterfly-loves-grass-mud-horsE
 ```
 
+or the python approach:
+
+```python
+>>> ct = '獭慬氭敬敧慮琭扵瑴敲晬礭汯癥猭杲慳猭浵搭桯牳'
+>>> ct.encode("utf-16be")
+b'small-elegant-butterfly-loves-grass-mud-hors'
+```
+
+and just add the `e` at the end from the challenge
+
+
 **Flag**
 ```
-HV20{small-elegant-butterfly-loves-grass-mud-horsE}
+HV20{small-elegant-butterfly-loves-grass-mud-horse}
 ```
 
 ## Day 03: Title
