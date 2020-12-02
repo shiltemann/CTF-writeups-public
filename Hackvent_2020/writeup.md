@@ -240,7 +240,29 @@ HV20{7vxFXB-ItHnqf-PuGNqZ}
 
 **Description**
 
+I've received this note from a friend, who is a Chinese CTF player:
+
+    恭喜！收旗爲：ＨＶ２０｛獭慬氭敬敧慮琭扵瑴敲晬礭汯癥猭杲慳猭浵搭桯牳ｅ｝
+
+Unfortunately, Google Translate wasn't of much help:
+
+![](writeupfiles/dec2-chall.png)
+
+I suspect the data has somehow been messed up while transmitting it.
+
+Sadly, I can't ask my friend about more details. The Great Chinese Firewall is thwarting our attempts to reach each other, and there's no way I'm going to install WeChat on my phone.
+
 **Solution**
+
+Google Translate gives the following:
+
+![](writeupfiles/dec2-translate.png)
+
+
+```
+慬氭氭氭歵歵琭琭扵瑴晬晬礭汯猭杲悭猭浵打桯牳
+```
+
 
 **Flag**
 ```
