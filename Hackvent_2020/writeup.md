@@ -286,9 +286,15 @@ and just add the `e` at the end from the original challenge to get the flag:
 HV20{small-elegant-butterfly-loves-grass-mud-horse}
 ```
 
-## Day 03: Title
+## Day 03: Packed Gifts
 
 **Description**
+
+One of the elves has unfortunately added a password to the last presents delivery and we cannot open it. The elf has taken a few days off after all the stress of the last weeks and is not available. Can you open the package for us?
+
+We found the following packages:
+- [Package 1](writeupfiles/dec3_package1.zip)
+- [Package 2](writeupfiles/dec3_package2.zip)
 
 **Solution**
 
