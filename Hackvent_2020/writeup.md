@@ -13,7 +13,7 @@ Title                                             | Category    | Points | Flag
 [December 1 ](#day-01-happy-hackvent-2020)        | Easy        | 2/1    | `HV20{7vxFXB-ItHnqf-PuGNqZ}`
 [December 2 ](#day-02-chinese-animals)            | Easy        | 2/1    | `HV20{small-elegant-butterfly-loves-grass-mud-horse}`
 [December 3 ](#day-03-packed-gifts)               | Easy        | 2/1    | `HV20{ZipCrypt0_w1th_kn0wn_pla1ntext_1s_easy_t0_decrypt}`
-[December 4 ](#day-04-bracelet)                   | Easy        | 2/1    | `HV20-`
+[December 4 ](#day-04-bracelet)                   | Easy        | 2/1    | `HV20{Ilov3y0uS4n74}`
 [December 5 ](#day-05)                            | Easy        | 2/1    | `HV20-`
 [December 6 ](#day-06)                            | Easy        | 2/1    | `HV20-`
 [December 7 ](#day-07)                            | Easy        | 2/1    | `HV20-`
@@ -349,24 +349,55 @@ Santa was given a nice bracelet by one of his elves. Little does he know that th
 Hints:
  - No internet is required - only the bracelet
  - The message is encoded in binary
+ - Violet color is the delimiter
+ - Colors have a fixed order
+ - Missing colors matter
 
 **Solution**
 
+Lets start by transcribing the beads of the bracelet, and we know that purple is a delimiter
+
 ```
-gpiypgbpigpgbpigbypgbypgbpbypbypgbypiypbyppgbypgypgypbypbypgpgbpigbpbypgbypbypgp
+g|py|gb|pg|gb|pgby|gby|gb|by|by|gby|py|by||gby|gy|gy|by|by|g|gb|pgb|by|gby|by|g|
+
 
 g=green
-p=purple
-i=pink
+p=pink
 y=yellow
 b=blue
 ```
 
+Given the clues that the order is always the same, we suspect that each color represents a place in the binary number, and presence of the bead means a `1` in that position, and absence of the color bead a `0`
 
+we have one grouping with all colors, so we know the order is `pgby`, and if all beads are present, it corresponds to `1111`, and if none are present it is `0000` etc
+
+```
+pgby
+----
+0000
+0001 y
+0010 b
+0011 by
+0100 g
+0101 gy
+..etc
+
+```
+
+then to convert this to ascii characters, two groups form one letter
+
+Transcribing the whole bracelet gives the following binary code:
+
+
+```
+01001001 01101100 01101111 01110110 00110011 01111001 00110000 01110101 01010011 00110100 01101110 00110111 00110100
+```
+
+which when converted to ascii spells `Ilov3y0uS4n74`
 
 **Flag**
 ```
-HV20{}
+HV20{Ilov3y0uS4n74}
 ```
 
 ## Day 05: Title
