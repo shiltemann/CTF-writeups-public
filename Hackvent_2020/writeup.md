@@ -13,7 +13,7 @@ Title                                             | Category    | Points | Flag
 [December 1 ](#day-01-happy-hackvent-2020)        | Easy        | 2/1    | `HV20{7vxFXB-ItHnqf-PuGNqZ}`
 [December 2 ](#day-02-chinese-animals)            | Easy        | 2/1    | `HV20{small-elegant-butterfly-loves-grass-mud-horse}`
 [December 3 ](#day-03-packed-gifts)               | Easy        | 2/1    | `HV20{ZipCrypt0_w1th_kn0wn_pla1ntext_1s_easy_t0_decrypt}`
-[December 4 ](#day-04)                            | Easy        | 2/1    | `HV20-`
+[December 4 ](#day-04-bracelet)                   | Easy        | 2/1    | `HV20-`
 [December 5 ](#day-05)                            | Easy        | 2/1    | `HV20-`
 [December 6 ](#day-06)                            | Easy        | 2/1    | `HV20-`
 [December 7 ](#day-07)                            | Easy        | 2/1    | `HV20-`
@@ -337,11 +337,32 @@ HV20{ZipCrypt0_w1th_kn0wn_pla1ntext_1s_easy_t0_decrypt}
 HV20{ZipCrypt0_w1th_kn0wn_pla1ntext_1s_easy_t0_decrypt}
 ```
 
-## Day 04: Title
+## Day 04: Bracelet
 
 **Description**
 
+Santa was given a nice bracelet by one of his elves. Little does he know that the secret admirer has hidden a message in the pattern of the bracelet...
+
+![](writeupfiles/dec4.jpg)
+
+
+Hints:
+ - No internet is required - only the bracelet
+ - The message is encoded in binary
+
 **Solution**
+
+```
+gpiypgbpigpgbpigbypgbypgbpbypbypgbypiypbyppgbypgypgypbypbypgpgbpigbpbypgbypbypgp
+
+g=green
+p=purple
+i=pink
+y=yellow
+b=blue
+```
+
+
 
 **Flag**
 ```
