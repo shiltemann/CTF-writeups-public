@@ -14,7 +14,7 @@ Title                                             | Category    | Points | Flag
 [December 2 ](#day-02-chinese-animals)            | Easy        | 2/1    | `HV20{small-elegant-butterfly-loves-grass-mud-horse}`
 [December 3 ](#day-03-packed-gifts)               | Easy        | 2/1    | `HV20{ZipCrypt0_w1th_kn0wn_pla1ntext_1s_easy_t0_decrypt}`
 [December 4 ](#day-04-bracelet)                   | Easy        | 2/1    | `HV20{Ilov3y0uS4n74}`
-[December 5 ](#day-05)                            | Easy        | 2/1    | `HV20-`
+[December 5 ](#day-05-image-dna)                            | Easy        | 2/1    | `HV20{s4m3s4m3bu7diff3r3nt}`
 [December 6 ](#day-06)                            | Easy        | 2/1    | `HV20-`
 [December 7 ](#day-07)                            | Easy        | 2/1    | `HV20-`
 [December 8 ](#day-08)                            | Medium      | 3/2    | `HV20-`
@@ -436,9 +436,53 @@ ATATATAAACCAGTTAATCAATATCTCTATATGCTTATATGTCTCGTCCGTCTACGCACCTAATATAACGTCCATGCGTC
 
 ```
 
+Aha! we see two DNA strings, of equal length, and looks about the right length for a flag..
+
+The challenge description refers to differences, so lets subtract these two strings from each other
+We first convert to binary from this 4 base string
+
+```
+A = 00
+C = 01
+G = 10
+T = 11
+```
+in this scheme, each group of 4 characters maps to 8 bits, and therefor one character.
+
+Knowing that the result should start with `HV20{`, we experiment with the first few characters, and find
+out that if we XOR the result of the above mapping, we get the right answer:
+
+```
+CTGT CGCG: 01111011 01100110
+ATAT ATAA: 00110011 00110000
+xor:       01001000 01010110
+ascii:     H        V
+```
+
+ok, this looks good! Let's automate the rest in python:
+
+```python
+import binascii
+
+dna1="ATATATAAACCAGTTAATCAATATCTCTATATGCTTATATGTCTCGTCCGTCTACGCACCTAATATAACGTCCATGCGTCACCCCTAGACTAATTACCTCATTC"
+dna2="CTGTCGCGAGCGGATACATTCAAACAATCCTGGGTACAAAGAATAAAACCTGGGCAATAATTCACCCAAACAAGGAAAGTAGCGAAAAAGTTCCAGAGGCCAAA"
+
+map={"A": "00", "C": "01", "G":"10", "T":"11"}
+
+dna1b = dna1.translate(dna1.maketrans(map))
+dna2b = dna2.translate(dna2.maketrans(map))
+
+flag = int(dna1b,2)^int(dna2b,2)
+
+print(binascii.unhexlify('%x' % flag))
+
+```
+
+This outputs the flag :)
+
 **Flag**
 ```
-HV20{}
+HV20{s4m3s4m3bu7diff3r3nt}
 ```
 
 ## Day 06: Title
