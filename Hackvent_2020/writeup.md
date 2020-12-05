@@ -400,11 +400,41 @@ which when converted to ascii spells `Ilov3y0uS4n74`
 HV20{Ilov3y0uS4n74}
 ```
 
-## Day 05: Title
+## Day 05: Image DNA
 
 **Description**
 
+Santa has thousands of Christmas balls in stock. They all look the same, but he can still tell them apart. Can you see the difference?
+
+![](writeupfiles/dec5-1.jpg)
+![](writeupfiles/dec5-2.jpg)
+
 **Solution**
+
+running `strings` on the images reveals a DNA sequence, hint?
+
+```bash
+$ strings dec5-1.jpg
+JFIF
+$3br
+[..]
+f?*~
+kh[F;-8B
+VW}L
+CTGTCGCGAGCGGATACATTCAAACAATCCTGGGTACAAAGAATAAAACCTGGGCAATAATTCACCCAAACAAGGAAAGTAGCGAAAAAGTTCCAGAGGCCAAA
+
+
+$ strings dec5-2.jpg
+JFIF
+ICC_PROFILE
+lcms
+mntrRGB XYZ
+[..]
+Iwh]r
+=nr_
+ATATATAAACCAGTTAATCAATATCTCTATATGCTTATATGTCTCGTCCGTCTACGCACCTAATATAACGTCCATGCGTCACCCCTAGACTAATTACCTCATTC
+
+```
 
 **Flag**
 ```
