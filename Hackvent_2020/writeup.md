@@ -439,15 +439,17 @@ ATATATAAACCAGTTAATCAATATCTCTATATGCTTATATGTCTCGTCCGTCTACGCACCTAATATAACGTCCATGCGTC
 Aha! we see two DNA strings, of equal length, and looks about the right length for a flag..
 
 The challenge description refers to differences, so lets subtract these two strings from each other
-We first convert to binary from this 4 base string
+We first convert to binary from this base-4 string
 
 ```
-A = 00
-C = 01
-G = 10
-T = 11
+    bin base4
+A = 00  0
+C = 01  1
+G = 10  2
+T = 11  3
 ```
-in this scheme, each group of 4 characters maps to 8 bits, and therefor one character.
+
+In this scheme, each group of 4 characters maps to 8 bits, and therefore one ascii character.
 
 Knowing that the result should start with `HV20{`, we experiment with the first few characters, and find
 out that if we XOR the result of the above mapping, we get the right answer:
@@ -459,7 +461,7 @@ xor:       01001000 01010110
 ascii:     H        V
 ```
 
-ok, this looks good! Let's automate the rest in python:
+ok, this looks good! Let's automate the rest in Python:
 
 ```python
 import binascii
@@ -467,13 +469,15 @@ import binascii
 dna1="ATATATAAACCAGTTAATCAATATCTCTATATGCTTATATGTCTCGTCCGTCTACGCACCTAATATAACGTCCATGCGTCACCCCTAGACTAATTACCTCATTC"
 dna2="CTGTCGCGAGCGGATACATTCAAACAATCCTGGGTACAAAGAATAAAACCTGGGCAATAATTCACCCAAACAAGGAAAGTAGCGAAAAAGTTCCAGAGGCCAAA"
 
-map={"A": "00", "C": "01", "G":"10", "T":"11"}
-
+# translate DNA strings to base-4 numbers
+map={"A": "0", "C": "1", "G":"2", "T":"3"}
 dna1b = dna1.translate(dna1.maketrans(map))
 dna2b = dna2.translate(dna2.maketrans(map))
 
-flag = int(dna1b,2)^int(dna2b,2)
+# xor the two numbers
+flag = int(dna1b,4)^int(dna2b,4)
 
+# convert back to ascii
 print(binascii.unhexlify('%x' % flag))
 
 ```
