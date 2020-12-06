@@ -15,7 +15,8 @@ Title                                             | Category    | Points | Flag
 [December 3 ](#day-03-packed-gifts)               | Easy        | 2/1    | `HV20{ZipCrypt0_w1th_kn0wn_pla1ntext_1s_easy_t0_decrypt}`
 [December 4 ](#day-04-bracelet)                   | Easy        | 2/1    | `HV20{Ilov3y0uS4n74}`
 [December 5 ](#day-05-image-dna)                            | Easy        | 2/1    | `HV20{s4m3s4m3bu7diff3r3nt}`
-[December 6 ](#day-06)                            | Easy        | 2/1    | `HV20-`
+[December 6 ](#day-06-twelve-steps-of-christmas)                            | Easy        | 2/1    | `HV20{Erno_Rubik_would_be_proud.Petrus_is_Valid.#HV20QRubicsChal}
+`
 [December 7 ](#day-07)                            | Easy        | 2/1    | `HV20-`
 [December 8 ](#day-08)                            | Medium      | 3/2    | `HV20-`
 [December 9 ](#day-09)                            | Medium      | 3/2    | `HV20-`
@@ -508,37 +509,76 @@ and the rest has been said previously.
 
 This is cool, I love Rubik's cubes! Unfortunately I don't have a printer, so we are going to solve this in-silico :)
 
-We cut out all the squares with GIMP, and use imagemagick to generate the possible rotations for each, and now we are going to brute force all the combinations until we find the flag!
+We cut out all the squares with GIMP, and use python to generate all possible combinations of QR-quarters, and find the flag
 
-We use montage to stitch the 4 images together, and [zbarimg]() to scan the QR codes from the commandline:
 
-```bash
-for p1 in tl/*.png; do
- echo $p1
- for p2 in tr/*.png; do
-  for p3 in bl/*.png; do
-   for p4 in br2/*.png br3/*png br4*.png; do
-     montage  -mode concatenate -tile 2x2 ${p1} $p2 $p3 $p4 out/out.png;
-     zbarimg out/out.png 2>&1 | grep QR-Code
-   done;
-  done;
- done;
-done;
+```python
+from PIL import Image
+from pyzbar.pyzbar import decode
+import glob, itertools
+
+def concat_h(im1, im2):
+    dst = Image.new('RGB', (im1.width + im2.width, im1.height))
+    dst.paste(im1, (0, 0))
+    dst.paste(im2, (im1.width, 0))
+    return dst
+
+def concat_v(im1, im2):
+    dst = Image.new('RGB', (im1.width, im1.height + im2.height))
+    dst.paste(im1, (0, 0))
+    dst.paste(im2, (0, im1.height))
+    return dst
+
+
+# load image parts
+qrblocks = [Image.open(a) for a in glob.glob("dec6-qrcodes/good_tr/*.png")]
+qrbr = [Image.open(a) for a in glob.glob("dec6-qrcodes/br/*.png")]
+perm = itertools.permutations(qrblocks,3)
+
+found = 0
+for i in perm:
+  tl = i[0].rotate(90)
+  tr = i[1]
+  bl = i[2].rotate(180)
+  for br in qrbr:
+    top = concat_h(tl,tr)
+    bottom = concat_h(bl,br)
+    final = concat_v(top,bottom)
+    dec = decode(final)
+    if dec != []:
+      print(dec[0].data)
+      final.save("dec6_qrcode"+str(found)+".png")
+      found+=1
 
 ```
 
 This gives the following output:
 
 ```
-QR-Code:_Valid.
-QR-Code:HV20{Erno_
-QR-Code:Rubik_would
-QR-Code:#HV20QRubicsChal}
+b'HV20{Erno_                                                      '
+b'_be_proud.                                                      '
+b'Rubik_would                                                     '
+b'#HV20QRubicsChal}                                               '
+b'_Valid.                                                         '
+b'Petrus_is                                                       '
 ```
+
+whoo! we found all the fragments! Now its just a matter of putting them in the right order and we have our flag :)
+
+These were the qr images
+
+![](writeupfiles/dec6_qr0.png)
+![](writeupfiles/dec6_qr1.png)
+![](writeupfiles/dec6_qr2.png)
+![](writeupfiles/dec6_qr3.png)
+![](writeupfiles/dec6_qr4.png)
+![](writeupfiles/dec6_qr5.png)
+
+
 
 **Flag**
 ```
-HV20{}
+HV20{Erno_Rubik_would_be_proud.Petrus_is_Valid.#HV20QRubicsChal}
 ```
 
 ## Day 07: Title
