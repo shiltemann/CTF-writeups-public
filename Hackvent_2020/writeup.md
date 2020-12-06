@@ -489,11 +489,52 @@ This outputs the flag :)
 HV20{s4m3s4m3bu7diff3r3nt}
 ```
 
-## Day 06: Title
+## Day 06: Twelve steps of Christmas
 
 **Description**
 
+On the sixth day of Christmas my true love sent to me...
+
+six valid QRs,
+five potential scrambles,
+four orientation bottom and right,
+and the rest has been said previously.
+
+![](writeupfiles/dec6.png)
+
+[source image (.pxd)](writeupfiles/dec6.pxd)
+
 **Solution**
+
+This is cool, I love Rubik's cubes! Unfortunately I don't have a printer, so we are going to solve this in-silico :)
+
+We cut out all the squares with GIMP, and use imagemagick to generate the possible rotations for each, and now we are going to brute force all the combinations until we find the flag!
+
+We use montage to stitch the 4 images together, and [zbarimg]() to scan the QR codes from the commandline:
+
+```bash
+for p1 in tl/*.png; do
+ echo $p1
+ for p2 in tr/*.png; do
+  for p3 in bl/*.png; do
+   for p4 in br2/*.png br3/*png br4*.png; do
+     montage  -mode concatenate -tile 2x2 ${p1} $p2 $p3 $p4 out/out.png;
+     zbarimg out/out.png 2>&1 | grep QR-Code
+   done;
+  done;
+ done;
+done;
+
+```
+
+This gives the following output:
+
+```
+QR-Code:_Valid.
+QR-Code:HV20{Erno_
+QR-Code:Rubik_would
+QR-Code:#HV20QRubicsChal}
+```
 
 **Flag**
 ```
