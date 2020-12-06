@@ -14,9 +14,8 @@ Title                                             | Category    | Points | Flag
 [December 2 ](#day-02-chinese-animals)            | Easy        | 2/1    | `HV20{small-elegant-butterfly-loves-grass-mud-horse}`
 [December 3 ](#day-03-packed-gifts)               | Easy        | 2/1    | `HV20{ZipCrypt0_w1th_kn0wn_pla1ntext_1s_easy_t0_decrypt}`
 [December 4 ](#day-04-bracelet)                   | Easy        | 2/1    | `HV20{Ilov3y0uS4n74}`
-[December 5 ](#day-05-image-dna)                            | Easy        | 2/1    | `HV20{s4m3s4m3bu7diff3r3nt}`
-[December 6 ](#day-06-twelve-steps-of-christmas)                            | Easy        | 2/1    | `HV20{Erno_Rubik_would_be_proud.Petrus_is_Valid.#HV20QRubicsChal}
-`
+[December 5 ](#day-05-image-dna)                  | Easy        | 2/1    | `HV20{s4m3s4m3bu7diff3r3nt}`
+[December 6 ](#day-06-twelve-steps-of-christmas)  | Easy        | 2/1    | `HV20{Erno_Rubik_would_be_proud.Petrus_is_Valid.#HV20QRubicsChal}`
 [December 7 ](#day-07)                            | Easy        | 2/1    | `HV20-`
 [December 8 ](#day-08)                            | Medium      | 3/2    | `HV20-`
 [December 9 ](#day-09)                            | Medium      | 3/2    | `HV20-`
