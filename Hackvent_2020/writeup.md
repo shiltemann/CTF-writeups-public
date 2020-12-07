@@ -742,6 +742,22 @@ public class Program
 
 ```
 
+So looks like we need to find the input that passes all the tests in the code, and then we can derive the flag from that.
+
+Lets translate the code into what our strings needs to look like:=
+
+1. Every odd-numbered character has to translate to `BumBumWithTheTumTum`
+   - input: `.B.u.m.B.u.m.W.i.t.h.T.h.e.T.u.m.T.u.m.`
+   - text2: `SFYyMHtyMz?zcnMzXzNuZzFuMzNyMW5n?2`
+     - ? = array[8].GetHashCode() % 10
+     - ? = array[14].ToString()
+2. input must be "BackAndForth" in reverse `htroFdnAkcaB`
+   - text3: `Q1RGX3BsNHkxbmdf`
+
+3.
+
+
+
 **Flag**
 ```
 HV20{}
