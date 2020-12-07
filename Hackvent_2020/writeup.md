@@ -16,7 +16,7 @@ Title                                             | Category    | Points | Flag
 [December 4 ](#day-04-bracelet)                   | Easy        | 2/1    | `HV20{Ilov3y0uS4n74}`
 [December 5 ](#day-05-image-dna)                  | Easy        | 2/1    | `HV20{s4m3s4m3bu7diff3r3nt}`
 [December 6 ](#day-06-twelve-steps-of-christmas)  | Medium        | 2/1    | `HV20{Erno_Rubik_would_be_proud.Petrus_is_Valid.#HV20QRubicsChal}`
-[December 7 ](#day-bad-morals)                            | Easy        | 2/1    | `HV20-`
+[December 7 ](#day-bad-morals)                            | Medium        | 2/1    | `HV20{r3?3rs3_3ng1n33r1ng_m4d3_34sy}`
 [December 8 ](#day-08)                            | Medium      | 3/2    | `HV20-`
 [December 9 ](#day-09)                            | Medium      | 3/2    | `HV20-`
 [December 10](#day-10)                            | Medium      | 3/2    | `HV20-`
@@ -35,7 +35,7 @@ Title                                             | Category    | Points | Flag
 [December 23](#day-23-)                           | Expert      | 5/4    | `HV20-`
 [December 24](#day-24-)                           | Expert      | 5/4    | `HV20-`
 [December 25](#day-25-)                           | Expert      | 5/4    | `HV20-`
-[Hidden 1][#hidden-1]                             |             |      | `HV20{it_is_always_worth_checking_everywhere_and_congratulations,_you_have_found_a_hidden_flag}`
+[Hidden 1](#hidden-1)                             |             |      | `HV20{it_is_always_worth_checking_everywhere_and_congratulations,_you_have_found_a_hidden_flag}`
 
 ## Day -1: Twelve steps of christmas
 
@@ -748,17 +748,18 @@ Lets translate the code into what our strings needs to look like:=
 
 1. Every odd-numbered character has to translate to `BumBumWithTheTumTum`
    - input: `.B.u.m.B.u.m.W.i.t.h.T.h.e.T.u.m.T.u.m.`
-   - text2: `SFYyMHtyMz?zcnMzXzNuZzFuMzNyMW5n?2`
-     - ? = array[8].GetHashCode() % 10
-     - ? = array[14].ToString()
-2. input must be "BackAndForth" in reverse `htroFdnAkcaB`
-   - text3: `Q1RGX3BsNHkxbmdf`
-
-3. Input must match an algorithm:
+   - text2: `SFYyMHtyMz?zcnMzXzNuZzFuMzNyMW5n?2` (tho unknown characters)
+2. Input must be "BackAndForth" in reverse `htroFdnAkcaB`
+   - text3: `Q1RGX3hsNHoxbmnf`
+3. Input must match an algorithm (see snippet below)
   - input: `nOMNSaSFjC[`
-  - text4: ...
+  - text4: `00ZDNfMzRzeX0=`
+4. Combination of inputs must match a specific SHA1 hash
 
-```
+
+We obtained part 3 with the following code:
+
+```python
 import string
 
 def m(i):
@@ -782,10 +783,71 @@ for idx, k in enumerate(want):
 # nOMNSaSFjC[
 ```
 
+So we know all the pieces, but piece 2 has two unknown characters. The right ones will lead the fourth test to pass (SHA1 hash). So we just adjust the C# code to loop over all possibilities, and print our flag:
+
+
+```c#
+using System;
+using System.Security.Cryptography;
+using System.Text;
+
+public class Program{
+	public static void Main(string[] args)	{
+		string text2a="SFYyMHtyMz";
+		string text2b="zcnMzXzNuZzFuMzNyMW5n";
+		string text2c="2";
+		string text2="";
+		string text3="Q1RGX3hsNHoxbmnf";
+		string text4="00ZDNfMzRzeX0=";
+		byte[] array5 = Convert.FromBase64String(text3);
+		string b64chars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/";
+		for(int x=0;x<=63; x++){
+			for(int y=0;y<=63; y++){
+				text2= text2a +b64chars[x]+ text2b+b64chars[y]+ text2c;
+				byte[] array4 = Convert.FromBase64String(text2 + text4);
+				byte[] array6 = new byte[array4.Length];
+				for (int l = 0; l < array4.Length; l++){
+					array6[l] = (byte)(array4[l] ^ array5[l % array5.Length]);
+				}
+				byte[] array7 = SHA1.Create().ComputeHash(array6);
+				byte[] array8 = new byte[20]{107,64,119,202,154,218,200,113,63,1,66,148,207,23,254,198,197,79,21,10};
+				bool match=true;
+				for (int m = 0; m < array7.Length; m++){
+					if (array7[m] != array8[m]){
+						match=false;
+					}
+				}
+				if (match){
+					string flag = Encoding.ASCII.GetString(array4);
+					if (flag.StartsWith("HV20{")){
+						Console.WriteLine("Congratulations! You're now worthy to claim your flag: {0}", flag);
+					}
+				}
+			}
+		}
+	}
+}
+```
+
+```
+Congratulations! You're now worthy to claim your flag: HV20{r3?3rs3_3ng1n33r1ng_m4d3_34sy}
+```
+
+Note: below are instructions to compile and run C# on Ubuntu:
+
+```
+sudo apt-get install mono-runtime mono-mcs
+mcs dec7_solve.cs
+mono dec7_solve.exe
+```
+
+
 **Flag**
 ```
-HV20{}
+HV20{r3?3rs3_3ng1n33r1ng_m4d3_34sy}
 ```
+
+
 ## Day 08: Title
 
 **Description**
