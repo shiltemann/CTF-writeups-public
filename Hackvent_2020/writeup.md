@@ -752,36 +752,33 @@ Lets translate the code into what our strings needs to look like:=
 2. Input must be "BackAndForth" in reverse `htroFdnAkcaB`
    - text3: `Q1RGX3hsNHoxbmnf`
 3. Input must match an algorithm (see snippet below)
-  - input: `nOMNSaSFjC[`
-  - text4: `00ZDNfMzRzeX0=`
+   - input: `nOMNSaSFjC[`
+   - text4: `00ZDNfMzRzeX0=`
+
+    ```python
+    import string
+
+    def m(i):
+        arr3 = list(i)
+        b = 42
+        text = ''
+        for k, character in enumerate(arr3):
+            c = ord(arr3[k]) ^ b
+            b = b + k -4
+            text += chr(c)
+
+        return text
+    want = 'DinosAreLit'
+    key = ''
+    for idx, k in enumerate(want):
+        for i in string.printable:
+            if m(key + i) == want[0:idx + 1]:
+                print(key + i, m(key + i), want[0:idx + 1])
+                key += i
+    # prints
+    # nOMNSaSFjC[
+    ```
 4. Combination of inputs must match a specific SHA1 hash
-
-
-We obtained part 3 with the following code:
-
-```python
-import string
-
-def m(i):
-    arr3 = list(i)
-    b = 42
-    text = ''
-    for k, character in enumerate(arr3):
-        c = ord(arr3[k]) ^ b
-        b = b + k -4
-        text += chr(c)
-
-    return text
-want = 'DinosAreLit'
-key = ''
-for idx, k in enumerate(want):
-    for i in string.printable:
-        if m(key + i) == want[0:idx + 1]:
-            print(key + i, m(key + i), want[0:idx + 1])
-            key += i
-# prints
-# nOMNSaSFjC[
-```
 
 So we know all the pieces, but piece 2 has two unknown characters. The right ones will lead the fourth test to pass (SHA1 hash). So we just adjust the C# code to loop over all possibilities, and print our flag:
 
@@ -793,18 +790,13 @@ using System.Text;
 
 public class Program{
 	public static void Main(string[] args)	{
-		string text2a="SFYyMHtyMz";
-		string text2b="zcnMzXzNuZzFuMzNyMW5n";
-		string text2c="2";
-		string text2="";
-		string text3="Q1RGX3hsNHoxbmnf";
-		string text4="00ZDNfMzRzeX0=";
-		byte[] array5 = Convert.FromBase64String(text3);
+		byte[] array5 = Convert.FromBase64String("Q1RGX3hsNHoxbmnf");
+
 		string b64chars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/";
 		for(int x=0;x<=63; x++){
 			for(int y=0;y<=63; y++){
-				text2= text2a +b64chars[x]+ text2b+b64chars[y]+ text2c;
-				byte[] array4 = Convert.FromBase64String(text2 + text4);
+				string text2= "SFYyMHtyMz" + b64chars[x] + "zcnMzXzNuZzFuMzNyMW5n" + b64chars[y] + "2";
+				byte[] array4 = Convert.FromBase64String(text2 + "00ZDNfMzRzeX0=");
 				byte[] array6 = new byte[array4.Length];
 				for (int l = 0; l < array4.Length; l++){
 					array6[l] = (byte)(array4[l] ^ array5[l % array5.Length]);
@@ -827,6 +819,7 @@ public class Program{
 		}
 	}
 }
+
 ```
 
 ```
