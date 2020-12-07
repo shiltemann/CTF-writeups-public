@@ -754,9 +754,33 @@ Lets translate the code into what our strings needs to look like:=
 2. input must be "BackAndForth" in reverse `htroFdnAkcaB`
    - text3: `Q1RGX3BsNHkxbmdf`
 
-3.
+3. Input must match an algorithm:
+  - input: `nOMNSaSFjC[`
+  - text4: ...
 
+```
+import string
 
+def m(i):
+    arr3 = list(i)
+    b = 42
+    text = ''
+    for k, character in enumerate(arr3):
+        c = ord(arr3[k]) ^ b
+        b = b + k -4
+        text += chr(c)
+
+    return text
+want = 'DinosAreLit'
+key = ''
+for idx, k in enumerate(want):
+    for i in string.printable:
+        if m(key + i) == want[0:idx + 1]:
+            print(key + i, m(key + i), want[0:idx + 1])
+            key += i
+# prints
+# nOMNSaSFjC[
+```
 
 **Flag**
 ```
