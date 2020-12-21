@@ -1016,6 +1016,15 @@ HV20{}
 
 **Description**
 
+Elf4711 has written a cool front end for the linux man pages. Soon after publishing he got pwned. In the meantime he found out the reason and improved his code. So now he is sure it's unpwnable.
+
+*Notes*
+- You need to start the web application from the `RESOURCES` section on top
+- This challenge requires a VPN connection into the Hacking-Lab. Check out the document in the `RESOURCES` section.
+
+*Hints*
+- Don't miss the source code link on the man page
+
 **Solution**
 
 **Flag**
@@ -1026,6 +1035,15 @@ HV20{}
 ## Day 16: Naughty Rudolph
 
 **Description**
+
+Santa loves to keep his personal secrets on a little toy cube he got from a kid called Bread. Turns out that was not a very good idea. Last night Rudolph got hold of it and frubl'd it about five times before spitting it out. Look at it! All the colors have come off! Naughty Rudolph!
+
+[dec16.stl](writeupfiles/dec16.stl)
+
+*Hints*
+- The flag matches `/^HV20{[a-z3-7_@]+}$/` and is read face by face, from left to right, top to bottom
+- The cube has been scrambled with ~5 moves in total
+- jElf has already started trying to solve the problem, however he got lost with all the numbers. Feel free to use his current state if you don't want to start from scratch...
 
 **Solution**
 
@@ -1038,6 +1056,21 @@ HV20{}
 
 **Description**
 
+Santa has a customized remote control panel for his gift factory at the north pole. Only clients with the following fingerprint seem to be able to connect:
+
+`771,49162-49161-52393-49200-49199-49172-49171-52392,0-13-5-11-43-10,23-24,0`
+
+Connect to Santa's super-secret control panel and circumvent its access controls.
+
+[Santa's Control Panel](Santa's Control Panel)
+
+*Hints*
+- If you get a 403 forbidden: this is part of the challenge
+- The remote control panel does client fingerprinting
+- There is an information leak somewhere which you need to solve the challenge
+- The challenge is not solvable using brute force or injection vulnerabilities
+- Newlines matter, check your files
+
 **Solution**
 
 **Flag**
@@ -1049,7 +1082,16 @@ HV20{}
 
 **Description**
 
-**Solution**
+Santa has forgotten his password and can no longer access his data. While trying to read the hard disk from another computer he also destroyed an important file. To avoid further damage he made a backup of his home partition. Can you help him recover the data.
+
+When asked he said the only thing he remembers is that he used his name in the password... I thought this was something only a real human would do...
+
+[dec18.bz2](writeupfiles/dec18.bz2)
+
+*Hints*
+- It's not rock-science, it's station-science!
+- Use default options
+
 
 **Flag**
 ```
@@ -1059,6 +1101,12 @@ HV20{}
 ## Day 19: Docker Linter
 
 **Description**
+
+Docker Linter is a useful web application ensuring that your Docker-related files follow best practices. Unfortunately, there's a security issue in there...
+
+Requirements
+
+This challenge requires a reverse shell. You can use the provided Web Shell or the VPN to solve this challenge (see `RESOURCES` on top).
 
 **Solution**
 
@@ -1070,6 +1118,16 @@ HV20{}
 ## Day 20: Twelve steps of Christmas
 
 **Description**
+On the twelfth day of Christmas my true love sent to me...
+twelve rabbits a-rebeling,
+eleven ships a-sailing,
+ten (twentyfourpointone) pieces a-puzzling,
+and the rest is history.
+
+![](writeupfiles/dec20.png)
+
+*Hints*
+- You should definitely give [Bread's famous easy perfect fresh rosemary yeast black pepper bread](writeupfiles/dec20.txt) a try this Christmas!
 
 **Solution**
 
@@ -1081,6 +1139,12 @@ HV20{}
 ## Day 21: Threatened Cat
 
 **Description**
+
+You can feed this cat with many different things, but only a certain kind of file can endanger the cat.
+
+Do you find that kind of files? And if yes, can you use it to disclose the flag? Ahhh, by the way: The cat likes to hide its stash in `/usr/bin/catnip.txt`.
+
+Note: The cat is currently in hibernation and will take a few seconds to wake up.
 
 **Solution**
 
