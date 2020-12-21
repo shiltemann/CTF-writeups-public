@@ -1,5 +1,6 @@
 # HACKvent 2020
 
+
 The annual advent calender from Hacking-lab
 
 ![]()
@@ -841,7 +842,177 @@ HV20{r3?3rs3_3ng1n33r1ng_m4d3_34sy}
 ```
 
 
-## Day 08: Title
+## Day 08: The Game
+
+**Description**
+
+Let's play another little game this year. Once again, as every year, I promise it is hardly obfuscated.
+
+[Game](writeupfiles/dec8.txt)
+
+**Solution**
+
+
+```
+perl -Mre=eval -MO=Deparse dec8.txt > dec8_deparse.pl
+```
+
+makes it a bit more readable.
+
+We can run the code in perl, and see it is a tetris game
+
+```bash
+$ sudo apt install libterm-readkey-perl
+$ perl dec8.txt
+```
+
+There is a flag in there that leads to a Rick roll youtube video, hmm..
+We can fiddle with the code a bit to make it easier to play (slower drops, and we make all shapes squares, [dec8_tidy.pl](writeupfiles/dec8_tidy.p.)
+
+The letter that drop do not follow exactly the rick roll video link,
+
+`HV20{https://www.youtube.com/watch?v=dlh4hs0chjl0}`
+
+but this other link it gives also doesnt lead anywhere, hmm, did we emss with some setting that affect the outcome?
+
+
+
+
+**Flag**
+```
+HV20{}
+```
+
+## Day 09: Santa's Gingerbread Factory
+
+**Description**
+
+Here you can customize your absolutely fat-free gingerbread man.
+
+Note: Start your personal instance from the RESOURCES section on top.
+
+Besides the gingerbread men, there are other goodies there. Let's see if you can get the goodie, which is stored in /flag.txt.
+
+**Solution**
+
+**Flag**
+```
+HV20{}
+```
+
+## Day 10: Be patient with the adjacent
+
+**Description**
+
+Ever wondered how Santa delivers presents, and knows which groups of friends should be provided with the best gifts? It should be as great or as large as possible! Well, here is one way.
+
+Hmm, I cannot seem to read the file either, maybe the internet knows?
+
+[dec10.col.b](writeupfiles/dec10.col.b)
+
+*Hints*
+- Hope this cliques for you
+- `bin2asc` will help you with this, but ...
+- segfaults can be fixed - maybe read the source
+- If you are using Windows for this challenge, make sure to add a b to to the fopen calls on lines 37 and 58
+- There is more than one thing you can do with this type of file! Try other options...
+- Groups, not group
+
+**Solution**
+
+**Flag**
+```
+HV20{}
+```
+
+## Day 11: Chris'mas carol
+
+**Description**
+
+Since yesterday's challenge seems to have been a bit on the hard side, we're adding a small musical innuendo to relax.
+
+My friend Chris from Florida sent me this score. Enjoy! Is this what you call postmodern?
+
+![](writeupfiles/dec11.png)
+
+P.S: Also, we're giving another 24h to get full points for the last challenge.
+
+*Hints*
+- He also sent this image, but that doesn't look like Miami's skyline to me.
+- The secret code is useful for a file - not a website
+
+
+**Solution**
+
+**Flag**
+```
+HV20{}
+```
+
+## Day 12: Wiener Waltz
+
+**Description**
+
+During their yearly season opening party our super-smart elves developed an improved usage of the well known RSA crypto algorithm. Under the "Green IT" initiative they decided to save computing horsepower (or rather reindeer power?) on their side. To achieve this they chose a pretty large private exponent, around 1/4 of the length of the modulus - impossible to guess. The reduction of 75% should save a lot of computing effort while still being safe. Shouldn't it?
+Mission
+
+Your SIGINT team captured some communication containing key exchange and encrypted data. Can you recover the original message?
+
+[dec12.pcap](writeupfiles/dec12.pcap)
+
+*Hints*
+- Don't waste time with the attempt to brute-force the private key
+
+
+**Solution**
+
+**Flag**
+```
+HV20{}
+```
+
+## Day 13: Twelve steps of christmas
+
+**Description**
+
+On the ninth day of Christmas my true love sent to me...
+
+nineties style xls,
+eighties style compression,
+seventies style crypto,
+and the rest has been said previously.
+
+[dec13.xls](writeupfiles/dec13.xls)
+
+*Hints*
+- Wait, Bread is on the Nice list? Better check that comment again...
+
+**Solution**
+
+**Flag**
+```
+HV20{}
+```
+
+## Day 14: Santa's Special GIFt
+
+**Description**
+
+Today, you got a strange GIFt from Santa:
+
+![](writeupfiles/dec14.gif)
+
+You are unsure what it is for. You do happen to have some wood lying around, but the tool seems to be made for metal. You notice how it has a rather strange size. You could use it for your fingernails, perhaps? If you keep looking, you might see some other uses...
+
+
+**Solution**
+
+**Flag**
+```
+HV20{}
+```
+
+## Day 15: Man Commands, Server Lost
 
 **Description**
 
@@ -852,7 +1023,7 @@ HV20{r3?3rs3_3ng1n33r1ng_m4d3_34sy}
 HV20{}
 ```
 
-## Day 09: Title
+## Day 16: Naughty Rudolph
 
 **Description**
 
@@ -863,7 +1034,7 @@ HV20{}
 HV20{}
 ```
 
-## Day 10: Title
+## Day 17: Santa's Gift Factory Control
 
 **Description**
 
@@ -874,7 +1045,7 @@ HV20{}
 HV20{}
 ```
 
-## Day 11: Title
+## Day 18: Santa's lost home
 
 **Description**
 
@@ -885,7 +1056,7 @@ HV20{}
 HV20{}
 ```
 
-## Day 12: Title
+## Day 19: Docker Linter
 
 **Description**
 
@@ -896,7 +1067,7 @@ HV20{}
 HV20{}
 ```
 
-## Day 13: Title
+## Day 20: Twelve steps of Christmas
 
 **Description**
 
@@ -907,84 +1078,7 @@ HV20{}
 HV20{}
 ```
 
-## Day 14: Title
-
-**Description**
-
-**Solution**
-
-**Flag**
-```
-HV20{}
-```
-
-## Day 15: Title
-
-**Description**
-
-**Solution**
-
-**Flag**
-```
-HV20{}
-```
-
-## Day 16: Title
-
-**Description**
-
-**Solution**
-
-**Flag**
-```
-HV20{}
-```
-
-## Day 17: Title
-
-**Description**
-
-**Solution**
-
-**Flag**
-```
-HV20{}
-```
-
-## Day 18: Title
-
-**Description**
-
-**Solution**
-
-**Flag**
-```
-HV20{}
-```
-
-## Day 19: Title
-
-**Description**
-
-**Solution**
-
-**Flag**
-```
-HV20{}
-```
-
-## Day 20: Title
-
-**Description**
-
-**Solution**
-
-**Flag**
-```
-HV20{}
-```
-
-## Day 21: Title
+## Day 21: Threatened Cat
 
 **Description**
 
