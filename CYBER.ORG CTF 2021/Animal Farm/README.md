@@ -20,6 +20,9 @@ The file can be opened in wireshark or any other reader. If we google an online 
 
 Upon uploading the .cap file and switching to the Pictures tab we can see the following images:
 
-
+![File](1.jpg)
+![File](2.jpg)
+![File](3.jpg)
+![File](4.jpg)
 
 Looking back at the question prompt, The flag is dolphin
