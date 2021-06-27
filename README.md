@@ -40,6 +40,8 @@ Some permanent CTF challenges I'd recommend are:
 - [OverTheWire](http://overthewire.org/wargames/)
 - [SmashTheStack](http://smashthestack.org/)
 - [WeChall](http://www.wechall.net/) (aggregates scores from various permanent CTF challenge sites)
+- [TryHackMe](https://tryhackme.com)
+- [HackTheBox](https://hackthebox.eu)
 - [PicoCTF](https://picoctf.org/)
 - Comprehensive [list](http://www.wechall.net/active_sites/all/by/site_id/ASC/page-1) of CTF sites from WeChall website
 
