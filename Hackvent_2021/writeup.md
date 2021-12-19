@@ -146,8 +146,6 @@ Not knowing how to blender, I just slowly selected groups of verticies and delet
 
 Cleaned up stl file included here [writeupfiles/15/obj.stl](writeupfiles/15/obj.stl)
 
-![](writeupfiles/15/obj.stl)
-
 
 **Flag**
 
