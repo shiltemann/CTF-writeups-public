@@ -131,6 +131,23 @@ I played around with it at first, and judging by the cone of snow there's clearl
 hv21{m3ssage_out_of_flakes}
 ```
 
+## Day 11: Oversized Gifts
+
+**Challenge**
+
+To ensure that Santa does not have to carry such a heavy load, our elves are always trying to shrink the gifts as much as possible. New technologies are constantly being developed in our laboratories. Unfortunately, an incident occurred during a test, when restoring the original size, an error occurred and now we are no longer able to achieve the original size.
+
+**Solution**
+
+https://www.bamsoftware.com/hacks/deflate.html seems relevant, maybe something about incorrect deflate flag or so? odd.
+
+
+**Flag**
+
+```
+```
+
+
 
 ## Day 15: Christmas Bauble
 
