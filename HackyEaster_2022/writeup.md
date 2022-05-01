@@ -14,7 +14,7 @@ Title                                            | Points     | Egg
 [I Key, You Key, ASCII](i-key-you-key-ascii)     | Level 2    | `he2022{th1s_0n3_1s_r3333ly_s1mpl3}`
 [Alpha Bravo Charlie](#alpha-bravo-charlie)      | Level 2    | `he2022{phonetic}`
 [Fibonacci Rabbits](#fibonacci-rabbits)          | Level 3    |
-[Knäck låset](knack-laset)                       | Level 3    | `he2022{807}`
+[Knäck låset](#knäck-låset)                      | Level 3    | `he2022{807}`
 
 
 ## Level 1
