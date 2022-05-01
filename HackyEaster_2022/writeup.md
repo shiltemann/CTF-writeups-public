@@ -102,6 +102,9 @@ he2022{welcome_to_hacky_easter_2022}
 
 **Challenge**
 
+My favourite game in the 80s was Space Invaders!
+
+[PDF](writeupfiles/spaceinvaders.pdf)
 
 **Solution**
 
