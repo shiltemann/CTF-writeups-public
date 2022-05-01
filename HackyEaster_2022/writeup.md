@@ -449,7 +449,37 @@ he2022{th1s_fl4g_1s_bl4ck_n0t}
 
 ### Copy Protection Pioneers
 
-TODO
+**Challenge**
+
+In case of fire, break the glass and press the button.
+
+http://46.101.107.117:2204
+
+Note: The service is restarted every hour at x:00.
+
+**Solution**
+
+Jet Set Willy was an archaic game with a copy protection card. Googling that finds a [really nice article on its history](https://intarch.ac.uk/journal/issue45/2/1.html)
+
+![image of a colour code chart, a-z on left, 0-9 on top, and series of 4 red/green/blue/pink squares for each cell](https://intarch.ac.uk/journal/issue45/2/images/figure9th.jpg)
+
+
+Helpfully this [available as a python script](https://github.com/aycock/jsw)
+
+```python
+$ python2 jswdecode.py | grep -e 'A 4' -e 'C 2' -e 'D 4' -e 'F 9' -e 'Q 2'
+A 4 = 2 1 4 2
+C 2 = 4 2 3 2
+D 4 = 1 3 3 1
+F 9 = 4 2 1 3
+Q 2 = 1 2 4 3
+```
+
+**Egg**
+
+```
+he2022{J3t-53t-W1llY-f0r3v3R}
+```
 
 ### Statues
 
