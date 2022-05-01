@@ -664,6 +664,8 @@ TODO
 
 View my verified achievement from (HOP)².
 
+![](writeupfiles/crypto_bunny.png)
+
 **Solution**
 
 Sounds like a badging system, checking the exifdata confirms:
