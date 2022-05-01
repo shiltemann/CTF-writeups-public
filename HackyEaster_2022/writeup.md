@@ -643,9 +643,9 @@ Can you find it?
 
 **Solution**
 
-Extracting the LSB plane (e.g. with stegonline) gives us the flag
+Extracting the LSB plane (e.g. with [stegonline](https://stegonline.com)) gives us the flag
 
-![](writeupfile/jupiter-lsb.png)
+![](writeupfiles/jupiter-lsb.png)
 
 **Egg**
 
