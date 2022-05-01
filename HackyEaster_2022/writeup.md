@@ -13,6 +13,9 @@ Title                                            | Points     | Egg
 [Sp4c3 Inv4d3r5!](#sp4c3-inv4d3r5)               | Level 2    | `he2022{Inv4d3rs_fr0m_sp4c3!}`
 [I Key, You Key, ASCII](i-key-you-key-ascii)     | Level 2    | `he2022{th1s_0n3_1s_r3333ly_s1mpl3}`
 [Alpha Bravo Charlie](#alpha-bravo-charlie)      | Level 2    | `he2022{phonetic}`
+[Fibonacci Rabbits](#fibonacci-rabbits)          | Level 3    |
+[Knäck låset](knack-laset)                       | Level 3    | `he2022{807}`
+
 
 ## Level 1
 
@@ -196,6 +199,127 @@ Just [NATO phonetic alphabet](https://en.wikipedia.org/wiki/NATO_phonetic_alphab
 
 **Egg**
 
+```
 he2022{phonetic}
+```
+
+
+## Level 3
+
+### Fibonacci Rabbits
+
+**Challenge**
+
+Everyone loves rabbits!
+
+http://46.101.107.117:2201
+
+Note: The service is restarted every hour at x:00.
+
+Hint: It is not about the rabbit names.
+
+
+**Solution**
+
+A website with pictures of bunnies..
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacci Rabbits</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+</head>
+<body translate="no">
+    <h1>Fibonacci Rabbits</h1>
+    <div id="gallery">
+        <div><img src="images/rabbit-17711.jpg" /><a href="#">Petal</a></div>
+        <div><img src="images/rabbit-75025.jpg" /><a href="#">Harley</a></div>
+        <div><img src="images/rabbit-34.jpg" /><a href="#">Rosie</a></div>
+        <div><img src="images/rabbit-987.jpg" /><a href="#">Petunia</a></div>
+        <div><img src="images/rabbit-8.jpg" /><a href="#">Mortimer</a></div>
+        <div><img src="images/rabbit-1.jpg" /><a href="#">Henry</a></div>
+        <div><img src="images/rabbit-144.jpg" /><a href="#">Miffy</a></div>
+        <div><img src="images/rabbit-2584.jpg" /><a href="#">E.B.</a></div>
+        <div><img src="images/rabbit-89.jpg" /><a href="#">Baxter</a></div>
+        <div><img src="images/rabbit-55.jpg" /><a href="#">Archie</a></div>
+        <div><img src="images/rabbit-5.jpg" /><a href="#">Murphy</a></div>
+        <div><img src="images/rabbit-317811.jpg" /><a href="#">Doc</a></div>
+        <div><img src="images/rabbit-2.jpg" /><a href="#">Hopper</a></div>
+        <div><img src="images/rabbit-6765.jpg" /><a href="#">Fluffy</a></div>
+        <div><img src="images/rabbit-46368.jpg" /><a href="#">Daffodil</a></div>
+        <div><img src="images/rabbit-28657.jpg" /><a href="#">Buttons</a></div>
+        <div><img src="images/rabbit-233.jpg" /><a href="#">Freddie</a></div>
+        <div><img src="images/rabbit-1597.jpg" /><a href="#">Roger</a></div>
+        <div><img src="images/rabbit-514229.jpg" /><a href="#">Bucky</a></div>
+        <div><img src="images/rabbit-4181.jpg" /><a href="#">Oliver</a></div>
+        <div><img src="images/rabbit-13.jpg" /><a href="#">Olive</a></div>
+        <div><img src="images/rabbit-3.jpg" /><a href="#">Bugs</a></div>
+        <div><img src="images/rabbit-377.jpg" /><a href="#">Flower</a></div>
+        <div><img src="images/rabbit-10946.jpg" /><a href="#">Chester</a></div>
+        <div><img src="images/rabbit-610.jpg" /><a href="#">Bubbles</a></div>
+        <div><img src="images/rabbit-121393.jpg" /><a href="#">Coco</a></div>
+        <div><img src="images/rabbit-21.jpg" /><a href="#">Clover</a></div>
+    </div>
+</body>
+</html>
+```
+
+These are all fibonacci numbers, specifically the Nth:
+
+```
+22, 25, 9, 16, 6, 1, 12, 18, 11, 10, 5, 28, 3, 20, 24, 23, 13, 17, 29, 19, 7, 4, 14, 21, 15, 26, 8
+```
+
+now what?
+
+
+**Egg**
+
+
+### Knäck låset
+
+**Challenge**
+
+Knäck the cØde!
+
+```
+koda   ✅ 🔀 ❌
+2-9-7  1  0  2
+2-3-0  0  1  2
+7-8-2  0  2  1
+5-1-9  0  0  3
+5-9-8  0  1  2
+```
+
+**Solution**
+
+ok, so its mastermind
+
+
+```
+koda   ✅ 🔀 ❌
+2-9-7  1  0  2   # 1: one correct, the 7 (not the 2 because of line 2, not the 9, because of line 4)
+2-3-0  0  1  2   # 2: either a 3 or 0 in the code
+7-8-2  0  2  1   # 3: 8 in the code (in addition to the 7), must be in first spot
+5-1-9  0  0  3   # 4: 5, 1 and 9 not in code
+5-9-8  0  1  2   # 5: 8 is in wrong spot
+
+---------------------
+8-0-7
+```
+
+**Egg**
+
+```
+he2022{807}
+```
+
 
 
