@@ -18,7 +18,7 @@ Title                                            | Points     | Egg
 [City Trip](#city-trip)                          | Level 3    | `he2022{bayardst}`
 [Unicorn](#unicorn)                              | Level 3    | `he2022{1_c_un1c0rns_3v3rywh3r3!}`
 [Bucket Egg](#bucket-egg)                        | Level 4    |
-[Fire Alert](#fire-alert)                        | Level 4    |
+[Fire Alert](#fire-alert)                        | Level 4    | `he2022{th1s_fl4g_1s_bl4ck_n0t}`
 [Copy Protection Pioneers](#copy-protection-pioneers) | Level 4    |
 [Statues](#statues)                              | Level 4    | `he2022{achilles}`
 [Snoopy](#snoopy)                                | Level 4    |
@@ -408,7 +408,44 @@ TODO
 
 ### Fire Alert
 
-TODO
+**Challenge**
+
+In case of fire, break the glass and press the button.
+
+http://46.101.107.117:2204
+
+Note: The service is restarted every hour at x:00.
+
+**Solution**
+
+
+We see a website with a button, it logs some color lines to the console, but it looks like also a flag
+
+```js
+function firealert() {
+    console.log("%c x", "color:transparent; border-left: 1000px solid lightgreen;");console.log("%c x", "color:transparent; border-left: 1000px solid blue;");
+    console.log("%c x", "color:transparent; border-left: 1000px solid red;");console.log("%c x", "color:transparent; border-left: 1000px solid tomato;");
+    console.log("%c x", "color:transparent; border-left: 1000px solid darkgray;");console.log("%c x", "color:transparent; border-left: 1000px solid yellow;");
+    console.log("%c x", "color:transparent; border-left: 1000px solid black;");console.log(atob("JWMgZmxhZzogaGUyMDIye3RoMXNfZmw0Z18xc19ibDRja19uMHR9"), "color:transparent; border-left: 1000px solid magenta;");
+    console.log("%c x", "color:transparent; border-left: 1000px solid purple;");console.log("%c x", "color:transparent; border-left: 1000px solid lightblue;");
+    console.log("%c x", "color:transparent; border-left: 1000px solid green;");console.log("%c x", "color:transparent; border-left: 1000px solid gray;");
+    window.location.href='https://www.youtube.com/watch?v=0oBx7Jg4m-o';
+}
+setInterval(function() {
+    document.body.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+}, 1000)
+
+```
+
+Running `atob("JWMgZmxhZzogaGUyMDIye3RoMXNfZmw0Z18xc19ibDRja19uMHR9")` it the console gets us our flag
+
+
+
+**Egg**
+
+```
+he2022{th1s_fl4g_1s_bl4ck_n0t}
+```
 
 ### Copy Protection Pioneers
 
