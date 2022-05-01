@@ -11,7 +11,8 @@ Title                                            | Points     | Egg
 -------------------------------------------------| ---------- | ------------------------------
 [Welcome Flag](#welcome-flag)                    | Level 1    | `he2022{welcome_to_hacky_easter_2022}`
 [Sp4c3 Inv4d3r5!](#sp4c3-inv4d3r5)               | Level 2    | `he2022{Inv4d3rs_fr0m_sp4c3!}`
-
+[I Key, You Key, ASCII](i-key-you-key-ascii)     | Level 2    | `he2022{th1s_0n3_1s_r3333ly_s1mpl3}`
+[Alpha Bravo Charlie](#alpha-bravo-charlie)      | Level 2    | `he2022{phonetic}`
 
 ## Level 1
 
@@ -125,5 +126,76 @@ Simple transcription (or simply copying and pasting the text into a diffrent fon
 ```
 he2022{Inv4d3rs_fr0m_sp4c3!}
 ```
+
+### Glitch
+
+**Challenge**
+
+I got a flag, but it's glitched somehow.
+
+```
+}ɥɔʇᴉしƃ_ǝしʇʇᴉし_ɐ_ʇ己几ɾ{ᄅᄅ０ᄅǝɥ
+```
+
+**Solution**
+It just a weird upside down font? read backwards and upside down to get the flag
+
+**Egg**
+
+```
+he2022{just_a_little_glitch}
+```
+
+### I Key, You Key, ASCII
+
+**Challenge**
+
+Look what I was drawing in my text editor!
+
+```
+.. .. .. 68 65 32 30 .. .. ..
+.. .. 32 ██ ██ ██ ██ 32 .. ..
+.. 7b ██ ██ ██ ██ ██ ██ 74 ..
+.. 68 ██ ██ ██ ██ ██ ██ 31 ..
+73 ██ ██ ██ ██ ██ ██ ██ ██ 5f
+30 ██ ██ ██ ██ ██ ██ ██ ██ 6e
+33 ██ ██ ██ ██ ██ ██ ██ ██ 5f
+31 ██ ██ ██ ██ ██ ██ ██ ██ 73
+5f ██ ██ ██ ██ ██ ██ ██ ██ 72
+33 ██ ██ ██ ██ ██ ██ ██ ██ 33
+33 ██ ██ ██ ██ ██ ██ ██ ██ 33
+.. 6c ██ ██ ██ ██ ██ ██ 79 ..
+.. 5f ██ ██ ██ ██ ██ ██ 73 ..
+.. .. 31 ██ ██ ██ ██ 6d .. ..
+.. .. .. 70 6c 33 7d .. .. ..
+```
+
+Hint: Cyber Chef
+
+**Solution**
+
+Ignoring everything but the hex values and converting to ascii gives us the flag
+
+**Egg**
+
+```
+he2022{th1s_0n3_1s_r3333ly_s1mpl3}
+```
+
+### Alhpa Bravo Charlie
+
+**Challenge**
+
+I received a strange message on my walkie-talkie today:
+
+hotel echo two zero two two{papa hotel oscar november echo tango india charlie}
+
+**Solution**
+
+Just [NATO phonetic alphabet](https://en.wikipedia.org/wiki/NATO_phonetic_alphabet)
+
+**Egg**
+
+he2022{phonetic}
 
 
