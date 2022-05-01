@@ -335,7 +335,7 @@ I made a nice city trip. Find out where I was!
     district or city name is not enough, we need the street
     example: Main Rd -> he2022{mainrd}
 
-![[](writeupfiles/citytrip.jpg)
+![](writeupfiles/citytrip.jpg)
 
 **Solution**
 
