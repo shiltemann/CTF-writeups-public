@@ -10,7 +10,7 @@ The annual Easter CTF from Hacking-lab
 Title                                            | Points     | Egg
 -------------------------------------------------| ---------- | ------------------------------
 [Welcome Flag](#welcome-flag)                    | Level 1    | `he2022{welcome_to_hacky_easter_2022}`
-[Sp4c3 Inv4d3r5!](#sp4c3_inv4d3r5)               | Level 2    | `he2022{Inv4d3rs_fr0m_sp4c3!}`
+[Sp4c3 Inv4d3r5!](#sp4c3-inv4d3r5)               | Level 2    | `he2022{Inv4d3rs_fr0m_sp4c3!}`
 
 
 ## Level 1
@@ -113,6 +113,7 @@ Nothing to see with binwalk, so maybe the key is in the images itself.
 
 A Quick google reveals the following space invaders alphabet
 
+![](writeupfiles/space-invaders-code.png)
 
 Simple transcription (or simply copying and pasting the text into a diffrent font, since it was text) gives us the key:
 
