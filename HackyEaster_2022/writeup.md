@@ -23,6 +23,13 @@ Title                                            | Points     | Egg
 [Statues](#statues)                              | Level 4    | `he2022{achilles}`
 [Snoopy](#snoopy)                                | Level 4    |
 [LEDs](#leds)                                    | Level 4    | `he2022{n34t_l1ttl3_d3v1c3}`
+[Rabbits with Hats](#rabbits-with-hats)          | Level 5    |
+[Crypto Bunny](#crypto-bunny)                    | Level 5    |
+[Jupiter One](#jupiter-one)                      | Level 5    | `he2022{jim_jupiter_the_healthiest_man_in_chicago!!}`
+[Ghost in a Shell 3](#ghost-in-a-shell-3)        | Level 5    |
+[Coney Island Hackers](#coney-island-hackers)    | Level 5    |
+[Textbook](#textbook)                            | Level 5    |
+
 
 ## Level 1
 
@@ -609,3 +616,53 @@ We need to setup a shift of 14, so we hit the B buttin 3 times to make 15, then 
 ```
 he2022{n34t_l1ttl3_d3v1c3}
 ```
+
+
+
+## Level 5
+
+
+### Rabbits with Hats
+
+TODO
+
+### Crypto Bunny
+
+TODO
+
+### Jupiter One
+
+**Challenge**
+
+Jupiter is hiding something.
+
+Can you find it?
+
+
+![](writeupfiles/jupiter-one.png)
+
+**Solution**
+
+Extracting the LSB plane (e.g. with stegonline) gives us the flag
+
+![](writeupfile/jupiter-lsb.png)
+
+**Egg**
+
+```
+he2022{jim_jupiter_the_healthiest_man_in_chicago!!}
+```
+
+### Ghost in a Shell 3
+
+TODO
+
+### Coney Island Hackers
+
+TODO
+
+### Textbook
+
+TODO
+
+
