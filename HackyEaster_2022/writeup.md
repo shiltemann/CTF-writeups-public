@@ -15,6 +15,7 @@ Title                                            | Points     | Egg
 [Alpha Bravo Charlie](#alpha-bravo-charlie)      | Level 2    | `he2022{phonetic}`
 [Fibonacci Rabbits](#fibonacci-rabbits)          | Level 3    |
 [Knäck låset](#knäck-låset)                      | Level 3    | `he2022{807}`
+[City Trip](#city-trip)                          | Level 3    |
 
 
 ## Level 1
@@ -321,5 +322,25 @@ koda   ✅ 🔀 ❌
 he2022{807}
 ```
 
+
+### City Trip
+
+**Challenge**
+
+I made a nice city trip. Find out where I was!
+
+🚩 Flag
+
+    street's name in lowercase and without spaces
+    district or city name is not enough, we need the street
+    example: Main Rd -> he2022{mainrd}
+
+![[](writeupfiles/citytrip.jpg)
+
+**Solution**
+
+Seems like we have to find out the location of this image, but it does not appear to be geotagged, hmm..
+
+**Egg**
 
 
