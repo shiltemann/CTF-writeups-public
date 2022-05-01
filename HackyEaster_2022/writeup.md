@@ -21,7 +21,7 @@ Title                                            | Points     | Egg
 [Fire Alert](#fire-alert)                        | Level 4    | `he2022{th1s_fl4g_1s_bl4ck_n0t}`
 [Copy Protection Pioneers](#copy-protection-pioneers) | Level 4    | `he2022{J3t-53t-W1llY-f0r3v3R}`
 [Statues](#statues)                              | Level 4    | `he2022{achilles}`
-[Snoopy](#snoopy)                                | Level 4    |
+[Snoopy](#snoopy)                                | Level 4    | `he2022{ctx1_41nt_3nKryp710n!}`
 [LEDs](#leds)                                    | Level 4    | `he2022{n34t_l1ttl3_d3v1c3}`
 [Rabbits with Hats](#rabbits-with-hats)          | Level 5    |
 [Crypto Bunny](#crypto-bunny)                    | Level 5    |
@@ -542,7 +542,38 @@ he2022{achilles}
 
 ### Snoopy
 
-TODO
+
+**Challenge**
+
+Snoopy dog found something interesting.
+
+Can you get something interesting out of the 256 bytes he found?
+
+```
+IKIANJKDPKKAPJIDNKKAPNBHELCBHMGGDLOBLIPCKNAHFOEEBNFHALLBOMPGKJADFKDAGMNGIIGCDPEFBINCIPNFIMKGPPLFOMLGOKFAAIECBPJFM</Password>
+<Domain type="NT">CORP</Domain>
+</Credentials>
+<ClientName>THUMPERSDESK7</ClientName>
+<ClientType>ica30</ClientType>
+<ClientAddress>10.1
+```
+**Solution**
+
+Looks like a CITRIX password, Cyberchef can decode those!
+
+It complains about not being the right length, so we are probably missing some characters at the start of the snippet, so we add `A`s to the beginning until it decrypts
+
+```
+궥.2022{ctx1_41nt_3nKryp710n!}
+```
+
+luckily we can guess the start of the string ;)
+
+**Egg**
+
+```
+he2022{ctx1_41nt_3nKryp710n!}
+```
 
 ### LEDs
 
