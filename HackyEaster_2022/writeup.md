@@ -291,6 +291,38 @@ These are all fibonacci numbers, specifically the Nth:
 22, 25, 9, 16, 6, 1, 12, 18, 11, 10, 5, 28, 3, 20, 24, 23, 13, 17, 29, 19, 7, 4, 14, 21, 15, 26, 8
 ```
 
+
+```
+$ xsel -b | sed 's/^.*rabbit-//g;s/.jpg.*"#">/\t/g;s/<.*//g' | sort -k2
+55	Archie
+89	Baxter
+610	Bubbles
+514229	Bucky
+3	Bugs
+28657	Buttons
+10946	Chester
+21	Clover
+121393	Coco
+46368	Daffodil
+317811	Doc
+2584	E.B.
+377	Flower
+6765	Fluffy
+233	Freddie
+75025	Harley
+1	Henry
+2	Hopper
+144	Miffy
+8	Mortimer
+5	Murphy
+13	Olive
+4181	Oliver
+17711	Petal
+987	Petunia
+1597	Roger
+34	Rosie
+```
+
 now what?
 
 
@@ -655,8 +687,30 @@ he2022{n34t_l1ttl3_d3v1c3}
 
 ### Rabbits with Hats
 
-TODO
+**Challenge**
 
+I'm looking for a friend of mine who had to flee from his evil owner.
+
+He must have found a shelter for wildlife, but didn't tell me where it is. He just said he would go join rabbits with hats. What the heck do these three words mean??
+
+🚩 Flag
+
+- he2022{nameoftheplace}
+- all lowercase, no spaces
+- first letter is j, last one is y
+- e.g. he2022{junglezooaviary}
+
+**Solution**
+
+once you read "*What* the heck do these *three words* mean?" and remember that `what3words` exists as a geocoding service, simply go to
+
+[https://what3words.com/rabbits.with.hats](https://what3words.com/rabbits.with.hats) and see that "jackrabbit flat wildlife sanctuary" is nearby
+
+**Egg**
+
+```
+he2022{jackrabbitflatwildlifesanctuary}
+```
 
 ### Crypto Bunny
 
@@ -729,7 +783,37 @@ he2022{jim_jupiter_the_healthiest_man_in_chicago!!}
 
 ### Ghost in a Shell 3
 
-TODO
+
+**Solution**
+
+
+```
+276c642cc2e4:/opt/bannerkoder$ cat /var/spool/cron/crontabs/root
+* * * * * /opt/bannerkoder/cipher.sh > /dev/null 2>&1
+```
+
+Found this (via the crontab, weirdly)
+
+```
+276c642cc2e4:/opt/bannerkoder$ cat cipher.sh
+#!/bin/bash
+date +%s | md5sum | base64 | head -c 32 > /tmp/7367111C2875730D00686C13B98E7F36
+openssl enc -aes-256-cbc -e -in /home/pinky/flag.txt -out /home/pinky/flag.enc -kfile /tmp/7367111C2875730D00686C13B98E7F36276c642cc2e4:/opt/bannerkoder$
+```
+
+Ok, so we just need to loop over the +%s for that minute to decrypt
+
+```
+while true; do openssl enc -aes-256-cbc -d -in flag.enc -k "$(date +%s | md5sum | base64 | head -c 32)"; sleep 0.5; done;
+```
+
+and bingo!
+
+**Egg**
+
+```
+he2022{0p3n-35-35-37-f0r-pr0fit}
+```
 
 ### Coney Island Hackers
 
