@@ -643,7 +643,7 @@ Can you find it?
 
 **Solution**
 
-Extracting the LSB plane (e.g. with [stegonline](https://stegonline.com)) gives us the flag
+Extracting the LSB plane (e.g. with [stegonline](https://stegonline.georgeom.net)) gives us the flag
 
 ![](writeupfiles/jupiter-lsb.png)
 
