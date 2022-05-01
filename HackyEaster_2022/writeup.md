@@ -17,9 +17,9 @@ Title                                            | Points     | Egg
 [Knäck låset](#knäck-låset)                      | Level 3    | `he2022{807}`
 [City Trip](#city-trip)                          | Level 3    | `he2022{bayardst}`
 [Unicorn](#unicorn)                              | Level 3    | `he2022{1_c_un1c0rns_3v3rywh3r3!}`
-[Bucket Egg](#bucket-egg)                        | Level 4    |
+[Bucket Egg](#bucket-egg)                        | Level 4    | `he2022{th1s_3gg_1s_1n_4_buck3t}`
 [Fire Alert](#fire-alert)                        | Level 4    | `he2022{th1s_fl4g_1s_bl4ck_n0t}`
-[Copy Protection Pioneers](#copy-protection-pioneers) | Level 4    |
+[Copy Protection Pioneers](#copy-protection-pioneers) | Level 4    | `he2022{J3t-53t-W1llY-f0r3v3R}`
 [Statues](#statues)                              | Level 4    | `he2022{achilles}`
 [Snoopy](#snoopy)                                | Level 4    |
 [LEDs](#leds)                                    | Level 4    | `he2022{n34t_l1ttl3_d3v1c3}`
@@ -404,7 +404,21 @@ he2022{1_c_un1c0rns_3v3rywh3r3!}
 
 ### Bucket Egg
 
-TODO
+**Challenge**
+
+My Irish friend told me about his new web site. He told me it was in a bucket named egg-in-a-bucket. No clue what that is...
+
+**Solution**
+
+They're an "irish" friend, so, eu-west-1 is the appropriate region: [http://egg-in-a-bucket.s3-website-eu-west-1.amazonaws.com/](http://egg-in-a-bucket.s3-website-eu-west-1.amazonaws.com/)
+
+![](writeupfiles/bucketbg.png)
+
+**Egg**
+
+```
+he2022{th1s_3gg_1s_1n_4_buck3t}
+```
 
 ### Fire Alert
 
@@ -451,9 +465,9 @@ he2022{th1s_fl4g_1s_bl4ck_n0t}
 
 **Challenge**
 
-In case of fire, break the glass and press the button.
+The copy protection pioneers were really creative and lived the jet set life.
 
-http://46.101.107.117:2204
+http://46.101.107.117:2209
 
 Note: The service is restarted every hour at x:00.
 
