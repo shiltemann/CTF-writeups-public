@@ -17,7 +17,10 @@ Title                                            | Points     | Egg
 [Knäck låset](#knäck-låset)                      | Level 3    | `he2022{807}`
 [City Trip](#city-trip)                          | Level 3    | `he2022{bayardst}`
 [Unicorn](#unicorn)                              | Level 3    | `he2022{1_c_un1c0rns_3v3rywh3r3!}`
-
+[Bucket Egg](#bucket-egg)                        | Level 4    |
+[Fire Alert](#fire-alert)                        | Level 4    |
+[Copy Protection Pioneers](#copy-protection-pioneers) | Level 4    |
+[Statues](#statues)                              | Level 4    | `he2022{achilles}`
 
 ## Level 1
 
@@ -393,4 +396,56 @@ We get several copies of the unicorn image, but also one of an easter egg with a
 
 ```
 he2022{1_c_un1c0rns_3v3rywh3r3!}
+```
+
+## Level 4
+
+### Bucket Egg
+
+TODO
+
+### Fire Alert
+
+TODO
+
+### Copy Protection Pioneers
+
+TODO
+
+### Statues
+
+Hope you like statues as much as I do!
+
+I created a little tour in my favourite city for you:
+
+    Richard I
+    Peter Pan
+    Albert
+    James Cook
+
+I will not reveal my favourite statue, though. Find it yourself!
+
+🚩 Flag
+
+    it's not the one on the challenge image (Joan of Arc)!
+    name of the person represented by the statue
+    all lowercase, no spaces, no special chars
+    e.g. he2022{johnny}
+
+
+
+**Solution**
+
+These all appear to be statues in London, let's pull op a map!
+
+
+![](writeupfiles/statues_map.png)
+
+Where the lines between the statues intersect is exactly the location of the Achilles statue!
+
+
+**Egg**
+
+```
+he2022{achilles}
 ```
