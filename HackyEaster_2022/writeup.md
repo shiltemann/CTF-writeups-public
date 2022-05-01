@@ -15,7 +15,7 @@ Title                                            | Points     | Egg
 [Alpha Bravo Charlie](#alpha-bravo-charlie)      | Level 2    | `he2022{phonetic}`
 [Fibonacci Rabbits](#fibonacci-rabbits)          | Level 3    |
 [Knäck låset](#knäck-låset)                      | Level 3    | `he2022{807}`
-[City Trip](#city-trip)                          | Level 3    |
+[City Trip](#city-trip)                          | Level 3    | `he2022{bayardst}`
 
 
 ## Level 1
@@ -341,6 +341,12 @@ I made a nice city trip. Find out where I was!
 
 Seems like we have to find out the location of this image, but it does not appear to be geotagged, hmm..
 
+Helena's first thought was manhattan, and looking at the shop front in bottom right corner it looks like "Manhattan Flo" Florist?
+
+Googling Manhattan florist chinatown gets us to manhattanflorist.com, on Bayard street
+
 **Egg**
 
-
+```
+he2022{bayardst}
+```
