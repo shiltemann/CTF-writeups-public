@@ -325,6 +325,38 @@ $ xsel -b | sed 's/^.*rabbit-//g;s/.jpg.*"#">/\t/g;s/<.*//g' | sort -k2
 
 now what?
 
+```
+$ identify rabbit*
+rabbit-10946.jpg JPEG 1280x853 1280x853+0+0 8-bit sRGB 272590B 0.000u 0:00.000
+rabbit-121393.jpg JPEG 1280x853 1280x853+0+0 8-bit sRGB 292910B 0.000u 0:00.000
+rabbit-13.jpg JPEG 1280x853 1280x853+0+0 8-bit sRGB 155592B 0.000u 0:00.000
+rabbit-144.jpg JPEG 1280x853 1280x853+0+0 8-bit sRGB 163366B 0.000u 0:00.000
+rabbit-1597.jpg JPEG 1280x960 1280x960+0+0 8-bit sRGB 585421B 0.000u 0:00.000
+rabbit-17711.jpg JPEG 1280x719 1280x719+0+0 8-bit sRGB 511271B 0.000u 0:00.000
+rabbit-1.jpg JPEG 1280x853 1280x853+0+0 8-bit sRGB 474764B 0.000u 0:00.000
+rabbit-21.jpg JPEG 1280x853 1280x853+0+0 8-bit sRGB 111550B 0.000u 0:00.000
+rabbit-233.jpg JPEG 1280x960 1280x960+0+0 8-bit sRGB 369672B 0.000u 0:00.000
+rabbit-2584.jpg JPEG 1280x853 1280x853+0+0 8-bit sRGB 170860B 0.000u 0:00.000
+rabbit-28657.jpg JPEG 1280x853 1280x853+0+0 8-bit sRGB 262431B 0.000u 0:00.000
+rabbit-2.jpg JPEG 1280x853 1280x853+0+0 8-bit sRGB 226245B 0.000u 0:00.000
+rabbit-317811.jpg JPEG 1072x1500 1072x1500+0+0 8-bit sRGB 131508B 0.000u 0:00.000
+rabbit-34.jpg JPEG 1280x960 1280x960+0+0 8-bit sRGB 475212B 0.000u 0:00.000
+rabbit-377.jpg JPEG 1280x887 1280x887+0+0 8-bit sRGB 373786B 0.000u 0:00.000
+rabbit-3.jpg JPEG 1280x853 1280x853+0+0 8-bit sRGB 436276B 0.000u 0:00.000
+rabbit-4181.jpg JPEG 1280x853 1280x853+0+0 8-bit sRGB 264739B 0.000u 0:00.000
+rabbit-46368.jpg JPEG 1280x853 1280x853+0+0 8-bit sRGB 372928B 0.000u 0:00.000
+rabbit-514229.jpg JPEG 1280x768 1280x768+0+0 8-bit sRGB 325076B 0.000u 0:00.000
+rabbit-55.jpg JPEG 1280x720 1280x720+0+0 8-bit sRGB 367224B 0.000u 0:00.000
+rabbit-5.jpg JPEG 1280x853 1280x853+0+0 8-bit sRGB 159823B 0.000u 0:00.000
+rabbit-610.jpg JPEG 1280x720 1280x720+0+0 8-bit sRGB 151790B 0.000u 0:00.000
+rabbit-6765.jpg JPEG 1280x853 1280x853+0+0 8-bit sRGB 507688B 0.000u 0:00.000
+rabbit-75025.jpg JPEG 1280x853 1280x853+0+0 8-bit sRGB 276286B 0.000u 0:00.000
+rabbit-89.jpg JPEG 1280x853 1280x853+0+0 8-bit sRGB 270403B 0.000u 0:00.000
+rabbit-8.jpg JPEG 1280x844 1280x844+0+0 8-bit sRGB 569582B 0.000u 0:00.000
+rabbit-987.jpg JPEG 1280x806 1280x806+0+0 8-bit sRGB 385891B 0.000u 0:00.000
+```
+
+they're all the same width. hmm.
 
 **Egg**
 
@@ -817,7 +849,57 @@ he2022{0p3n-35-35-37-f0r-pr0fit}
 
 ### Coney Island Hackers
 
-TODO
+
+**Challenge**
+
+Coney Island Hackers have a secret web portal.
+
+Using advanced social engineering techniques, you found out their secret passphrase: eat,sleep,hack,repeat. However, it seems to take more than just entering the passphrase as-is. Can you find out what?
+
+http://46.101.107.117:2202
+
+Note: The service is restarted every hour at x:00.
+
+**Solution**
+
+```
+if (req.query.passphrase == 'eat,sleep,hack,repeat')
+```
+
+This hint was super unhelpful at first, eventually I fetched the HEAD of the website
+
+```
+$ curl -I http://46.101.107.117:2202/?passphrase=eat,sleep,hack,repeat
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: text/html; charset=utf-8
+Content-Length: 609
+ETag: W/"261-eAa/QxeLx6CjmYOc9KnGojwfNKY"
+Date: Thu, 05 May 2022 16:20:04 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+```
+
+Ahh express JS. After some super sleuthing (i.e. googling `express nodejs form password check ctf hack`), I [found this article which had a URL with split up password fields](https://www.doyler.net/security-not-included/nodejs-code-injection). This answered it for me, we need to pass in the passphrase as multiple elements like a list. In the old php days I remember seeing that quite often with `?param[]=value&param[]=value2`
+
+Which, given the javascript behaviour of stringifying lists for comparison, by helpfully adding `,`s:
+
+```
+[1,2,3,4].toString()
+"1,2,3,4"
+```
+
+means that's how we solve it without commas:
+
+```
+http://46.101.107.117:2202/?passphrase[]=eat&passphrase[]=sleep&passphrase[]=hack&passphrase[]=repeat
+```
+
+**Egg**
+
+```
+he2022{el_dorado_arkade}
+```
 
 ### Textbook
 
