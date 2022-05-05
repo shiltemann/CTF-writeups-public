@@ -34,7 +34,7 @@ def handle(j):
         return {
             'B': long_to_base64(pow(g, b, p))
         }
-    
+
     cmd = decrypt(cipher, j['rpc'])
     return {
         'return': encrypt(cipher, subprocess.check_output(cmd))

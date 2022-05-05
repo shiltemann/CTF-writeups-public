@@ -926,3 +926,37 @@ Something running on `nc 46.101.107.117 2105`
 ```
 cat writeupfiles/dean.sh
 ```
+
+### C2
+
+**Challenge**
+
+We have detected C2 payloads on one of our servers! The blue team have extracted its communications from the traffic logs, and Operations have dumped the payload code from the running process.
+
+Find out what the actors have exfiltrated!
+
+**Solution**
+
+There's a json file, and some encrypted contents inside. The companion python file shows us how the encryption was done, but there's a missing `B`, which is randomly chosen. The 'problem' to solve is the value of B, an integer in [1, 2272978429], and the only operation we need to calculate is `pow` so this probably means we can just trivially bruteforce it, the simplicity of the operation and small search space, it should be fast (see [writeupfiles/c2/payload-mp.py](writeupfiles/c2/payload-mp.py))
+
+20 minutes later we've recovered the value
+
+```
+620620105
+ 60%|█████████████████████████████████████████████████████████████████████▌                                              | 1363765343/2272978428 [20:12<05:09, 2937691.27it/s]
+```
+
+And plugging that in we can reverse it (see [writeupfiles/c2/solution.py](writeupfiles/c2/solution.py)) and can decrypt the b64:
+
+```
+b'ls'
+b'cat sensitive.txt'
+b'sensitive.txt\n'
+b'he2022{wh4dy4_m3an_32_b1t5_1s_1n53cur3}\n'
+```
+
+**Egg**
+
+```
+he2022{wh4dy4_m3an_32_b1t5_1s_1n53cur3}
+```
