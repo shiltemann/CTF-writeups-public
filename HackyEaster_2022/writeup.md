@@ -27,7 +27,7 @@ Title                                            | Points     | Egg
 [Crypto Bunny](#crypto-bunny)                    | Level 5    |
 [Jupiter One](#jupiter-one)                      | Level 5    | `he2022{jim_jupiter_the_healthiest_man_in_chicago!!}`
 [Ghost in a Shell 3](#ghost-in-a-shell-3)        | Level 5    |
-[Coney Island Hackers](#coney-island-hackers)    | Level 5    |
+[Coney Island Hackers](#coney-island-hackers)    | Level 5    | `he2022{el_dorado_arkade}`
 [Textbook](#textbook)                            | Level 5    |
 
 
