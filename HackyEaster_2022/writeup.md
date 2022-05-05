@@ -13,7 +13,7 @@ Title                                            | Points     | Egg
 [Sp4c3 Inv4d3r5!](#sp4c3-inv4d3r5)               | Level 2    | `he2022{Inv4d3rs_fr0m_sp4c3!}`
 [I Key, You Key, ASCII](i-key-you-key-ascii)     | Level 2    | `he2022{th1s_0n3_1s_r3333ly_s1mpl3}`
 [Alpha Bravo Charlie](#alpha-bravo-charlie)      | Level 2    | `he2022{phonetic}`
-[Fibonacci Rabbits](#fibonacci-rabbits)          | Level 3    |
+[Fibonacci Rabbits](#fibonacci-rabbits)          | Level 3    | `he2022{th1z_41nT_4_r4bB1T!}`
 [Knäck låset](#knäck-låset)                      | Level 3    | `he2022{807}`
 [City Trip](#city-trip)                          | Level 3    | `he2022{bayardst}`
 [Unicorn](#unicorn)                              | Level 3    | `he2022{1_c_un1c0rns_3v3rywh3r3!}`
@@ -358,7 +358,18 @@ rabbit-987.jpg JPEG 1280x806 1280x806+0+0 8-bit sRGB 385891B 0.000u 0:00.000
 
 they're all the same width. hmm.
 
+
+Oh! we are way overthinking this, it looks like the 27th fibonacci number is missing, that is `196418`, so let's see if there is an image under `images/rabbit-196418.jpg`
+
+Bingo!
+
+![](writeupfiles/images/rabbit-196418.jpg)
+
 **Egg**
+
+```
+he2022{th1z_41nT_4_r4bB1T!}
+```
 
 
 ### Knäck låset
