@@ -906,3 +906,12 @@ he2022{el_dorado_arkade}
 TODO
 
 
+
+
+### Dean's Transfers
+
+Something running on `nc 46.101.107.117 2105`
+
+```
+cat writeupfiles/dean.sh
+```
