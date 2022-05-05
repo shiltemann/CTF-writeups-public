@@ -363,7 +363,7 @@ Oh! we are way overthinking this, it looks like the 27th fibonacci number is mis
 
 Bingo!
 
-![](writeupfiles/images/rabbit-196418.jpg)
+![](./writeupfiles/rabbit-196418.jpg)
 
 **Egg**
 
