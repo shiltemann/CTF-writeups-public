@@ -927,6 +927,13 @@ Something running on `nc 46.101.107.117 2105`
 cat writeupfiles/dean.sh
 ```
 
+There's something hidden in the colours:
+
+```
+cat writeupfiles/dean.sh | sed -e 's/\x1b\[[0-9;]*m//g' | grep he
+he2021{4Ns1MG1k}
+```
+
 ### C2
 
 **Challenge**
