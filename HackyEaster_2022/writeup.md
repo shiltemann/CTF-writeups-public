@@ -10,31 +10,44 @@ The annual Easter CTF from Hacking-lab
 Title                                            | Points     | Egg
 -------------------------------------------------| ---------- | ------------------------------
 [Welcome Flag](#welcome-flag)                    | Level 1    | `he2022{welcome_to_hacky_easter_2022}`
+
 [Sp4c3 Inv4d3r5!](#sp4c3-inv4d3r5)               | Level 2    | `he2022{Inv4d3rs_fr0m_sp4c3!}`
 [I Key, You Key, ASCII](i-key-you-key-ascii)     | Level 2    | `he2022{th1s_0n3_1s_r3333ly_s1mpl3}`
 [Alpha Bravo Charlie](#alpha-bravo-charlie)      | Level 2    | `he2022{phonetic}`
+
 [Fibonacci Rabbits](#fibonacci-rabbits)          | Level 3    | `he2022{th1z_41nT_4_r4bB1T!}`
 [Knäck låset](#knäck-låset)                      | Level 3    | `he2022{807}`
 [City Trip](#city-trip)                          | Level 3    | `he2022{bayardst}`
 [Unicorn](#unicorn)                              | Level 3    | `he2022{1_c_un1c0rns_3v3rywh3r3!}`
+
 [Bucket Egg](#bucket-egg)                        | Level 4    | `he2022{th1s_3gg_1s_1n_4_buck3t}`
 [Fire Alert](#fire-alert)                        | Level 4    | `he2022{th1s_fl4g_1s_bl4ck_n0t}`
 [Copy Protection Pioneers](#copy-protection-pioneers) | Level 4    | `he2022{J3t-53t-W1llY-f0r3v3R}`
 [Statues](#statues)                              | Level 4    | `he2022{achilles}`
 [Snoopy](#snoopy)                                | Level 4    | `he2022{ctx1_41nt_3nKryp710n!}`
 [LEDs](#leds)                                    | Level 4    | `he2022{n34t_l1ttl3_d3v1c3}`
-[Rabbits with Hats](#rabbits-with-hats)          | Level 5    |
+
+[Rabbits with Hats](#rabbits-with-hats)          | Level 5    | `he2022{jackrabbitflatwildlifesanctuary}`
 [Crypto Bunny](#crypto-bunny)                    | Level 5    |
 [Jupiter One](#jupiter-one)                      | Level 5    | `he2022{jim_jupiter_the_healthiest_man_in_chicago!!}`
-[Ghost in a Shell 3](#ghost-in-a-shell-3)        | Level 5    |
+[Ghost in a Shell 3](#ghost-in-a-shell-3)        | Level 5    | `he2022{0p3n-35-35-37-f0r-pr0fit}`
 [Coney Island Hackers](#coney-island-hackers)    | Level 5    | `he2022{el_dorado_arkade}`
 [Textbook](#textbook)                            | Level 5    |
+
 [H2O](#h20)                                      | Level 6    |
 [Dean's Transfers](#deans-transfers)             | Level 6    | `he2022{d34n_dr1v3s_you_3v3rywh3r3!!}`
-[C2 Traffic](#c2-traffic)                        | Level 6    |
-[自動販売機](#自動販売機)                        | Level 6    |
-[Dingos!](#dingos)                               | Level 6    |
+[C2 Traffic](#c2-traffic)                        | Level 6    | `he2022{wh4dy4_m3an_32_b1t5_1s_1n53cur3}`
+[自動販売機](#自動販売機)                        | Level 6    | `he2022{p0llut10n_41nt_g00d}`
+[Dingos!](#dingos)                               | Level 6    | `he2022{4_b4rk1n9_D1NG0_n3v3r_b1735}`
 [Cyclic](#cyclic)                                | Level 6    |
+
+[C0ns0n4nt Pl4n3t](#c0ns0n4nt-pl4n3t)            | Level 7    | `he2022{v0w3ls_4r3_f0r_n3rd5!}`
+[Layer Cake](#layer-cake)                        | Level 7    | `he2022{th3_c4k3_is_a_l1e!}`
+[Jupiter Two](#jupiter-two)                      | Level 7    |
+[Casino](#casino)                                | Level 7    |
+[Go For Gold](#go-for-gold)                      | Level 7    |
+[City Trip 2](#city-trip-2)                      | Level 7    |
+
 
 ## Level 1
 
@@ -806,6 +819,7 @@ Googling the `salted__` I find other ctf posts (lmao)
 
 ```
 ```
+
 ### Jupiter One
 
 **Challenge**
@@ -1161,7 +1175,58 @@ he2022{4_b4rk1n9_D1NG0_n3v3r_b1735}
 TODO
 
 
+## Level 7
 
+
+### C0ns0n4nt Pl4n3t
+
+Apollo wants his name printed on that fancy new site. He's constantly failing as vowels and some special characters are blocked when entered.
+
+Can you help him?
+
+http://46.101.107.117:2205
+
+Note: The service is restarted every hour at x:00.
+
+
+**Solution**
+
+If we enter a vowel, the site will not print our entry.
+
+For example:
+
+```
+http://46.101.107.117:2205/?name=Apollo
+```
+
+Response: `f0rb1dd3n`
+
+If we enter just a double-quote, we trigger an error:
+
+```
+Parse error: syntax error, unexpected '"' in /var/www/html/index.php(17) : eval()'d code on line 1
+```
+
+So we know this is PHP in the backend. Let's try escaping our vowels:
+
+
+```
+http://46.101.107.117:2205/?name=\x41p\x6fll\x6f
+```
+
+Bingo! We get the flag in the response:
+
+```
+Cngrts, hr's yr flg:
+he2022{v0w3ls_4r3_f0r_n3rd5!}
+```
+
+
+**Egg**
+
+```
+he2022{v0w3ls_4r3_f0r_n3rd5!}
+```
 
 
 ### Layer Cake
@@ -1189,3 +1254,53 @@ And then we see [all of the eggs](./writeupfiles/docker/) and rely on manual ins
 ```
 he2022{th3_c4k3_is_a_l1e!}
 ```
+
+### Jypiter Two
+
+**Challenge**
+
+Jupiter is hiding even more.
+
+This time, it is a bit more tricky.
+
+![](writeupfiles/jupiter-two.png)
+
+**Solution**
+
+**Egg**
+
+
+
+### Casino
+
+TODO
+
+
+### Go For Gold!
+
+TODO
+
+### City Trip 2
+
+**Challenge**
+
+Later that year, I was travelling again. Find out where I shot this picture! This time, I want GPS coordinates.
+
+🚩 Flag
+
+    GPS coordinates, rounded to three decimals
+    , as separator
+    . as decimal point
+    example:
+        40°46'30.3"N 73°57'59.8"W
+        40.775082, -73.966599
+        he2022{40.775,-73.967}
+
+
+![](writeupfiles/citytrip2.jpg)
+
+**Solution**
+
+**Egg**
+
+
