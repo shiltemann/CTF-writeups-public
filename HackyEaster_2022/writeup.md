@@ -1389,6 +1389,18 @@ Later that year, I was travelling again. Find out where I shot this picture! Thi
 
 **Solution**
 
+We know it's in manchester based off of the phone number.
+
+After fruitless attemts to automatically discover an intersection of tram + street + bike lane, combined with people commenting endlessly about how fast they did it, we saw the sign and tried reverse image searching it. It return a lot of crufixes in the current format. So we stretched it, and...still crucifixes and churches for some reason.
+
+So we googled "manchester pub signs" (guessing it was a pub) and scrolled until we found [this page linked from the search results](https://www.geograph.org.uk/photo/1843484) which looked spot on, plus some ageing. That turned out to be annoying to google but between knowing it was in Ancoats and that it was on pollard street, eventually we found the right location and angle.
+
+![link to google maps](https://www.google.com/maps/@53.4822203,-2.2165773,3a,75y,309.14h,99.02t/data=!3m6!1e1!3m4!1s3VmOIwuJAlRwqdhWtDRhRg!2e0!7i16384!8i8192)
+
 **Egg**
 
+
+```
+he2022{53.482,-2.216}
+```
 
