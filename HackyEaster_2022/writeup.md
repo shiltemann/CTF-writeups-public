@@ -28,7 +28,7 @@ Title                                            | Points     | Egg
 [LEDs](#leds)                                    | Level 4    | `he2022{n34t_l1ttl3_d3v1c3}`
 
 [Rabbits with Hats](#rabbits-with-hats)          | Level 5    | `he2022{jackrabbitflatwildlifesanctuary}`
-[Crypto Bunny](#crypto-bunny)                    | Level 5    |
+[Crypto Bunny](#crypto-bunny)                    | Level 5    | `he2022{b4dg3_4w4rd3d}`
 [Jupiter One](#jupiter-one)                      | Level 5    | `he2022{jim_jupiter_the_healthiest_man_in_chicago!!}`
 [Ghost in a Shell 3](#ghost-in-a-shell-3)        | Level 5    | `he2022{0p3n-35-35-37-f0r-pr0fit}`
 [Coney Island Hackers](#coney-island-hackers)    | Level 5    | `he2022{el_dorado_arkade}`
@@ -790,11 +790,16 @@ $ exiftool writeupfiles/crypto_bunny.png | grep open
 Openbadges                      : {.  "@context": "https://w3id.org/openbadges/v2",.  "type": "Assertion",.  "id": "https://api.eu.badgr.io/public/assertions/aeT2h9EWTHyiqHk7Yx4X4Q",.  "badge": "https://api.eu.badgr.io/public/badges/LaGEPKu1R2W5mg221vdV4g",.  "image": "https://api.eu.badgr.io/public/assertions/aeT2h9EWTHyiqHk7Yx4X4Q/image",.  "verification": {.    "type": "HostedBadge".  },.  "issuedOn": "2021-07-14T22:00:00+00:00",.  "recipient": {.    "hashed": true,.    "type": "email",.    "identity": "sha256$821158dcab489c45156fd110707bd2ec51d4365b1f34ed42ddde612383717338",.    "salt": "9529d9c5e91b4475a52b46fbe37cb55d".  },.  "extensions:recipientProfile": {.    "@context": "https://openbadgespec.org/extensions/recipientProfile/context.json",.    "type": [.      "Extension",.      "extensions:RecipientProfile".    ],.    "name": "Hacky Easter".  }.}
 ```
 
+![](writeupfiles/cryptobunny_badge.png)
+
 Looking at [one of the urls](https://eu.badgr.com/public/assertions/aeT2h9EWTHyiqHk7Yx4X4Q) they have an 'earning criteria' of:
+
 
 ```
 U2FsdGVkX1/G2uIf1R3WmIzrCnm3Hz6UQ9Dmm94/0/TtatYB5MDZZRgn/tjzQs5uzuxxPutLznGQlXOTMlcWjg==
 ```
+
+
 
 Which looks interesting when b64 decoded
 
@@ -815,9 +820,32 @@ Googling the `salted__` I find other ctf posts (lmao)
 > -- https://nineninenine.blog/
 
 
+After trying all the available SSL ciphers and digest combos and ending up with nothing, we figure we must be missing something..
+
+```bash
+for i in $(openssl list -1 -cipher-commands); do
+  echo U2FsdGVkX1/G2uIf1R3WmIzrCnm3Hz6UQ9Dmm94/0/TtatYB5MDZZRgn/tjzQs5uzuxxPutLznGQlXOTMlcWjg== |
+    openssl enc -d -a -$i -pass pass:carrot -pbkdf2 -md md5 -nopad;
+done
+
+```
+but what are we missing?!
+
+The text on the badge reads "for the rabbit cipher masters only." ..rabbit cipher, is this a hint!
+
+And [Rabbit Cipher](https://en.wikipedia.org/wiki/Rabbit_(cipher)) exists!
+
+We can decrypt it easily with a site like [this](https://www.browserling.com/tools/rabbit-decrypt), entering "carrot" as the password/key
+
+```
+Congrats, here's the flag: he2022{b4dg3_4w4rd3d}
+```
+
+
 **Egg**
 
 ```
+he2022{b4dg3_4w4rd3d}
 ```
 
 ### Jupiter One
