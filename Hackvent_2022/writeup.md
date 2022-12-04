@@ -369,8 +369,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 We are looking for these numbers to map to HV22 (`72 86 50 50` in ASCII). It doesn't quite work out, but we notice some things
 
 - 144 is twice the expected value of 72
-- 28 is twice the difference between H (72) and V (86
-- -72 is twice the difference from V (86 to 2 (50
+- 28 is twice the difference between H (72) and V (86)
+- -72 is twice the difference from V (86) to 2 (50)
 
 Ok, looks like we got it! Let's get a quick python script to decode for us:
 
