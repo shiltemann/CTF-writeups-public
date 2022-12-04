@@ -209,7 +209,7 @@ We also see some sneaky null bytes inside all the strigs when we open with Vim:
 
 ![](writeupfiles/dec3/nullbytes.png)
 
-but these don't really affect us since we're making the program compute the answer for us.
+But these won't really affect us since we're making the program compute the answer for us.
 
 Here is the code we add near the bottom of the file:
 
@@ -224,10 +224,43 @@ for i,c in enumerate(correct):
 print("".join([chr(a) for a in correct]))
 ```
 
-And this gives us the flag
+And this gives us the flag!
 
 ```bash
-python3 gh0st.py aaa
+$ python3 gh0st.py aaa
+Nice job getting lucky there! But did you get the flag?
+72 - H
+86 - V
+50 - 2
+50 - 2
+123 - {
+110 - n
+85 - U
+108 - l
+108 - l
+95 - _
+98 - b
+121 - y
+116 - t
+101 - e
+115 - s
+95 - _
+115 - s
+116 - t
+48 - 0
+109 - m
+112 - p
+95 - _
+99 - c
+80 - P
+121 - y
+55 - 7
+104 - h
+48 - 0
+110 - n
+125 - }
+HV22{nUll_bytes_st0mp_cPy7h0n}
+Try again!
 ```
 
 
@@ -238,11 +271,64 @@ HV22{nUll_bytes_st0mp_cPy7h0n}
 ```
 
 
-## Day X: Title
+## Day 4: Santa's radians
 
 **Description**
 
+Santa, who is a passionate mathematician, has created a small website to train his animation coding skills. Although Santa lives in the north pole, where the degrees are very low, the website's animation luckily did not freeze. It just seems to move very slooowww. But how does this help...? The elves think there might be a flag in the application...
+
 **Solution**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The UPICode</title>
+</head>
+<body>
+
+<h3>[HV22.04] Santa's radians</h3>
+
+<canvas width="1200" height="200" id="canvasPiCode" style="border: 1px solid black"></canvas>
+<script>
+    const canvas = document.getElementById("canvasPiCode");
+    const context = canvas.getContext("2d");
+    let clientX = 0;
+
+    canvas.addEventListener('mousemove', e => {
+        clientX = e.clientX*7/1000;
+    });
+
+    let rot = [2.5132741228718345, 0.4886921905584123, -1.2566370614359172, 0, 2.548180707911721, -1.9547687622336491, -0.5235987755982988, 1.9547687622336491, -0.3141592653589793, 0.6283185307179586, -0.3141592653589793, -1.8151424220741028, 1.361356816555577, 0.8377580409572781, -2.443460952792061, 2.3387411976724013, -0.41887902047863906, -0.3141592653589793, -0.5235987755982988, -0.24434609527920614, 1.8151424220741028];
+    let size = canvas.width / (rot.length+2);
+
+    context.strokeStyle = "black";
+    context.lineWidth = size*5/16;
+    context.shadowOffsetX = size/4;
+    context.shadowOffsetY = size/4;
+    context.shadowColor = "gray";
+    context.shadowBlur = size/4;
+
+    let animCount = 0;
+
+    function anim() {
+        context.clearRect(0,0,canvas.width,canvas.height);
+        for (let i = 0; i < rot.length; i++) {
+            context.beginPath();
+            context.arc((i + 1) * size, canvas.height / 2, size * 2 / 7, rot[i]+animCount+clientX, rot[i] + 5 +animCount+clientX);
+            context.stroke();
+        }
+        animCount+=0.001;
+        requestAnimationFrame(anim);
+    }
+    anim();
+
+</script>
+
+</body>
+</html>
+```
 
 **Flag**
 
