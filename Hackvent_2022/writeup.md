@@ -10,7 +10,7 @@ Title               | Category    | Points | Flag
 [December 1](#day-1-qr-means-quick-reactions-right)      | Easy        | 2/1    | `HV22{HV22{I_CaN_HaZ_Al_T3h_QRs_Plz}`
 [December 2](#day-2-santas-song)      | Easy        | 2/1    | `HV22{}`
 [December 3](#day-3-gh0st)      | Easy        | 2/1    | `HV22{nUll_bytes_st0mp_cPy7h0n}`
-[December 4](#day-4-santas-radians)      | Easy        | 2/1    | `HV22{C4lcul8_w1sh_PI}`
+[December 4](#day-4-santas-radians)      | Easy        | 2/1    | `HV22{C4lcul8_w1th_PI}`
 [December 5]()      | Easy        | 2/1    | `HV22{}`
 [December 6]()      | Easy        | 2/1    | `HV22{}`
 [December 7]()      | Easy        | 2/1    | `HV22{}`
@@ -396,17 +396,17 @@ This gives us the flag, almost:
 HV22{C4lcul8_w1sg^OH|
 ```
 
-It seems to be getting off by 1 afer the `wis`, but we just increase it by 1 manually to get the right flag (not sure what's gonig on there, maybe a mistake in the challenge? but this was close enough to get us to the answer)
+It seems to be getting off by 1 at the end but we just increase the characters by 1 manually to get the right flag (not sure what's gonig on there, maybe a mistake in the challenge? but this was close enough to get us to the answer)
 
 
 ```
-HV22{C4lcul8_w1sh_PI}
+HV22{C4lcul8_w1th_PI}
 ```
 
 **Flag**
 
 ```
-HV22{C4lcul8_w1sh_PI}
+HV22{C4lcul8_w1th_PI}
 ```
 
 ## Day X: Title
