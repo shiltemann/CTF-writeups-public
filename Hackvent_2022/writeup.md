@@ -279,6 +279,12 @@ Santa, who is a passionate mathematician, has created a small website to train h
 
 **Solution**
 
+We are given a website with some moving discs:
+
+![](writeupfiles/dec4/radians.gif)
+
+We look at the html code for the page:
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
