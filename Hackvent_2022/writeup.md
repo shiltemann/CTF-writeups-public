@@ -203,13 +203,15 @@ else:
 ```
 
 
-So the the list `correct` encodes the flag.
+So the the list `correct` encodes the flag. Luckily it is XOR based, so easy to reverse. We can just add a bit of code to make it give us the flag.
 
 We also see some sneaky null bytes inside all the strigs when we open with Vim:
 
-![](writeupfiles/dec2/nullpytes.png)
+![](writeupfiles/dec3/nullbytes.png)
 
-Luckily it is XOR based, so easy to reverse. We can just add a bit of code to make it give us the flag:
+but these don't really affect us since we're making the program compute the answer for us.
+
+Here is the code we add near the bottom of the file:
 
 
 ```python
