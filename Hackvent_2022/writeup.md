@@ -8,8 +8,8 @@ The annual advent calender from Hacking-lab
 Title               | Category    | Points | Flag
 ------------------- | ----------- | ------ | ------------------------------
 [December 1](#day-1-qr-means-quick-reactions-right)      | Easy        | 2/1    | `HV22{HV22{I_CaN_HaZ_Al_T3h_QRs_Plz}`
-[December 2]()      | Easy        | 2/1    | `HV22{}`
-[December 3]()      | Easy        | 2/1    | `HV22{}`
+[December 2](#day-2-santas-song)      | Easy        | 2/1    | `HV22{}`
+[December 3](#day-3-gh0st)      | Easy        | 2/1    | `HV22{nUll_bytes_st0mp_cPy7h0n}`
 [December 4]()      | Easy        | 2/1    | `HV22{}`
 [December 5]()      | Easy        | 2/1    | `HV22{}`
 [December 6]()      | Easy        | 2/1    | `HV22{}`
@@ -141,19 +141,34 @@ The elves found this Python script that Rudolph wrote for Santa, but it's behavi
 The code is:
 
 ```python
-#!/usr/bin/env python3.7
 
-import random
-import sys
-
-
-if len(sys.argv) != 2:
-    print(f'''usage: {sys.argv[0]} flag''')
-    sys.exit()
-    print('''Things
 ```
 
+So the the list `correct` encodes the flag. Luckily it is XOR based, so easy to reverse. We can add a bit of code to make it give us the flag:
+
+```python
+#copy the existing function, just use correct instead of flag, since it's XOR
+for i,c in enumerate(correct):
+    correct[i] ^= ord(song[i*10 % len(song)])
+    print(correct[i],"-", chr(correct[i]))
+
+# print out the flag all at once
+print("".join([chr(a) for a in correct]))
+```
+
+And this gives us the flag
+
+```bash
+python3 gh0st.py aaa
+```
+
+
 **Flag**
+
+```
+HV22{nUll_bytes_st0mp_cPy7h0n}
+```
+
 
 ## Day X: Title
 
