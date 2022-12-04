@@ -121,9 +121,11 @@ We get a website with a submission form:
 ![](writeupfiles/dec2/screenshot.png)
 
 
-And the [pdf with the song](writeupfiles/dec2/song.pdf):
+And the [pdf with the song](writeupfiles/dec2/song.pdf) containing the score:
 
-![](writeupfiles/dec2/song.pdf)
+![](writeupfiles/dec2/music.png)
+
+This is explicitly not a web challenge, and we see nothing suspicious in the pdf file, so the answer must lie in the music notes ..but I am totally not musical so nothing obvious to me..
 
 **Flag**
 
