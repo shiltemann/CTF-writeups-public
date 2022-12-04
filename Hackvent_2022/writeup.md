@@ -128,11 +128,30 @@ And the [pdf with the song](writeupfiles/dec2/song.pdf):
 **Flag**
 
 
-## Day X: Title
+## Day 3: gh0st
 
 **Description**
 
+The elves found this Python script that Rudolph wrote for Santa, but it's behaving very strangely. It shouldn't even run at all, and yet it does! It's like there's some kind of ghost in the script! Can you figure out what's going on and recover the flag?
+
+[gh0st.py](writeupfiles/dec3/gh0st.py)
+
 **Solution**
+
+The code is:
+
+```python
+#!/usr/bin/env python3.7
+
+import random
+import sys
+
+
+if len(sys.argv) != 2:
+    print(f'''usage: {sys.argv[0]} flag''')
+    sys.exit()
+    print('''Things
+```
 
 **Flag**
 
