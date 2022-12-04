@@ -7,7 +7,7 @@ The annual advent calender from Hacking-lab
 
 Title               | Category    | Points | Flag
 ------------------- | ----------- | ------ | ------------------------------
-[December 1]()      | Easy        | 2/1    | `HV22{}`
+[December 1](#day-1-qr-means-quick-reactions-right)      | Easy        | 2/1    | `HV22{HV22{I_CaN_HaZ_Al_T3h_QRs_Plz}`
 [December 2]()      | Easy        | 2/1    | `HV22{}`
 [December 3]()      | Easy        | 2/1    | `HV22{}`
 [December 4]()      | Easy        | 2/1    | `HV22{}`
@@ -43,9 +43,61 @@ Santa's brother Father Musk just bought out a new decoration factory. He sacked 
 
 **Solution**
 
+The gif cycles through multiple QR codes quickly, let's read all of them:
+
+First, we extract each frame using imagemagich:
+
+```bash
+$ mkdir img
+$ convert hackvent2022_01.gif -coalesce img/xx_%05d.png
+```
+
+We get [30 images](writeupfile/img/), all with different QR codes. Let's read all of them using zbar-tools
+
+```bash
+$ cd img
+$ zbarimg .
+QR-Code:H
+QR-Code:V
+QR-Code:2
+QR-Code:2
+QR-Code:{
+QR-Code:I
+QR-Code:_
+QR-Code:C
+QR-Code:a
+QR-Code:N
+QR-Code:_
+QR-Code:H
+QR-Code:a
+QR-Code:Z
+QR-Code:_
+QR-Code:A
+QR-Code:l
+QR-Code:_
+QR-Code:T
+QR-Code:3
+QR-Code:h
+QR-Code:_
+QR-Code:Q
+QR-Code:R
+QR-Code:s
+QR-Code:_
+QR-Code:P
+QR-Code:l
+QR-Code:z
+QR-Code:}
+scanned 30 barcode symbols from 30 images in 3.1 seconds
+
+```
+
+So each frame gives us one letter of the flag, putting them all togeher we get
+
 **Flag**
 
-
+```
+HV22{I_CaN_HaZ_Al_T3h_QRs_Plz}
+```
 ## Day X: Title
 
 **Description**
