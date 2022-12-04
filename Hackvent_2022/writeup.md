@@ -10,7 +10,7 @@ Title               | Category    | Points | Flag
 [December 1](#day-1-qr-means-quick-reactions-right)      | Easy        | 2/1    | `HV22{HV22{I_CaN_HaZ_Al_T3h_QRs_Plz}`
 [December 2](#day-2-santas-song)      | Easy        | 2/1    | `HV22{}`
 [December 3](#day-3-gh0st)      | Easy        | 2/1    | `HV22{nUll_bytes_st0mp_cPy7h0n}`
-[December 4]()      | Easy        | 2/1    | `HV22{}`
+[December 4](#day-4-santas-radians)      | Easy        | 2/1    | `HV22{C4lcul8_w1sh_PI}`
 [December 5]()      | Easy        | 2/1    | `HV22{}`
 [December 6]()      | Easy        | 2/1    | `HV22{}`
 [December 7]()      | Easy        | 2/1    | `HV22{}`
@@ -336,7 +336,78 @@ We look at the html code for the page:
 </html>
 ```
 
+So the `rot` variable likely encodes the flag, if we can just find out how..
+
+```javascript
+let rot = [2.5132741228718345, 0.4886921905584123, -1.2566370614359172, 0, 2.548180707911721, -1.9547687622336491, -0.5235987755982988, 1.9547687622336491, -0.3141592653589793, 0.6283185307179586, -0.3141592653589793, -1.8151424220741028, 1.361356816555577, 0.8377580409572781, -2.443460952792061, 2.3387411976724013, -0.41887902047863906, -0.3141592653589793, -0.5235987755982988, -0.24434609527920614, 1.8151424220741028]
+```
+
+It most likely starts with `HV22` ..but we see that the third and fourth element aren't equal, and the fourthe element is 0, so maybe it doesn't encode directly, but as a function of the previous character..
+
+Maybe converting radians to degrees? Let's try the first couple:
+
+```bash
+Python 3.9.7 (default, Jun 22 2022, 20:11:26)
+[GCC 11.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> ord("H")
+72
+>>> ord("V")
+86
+>>> ord("2")
+50
+>>> import math
+>>> math.degrees(2.5132741228718345)
+144.0
+>>> math.degrees(0.4886921905584123)
+28.0
+>>> math.degrees(-1.2566370614359172)
+-72.0
+
+```
+
+We are looking for these numbers to map to HV22 (`72 86 50 50` in ASCII). It doesn't quite work out, but we notice some things
+
+- 144 is twice the expected value of 72
+- 28 is twice the difference between H (72) and V (86
+- -72 is twice the difference from V (86 to 2 (50
+
+Ok, looks like we got it! Let's get a quick python script to decode for us:
+
+```python
+import math
+
+rot = [2.5132741228718345, 0.4886921905584123, -1.2566370614359172, 0, 2.548180707911721, -1.9547687622336491, -0.5235987755982988, 1.9547687622336491, -0.3141592653589793, 0.6283185307179586, -0.3141592653589793, -1.8151424220741028, 1.361356816555577, 0.8377580409572781, -2.443460952792061, 2.3387411976724013, -0.41887902047863906, -0.3141592653589793, -0.5235987755982988, -0.24434609527920614, 1.8151424220741028]
+
+last = 0
+flag = ""
+for i in rot:
+  f = last+math.degrees(i)/2
+  last = f
+  flag += chr(int(f))
+
+print(flag)
+
+```
+
+This gives us the flag, almost:
+
+```
+HV22{C4lcul8_w1sg^OH|
+```
+
+It seems to be getting off by 1 afer the `wis`, but we just increase it by 1 manually to get the right flag (not sure what's gonig on there, maybe a mistake in the challenge? but this was close enough to get us to the answer)
+
+
+```
+HV22{C4lcul8_w1sh_PI}
+```
+
 **Flag**
+
+```
+HV22{C4lcul8_w1sh_PI}
+```
 
 ## Day X: Title
 
