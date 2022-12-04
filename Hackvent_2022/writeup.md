@@ -39,7 +39,7 @@ Title               | Category    | Points | Flag
 
 Santa's brother Father Musk just bought out a new decoration factory. He sacked all the developers and tried making his own QR code generator but something seems off with it. Can you try and see what he's done wrong?
 
-![](writeupfiles/hackvent2022_01.gif)
+![](writeupfiles/dec1/hackvent2022_01.gif)
 
 **Solution**
 
@@ -52,7 +52,7 @@ $ mkdir img
 $ convert hackvent2022_01.gif -coalesce img/xx_%05d.png
 ```
 
-We get [30 images](writeupfile/img/), all with different QR codes. Let's read all of them using zbar-tools
+We get [30 images](writeupfile/dec1/img/), all with different QR codes. Let's read all of them using zbar-tools
 
 ```bash
 $ cd img
@@ -98,11 +98,32 @@ So each frame gives us one letter of the flag, putting them all togeher we get
 ```
 HV22{I_CaN_HaZ_Al_T3h_QRs_Plz}
 ```
-## Day X: Title
+
+
+## Day 2: Santa's Song
 
 **Description**
 
+Santa has always wanted to compose a song for his elves to cherish their hard work. Additionally, he set up a vault with a secret access code only he knows!
+
+The elves say that Santa has always liked to hide secret messages in his work and they think that the vaults combination number may be hidden in the magnum opus of his.
+
+What are you waiting for? Go on, help the elves!
+
+Hint #1: Keep in mind that you are given a web service, not a play button for a song.
+
+Hint #2: As stated in the description, Santa's vault accepts a number, not text.
+
 **Solution**
+
+We get a website with a submission form:
+
+![](writeupfiles/dec2/screenshot.png)
+
+
+And the [pdf with the song](writeupfiles/dec2/song.pdf):
+
+![](writeupfiles/dec2/song.pdf)
 
 **Flag**
 
