@@ -386,24 +386,21 @@ flag = ""
 for i in rot:
   f = last+math.degrees(i)/2
   last = f
-  flag += chr(int(f))
+  flag += chr(round(f))
 
 print(flag)
 
 ```
 
-This gives us the flag, almost:
-
-```
-HV22{C4lcul8_w1sg^OH|
-```
-
-It seems to be getting off by 1 at the end but we just increase the characters by 1 manually to get the right flag (not sure what's gonig on there, maybe a mistake in the challenge? but this was close enough to get us to the answer)
-
+This gives us the flag:
 
 ```
 HV22{C4lcul8_w1th_PI}
 ```
+
+
+Note: at first I used `int(f)` instead of `round(f)` and it got off by one halfway through the flag, so if you are ending up with a flag like `HV22{C4lcul8_w1sg^OH|`, it may be because of this issue
+
 
 **Flag**
 

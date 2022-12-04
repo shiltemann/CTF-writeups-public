@@ -7,7 +7,7 @@ flag = ""
 for i in rot:
   f = last+math.degrees(i)/2
   last = f
-  flag += chr(int(f))
+  flag += chr(round(f))
 
 print(flag)
 
