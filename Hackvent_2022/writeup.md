@@ -11,7 +11,7 @@ Title               | Category    | Points | Flag
 [December 2](#day-2-santas-song)      | Easy        | 2/1    | `HV22{}`
 [December 3](#day-3-gh0st)      | Easy        | 2/1    | `HV22{nUll_bytes_st0mp_cPy7h0n}`
 [December 4](#day-4-santas-radians)      | Easy        | 2/1    | `HV22{C4lcul8_w1th_PI}`
-[December 5]()      | Easy        | 2/1    | `HV22{}`
+[December 5](#day-5-missing-gift)      | Easy        | 2/1    | `HV22{}`
 [December 6]()      | Easy        | 2/1    | `HV22{}`
 [December 7]()      | Easy        | 2/1    | `HV22{}`
 [December 8]()      | Easy        | 2/1    | `HV22{}`
@@ -408,9 +408,20 @@ Note: at first I used `int(f)` instead of `round(f)` and it got off by one halfw
 HV22{C4lcul8_w1th_PI}
 ```
 
-## Day X: Title
+## Day 5: Missing Gift
 
 **Description**
+
+Like every year the elves were busy all year long making the best toys in Santas workshop. This year they tried some new fabrication technology. They had fun using their new machine, but it turns out that the last gift is missing.
+
+Unfortunately, Alabaster who was in charge of making this gift is not around, because he had to go and fulfill his scout elf duty as an elf on the shelf.
+
+But due to some very lucky circumstances the IT-guy elf was capturing the network traffic during this exact same time.
+Goal:
+
+Can you help Santa and the elves to fabricate this toy and find the secret message?
+
+[tcpdump.pcap](writeupfiles/dec5/tcpdump.pcap)
 
 **Solution**
 
