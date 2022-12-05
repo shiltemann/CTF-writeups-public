@@ -11,7 +11,7 @@ Title               | Category    | Points | Flag
 [December 2](#day-2-santas-song)      | Easy        | 2/1    | `HV22{}`
 [December 3](#day-3-gh0st)      | Easy        | 2/1    | `HV22{nUll_bytes_st0mp_cPy7h0n}`
 [December 4](#day-4-santas-radians)      | Easy        | 2/1    | `HV22{C4lcul8_w1th_PI}`
-[December 5](#day-5-missing-gift)      | Easy        | 2/1    | `HV22{}`
+[December 5](#day-5-missing-gift)      | Easy        | 2/1    | `HV22{this-is-a-w4ste-of-pl4stic}`
 [December 6]()      | Easy        | 2/1    | `HV22{}`
 [December 7]()      | Easy        | 2/1    | `HV22{}`
 [December 8]()      | Easy        | 2/1    | `HV22{}`
@@ -425,7 +425,27 @@ Can you help Santa and the elves to fabricate this toy and find the secret messa
 
 **Solution**
 
+We look around the pcap, filter for http in the top bar, notice a POST request with a big load:
+
+![](writeupfiles/dec5/screenshot-wireshark.png)
+
+So we right-click on this and Follow the TCP stream, we see a gcode file:
+
+![](writeupfiles/dec5/screenshot-wireshark2.png)
+
+This is a file for a 3D printer, that sounds promising!
+
+We export this part of the file, name it [`hv22.gcode`](writeupfiles/dec5/hv22.gcode), and open it in Cura:
+
+![](writeupfiles/dec5/screenshot-cura.jpg)
+
+Whoo! this model is the flag!
+
 **Flag**
+
+```
+HV22{this-is-a-w4ste-of-pl4stic}
+```
 
 ## Day X: Title
 
