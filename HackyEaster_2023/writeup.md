@@ -19,7 +19,7 @@ Level 2: Noob Zone                               |            |
 Level 3: It's so Easy                            |            |
 [Chemical Code](#chemical-code)                  | Level 3    | `he2023{flagenergyatomcosmos}`
 [Serving Things](#serving-things)                | Level 3    | `he2023{}`
-[Cut Off](#cut-off)                              | Level 3    | `he2023{}`
+[Cut Off](#cut-off)                              | Level 3    | `he2023{4cr0pa_wh4t?}`
 [Global Egg Delivery](#global-egg-delivery)      | Level 3    | `he2023{}`
 Level 4                                          |            |
 
@@ -338,11 +338,19 @@ We try some phone models until we have success with the "Google Pixel 6" setting
 
 ![](writeupfiles/screenshot-recovered.png)
 
+we than scan the QR code to get the flag
+
+```bash
+$ zbarimg screenshot-recovered.png
+QR-Code:he2023{4cr0pa_wh4t?}
+scanned 1 barcode symbols from 1 images in 0.24 seconds
+
+```
 
 **Egg**
 
 ```
-he2023{}
+he2023{4cr0pa_wh4t?}
 ```
 
 
