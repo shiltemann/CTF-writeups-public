@@ -480,7 +480,8 @@ http://ch.hackyeaster.com:2310
 
 We get a service that will take an image we supply it, and return it to us flipped upside down. The hint says it uses imagemagick to do this.
 
-This looks like an imagemagick vulnerability, and we find a useful [articl](https://www.uptycs.com/blog/denial-of-servicedos-and-arbitrary-file-read-vulnerability-in-imagemagick)
+This looks like an imagemagick vulnerability, and we find a useful [article](https://www.uptycs.com/blog/denial-of-servicedos-and-arbitrary-file-read-vulnerability-in-imagemagick)
+on the topic that we can follow.
 
 So we use pngcrush to generate our image (the `test.png` input image can be any png image you have lying around)
 
