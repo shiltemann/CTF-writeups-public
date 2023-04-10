@@ -17,8 +17,7 @@ Level 2: Noob Zone                               |            |
 [Birds on a Wire](#birds-on-a-wire)              | Level 2    | `he2023{birdwatchingisfun}`
 [Bins](#bins)                                    | Level 2    | `he2023{}`
 Level 3: It's so Easy                            |            |
-[Chemical Code](#chemical-code)                  | Level 3    | `he2023{flagenergyatomcosmos}
-`
+[Chemical Code](#chemical-code)                  | Level 3    | `he2023{flagenergyatomcosmos}`
 [Serving Things](#serving-things)                | Level 3    | `he2023{}`
 [Cut Off](#cut-off)                              | Level 3    | `he2023{}`
 [Global Egg Delivery](#global-egg-delivery)      | Level 3    | `he2023{}`
