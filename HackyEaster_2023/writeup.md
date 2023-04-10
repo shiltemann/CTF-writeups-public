@@ -25,7 +25,7 @@ Level 4: Quattuor                                |            |
 [Flip Flop](#flip-flop)                          | Level 4    | `he2023{}`
 [Bouncy not in the Castle](#bouncy-not-in-the-castle)| Level 4| `he2023{}`
 [A Mysterious Parchement](#a-mysterious-parchment)| Level 4   | `he2023{}`
-[Hamster](#Hamster)                              | Level 4    | `he2023{}`
+[Hamster](#Hamster)                              | Level 4    | `he2023{s1mpl3_h34d3r_t4mp3r1ng}`
 [Lost in (French) Space](#lost-in-french-space)  | Level 4    | `he2023{}`
 [Spy Tricks](#spy-tricks)                        | Level 4    | `he2023{}`
 Level 5                                          |            |
@@ -421,6 +421,16 @@ On their holiday, the bunnies came across a sleepy village with an interesting t
 
 **Solution**
 
+The challenge said the bunnies altered the parchment slightly, so let's find the original so we can compare.
+
+Some Googling tells us this is parchment of Bérenger Saunière, found in the Church of Mary Magdalene at Rennes-le-Château by Bérenger Saunière.
+It is said that these documents led to the discovery of the famed treasure of Rennes-le-Château.
+
+Coded messages were later found by historian Henry Lincoln. 
+
+![](writeupfiles/parchment-original.jpg)
+
+
 **Egg**
 
 ```
@@ -431,12 +441,54 @@ he2023{}
 
 **Challenge**
 
+The Hamster has a flag for you.
+
+http://ch.hackyeaster.com:2301
+
+Note: The service is restarted every hour at x:00.
+
 **Solution**
+
+we visit the url and get various responsed of how to alter our requests, so we use curl and follow instructions:
+
+
+```bash
+$ curl http://ch.hackyeaster.com:2301
+Howdy, I am the hamster.Please go to /feed
+
+# ok, let's go to /feed
+$ curl http://ch.hackyeaster.com:2301/feed
+only hamster-agent is allowed
+
+# so let's set a user-agent
+$ curl -A "hamster-agent"  http://ch.hackyeaster.com:2301/feed
+⛳ GET invalid
+
+# maybe POST? PUT? Yes, you want put
+$ curl -A "hamster-agent" -X PUT http://ch.hackyeaster.com:2301/feed
+🛑 request must come from hackyhamster.org
+
+# ok, let's set a referrer
+$ curl -A "hamster-agent" -X PUT -e "hackyhamster.org" http://ch.hackyeaster.com:2301/feed
+🍪 brownie not found
+
+# want a cookie? here you go.
+$ curl -A "hamster-agent" -X PUT -e "hackyhamster.org" --cookie "brownie=brownie" http://ch.hackyeaster.com:2301/feed
+🍪 brownie must be baked
+
+# ok, set the value to baked
+$ curl -A "hamster-agent" -X PUT -e "hackyhamster.org" --cookie "brownie=baked" http://ch.hackyeaster.com:2301/feed
+🚩 he2023{s1mpl3_h34d3r_t4mp3r1ng}
+
+#whoo, we got it!
+```
+
+
 
 **Egg**
 
 ```
-he2023{}
+he2023{s1mpl3_h34d3r_t4mp3r1ng}
 ```
 
 ### Lost in (French) Space
