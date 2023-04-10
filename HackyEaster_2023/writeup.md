@@ -470,12 +470,19 @@ he2023{u7ƒ_b0m5s_8rᗱ_n07_8ㅣway5_1gn0rᗱd}
 
 **Challenge**
 
+This awesome service can flipflop an image!
+
+Flag is located at: `/flag.txt`
+
+http://ch.hackyeaster.com:2310
+
 **Solution**
 
-[instructiong](https://www.uptycs.com/blog/denial-of-servicedos-and-arbitrary-file-read-vulnerability-in-imagemagick)
+We get a service that will take an image we supply it, and return it to us flipped upside down. The hint says it uses imagemagick to do this.
 
+This looks like an imagemagick vulnerability, and we find a useful [articl](https://www.uptycs.com/blog/denial-of-servicedos-and-arbitrary-file-read-vulnerability-in-imagemagick)
 
-so we use pngcrush to generate our image (the `test.png` input image can be any png image you have lying around)
+So we use pngcrush to generate our image (the `test.png` input image can be any png image you have lying around)
 
 ```bash
 $ pngcrush -text a Profile /flag.txt test.png
