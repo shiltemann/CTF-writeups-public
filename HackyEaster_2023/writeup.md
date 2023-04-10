@@ -24,7 +24,7 @@ Level 3: It's so Easy                            |            |
 Level 4: Quattuor                                |            |
 [Flip Flop](#flip-flop)                          | Level 4    | `he2023{}`
 [Bouncy not in the Castle](#bouncy-not-in-the-castle)| Level 4| `he2023{}`
-[A Mysterious Parchement](#a-mysterious-parchment)| Level 4   | `he2023{}`
+[A Mysterious Parchement](#a-mysterious-parchment)| Level 4   | `he2023{BUTISITACOOLOLDCODEITSUREIS}`
 [Hamster](#Hamster)                              | Level 4    | `he2023{s1mpl3_h34d3r_t4mp3r1ng}`
 [Lost in (French) Space](#lost-in-french-space)  | Level 4    | `he2023{}`
 [Spy Tricks](#spy-tricks)                        | Level 4    | `he2023{}`
@@ -430,11 +430,16 @@ Coded messages were later found by historian Henry Lincoln. 
 
 ![](writeupfiles/parchment-original.jpg)
 
+I noticed that some of the letter were moved up compared to the original, so this must be the bunnies code. I simply onderlined all the higher letters and read off the flag
+
+![](writeupfiles/parchment-solved.png)
+
+its spells out `but is it a cool old parchment it sure is`. The instructions say the flag is all uppercase and no spaces, so we know our flag
 
 **Egg**
 
 ```
-he2023{}
+he2023{BUTISITACOOLOLDCODEITSUREIS}
 ```
 
 ### Hamster
