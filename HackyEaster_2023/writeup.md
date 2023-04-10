@@ -9,14 +9,20 @@ The annual Easter CTF from Hacking-lab
 
 Title                                            | Points     | Egg
 -------------------------------------------------| ---------- | ------------------------------
+Level 1: Welcome                                 |            |
 [Sanity Check](#sanity-check)                    | Level 1    | `he2023{just_A_sanity_chEck}`
-Level 2                                          |            |
+Level 2: Noob Zone                               |            |
 [Word Cloud](#word-cloud)                        | Level 2    | `he2023{this_is_the_flag!}`
 [Rotation](#roation)                             | Level 2    | `he2023{0n3_c4n_r34d_r0t0r_b4ckw4rds}`
 [Birds on a Wire](#birds-on-a-wire)              | Level 2    | `he2023{birdwatchingisfun}`
 [Bins](#bins)                                    | Level 2    | `he2023{}`
-Level 3                                          |            |
-
+Level 3: It's so Easy                            |            |
+[Chemical Code](#chemical-code)                  | Level 3    | `he2023{flagenergyatomcosmos}
+`
+[Serving Things](#serving-things)                | Level 3    | `he2023{}`
+[Cut Off](#cut-off)                              | Level 3    | `he2023{}`
+[Global Egg Delivery](#global-egg-delivery)      | Level 3    | `he2023{}`
+Level 4                                          |            |
 
 ## Level 1: Welcome
 
@@ -136,6 +142,18 @@ he2023{birdwatchingisfun}
 
 **Challenge**
 
+The rabbits left a mess in their cage.
+
+```
+  //    //                    //
+ ('>   ('>    LX2gkn81        ('>
+ /rr   /rr       carrots      /rr
+*\))_ *\))_                  *\))_
+```
+
+If only I knew which bin to put the rubbish in.
+
+
 **Solution**
 
 **Egg**
@@ -145,7 +163,86 @@ he2023{}
 ```
 
 
-## Level 3
+## Level 3: It's so Easy
+
+### Title
+
+**Challenge**
+
+Our crazy chemistry professor wrote a secret code on the blackboard:
+
+```
+9 57 32 10 111 39 85 8 115 8 16 42 16
+```
+
+He also mumbled something like "essential and elementary knowledge".
+
+
+**Solution**
+
+This sounds like we have to convert atomic numbers to their corresponding sybols to get the flag
+
+We find a python package to help us and use it to decode the flag
+
+```python3
+from PyAstronomy import pyasl
+
+an = pyasl.AtomicNo()
+ct =[9,57,32,10,111,39,85,8,115,8,16,42,16]
+
+flag = "".join(an.getElSymbol(ct[i]) for i in range(0,len(ct)))
+
+print(flag)  # outputs FLaGeNeRgYAtOMcOSMoS
+
+```
+
+**Egg**
+
+```
+he2023{flagenergyatomcosmos}
+```
+
+### Title
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+```
+he2023{}
+```
+
+
+### Title
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+```
+he2023{}
+```
+
+
+### Title
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+```
+he2023{}
+```
+
+
+
+## Level 4
 
 ### Title
 
