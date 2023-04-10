@@ -13,7 +13,7 @@ Title                                            | Points     | Egg
 Level 2                                          |            |
 [Word Cloud](#word-cloud)                        | Level 2    | `he2023{this_is_the_flag!}`
 [Rotation](#roation)                             | Level 2    | `he2023{0n3_c4n_r34d_r0t0r_b4ckw4rds}`
-[Birds on a Wire](#birds-on-a-wire)              | Level 2    | `he2023{}`
+[Birds on a Wire](#birds-on-a-wire)              | Level 2    | `he2023{birdwatchingisfun}`
 [Bins](#bins)                                    | Level 2    | `he2023{}`
 Level 3                                          |            |
 
@@ -114,12 +114,22 @@ he2023{0n3_c4n_r34d_r0t0r_b4ckw4rds}
 
 **Challenge**
 
+Just some birds sitting on a wire.
+
+Download the image and find the flag!
+
+![](writeupfiles/birdsonawire.jpg)
+
 **Solution**
+
+Some Googling reveals that this is the ["Birds on a Wire" cipher](https://www.dcode.fr/birds-on-a-wire-cipher)
+
+It's a simple substitution cipher so we just map the birds to their corresponding letters to find the flag!
 
 **Egg**
 
 ```
-he2023{}
+he2023{birdwatchingisfun}
 ```
 
 ### Bins
