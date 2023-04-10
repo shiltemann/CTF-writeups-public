@@ -21,7 +21,16 @@ Level 3: It's so Easy                            |            |
 [Serving Things](#serving-things)                | Level 3    | `he2023{}`
 [Cut Off](#cut-off)                              | Level 3    | `he2023{4cr0pa_wh4t?}`
 [Global Egg Delivery](#global-egg-delivery)      | Level 3    | `he2023{}`
-Level 4                                          |            |
+Level 4: Quattuor                                |            |
+[Flip Flop](#flip-flop)                          | Level 4    | `he2023{}`
+[Bouncy not in the Castle](#bouncy-not-in-the-castle)| Level 4| `he2023{}`
+[A Mysterious Parchement](#a-mysterious-parchment)| Level 4   | `he2023{}`
+[Hamster](#Hamster)                              | Level 4    | `he2023{}`
+[Lost in (French) Space](#lost-in-french-space)  | Level 4    | `he2023{}`
+[Spy Tricks](#spy-tricks)                        | Level 4    | `he2023{}`
+Level 5                                          |            |
+
+
 
 ## Level 1: Welcome
 
@@ -376,7 +385,83 @@ he2023{}
 
 
 
-## Level 4
+## Level 4: Quattuor
+
+### Flip Flop
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+```
+he2023{}
+```
+
+### Bouncy not in the Castle
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+```
+he2023{}
+```
+
+### A Mysterious Parchment
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+```
+he2023{}
+```
+
+### Hamster
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+```
+he2023{}
+```
+
+### Lost in (French) Space
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+```
+he2023{}
+```
+
+### Spy Tricks
+
+**Challenge**
+
+**Solution**
+
+**Egg**
+
+```
+he2023{}
+```
+
+
+
+## Level 5
 
 ### Title
 
