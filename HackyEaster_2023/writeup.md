@@ -12,7 +12,7 @@ Title                                            | Points     | Egg
 [Sanity Check](#sanity-check)                    | Level 1    | `he2023{just_A_sanity_chEck}`
 Level 2                                          |            |
 [Word Cloud](#word-cloud)                        | Level 2    | `he2023{this_is_the_flag!}`
-[Rotation](#roation)                             | Level 2    | `he2023{}`
+[Rotation](#roation)                             | Level 2    | `he2023{0n3_c4n_r34d_r0t0r_b4ckw4rds}`
 [Birds on a Wire](#birds-on-a-wire)              | Level 2    | `he2023{}`
 [Bins](#bins)                                    | Level 2    | `he2023{}`
 Level 3                                          |            |
@@ -74,12 +74,40 @@ he2023{this_is_the_flag!}
 
 **Challenge**
 
+My new rotor messed up the flag!
+
+```
+96a_abL_?b04c?0Cbc50C_E_C03c4<HcC5DN
+```
+
+I tried to decode it, but it didn't work. The rotor must have been too fast!
+
 **Solution**
+
+We suspect a rotation cipher because of the cipher, and assuming the given string starts with `he2023`, this indeed checks out (`h` and `e` are 3 apart in the ASCII table, so are `9` and `6`). It would appear to be a rotation of 47, though sometimes it is +47, sometimes -47, so we write a short script to find the direction of rotation
+
+```python
+import string
+
+ct="96a_abL_?b04c?0Cbc50C_E_C03c4<HcC5DN"
+flag = ""
+
+for i in range(0,len(ct)):
+  pt = chr ( ord(ct[i])+47 )
+  if pt not in string.printable:
+     pt = chr ( ord(ct[i])-47 )
+
+  flag += pt
+
+print(flag)
+```
+
+which gives us the flag!
 
 **Egg**
 
 ```
-he2023{}
+he2023{0n3_c4n_r34d_r0t0r_b4ckw4rds}
 ```
 
 ### Birds on a Wire
