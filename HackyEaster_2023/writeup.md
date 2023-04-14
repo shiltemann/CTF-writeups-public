@@ -29,7 +29,7 @@ Level 4: Quattuor                                |            |
 [Lost in (French) Space](#lost-in-french-space)  | Level 4    | `he2023{davies}`
 [Spy Tricks](#spy-tricks)                        | Level 4    | `he2023{}`
 Level 5                                          |            |
-[Thumper's PWN - Ring 3](#thumpers-pwn-ring3)    | Level 5    |
+[Thumper's PWN - Ring 3](#thumpers-pwn---ring3)  | Level 5    |
 [Ghost in a Shell 4](#ghost-in-a-shell-4)        | Level 5    |
 [Going Round](#going-round)                      | Level 5    |
 [Numbers Station](#numbers-station)              | Level 5    |
