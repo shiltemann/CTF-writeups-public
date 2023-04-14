@@ -33,7 +33,7 @@ Level 5                                          |            |
 [Ghost in a Shell 4](#ghost-in-a-shell-4)        | Level 5    |
 [Going Round](#going-round)                      | Level 5    |
 [Numbers Station](#numbers-station)              | Level 5    |
-[Igor's Gory Passwordsafe](#gors-gory-passwordsafe)| Level 5  |
+[Igor's Gory Passwordsafe](#igors-gory-passwordsafe)| Level 5  |
 [Singular](#singular)                            | Level 5    |
 
 
