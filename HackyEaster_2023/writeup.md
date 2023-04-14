@@ -29,12 +29,12 @@ Level 4: Quattuor                                |            |
 [Lost in (French) Space](#lost-in-french-space)  | Level 4    | `he2023{davies}`
 [Spy Tricks](#spy-tricks)                        | Level 4    | `he2023{}`
 Level 5                                          |            |
-[thumpers-pwn-ring-3](Thumper's PWN - Ring 3)    | Level 5    |
-[ghost-in-a-shell-4](Ghost in a Shell 4)         | Level 5    |
-[going-round](Going Round)                       | Level 5    |
-[numbers-station](Numbers Station)               | Level 5    |
-[igors-gory-passwordsafe](Igor's Gory Passwordsafe)| Level 5  |
-[singular](Singular)                             | Level 5    |
+[Thumper's PWN - Ring 3](#thumpers-pwn-ring3)    | Level 5    |
+[Ghost in a Shell 4](#ghost-in-a-shell-4)        | Level 5    |
+[Going Round](#going-round)                      | Level 5    |
+[Numbers Station](#numbers-station)              | Level 5    |
+[Igor's Gory Passwordsafe](#gors-gory-passwordsafe)| Level 5  |
+[Singular](#singular)                            | Level 5    |
 
 
 ## Level 1: Welcome
