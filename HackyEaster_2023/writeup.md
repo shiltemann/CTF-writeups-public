@@ -27,7 +27,7 @@ Level 4: Quattuor                                |            |
 [A Mysterious Parchement](#a-mysterious-parchment)| Level 4   | `he2023{BUTISITACOOLOLDCODEITSUREIS}`
 [Hamster](#Hamster)                              | Level 4    | `he2023{s1mpl3_h34d3r_t4mp3r1ng}`
 [Lost in (French) Space](#lost-in-french-space)  | Level 4    | `he2023{davies}`
-[Spy Tricks](#spy-tricks)                        | Level 4    | `he2023{}`
+[Spy Tricks](#spy-tricks)                        | Level 4    | `he2023{I_like_303_b3tter_but_thats_n0t_pr1me}`
 Level 5                                          |            |
 [Thumper's PWN - Ring 3](#thumpers-pwn---ring3)  | Level 5    |
 [Ghost in a Shell 4](#ghost-in-a-shell-4)        | Level 5    | `he{2023{al1asses-4-fUn-and-pr0fit}`
@@ -745,10 +745,42 @@ The bunny spymaster found a tiny note in a forgotten dead drop and is now scratc
 
 **Solution**
 
+We applied random characters to this and put it through a cryptogram solver which go us .. quite close
+
+```
+WESCONGRATULATESYOUSONSASBAFESARRISALYSWESCONFIRMSTHESRECEIPTSOFSYOURSLETTERSTOSTHESADDREBBSSSREPEATSSSANDSTHESREADINGSOFSLETTERSNUMVERSJYUAXQZQXMIZDVCXZXZXZQXKKXHZQLKZKAJKIZFZKZGHJEXNUTHESPACKAGESWABSDELISEREDSTOSYOURSWIFESPERBONALLYYS
+```
+
+and then took that into python where we made more progress with a 52 character subtitution alphabet:
+
+```
+we congratulate you on a safe arrival. we confirm the receipt of your letter to the address v repeat v and the reading of letter number 1.
+HE2023{i_LIKE_303_D3SSEQ_DRS_SHCSP_O0S_NQ1ME}
+the package was delivered to your wife personally. everything is all right with the family. we wish you success. greetings from the comrades. number 1: 3rd of december.
+```
+
+Saskia eventually got this into
+
+```
+HE2023{i_LIKE_303_B3TTER_BUT_THATS_N0T_PR1ME}
+```
+
+Which we tried, and then tried lower case which wasn't right (:eyes:)
+
+So we tried doing it their way which was clearly intended and did a common factor finder and oh whoopsie it was actually really simple:
+
+```python
+data = open('intercepted_message.txt', 'r').read().replace('\n', ' ').split(' ')
+data = map(int, data[0:-1])
+print(''.join([chr(x // 313) for x in data]))
+```
+
+and wow that was really simple, we just forgot to also capitalise the I when we uncapitalised the rest:
+
 **Egg**
 
 ```
-he2023{}
+he2023{I_like_303_b3tter_but_thats_n0t_pr1me}
 ```
 
 
