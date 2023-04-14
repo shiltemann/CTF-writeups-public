@@ -26,10 +26,15 @@ Level 4: Quattuor                                |            |
 [Bouncy not in the Castle](#bouncy-not-in-the-castle)| Level 4| `he2023{}`
 [A Mysterious Parchement](#a-mysterious-parchment)| Level 4   | `he2023{BUTISITACOOLOLDCODEITSUREIS}`
 [Hamster](#Hamster)                              | Level 4    | `he2023{s1mpl3_h34d3r_t4mp3r1ng}`
-[Lost in (French) Space](#lost-in-french-space)  | Level 4    | `he2023{}`
+[Lost in (French) Space](#lost-in-french-space)  | Level 4    | `he2023{davies}`
 [Spy Tricks](#spy-tricks)                        | Level 4    | `he2023{}`
 Level 5                                          |            |
-
+[thumpers-pwn-ring-3](Thumper's PWN - Ring 3)    | Level 5    |
+[ghost-in-a-shell-4](Ghost in a Shell 4)         | Level 5    |
+[going-round](Going Round)                       | Level 5    |
+[numbers-station](Numbers Station)               | Level 5    |
+[igors-gory-passwordsafe](Igor's Gory Passwordsafe)| Level 5  |
+[singular](Singular)                             | Level 5    |
 
 
 ## Level 1: Welcome
@@ -750,6 +755,144 @@ he2023{}
 
 ## Level 5
 
+### Thumper's PWN - Ring 3
+
+**Challenge**
+
+Thumper has been hunting his nemesis, Dr. Evil, for months. He finally located his remote system and is trying to gain access. Can you help him find the right password?
+
+Target: `nc ch.hackyeaster.com 2313`
+
+**Solution**
+
+**Egg**
+
+```
+he2023{}
+```
+
+
+### Ghost in a Shell 4
+
+**Challenge**
+
+```
+  _, _,_  _,  _, ___   _ _, _    _,    _, _,_ __, _,  _,    , ,   ,
+ / _ |_| / \ (_   |    | |\ |   /_\   (_  |_| |_  |   |     | \   /
+ \ / | | \ / , )  |    | | \|   | |   , ) | | |   | , | ,   |  \ /
+  ~  ~ ~  ~   ~   ~    ~ ~  ~   ~ ~    ~  ~ ~ ~~~ ~~~ ~~~   ~   ~
+______________________________________________________________________
+ ,--.     ,--.     ,--.     ,--.
+| oo |   | oo |   | oo |   | oo |
+| ~~ |   | ~~ |   | ~~ |   | ~~ |  o  o  o  o  o  o  o  o  o  o  o  o
+|/\/\|   |/\/\|   |/\/\|   |/\/\|
+______________________________________________________________________
+```
+
+Connect to the server, snoop around, and find the flag!
+
+- ssh `ch.hackyeaster.com -p 2306 -l blinky`
+- password is: `blinkblink`
+
+
+**Solution**
+
+**Egg**
+
+```
+he2023{}
+```
+
+
+### Going Round
+
+**Challenge**
+
+I got a flag, but it's encrypted somehow:
+`ip0232j{1t_x_v0z4b3bm__v4xvq}a`
+
+It was created using the following service:
+
+http://ch.hackyeaster.com:2305
+
+Note: The service is restarted every hour at x:00.
+
+**Solution**
+
+**Egg**
+
+```
+he2023{}
+```
+
+
+### Numbers Station
+
+**Challenge**
+
+"Testing, testing, one, two, one, zero.." - the bunnies found a strange radio station when looking for uplifting BunnyBop; can you find out what the nice Spanish lady is saying?
+
+[numbers.mp3](writeupfiles/numbers.mp3)
+
+**Solution**
+
+**Egg**
+
+```
+he2023{}
+```
+
+
+### Igor's Gory Passwordsafe
+
+**Challenge**
+
+You found the following letter:
+
+Hi Peter
+
+Thanks again for your help in cryptography to make the passwordsafe secure. Now
+
+    The passwords of the user are stored in a irreversible way (bcrypt)
+    All passwords in the safe are encrypted by a strong symmetric key
+
+Kind regards, Roy
+
+Open the passwordsafe at at http://ch.hackyeaster.com:2312 to get your 🚩 flag.
+
+Note: The service is restarted every hour at x:00.
+
+**Solution**
+
+**Egg**
+
+```
+he2023{}
+```
+
+
+### Singular
+
+**Challenge**
+
+Wow, so many flags!
+
+Find the real flag, which is unique in multiple ways.
+
+[singular.zip](writeupfiles/singular.zip)
+
+Hint: This one can be solved with linux commands, with a one-liner.
+
+**Solution**
+
+**Egg**
+
+```
+he2023{}
+```
+
+## Level 6
+
 ### Title
 
 **Challenge**
@@ -761,3 +904,5 @@ he2023{}
 ```
 he2023{}
 ```
+
+
