@@ -558,6 +558,11 @@ he2023{1m4g3-tr4g1cK-aga111n}
 
 **Challenge**
 
+Very bouncy, indeed, but not in a castle.
+
+Try http://ch.hackyeaster.com:2308
+
+
 **Solution**
 
 Hmm...
