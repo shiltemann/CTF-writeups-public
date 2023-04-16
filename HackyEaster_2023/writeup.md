@@ -15,7 +15,7 @@ Level 2: Noob Zone                               |            |
 [Word Cloud](#word-cloud)                        | Level 2    | `he2023{this_is_the_flag!}`
 [Rotation](#roation)                             | Level 2    | `he2023{0n3_c4n_r34d_r0t0r_b4ckw4rds}`
 [Birds on a Wire](#birds-on-a-wire)              | Level 2    | `he2023{birdwatchingisfun}`
-[Bins](#bins)                                    | Level 2    | `he2023{}`
+[Bins](#bins)                                    | Level 2    | `he2023{s0rting_th3_w4ste}`
 Level 3: It's so Easy                            |            |
 [Chemical Code](#chemical-code)                  | Level 3    | `he2023{flagenergyatomcosmos}`
 [Serving Things](#serving-things)                | Level 3    | `he2023{}`
@@ -169,10 +169,16 @@ If only I knew which bin to put the rubbish in.
 
 **Solution**
 
+This one took way too long, we first thought of anything in `/bin` folder we might use on this, then finally realized we did not get a file to download, are there any "bins" on the website or online? OMG *paste*bin!
+
+[pastebin.com/LX2gkn81](https://pastebin.com/LX2gkn81)
+
+It exists, made just before the event, this is promising ..but it asks us for password, we try "carrots", and boom, there is our flag!
+
 **Egg**
 
 ```
-he2023{}
+he2023{s0rting_th3_w4ste}
 ```
 
 
