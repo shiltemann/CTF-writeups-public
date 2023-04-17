@@ -1345,7 +1345,10 @@ $(document).ready(function () {
 
 ```
 
-In the end, we find our flag when we try id `07` (by simply going to http://ch.hackyeaster.com:2312/get/07)
+In the end, we find our flag when we try id `07` (by simply going to http://ch.hackyeaster.com:2312/get/07), we
+get the response `he2023{1d0R_c4n_d3str0y_ur_Crypt0_3ff0rt}`
+
+The flag refers to *Insecure direct object reference (IDOR)*
 
 (other id's contain responses like `SQLI_doesnt_help`, `verySecure`, `Well_not_the_flag`, `White_Rabbit_99`)
 
