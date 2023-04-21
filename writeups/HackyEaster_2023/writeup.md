@@ -10,31 +10,38 @@ The annual Easter CTF from Hacking-lab
 Title                                            | Points     | Egg
 -------------------------------------------------| ---------- | ------------------------------
 Level 1: Welcome                                 |            |
-[Sanity Check](#sanity-check)                    | Level 1    | `he2023{just_A_sanity_chEck}`
+[Sanity Check](#sanity-check)                    | noob       | `he2023{just_A_sanity_chEck}`
 Level 2: Noob Zone                               |            |
-[Word Cloud](#word-cloud)                        | Level 2    | `he2023{this_is_the_flag!}`
-[Rotation](#roation)                             | Level 2    | `he2023{0n3_c4n_r34d_r0t0r_b4ckw4rds}`
-[Birds on a Wire](#birds-on-a-wire)              | Level 2    | `he2023{birdwatchingisfun}`
-[Bins](#bins)                                    | Level 2    | `he2023{s0rting_th3_w4ste}`
+[Word Cloud](#word-cloud)                        | noob       | `he2023{this_is_the_flag!}`
+[Rotation](#roation)                             | noob       | `he2023{0n3_c4n_r34d_r0t0r_b4ckw4rds}`
+[Birds on a Wire](#birds-on-a-wire)              | noob       | `he2023{birdwatchingisfun}`
+[Bins](#bins)                                    | noob       | `he2023{s0rting_th3_w4ste}`
 Level 3: It's so Easy                            |            |
-[Chemical Code](#chemical-code)                  | Level 3    | `he2023{flagenergyatomcosmos}`
-[Serving Things](#serving-things)                | Level 3    | `he2023{}`
-[Cut Off](#cut-off)                              | Level 3    | `he2023{4cr0pa_wh4t?}`
-[Global Egg Delivery](#global-egg-delivery)      | Level 3    | `he2023{u7ƒ_b0m5s_8rᗱ_n07_8ㅣway5_1gn0rᗱd}`
+[Chemical Code](#chemical-code)                  | easy       | `he2023{flagenergyatomcosmos}`
+[Serving Things](#serving-things)                | easy       | `he2023{}`
+[Cut Off](#cut-off)                              | easy       | `he2023{4cr0pa_wh4t?}`
+[Global Egg Delivery](#global-egg-delivery)      | easy       | `he2023{u7ƒ_b0m5s_8rᗱ_n07_8ㅣway5_1gn0rᗱd}`
 Level 4: Quattuor                                |            |
-[Flip Flop](#flip-flop)                          | Level 4    | `he2023{1m4g3-tr4g1cK-aga111n}`
-[Bouncy not in the Castle](#bouncy-not-in-the-castle)| Level 4| `he2023{n0_b0uNc}`
-[A Mysterious Parchement](#a-mysterious-parchment)| Level 4   | `he2023{BUTISITACOOLOLDCODEITSUREIS}`
-[Hamster](#Hamster)                              | Level 4    | `he2023{s1mpl3_h34d3r_t4mp3r1ng}`
-[Lost in (French) Space](#lost-in-french-space)  | Level 4    | `he2023{davies}`
-[Spy Tricks](#spy-tricks)                        | Level 4    | `he2023{I_like_303_b3tter_but_thats_n0t_pr1me}`
+[Flip Flop](#flip-flop)                          | medium     | `he2023{1m4g3-tr4g1cK-aga111n}`
+[Bouncy not in the Castle](#bouncy-not-in-the-castle)| medium | `he2023{n0_b0uNc}`
+[A Mysterious Parchement](#a-mysterious-parchment)| easy      | `he2023{BUTISITACOOLOLDCODEITSUREIS}`
+[Hamster](#Hamster)                              | easy       | `he2023{s1mpl3_h34d3r_t4mp3r1ng}`
+[Lost in (French) Space](#lost-in-french-space)  | easy       | `he2023{davies}`
+[Spy Tricks](#spy-tricks)                        | easy        | `he2023{I_like_303_b3tter_but_thats_n0t_pr1me}`
 Level 5                                          |            |
-[Thumper's PWN - Ring 3](#thumpers-pwn---ring3)  | Level 5    | `he2023{w3lc0m3_t0_r1ng_3_thump3r}`
-[Ghost in a Shell 4](#ghost-in-a-shell-4)        | Level 5    | `he{2023{al1asses-4-fUn-and-pr0fit}`
-[Going Round](#going-round)                      | Level 5    | `he2023{fl1p_n_r0t4t3_in_p4irs}`
-[Numbers Station](#numbers-station)              | Level 5    |
-[Igor's Gory Passwordsafe](#igors-gory-passwordsafe)| Level 5  | `he2023{1d0R_c4n_d3str0y_ur_Crypt0_3ff0rt}`
-[Singular](#singular)                            | Level 5    |
+[Thumper's PWN - Ring 3](#thumpers-pwn---ring3)  | medium     | `he2023{w3lc0m3_t0_r1ng_3_thump3r}`
+[Ghost in a Shell 4](#ghost-in-a-shell-4)        | medium     | `he{2023{al1asses-4-fUn-and-pr0fit}`
+[Going Round](#going-round)                      | medium    | `he2023{fl1p_n_r0t4t3_in_p4irs}`
+[Numbers Station](#numbers-station)              | medium     |
+[Igor's Gory Passwordsafe](#igors-gory-passwordsafe)| easy    | `he2023{1d0R_c4n_d3str0y_ur_Crypt0_3ff0rt}`
+[Singular](#singular)                            | easy    |
+Level 6                                          |            |
+[Crash Bash](#crash-bash)                        | hard       |
+[Code locked](#code-locked)                      | medium     |
+[Quilt](#quilt)                                  | medium     |
+[Cat in the Bucket](#cat-in-the-bucket)          | medium     |
+[Tom's Diary](#toms-diary)                       | medium     |
+
 
 
 ## Level 1: Welcome

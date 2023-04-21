@@ -1,0 +1,47 @@
+from collections import Counter
+import itertools
+import sys
+
+text_file = open('singular.txt', 'r')
+text = text_file.read()
+
+# all words
+words = text.replace("\n"," ").split()
+print(len(words))
+
+freq = Counter(words)
+print(sorted(freq.items(), key=lambda k: -k[1]))
+
+## ok, there are no words that only appear once
+
+
+# find lines which only appear once
+lines = text.split("\n")
+print(len(lines))
+freq = Counter(lines)
+#print(sorted(freq.items(), key=lambda k: -k[1]))
+
+unique = [line[0] for line in freq.items() if line[1] == 1 ]
+print(unique)
+print(len(unique))
+## ok, we are down to 1016 possible flags, what more?
+
+# look per column, which flags have a unique first word?
+firstwords = [w.split()[0] for w in unique if len(w)>0 ]
+print(firstwords)
+freq2 = Counter(firstwords)
+#print(sorted(freq2.items(), key=lambda k: -k[1]))
+uniquefirstwords = [w for word in freq2 if freq2[1] == 1]
+print(uniquefirstwords)
+print(len(uniquefirstwords))
+
+
+unique = [line[0] for line in freq.items() if line[1] == 1 ]
+
+unique2 = [line for line in unique if line[1] == 1 and len(line)>1 ]
+print(unique2)
+print(len(unique2))
+
+
+
+

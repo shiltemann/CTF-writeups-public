@@ -1,1 +1,1 @@
-writeup.md
+writeups.md

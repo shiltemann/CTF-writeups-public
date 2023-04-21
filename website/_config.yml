@@ -13,12 +13,12 @@ baseurl: ""
 lang: en
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone: Asia/Shanghai
+timezone: Europe/Amsterdam
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy # the main title
+title: Galaxians CTF # the main title
 
 tagline: A text-focused Jekyll theme # it will display as the sub-title
 
@@ -197,3 +197,4 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+

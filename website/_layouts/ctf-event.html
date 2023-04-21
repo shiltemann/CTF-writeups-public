@@ -1,0 +1,37 @@
+---
+layout: page
+---
+
+{{ content }}
+
+{% assign writeups = site.pages | where: "layout", "writeup" | where_exp: "item", "item.url contains page.url" %}
+
+<!-- overview table -->
+<div class="table-wrapper">
+
+<table>
+<thead>
+<tr>
+  <th>Challenge</th>
+  <th>Difficulty</th>
+  <th>Category</th>
+  <th>Flag</th>
+</tr>
+</thead>
+<tbody>
+
+{% for writeup in writeups %}
+<tr>
+ <td><a href="{{writeup.url}}">{{writeup.title}}</a> </td>
+ <td>{{ writeup.difficulty | default: writeup.points }}</td>
+ <td>{% for c in writeup.categories %}{{c}}{% unless forloop.last%}, {% endunless %}{% endfor %}</td>
+ <td>{{writeup.flag | default: "unsolved" }}</td>
+</tr>
+{% endfor %}
+
+</tbody>
+</table>
+
+</div>
+
+<!-- writeups -->
