@@ -2,6 +2,8 @@
 layout: page
 ---
 
+<h1> {{ page.title }} </h1>
+
 {{ content }}
 
 {% assign writeups = site.pages | where: "layout", "writeup" | where_exp: "item", "item.url contains page.url" %}
@@ -20,9 +22,16 @@ layout: page
 </thead>
 <tbody>
 
+{% assign lastlevel = "" %}
 {% for writeup in writeups %}
+
+{% if writeup.level and writeup.level != lastlevel %}
+<tr><td> Level {{ writeup.level }}</td></tr>
+{% assign lastlevel = writeup.level %}
+{% endif %}
+
 <tr>
- <td><a href="{{writeup.url}}">{{writeup.title}}</a> </td>
+ <td><a href="#{{writeup.title|slugify}}">{{writeup.title}}</a> </td>
  <td>{{ writeup.difficulty | default: writeup.points }}</td>
  <td>{% for c in writeup.categories %}{{c}}{% unless forloop.last%}, {% endunless %}{% endfor %}</td>
  <td>{{writeup.flag | default: "unsolved" }}</td>
@@ -35,3 +44,17 @@ layout: page
 </div>
 
 <!-- writeups -->
+
+{% for writeup in writeups %}
+<h1 id="{{writeup.title | slugify }}"> {{ writeup.title }}
+<a href="{{writeup.url}}"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a>
+</h1>
+
+{{ writeup.content | markdownify }}
+
+<h2> Flag </h2>
+
+<code> {{ writeup.flag | default: "unsolved" }} </code>
+
+<hr>
+{% endfor %}
