@@ -1,0 +1,22 @@
+// // // // // // // // // // // // // // // // // // // // // //
+// // // // // // // // // // // // // // // // // // // // // //
+
+Tom's Diary
+
+\/\ \\\/ / \/\ /\\ /\ \/\ //\ /\/ /\// //\/ /\// /\/ //\ /\\\ \\/\
+\/\ \\\/ / \/\ /\\ /\ \/\ //\ /\/ /\// //\/ /\// /\/ //\ /\\\ \\/\
+
+Dear diary,
+
+today I found a secret flag.
+
+I need to keep it safe here:
+
+UEsDBAoACQAAAJJEK1X6oNHsKgAAAB4AAAAIABwAZmxhZy50eHRVVAkAA/OBHWOR
+gR1jdXgLAAEE9QEAAAQUAAAArGnVXoZRCLYaWU8HFSFo+dWfh2yfPa868sNqxTVP
+xqHrGTs3dIVbxR9WUEsHCPqg0ewqAAAAHgAAAFBLAQIeAwoACQAAAJJEK1X6oNHs
+KgAAAB4AAAAIABgAAAAAAAEAAACkgQAAAABmbGFnLnR4dFVUBQAD84EdY3V4CwAB
+BPUBAAAEFAAAAFBLBQYAAAAAAQABAE4AAAB8AAAAAAA=
+
+\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
