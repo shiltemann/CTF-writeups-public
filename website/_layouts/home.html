@@ -39,7 +39,7 @@ layout: page
 {% endif %}
 
 <div id="post-list">
-  {% assign ctfs = site.pages | where: "layout", "ctf-event"%}
+  {% assign ctfs = site.pages | where: "layout", "ctf-event" | sort: "date" | reverse %}
   {% for post in ctfs %}
     <div class="card post-preview">
       <a href="{{ post.url | relative_url }}">
