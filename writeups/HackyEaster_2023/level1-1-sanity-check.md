@@ -2,6 +2,7 @@
 layout: writeup
 
 title: Sanity Check
+level: 1
 difficulty: noob
 categories: [misc]
 tags: [intro]
@@ -24,8 +25,4 @@ The inner part of the flag is invisible, but inspecting the source for the empty
 
 ```html
 <span style="color: black; background-color: black; opacity: 0;">just_A_sanity_chEck</span>
-```
-
-```
-he2023{bla}
 ```

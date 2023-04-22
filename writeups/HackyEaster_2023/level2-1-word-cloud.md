@@ -1,6 +1,8 @@
 ---
 layout: writeup
+
 title: Word Cloud
+level: 2
 difficulty: noob
 categories: [misc]
 tags: [image]
