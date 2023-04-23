@@ -1,7 +1,7 @@
 ---
 layout: writeup
 
-title: gh0st
+title: "Dec 3: gh0st"
 level:  # optional, for events that use levels
 difficulty: easy
 categories: []

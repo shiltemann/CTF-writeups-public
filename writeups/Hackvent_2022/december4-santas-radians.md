@@ -1,7 +1,7 @@
 ---
 layout: writeup
 
-title: Santa's Radians
+title: "Dec 4: Santa's Radians"
 level:  # optional, for events that use levels
 difficulty: easy
 categories: []

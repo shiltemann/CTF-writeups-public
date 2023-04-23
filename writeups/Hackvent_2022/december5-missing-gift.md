@@ -1,7 +1,7 @@
 ---
 layout: writeup
 
-title: Missing Gift
+title: "Dec 5: Missing Gift"
 level:  # optional, for events that use levels
 difficulty: easy
 categories: []

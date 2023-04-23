@@ -1,7 +1,7 @@
 ---
 layout: writeup
 
-title: QR means quick reactions, right?
+title: "Dec 1: QR means quick reactions, right?"
 difficulty: easy
 categories: []
 tags: []
