@@ -49,10 +49,11 @@
   {{ seo_tags }}
 
   <title>
-    {%- unless page.layout == 'home' -%}
-      {{ page.title | append: ' | ' }}
-    {%- endunless -%}
     {{ site.title }}
+    {%- unless page.layout == 'home' -%}
+      {{ ' | ' | append: page.title }}
+    {%- endunless -%}
+
   </title>
 
   {% include favicons.html %}
