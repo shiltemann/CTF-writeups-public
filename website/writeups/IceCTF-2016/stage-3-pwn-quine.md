@@ -5,10 +5,11 @@ level: 3
 difficulty:
 points:
 categories: [pwn]
-:xa
 tags: []
 flag:
+
 ---
+
 ## Challenge
 
 This service is really strange... It seems to accept only C programs.
