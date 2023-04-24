@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Cryptography 75: AES Mess'
+title: 'AES Mess'
 level:
 difficulty:
 points: 75

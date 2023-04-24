@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Programming 200: Qset3'
+title: 'Qset3'
 level:
 difficulty:
 points: 200

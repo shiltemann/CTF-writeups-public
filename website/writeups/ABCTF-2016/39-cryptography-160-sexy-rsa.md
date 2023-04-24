@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Cryptography 160: Sexy RSA'
+title: 'Sexy RSA'
 level:
 difficulty:
 points: 160

@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Programming 30: TGIF'
+title: 'TGIF'
 level:
 difficulty:
 points: 30

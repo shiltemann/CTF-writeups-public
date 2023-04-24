@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Reconnaissance 50: Drive Home'
+title: 'Drive Home'
 level:
 difficulty:
 points: 50

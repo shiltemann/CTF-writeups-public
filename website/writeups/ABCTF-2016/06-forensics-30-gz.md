@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Forensics 30: GZ'
+title: 'GZ'
 level:
 difficulty:
 points: 30

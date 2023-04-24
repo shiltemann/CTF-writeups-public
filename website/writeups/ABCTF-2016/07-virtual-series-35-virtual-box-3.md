@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Virtual Series 35: Virtual Box 3'
+title: 'Virtual Box 3'
 level:
 difficulty:
 points: 35

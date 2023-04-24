@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Reverse Engineering 50: Java Madness'
+title: 'Java Madness'
 level:
 difficulty:
 points: 50

@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Cryptography 60: Yummi'
+title: 'Yummi'
 level:
 difficulty:
 points: 60

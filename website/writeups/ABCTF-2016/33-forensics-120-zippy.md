@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Forensics 120: Zippy'
+title: 'Zippy'
 level:
 difficulty:
 points: 120

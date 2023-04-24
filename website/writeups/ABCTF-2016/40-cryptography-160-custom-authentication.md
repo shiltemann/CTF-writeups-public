@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Cryptography 160: Custom Authentication'
+title: 'Custom Authentication'
 level:
 difficulty:
 points: 160

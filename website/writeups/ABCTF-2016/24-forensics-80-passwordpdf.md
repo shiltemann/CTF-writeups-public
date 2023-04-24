@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Forensics 80: PasswordPDF'
+title: 'PasswordPDF'
 level:
 difficulty:
 points: 80

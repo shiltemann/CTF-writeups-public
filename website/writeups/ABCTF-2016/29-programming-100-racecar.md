@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Programming 100: RacecaR'
+title: 'RacecaR'
 level:
 difficulty:
 points: 100

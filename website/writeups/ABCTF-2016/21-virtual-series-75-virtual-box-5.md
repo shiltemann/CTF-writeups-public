@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Virtual Series 75: Virtual Box 5'
+title: 'Virtual Box 5'
 level:
 difficulty:
 points: 75

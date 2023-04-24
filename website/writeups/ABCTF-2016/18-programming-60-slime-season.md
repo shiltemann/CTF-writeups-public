@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Programming 60: Slime Season'
+title: 'Slime Season'
 level:
 difficulty:
 points: 60

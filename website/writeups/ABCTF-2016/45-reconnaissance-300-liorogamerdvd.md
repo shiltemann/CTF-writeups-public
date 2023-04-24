@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Reconnaissance 300: Liorogamerdvd'
+title: 'Liorogamerdvd'
 level:
 difficulty:
 points: 300

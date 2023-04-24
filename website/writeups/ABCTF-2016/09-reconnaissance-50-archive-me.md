@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Reconnaissance 50: Archive Me'
+title: 'Archive Me'
 level:
 difficulty:
 points: 50

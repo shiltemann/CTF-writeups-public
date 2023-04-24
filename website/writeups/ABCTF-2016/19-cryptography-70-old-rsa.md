@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Cryptography 70: Old RSA'
+title: 'Old RSA'
 level:
 difficulty:
 points: 70

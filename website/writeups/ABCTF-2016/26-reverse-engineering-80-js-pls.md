@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Reverse Engineering 80: JS Pls'
+title: 'JS Pls'
 level:
 difficulty:
 points: 80

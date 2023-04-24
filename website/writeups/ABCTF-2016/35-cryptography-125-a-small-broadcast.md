@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Cryptography 125: A Small Broadcast'
+title: 'A Small Broadcast'
 level:
 difficulty:
 points: 125

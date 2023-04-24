@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Forensics 60: Moonwalk'
+title: 'Moonwalk'
 level:
 difficulty:
 points: 60

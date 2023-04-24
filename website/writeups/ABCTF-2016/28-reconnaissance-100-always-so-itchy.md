@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Reconnaissance 100: Always so Itchy'
+title: 'Always so Itchy'
 level:
 difficulty:
 points: 100

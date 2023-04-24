@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: Forensics 50 - Best Ganondorf
+title:  Best Ganondorf
 level:
 difficulty:
 points: 50

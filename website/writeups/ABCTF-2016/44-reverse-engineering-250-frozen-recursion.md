@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Reverse Engineering 250: Frozen Recursion'
+title: 'Frozen Recursion'
 level:
 difficulty:
 points: 250

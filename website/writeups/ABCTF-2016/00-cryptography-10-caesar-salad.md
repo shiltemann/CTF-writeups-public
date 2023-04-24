@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Cryptography 10: Caesar Salad'
+title: 'Caesar Salad'
 level:
 difficulty:
 points: 10

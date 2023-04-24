@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Cryptography 140: Encryption Service'
+title: 'Encryption Service'
 level:
 difficulty:
 points: 140

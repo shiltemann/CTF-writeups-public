@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Programming 120: The Big Kahuna'
+title: 'The Big Kahuna'
 level:
 difficulty:
 points: 120

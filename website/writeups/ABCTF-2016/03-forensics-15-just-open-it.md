@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: 'Forensics 15: Just open it'
+title: 'Just open it'
 level:
 difficulty:
 points: 15
