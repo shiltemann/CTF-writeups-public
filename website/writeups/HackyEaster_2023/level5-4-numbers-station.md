@@ -4,6 +4,7 @@ layout: writeup
 title: Number's Station
 level: 5 # optional, for events that use levels
 difficulty: medium
+points: 200
 categories: [misc]
 tags: []
 

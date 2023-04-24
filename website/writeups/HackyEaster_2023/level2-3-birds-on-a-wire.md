@@ -4,6 +4,7 @@ layout: writeup
 title: Birds on a Wire
 level: 2
 difficulty: noob
+points: 50
 categories: [crypto]
 tags: [cipher]
 

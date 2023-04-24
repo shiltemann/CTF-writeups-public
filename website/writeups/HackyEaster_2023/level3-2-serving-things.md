@@ -4,6 +4,7 @@ layout: writeup
 title: Serving Things
 level: 3
 difficulty: easy
+points: 100
 categories: [web]
 tags: [remote file inclusion]
 

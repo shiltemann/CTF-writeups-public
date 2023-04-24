@@ -4,6 +4,7 @@ layout: writeup
 title: Hamster
 level: 4
 difficulty: easy
+points: 100
 categories: [web]
 tags: []
 

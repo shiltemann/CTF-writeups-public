@@ -4,6 +4,7 @@ layout: writeup
 title: Lost in (French) Space
 level: 4
 difficulty: easy
+points: 100
 categories: [osint]
 tags: []
 

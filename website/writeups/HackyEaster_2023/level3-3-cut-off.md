@@ -4,6 +4,7 @@ layout: writeup
 title: Cut Off
 level: 3
 difficulty: easy
+points: 100
 categories: [misc]
 tags: [image]
 

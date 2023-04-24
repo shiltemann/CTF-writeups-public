@@ -4,6 +4,7 @@ layout: writeup
 title: Global Egg Delivery
 level: 3
 difficulty: easy
+points: 100
 categories: [misc]
 tags: [unicode BOM]
 

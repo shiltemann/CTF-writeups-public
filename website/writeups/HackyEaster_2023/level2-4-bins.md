@@ -4,6 +4,7 @@ layout: writeup
 title: Bins
 level: 2
 difficulty: noob
+points: 50
 categories: [misc]
 tags: [cipher]
 

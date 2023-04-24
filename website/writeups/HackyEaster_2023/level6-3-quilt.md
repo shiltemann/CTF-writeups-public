@@ -4,6 +4,7 @@ layout: writeup
 title: Quilt
 level: 6 # optional, for events that use levels
 difficulty: medium
+points: 200
 categories: [misc]
 tags: []
 

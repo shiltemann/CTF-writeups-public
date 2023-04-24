@@ -4,6 +4,7 @@ layout: writeup
 title: Crash Bash
 level: 6 # optional, for events that use levels
 difficulty: hard
+points: 300
 categories: [pwn]
 tags: []
 

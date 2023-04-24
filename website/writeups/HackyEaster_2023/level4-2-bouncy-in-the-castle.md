@@ -4,6 +4,7 @@ layout: writeup
 title: Bouncy not in the Castle
 level: 4
 difficulty: medium
+points: 200
 categories: [web, forensics]
 tags: [image, LSB]
 

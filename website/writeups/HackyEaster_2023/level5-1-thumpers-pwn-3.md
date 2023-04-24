@@ -4,6 +4,7 @@ layout: writeup
 title: Thumper's PWN 3
 level: 5 # optional, for events that use levels
 difficulty: medium
+points: 200
 categories: [pwn]
 tags: [format string]
 

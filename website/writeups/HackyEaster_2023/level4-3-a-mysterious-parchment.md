@@ -4,6 +4,7 @@ layout: writeup
 title: A Mysterious Parchment
 level: 4
 difficulty: easy
+points: 100
 categories: [misc]
 tags: []
 

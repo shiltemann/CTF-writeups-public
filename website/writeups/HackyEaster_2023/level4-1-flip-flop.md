@@ -4,6 +4,7 @@ layout: writeup
 title: Flip Flop
 level: 4
 difficulty: medium
+points: 200
 categories: [web]
 tags: [image]
 

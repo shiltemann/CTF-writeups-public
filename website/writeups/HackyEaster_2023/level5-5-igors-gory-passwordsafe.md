@@ -4,6 +4,7 @@ layout: writeup
 title: Igor's Gory Passwordsafe
 level:  # optional, for events that use levels
 difficulty: easy
+points: 100
 categories: [web]
 tags: []
 

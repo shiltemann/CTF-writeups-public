@@ -4,6 +4,7 @@ layout: writeup
 title: Going Round
 level: 5 # optional, for events that use levels
 difficulty: medium
+points: 200
 categories: [crypto]
 tags: []
 

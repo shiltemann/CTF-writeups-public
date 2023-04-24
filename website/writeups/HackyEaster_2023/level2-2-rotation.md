@@ -4,6 +4,7 @@ layout: writeup
 title: Rotation
 level: 2
 difficulty: noob
+points: 50
 categories: [misc]
 tags: [rotation cipher]
 

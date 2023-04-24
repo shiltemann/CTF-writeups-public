@@ -16,6 +16,7 @@ layout: page
 <tr>
   <th>Challenge</th>
   <th>Difficulty</th>
+  <th>Points</th>
   <th>Category</th>
   <th>Flag</th>
 </tr>
@@ -32,7 +33,8 @@ layout: page
 
 <tr>
  <td><a href="#{{writeup.title|slugify}}">{{writeup.title}}</a> </td>
- <td>{{ writeup.difficulty | default: writeup.points }}</td>
+ <td>{{ writeup.difficulty }}</td>
+ <td>{{ writeup.points }}</td>
  <td>{% for c in writeup.categories %}{{c}}{% unless forloop.last%}, {% endunless %}{% endfor %}</td>
  <td>{% if writeup.flag %}<code>{{ writeup.flag }}</code> {% else %} unsolved {% endif %}</td>
 </tr>

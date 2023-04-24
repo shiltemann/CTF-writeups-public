@@ -4,6 +4,7 @@ layout: writeup
 title: Spy Tricks
 level: 4
 difficulty: easy
+points: 100
 categories: [crypto]
 tags: []
 

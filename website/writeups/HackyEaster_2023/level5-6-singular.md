@@ -4,6 +4,7 @@ layout: writeup
 title: Singular
 level:  # optional, for events that use levels
 difficulty: easy
+points: 100
 categories: [misc]
 tags: []
 
