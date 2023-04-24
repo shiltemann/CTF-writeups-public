@@ -4,9 +4,9 @@ I like to participate in *Capture The Flag* events; computer security/hacking co
 
 ### Team Galaxians
 
-| ![](https://github.com/erasche.png?size=150)    |![](https://github.com/shiltemann.png?size=150)|
+| ![](https://github.com/hexylena.png?size=150)   |![](https://github.com/shiltemann.png?size=150)|
 |:-----------------------------------------------:|:---------------------------------------------:|
-| **hxr64** (Helena)                              | **ysje** (Saskia)                             |
+| **hexylena** (Helena)                           | **ysje** (Saskia)                             |
 
 
 ### Links
