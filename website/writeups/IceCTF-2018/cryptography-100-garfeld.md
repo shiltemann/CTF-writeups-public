@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Cryptography 100: garfeld'
+title: 'garfeld'
 level:
 difficulty:
-points:
-categories: []
+points: 100
+categories: [cryptography]
 tags: []
 flag: IceCTF{I_DONT_THINK_GRONSFELD_LIKES_MONDAYS}
 ---

@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Web 200: Friðfinnur'
+title: 'Friðfinnur'
 level:
 difficulty:
-points:
-categories: []
+points: 200
+categories: [web]
 tags: []
 flag: IceCTF{you_found_debug}
 ---

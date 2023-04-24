@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Web 75: Ligths out'
+title: 'Ligths out'
 level:
 difficulty:
-points:
-categories: []
+points: 75
+categories: [web]
 tags: []
 flag: IceCTF{styles_turned_the_lights}
 ---

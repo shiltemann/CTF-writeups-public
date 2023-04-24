@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Web 350: History of Computing'
+title: 'History of Computing'
 level:
 difficulty:
-points:
-categories: []
+points: 350
+categories: [web]
 tags: []
 flag:
 ---

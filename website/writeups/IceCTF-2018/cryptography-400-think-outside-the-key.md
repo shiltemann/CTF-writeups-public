@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Cryptography 400: Think outside the key'
+title: 'Think outside the key'
 level:
 difficulty:
-points:
-categories: []
+points: 400
+categories: [cryptography]
 tags: []
 flag:
 ---

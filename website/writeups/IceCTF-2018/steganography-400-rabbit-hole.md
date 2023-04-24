@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Steganography 400: Rabbit Hole'
+title: 'Rabbit Hole'
 level:
 difficulty:
-points:
-categories: []
+points: 400
+categories: [steganography]
 tags: []
 flag: IceCTF{if_you_see_this_youve_breached_my_privacy}
 ---

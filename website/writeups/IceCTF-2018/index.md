@@ -4,4 +4,4 @@ title: IceCTF 2018
 date: 2018
 ---
 
-The annual Icelandic Hacking Competition
+2-Week-long Icelandic CTF in September 2018

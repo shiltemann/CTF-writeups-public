@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Misc 250: anticaptcha'
+title: 'anticaptcha'
 level:
 difficulty:
-points:
-categories: []
+points: 250
+categories: [misc]
 tags: []
 flag: IceCTF{ahh_we_have_been_captchured}
 ---

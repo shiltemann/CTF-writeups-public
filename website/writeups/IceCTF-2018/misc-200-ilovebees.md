@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Misc 200: ilovebees'
+title: 'ilovebees'
 level:
 difficulty:
-points:
-categories: []
+points: 200
+categories: [misc]
 tags: []
 flag: IceCTF{MY_FAVORITE_ICON}
 ---

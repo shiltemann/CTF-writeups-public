@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Forensics 300: Lost in the Forest'
+title: 'Lost in the Forest'
 level:
 difficulty:
-points:
-categories: []
+points: 300
+categories: [forensics]
 tags: []
 flag: IceCTF{good_ol_history_lesson}
 ---

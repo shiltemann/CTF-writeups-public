@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Reverse Engineering 200: Locked out'
+title: 'Locked out'
 level:
 difficulty:
-points:
-categories: []
+points: 200
+categories: [reverse engineering]
 tags: []
 flag:
 ---

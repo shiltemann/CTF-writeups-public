@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Misc 10: Hello World!'
+title: 'Hello World!'
 level:
 difficulty:
-points:
-categories: []
+points: 10
+categories: [misc]
 tags: []
 flag: IceCTF{this_is_a_flag}
 ---

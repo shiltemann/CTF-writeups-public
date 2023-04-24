@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Forensics 150: Modern Picasso'
+title: 'Modern Picasso'
 level:
 difficulty:
-points:
-categories: []
+points: 150
+categories: [forensics]
 tags: []
 flag: IceCTF{wow_fast}
 ---

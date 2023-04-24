@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Forensics 200: Hard Shells'
+title: 'Hard Shells'
 level:
 difficulty:
-points:
-categories: []
+points: 200
+categories: [forensics]
 tags: []
 flag: IceCTF{look_away_i_am_hacking}
 ---

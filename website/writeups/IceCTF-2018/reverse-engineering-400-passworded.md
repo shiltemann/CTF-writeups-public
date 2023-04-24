@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Reverse Engineering 400: Passworded!'
+title: 'Passworded!'
 level:
 difficulty:
-points:
-categories: []
+points: 400
+categories: [reverse engineering]
 tags: []
 flag:
 ---

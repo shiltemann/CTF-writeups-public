@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Web 50: Toke Relaunch'
+title: 'Toke Relaunch'
 level:
 difficulty:
-points:
-categories: []
+points: 50
+categories: [web]
 tags: []
 flag: IceCTF{what_are_these_robots_doing_here}
 ---

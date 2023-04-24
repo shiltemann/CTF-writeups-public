@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Steganography 300: Hot or Not'
+title: 'Hot or Not'
 level:
 difficulty:
-points:
-categories: []
+points: 300
+categories: [steganography]
 tags: []
 flag: IceCTF{h0td1gg1tyd0g}
 ---

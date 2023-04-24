@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Reverse Engineering: Poke-A-Mango'
+title: 'Poke-A-Mango'
 level:
 difficulty:
 points:
-categories: []
+categories: [reverse engineering]
 tags: []
 flag:
 ---

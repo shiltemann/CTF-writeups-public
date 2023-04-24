@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Cryptography 250: Posted!'
+title: 'Posted!'
 level:
 difficulty:
-points:
-categories: []
+points: 250
+categories: [cryptography]
 tags: []
 flag:
 ---

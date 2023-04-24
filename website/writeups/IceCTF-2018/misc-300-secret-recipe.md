@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Misc 300: Secret Recipe'
+title: 'Secret Recipe'
 level:
 difficulty:
-points:
-categories: []
+points: 300
+categories: [misc]
 tags: []
 flag:
 ---

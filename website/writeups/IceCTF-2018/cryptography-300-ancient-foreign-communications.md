@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Cryptography 300: Ancient Foreign Communications'
+title: 'Ancient Foreign Communications'
 level:
 difficulty:
-points:
-categories: []
+points: 300
+categories: [cryptography]
 tags: []
 flag: IceCTF{squeamish ossifrage}
 ---

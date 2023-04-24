@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Steganography 150: Drumbone'
+title: 'Drumbone'
 level:
 difficulty:
-points:
-categories: []
+points: 150
+categories: [steganography]
 tags: []
 flag: IceCTF{Elliot_has_been_mapping_bits_all_day}
 ---
