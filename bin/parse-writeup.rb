@@ -81,9 +81,10 @@ if overview_idx < 3
   parts = parts[(overview_idx + 1)..]
 end
 
-parts.each{|res|
+parts.each.with_index{|res, idx|
   p "===== #{res[:title]}"
-  fn = "#{res[:id]}.md"
+  idx0 = "%02d" % idx
+  fn = "#{idx0}-#{res[:id]}.md"
   handle = File.open(fn, 'w')
   handle.write(res[:header].to_yaml)
   handle.write("---\n")
