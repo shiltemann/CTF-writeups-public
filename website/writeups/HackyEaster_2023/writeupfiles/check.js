@@ -1,34 +1,4 @@
----
-layout: writeup
 
-title: Code Locked
-level: 6 # optional, for events that use levels
-difficulty: medium
-points: 200
-categories: [reversing, web]
-tags: []
-
-flag:
-
----
-
-## Challenge
-
-Open the code lock at http://ch.hackyeaster.com:2311 to get your 🚩 flag.
-
-Note: The service is restarted every hour at x:00.
-
-## Solution
-
-We look through the javascript and see that it's calling a WASM code file to parse the input number. So we can start by ignoring all of the JS and just focusing on the WASM bits:
-
-```console
-wasm2js check.wasm
-```
-
-wasm2js from binaryen can be installed from at least the fedora repositories, and produces nicer, easier to read javascript:
-
-```javascript
 function Table(ret) {
   // grow method not included; table is not growable
   ret.set = function(i, func) {
@@ -285,18 +255,3 @@ export var emscripten_stack_get_end = retasmFunc.emscripten_stack_get_end;
 export var stackSave = retasmFunc.stackSave;
 export var stackRestore = retasmFunc.stackRestore;
 export var stackAlloc = retasmFunc.stackAlloc;
-```
-
-
-This bit looks promising:
-
-```console
-$ echo WAAAAFQAAAAGAAAABQAAAAAAAAAKAAAATQAAAEEAAAADAAAAUwAAAAAAAAAAAAAABwAAAAoAAABbAAAADgAAAAEAAABIAAAAawAAAAQAAAAHAAAAZgAAAHAAAABjAAAAfgAAAEwAAAAAAAAAAAAAAFgAAABUAAAABgAAAAUAAAAAAAAACgAAAE0AAABBAAAAAwAAAFMAAAAAAAAAAAAAAAcAAAAKAAAAWwAAAA4AAAABAAAASAAAAGsAAAAEAAAABwAAAGYAAABwAAAAYwAAAH4AAABMAAAAAAAAAAAAAABZAAAAbwAAAHUAAAAgAAAAZAAAAGkAAABkAAAAIAAAAG4AAABvAAAAdAAAACAAAABvAAAAcAAAAGUAAABuAAAAIAAAAHQAAABoAAAAZQAAACAAAABsAAAAbwAAAGMAAABrAAAAIQAAAA== | base64 -d
-XT
-MAS
-[Hkfpc~LXT
-MAS
-[Hkfpc~LYou did not open the lock!%
-```
-
-but it's not, yet.
