@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 2 Stego: Vape Nation'
-level:
+title: 'Vape Nation'
+level: 2
 difficulty:
 points:
-categories: []
+categories: [stego]
 tags: []
 flag: IceCTF{420_CuR35_c4NCEr}
 ---
@@ -42,8 +42,4 @@ ones, so we try outputting where the uneven ones are
 which outputs the following image containing our flag:
 
 ![](writeupfiles/vape_nation_out.png)
-
-## Flag
-
-    IceCTF{420_CuR35_c4NCEr}
 

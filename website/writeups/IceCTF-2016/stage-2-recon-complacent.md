@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 2 Recon: Complacent'
-level:
+title: 'Complacent'
+level: 2
 difficulty:
 points:
-categories: []
+categories: [recon]
 tags: []
 flag: IceCTF{this_1nformation_wasnt_h1dd3n_at_a11}
 ---
@@ -38,8 +38,3 @@ The flag was in the SSL certificate
     49 95 B1 FB F0 AC 95 5A 75 BD F8 6B 5C 93 20 7B
     SHA-1 Fingerprint	75 29 19 51 91 06 9E D5 D2 68 8C 94 EA 01 78 AB
     8C D1 76 33
-
-## Flag
-
-    IceCTF{this_1nformation_wasnt_h1dd3n_at_a11}
-

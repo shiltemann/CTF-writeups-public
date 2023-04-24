@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 2 Web: Exposed!'
-level:
+title: 'Exposed!'
+level: 2
 difficulty:
 points:
-categories: []
+categories: [web]
 tags: []
 flag: IceCTF{secure_y0ur_g1t_repos_pe0ple}
 ---
@@ -37,11 +37,6 @@ deploying with git, then the web directory was git.
     -                echo 'Hello World! IceCTF{secure_y0ur_g1t_repos_pe0ple}';
     +                echo 'Hello World! IceCTF{secure_y0ur_g1t_repos_pe0ple}';
 {: .language-console}
-
-## Flag
-
-    IceCTF{secure_y0ur_g1t_repos_pe0ple}
-
 
 
 [1]: http://exposed.vuln.icec.tf/

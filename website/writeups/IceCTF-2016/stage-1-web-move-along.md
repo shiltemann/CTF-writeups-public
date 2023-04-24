@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 1 Web: Move Along'
-level:
+title: 'Move Along'
+level: 1
 difficulty:
 points:
-categories: []
+categories: [web]
 tags: []
 flag: IceCTF{tH3_c4t_15_Ou7_oF_THe_b49}
 ---
@@ -35,11 +35,5 @@ image in it
 ![](writeupfiles/secret.jpg)
 
 which contains the flag
-
-## Flag
-
-    IceCTF{tH3_c4t_15_Ou7_oF_THe_b49}
-
-
 
 [1]: http://move-along.vuln.icec.tf/

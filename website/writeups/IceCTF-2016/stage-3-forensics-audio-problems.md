@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 3 Forensics: Audio Problems'
-level:
+title: 'Audio Problems'
+level: 3
 difficulty:
 points:
-categories: []
+categories: [forensics]
 tags: []
 flag: IceCTF{y0U_b3t7Er_l15TeN_cL053LY}
 ---
@@ -26,8 +26,4 @@ to get the flag from spectorgram
     window type: Hanning
 
 ![](writeupfiles/spectogram.png)
-
-## Flag
-
-    IceCTF{y0U_b3t7Er_l15TeN_cL053LY}
 

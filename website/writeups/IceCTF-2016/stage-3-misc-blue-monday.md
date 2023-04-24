@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 3 Misc: Blue Monday'
-level:
+title: 'Blue Monday'
+level: 3
 difficulty:
 points:
-categories: []
+categories: [misc]
 tags: []
 flag: IceCTF{HAck1n9_mU5Ic_w17h_mID15_L3t5_H4vE_a_r4v3}
 ---
@@ -30,8 +30,4 @@ note is exactly the difference between `I` and `c` in ASCII, so we work
 out the rest as well:
 
 ![](writeupfiles/midiflag.png)
-
-## Flag
-
-    IceCTF{HAck1n9_mU5Ic_w17h_mID15_L3t5_H4vE_a_r4v3}
 

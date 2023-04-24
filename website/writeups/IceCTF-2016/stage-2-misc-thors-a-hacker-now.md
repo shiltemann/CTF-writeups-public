@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 2 Misc: Thor’s a hacker now'
-level:
+title: 'Thor’s a hacker now'
+level: 2
 difficulty:
 points:
-categories: []
+categories: [misc]
 tags: []
 flag: IceCTF{h3XduMp1N9_l1K3_A_r341_B14Ckh47}
 ---
@@ -34,8 +34,3 @@ Once this is done
 {: .language-console}
 
 ![](./writeupfiles/thor.jpg)
-
-## Flag
-
-    IceCTF{h3XduMp1N9_l1K3_A_r341_B14Ckh47}
-

@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 3 Cryptography: Contract'
-level:
+title: 'Contract'
+level: 3
 difficulty:
 points:
-categories: []
+categories: [cryptography]
 tags: []
 flag:
 ---
@@ -34,8 +34,4 @@ useful packets we can replay:
 
     time:c0e1fc4e3858ac6334cc8798fdec40790d7ad361ffc691c26f2902c41f2b7c2fd1ca916de687858953a6405423fe156c0cbebcec222f83dc9dd5b0d4d8e698a08ddecb79e6c3b35fc2caaa4543d58a45603639647364983301565728b504015d
     2016-08-11 22:48:48
-
-## Flag
-
-
 

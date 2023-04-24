@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 2 Web: Kitty'
-level:
+title: 'Kitty'
+level: 2
 difficulty:
 points:
-categories: []
+categories: [web]
 tags: []
 flag: IceCTF{i_guess_hashing_isnt_everything_in_this_world}
 ---
@@ -64,8 +64,4 @@ is what they use here too.
 
 This output password `Vo83*` and if we enter this on site with username
 `admin`, we are given our flag
-
-## Flag
-
-    IceCTF{i_guess_hashing_isnt_everything_in_this_world}
 

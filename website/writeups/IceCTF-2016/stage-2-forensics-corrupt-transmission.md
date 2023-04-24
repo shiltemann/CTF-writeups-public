@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 2 Forensics: Corrupt Transmission'
-level:
+title: 'Corrupt Transmission'
+level: 2
 difficulty:
 points:
-categories: []
+categories: [forensics]
 tags: []
 flag: IceCTF{t1s_but_4_5cr4tch}
 ---
@@ -25,11 +25,5 @@ We open it in a hex editor and see that the [header is corrupted][1],
 and only thing we had to do was fix this header to fix the file
 
 ![](writeupfiles/corrupt_fixed.png)
-
-## Flag
-
-    IceCTF{t1s_but_4_5cr4tch}
-
-
 
 [1]: https://en.wikipedia.org/wiki/Portable_Network_Graphics

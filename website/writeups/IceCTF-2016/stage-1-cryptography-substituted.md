@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 1 Cryptography: Substituted'
-level:
+title: 'Substituted'
+level: 1
 difficulty:
 points:
-categories: []
+categories: [cryptography]
 tags: []
 flag: IceCTF{always_listen_to_your_substitute_flags}
 ---
@@ -41,8 +41,3 @@ Substitution cipher, decode to get
     field and is very interesting though. So kick back, read up on some cool ciphers and have fun!  
     
     Oh and for your records my name is IceCTF{always_listen_to_your_substitute_flags}.
-
-## Flag
-
-    IceCTF{always_listen_to_your_substitute_flags}
-

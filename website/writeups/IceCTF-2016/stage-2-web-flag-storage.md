@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 2 Web: Flag Storage'
-level:
+title: 'Flag Storage'
+level: 2
 difficulty:
 points:
-categories: []
+categories: [web]
 tags: []
 flag: IceCTF{why_would_you_even_do_anything_client_side}
 ---
@@ -61,11 +61,6 @@ flag:
 
     Logged in!
     Your flag is: IceCTF{why_would_you_even_do_anything_client_side}
-
-## Flag
-
-    IceCTF{why_would_you_even_do_anything_client_side}
-
 
 
 [1]: https://en.wikipedia.org/wiki/SQL_injection

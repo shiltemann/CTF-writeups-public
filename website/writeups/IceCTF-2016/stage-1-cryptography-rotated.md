@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 1 Cryptography: Rotated!'
-level:
+title: 'Rotated!'
+level: 1
 difficulty:
 points:
-categories: []
+categories: [cryptography]
 tags: []
 flag: IceCTF{wait_one_plus_1_is_3?}
 ---
@@ -17,11 +17,5 @@ scoundrels! Anyway once they were done this was all that was left
 ## Solution
 
 [rot13][1]
-
-## Flag
-
-    IceCTF{wait_one_plus_1_is_3?}
-
-
 
 [1]: https://duckduckgo.com/?q=rot13+VprPGS%7Bjnvg_bar_cyhf_1_vf_3%3F%7D&t=canonical

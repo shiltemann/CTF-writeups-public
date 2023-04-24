@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 1 Web: Spotlight'
-level:
+title: 'Spotlight'
+level: 1
 difficulty:
 points:
-categories: []
+categories: [web]
 tags: []
 flag: IceCTF{5tup1d_d3v5_w1th_th31r_l095}
 ---
@@ -21,8 +21,3 @@ associated
 [javascript file](./writeupfiles/spotlight.js).
 
     console.log("DEBUG: IceCTF{5tup1d_d3v5_w1th_th31r_l095}");
-
-## Flag
-
-    IceCTF{5tup1d_d3v5_w1th_th31r_l095}
-

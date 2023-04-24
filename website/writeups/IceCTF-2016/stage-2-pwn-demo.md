@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 2 Pwn: Demo'
-level:
+title: 'Demo'
+level: 2
 difficulty:
 points:
-categories: []
+categories: [pwn]
 tags: []
 flag: IceCTF{wH0_WoU1d_3vr_7Ru5t_4rgV}
 ---
@@ -33,8 +33,3 @@ permissions of that file), and then run it which pops open a shell.
     $ bash
     ctf-98836@icectf-shell-2016:~$ cat /home/demo/flag.txt
     IceCTF{wH0_WoU1d_3vr_7Ru5t_4rgV}
-
-## Flag
-
-    IceCTF{wH0_WoU1d_3vr_7Ru5t_4rgV}
-

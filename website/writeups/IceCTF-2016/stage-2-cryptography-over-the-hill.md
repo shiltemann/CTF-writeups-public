@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 2 Cryptography: Over The Hill'
-level:
+title: 'Over The Hill'
+level: 2
 difficulty:
 points:
-categories: []
+categories: [Cryptography]
 tags: []
 flag: IceCTF{linear_algebra_plus_led_zeppelin_are_a_beautiful_m1xture}
 ---
@@ -49,11 +49,6 @@ python:
     
     print decipher_hill(ciphertext, key, alphabet)
 {: .language-python}
-
-## Flag
-
-    IceCTF{linear_algebra_plus_led_zeppelin_are_a_beautiful_m1xture}
-
 
 
 [1]: https://en.wikipedia.org/wiki/Hill_cipher

@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 3: Forensics: Intercepted Conversations Pt. 1'
-level:
+title: 'Intercepted Conversations Pt. 1'
+level: 3
 difficulty:
 points:
-categories: []
+categories: [forensics]
 tags: []
 flag: IceCTF{Wh0_l1K3S_qw3R7Y_4NYw4y5}
 ---
@@ -120,11 +120,6 @@ Turns out we needed to translate qwerty keys to dvorak to get the flag
     
     print flag
 {: .language-python}
-
-## Flag
-
-    IceCTF{Wh0_l1K3S_qw3R7Y_4NYw4y5}
-
 
 
 [1]: https://ask.wireshark.org/questions/11054/analysing-usb-traffic

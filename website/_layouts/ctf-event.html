@@ -27,7 +27,7 @@ layout: page
 {% for writeup in writeups %}
 
 {% if writeup.level and writeup.level != lastlevel %}
-<tr><td> Level {{ writeup.level }}</td></tr>
+<tr style="background-color: rgba(99, 100, 100, 0.52);"><td colspan="5" style="font-weight: 900"> Level {{ writeup.level }}</td></tr>
 {% assign lastlevel = writeup.level %}
 {% endif %}
 

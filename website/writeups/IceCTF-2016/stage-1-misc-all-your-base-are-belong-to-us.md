@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 1 Misc: All your Base are belong to us'
-level:
+title: 'All your Base are belong to us'
+level: 1
 difficulty:
 points:
-categories: []
+categories: [misc]
 tags: []
 flag: IceCTF{al1_my_bases_are_yours_and_all_y0ur_bases_are_mine}
 ---
@@ -21,8 +21,3 @@ What a mess... we got a raw flag but now what do we do...
 ## Solution
 
 convert binary to ascii to get flag
-
-## Flag
-
-    IceCTF{al1_my_bases_are_yours_and_all_y0ur_bases_are_mine}
-

@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 3 Cryptography: Sand Castles on the Beach'
-level:
+title: 'Sand Castles on the Beach'
+level: 3
 difficulty:
 points:
-categories: []
+categories: [cryptography]
 tags: []
 flag:
 ---
@@ -71,8 +71,3 @@ identified the image to be part of the cover to the fourth edition of
     85-11-6
     75-7-3
     106-9-14
-
-## Flag
-
-    flag
-

@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 2 Cryptography: RSA?'
-level:
+title: 'RSA?'
+level: 2
 difficulty:
 points:
-categories: []
+categories: [cryptography]
 tags: []
 flag: IceCTF{falls_apart_so_easily_and_reassembled_so_crudely}
 ---
@@ -25,8 +25,3 @@ flag for us?
 when you use `e=1` you are not encrypting anything (`m^1 mod N = m`) so
 the ciphertext was same as plaintext, just convert hex to ascii to get
 the flag.
-
-## Flag
-
-    IceCTF{falls_apart_so_easily_and_reassembled_so_crudely}
-

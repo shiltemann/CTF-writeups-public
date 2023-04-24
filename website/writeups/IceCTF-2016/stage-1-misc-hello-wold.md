@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 1 Misc: Hello Wold!'
-level:
+title: 'Hello Wold!'
+level: 1
 difficulty:
 points:
-categories: []
+categories: [misc]
 tags: []
 flag: IceCTF{h3l10_wr0ld}
 ---
@@ -19,8 +19,3 @@ below!
 ## Solution
 
 Dummy challenge, just enter flag
-
-## Flag
-
-    IceCTF{h3l10_wr0ld}
-

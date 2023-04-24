@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 2 Cryptography: RSA'
-level:
+title: 'RSA'
+level: 2
 difficulty:
 points:
-categories: []
+categories: [cryptography]
 tags: []
 flag: IceCTF{rsa_is_awesome_when_used_correctly_but_horrible_when_not}
 ---
@@ -46,8 +46,3 @@ this gives as output:
 
     3843655260524402023604596518050334491485822435243281383499136834535067384556161639265107050668678281151778547364113350618891028501821403003350717660361853
     IceCTF{rsa_is_awesome_when_used_correctly_but_horrible_when_not}
-
-## Flag
-
-    IceCTF{rsa_is_awesome_when_used_correctly_but_horrible_when_not}
-

@@ -1,10 +1,11 @@
 ---
 layout: writeup
-title: 'Stage 3 Pwn: Quine'
-level:
+title: 'Quine'
+level: 3
 difficulty:
 points:
-categories: []
+categories: [pwn]
+:xa
 tags: []
 flag:
 ---
@@ -47,10 +48,6 @@ Found [a quine](writeupfiles/quine.c) on the [internet][1]:
     [INFO]  server.c:438  (2439) Fri 12 Aug 2016 17:10:33 Echoing surviving source back
     main(){char *c="main(){char *c=%c%s%c;printf(c,34,c,34);}";printf(c,34,c,34);}
 {: .language-console}
-
-## Flag
-
-
 
 
 

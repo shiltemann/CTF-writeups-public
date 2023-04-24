@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 1 Misc: Scavenger Hunt'
-level:
+title: 'Scavenger Hunt'
+level: 1
 difficulty:
 points:
-categories: []
+categories: [misc]
 tags: []
 flag: IceCTF{Y0u_c4n7_533_ME_iM_h1Din9}
 ---
@@ -19,8 +19,3 @@ Found this via their GitHub page, looked at recent commits and saw one
 with commit message `aoeuMyhandsaretypingwords` looked suspicious, saw
 they edited the sponsors.html page
 (https://github.com/IceCTF/ctf-landing/commit/fe9c68d06680156f32f9963fa8490810e28ebdd2)
-
-## Flag
-
-    IceCTF{Y0u_c4n7_533_ME_iM_h1Din9}
-

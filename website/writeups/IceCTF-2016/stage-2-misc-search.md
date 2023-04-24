@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 2 Misc: Search'
-level:
+title: 'Search'
+level: 2
 difficulty:
 points:
-categories: []
+categories: [misc]
 tags: []
 flag: IceCTF{flag5_all_0v3r_the_Plac3}
 ---
@@ -40,8 +40,3 @@ record.
     ;; SERVER: 8.8.8.8#53(8.8.8.8)
     ;; WHEN: Fri Aug 12 19:42:20 UTC 2016
     ;; MSG SIZE  rcvd: 88
-
-## Flag
-
-    IceCTF{flag5_all_0v3r_the_Plac3}
-

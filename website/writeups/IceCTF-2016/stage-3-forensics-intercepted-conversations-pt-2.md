@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 3: Forensics: Intercepted Conversations Pt. 2'
-level:
+title: 'Intercepted Conversations Pt. 2'
+level: 3
 difficulty:
 points:
-categories: []
+categories: [forensics]
 tags: []
 flag: IceCTF{4Lw4y5_US3_5s1_AnD_n3VR4r_mAKe_Y0ur_0wN_cRyp70}
 ---
@@ -60,8 +60,3 @@ flag:
 
     $ python decode.py
     IceCTF{4Lw4y5_US3_5s1_AnD_n3VR4r_mAKe_Y0ur_0wN_cRyp70}
-
-## Flag
-
-    IceCTF{4Lw4y5_US3_5s1_AnD_n3VR4r_mAKe_Y0ur_0wN_cRyp70}
-

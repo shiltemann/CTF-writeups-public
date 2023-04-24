@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 3 Misc: Matrix'
-level:
+title: 'Matrix'
+level: 3
 difficulty:
 points:
-categories: []
+categories: [misc]
 tags: []
 flag: IceCTF{1F_y0U_l0oK_c1Os3lY_EV3rY7h1N9_i5_1s_4nD_0s}
 ---
@@ -135,8 +135,3 @@ Let's make a prober image out of it and decode the QR code
 this gives us the following QR code and prints the flag for us.
 
 ![](writeupfiles/matrix_out.png)
-
-## Flag
-
-    IceCTF{1F_y0U_l0oK_c1Os3lY_EV3rY7h1N9_i5_1s_4nD_0s}
-

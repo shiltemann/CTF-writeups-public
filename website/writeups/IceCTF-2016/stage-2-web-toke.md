@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 2 Web: Toke'
-level:
+title: 'Toke'
+level: 2
 difficulty:
 points:
-categories: []
+categories: [web]
 tags: []
 flag: IceCTF{jW7_t0K3ns_4Re_nO_p14CE_fOR_53CrE7S}
 ---
@@ -19,8 +19,4 @@ there was a registration and login option, which gave us a cookie
 containing the base64 encoded flag
 
     jwt_token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmbGFnIjoiSWNlQ1RGe2pXN190MEszbnNfNFJlX25PX3AxNENFX2ZPUl81M0NyRTdTfSIsInVzZXIiOiInIn0.8dpZppOpfKijXcgbpzx0QtVU91xDvCwsRTzc5lCadlE
-
-## Flag
-
-    IceCTF{jW7_t0K3ns_4Re_nO_p14CE_fOR_53CrE7S}
 

@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: 'Stage 2 Reverse Engineering: Hidden in Plain Sight'
-level:
+title: 'Hidden in Plain Sight'
+level: 2
 difficulty:
 points:
-categories: []
+categories: [reverse engineering]
 tags: []
 flag: IceCTF{look_mom_I_found_it}
 ---
@@ -62,8 +62,4 @@ We disassemble the file and find this segment of asm code
 {: .language-asm}
 
 converting these hex values to characters gives the flag
-
-## Flag
-
-    IceCTF{look_mom_I_found_it}
 
