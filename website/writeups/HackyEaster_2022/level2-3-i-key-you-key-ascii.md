@@ -3,8 +3,9 @@ layout: writeup
 
 title: I Key, You Key, ASCII
 level: 2 # optional, for events that use levels
-difficulty: easy
-categories: []
+difficulty: noob
+points: 50
+categories: [misc]
 tags: []
 
 flag: he2022{th1s_0n3_1s_r3333ly_s1mpl3}

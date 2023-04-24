@@ -3,8 +3,9 @@ layout: writeup
 
 title: Alpha Bravo Charlie
 level: 2 # optional, for events that use levels
-difficulty: easy
-categories: []
+difficulty: noob
+points: 50
+categories: [misc]
 tags: []
 
 flag: he2022{phonetic}

@@ -3,7 +3,8 @@ layout: writeup
 
 title: Glitch
 level: 2  # optional, for events that use levels
-difficulty:
+difficulty: noob
+points: 50
 categories: [misc]
 tags: []
 

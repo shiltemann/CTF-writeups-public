@@ -3,8 +3,9 @@ layout: writeup
 
 title: Sp4ce Inv4d3r5
 level: 2 # optional, for events that use levels
-difficulty:
-categories: []
+difficulty: noob
+points: 50
+categories: [misc]
 tags: []
 
 flag: he2022{Inv4d3rs_fr0m_sp4c3!}

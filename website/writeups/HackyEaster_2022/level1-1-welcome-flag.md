@@ -3,8 +3,9 @@ layout: writeup
 
 title: Welcome Flag
 level: 1  # optional, for events that use levels
-difficulty:
-categories: []
+difficulty: noob
+points: 50
+categories: [misc]
 tags: []
 
 flag:  he2022{welcome_to_hacky_easter_2022}
