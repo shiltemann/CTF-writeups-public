@@ -1,0 +1,19 @@
+---
+layout: writeup
+title: 'Forensics 30: GZ'
+level:
+difficulty:
+points:
+categories: []
+tags: []
+flag: ABCTF{broken_zipper}
+---
+**Challenge**  
+We shot a flag into [this](writupfiles/forensics30) file but some things
+got messed up on the way...
+
+Can you somehow get the flag from this website?
+
+**Solution**   
+The file was gzipped.
+
