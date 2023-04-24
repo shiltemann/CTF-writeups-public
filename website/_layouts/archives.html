@@ -10,7 +10,8 @@ layout: page
 
 <div id="archives" class="pl-xl-3">
 
-{% for post in site.posts %}
+{% assign ctfs = site.pages | where: "layout", "ctf-event" | sort: "date" | reverse  %}
+{% for post in ctfs %}
   {% capture cur_year %}{{ post.date | date: "%Y" }}{% endcapture %}
 
   {% if cur_year != last_year %}
