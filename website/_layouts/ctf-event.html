@@ -34,7 +34,7 @@ layout: page
  <td><a href="#{{writeup.title|slugify}}">{{writeup.title}}</a> </td>
  <td>{{ writeup.difficulty | default: writeup.points }}</td>
  <td>{% for c in writeup.categories %}{{c}}{% unless forloop.last%}, {% endunless %}{% endfor %}</td>
- <td>{{writeup.flag | default: "unsolved" }}</td>
+ <td>{% if writeup.flag %}<code>{{ writeup.flag }}</code> {% else %} unsolved {% endif %}</td>
 </tr>
 {% endfor %}
 
