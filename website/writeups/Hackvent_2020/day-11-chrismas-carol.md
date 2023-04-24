@@ -29,7 +29,3 @@ challenge.
 
 ## Solution
 
-## Flag
-
-    HV20{}
-

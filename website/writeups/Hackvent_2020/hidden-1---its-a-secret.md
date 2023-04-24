@@ -34,7 +34,3 @@ We decrypt all these files, and see they are b64 strings
     ;>>>>   HV20{it_is_always_worth_checking_everywhere_and_congratulations,_you_have_found_a_hidden_flag}   <<<<
 {: .language-bash}
 
-## Flag
-
-    HV20{it_is_always_worth_checking_everywhere_and_congratulations,_you_have_found_a_hidden_flag}
-

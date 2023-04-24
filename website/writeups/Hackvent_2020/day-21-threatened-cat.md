@@ -22,7 +22,3 @@ wake up.
 
 ## Solution
 
-## Flag
-
-    HV20{}
-

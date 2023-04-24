@@ -53,10 +53,6 @@ now we can to recover `flag.bin` file using these found keys as follows:
     HV20{ZipCrypt0_w1th_kn0wn_pla1ntext_1s_easy_t0_decrypt}
 {: .language-bash}
 
-## Flag
-
-    HV20{ZipCrypt0_w1th_kn0wn_pla1ntext_1s_easy_t0_decrypt}
-
 
 
 [1]: https://github.com/kimci86/bkcrack

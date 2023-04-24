@@ -33,7 +33,3 @@ controls.
 
 ## Solution
 
-## Flag
-
-    HV20{}
-

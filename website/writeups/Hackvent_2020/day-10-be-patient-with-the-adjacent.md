@@ -31,7 +31,3 @@ Hmm, I cannot seem to read the file either, maybe the internet knows?
 
 ## Solution
 
-## Flag
-
-    HV20{}
-

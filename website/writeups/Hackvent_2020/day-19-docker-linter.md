@@ -21,7 +21,3 @@ Shell or the VPN to solve this challenge (see `RESOURCES` on top).
 
 ## Solution
 
-## Flag
-
-    HV20{}
-

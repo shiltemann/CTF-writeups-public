@@ -266,10 +266,6 @@ Note: below are instructions to compile and run C# on Ubuntu:
     mcs dec7_solve.cs
     mono dec7_solve.exe
 
-## Flag
-
-    HV20{r3?3rs3_3ng1n33r1ng_m4d3_34sy}
-
 
 
 [1]: https://github.com/icsharpcode/AvaloniaILSpy

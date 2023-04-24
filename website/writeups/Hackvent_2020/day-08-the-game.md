@@ -40,7 +40,3 @@ The letter that drop do not follow exactly the rick roll video link,
 but this other link it gives also doesnt lead anywhere, hmm, did we emss
 with some setting that affect the outcome?
 
-## Flag
-
-    HV20{}
-

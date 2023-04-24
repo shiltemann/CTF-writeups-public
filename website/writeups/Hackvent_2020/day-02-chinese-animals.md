@@ -51,7 +51,3 @@ or the python approach:
 and just add the `e` at the end from the original challenge to get the
 flag:
 
-## Flag
-
-    HV20{small-elegant-butterfly-loves-grass-mud-horse}
-

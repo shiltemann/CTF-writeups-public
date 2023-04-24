@@ -71,7 +71,3 @@ it!
 
 Aha! we can still see the flag on here!
 
-## Flag
-
-    HV20{7vxFXB-ItHnqf-PuGNqZ}
-

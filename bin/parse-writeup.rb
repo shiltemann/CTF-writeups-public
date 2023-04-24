@@ -14,17 +14,25 @@ def parse(doc)
   id = x.split('>')[0].split('"')[1]
   title = x.split(/[<>]/)[2]
   body = x.split('</h2>')[1]
-  if ! body.nil?
-    doc.root.children = doc.root.children[1..]
-    body = doc.to_kramdown.gsub(/^\*\*(.*)\*\*$/, '## \1')
-  end
 
   flag = nil
   potential_flag = doc.root.children.map{|n| find_code n }.flatten.uniq[-1]
+  potential_flag_idx = doc.root.children.index{|e| e.type.to_s == "p" && e.children[0].type.to_s == "strong" && e.children[0].children[0].type.to_s == "text"  && e.children[0].children[0].value == "Flag"}
+
   if ! potential_flag.nil?
     if potential_flag.value.count('{') == 1
     flag = potential_flag.value.strip
     end
+  end
+
+  if ! potential_flag_idx.nil?
+    doc.root.children = doc.root.children[0..(potential_flag_idx - 1)]
+  end
+
+  if ! body.nil?
+    # Strip the header
+    doc.root.children = doc.root.children[1..]
+    body = doc.to_kramdown.gsub(/^\*\*(.*)\*\*$/, '## \1')
   end
 
   {
@@ -49,7 +57,6 @@ def process(doc)
   res = []
   cached = []
   doc.root.children.each{|e|
-    p e
     if e.type.to_s == "header"
       res.append cached
       cached = []
@@ -63,11 +70,19 @@ end
 text = File.open('writeup.md').read.strip
 doc = Kramdown::Document.new(text, input: 'GFM')
 
-process(doc).select{|x| x.length > 0}.each{|x|
-  p "===== #{x.length}"
+parts = process(doc).select{|x| x.length > 0}.map{|x|
   doc2 = doc.clone
   doc2.root.children = x
-  res = parse(doc2)
+  parse(doc2)
+}
+
+overview_idx = parts.index{|res| res[:title] == "Overview" }
+if overview_idx < 3
+  parts = parts[(overview_idx + 1)..]
+end
+
+parts.each{|res|
+  p "===== #{res[:title]}"
   fn = "#{res[:id]}.md"
   handle = File.open(fn, 'w')
   handle.write(res[:header].to_yaml)

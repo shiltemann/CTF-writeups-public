@@ -30,7 +30,3 @@ encrypted data. Can you recover the original message?
 
 ## Solution
 
-## Flag
-
-    HV20{}
-

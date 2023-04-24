@@ -25,7 +25,3 @@ and the rest is history.
 
 ## Solution
 
-## Flag
-
-    HV20{}
-

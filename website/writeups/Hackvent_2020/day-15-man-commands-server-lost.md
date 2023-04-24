@@ -27,7 +27,3 @@ improved his code. So now he is sure it's unpwnable.
 
 ## Solution
 
-## Flag
-
-    HV20{}
-

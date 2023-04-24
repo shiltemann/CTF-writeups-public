@@ -63,7 +63,3 @@ Transcribing the whole bracelet gives the following binary code:
 
 which when converted to ascii spells `Ilov3y0uS4n74`
 
-## Flag
-
-    HV20{Ilov3y0uS4n74}
-

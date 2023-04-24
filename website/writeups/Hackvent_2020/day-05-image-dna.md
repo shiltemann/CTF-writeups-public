@@ -88,7 +88,3 @@ ok, this looks good! Let's automate the rest in Python:
 
 This outputs the flag :)
 
-## Flag
-
-    HV20{s4m3s4m3bu7diff3r3nt}
-

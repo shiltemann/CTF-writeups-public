@@ -30,7 +30,3 @@ We follow this method, and find the injection that gives us our flag:
 
 ![](writeupfiles/dec9_solution.png)
 
-## Flag
-
-    HV20{SST1_N0t_0NLY_H1Ts_UB3R!!!}
-

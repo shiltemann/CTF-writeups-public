@@ -12,7 +12,3 @@ flag: HV20{}
 
 ## Solution
 
-## Flag
-
-    HV20{}
-

@@ -26,7 +26,3 @@ do...
 * It's not rock-science, it's station-science!
 * Use default options
 
-## Flag
-
-    HV20{}
-

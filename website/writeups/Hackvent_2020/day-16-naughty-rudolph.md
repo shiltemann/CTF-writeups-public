@@ -29,7 +29,3 @@ Rudolph!
 
 ## Solution
 
-## Flag
-
-    HV20{}
-

@@ -88,7 +88,3 @@ These were the qr images
 ![](writeupfiles/dec6_qr4.png)  
 ![](writeupfiles/dec6_qr5.png)
 
-## Flag
-
-    HV20{Erno_Rubik_would_be_proud.Petrus_is_Valid.#HV20QRubicsChal}
-

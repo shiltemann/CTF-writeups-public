@@ -121,7 +121,3 @@ the hidden QR code!
 
 ![](writeupfiles/3-solved.png)
 
-## Flag
-
-    HV20{34t-sl33p-haxx-rep34t}
-

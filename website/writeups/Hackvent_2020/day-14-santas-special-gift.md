@@ -21,7 +21,3 @@ you keep looking, you might see some other uses...
 
 ## Solution
 
-## Flag
-
-    HV20{}
-

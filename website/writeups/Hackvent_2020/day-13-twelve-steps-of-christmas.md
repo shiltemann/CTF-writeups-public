@@ -56,7 +56,3 @@ Putting those bytes in a file:
             nul nul nul nul nul nul
     0000066
 
-## Flag
-
-    HV20{}
-
