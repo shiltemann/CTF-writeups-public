@@ -60,7 +60,7 @@ def process(doc)
   res
 end
 
-text = File.open(ARGV[0]).read.strip
+text = File.open('writeup.md').read.strip
 doc = Kramdown::Document.new(text, input: 'GFM')
 
 process(doc).select{|x| x.length > 0}.each{|x|
