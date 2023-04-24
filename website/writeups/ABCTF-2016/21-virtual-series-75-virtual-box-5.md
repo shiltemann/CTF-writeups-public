@@ -3,8 +3,8 @@ layout: writeup
 title: 'Virtual Series 75: Virtual Box 5'
 level:
 difficulty:
-points:
-categories: []
+points: 75
+categories: [virtual series]
 tags: []
 flag:
 ---
@@ -12,4 +12,3 @@ flag:
 I accidentaly closed out this odd message I found. Can you get it back?
 
 ## Solution
-

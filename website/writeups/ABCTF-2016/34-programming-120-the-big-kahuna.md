@@ -3,8 +3,8 @@ layout: writeup
 title: 'Programming 120: The Big Kahuna'
 level:
 difficulty:
-points:
-categories: []
+points: 120
+categories: [programming]
 tags: []
 flag: abctf{28}
 ---
@@ -28,4 +28,3 @@ This is just the edit distance of two strings.
 output
 
     28
-

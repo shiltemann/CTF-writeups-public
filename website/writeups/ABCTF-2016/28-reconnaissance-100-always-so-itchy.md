@@ -3,8 +3,8 @@ layout: writeup
 title: 'Reconnaissance 100: Always so Itchy'
 level:
 difficulty:
-points:
-categories: []
+points: 100
+categories: [reconnaissance]
 tags: []
 flag: ABCTF{DoYouThinkISpentTooMuchTimeOnThis}
 ---

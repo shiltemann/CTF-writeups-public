@@ -3,8 +3,8 @@ layout: writeup
 title: 'Reconnaissance 50: Drive Home'
 level:
 difficulty:
-points:
-categories: []
+points: 50
+categories: [reconnaissance]
 tags: []
 flag: abctf{g00gle_driv3_1s_my_f4v0r1t3}
 ---

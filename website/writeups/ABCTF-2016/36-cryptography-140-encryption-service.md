@@ -3,8 +3,8 @@ layout: writeup
 title: 'Cryptography 140: Encryption Service'
 level:
 difficulty:
-points:
-categories: []
+points: 140
+categories: [cryptography]
 tags: []
 flag:
 ---
@@ -62,4 +62,3 @@ here:
 {: .language-python}
 
 ## Solution
-

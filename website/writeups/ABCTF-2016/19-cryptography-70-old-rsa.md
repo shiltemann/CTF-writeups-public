@@ -3,8 +3,8 @@ layout: writeup
 title: 'Cryptography 70: Old RSA'
 level:
 difficulty:
-points:
-categories: []
+points: 70
+categories: [cryptography]
 tags: []
 flag: ABCTF{th1s_was_h4rd_in_1980}
 ---

@@ -3,8 +3,8 @@ layout: writeup
 title: 'Virtual Series 35: Virtual Box 3'
 level:
 difficulty:
-points:
-categories: []
+points: 35
+categories: [virtual series]
 tags: []
 flag: ABCTF{FR0M_THE_FUTURE}
 ---
@@ -15,4 +15,3 @@ Do you? I left it in a folder named 2016 just for you.
 **Solution**   
 file had no extension, but was a zip file, unpack, search all the files,
 find the flag in one of them.
-

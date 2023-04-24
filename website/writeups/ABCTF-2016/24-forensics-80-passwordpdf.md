@@ -3,8 +3,8 @@ layout: writeup
 title: 'Forensics 80: PasswordPDF'
 level:
 difficulty:
-points:
-categories: []
+points: 80
+categories: [forensics]
 tags: []
 flag:
 ---
@@ -18,4 +18,3 @@ password. Can you help us?
 ## Flag
 
     flag
-

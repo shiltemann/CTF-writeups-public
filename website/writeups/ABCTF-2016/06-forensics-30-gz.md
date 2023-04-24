@@ -3,8 +3,8 @@ layout: writeup
 title: 'Forensics 30: GZ'
 level:
 difficulty:
-points:
-categories: []
+points: 30
+categories: [forensics]
 tags: []
 flag: ABCTF{broken_zipper}
 ---
@@ -16,4 +16,3 @@ Can you somehow get the flag from this website?
 
 **Solution**   
 The file was gzipped.
-

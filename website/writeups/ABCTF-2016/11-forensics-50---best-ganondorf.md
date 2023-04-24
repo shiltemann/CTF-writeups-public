@@ -3,8 +3,8 @@ layout: writeup
 title: Forensics 50 - Best Ganondorf
 level:
 difficulty:
-points:
-categories: []
+points: 50
+categories: [forensics]
 tags: []
 flag: abctf{tfw_kage_r3kt_nyway}
 ---
@@ -21,4 +21,3 @@ we change the first two bytes of the header to `FFD8` and now we can
 view the image (which contains the flag)
 
 ![](writeupfiles/ezmonay_fixed.jpg)
-

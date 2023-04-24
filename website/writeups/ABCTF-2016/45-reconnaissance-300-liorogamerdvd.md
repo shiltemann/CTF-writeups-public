@@ -3,8 +3,8 @@ layout: writeup
 title: 'Reconnaissance 300: Liorogamerdvd'
 level:
 difficulty:
-points:
-categories: []
+points: 300
+categories: [reconnaissance]
 tags: []
 flag:
 ---
@@ -27,4 +27,3 @@ flag
 flag
 ```
 </None>
-

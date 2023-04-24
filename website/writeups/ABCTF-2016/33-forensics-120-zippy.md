@@ -3,8 +3,8 @@ layout: writeup
 title: 'Forensics 120: Zippy'
 level:
 difficulty:
-points:
-categories: []
+points: 120
+categories: [forensics]
 tags: []
 flag:
 ---
@@ -42,4 +42,3 @@ This is interesting, but not sure what to make of it:
     0000000    fbec    de00
               l   { nul   ^
     0000004
-

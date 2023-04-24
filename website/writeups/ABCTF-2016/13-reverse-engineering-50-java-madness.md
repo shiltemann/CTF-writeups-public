@@ -3,8 +3,8 @@ layout: writeup
 title: 'Reverse Engineering 50: Java Madness'
 level:
 difficulty:
-points:
-categories: []
+points: 50
+categories: [reverse engineering]
 tags: []
 flag: ABCTF{ftc tselooc eht si ftcba}
 ---
@@ -44,4 +44,3 @@ key was encoded in the file as "abctfs is the coolest ctf". After
 understanding  
 what the loop did I `echo 'abctf is the coolest ctf' | rev` to get the
 key
-

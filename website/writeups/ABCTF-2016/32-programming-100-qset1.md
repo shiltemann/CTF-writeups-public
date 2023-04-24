@@ -3,8 +3,8 @@ layout: writeup
 title: 'Programming 100: Qset1'
 level:
 difficulty:
-points:
-categories: []
+points: 100
+categories: [programming]
 tags: []
 flag:
 ---
@@ -31,4 +31,3 @@ Can you create a program to multiply 2 inputs?
     o0 a/i0             --> assign value of i0 to two variables at once (o0 and a)
     o0 o0/i0            --> multiply input by two
     o0 o0 o0/i0         --> multiply input by three
-

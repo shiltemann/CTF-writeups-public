@@ -3,8 +3,8 @@ layout: writeup
 title: 'Virtual Series 75: Virtual Box 6'
 level:
 difficulty:
-points:
-categories: []
+points: 75
+categories: [virtual series]
 tags: []
 flag: ABCTF{I_L0VE_PATTERNS}
 ---

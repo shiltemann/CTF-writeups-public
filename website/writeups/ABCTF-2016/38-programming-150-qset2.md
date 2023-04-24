@@ -3,8 +3,8 @@ layout: writeup
 title: 'Programming 150: Qset2'
 level:
 difficulty:
-points:
-categories: []
+points: 150
+categories: [programming]
 tags: []
 flag:
 ---
@@ -15,4 +15,3 @@ of an input. `nc 107.170.122.6 7772`
 ## Flag
 
     flag
-

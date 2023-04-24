@@ -3,8 +3,8 @@ layout: writeup
 title: 'Virtual Series 15: Virtual Box 2'
 level:
 difficulty:
-points:
-categories: []
+points: 15
+categories: [virtual series]
 tags: []
 flag: ABCTF{H1DDEN_AWAY}
 ---
@@ -15,4 +15,3 @@ able to see it anymore.
 **Solution**   
 there was some more invisible text in the file named `flag.txt` on the
 desktop, this was the second flag
-

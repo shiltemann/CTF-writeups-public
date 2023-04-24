@@ -3,8 +3,8 @@ layout: writeup
 title: 'Programming 30: TGIF'
 level:
 difficulty:
-points:
-categories: []
+points: 30
+categories: [programming]
 tags: []
 flag: ABCTF{194}
 ---
@@ -34,4 +34,3 @@ each date.
 {: .language-python}
 
 output: `194`
-

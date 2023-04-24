@@ -3,8 +3,8 @@ layout: writeup
 title: 'Reverse Engineering 80: JS Pls'
 level:
 difficulty:
-points:
-categories: []
+points: 80
+categories: [reverse engineering]
 tags: []
 flag: ABCTF{node_is_w4Ck}
 ---

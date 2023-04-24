@@ -3,8 +3,8 @@ layout: writeup
 title: 'Virtual Series 100: Virtual Box 7'
 level:
 difficulty:
-points:
-categories: []
+points: 100
+categories: [virtual series]
 tags: []
 flag:
 ---
@@ -15,4 +15,3 @@ the map hassle.
 ## Flag
 
     flag
-

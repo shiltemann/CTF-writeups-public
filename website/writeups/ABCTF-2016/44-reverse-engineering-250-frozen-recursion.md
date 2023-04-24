@@ -3,8 +3,8 @@ layout: writeup
 title: 'Reverse Engineering 250: Frozen Recursion'
 level:
 difficulty:
-points:
-categories: []
+points: 250
+categories: [reverse engineering]
 tags: []
 flag:
 ---
@@ -12,4 +12,3 @@ flag:
 I finally learned recursion! Am I doing it right? Here it is.
 
 ## Solution
-

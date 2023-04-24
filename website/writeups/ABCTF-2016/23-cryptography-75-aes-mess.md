@@ -3,8 +3,8 @@ layout: writeup
 title: 'Cryptography 75: AES Mess'
 level:
 difficulty:
-points:
-categories: []
+points: 75
+categories: [cryptography]
 tags: []
 flag: abctf{looks_like_you_can_break_aes}
 ---
@@ -57,4 +57,3 @@ key:
     block1: e220eb994c8fc16388dbd60a969d4953   -   abctf{looks_like
     block2: f042fc0bce25dbef573cf522636a1ba3   -   _you_can_break_a
     block3: fafa1a7c21ff824a5824c5dc4a376e75   -   es}
-

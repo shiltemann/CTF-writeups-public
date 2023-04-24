@@ -3,8 +3,8 @@ layout: writeup
 title: 'Cryptography 125: A Small Broadcast'
 level:
 difficulty:
-points:
-categories: []
+points: 125
+categories: [cryptography]
 tags: []
 flag:
 ---

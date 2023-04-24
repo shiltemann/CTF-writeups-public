@@ -3,8 +3,8 @@ layout: writeup
 title: 'Cryptography 160: Custom Authentication'
 level:
 difficulty:
-points:
-categories: []
+points: 160
+categories: [cryptography]
 tags: []
 flag:
 ---

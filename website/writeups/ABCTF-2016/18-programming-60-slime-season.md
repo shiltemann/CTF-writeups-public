@@ -3,8 +3,8 @@ layout: writeup
 title: 'Programming 60: Slime Season'
 level:
 difficulty:
-points:
-categories: []
+points: 60
+categories: [programming]
 tags: []
 flag:
 ---
@@ -47,4 +47,3 @@ programming approach
 output:
 
     7315
-

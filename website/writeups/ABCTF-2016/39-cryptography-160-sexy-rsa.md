@@ -3,8 +3,8 @@ layout: writeup
 title: 'Cryptography 160: Sexy RSA'
 level:
 difficulty:
-points:
-categories: []
+points: 160
+categories: [cryptography]
 tags: []
 flag: ABCTF{i_h4ve_an_RSA_fetish_;)}
 ---

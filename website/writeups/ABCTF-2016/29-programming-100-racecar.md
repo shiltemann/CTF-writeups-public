@@ -3,8 +3,8 @@ layout: writeup
 title: 'Programming 100: RacecaR'
 level:
 difficulty:
-points:
-categories: []
+points: 100
+categories: [programming]
 tags: []
 flag:
 ---
@@ -50,4 +50,3 @@ This is the longest palindrome substring problem
 output
 
     DbrMrbD
-

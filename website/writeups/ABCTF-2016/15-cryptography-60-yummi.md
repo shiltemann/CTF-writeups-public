@@ -3,8 +3,8 @@ layout: writeup
 title: 'Cryptography 60: Yummi'
 level:
 difficulty:
-points:
-categories: []
+points: 60
+categories: [cryptography]
 tags: []
 flag:
 ---
@@ -40,4 +40,3 @@ output
 
 File was named `baconian.bmp` so we suspect a bacon cipher, and indeed
 when we decode we get the flag
-

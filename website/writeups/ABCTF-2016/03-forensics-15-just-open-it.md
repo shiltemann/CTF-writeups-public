@@ -3,8 +3,8 @@ layout: writeup
 title: 'Forensics 15: Just open it'
 level:
 difficulty:
-points:
-categories: []
+points: 15
+categories: [forensics]
 tags: []
 flag: ABCTF{forensics_1_tooo_easy?}
 ---
@@ -28,4 +28,3 @@ file was an image:
     )8,=
     Wt;fR
     [..]
-

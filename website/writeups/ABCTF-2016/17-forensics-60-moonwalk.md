@@ -3,8 +3,8 @@ layout: writeup
 title: 'Forensics 60: Moonwalk'
 level:
 difficulty:
-points:
-categories: []
+points: 60
+categories: [forensics]
 tags: []
 flag: ABCTF{PNG_S0_C00l}
 ---
@@ -36,4 +36,3 @@ we extract the jpeg image
     $ binwalk --dd=jpeg PurpleThing.png
 
 ![](writeupfiles/BAE0F.jpg)
-
