@@ -1,13 +1,16 @@
 ---
 layout: writeup
+
 title: 'Sand Castles on the Beach'
 level: 3
 difficulty:
 points:
-categories: [cryptography]
+categories: [crypto]
 tags: []
+
 flag:
 ---
+
 ## Challenge
 
 We found this very mysterious image, it doesn't look complete and there
@@ -54,10 +57,10 @@ identified the image to be part of the cover to the fourth edition of
 ![](http://williamstallings.com/Images/Crypto4e.jpg)
 
     58-7-9.210-13-2.67-3-16.85-17-15.305-18-4.83-12-18.75-8-15.47-4-2.83-20-11.208-6-6.85-11-6.75-7-3.106-9-14
-    
+
     page-line-character?
     page-line-word (and then first letter of word)?
-    
+
     58-7-9
     210-13-2
     67-3-16

@@ -1,13 +1,16 @@
 ---
 layout: writeup
+
 title: 'Hidden in Plain Sight'
 level: 2
 difficulty:
 points:
-categories: [reverse engineering]
+categories: [reversing]
 tags: []
+
 flag: IceCTF{look_mom_I_found_it}
 ---
+
 ## Challenge
 
 Make sure you take a real close look at it, it should be right there!

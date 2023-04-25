@@ -1,13 +1,16 @@
 ---
 layout: writeup
+
 title: 'Contract'
 level: 3
 difficulty:
 points:
-categories: [cryptography]
-tags: []
+categories: [crypto]
+tags: [RSA]
+
 flag:
 ---
+
 ## Challenge
 
 Our contractors stole the flag! They put it on their file server and
@@ -22,7 +25,7 @@ to that file. There is a pcap file associated which provides a couple of
 useful packets we can replay:
 
     help:c0e1fc4e3858ac6334cc8798fdec40790d7ad361ffc691c26f2902c41f2b7c2fd1ca916de687858953a6405423fe156cfd7287caf75247c9a32e52ab8260e7ff1e46e55594aea88731bee163035f9ee31f2c2965ac7b2cdfca6100d10ba23826
-    
+
     COMMANDS:
     * read [file]
      - prints contents of file
