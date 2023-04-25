@@ -2,7 +2,7 @@
 layout: writeup
 title: 'Day 24: Take the red pill, take the blue pill'
 level:
-difficulty:
+difficulty: hard
 points:
 categories: []
 tags: []
@@ -13,7 +13,7 @@ flag:
 Have you already taken your vitamins today? Here are some pills for your
 health.
 
-[red pill](writeupfiles/redpill.zip)  
+[red pill](writeupfiles/redpill.zip)
 [blue pill](writeupfiles/bluepill.zip)
 
 *Hint:*

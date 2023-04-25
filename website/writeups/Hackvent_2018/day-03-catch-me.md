@@ -2,11 +2,12 @@
 layout: writeup
 title: 'Day 03: Catch Me'
 level:
-difficulty:
+difficulty: easy
 points:
 categories: []
 tags: []
-flag:
+flag: HV18-pFAT-O1Dl-HjVp-jJNE-Zju8
+
 ---
 *..if you can*
 
@@ -91,7 +92,7 @@ There is some heavily obfuscated javascript on the page:
         _0xaa99x6 = _0xaa99xa / 2 + Math[_0x766f[18]]() * _0xaa99xa / 2;
         _0xaa99x7 = _0xaa99xb / 2 + Math[_0x766f[18]]() * _0xaa99xb / 2;
         _0xaa99xe();
-    
+
         function _0xaa99xc() {
             lbx = _0xaa99x6 + _0xaa99x8 / 2;
             lby = _0xaa99x7 + _0xaa99x9 / 2;
@@ -100,7 +101,7 @@ There is some heavily obfuscated javascript on the page:
             };
             return false
         }
-    
+
         function _0xaa99xd() {
             _0xaa99x6 = (Math[_0x766f[18]]() * _0xaa99xa) % _0xaa99xa;
             _0xaa99x7 = (Math[_0x766f[18]]() * _0xaa99xb) % _0xaa99xb;
@@ -108,7 +109,7 @@ There is some heavily obfuscated javascript on the page:
                 _0xaa99xd()
             }
         }
-    
+
         function _0xaa99xe() {
             $(_0x766f[3])[_0x766f[24]](_0x766f[19], {
                 origin: [_0x766f[20], _0x766f[20]]
@@ -118,7 +119,7 @@ There is some heavily obfuscated javascript on the page:
                 _0xaa99xf()
             })
         }
-    
+
         function _0xaa99xf() {
             $(_0x766f[3])[_0x766f[23]](_0x766f[25], _0xaa99x6);
             $(_0x766f[3])[_0x766f[23]](_0x766f[26], _0xaa99x7);

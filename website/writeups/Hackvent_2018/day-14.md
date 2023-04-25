@@ -1,8 +1,8 @@
 ---
 layout: writeup
-title: 'Day 14:'
+title: 'Day 14: Power in the Shell'
 level:
-difficulty:
+difficulty: medium
 points:
 categories: []
 tags: []

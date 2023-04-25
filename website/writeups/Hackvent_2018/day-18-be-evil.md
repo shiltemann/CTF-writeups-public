@@ -2,7 +2,7 @@
 layout: writeup
 title: 'Day 18: Be Evil'
 level:
-difficulty:
+difficulty: hard
 points:
 categories: []
 tags: []

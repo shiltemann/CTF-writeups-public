@@ -2,13 +2,14 @@
 layout: writeup
 title: 'Day 09: fake xmass balls'
 level:
-difficulty:
+difficulty: medium
 points:
 categories: []
 tags: []
-flag:
+flag: HV18-PpTR-Qri5-3nOI-n51a-42gJ
 ---
-**Challenge**  
+
+## Challenge
 A rogue manufacturer is flooding the market with counterfeit yellow xmas
 balls.They are popping up like everywhere!
 
@@ -30,6 +31,6 @@ Running `compare` on the two we see this useful image:
 Scaling the input images up before re-comparing and inverting the
 colours and adding a border to make the code readable:
 
-![](writeupfiles/medium-compare-big.png)  
+![](writeupfiles/medium-compare-big.png)
 ![](writeupfiles/day09-qrcode.png)
 

@@ -2,7 +2,7 @@
 layout: writeup
 title: 'Day 22: MuffinCTF'
 level:
-difficulty:
+difficulty: hard
 points:
 categories: []
 tags: []
@@ -14,7 +14,7 @@ flag:
 
         DAY 2 Services
         --------------------------------------------
-    
+
                         ,-_                  (`  ).
                         |-_'-,              (     ).
                         |-_'-'           _(        '`.
@@ -37,7 +37,7 @@ flag:
               Improve the security of the mill.
               And reduce production rate of food for enemy nations.
           Creator: xorkiwi
-    
+
                              __--___
                            >_'--'__'
                           _________!__________
@@ -54,7 +54,7 @@ flag:
                     \________\\\\\\\\\\\\\\\\\\_______/
           %%%^^^^^%%%%%^^^^!!^%%^^^^%%%%%!!!!^^^^^^!%^^^%%%%!!^^
           ^^!!!!%%%%^^^^!!^^%%%%%^^!!!^^%%%%%!!!%%%%^^^!!^^%%%!!
-    
+
           Name: port
           Description:
               There are ships coming from a long distance.

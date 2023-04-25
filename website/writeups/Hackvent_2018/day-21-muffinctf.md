@@ -2,7 +2,7 @@
 layout: writeup
 title: 'Day 21: MuffinCTF'
 level:
-difficulty:
+difficulty: hard
 points:
 categories: []
 tags: []
@@ -21,7 +21,7 @@ flag:
             |.  '| / |     \ |  /     ))
             |____|/  |`-----'  /_____))
                       `-----'  `------'
-    
+
             Name: bakery
             Description:
                 Simply the best bakery in town!
@@ -29,8 +29,8 @@ flag:
                 Make sure that the thieves of the enemy nations cannot steal our bread!
                 Maybe you have a method where we can get more bread?
             Creator: muffinx
-    
-    
+
+
                       / \  _  _  _  / \
                       | | / \/ \/ \ | |
                   %   | |I| || || |=o | %
@@ -39,7 +39,7 @@ flag:
                >@<| ; | | | || || | | | | ~*~ | |%
                *| |:X:| |I| || || | | | |*'|`\|/||   ~@~   *
               ,||/|`|'|_| |_||_||_| |_|,||,|/ |,||Vv,`|',v`|v hjw
-    
+
             Name: garden
             Description:
                 A very beautiful vegetable/fruit garden.

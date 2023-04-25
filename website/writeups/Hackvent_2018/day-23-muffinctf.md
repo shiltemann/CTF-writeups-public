@@ -2,7 +2,7 @@
 layout: writeup
 title: 'Day 23: MuffinCTF'
 level:
-difficulty:
+difficulty: hard
 points:
 categories: []
 tags: []
@@ -35,7 +35,7 @@ flag:
                       / |   \_____\         /                              /
                       `-'               /                                 /
              ________________________/                                   /___________
-    
+
             Name: barracks
             Description:
                 The knights and warriors of the king are here practicing the art of war.
@@ -43,7 +43,7 @@ flag:
                 Other nations sent their assassins to poision our warriors, make sure that we thighten our security.
                 Also maybe talk with these guys and to show the enemies our powerful warriors.
             Creator: xorkiwi
-    
+
                                       .- ._          *
                              .       (   ) `) ._,--.
                       _.-.          (      .' |    }      ._    +

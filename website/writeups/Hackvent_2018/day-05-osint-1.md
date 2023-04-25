@@ -2,11 +2,12 @@
 layout: writeup
 title: 'Day 05: OSINT 1'
 level:
-difficulty:
+difficulty: easy
 points:
 categories: []
 tags: []
-flag:
+flag: HV18-0Sin-tI5S-R34l-lyC0-oo0L
+
 ---
 *It's all about transparency*
 

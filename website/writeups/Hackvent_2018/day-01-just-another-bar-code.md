@@ -1,12 +1,15 @@
 ---
 layout: writeup
+
 title: 'Day 01: Just Another Bar Code'
 level:
-difficulty:
+difficulty: easy
 points:
 categories: []
 tags: []
-flag:
+
+flag: HV18-L3ts-5t4r-7Th3-Phun-G33k
+
 ---
 ## Challenge
 
@@ -18,7 +21,7 @@ infrastructure with color displays.
 ## Solution
 
 After some Googling, we find JAB Code (Just Another Bar Code) which is a
-high-capacity 2D color bar code,  
+high-capacity 2D color bar code,
 which can encode more data than traditional black/white (QR) codes.
 
 * [GitHub repo][1]

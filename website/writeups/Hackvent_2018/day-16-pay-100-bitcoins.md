@@ -2,7 +2,7 @@
 layout: writeup
 title: 'Day 16: Pay 100 Bitcoins'
 level:
-difficulty:
+difficulty: hard
 points:
 categories: []
 tags: []

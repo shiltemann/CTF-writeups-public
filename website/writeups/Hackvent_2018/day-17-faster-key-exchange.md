@@ -2,7 +2,7 @@
 layout: writeup
 title: 'Day 17: Faster KEy Exchange'
 level:
-difficulty:
+difficulty: hard
 points:
 categories: []
 tags: []

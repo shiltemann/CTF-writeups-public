@@ -2,7 +2,7 @@
 layout: writeup
 title: 'Day 15: Watch me'
 level:
-difficulty:
+difficulty: hard
 points:
 categories: []
 tags: []

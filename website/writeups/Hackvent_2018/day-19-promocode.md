@@ -2,7 +2,7 @@
 layout: writeup
 title: 'Day 19: PromoCode'
 level:
-difficulty:
+difficulty: hard
 points:
 categories: []
 tags: []

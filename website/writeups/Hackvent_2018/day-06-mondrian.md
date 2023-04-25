@@ -2,11 +2,12 @@
 layout: writeup
 title: 'Day 06: Mondrian'
 level:
-difficulty:
+difficulty: easy
 points:
 categories: []
 tags: []
-flag:
+flag: HV18-M4ke-S0m3-R3Al-N1c3-artZ
+
 ---
 ## Challenge
 
@@ -21,11 +22,11 @@ The page contained 6 images of abstract art
 
 ![](writeupfiles/day06-gallery.png)
 
-[image1](writeupfiles/day06-house.png)  
-[image2](writeupfiles/day06-2-trees.png)  
-[image3](writeupfiles/day06-3-lake.png)  
-[image4](writeupfiles/day06-4-sky.png)  
-[image5](writeupfiles/day06-5-sheep.png)  
+[image1](writeupfiles/day06-house.png)
+[image2](writeupfiles/day06-2-trees.png)
+[image3](writeupfiles/day06-3-lake.png)
+[image4](writeupfiles/day06-4-sky.png)
+[image5](writeupfiles/day06-5-sheep.png)
 [image6](writeupfiles/day06-6-snake.png)
 
 We recognize this as esoteric programming language [Piet][2] and use the

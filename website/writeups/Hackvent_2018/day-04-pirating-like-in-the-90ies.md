@@ -2,11 +2,11 @@
 layout: writeup
 title: 'Day 04: pirating like in the 90ies'
 level:
-difficulty:
+difficulty: easy
 points:
 categories: []
 tags: []
-flag:
+flag: HV18-5o9x-4geL-7hkJ-wc4A-xp8F
 ---
 *Ahoy, my name is Santa and I want to be a pirate!*
 
@@ -22,7 +22,7 @@ to be filled with specific values to decrypt the key
 ![](writeupfiles/day04-screenshot.png)
 
     [..]
-    
+
     <div class="divTableRow">
       <div class="divTableCell" align="center">
         <img src="pirate01.jpg" width="151" height="151">
@@ -45,14 +45,14 @@ to be filled with specific values to decrypt the key
     	<div class="number"><br><input type="text" id="pirate04" size="2"></div>
     	</div>
     </div>
-    
+
     [..]
 {: .language-html}
 
 and a script to produce the flag:
 
     function JollyRoger() {
-    
+
     		var elements = document.getElementsByTagName("input")
     		for (var i = 0; i < elements.length; i++) {
     		    if(elements[i].value == "") {
@@ -60,7 +60,7 @@ and a script to produce the flag:
     		        return;
     		    }
     		}
-    
+
     		var a, b;
     		p=document.getElementById('pirate01').value+document.getElementById('pirate02').value+document.getElementById('pirate03').value+
     		document.getElementById('pirate04').value+document.getElementById('pirate05').value+document.getElementById('pirate06').value+
@@ -82,11 +82,11 @@ the dashes), so we can use this to..
 
 `s` is 22 characthers long, and since `p` expects a length up to
 `len(s)*2+2`, combined with the fact that the HTML for the names
-(Jamaica etc)  
+(Jamaica etc)
 is called `year`, it looks like we need to enter 4 digits in each box.
 
 After some DuckDuckGo'ing, we find out this is a reference to a 90s game
-called [The Secret of Monkey Island][2],  
+called [The Secret of Monkey Island][2],
 with which a cardboard wheel, named "Dial-a-Pirate", was provided, as a
 form of copy-protection. The player had to match the pirate shown
 on-screen with that of the wheel.
@@ -101,7 +101,7 @@ enter a date that was significant in the pirate's life at a given
 geographical location. Use your Dial-A-Pirate wheel to match up the top
 and bottom halves of the pirate face you see on the screen. Then, locate
 the window on the wheel that matches the geographical location mentiones
-on the screen. Using the keyboard, type the date you see in the window. 
+on the screen. Using the keyboard, type the date you see in the window.
 
 Don't lose your Dial-A-Pirate wheel! Without it, you won't be able to
 play the game. If you lose the Wheel, you may purchase another from

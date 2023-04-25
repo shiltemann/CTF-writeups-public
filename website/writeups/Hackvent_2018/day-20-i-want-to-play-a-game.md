@@ -2,7 +2,7 @@
 layout: writeup
 title: 'Day 20: I want to play a game'
 level:
-difficulty:
+difficulty: hard
 points:
 categories: []
 tags: []

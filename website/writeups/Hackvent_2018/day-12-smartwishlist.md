@@ -2,7 +2,7 @@
 layout: writeup
 title: 'Day 12: SmartWishList'
 level:
-difficulty:
+difficulty: medium
 points:
 categories: []
 tags: []

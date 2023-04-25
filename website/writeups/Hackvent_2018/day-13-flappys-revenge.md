@@ -2,11 +2,11 @@
 layout: writeup
 title: 'Day 13: flappy’s revenge'
 level:
-difficulty:
+difficulty: medium
 points:
 categories: []
 tags: []
-flag:
+flag: HV18-9hYf-LSY1-hWdZ-496n-Mbda
 ---
 ## Challenge
 
