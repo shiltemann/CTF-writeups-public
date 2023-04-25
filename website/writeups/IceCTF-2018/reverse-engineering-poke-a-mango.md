@@ -3,7 +3,7 @@ layout: writeup
 title: 'Poke-A-Mango'
 level:
 difficulty:
-points:
+points: 250
 categories: [reverse engineering]
 tags: []
 flag:
