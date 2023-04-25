@@ -37,6 +37,10 @@ Add an `index.md` file:
 layout: ctf-event
 title: Title of Event
 date: 2042-04-02
+
+difficulty: false  # optional, if an event doesnt have difficulty, hide it from table
+points: false      # optional, if an event doesnt have difficulty, hide it from table
+
 ---
 
 Some description of the event
