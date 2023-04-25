@@ -8,7 +8,7 @@ points: 200
 categories: [misc]
 tags: []
 
-flag:
+flag: he2023{L1stening_to_spy_c0mmunicat1ons}
 
 ---
 
@@ -83,3 +83,5 @@ And the binary ones:
 ```
 
 which turn up… nothing on [ascii2hex](https://www.asciitohex.com/). Odd. Could be transcription errors, but, still.
+
+Saskia points out that if you add a zero at the start, then it decodes completely properly.
