@@ -3,8 +3,8 @@ layout: writeup
 
 title: 'Substituted'
 level: 1
-difficulty: 30
-points:
+difficulty:
+points: 30
 categories: [crypto]
 tags: []
 
