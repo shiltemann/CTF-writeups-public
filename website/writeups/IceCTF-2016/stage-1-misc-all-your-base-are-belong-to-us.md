@@ -1,14 +1,17 @@
 ---
 layout: writeup
+
 title: 'All your Base are belong to us'
 level: 1
 difficulty:
-points:
+points: 15
 categories: [misc]
 tags: []
 flag: IceCTF{al1_my_bases_are_yours_and_all_y0ur_bases_are_mine}
+
 ---
-**Challenge**  
+
+**Challenge**
 What a mess... we got a raw flag but now what do we do...
 
     01001001 01100011 01100101 01000011 01010100 01000110 01111011 01100001 01101100 00110001 01011111

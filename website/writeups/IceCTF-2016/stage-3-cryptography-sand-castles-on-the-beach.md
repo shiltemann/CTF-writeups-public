@@ -4,7 +4,7 @@ layout: writeup
 title: 'Sand Castles on the Beach'
 level: 3
 difficulty:
-points:
+points: 140
 categories: [crypto]
 tags: []
 

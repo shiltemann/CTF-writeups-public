@@ -4,7 +4,7 @@ layout: writeup
 title: 'RSA2'
 level: 3
 difficulty:
-points:
+points: 90
 categories: [crypto]
 tags: [RSA]
 

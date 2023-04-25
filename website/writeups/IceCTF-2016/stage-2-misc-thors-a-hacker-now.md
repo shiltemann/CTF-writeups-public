@@ -3,7 +3,7 @@ layout: writeup
 title: 'Thor’s a hacker now'
 level: 2
 difficulty:
-points:
+points: 55
 categories: [misc]
 tags: []
 flag: IceCTF{h3XduMp1N9_l1K3_A_r341_B14Ckh47}
@@ -17,9 +17,9 @@ of it, can you help him figure out what it is?
 ## Solution
 
 Looking at the file it looks like the output of `od -tx2` or `xxd`. A
-bit  
+bit
 of googling reveals that `xxd` has a flag `-r` which reverses the
-output.  
+output.
 (I.e. `cat a | xxd | xxd -r > b`, `a == b`)
 
 Once this is done

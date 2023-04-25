@@ -3,7 +3,7 @@ layout: writeup
 title: 'Kitty'
 level: 2
 difficulty:
-points:
+points: 70
 categories: [web]
 tags: []
 flag: IceCTF{i_guess_hashing_isnt_everything_in_this_world}
@@ -48,9 +48,9 @@ is what they use here too.
 
     import hashlib
     import string
-    
+
     target="c7e83c01ed3ef54812673569b2d79c4e1f6554ffeb27706e98c067de9ab12d1a"
-    
+
     for i in string.uppercase:
         for j in string.lowercase:
             for k in string.digits:

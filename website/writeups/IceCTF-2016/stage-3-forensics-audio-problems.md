@@ -3,7 +3,7 @@ layout: writeup
 title: 'Audio Problems'
 level: 3
 difficulty:
-points:
+points: 50
 categories: [forensics]
 tags: []
 flag: IceCTF{y0U_b3t7Er_l15TeN_cL053LY}

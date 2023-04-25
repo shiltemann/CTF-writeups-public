@@ -3,19 +3,20 @@ layout: writeup
 title: 'Blue Monday'
 level: 3
 difficulty:
-points:
+points: 60
 categories: [misc]
 tags: []
 flag: IceCTF{HAck1n9_mU5Ic_w17h_mID15_L3t5_H4vE_a_r4v3}
 ---
+
 ## Challenge
 
 Those who came before me lived through their vocations From the past
-until  
+until
 completion, they'll turn away no more And still I find it so hard to say
-what I  
+what I
 need to say But I'm quite sure that you'll tell me just how I should
-feel  
+feel
 today.
 
 ## Solution

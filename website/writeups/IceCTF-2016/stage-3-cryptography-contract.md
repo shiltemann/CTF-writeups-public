@@ -4,7 +4,7 @@ layout: writeup
 title: 'Contract'
 level: 3
 difficulty:
-points:
+points: 130
 categories: [crypto]
 tags: [RSA]
 

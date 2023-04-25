@@ -1,13 +1,17 @@
 ---
 layout: writeup
+
 title: 'IRC 1'
 level: 1
 difficulty:
-points:
+points: 60
 categories: [misc]
 tags: []
+
 flag: IceCTF{pL3AsE_D0n7_5h4re_fL495_JUsT_doNT}
+
 ---
+
 ## Challenge
 
 connecting to the irc server and doing a `/list` will print

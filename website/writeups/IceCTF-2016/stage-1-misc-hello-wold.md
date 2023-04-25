@@ -1,13 +1,16 @@
 ---
 layout: writeup
+
 title: 'Hello Wold!'
 level: 1
 difficulty:
-points:
+points: 1
 categories: [misc]
 tags: []
+
 flag: IceCTF{h3l10_wr0ld}
 ---
+
 ## Challenge
 
 In this capture the flag competiton you're hunting for these strings, we

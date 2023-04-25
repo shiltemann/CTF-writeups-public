@@ -3,11 +3,12 @@ layout: writeup
 title: 'Intercepted Conversations Pt. 2'
 level: 3
 difficulty:
-points:
+points: 105
 categories: [forensics]
-tags: []
+tags: [pcap]
 flag: IceCTF{4Lw4y5_US3_5s1_AnD_n3VR4r_mAKe_Y0ur_0wN_cRyp70}
 ---
+
 ## Challenge
 
 We managed to intercept more of the hacker's traffic, unfortunately
@@ -18,8 +19,8 @@ you to try to make sense of this traffic.
 ## Solution
 
 The pcap file has two tcp streams (in wireshark I normally click "follow
-TCP  
-stream" and then it inserts a nice `tcp.stream eq 0` and then I  
+TCP
+stream" and then it inserts a nice `tcp.stream eq 0` and then I
 increment/decrement to find all streams)
 
 The first stream is IRC chat
@@ -47,14 +48,14 @@ The first stream is IRC chat
     PRIVMSG Cold_Storm :Wmkvw680HDzDqMK6UBXChDXCtC7CosKmw7R9w7JLwr/CoT44UcKNwp7DllpPwo3DtsOID8OPTcOWwrzDpi3CtMOKw4PColrCpXUYRhXChMK9w6PDhxfDicOdwoAgwpgNw5/Cvw==
 
 The DCC looks someone sends a python file which we find in the next
-stream.  
+stream.
 This was extracted to [encode.pyc](writeupfiles/encode.pyc). Uncompyle
 will extract the original python from this:
 
     $ uncompyle6 encode.pyc > encode.py
 
 We [reversed](writeupfiles/decode.py) the
-[algorithm](writeupfiles/encode.py),  
+[algorithm](writeupfiles/encode.py),
 when run with the base64 string found in the IRC chat, it prints out the
 flag:
 

@@ -1,13 +1,16 @@
 ---
 layout: writeup
+
 title: 'Scavenger Hunt'
 level: 1
 difficulty:
-points:
+points: 50
 categories: [misc]
 tags: []
+
 flag: IceCTF{Y0u_c4n7_533_ME_iM_h1Din9}
 ---
+
 ## Challenge
 
 There is a flag hidden somewhere on our website, do you think you can

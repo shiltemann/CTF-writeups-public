@@ -3,11 +3,12 @@ layout: writeup
 title: 'Toke'
 level: 2
 difficulty:
-points:
+points: 45
 categories: [web]
 tags: []
 flag: IceCTF{jW7_t0K3ns_4Re_nO_p14CE_fOR_53CrE7S}
 ---
+
 ## Challenge
 
 I have a feeling they were pretty high when they made this website...

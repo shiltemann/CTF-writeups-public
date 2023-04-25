@@ -1,13 +1,16 @@
 ---
 layout: writeup
+
 title: 'RSA'
 level: 2
 difficulty:
-points:
+points: 60
 categories: [crypto]
-tags: []
+tags: [RSA]
+
 flag: IceCTF{rsa_is_awesome_when_used_correctly_but_horrible_when_not}
 ---
+
 ## Challenge
 
 This time John managed to use RSA " correctly "&amp;ellipsis; I think he

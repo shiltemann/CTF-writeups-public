@@ -3,7 +3,7 @@ layout: writeup
 title: 'Matrix'
 level: 3
 difficulty:
-points:
+points: 85
 categories: [misc]
 tags: []
 flag: IceCTF{1F_y0U_l0oK_c1Os3lY_EV3rY7h1N9_i5_1s_4nD_0s}
@@ -90,13 +90,13 @@ Let's make a prober image out of it and decode the QR code
 
     from PIL import Image
     import qrtools
-    
+
     w=31
     h=31
     outimg = Image.new( 'RGB', (w,h), "white")
     pixels_out = outimg.load()
-    
-    
+
+
     m=[
     0x00000000,0xff71fefe,0x83480082,0xbb4140ba,
     0xbb6848ba,0xbb4a80ba,0x83213082,0xff5556fe,
@@ -107,25 +107,25 @@ Let's make a prober image out of it and decode the QR code
     0x00402e36,0xff01b6a8,0x83657e3a,0xbb3b27fa,
     0xbb5eaeac,0xbb1017a0,0x8362672c,0xff02a650,
     0x00000000]
-    
+
     m2 = [ list(bin(m[i])[2:].zfill(33)) for i in range(0,len(m)) ]
-    
+
     # remove row and column 7 and 22 to fix our QR code
     m2.pop(7)
     m2.pop(21)
     for i in m2:
         i.pop(7)
         i.pop(21)
-    
+
     # create image
     for i in range(0,h):
         for j in range(0,w):
           if m2[i][j] == '1':
               pixels_out[i,j] = (0,0,0)
-    
+
     outimg = outimg.resize((256,256))
     outimg.save("matrix_out.png","png")
-    
+
     # decode QR code
     qr = qrtools.QR()
     qr.decode(filename="matrix_out.png")

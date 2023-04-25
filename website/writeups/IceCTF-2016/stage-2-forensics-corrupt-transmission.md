@@ -3,11 +3,13 @@ layout: writeup
 title: 'Corrupt Transmission'
 level: 2
 difficulty:
-points:
+points: 50
 categories: [forensics]
-tags: []
+tags: [image]
 flag: IceCTF{t1s_but_4_5cr4tch}
+
 ---
+
 ## Challenge
 
 We intercepted this image, but it must have gotten corrupted during the

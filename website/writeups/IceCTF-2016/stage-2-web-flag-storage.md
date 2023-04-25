@@ -3,7 +3,7 @@ layout: writeup
 title: 'Flag Storage'
 level: 2
 difficulty:
-points:
+points: 50
 categories: [web]
 tags: []
 flag: IceCTF{why_would_you_even_do_anything_client_side}

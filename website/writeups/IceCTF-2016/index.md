@@ -4,7 +4,6 @@ title: IceCTF 2016
 date: 2016-08-12
 
 difficulty: false
-points: false
 
 ---
 

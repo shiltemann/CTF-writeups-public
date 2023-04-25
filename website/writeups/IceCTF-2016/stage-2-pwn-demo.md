@@ -3,7 +3,7 @@ layout: writeup
 title: 'Demo'
 level: 2
 difficulty:
-points:
+points: 55
 categories: [pwn]
 tags: []
 flag: IceCTF{wH0_WoU1d_3vr_7Ru5t_4rgV}
@@ -16,11 +16,11 @@ can you help me crack it? `/home/demo/` on the shell
 ## Solution
 
 The [c source code](writeupfiles/demo.c) is provided alongside. It
-checks  
+checks
 the environment variable for `_` which is the name of the executable
-being  
+being
 run, takes the basename of that, and compares against "icesh", exiting
-if  
+if
 not equal, otherwise giving root permissions which allow access to
 `/home/demo/flag.txt`
 

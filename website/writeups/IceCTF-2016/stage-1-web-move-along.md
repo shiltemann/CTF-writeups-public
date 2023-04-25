@@ -1,12 +1,15 @@
 ---
 layout: writeup
+
 title: 'Move Along'
 level: 1
 difficulty:
-points:
+points: 30
 categories: [web]
 tags: []
+
 flag: IceCTF{tH3_c4t_15_Ou7_oF_THe_b49}
+
 ---
 ## Challenge
 

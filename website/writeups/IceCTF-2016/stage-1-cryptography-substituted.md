@@ -1,13 +1,17 @@
 ---
 layout: writeup
+
 title: 'Substituted'
 level: 1
-difficulty:
+difficulty: 30
 points:
 categories: [crypto]
 tags: []
+
 flag: IceCTF{always_listen_to_your_substitute_flags}
+
 ---
+
 ## Challenge
 
 We got a substitute flag, I hear they are pretty lax on the rules...

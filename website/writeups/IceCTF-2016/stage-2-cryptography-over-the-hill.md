@@ -3,7 +3,7 @@ layout: writeup
 title: 'Over The Hill'
 level: 2
 difficulty:
-points:
+points: 65
 categories: [crypto]
 tags: []
 flag: IceCTF{linear_algebra_plus_led_zeppelin_are_a_beautiful_m1xture}

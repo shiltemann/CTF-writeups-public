@@ -3,7 +3,7 @@ layout: writeup
 title: 'Rotated!'
 level: 1
 difficulty:
-points:
+points: 20
 categories: [crypto]
 tags: []
 flag: IceCTF{wait_one_plus_1_is_3?}

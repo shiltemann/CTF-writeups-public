@@ -3,7 +3,7 @@ layout: writeup
 title: 'Quine'
 level: 3
 difficulty:
-points:
+points: 90
 categories: [pwn]
 tags: []
 flag:

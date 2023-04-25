@@ -3,7 +3,7 @@ layout: writeup
 title: 'Exposed!'
 level: 2
 difficulty:
-points:
+points: 60
 categories: [web]
 tags: []
 flag: IceCTF{secure_y0ur_g1t_repos_pe0ple}
@@ -22,13 +22,13 @@ deploying with git, then the web directory was git.
     $ git clone http://exposed.vuln.icec.tf/
     Cloning into 'exposed.vuln.icec.tf'...
     fatal: repository 'http://exposed.vuln.icec.tf/' not found
-    
+
     $ git clone http://exposed.vuln.icec.tf/.git
     Cloning into 'exposed.vuln.icec.tf'...
     Checking connectivity... done.
-    
+
     # Success!
-    
+
     $ git log -p | grep IceCTF
     -IceCTF{this_isnt_the_flag_either}
     -                    echo 'IceCTF{not_this_flag}';

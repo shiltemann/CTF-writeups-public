@@ -4,7 +4,7 @@ layout: writeup
 title: 'Hidden in Plain Sight'
 level: 2
 difficulty:
-points:
+points: 45
 categories: [reversing]
 tags: []
 
