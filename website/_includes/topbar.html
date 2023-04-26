@@ -26,12 +26,18 @@
             {% endif %}
 
 
-          {% elsif page.layout == 'category' or page.layout == 'tag' %}
+          {% elsif page.layout == 'category-bak' or page.layout == 'tag-bak' %}
             <span>
               <a href="{{ item | relative_url }}">
                 {{ site.data.locales[include.lang].tabs[item] | default: page.title }}
               </a>
             </span>
+
+          {% elsif item == "tag" %}
+            <span><a href="/tags">Tags</a></span>
+
+          {% elsif item == "category" %}
+            <span><a href="/categories">Categories</a></span>
 
           {% elsif item != "writeups" %}
             {% assign s = forloop.index %}
