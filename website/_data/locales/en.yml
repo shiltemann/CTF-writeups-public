@@ -89,5 +89,5 @@ categories:
     singular: category
     plural: categories
   post_measure:
-    singular: post
-    plural: posts
+    singular: writeup
+    plural: writeups
