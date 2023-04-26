@@ -6,7 +6,7 @@ layout: page
 {% include lang.html %}
 
 {% assign cat = page.autopage.display_name %}
-{% assign writeups  = site.writeups | categorized: cat %}
+{% assign writeups  = site.writeups | categorized: cat | reverse %}
 
 <div id="page-category">
   <h1 class="pl-lg-2">
@@ -17,10 +17,17 @@ layout: page
 
   <ul class="post-content pl-0">
     {% for post in writeups %}
+      {% assign path = post.id | split: "/" %}
+      {% assign ctf = path[2] %}
       <li class="d-flex justify-content-between pl-md-3 pr-md-3">
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
         <span class="dash flex-grow-1"></span>
+        <span class="text-muted small">
+        {{ ctf | replace: "_", " "}}
+        </span>
+        {% comment %}
         {% include datetime.html date=post.date wrap='span' class='text-muted small' lang=lang %}
+        {% endcomment %}
       </li>
     {% endfor %}
   </ul>
