@@ -4,7 +4,7 @@ title: 'Posted!'
 level:
 difficulty:
 points: 250
-categories: [cryptography]
+categories: [crypto]
 tags: []
 flag:
 ---

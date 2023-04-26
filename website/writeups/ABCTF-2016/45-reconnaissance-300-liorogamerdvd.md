@@ -4,7 +4,7 @@ title: 'Liorogamerdvd'
 level:
 difficulty:
 points: 300
-categories: [reconnaissance]
+categories: [recon]
 tags: []
 flag:
 ---
@@ -12,17 +12,17 @@ flag:
 
 <None>
 
-**Solution**  
+**Solution**
 
-**Flag**  
+**Flag**
 ```
 flag
 ```
 
 ## Challenge 10: Title
-**Challenge**  
-**Solution**  
-**Flag**  
+**Challenge**
+**Solution**
+**Flag**
 ```
 flag
 ```

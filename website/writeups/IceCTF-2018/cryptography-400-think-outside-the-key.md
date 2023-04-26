@@ -4,7 +4,7 @@ title: 'Think outside the key'
 level:
 difficulty:
 points: 400
-categories: [cryptography]
+categories: [crypto]
 tags: []
 flag:
 ---

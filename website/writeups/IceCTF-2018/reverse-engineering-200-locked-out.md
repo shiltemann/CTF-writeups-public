@@ -4,11 +4,11 @@ title: 'Locked out'
 level:
 difficulty:
 points: 200
-categories: [reverse engineering]
+categories: [reversing]
 tags: []
 flag:
 ---
-**Challenge**  
+**Challenge**
 This is a fancy looking lock, I wonder what would happen if you broke it
 open?
 

@@ -4,7 +4,7 @@ title: 'garfeld'
 level:
 difficulty:
 points: 100
-categories: [cryptography]
+categories: [crypto]
 tags: []
 flag: IceCTF{I_DONT_THINK_GRONSFELD_LIKES_MONDAYS}
 ---

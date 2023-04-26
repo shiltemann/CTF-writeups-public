@@ -4,7 +4,7 @@ title: 'Passworded!'
 level:
 difficulty:
 points: 400
-categories: [reverse engineering]
+categories: [reversing]
 tags: []
 flag:
 ---

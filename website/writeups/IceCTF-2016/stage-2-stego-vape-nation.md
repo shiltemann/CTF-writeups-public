@@ -4,7 +4,7 @@ title: 'Vape Nation'
 level: 2
 difficulty:
 points: 50
-categories: [stego]
+categories: [stegano]
 tags: []
 flag: IceCTF{420_CuR35_c4NCEr}
 ---

@@ -4,11 +4,11 @@ title: 'Java Madness'
 level:
 difficulty:
 points: 50
-categories: [reverse engineering]
+categories: [reversing]
 tags: []
 flag: ABCTF{ftc tselooc eht si ftcba}
 ---
-**Challenge**  
+**Challenge**
 Hey if you can get this to pass some tests you could probably have the
 flag.
 
@@ -37,10 +37,10 @@ flag.
     }
 {: .language-java}
 
-**Solution**  
+**Solution**
 The associated java file used a couple loops to reverse the five
-arguments. The  
+arguments. The
 key was encoded in the file as "abctfs is the coolest ctf". After
-understanding  
+understanding
 what the loop did I `echo 'abctf is the coolest ctf' | rev` to get the
 key

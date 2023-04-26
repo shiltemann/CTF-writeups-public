@@ -5,7 +5,7 @@ title: Knäck låset
 level: 3         # optional, for events that use levels (like HackyEaster)
 difficulty: easy     # easy/medium/hard etc, if applicable
 points: 100        # if used
-categories: [mics]  # e.g. crypto, pwn, reversing
+categories: [misc]  # e.g. crypto, pwn, reversing
 tags: []        # anything notable about challenge/solution, vuln/tools/etc
 
 flag: he2022{807}

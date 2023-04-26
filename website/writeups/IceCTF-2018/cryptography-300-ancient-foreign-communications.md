@@ -4,11 +4,11 @@ title: 'Ancient Foreign Communications'
 level:
 difficulty:
 points: 300
-categories: [cryptography]
+categories: [crypto]
 tags: []
 flag: IceCTF{squeamish ossifrage}
 ---
-**Challenge**  
+**Challenge**
 We got word from a friend of ours lost in the depths of the Andorran
 jungles! Help us figure out what he is trying to tell us before its too
 late!
@@ -17,7 +17,7 @@ Note: The flag here is non-standard, in the result you should end up
 with some words! The flag is IceCTF\{<words, lowercase, including
 spaces>}
 
-**Solution**  
+**Solution**
 We're given a file with hex bytes, we can use `xxd` to covnert that into
 the appropriate characters/bytes:
 
@@ -29,7 +29,7 @@ Which is full of some fun symbols?
 
 combining pigpen cipher with T9 we translate this to:
 
-![](writeupfiles/pigpen.png)  
+![](writeupfiles/pigpen.png)
 ![](writeupfiles/T9.jpeg)
 
     ⨅ ]] ⌞⌞ ⌟ [ ⨆ ] ⌟ ]]] ⨆⨆⨆ ⌜ [[[ ⌝⌝⌝ ⌞ ⌝⌝⌝⌝ ⨆ ⌝⌝⌝ ⌞⌞ ⌝⌝⌝⌝ ⌟ ⌝⌝ ⨅⨅ ⌞⌞ ⨆ [ ]]] ⌝⌝⌝⌝ ]] ⌟ [[[ ⌝⌝⌝⌝ ⌟ ⌝⌝⌝⌝ ]]] ⌞⌞⌞ ⌝⌝⌝ ⨆ ] ⌞⌞

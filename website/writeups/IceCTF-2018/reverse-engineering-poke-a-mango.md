@@ -4,7 +4,7 @@ title: 'Poke-A-Mango'
 level:
 difficulty:
 points: 250
-categories: [reverse engineering]
+categories: [reversing]
 tags: []
 flag:
 ---

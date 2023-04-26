@@ -4,7 +4,7 @@ title: 'Yummi'
 level:
 difficulty:
 points: 60
-categories: [cryptography]
+categories: [crypto]
 tags: []
 flag:
 ---
@@ -15,22 +15,22 @@ you to figure it out!
 
 *Hint: Water -> Fish, Mud -> ???*
 
-**Solution**   
+**Solution**
 All pixels were either black or white, convert to bitstring
 
     from PIL import Image
-    
+
     img = Image.open('baconian.bmp').convert('RGB')
     pixels_orig = img.load()
-    
+
     (w,h)=img.size
-    
+
     s=[]
     for j in range(0,w):
-        for i in range(0,h):    
+        for i in range(0,h):
           (r,g,b) = pixels_orig[j,i]
           s.append(str(r&1))
-    
+
     print ''.join(s)
 {: .language-python}
 

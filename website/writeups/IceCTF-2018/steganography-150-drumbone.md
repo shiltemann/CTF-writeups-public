@@ -4,7 +4,7 @@ title: 'Drumbone'
 level:
 difficulty:
 points: 150
-categories: [steganography]
+categories: [stegano]
 tags: []
 flag: IceCTF{Elliot_has_been_mapping_bits_all_day}
 ---
@@ -25,21 +25,21 @@ of each of the RGB channels to black or white gives the following
 result:
 
     from PIL import Image
-    
+
     img = Image.open('drumbone.png')
     pixels = img.load()
-    
+
     (w,h) = img.size
     print(w,h)
-    
+
     outimg_r = Image.new('RGB', (w,h), "white")
     outimg_g = Image.new('RGB', (w,h), "white")
     outimg_b = Image.new('RGB', (w,h), "white")
-    
+
     pixels_r = outimg_r.load()
     pixels_g = outimg_g.load()
     pixels_b = outimg_b.load()
-    
+
     for i in range(0,w):
       for j in range(0,h):
         (r,g,b) = pixels[i,j]
@@ -49,7 +49,7 @@ result:
             pixels_g[i,j] = (0,0,0)
         if not b&1:
             pixels_b[i,j] = (0,0,0)
-    
+
     outimg_r.save("outimg_r.png")
     outimg_g.save("outimg_g.png")
     outimg_b.save("outimg_b.png")
@@ -57,8 +57,8 @@ result:
 
 This gives us the following images:
 
-![](writeupfiles/drumbone_r.png)  
-![](writeupfiles/drumbone_g.png)  
+![](writeupfiles/drumbone_r.png)
+![](writeupfiles/drumbone_g.png)
 ![](writeupfiles/drumbone_b.png)
 
 Bingpot! the blue channel seems to contain a QR code!
@@ -66,14 +66,14 @@ Bingpot! the blue channel seems to contain a QR code!
 We clean up the image a bit to get our flag:
 
     from PIL import Image
-    
+
     img = Image.open('drumbone.png')
     pixels = img.load()
-    
+
     (w,h) = img.size
     outimg_b = Image.new('RGB', (outw,outh), "white")
     pixels_b = outimg_b.load()
-    
+
     wout = -1
     hout = -1
     for i in range(1,w,6):
@@ -84,7 +84,7 @@ We clean up the image a bit to get our flag:
         (r,g,b) = pixels[i,j]
         if not b&1:
             pixels_b[wout,hout] = (0,0,0)
-    
+
     outimg_b = outimg_b.resize((10*outw,10*outh))
     outimg_b.save("outimg_b.png")
 {: .language-python}

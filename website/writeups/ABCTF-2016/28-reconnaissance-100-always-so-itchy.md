@@ -4,11 +4,11 @@ title: 'Always so Itchy'
 level:
 difficulty:
 points: 100
-categories: [reconnaissance]
+categories: [recon]
 tags: []
 flag: ABCTF{DoYouThinkISpentTooMuchTimeOnThis}
 ---
-**Challenge**   
+**Challenge**
 Dialga1234 - Johnny Boy
 
 ## Solution

@@ -4,11 +4,11 @@ title: 'JS Pls'
 level:
 difficulty:
 points: 80
-categories: [reverse engineering]
+categories: [reversing]
 tags: []
 flag: ABCTF{node_is_w4Ck}
 ---
-**Challenge**   
+**Challenge**
 Can you figure out the flag from [this](writeupfiles/jspls.js)? Have fun
 ;)
 
@@ -25,9 +25,9 @@ javascript](writeupfiles/jspls2.js)
     process.stdin.on('data', (t) = > {
       t = t.trim();
       if (t.length === + [[ + ! + []] + [! + [] + ! + [] + ! + [] + ! + [] + ! + [] + ! + [] + ! + [] + ! + [] + ! + []]]) {
-    
-    [..snip..]   
-    
+
+    [..snip..]
+
          ! + []] + (!![] + []) [ + ! + []]]) [ + ! + [] + [ + []]] + (!![] + []) [ + ! + []]]) [! + [] + ! + [] + [ + []]]](! + [] + ! + [] + [ + ! + []])) {
                     console.log('nice job!');
                     process.exit();
