@@ -6,7 +6,7 @@ layout: page
 {% include lang.html %}
 
 {% assign cat = page.autopage.display_name %}
-{% assign writeups  = site.writeups | categorized: cat | reverse %}
+{% assign writeups  = site.writeups | categorized: cat %}
 
 <div id="page-category">
   <h1 class="pl-lg-2">

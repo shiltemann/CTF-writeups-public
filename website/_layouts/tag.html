@@ -6,7 +6,7 @@ layout: page
 {% include lang.html %}
 {% assign tag = page.autopage.display_name %}
 
-{% assign writeups  = site.writeups | tagged: tag | reverse %}
+{% assign writeups  = site.writeups | tagged: tag  %}
 
 
 <div id="page-tag">
