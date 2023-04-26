@@ -56,7 +56,7 @@ this gives us a ciphertext of
 wqsaonmx xqv zphj zjb3f bnqvu tewz13s rzetz cpw soydi1 kiboyul2u ijgul3a gq cq31 gzby qy1 towz13uj2g ijgu13s gz1aj p3l tpimjf zqcqwzqyet tekzj3s uz1 sqmvueqy os zxwl3houpcoyqsoa
 ```
 
-Now we enter this in [dcode.fr substitution solver](https://www.dcode.fr/monoalphabetic-substitution). And the automatic analyzer gets us close, we fiddle a bit more with the mapping between plaintext and ciphertext, quickly realizing that differnt ciphertext letters map to the same plaintext letter, so we are dealing with a homophonic cipher.
+Now we enter this in [dcode.fr substitution solver](https://www.dcode.fr/monoalphabetic-substitution). And the automatic analyzer gets us sortof close, we recognize a possible subsentence "more than one", and then we fiddle a bit more with the mapping between plaintext and ciphertext, quickly realizing that different ciphertext letters map to the same plaintext letter, so we are dealing with a homophonic cipher.
 
 ![](writeupfiles/fruity-ss.png)
 
