@@ -252,3 +252,4 @@ public class SnakeService {
 {: file='writeupfiles/digitalsnakeart/com/hackyeaster/SnakeService.java'}
 
 
+So it looks like there is a secret codes stored in `env.getProperty("secret.code")`
