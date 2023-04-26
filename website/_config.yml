@@ -115,7 +115,7 @@ assets:
 pwa:
   enabled: true # the option for PWA feature
 
-paginate: 10
+#paginate: 10
 
 # ------------ The following options are not recommended to be modified ------------------
 
@@ -134,6 +134,8 @@ collections:
   tabs:
     output: true
     sort_by: order
+  writeups:
+    output: false
 
 defaults:
   - scope:
@@ -197,3 +199,18 @@ jekyll-archives:
     tag: /tags/:name/
     category: /categories/:name/
 
+plugins:
+  - jekyll-tagories
+  - jekyll-paginate-v2
+
+autopages:
+  enabled: true
+  tags:
+    layouts:
+      - 'tag.html'
+    title: 'Writeups tagged with :tag' # :tag is replaced by the tag name
+    permalink: '/tag/:tag'
+    silent: false
+    slugify:
+      mode: 'default'   # :tag is slugified.
+      case: true
