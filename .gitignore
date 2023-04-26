@@ -4,3 +4,4 @@
 .venv
 .venv2
 website/_site/
+website/Gemfile.lock
