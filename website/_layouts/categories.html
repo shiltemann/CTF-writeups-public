@@ -41,7 +41,7 @@ layout: page
         <span>
           <i class="far fa-folder{% if sub_categories_size > 0 %}-open{% endif %} fa-fw"></i>
 
-          {% capture _category_url %}/categories/{{ category_name | slugify | url_encode }}/{% endcapture %}
+          {% capture _category_url %}/category/{{ category_name | slugify | url_encode }}/{% endcapture %}
           <a href="{{ _category_url | relative_url }}" class="ml-1 mr-2">{{ category_name }}</a>
 
           <!-- content count -->
@@ -106,7 +106,7 @@ layout: page
               <li class="list-group-item">
                 <i class="far fa-folder fa-fw"></i>
 
-                {% capture _sub_ctg_url %}/categories/{{ sub_category | slugify | url_encode }}/{% endcapture %}
+                {% capture _sub_ctg_url %}/category/{{ sub_category | slugify | url_encode }}/{% endcapture %}
                 <a href="{{ _sub_ctg_url | relative_url }}" class="ml-1 mr-2">{{ sub_category }}</a>
 
                 {% assign posts_size = site.categories[sub_category] | size %}

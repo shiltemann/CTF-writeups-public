@@ -214,3 +214,12 @@ autopages:
     slugify:
       mode: 'default'   # :tag is slugified.
       case: true
+  categories:
+    layouts:
+      - 'category.html'
+    title: 'Writeups in :cat category' # :tag is replaced by the tag name
+    permalink: '/category/:cat'
+    silent: false
+    slugify:
+      mode: 'default'   # :category is slugified.
+      case: true

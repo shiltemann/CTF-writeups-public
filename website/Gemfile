@@ -2,6 +2,9 @@
 
 source "https://rubygems.org"
 
+gem "jekyll-tagories"
+gem "jekyll-paginate-v2"
+
 gemspec
 
 group :test do
