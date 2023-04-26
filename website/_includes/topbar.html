@@ -25,12 +25,18 @@
               <span>{{ page.title }}</span>
             {% endif %}
 
+
           {% elsif page.layout == 'category' or page.layout == 'tag' %}
             <span>
               <a href="{{ item | relative_url }}">
                 {{ site.data.locales[include.lang].tabs[item] | default: page.title }}
               </a>
             </span>
+
+          {% elsif item != "writeups" %}
+            {% assign s = forloop.index %}
+            {% capture url %}{% for p in paths %}{% if forloop.index <= s %}{{p}}/{% endif %}{% endfor %}{% endcapture %}
+            <span><a href="{{url | relative_url }}">{{ item | replace: "_", " "}}</a></span>
           {% endif %}
         {% endfor %}
       {% endif %}
