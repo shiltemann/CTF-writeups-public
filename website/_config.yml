@@ -208,7 +208,7 @@ autopages:
   tags:
     layouts:
       - 'tag.html'
-    title: 'Writeups tagged with :tag' # :tag is replaced by the tag name
+    title: 'Writeups tagged with <code>:tag</code>' # :tag is replaced by the tag name
     permalink: '/tag/:tag'
     silent: false
     slugify:
@@ -217,7 +217,7 @@ autopages:
   categories:
     layouts:
       - 'category.html'
-    title: 'Writeups in :cat category' # :tag is replaced by the tag name
+    title: 'Writeups in <code>:cat</code> category' # :tag is replaced by the tag name
     permalink: '/category/:cat'
     silent: false
     slugify:
