@@ -4,7 +4,7 @@ swcache: true
 ---
 
 [
-  {% for post in site.posts %}
+  {% for post in site.pages %}
   {
     "title": {{ post.title | jsonify }},
     "url": {{ post.url | relative_url | jsonify }},
