@@ -223,3 +223,12 @@ autopages:
     slugify:
       mode: 'default'   # :category is slugified.
       case: true
+
+# update to pagination-v2
+#pagination:
+#  enabled: true
+#  per_page: 5
+#  debug: true
+#  permalink: '/page:num/'
+#  collection: writeups
+#  layout: ctf-event

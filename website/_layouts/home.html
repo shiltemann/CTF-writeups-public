@@ -1,7 +1,5 @@
 ---
 layout: page
-pagination:
-  enabled: true
 ---
 
 {% assign pinned = site.posts | where: 'pin', 'true' %}
@@ -10,7 +8,6 @@ pagination:
 {% assign posts = '' | split: '' %}
 
 <!-- Get pinned posts -->
-
 {% assign offset = paginator.page | minus: 1 | times: paginator.per_page %}
 {% assign pinned_num = pinned.size | minus: offset %}
 
