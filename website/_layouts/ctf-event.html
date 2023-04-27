@@ -1,5 +1,7 @@
 ---
 layout: page
+panel_includes:
+  - toc
 ---
 
 <h1> {{ page.title }} </h1>
@@ -8,6 +10,9 @@ layout: page
 
 {% assign writeups = site.pages | where: "layout", "writeup" | where_exp: "item", "item.url contains page.url" %}
 
+<div class="post-content">
+
+<h1>Overview</h1>
 <!-- overview table -->
 <div class="table-wrapper">
 
@@ -60,3 +65,20 @@ layout: page
 
 <hr>
 {% endfor %}
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Hello World!");
+  tocbot.init({
+      tocSelector: '#toc',
+      contentSelector: '.post-content',
+      ignoreSelector: '[data-toc-skip]',
+      headingSelector: 'h1',
+      orderedList: false,
+      scrollSmooth: false,
+    });
+
+});
+</script>
