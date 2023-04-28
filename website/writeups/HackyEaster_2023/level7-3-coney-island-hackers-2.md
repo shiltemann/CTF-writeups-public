@@ -158,6 +158,6 @@ So we enter the following string in the password box, and get our flag!
 ![](writeupfiles/coney-success.png)
 
 
-Note: first we used `ß=''!1++[][1]+{};  // "falseundefined[object Object]"` as our string but ended up 1 character over the limit because we needed a 2-digit index once more often than in the real solution, grrr!
+Note: first we used `ß=''!1++[][1]+{};  // "falseundefined[object Object]"` (different order of the substrings), but ended up 1 character over the limit because we needed a 2-digit index once more often than in the real solution, grrr!
 
 
