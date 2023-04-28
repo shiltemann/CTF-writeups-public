@@ -4,7 +4,9 @@ swcache: true
 ---
 
 [
-  {% for post in site.pages %}
+  {% assign writeups = site.pages | where: "layout", "writeup" %}
+  {% assign search_space = site.posts | concat: writeups %}
+  {% for post in search_space %}
   {
     "title": {{ post.title | jsonify }},
     "url": {{ post.url | relative_url | jsonify }},
