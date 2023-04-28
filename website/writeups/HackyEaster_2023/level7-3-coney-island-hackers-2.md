@@ -20,8 +20,7 @@ They changed the passphrase of their secret web portal to: coneʸisland.
 
 However, they implemented some protection:
 
-    letters and some special characters are not allowed
-    maximum length of the string entered is 75
+`letters and some special characters are not allowed, maximum length of the string entered is 75`
 
 http://ch.hackyeaster.com:2302
 
@@ -39,10 +38,9 @@ We are given the password (coneʸisland), but can't just enter it due to filters
 
 ![](writeupfiles/coney-noletter.png)
 
-We are not allowed to use a bunch of characters,  no letters, `_`, `/`, `$`
+We are not allowed to use a bunch of characters, including letters, `_`, `/`, and `$`
 
-
-
+Let's look at the source
 
 ```html
 <html>
@@ -82,7 +80,7 @@ If we input `2+2`, we get the message `invalid expression`
 
 And the hint for this challenge was `eval`, so clearly our input is going into an eval call
 
-We could use [JSfuck](http://www.jsfuck.com/#), but this generates strings that are way longer than our limit of 75 characters
+We could use [JSfuck](http://www.jsfuck.com/#) to pass in our password without using letters, but this generates strings that are way longer than our limit of 75 characters
 
 ![](writeupfiles/coney-length.png)
 
@@ -109,7 +107,9 @@ In javascript, we can get some letters in other ways
 
 We cannot use the last expression because `/` is disallowed, but we don't need a proper y anyway.
 
-So we can get all letters in words `true, false, undefined, object` the list of letters we can get without using any letter characters are:
+So we can get all characters in the strings `true`, `false`, `undefined`, `[object Object]`
+
+So this is what we can get without using any letter characters are:
 
 ```
 a = (!1+'')[1]     // "false"[1]
@@ -139,21 +139,20 @@ x
 y = (1/0+'')[y]  // cannot use because / character disallowed
 ```
 
-That covers all the characters we need, but this would still be too many characters since it's about 10 characters per letter and we also need to concatenate them together with `+` symbols..
+That covers all the characters we need, but this would still be too many characters since it needs about 10 characters per letter and we also need to concatenate them together with `+` symbols..
 
 so let's create a variable containing all the letters we need once, then accessing them as we need. We cannot use ascii letters for variable name, so we use `ß`
 
-```
+```javascript
 ß=''+[][1]+!1+{};  // "undefinedfalse[object Object]"
 
+// coneʸisland
 ß[19]+ß[15]+ß[1]+ß[3]+'ʸ'+ß[5]+ß[12]+ß[11]+ß[10]+ß[1]+ß[2]
 ```
 
 So we enter the following string in the password box, and get our flag!
 
-```
-ß=''+[][1]+!1+{};ß[19]+ß[15]+ß[1]+ß[3]+'ʸ'+ß[5]+ß[12]+ß[11]+ß[10]+ß[1]+ß[2]
-```
+`ß=''+[][1]+!1+{};ß[19]+ß[15]+ß[1]+ß[3]+'ʸ'+ß[5]+ß[12]+ß[11]+ß[10]+ß[1]+ß[2]`
 
 ![](writeupfiles/coney-success.png)
 
