@@ -31,7 +31,7 @@
     <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
       <a href="{{ '/' | relative_url }}" class="nav-link">
         <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
-        <span>{{ site.data.locales[include.lang].tabs.home | upcase }}</span>
+        <span>{{ site.data.locales[include.lang].tabs.ctfs | upcase | default: "CTF EVENTS" }}</span>
       </a>
     </li>
     <!-- the real tabs -->
