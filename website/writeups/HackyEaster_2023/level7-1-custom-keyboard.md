@@ -71,10 +71,10 @@ so the theory is that the flag is something like:
  h  e  2  0  2  3  {     e                    h           h  e              }
 ```
 
-so what if this isn't ascii based encoding, but keyboard based, 2 and 3 are one apart on the keyboard too (if you llist them by row), let's see if we
-can get this to work
+so what if this isn't ascii based encoding, but keyboard based, 2 and 3 are one apart on the keyboard too (if you list them by row), let's see if we
+can get this to work for the rest of the keys/letters..
 
-We just make a list of codes, fill in what we we know/theorize to be the mapping, and find out that we can fill in the missing mappings based on how each row on a qwerty keyboard is laid out! codes seem to correspond with keys row by row from top to bottom, with each row from right to left:
+We just make a list of codes, fill in what we (think we) know to be the mapping, and find out that we can fill in the missing mappings based on how each row on a qwerty keyboard is laid out! codes seem to correspond with keys row by row from top to bottom, with each row listed rom right to left:
 
 ```
 00 BACKSPACE
@@ -120,7 +120,7 @@ We just make a list of codes, fill in what we we know/theorize to be the mapping
 28 CAPS
 29
 ..
-[ last row of keyboard, but not used in flag]
+[ bottom row of keyboard, but not used in flag so we don't write it out]
 ..
 
 ```
