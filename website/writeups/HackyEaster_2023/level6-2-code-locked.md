@@ -8,7 +8,7 @@ points: 200
 categories: [reversing, web]
 tags: []
 
-flag:
+flag: he2023{w3b4553m81y_15_FUN}
 
 ---
 
@@ -23,6 +23,49 @@ Note: The service is restarted every hour at x:00.
 We get a website with a number pad, where we are told to enter 8 numbers, then hit '#' to open
 
 ![](writeupfiles/code-locked-ss.png)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>code locked</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="main.css">
+    <script src="jquery.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div id="codelock">
+        <img id="lock" src="lock.png" class="center" usemap="#lockmap">
+        <map name="lockmap">
+            <area shape="circle" coords="111,178,32" alt="1" onclick="press('1')">
+            <area shape="circle" coords="200,178,32" alt="1" onclick="press('2')">
+            <area shape="circle" coords="283,178,32" alt="1" onclick="press('3')">
+            <area shape="circle" coords="111,261,32" alt="1" onclick="press('4')">
+            <area shape="circle" coords="200,261,32" alt="1" onclick="press('5')">
+            <area shape="circle" coords="283,261,32" alt="1" onclick="press('6')">
+            <area shape="circle" coords="111,345,32" alt="1" onclick="press('7')">
+            <area shape="circle" coords="200,345,32" alt="1" onclick="press('8')">
+            <area shape="circle" coords="283,345,32" alt="1" onclick="press('9')">
+            <area shape="circle" coords="111,427,32" alt="1" onclick="press('*')">
+            <area shape="circle" coords="200,427,32" alt="1" onclick="press('0')">
+            <area shape="circle" coords="283,427,32" alt="1" onclick="press('#')">
+        </map>
+        <img id="green" class="overlay" src="green.png">
+        <img id="yellow" class="overlay" src="yellow.png">
+        <img id="red" class="overlay" src="red.png">
+    </div>
+    <div id="text">
+        * to clear | 8 numbers | # open
+    </div>
+</body>
+
+</html>
+```
+
 
 We look through the javascript
 
@@ -383,3 +426,58 @@ MAS
 ```
 
 but it's not, yet.
+
+Ok, let's change gears, since we cannot reverse the wasm code. An 8 digit code is within bruteforcing range. But we don't want to bruteforce the server, so can we do it locally?
+
+We tried a bunch of ways to run the code locally, but what ended up being easiest was using Chrome. In Developer tools you can use local overrides ([instructions](https://www.debugbear.com/blog/devtools-local-overrides)), so we can adapt the `main.js` to bruteforce the code for us.
+
+```javascript
+
+[..]
+
+function bruteforce(){
+  for (let i = 10000000; i< 999999999; i++){  // let's hope the code doesnt start with 0 so we dont have to figure out leftpadding
+    if(i%10000000 == 0){
+      console.log("checking codes starting with "+i/10000000);
+    }
+    msg=checkWASM(i.toString());
+    if(msg.startsWith("he2023")) {
+      console.log(code+": "+msg);
+      return;
+    }
+  }
+}
+
+$(document).ready(function () {
+    (async () => {
+        const response = await fetch("check.wasm");
+        const file = await response.arrayBuffer();
+        const wasm = await WebAssembly.instantiate(file);
+        const {memory, check} = wasm.instance.exports;
+        wasmMemory = memory;
+        wasmCheck = check;
+
+        //bruteforce the code
+        console.log("bruteforcing");
+        bruteforce();
+    })();
+
+})
+
+```
+{:file main.js}
+
+and keep an eye on our console, and after about 10 seconds we get our flag!
+
+```
+main.js:99 bruteforcing
+main.js:32 searching..
+main.js:35 chacking codes starting with 0
+main.js:35 chacking codes starting with 1
+main.js:35 chacking codes starting with 2
+main.js:46 29660145: he2023{w3b4553m81y_15_FUN}
+```
+
+![](writeupfiles/codelocked-chrome.png)
+
+whoo!
