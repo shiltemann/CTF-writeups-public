@@ -46,10 +46,9 @@ objdump: can't disassemble for architecture UNKNOWN!
 
 ```
 
-So we find a useful Docker container containing binutils and gdb for various architectures ([here](https://hub.docker.com/r/blukat29/cross/)
+So we find a useful Docker container containing binutils and gdb for various architectures ([here](https://hub.docker.com/r/blukat29/cross/))
 
-and inside this we can run commands like objdump
-)
+and inside this docker we can run commands like objdump for our file, and find:
 
 ```bash
 $ avr-elf-objdump custom_keyboard.elf -dS --section=.data
