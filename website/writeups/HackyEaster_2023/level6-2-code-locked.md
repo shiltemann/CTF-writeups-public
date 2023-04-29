@@ -20,7 +20,90 @@ Note: The service is restarted every hour at x:00.
 
 ## Solution
 
-We look through the javascript and see that it's calling a WASM code file to parse the input number. So we can start by ignoring all of the JS and just focusing on the WASM bits:
+We get a website with a number pad, where we are told to enter 8 numbers, then hit '#' to open
+
+![](writeupfiles/code-locked-ss.png)
+
+We look through the javascript
+
+```javascript
+
+code = "";
+
+var audioDelete = new Audio("delete.mp3");
+audioDelete.load();
+var audioClick = new Audio("click.wav");
+audioClick.load();
+var audioSuccess = new Audio("success.mp3");
+audioSuccess.load();
+var audioFail = new Audio("fail.mp3");
+audioFail.load();
+
+wasmMemory = null;
+wasmCheck = null;
+
+function checkWASM(code) {
+    const pinArray = new Int32Array(wasmMemory.buffer, 0, 26);
+    encode(code, pinArray);
+    wasmCheck(pinArray.byteOffset, pinArray.length);
+    return decode(pinArray);
+}
+
+function play(file) {
+    a = new Audio(file);
+    a.play();
+}
+
+function press(input) {
+    if (input == "*") {
+        play("delete.mp3");
+        $("#yellow").show(0).delay(200).hide(0);
+        code = "";
+    } else if (input == "#") {
+        msg = checkWASM(code);
+        if (msg.startsWith("he2023")) {
+            play("success.mp3");
+            audioSuccess.play();
+            $("#green").show(0).delay(5000).hide(0);
+        } else {
+            play("fail.mp3");
+            $("#red").show(0).delay(1000).hide(0);
+        }
+        setTimeout(function() {alert(msg);}, 200)
+    } else {
+        $("#yellow").show(0).delay(200).hide(0);
+        play("click.wav");
+        code = (code + input).substr(-8, 8);
+    }
+}
+
+const encode = function stringToIntegerArray(string, array) {
+    for (let i = 0; i < string.length; i++) {
+        array[i] = string[i].charCodeAt(0);
+    }
+};
+
+const decode = function integerArrayToString(array) {
+    let string = "";
+    for (let i = 0; i < array.length; i++) {
+        string += String.fromCharCode(array[i]);
+    }
+    return string;
+};
+
+$(document).ready(function () {
+    (async () => {
+        const response = await fetch("check.wasm");
+        const file = await response.arrayBuffer();
+        const wasm = await WebAssembly.instantiate(file);
+        const {memory, check} = wasm.instance.exports;
+        wasmMemory = memory;
+        wasmCheck = check;
+    })();
+})
+```
+
+and see that it's calling a WASM code file to parse the input number. So we can start by ignoring all of the JS and just focusing on the WASM bits:
 
 ```console
 wasm2js check.wasm
@@ -119,7 +202,7 @@ function asmFunc(env) {
   }
   return;
  }
- 
+
  function $2($0) {
   $0 = $0 | 0;
   var $3_1 = 0;
@@ -138,7 +221,7 @@ function asmFunc(env) {
   }
   return;
  }
- 
+
  function $3($0) {
   $0 = $0 | 0;
   var $3_1 = 0;
@@ -202,16 +285,16 @@ function asmFunc(env) {
   global$0 = $3_1 + 16 | 0;
   return;
  }
- 
+
  function $4() {
   return global$0 | 0;
  }
- 
+
  function $5($0) {
   $0 = $0 | 0;
   global$0 = $0;
  }
- 
+
  function $6($0) {
   $0 = $0 | 0;
   var $1_1 = 0;
@@ -219,56 +302,56 @@ function asmFunc(env) {
   global$0 = $1_1;
   return $1_1 | 0;
  }
- 
+
  function $7() {
   global$2 = 5244240;
   global$1 = (1356 + 15 | 0) & -16 | 0;
  }
- 
+
  function $8() {
   return global$0 - global$1 | 0 | 0;
  }
- 
+
  function $9() {
   return global$2 | 0;
  }
- 
+
  function $10() {
   return global$1 | 0;
  }
- 
+
  function $11() {
   return 1352 | 0;
  }
- 
+
  bufferView = HEAPU8;
  initActiveSegments(env);
  var FUNCTION_TABLE = Table([]);
  function __wasm_memory_size() {
   return buffer.byteLength / 65536 | 0;
  }
- 
+
  return {
   "memory": Object.create(Object.prototype, {
    "grow": {
-    
-   }, 
+
+   },
    "buffer": {
     "get": function () {
      return buffer;
     }
-    
+
    }
-  }), 
-  "check": $3, 
-  "__indirect_function_table": FUNCTION_TABLE, 
-  "__errno_location": $11, 
-  "emscripten_stack_init": $7, 
-  "emscripten_stack_get_free": $8, 
-  "emscripten_stack_get_base": $9, 
-  "emscripten_stack_get_end": $10, 
-  "stackSave": $4, 
-  "stackRestore": $5, 
+  }),
+  "check": $3,
+  "__indirect_function_table": FUNCTION_TABLE,
+  "__errno_location": $11,
+  "emscripten_stack_init": $7,
+  "emscripten_stack_get_free": $8,
+  "emscripten_stack_get_base": $9,
+  "emscripten_stack_get_end": $10,
+  "stackSave": $4,
+  "stackRestore": $5,
   "stackAlloc": $6
  };
 }
