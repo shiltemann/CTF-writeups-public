@@ -429,7 +429,7 @@ but it's not, yet.
 
 Ok, let's change gears, since we cannot reverse the wasm code. An 8 digit code is within bruteforcing range. But we don't want to bruteforce the server, so can we do it locally?
 
-We tried a bunch of ways to run the code locally, but what ended up being easiest was using Chrome. In Developer tools you can use local overrides ([instructions](https://www.debugbear.com/blog/devtools-local-overrides)), so we can adapt the `main.js` to bruteforce the code for us.
+We tried a bunch of ways to execute the wasm binary locally, but what ended up being easiest was using Chrome. In Developer tools you can use local overrides ([instructions](https://www.debugbear.com/blog/devtools-local-overrides)), so we can adapt the `main.js` to bruteforce the code for us.
 
 ```javascript
 
