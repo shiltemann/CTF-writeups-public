@@ -75,10 +75,10 @@ so the theory is that the flag is something like:
 so what if this isn't ascii based encoding, but keyboard based, 2 and 3 are one apart on the keyboard too (if you llist them by row), let's see if we
 can get this to work
 
-We just make a list of codes, fill in what we we know/theorize to be the mapping, and find out that we can fill in the missing mappings based on how each row on a qwerty keyboard is laid out!
+We just make a list of codes, fill in what we we know/theorize to be the mapping, and find out that we can fill in the missing mappings based on how each row on a qwerty keyboard is laid out! codes seem to correspond with keys row by row from top to bottom, with each row from right to left:
 
 ```
-
+00 BACKSPACE
 01 +
 02 _
 03 0 // known
@@ -91,34 +91,38 @@ We just make a list of codes, fill in what we we know/theorize to be the mapping
 0a 3 // known
 0b 2 // known
 0c 1
-0d
-0e
+0d `
+0e ENTER (?)
 0f {  // known
-10 }  // knowd
+10 }  // known
 11 p
 12 o
-13 i  *
+13 i  // used
 14 u
-15 y
-16 t  *
+15 y  // used
+16 t  // used
 17 r
 18 e  // known
-19 w  *
+19 w  // used
 1a q
-1b
-1c
-1d
-1e
-1f l
+1b TAB
+1c |
+1d "
+1e ;
+1f l // used
 20 k
 21 j
 22 h // known
-23 g
+23 g // used
 24 f
-25 d
-26 s
-27 a
-28
+25 d // used
+26 s // used
+27 a // used
+28 CAPS
+29
+..
+[ last row of keyboard, but not used in flag]
+..
 
 ```
 
