@@ -6,7 +6,7 @@ level: 7    # optional, for events that use levels (like HackyEaster)
 difficulty: medium     # easy/medium/hard etc, if applicable
 points: 200        # if used
 categories: [web]  # e.g. crypto, pwn, reversing
-tags: []        # anything notable about challenge/solution, vuln/tools/etc
+tags: [javascript]        # anything notable about challenge/solution, vuln/tools/etc
 
 flag: he2023{fun_w1th_ev1l_ev4l_1n_nyc}
 

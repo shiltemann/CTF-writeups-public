@@ -6,7 +6,7 @@ level: 7         # optional, for events that use levels (like HackyEaster)
 difficulty: medium     # easy/medium/hard etc, if applicable
 points: 200        # if used
 categories: [crypto]  # e.g. crypto, pwn, reversing
-tags: []        # anything notable about challenge/solution, vuln/tools/etc
+tags: [substitution cipher]        # anything notable about challenge/solution, vuln/tools/etc
 
 flag: he2023{hypervitaminosis}
 
