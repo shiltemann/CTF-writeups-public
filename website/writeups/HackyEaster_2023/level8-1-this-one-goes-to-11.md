@@ -27,4 +27,8 @@ Connect to the server.
 
 ## Solution
 
+this is found in the strings, and, unsurprisingly, is not it.
 
+```
+HE23{H3ll_a1nt_a_b@d_pl@c3!h377_i$_fr0m_h343_t0_3t3erni7y}
+```
