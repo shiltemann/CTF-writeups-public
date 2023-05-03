@@ -32,3 +32,5 @@ this is found in the strings, and, unsurprisingly, is not it.
 ```
 HE23{H3ll_a1nt_a_b@d_pl@c3!h377_i$_fr0m_h343_t0_3t3erni7y}
 ```
+
+But maybe the online version of the program has the real flag there, we just need to figure out how to make the program give it to us?
