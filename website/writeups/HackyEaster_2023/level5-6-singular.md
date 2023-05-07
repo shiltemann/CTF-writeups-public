@@ -147,7 +147,8 @@ Total words: 10
 ```
 he2023{worker_sister_everybody_next} # Had two unique words
 he2023{become_attorney_media_become} # Also not, had two extremely non-unique words.
-he2023{memory_service_Mr_activity}
+he2023{memory_service_Mr_activity}   # Nope
+he2023{my_PM_whole_part}             # no re-used letters from left to right.
 ```
 
 ## Misc
