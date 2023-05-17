@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy Website
 
 on:
   push
@@ -22,3 +22,4 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         jekyll_src: 'website'
         target_branch: 'gh-pages'
+        target_path: /
