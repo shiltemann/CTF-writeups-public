@@ -1,7 +1,9 @@
 name: Deploy Website
 
 on:
-  push
+  push:
+    branches:
+      - main
 
 jobs:
   jekyll:
