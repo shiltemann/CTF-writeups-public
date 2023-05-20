@@ -30,11 +30,11 @@
     <ul class="post-content pl-0 pb-1 ml-1 mt-2">
       {% for item in update_list %}
         {% assign index = item | split: '::' | last | plus: 0 %}
-        {% assign post = site.pages[index] %}
+        {% assign post = writeups[index] %}
         {% assign url = post.url | relative_url %}
         {% assign event = post.url | replace: '/writeups/', '' | split: '/' | first %}
         <li>
-          <a href="{{ url }}">{{ post.title }} - <span class="text-muted">({{event}})</span></a>
+          <a href="{{ url }}">{{ post.title }} - ({{event}})</a>
         </li>
       {% endfor %}
     </ul>
