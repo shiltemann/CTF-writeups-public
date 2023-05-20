@@ -1,12 +1,12 @@
 ---
 layout: writeup
-title: 'General Skills 900: Dog or Frog'
-level: 
-difficulty: 
-points: 
-categories: []
+title: 'Dog or Frog'
+level:
+difficulty:
+points: 900
+categories: [general]
 tags: []
-flag: 
+flag:
 ---
 ## Challenge
 

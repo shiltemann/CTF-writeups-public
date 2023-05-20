@@ -1,20 +1,21 @@
 ---
 layout: writeup
 title: 'Cryptography 700: James Brahm Returns'
-level: 
-difficulty: 
-points: 
-categories: []
+level:
+difficulty:
+points: 700
+categories: [crypto]
 tags: []
-flag: 
+flag:
 ---
-**Challenge**  
+
+## Challenge
 Dr. Xernon has finally approved an update to James Brahm's spy terminal.
 (Someone finally told them that ECB isn't secure.) Fortunately, CBC mode
 is safe! Right? Connect with nc 2018shell1.picoctf.com 15596.
 [Source.](writeupfiles/james-brahm-returns.py)
 
-**Hints**  
+**Hints**
 What killed SSL3?
 
 ## Solution
