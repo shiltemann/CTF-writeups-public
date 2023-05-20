@@ -1,0 +1,2139 @@
+<!doctype html><html lang="en" data-mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover" ><meta name="generator" content="Jekyll v4.3.2" /><meta property="og:title" content="Hackvent 2017" /><meta property="og:locale" content="en" /><meta name="description" content="A set of CTF writeups by team Galaxians." /><meta property="og:description" content="A set of CTF writeups by team Galaxians." /><link rel="canonical" href="https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2017/" /><meta property="og:url" content="https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2017/" /><meta property="og:site_name" content="Galaxians CTF" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2017-12-01T00:00:00+01:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Hackvent 2017" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-20T16:20:16+02:00","datePublished":"2017-12-01T00:00:00+01:00","description":"A set of CTF writeups by team Galaxians.","headline":"Hackvent 2017","mainEntityOfPage":{"@type":"WebPage","@id":"https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2017/"},"url":"https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2017/"}</script><title> Galaxians CTF | Hackvent 2017</title><link rel="apple-touch-icon" sizes="180x180" href="/CTF-writeups-public/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/CTF-writeups-public/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/CTF-writeups-public/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/CTF-writeups-public/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/CTF-writeups-public/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Galaxians CTF"><meta name="application-name" content="Galaxians CTF"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/CTF-writeups-public/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css"><link rel="stylesheet" href="/CTF-writeups-public/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script><body data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/CTF-writeups-public/" class="mx-auto"> <img src="/CTF-writeups-public/assets/img/galaxians-logo.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title"> <a href="/CTF-writeups-public/">Galaxians CTF</a></div><div class="site-subtitle font-italic">Galactic Girlfiends Hack the Universe!</div></div><ul class="w-100"><li class="nav-item"> <a href="/CTF-writeups-public/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>CTF EVENTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/posts/" class="nav-link"> <i class="fa-fw fas fa-pencil ml-xl-3 mr-xl-3 unloaded"></i> <span>POSTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <a href="https://github.com/shiltemann" aria-label="github" target="_blank" rel="noopener noreferrer" > <i class="fab fa-github"></i> </a> <a href="https://twitter.com/" aria-label="twitter" target="_blank" rel="noopener noreferrer" > <i class="fab fa-twitter"></i> </a> <a href="javascript:location.href = 'mailto:' + ['galaxians','galaxians.org'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/CTF-writeups-public/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/CTF-writeups-public/"> Home </a> </span> <span>Hackvent 2017</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Ctf-event</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..." > </span> <span id="search-cancel">Cancel</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1> Hackvent 2017</h1><div class="post-content"><h1>Overview</h1><div class="table-wrapper"><div class="table-wrapper"><table><thead><tr><th>Challenge<th>Difficulty<th>Category<th>Flag<tbody><tr><td><a href="#hidden-ball-1">Hidden ball 1:</a><td><td><td><code>HV17-4llw-aysL-00ki-nTh3-H34d</code><tr><td><a href="#hidden-ball-2">Hidden ball 2:</a><td><td><td> unsolved<tr><td><a href="#hidden-ball-3">Hidden ball 3:</a><td><td><td><code>HV17-bz7q-zrfD-XnGz-fQos-wr2A</code><tr><td><a href="#hidden-ball-4">Hidden ball 4:</a><td><td><td><code>HE17-W3ll-T00E-arly-forT-his!</code><tr><td><a href="#hidden-ball-5">Hidden ball 5:</a><td><td><td><code>HV17-UH4X-PPLE-ANND-IH4X-T1ME</code><tr><td><a href="#dec-1-5th-anniversary">Dec 1: 5th Anniversary</a><td><td><td><code>HV17-5YRS-4evr-IJHy-oXP1-c6Lw</code><tr><td><a href="#dec-2-wishlist">Dec 2: Wishlist</a><td><td><td><code>HV17-Th3F-1fth-Pow3-r0f2-is32</code><tr><td><a href="#dec-3-strange-logcat-entry">Dec 3: Strange Logcat Entry</a><td><td><td><code>HV17-th1s-isol-dsch-00lm-agic</code><tr><td><a href="#dec-4-hohoho">Dec 4: HoHoHo</a><td><td><td><code>HV17-RP7W-DU6t-Z3qA-jwBz-jItj</code><tr><td><a href="#dec-5-only-one-hint">Dec 5: Only One Hint</a><td><td><td><code>HV17-7pKs-whyz-o6wF-h4rp-Qlt6</code><tr><td><a href="#dec-6-santa-s-journey">Dec 6: Santa’s Journey</a><td><td><td><code>HV17-eCFw-J4xX-buy3-8pzG-kd3M</code><tr><td><a href="#dec-7-i-know">Dec 7: I know …</a><td><td><td><code>HV17-UCyz-0yEU-d90O-vSqS-Sd64</code><tr><td><a href="#dec-8-true-1337s">Dec 8: True 1337s</a><td><td><td><code>HV17-th1s-ju5t-l1k3-j5sf-uck!</code><tr><td><a href="#dec-9-jsonion">Dec 9: JSONion</a><td><td><td><code>HV17-Ip11-9CaB-JvCf-d5Nq-ffyi</code><tr><td><a href="#dec-10-just-play-the-game">Dec 10: Just play the game</a><td><td><td><code>HV17-y0ue-kn0w-7h4t-g4me-sure</code><tr><td><a href="#dec-11-crypt-o-math-2-0">Dec 11: Crypt-o-Math 2.0</a><td><td><td><code>HV17-XtDw-0DzO-YRgB-2b2e-UWNz</code><tr><td><a href="#dec-12-giftlogistics">Dec 12: giftlogistics</a><td><td><td><code>HV17-eUOF-mPJY-ruga-fUFq-EhOx</code><tr><td><a href="#dec-13-muffin-asm">Dec 13: muffin_asm</a><td><td><td><code>HV17-mUff!n-4sm-!s-cr4zY</code><tr><td><a href="#dec-14-happy-cryptmas">Dec 14: Happy Cryptmas</a><td><td><td><code>HV17-5BMu-mgD0-G7Su-EYsp-Mg0b</code><tr><td><a href="#dec-15-unsafe-gallery">Dec 15: Unsafe Gallery</a><td><td><td><code>HV17-el2S-0Td5-XcFi-6Wjg-J5aB</code><tr><td><a href="#dec-16-try-to-escape">Dec 16: Try to escape …</a><td><td><td> unsolved<tr><td><a href="#dec-17-title">Dec 17: Title</a><td><td><td> unsolved<tr><td><a href="#dec-18-title">Dec 18: Title</a><td><td><td> unsolved<tr><td><a href="#dec-19-title">Dec 19: Title</a><td><td><td> unsolved<tr><td><a href="#dec-20-title">Dec 20: Title</a><td><td><td> unsolved<tr><td><a href="#dec-21-title">Dec 21: Title</a><td><td><td> unsolved<tr><td><a href="#dec-22-title">Dec 22: Title</a><td><td><td> unsolved<tr><td><a href="#dec-23-title">Dec 23: Title</a><td><td><td> unsolved<tr><td><a href="#dec-24-title">Dec 24: Title</a><td><td><td> unsolved</table></div></div><h1 id="hidden-ball-1"> Hidden ball 1: <a href="/CTF-writeups-public/writeups/Hackvent_2017/00-hidden-ball-1.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Challenges are accessed by url like <code class="language-plaintext highlighter-rouge">https://hackvent.hacking-lab.com/challenge.php?day=2</code></p><p>Let’s see what happens when we try to skip ahead to Christmas <code class="language-plaintext highlighter-rouge">?day=25</code></p><p>We get:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>The resource (#1959) you are trying to access, is not (yet) for your eyes.
+</pre></table></code></div></div><p>ok, weird, what about <code class="language-plaintext highlighter-rouge">?day=26</code></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>The resource (#1958) you are trying to access, is not (yet) for your eyes.
+</pre></table></code></div></div><p>day and resource number seem to add up to 1984 every time, so let’s see what happens when we fill in <code class="language-plaintext highlighter-rouge">?day=1984</code></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>The resource you are trying to access, is hidden in the header.
+</pre></table></code></div></div><p>whoo! let’s check the headers:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre>HTTP/1.1 200 OK
+Date: Sat, 02 Dec 2017 21:14:21 GMT
+Server: Merry Christmas &amp; Hacky New Year
+Strict-Transport-Security: max-age=15768000
+Flag: HV17-4llw-aysL-00ki-nTh3-H34d
+Keep-Alive: timeout=5, max=99
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+</pre></table></code></div></div><p>There is our flag!</p><h2> Flag</h2><code> HV17-4llw-aysL-00ki-nTh3-H34d </code><hr><h1 id="hidden-ball-2"> Hidden ball 2: <a href="/CTF-writeups-public/writeups/Hackvent_2017/01-hidden-ball-2.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h2> Flag</h2><code> unsolved </code><hr><h1 id="hidden-ball-3"> Hidden ball 3: <a href="/CTF-writeups-public/writeups/Hackvent_2017/02-hidden-ball-3.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>we check <code class="language-plaintext highlighter-rouge">robots.txt</code> and see the following message: <code class="language-plaintext highlighter-rouge">We are people, not machines</code></p><p>so then we check <code class="language-plaintext highlighter-rouge">people.txt</code>: <code class="language-plaintext highlighter-rouge">What's about akronyms?</code></p><p>so then we check <code class="language-plaintext highlighter-rouge">humans.txt</code> and see:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre>All credits go to the following incredibly awesome HUMANS (in alphabetic order):
+avarx
+DanMcFly
+HaRdLoCk
+inik
+Lukasz
+M.
+Morpheuz
+MuffinX
+PS
+pyth0n33
+
+HV17-bz7q-zrfD-XnGz-fQos-wr2A
+</pre></table></code></div></div><p>whoo, theres a flag!</p><h2> Flag</h2><code> HV17-bz7q-zrfD-XnGz-fQos-wr2A </code><hr><h1 id="hidden-ball-4"> Hidden ball 4: <a href="/CTF-writeups-public/writeups/Hackvent_2017/03-hidden-ball-4.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>This one was hiding in the css folder <code class="language-plaintext highlighter-rouge">/css/egg.png</code>, it’s an egg from Hacky Easter!</p><p><img src="writeupfiles/egg.png" alt="" /></p><h2> Flag</h2><code> HE17-W3ll-T00E-arly-forT-his! </code><hr><h1 id="hidden-ball-5"> Hidden ball 5: <a href="/CTF-writeups-public/writeups/Hackvent_2017/04-hidden-ball-5.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>we scan the challenge server for open ports</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="nv">$ </span>nmap challenges.hackvent.hacking-lab.com
+
+Starting Nmap 7.01 <span class="o">(</span> https://nmap.org <span class="o">)</span> at 2017-12-06 22:59 CET
+Nmap scan report <span class="k">for </span>challenges.hackvent.hacking-lab.com <span class="o">(</span>80.74.140.188<span class="o">)</span>
+Host is up <span class="o">(</span>0.56s latency<span class="o">)</span><span class="nb">.</span>
+rDNS record <span class="k">for </span>80.74.140.188: urb80-74-140-188.ch-meta.net
+Not shown: 996 filtered ports
+PORT    STATE  SERVICE
+22/tcp  open   ssh
+23/tcp  open   telnet
+80/tcp  closed http
+443/tcp closed https
+
+Nmap <span class="k">done</span>: 1 IP address <span class="o">(</span>1 host up<span class="o">)</span> scanned <span class="k">in </span>67.94 seconds
+</pre></table></code></div></div><p>so, there’s a telnet service running, we connect, and are greeted by Santa:</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre><td class="rouge-code"><pre><span class="nv">$ </span>telnet challenges.hackvent.hacking-lab.com
+
+__.----.
+              _.<span class="s1">'        '</span>-.
+             /    _____     <span class="s1">'-.
+            /_.-""     ""-._   \                 HO, HO, HO...
+           ."   _......._   ".  \
+           ; .-'</span> _ <span class="o">)))</span> _ <span class="s1">'-. ;   |
+           '</span>/  .<span class="s2">" _   _ "</span><span class="nb">.</span>  <span class="se">\'</span><span class="nb">.</span>  /
+           _|  .-.^ <span class="o">)</span> ^.-.  |_ <span class="se">\/</span>-.
+           <span class="se">\ </span><span class="s1">'"==-.(_).-=="'</span> //    <span class="se">\</span>
+            <span class="s1">'.____.-^-.____.'</span> <span class="se">\ </span>   /
+             |    <span class="o">(</span> - <span class="o">)</span>   |   <span class="s1">'--'</span>
+              <span class="se">\ </span>          /
+      _________<span class="se">\_</span>________/_______________________________________________
+</pre></table></code></div></div><p>He keeps talking for a minute, and then gives us the flag</p><h2> Flag</h2><code> HV17-UH4X-PPLE-ANND-IH4X-T1ME </code><hr><h1 id="dec-1-5th-anniversary"> Dec 1: 5th Anniversary <a href="/CTF-writeups-public/writeups/Hackvent_2017/05-dec-1-5th-anniversary.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p><em>time to have a look back</em></p><p><img src="writeupfiles/HV17-hv16-hv15-hv14.svg" alt="" /></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Looks like we need the solutions from previous years, good thing I kept writeups</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>2014: HV14-BAAJ-6ZtK-IJHy-bABB-YoMw
+2015: HV15-Tz9K-4JIJ-EowK-oXP1-NUYL
+2016: HV16-t8Kd-38aY-QxL5-bn4K-c6Lw
+</pre></table></code></div></div><p>Putting the fragments together gives our nugget</p><h2> Flag</h2><code> HV17-5YRS-4evr-IJHy-oXP1-c6Lw </code><hr><h1 id="dec-2-wishlist"> Dec 2: Wishlist <a href="/CTF-writeups-public/writeups/Hackvent_2017/06-dec-2-wishlist.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p><em>The fifth power of two</em></p><p>Something happened to my wishlist, please help me.</p><p><a href="writeupfiles/Wishlist.txt">Get the Wishlist</a></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>This is clearly base-64 encoded, we decode, and still looks base64 encoded. Taking the hint into account, we decode 32 times:</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">cat </span>Wishlist.txt | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> |
+<span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span>  | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> |
+<span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> |
+<span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> |
+<span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span> | <span class="nb">base64</span> <span class="nt">-d</span>
+
+HV17-Th3F-1fth-Pow3-r0f2-is32%
+</pre></table></code></div></div><h2> Flag</h2><code> HV17-Th3F-1fth-Pow3-r0f2-is32 </code><hr><h1 id="dec-3-strange-logcat-entry"> Dec 3: Strange Logcat Entry <a href="/CTF-writeups-public/writeups/Hackvent_2017/07-dec-3-strange-logcat-entry.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p><em>Lost in messages</em></p><p>I found those strange entries in my Android logcat, but I don’t know what it’s all about… I just want to read my messages!</p><p><a href="writeupfiles/logcat.txt">Get the logcat</a></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>This is a long logcat file, but we notice that only two lines have raw tabs, suggesting they were manually added for the challenge:</p><p><img src="writeupfiles/logcat1.jpg" alt="" /></p><p><img src="writeupfiles/logcat2.jpg" alt="" /></p><p>which are the following lines:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>11-13 20:40:13.542	 137   137 I DEBUG	 : 			FAILED TO SEND RAW PDU MESSAGE
+
+[..]
+
+11-13 20:40:24.044	137	  137  DEBUG: I 07914400000000F001000B913173317331F300003AC7F79B0C52BEC52190F37D07D1C3EB32888E2E838CECF05907425A63B7161D1D9BB7D2F337BB459E8FD12D188CDD6E85CFE931
+</pre></table></code></div></div><p>This seems to be a raw SMS format, which we can decoded here:</p><p>https://www.diafaan.com/sms-tutorials/gsm-modem-tutorial/online-sms-pdu-decoder/</p><p>or using a python script:</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre><span class="nv">$ </span>pip <span class="nb">install </span>python-gsmmodem
+</pre></table></code></div></div><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">gsmmodem</span>
+<span class="kn">import</span> <span class="n">json</span>
+
+<span class="n">PDU</span><span class="o">=</span><span class="sh">'</span><span class="s">07914400000000F001000B913173317331F300003AC7F79B0C52BEC52190F37D07D1C3EB32888E2E838CECF05907425A63B7161D1D9BB7D2F337BB459E8FD12D188CDD6E85CFE931</span><span class="sh">'</span>
+
+<span class="n">decoded</span> <span class="o">=</span> <span class="n">gsmmodem</span><span class="p">.</span><span class="n">pdu</span><span class="p">.</span><span class="nf">decodeSmsPdu</span><span class="p">(</span><span class="n">PDU</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">json</span><span class="p">.</span><span class="nf">dumps</span><span class="p">(</span><span class="n">decoded</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre>{
+    "reference": 0,
+    "protocol_id": 0,
+    "text": "Good Job! Now take the Flag: HV17-th1s-isol-dsch-00lm-agic",
+    "smsc": "+44000000000",
+    "number": "+13371337133",
+    "type": "SMS-SUBMIT",
+    "tpdu_length": 64
+}
+</pre></table></code></div></div><p>So the flag is in the SMS!</p><h2> Flag</h2><code> HV17-th1s-isol-dsch-00lm-agic </code><hr><h1 id="dec-4-hohoho"> Dec 4: HoHoHo <a href="/CTF-writeups-public/writeups/Hackvent_2017/08-dec-4-hohoho.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><p><em>hint</em></p><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Santa has hidden something for you <a href="writeupfiles/HoHoHo_medium.pdf">here</a></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>It’s a pdf file, opening in okular popped up that ther was an embedded font file, named <a href="DroidSans-HACKvent.sfd">DroidSans-HACKvent.sfd</a> ..with hackvent in the name, that’s got to be hiding our flag!</p><p>We used <a href="https://fontforge.github.io/overview.html">fontforge</a> to extract the font from the pdf file and view it:</p><p><img src="writeupfiles/dec4-fontforge-before.png" alt="" /></p><p>hmm, we don’t see any characters in the boxes, so we select <code class="language-plaintext highlighter-rouge">view-&gt;fit to bounding box</code>:</p><p><img src="writeupfiles/dec4-fontforge.png" alt="" /></p><p>And there is our flag! ..looks like the characters were just tiny and being selectively enlarged in the pdf to create the visible text.</p><h2> Flag</h2><code> HV17-RP7W-DU6t-Z3qA-jwBz-jItj </code><hr><h1 id="dec-5-only-one-hint"> Dec 5: Only One Hint <a href="/CTF-writeups-public/writeups/Hackvent_2017/09-dec-5-only-one-hint.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Here is your flag:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre>0x69355f71
+0xc2c8c11c
+0xdf45873c
+0x9d26aaff
+0xb1b827f4
+0x97d1acf4
+</pre></table></code></div></div><p>and the one and only hint:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>0xFE8F9017 XOR 0x13371337
+</pre></table></code></div></div><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p><code class="language-plaintext highlighter-rouge">0xFE8F9017 XOR 0x13371337</code> is <code class="language-plaintext highlighter-rouge">0xedb88320</code> which is a polynomial involved in CRC32, and indeed</p><p><code class="language-plaintext highlighter-rouge">crc32('HV17')</code> is <code class="language-plaintext highlighter-rouge">0x69355f71</code></p><p>Let’s try to bruteforce the other parts:</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">binascii</span>
+<span class="kn">import</span> <span class="n">itertools</span>
+<span class="kn">import</span> <span class="n">string</span>
+
+<span class="n">alphabet</span><span class="o">=</span><span class="n">string</span><span class="p">.</span><span class="n">printable</span>
+
+<span class="n">ct</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x69355f71</span><span class="p">,</span> <span class="mh">0xc2c8c11c</span><span class="p">,</span> <span class="mh">0xdf45873c</span><span class="p">,</span> <span class="mh">0x9d26aaff</span><span class="p">,</span> <span class="mh">0xb1b827f4</span><span class="p">,</span> <span class="mh">0x97d1acf4</span><span class="p">]</span>
+
+<span class="n">perms</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">itertools</span><span class="p">.</span><span class="nf">product</span><span class="p">(</span><span class="n">alphabet</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">perms</span><span class="p">:</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">binascii</span><span class="p">.</span><span class="nf">crc32</span><span class="p">(</span> <span class="sh">''</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xffffffff</span> <span class="c1"># &amp; 0xffffffff only needed in python2
+</span>
+    <span class="k">if</span> <span class="n">out</span> <span class="ow">in</span> <span class="n">ct</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">bingo! </span><span class="sh">"</span><span class="o">+</span> <span class="n">tst</span> <span class="o">+</span><span class="sh">"</span><span class="s"> (</span><span class="sh">"</span><span class="o">+</span><span class="nf">hex</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="o">+</span><span class="sh">"</span><span class="s">)</span><span class="sh">"</span><span class="p">)</span>
+</pre></table></code></div></div><p>which gives the following output:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre>bingo! 7pKs (0xc2c8c11c)
+bingo! h4rp (0xb1b827f4)
+bingo! o6wF (0x9d26aaff)
+bingo! whyz (0xdf45873c)
+bingo! HV17 (0x69355f71)
+bingo! Qlt6 (0x97d1acf4)
+</pre></table></code></div></div><p>whoo!</p><h2> Flag</h2><code> HV17-7pKs-whyz-o6wF-h4rp-Qlt6 </code><hr><h1 id="dec-6-santa-s-journey"> Dec 6: Santa’s Journey <a href="/CTF-writeups-public/writeups/Hackvent_2017/10-dec-6-santas-journey.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><p><em>Make sure Santa visits every country</em></p><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Follow Santa Claus as he makes his journey around the world.</p><p>http://challenges.hackvent.hacking-lab.com:4200/</p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>When we click on the link we get a QR code image, it decodes to <code class="language-plaintext highlighter-rouge">Iceland</code>. If we refresh we get <code class="language-plaintext highlighter-rouge">Angola</code>. Ok, let’s automate this, hope we get the flag if we try often enough:</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">requests</span>
+<span class="kn">from</span> <span class="n">qrtools</span> <span class="kn">import</span> <span class="n">QR</span>
+
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="c1"># download image
+</span>    <span class="n">url</span> <span class="o">=</span> <span class="sh">"</span><span class="s">http://challenges.hackvent.hacking-lab.com:4200/</span><span class="sh">"</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">qrcode.png</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">wb</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">qrimage</span><span class="p">:</span>
+        <span class="n">qrimage</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">content</span><span class="p">)</span>
+
+    <span class="c1"># read QR code
+</span>    <span class="n">myCode</span> <span class="o">=</span> <span class="nc">QR</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sh">'</span><span class="s">qrcode.png</span><span class="sh">'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">myCode</span><span class="p">.</span><span class="nf">decode</span><span class="p">():</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">myCode</span><span class="p">.</span><span class="nf">data_to_string</span><span class="p">())</span>
+    <span class="k">if</span> <span class="sh">'</span><span class="s">HV17</span><span class="sh">'</span> <span class="ow">in</span> <span class="n">myCode</span><span class="p">.</span><span class="nf">data_to_string</span><span class="p">():</span>
+        <span class="k">break</span><span class="p">;</span>
+</pre></table></code></div></div><p>This outputs:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+</pre><td class="rouge-code"><pre>Saint-Martin
+Lebanon
+Anguilla
+Nepal
+New Zealand
+Marshall Islands
+Western Sahara
+Chile
+Yemen
+Antarctica
+Lithuania
+Czech Republic
+Panama
+Saudi Arabia
+Mali
+
+[..]
+
+China
+Christmas Island
+Pitcairn
+Slovakia
+Pitcairn
+Bahrain
+Cape Verde
+Angola
+Malawi
+Ecuador
+Turkmenistan
+Jamaica
+Mozambique
+American Samoa
+HV17-eCFw-J4xX-buy3-8pzG-kd3M
+</pre></table></code></div></div><p>whoo! we got our flag</p><p><img src="writeupfiles/dec6_qrcode.png" alt="" /></p><h2> Flag</h2><code> HV17-eCFw-J4xX-buy3-8pzG-kd3M </code><hr><h1 id="dec-7-i-know"> Dec 7: I know … <a href="/CTF-writeups-public/writeups/Hackvent_2017/11-dec-7-i-know-.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><p><em>… what you did last xmas</em></p><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>We were able to steal a file from santas computer. We are sure, he prepared a gift and there are traces for it in this file.</p><p>Please help us to recover it: <a href="writeupfiles/SANTA.FILE">SANTA.FILE</a></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>I have a feeling this wasn’t intended to be this easy, but..</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre><td class="rouge-code"><pre><span class="nv">$ </span>file SANTA.FILE
+SANTA.FILE: Zip archive data, at least v1.0 to extract
+
+<span class="nv">$ </span>unzip SANTA.FILE
+Archive:  SANTA.FILE
+  inflating: SANTA.IMA
+
+<span class="nv">$ </span>file SANTA.IMA
+SANTA.IMA: DOS/MBR boot sector, code offset 0x58+2, OEM-ID <span class="s2">"WINIMAGE"</span>, sectors/cluster 4, root entries 16, sectors 3360 <span class="o">(</span>volumes &lt;<span class="o">=</span>32 MB<span class="o">)</span> , sectors/FAT 3, sectors/track 21, serial number 0x2b523d5, label: <span class="s2">"           "</span>, FAT <span class="o">(</span>12 bit<span class="o">)</span>, followed by FAT
+
+<span class="nv">$ </span>strings SANTA.IMA | <span class="nb">grep </span>HV17
+Y<span class="k">*</span>C:<span class="se">\H</span>ackvent<span class="se">\H</span>V17-UCyz-0yEU-d90O-vSqS-Sd64.exe
+</pre></table></code></div></div><p>Note: There was also a ROT-13 version of the flag, which is probably the way the challenge was designed to be solved:</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="nv">$ </span>strings SANTA.IMA |grep <span class="nt">-4</span> HV17
+-+/D
+&amp;xNsb
+GameDVR_GameGUID
+TitleIdr
+Y<span class="k">*</span>C:<span class="se">\H</span>ackvent<span class="se">\H</span>V17-UCyz-0yEU-d90O-vSqS-Sd64.exe
+<span class="nv">Typey</span><span class="o">=</span>
+Revision
+P:<span class="se">\U</span>npxirag<span class="se">\U</span>I17-HPlm-0lRH-q90B-iFdF-Fq64.rkr
+969343ecc7b246e8426e573c30fd94c4ffa050c2
+</pre></table></code></div></div><h2> Flag</h2><code> HV17-UCyz-0yEU-d90O-vSqS-Sd64 </code><hr><h1 id="dec-8-true-1337s"> Dec 8: True 1337s <a href="/CTF-writeups-public/writeups/Hackvent_2017/12-dec-8-true-1337s.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><p>… can read this instantly</p><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>I found this obfuscated code on a public FTP-Server. But I don’t understand what it’s doing…</p><p><a href="writeupfiles/True.1337">File</a></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>The file looks like (truncated):</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre> exec(chr(True+True+True+True+True+True+True+True+True+True)+chr(True+True+
+ __1337(_1337(1337+1337+1337+1337+1337+1337+1337+1337+1337+1337)+_1337(1337+1337+
+</pre></table></code></div></div><p>Obfuscated python. The following snippet cleans up the code significantly:</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="k">for </span>i <span class="k">in</span> <span class="sb">`</span><span class="nb">seq </span>1 200<span class="sb">`</span><span class="p">;</span> <span class="k">do
+    </span><span class="nb">echo</span> <span class="nv">$i</span><span class="p">;</span>
+    <span class="nv">q</span><span class="o">=</span><span class="si">$(</span>python <span class="nt">-c</span> <span class="s2">"print('+'.join(['True'] * </span><span class="nv">$i</span><span class="s2">))"</span><span class="si">)</span>
+    <span class="nb">sed</span> <span class="nt">-i</span> <span class="s2">"s/(</span><span class="nv">$q</span><span class="s2">)/(</span><span class="nv">$i</span><span class="s2">)/g"</span> True.1337
+    <span class="nv">q</span><span class="o">=</span><span class="si">$(</span>python <span class="nt">-c</span> <span class="s2">"print('+'.join(['1337'] * </span><span class="nv">$i</span><span class="s2">))"</span><span class="si">)</span>
+    <span class="nb">sed</span> <span class="nt">-i</span> <span class="s2">"s/(</span><span class="nv">$q</span><span class="s2">)/(</span><span class="nv">$i</span><span class="s2">)/g"</span> True.1337
+<span class="k">done</span>
+</pre></table></code></div></div><p>This leaves us with two functions, one on each line, calling a bunch of chrs.</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>exec(chr(10)+chr(65)+chr(61)+chr(99)+chr(104)+chr(114)+
+__1337(_1337(10)+_1337(67)+_1337(61)+_1337(83)+_1337(65)+
+</pre></table></code></div></div><p>Replacing that with a <code class="language-plaintext highlighter-rouge">print()</code> call on each, and cleaning up more, we can see the original code:</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="nb">sed</span> <span class="nt">-i</span> <span class="s2">"s/exec/print/g"</span> True.1337
+<span class="nb">sed</span> <span class="nt">-i</span> <span class="s2">"s/__1337/print/g"</span> True.1337
+<span class="nb">sed</span> <span class="nt">-i</span> <span class="s2">"s/_1337/chr/g"</span> True.1337
+
+python True.1337 <span class="o">&gt;</span> True.1338
+</pre></table></code></div></div><p>which now looks like:</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="n">A</span><span class="o">=</span><span class="nb">chr</span><span class="p">;</span><span class="n">__1337</span><span class="o">=</span><span class="k">exec</span><span class="p">;</span><span class="n">SANTA</span><span class="o">=</span><span class="nb">input</span><span class="p">;</span><span class="n">FUN</span><span class="o">=</span><span class="k">print</span>
+<span class="k">def</span> <span class="nf">_1337</span><span class="p">(</span><span class="n">B</span><span class="p">):</span><span class="k">return</span> <span class="nc">A</span><span class="p">(</span><span class="n">B</span><span class="o">//</span><span class="mi">1337</span><span class="p">)</span>
+
+<span class="n">C</span><span class="o">=</span><span class="nc">SANTA</span><span class="p">(</span><span class="sh">"</span><span class="s">?</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">C</span><span class="o">==</span><span class="sh">"</span><span class="s">1787569</span><span class="sh">"</span><span class="p">:</span><span class="nc">FUN</span><span class="p">(</span><span class="sh">''</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="nf">chr</span><span class="p">(</span><span class="nf">ord</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">^</span> <span class="nf">ord</span><span class="p">(</span><span class="n">b</span><span class="p">))</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">(</span><span class="sh">"</span><span class="s">{gMZF_MC_X\ERF[X</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">31415926535897932384626433832</span><span class="sh">"</span><span class="p">)))</span>
+</pre></table></code></div></div><p>Running it (or the original) with py3k + inputting the magic number <code class="language-plaintext highlighter-rouge">1787569</code> results in our flag:</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre><span class="nv">$ </span>python3 True.1338
+?1787569
+HV17-th1s-ju5t-l1k3-j5sf-uck!
+</pre></table></code></div></div><h2> Flag</h2><code> HV17-th1s-ju5t-l1k3-j5sf-uck! </code><hr><h1 id="dec-9-jsonion"> Dec 9: JSONion <a href="/CTF-writeups-public/writeups/Hackvent_2017/13-dec-9-jsonion.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><p><em>hint</em></p><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>… is not really an onion. Peel it and find the flag.</p><p><a href="writeupfiles/jsonion.json">file</a></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>JSON file with</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>[{"op":"map","mapTo":"[{\"op:gzi,cnteH4sIAD
+
+&lt;bunch of data&gt;
+
+,"mapFrom":"\/8ge+uqP5lz:K2Fis\"MonJUp\\{S6NvmOk]ZI}hLRYXBCW4fD=jT0V[b3xaGQ9yEw,A1cdHrt7"}]
+</pre></table></code></div></div><p>..looks like we need to do a character mapping, we do that, then we get a similar string, but this time it starts with <code class="language-plaintext highlighter-rouge">[{"op":"gzip", ..</code>. we decompress this data, and find a <code class="language-plaintext highlighter-rouge">b64</code> operation, and as we keep peeling layers off this jsonion also <code class="language-plaintext highlighter-rouge">nul</code>, <code class="language-plaintext highlighter-rouge">xor</code>, <code class="language-plaintext highlighter-rouge">rev</code>.</p><p>We handle them all until we get a <code class="language-plaintext highlighter-rouge">flag</code> operation:</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">json</span>
+<span class="kn">import</span> <span class="n">gzip</span>
+<span class="kn">import</span> <span class="n">base64</span>
+
+<span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="n">data_orig</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">loads</span><span class="p">(</span><span class="n">data_orig</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">data_orig</span><span class="p">),</span> <span class="nf">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">q</span><span class="p">[</span><span class="sh">'</span><span class="s">op</span><span class="sh">'</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">q</span><span class="p">[</span><span class="sh">'</span><span class="s">op</span><span class="sh">'</span><span class="p">]</span> <span class="o">==</span> <span class="sh">'</span><span class="s">map</span><span class="sh">'</span><span class="p">:</span>
+            <span class="nf">process</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="sh">'</span><span class="s">content</span><span class="sh">'</span><span class="p">].</span><span class="nf">translate</span><span class="p">(</span><span class="nb">str</span><span class="p">.</span><span class="nf">maketrans</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="sh">'</span><span class="s">mapFrom</span><span class="sh">'</span><span class="p">],</span> <span class="n">q</span><span class="p">[</span><span class="sh">'</span><span class="s">mapTo</span><span class="sh">'</span><span class="p">])))</span>
+        <span class="k">elif</span> <span class="n">q</span><span class="p">[</span><span class="sh">'</span><span class="s">op</span><span class="sh">'</span><span class="p">]</span> <span class="o">==</span> <span class="sh">'</span><span class="s">gzip</span><span class="sh">'</span><span class="p">:</span>
+            <span class="nf">process</span><span class="p">(</span><span class="n">gzip</span><span class="p">.</span><span class="nf">decompress</span><span class="p">(</span><span class="n">base64</span><span class="p">.</span><span class="nf">b64decode</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="sh">'</span><span class="s">content</span><span class="sh">'</span><span class="p">])).</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">q</span><span class="p">[</span><span class="sh">'</span><span class="s">op</span><span class="sh">'</span><span class="p">]</span> <span class="o">==</span> <span class="sh">'</span><span class="s">b64</span><span class="sh">'</span><span class="p">:</span>
+            <span class="nf">process</span><span class="p">(</span><span class="n">base64</span><span class="p">.</span><span class="nf">b64decode</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="sh">'</span><span class="s">content</span><span class="sh">'</span><span class="p">]).</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">q</span><span class="p">[</span><span class="sh">'</span><span class="s">op</span><span class="sh">'</span><span class="p">]</span> <span class="o">==</span> <span class="sh">'</span><span class="s">nul</span><span class="sh">'</span><span class="p">:</span>
+            <span class="nf">process</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="sh">'</span><span class="s">content</span><span class="sh">'</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">q</span><span class="p">[</span><span class="sh">'</span><span class="s">op</span><span class="sh">'</span><span class="p">]</span> <span class="o">==</span> <span class="sh">'</span><span class="s">xor</span><span class="sh">'</span><span class="p">:</span>
+            <span class="n">bout</span> <span class="o">=</span> <span class="n">base64</span><span class="p">.</span><span class="nf">b64decode</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="sh">'</span><span class="s">content</span><span class="sh">'</span><span class="p">])</span>
+            <span class="n">bout2</span> <span class="o">=</span> <span class="n">base64</span><span class="p">.</span><span class="nf">b64decode</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="sh">'</span><span class="s">mask</span><span class="sh">'</span><span class="p">])</span>
+            <span class="n">rep</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">bout</span><span class="p">)</span> <span class="o">//</span> <span class="nf">len</span><span class="p">(</span><span class="n">bout2</span><span class="p">)</span>
+            <span class="nf">process</span><span class="p">(</span> <span class="sh">''</span><span class="p">.</span><span class="nf">join</span><span class="p">([</span><span class="nf">chr</span><span class="p">(</span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">(</span><span class="n">bout</span><span class="p">,</span> <span class="n">bout2</span><span class="o">*</span><span class="n">rep</span><span class="p">)])</span> <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">q</span><span class="p">[</span><span class="sh">'</span><span class="s">op</span><span class="sh">'</span><span class="p">]</span> <span class="o">==</span> <span class="sh">'</span><span class="s">rev</span><span class="sh">'</span><span class="p">:</span>
+            <span class="nf">process</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="sh">'</span><span class="s">content</span><span class="sh">'</span><span class="p">][::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">q</span><span class="p">[</span><span class="sh">'</span><span class="s">op</span><span class="sh">'</span><span class="p">]</span> <span class="o">==</span> <span class="sh">'</span><span class="s">flag</span><span class="sh">'</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="sh">'</span><span class="s">content</span><span class="sh">'</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="nb">Exception</span>
+
+<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">jsonion.json</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">r</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="n">handle</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">process</span><span class="p">(</span><span class="n">handle</span><span class="p">.</span><span class="nf">read</span><span class="p">()))</span>
+</pre></table></code></div></div><p>which outputs:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+</pre><td class="rouge-code"><pre>1502755 1 map
+1461121 1 gzip
+1511839 1 b64
+1133858 1 gzip
+3101412 1 map
+3087167 1 map
+2982613 1 nul
+2043890 1 nul
+1574519 1 nul
+1339824 1 nul
+1222467 1 map
+1163619 1 map
+1160571 1 b64
+870407 1 b64
+652783 1 b64
+489565 1 map
+467807 1 gzip
+477847 1 map
+457875 1 map
+438367 1 nul
+424116 1 gzip
+427535 1 nul
+411468 1 gzip
+507106 1 xor
+380298 1 nul
+353459 1 map
+339864 1 map
+326228 1 nul
+304905 1 rev
+294234 1 gzip
+286448 1 gzip
+479112 1 map
+461643 1 map
+446098 1 xor
+331427 1 b64
+248548 1 map
+241961 1 map
+238248 1 nul
+209329 1 rev
+194860 1 xor
+140701 1 nul
+138730 1 map
+137575 1 b64
+103160 1 rev
+97581 1 nul
+94782 1 gzip
+147537 1 rev
+140474 1 rev
+136933 1 map
+134995 1 b64
+101224 1 map
+100487 1 b64
+75343 1 b64
+56485 1 map
+54670 1 rev
+48207 1 nul
+44966 1 xor
+32491 1 gzip
+37182 1 rev
+37147 1 b64
+27839 1 b64
+20859 1 map
+19929 1 xor
+14324 1 gzip
+20656 1 rev
+20337 1 xor
+15115 1 nul
+12880 1 rev
+11753 1 xor
+8374 1 rev
+8339 1 b64
+6233 1 nul
+6136 1 map
+5914 2 xor
+671 1 b64
+482 1 rev
+419 1 nul
+378 1 xor
+251 1 b64
+167 1 b64
+103 1 b64
+57 1 flag
+THIS-ISNO-THEF-LAGR-EALL-Y...
+5914 2 nul
+4891 1 xor
+3621 1 rev
+3506 1 nul
+3439 1 xor
+2537 1 rev
+2486 1 rev
+2451 1 b64
+1818 1 rev
+1783 1 b64
+1315 1 b64
+964 1 nul
+881 1 rev
+830 1 rev
+795 1 b64
+574 1 map
+383 1 b64
+266 1 xor
+167 1 b64
+103 1 b64
+57 1 flag
+HV17-Ip11-9CaB-JvCf-d5Nq-ffyi
+None
+</pre></table></code></div></div><h2> Flag</h2><code> HV17-Ip11-9CaB-JvCf-d5Nq-ffyi </code><hr><h1 id="dec-10-just-play-the-game"> Dec 10: Just play the game <a href="/CTF-writeups-public/writeups/Hackvent_2017/14-dec-10-just-play-the-game.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><p><em>Haven’t you ever been bored at school?</em></p><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Santa is in trouble. He’s elves are busy playing TicTacToe. Beat them and help Sata to save christmas!</p><p><code class="language-plaintext highlighter-rouge">nc challenges.hackvent.hacking-lab.com 1037</code></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+</pre><td class="rouge-code"><pre>---_ ......._-_--.
+(|\ /      / /| \  \
+/  /     .'  -=-'   `.
+/  /    .'             )
+_/  /   .'        _.)   /
+/ o   o        _.-' /  .'
+\          _.-'    / .'*|
+\______.-'//    .'.' \*|
+\|  \ | //   .'.' _ |*|
+`   \|//  .'.'_ _ _|*|
+.  .// .'.' | _ _ \*|
+\`-|\_/ /    \ _ _ \*\
+`/'\__/      \ _ _ \*\
+/^|            \ _ _ \*
+'  `             \ _ _ \
+                \_
+Challenge by pyth0n33. Have fun!
+
+I think you know the game from school...Don't you? ;)
+
+Press enter to start the game
+
+-------------
+| * | * | * |
+-------------
+-------------
+| * | * | * |
+-------------
+-------------
+| * | * | * |
+-------------
+Make your move. Type the number of the field you want to set! (1-9)
+
+Field:
+</pre></table></code></div></div><p>Just a game of tic-tac-toe. We need to win 100 times in a row.</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">telnetlib</span>
+<span class="kn">import</span> <span class="n">random</span>
+
+<span class="k">def</span> <span class="nf">isWin</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">
+    GIven a board checks if it is in a winning state.
+    Arguments:
+          board: a list containing X,O or *.
+    Return Value:
+           True if board in winning state. Else False
+    </span><span class="sh">"""</span>
+    <span class="c1">### check if any of the rows has winning combination
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="nf">set</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">3</span><span class="p">:</span><span class="n">i</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="mi">3</span><span class="p">]))</span> <span class="ow">is</span>  <span class="mi">1</span> <span class="ow">and</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">3</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="sh">'</span><span class="s">*</span><span class="sh">'</span><span class="p">:</span> <span class="k">return</span> <span class="bp">True</span>
+    <span class="c1">### check if any of the Columns has winning combination
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+       <span class="nf">if </span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">is</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">is</span>  <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">6</span><span class="p">])</span> <span class="ow">and</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="sh">'</span><span class="s">*</span><span class="sh">'</span><span class="p">:</span>
+           <span class="k">return</span> <span class="bp">True</span>
+    <span class="c1">### 2,4,6 and 0,4,8 cases
+</span>    <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="n">board</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="ow">and</span> <span class="n">board</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="ow">is</span> <span class="n">board</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="ow">and</span> <span class="n">board</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="sh">'</span><span class="s">*</span><span class="sh">'</span><span class="p">:</span>
+        <span class="k">return</span>  <span class="bp">True</span>
+    <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="ow">is</span> <span class="n">board</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="ow">and</span> <span class="n">board</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="ow">is</span> <span class="n">board</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="ow">and</span> <span class="n">board</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="sh">'</span><span class="s">*</span><span class="sh">'</span><span class="p">:</span>
+        <span class="k">return</span>  <span class="bp">True</span>
+    <span class="k">return</span> <span class="bp">False</span>
+
+<span class="k">def</span> <span class="nf">nextMove</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">player</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">
+    Computes the next move for a player given the current board state and also
+    computes if the player will win or not.
+    Arguments:
+        board: list containing X,- and O
+        player: one character string </span><span class="sh">'</span><span class="s">X</span><span class="sh">'</span><span class="s"> or </span><span class="sh">'</span><span class="s">O</span><span class="sh">'</span><span class="s">
+    Return Value:
+        willwin: 1 if </span><span class="sh">'</span><span class="s">X</span><span class="sh">'</span><span class="s"> is in winning state, 0 if the game is draw and -1 if </span><span class="sh">'</span><span class="s">O</span><span class="sh">'</span><span class="s"> is
+                    winning
+        nextmove: position where the player can play the next move so that the
+                         player wins or draws or delays the loss
+    </span><span class="sh">"""</span>
+    <span class="c1">### when board is '*********' evaluating next move takes some time since
+</span>    <span class="c1">### the tree has 9! nodes. But it is clear in that state, the result is a draw
+</span>    <span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="nf">set</span><span class="p">(</span><span class="n">board</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span><span class="p">,</span><span class="mi">4</span>
+
+    <span class="n">nextplayer</span> <span class="o">=</span> <span class="sh">'</span><span class="s">X</span><span class="sh">'</span> <span class="k">if</span> <span class="n">player</span><span class="o">==</span><span class="sh">'</span><span class="s">O</span><span class="sh">'</span> <span class="k">else</span> <span class="sh">'</span><span class="s">O</span><span class="sh">'</span>
+    <span class="k">if</span> <span class="nf">isWin</span><span class="p">(</span><span class="n">board</span><span class="p">)</span> <span class="p">:</span>
+        <span class="k">if</span> <span class="n">player</span> <span class="ow">is</span> <span class="sh">'</span><span class="s">X</span><span class="sh">'</span><span class="p">:</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span>
+    <span class="n">res_list</span><span class="o">=</span><span class="p">[]</span> <span class="c1"># list for appending the result
+</span>    <span class="n">c</span><span class="o">=</span> <span class="n">board</span><span class="p">.</span><span class="nf">count</span><span class="p">(</span><span class="sh">'</span><span class="s">*</span><span class="sh">'</span><span class="p">)</span>
+    <span class="k">if</span>  <span class="n">c</span> <span class="ow">is</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span>
+    <span class="n">_list</span><span class="o">=</span><span class="p">[]</span> <span class="c1"># list for storing the indexes where '-' appears
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">board</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sh">'</span><span class="s">*</span><span class="sh">'</span><span class="p">:</span>
+            <span class="n">_list</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">_list</span><span class="p">:</span>
+        <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">player</span>
+        <span class="n">ret</span><span class="p">,</span><span class="n">move</span><span class="o">=</span><span class="nf">nextMove</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">nextplayer</span><span class="p">)</span>
+        <span class="n">res_list</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+        <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="sh">'</span><span class="s">*</span><span class="sh">'</span>
+    <span class="k">if</span> <span class="n">player</span> <span class="ow">is</span> <span class="sh">'</span><span class="s">X</span><span class="sh">'</span><span class="p">:</span>
+        <span class="n">maxele</span><span class="o">=</span><span class="nf">max</span><span class="p">(</span><span class="n">res_list</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">maxele</span><span class="p">,</span><span class="n">_list</span><span class="p">[</span><span class="n">res_list</span><span class="p">.</span><span class="nf">index</span><span class="p">(</span><span class="n">maxele</span><span class="p">)]</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="n">minele</span><span class="o">=</span><span class="nf">min</span><span class="p">(</span><span class="n">res_list</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">minele</span><span class="p">,</span><span class="n">_list</span><span class="p">[</span><span class="n">res_list</span><span class="p">.</span><span class="nf">index</span><span class="p">(</span><span class="n">minele</span><span class="p">)]</span>
+
+<span class="k">def</span> <span class="nf">parseboard</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">board</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sh">'</span><span class="se">\n</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">newboard</span> <span class="o">=</span> <span class="p">[</span> <span class="n">board</span><span class="p">[</span><span class="o">-</span><span class="mi">9</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span><span class="n">board</span><span class="p">[</span><span class="o">-</span><span class="mi">9</span><span class="p">][</span><span class="mi">7</span><span class="p">],</span><span class="n">board</span><span class="p">[</span><span class="o">-</span><span class="mi">9</span><span class="p">][</span><span class="mi">11</span><span class="p">],</span>
+                 <span class="n">board</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span><span class="n">board</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">][</span><span class="mi">7</span><span class="p">],</span><span class="n">board</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">][</span><span class="mi">11</span><span class="p">],</span>
+                 <span class="n">board</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span><span class="n">board</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">][</span><span class="mi">7</span><span class="p">],</span><span class="n">board</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">][</span><span class="mi">11</span><span class="p">]]</span>
+    <span class="nf">return</span><span class="p">(</span><span class="nf">nextMove</span><span class="p">(</span><span class="n">newboard</span><span class="p">,</span><span class="sh">'</span><span class="s">X</span><span class="sh">'</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">play</span><span class="p">():</span>
+    <span class="n">board</span> <span class="o">=</span> <span class="n">tn</span><span class="p">.</span><span class="nf">read_until</span><span class="p">(</span><span class="sh">"</span><span class="s">Make your move. Type the number of the field you want to set! (1-9)</span><span class="sh">"</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="sh">"</span><span class="s">HV17</span><span class="sh">"</span>  <span class="ow">in</span> <span class="n">board</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">board</span>
+        <span class="k">return</span>
+
+    <span class="k">if</span> <span class="sh">"</span><span class="s">Make your move. Type the number of the field you want to set! (1-9)</span><span class="sh">"</span> <span class="ow">in</span> <span class="n">board</span><span class="p">:</span>
+        <span class="n">nm</span> <span class="o">=</span> <span class="nf">parseboard</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+        <span class="n">tn</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="nf">str</span><span class="p">(</span><span class="n">nm</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="sh">"</span><span class="se">\n</span><span class="sh">"</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="sh">"</span><span class="s">Congratulations</span><span class="sh">"</span> <span class="ow">in</span> <span class="n">board</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">board</span>
+
+    <span class="k">if</span> <span class="sh">"</span><span class="s">Press enter to start</span><span class="sh">"</span> <span class="ow">in</span> <span class="n">board</span><span class="p">:</span>
+        <span class="n">tn</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="sh">"</span><span class="p">)</span>
+
+
+<span class="c1"># Start the game
+</span><span class="n">server</span> <span class="o">=</span> <span class="sh">"</span><span class="s">challenges.hackvent.hacking-lab.com</span><span class="sh">"</span>
+<span class="n">port</span> <span class="o">=</span> <span class="mi">1037</span>
+<span class="n">tn</span> <span class="o">=</span> <span class="n">telnetlib</span><span class="p">.</span><span class="nc">Telnet</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="nf">play</span><span class="p">()</span>
+</pre></table></code></div></div><p>we run this code, and after we win game 100 we get the flag:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre>-------------
+| O | X | O |
+-------------
+-------------
+| X | X | X |
+-------------
+-------------
+| O | O | * |
+-------------
+Congratulations you won! 100/100
+
+HV17-y0ue-kn0w-7h4t-g4me-sure
+Press enter to start again
+</pre></table></code></div></div><h2> Flag</h2><code> HV17-y0ue-kn0w-7h4t-g4me-sure </code><hr><h1 id="dec-11-crypt-o-math-2-0"> Dec 11: Crypt-o-Math 2.0 <a href="/CTF-writeups-public/writeups/Hackvent_2017/15-dec-11-crypt-o-math-20.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>You bruteforced last years math lessons? This time you cant escape!</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre>c = (a * b) % p
+c=0x423EDCDCDCD928DD43EAEEBFE210E694303C695C20F42A27F10284215E90
+p=0xB1FF12FF85A3E45F722B01BF3135ED70A552251030B114B422E390471633
+b=0x88589F79D4129AB83923722E4FB6DD5E20C88FDD283AE5724F6A3697DD97
+</pre></table></code></div></div><p>find <code class="language-plaintext highlighter-rouge">a</code> to get your flag.</p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>All we need to do is solve the modular equation, the <code class="language-plaintext highlighter-rouge">divm</code> function in <code class="language-plaintext highlighter-rouge">gmpy2</code> does exactly that:</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">codecs</span>
+<span class="kn">import</span> <span class="n">gmpy2</span>
+
+
+<span class="k">def</span> <span class="nf">int_to_text</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">codecs</span><span class="p">.</span><span class="nf">decode</span><span class="p">(</span><span class="nf">format</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="sh">'</span><span class="s">x</span><span class="sh">'</span><span class="p">),</span> <span class="sh">'</span><span class="s">hex</span><span class="sh">'</span><span class="p">).</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">)</span>
+
+
+<span class="c1"># c = (a * b) % p
+</span><span class="n">c</span> <span class="o">=</span> <span class="mh">0x559C8077EE6C7990AF727955B744425D3CC2D4D7D0E46F015C8958B34783</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mh">0x9451A6D9C114898235148F1BC7AA32901DCAE445BC3C08BA6325968F92DB</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mh">0xCDB5E946CB9913616FA257418590EBCACB76FD4840FA90DE0FA78F095873</span>
+
+<span class="c1"># solve the equation
+</span><span class="n">a</span> <span class="o">=</span> <span class="n">gmpy2</span><span class="p">.</span><span class="nf">divm</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="nf">int_to_text</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></table></code></div></div><h2> Flag</h2><code> HV17-XtDw-0DzO-YRgB-2b2e-UWNz </code><hr><h1 id="dec-12-giftlogistics"> Dec 12: giftlogistics <a href="/CTF-writeups-public/writeups/Hackvent_2017/16-dec-12-giftlogistics.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><p><em>countercomplete inmeasure</em></p><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Most passwords of Santa GiftLogistics were stolen. You find an example of the traffic for Santa’s account with password and everything. The Elves CSIRT Team detected this and made sure that everyone changed their password.</p><p>Unfortunately this was an incomplete countermeasure. It’s still possible to retrieve the protected user profile data where you will find the flag.</p><p><a href="writeupfiles/giftlogistics.pcapng">Traffic</a></p><p>[Link]</p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Link to a Gift Logistics website for Santa</p><p><img src="writeupfiles/dec12-ss.png" alt="" /></p><p>We open the pcap in wireshark, and find a jwt token:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>eyJraWQiOiJyc2ExIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJzYW50YSIsImF6cCI6ImE3NWI0NzIyLTE0MWQtNGMwMC1iNjVjLTVkYzI3OTE0NmI2MCIsImlzcyI6Imh0dHA6XC9cL2NoYWxsZW5nZXMuaGFja3ZlbnQuaGFja2luZy1sYWIuY29tOjcyNDBcL2dpZnRsb2dpc3RpY3NcLyIsImV4cCI6MTUyNjkzNjkzNiwiaWF0IjoxNTExMzg0OTM2LCJqdGkiOiI4MTlmNWYzZC1hN2M3LTQ0YTktYmI5Ni0wZmQ4MmY0YjdlNzUifQ.U9Hv66701DtUb8zeqOo45JVbzC3yhKJhsQ_q7N20rdLn5-uovYzMWjhxY8I9oPQkv3s5iDDsx1GIUbnOkC8l__oj_uqptG0BPbRfD2K1blKpbXQt3yxD1pB63aHw5LRAp10ia0MNe8_eo-qzi9d58CVYY_XOtTRH8Ic_tP5lpXVaImi8miYFY2XqR1TuFM-cUjIMUYT9Ik8rwZAEbLO_1UAWPuQUpi0_Z6N0r3hKoIRSlknmmg8A5PunL2I0qFyICUm0cqb4fieBZ34R4117LmyQY_XvzKogIaLegDIgbp22hTGHPAdziEloYYaP5uc_aEnfo0eNvY7QLPNy1dDs-Q
+</pre></table></code></div></div><p>with an expiry date far in the future according to https://jwt.io/</p><p>We also find a reference to an openID configuration file (from tcp stream 20)</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+</pre><td class="rouge-code"><pre>{
+    "request_parameter_supported": true,
+    "claims_parameter_supported": false,
+    "introspection_endpoint": "http://challenges.hackvent.hacking-lab.com:7240/giftlogistics/introspect",
+    "scopes_supported": ["openid", "profile", "email", "address", "phone", "offline_access"],
+    "issuer": "http://challenges.hackvent.hacking-lab.com:7240/giftlogistics/",
+    "userinfo_encryption_enc_values_supported": ["A256CBC+HS512", "A256GCM", "A192GCM", "A128GCM", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512", "A128CBC+HS256"],
+    "id_token_encryption_enc_values_supported": ["A256CBC+HS512", "A256GCM", "A192GCM", "A128GCM", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512", "A128CBC+HS256"],
+    "authorization_endpoint": "http://challenges.hackvent.hacking-lab.com:7240/giftlogistics/authorize",
+    "service_documentation": "http://challenges.hackvent.hacking-lab.com:7240/giftlogistics/about",
+    "request_object_encryption_enc_values_supported": ["A256CBC+HS512", "A256GCM", "A192GCM", "A128GCM", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512", "A128CBC+HS256"],
+    "userinfo_signing_alg_values_supported": ["HS256", "HS384", "HS512", "RS256", "RS384", "RS512", "ES256", "ES384", "ES512", "PS256", "PS384", "PS512"],
+    "claims_supported": ["sub", "name", "preferred_username", "given_name", "family_name", "middle_name", "nickname", "profile", "picture", "website", "gender", "zoneinfo", "locale", "updated_at", "birthdate", "email", "email_verified", "phone_number", "phone_number_verified", "address"],
+    "claim_types_supported": ["normal"],
+    "op_policy_uri": "http://challenges.hackvent.hacking-lab.com:7240/giftlogistics/about",
+    "token_endpoint_auth_methods_supported": ["client_secret_post", "client_secret_basic", "client_secret_jwt", "private_key_jwt", "none"],
+    "token_endpoint": "http://challenges.hackvent.hacking-lab.com:7240/giftlogistics/token",
+    "response_types_supported": ["code", "token"],
+    "request_uri_parameter_supported": false,
+    "userinfo_encryption_alg_values_supported": ["RSA-OAEP", "RSA-OAEP-256", "RSA1_5"],
+    "grant_types_supported": ["authorization_code", "implicit", "urn:ietf:params:oauth:grant-type:jwt-bearer", "client_credentials", "urn:ietf:params:oauth:grant_type:redelegate"],
+    "revocation_endpoint": "http://challenges.hackvent.hacking-lab.com:7240/giftlogistics/revoke",
+    "userinfo_endpoint": "http://challenges.hackvent.hacking-lab.com:7240/giftlogistics/userinfo",
+    "token_endpoint_auth_signing_alg_values_supported": ["HS256", "HS384", "HS512", "RS256", "RS384", "RS512", "ES256", "ES384", "ES512", "PS256", "PS384", "PS512"],
+    "op_tos_uri": "http://challenges.hackvent.hacking-lab.com:7240/giftlogistics/about",
+    "require_request_uri_registration": false,
+    "id_token_encryption_alg_values_supported": ["RSA-OAEP", "RSA-OAEP-256", "RSA1_5"],
+    "jwks_uri": "http://challenges.hackvent.hacking-lab.com:7240/giftlogistics/jwk",
+    "subject_types_supported": ["public", "pairwise"],
+    "id_token_signing_alg_values_supported": ["HS256", "HS384", "HS512", "RS256", "RS384", "RS512", "ES256", "ES384", "ES512", "PS256", "PS384", "PS512", "none"],
+    "registration_endpoint": "http://challenges.hackvent.hacking-lab.com:7240/giftlogistics/register",
+    "request_object_signing_alg_values_supported": ["HS256", "HS384", "HS512", "RS256", "RS384", "RS512", "ES256", "ES384", "ES512", "PS256", "PS384", "PS512"],
+    "request_object_encryption_alg_values_supported": ["RSA-OAEP", "RSA-OAEP-256", "RSA1_5"]
+}
+</pre></table></code></div></div><p>Description says we can find our flag in protected user profile data, and after some poking around we find:</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre><td class="rouge-code"><pre>curl <span class="s2">"http://challenges.hackvent.hacking-lab.com:7240/giftlogistics/userinfo?access_token=eyJraWQiOiJyc2ExIiwi
+YWxnIjoiUlMyNTYifQ.eyJzdWIiOiJzYW50YSIsImF6cCI6ImE3NWI0NzIyLTE0MWQtNGMwMC1iNjVjLTVkYzI3OTE0NmI2MCIsImlzcyI6Imh
+0dHA6XC9cL2NoYWxsZW5nZXMuaGFja3ZlbnQuaGFja2luZy1sYWIuY29tOjcyNDBcL2dpZnRsb2dpc3RpY3NcLyIsImV4cCI6MTUyNjkzNjkzN
+iwiaWF0IjoxNTExMzg0OTM2LCJqdGkiOiI4MTlmNWYzZC1hN2M3LTQ0YTktYmI5Ni0wZmQ4MmY0YjdlNzUifQ.U9Hv66701DtUb8zeqOo45JVb
+zC3yhKJhsQ_q7N20rdLn5-uovYzMWjhxY8I9oPQkv3s5iDDsx1GIUbnOkC8l__oj_uqptG0BPbRfD2K1blKpbXQt3yxD1pB63aHw5LRAp10ia0
+MNe8_eo-qzi9d58CVYY_XOtTRH8Ic_tP5lpXVaImi8miYFY2XqR1TuFM-cUjIMUYT9Ik8rwZAEbLO_1UAWPuQUpi0_Z6N0r3hKoIRSlknmmg8A
+5PunL2I0qFyICUm0cqb4fieBZ34R4117LmyQY_XvzKogIaLegDIgbp22hTGHPAdziEloYYaP5uc_aEnfo0eNvY7QLPNy1dDs-Q"</span> <span class="nt">-i</span>
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Access-Control-Allow-Origin: <span class="k">*</span>
+Content-Type: application/json<span class="p">;</span><span class="nv">charset</span><span class="o">=</span>ISO-8859-1
+Content-Language: en
+Content-Length: 98
+Date: Mon, 11 Dec 2017 23:34:09 GMT
+
+<span class="o">{</span><span class="s2">"sub"</span>:<span class="s2">"HV17-eUOF-mPJY-ruga-fUFq-EhOx"</span>,<span class="s2">"name"</span>:<span class="s2">"Reginald Thumblewood"</span>,<span class="s2">"preferred_username"</span>:<span class="s2">"santa"</span><span class="o">}</span>
+</pre></table></code></div></div><h2> Flag</h2><code> HV17-eUOF-mPJY-ruga-fUFq-EhOx </code><hr><h1 id="dec-13-muffin-asm"> Dec 13: muffin_asm <a href="/CTF-writeups-public/writeups/Hackvent_2017/17-dec-13-muffin_asm.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><p><em>As M. said, kind of a different architecture!</em></p><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>ohai \o/</p><p>How about some custom asm to obsfucate the codez?</p><p><a href="writeupfiles/muffin_asm.py">Link</a></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>It is a python program, running a simple asm-like program:</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+</pre><td class="rouge-code"><pre><span class="c1">#!/usr/bin/env python
+</span>
+<span class="kn">import</span> <span class="n">sys</span><span class="p">,</span> <span class="n">struct</span>
+
+<span class="n">ip</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="mh">0x00</span><span class="p">,</span> <span class="p">[</span><span class="mh">0x00</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="bp">False</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">_add</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">):</span> <span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">+</span> <span class="n">r</span><span class="p">[</span><span class="n">r2</span><span class="p">])</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_addv</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span> <span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">+</span> <span class="n">v</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_sub</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">):</span> <span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">-</span> <span class="n">r</span><span class="p">[</span><span class="n">r2</span><span class="p">])</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_subv</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span> <span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">-</span> <span class="n">v</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_xor</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">):</span> <span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">^</span> <span class="n">r</span><span class="p">[</span><span class="n">r2</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">_xorv</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span> <span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">^</span> <span class="n">v</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_cmp</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">):</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">==</span> <span class="n">r</span><span class="p">[</span><span class="n">r2</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">_cmpv</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">==</span> <span class="n">v</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_je</span><span class="p">(</span><span class="n">o</span><span class="p">):</span> <span class="k">global</span> <span class="n">ip</span><span class="p">;</span> <span class="n">ip</span> <span class="o">=</span> <span class="p">(</span><span class="n">o</span> <span class="k">if</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">else</span> <span class="n">ip</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_jne</span><span class="p">(</span><span class="n">o</span><span class="p">):</span> <span class="k">global</span> <span class="n">ip</span><span class="p">;</span> <span class="n">ip</span> <span class="o">=</span> <span class="p">(</span><span class="n">o</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">else</span> <span class="n">ip</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_wchr</span><span class="p">(</span><span class="n">r1</span><span class="p">):</span> <span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="nf">chr</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]))</span>
+<span class="k">def</span> <span class="nf">_rchr</span><span class="p">(</span><span class="n">r1</span><span class="p">):</span> <span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">=</span> <span class="nf">ord</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">stdin</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">ins</span> <span class="o">=</span> <span class="p">[</span><span class="n">_add</span><span class="p">,</span> <span class="n">_addv</span><span class="p">,</span> <span class="n">_sub</span><span class="p">,</span> <span class="n">_subv</span><span class="p">,</span> <span class="n">_xor</span><span class="p">,</span> <span class="n">_xorv</span><span class="p">,</span> <span class="n">_cmp</span><span class="p">,</span> <span class="n">_cmpv</span><span class="p">,</span> <span class="n">_je</span><span class="p">,</span> <span class="n">_jne</span><span class="p">,</span> <span class="n">_wchr</span><span class="p">,</span> <span class="n">_rchr</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">codez</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">ip</span>
+    <span class="k">while</span> <span class="n">ip</span> <span class="o">&lt;</span> <span class="nf">len</span><span class="p">(</span><span class="n">codez</span><span class="p">):</span>
+        <span class="n">c_ins</span> <span class="o">=</span> <span class="n">ins</span><span class="p">[</span><span class="nf">ord</span><span class="p">(</span><span class="n">codez</span><span class="p">[</span><span class="n">ip</span><span class="p">])]</span>
+        <span class="k">if</span> <span class="n">c_ins</span> <span class="ow">in</span> <span class="p">[</span><span class="n">_je</span><span class="p">,</span> <span class="n">_jne</span><span class="p">]:</span>
+            <span class="n">old_ip</span> <span class="o">=</span> <span class="n">ip</span>
+            <span class="nf">c_ins</span><span class="p">(</span><span class="n">struct</span><span class="p">.</span><span class="nf">unpack</span><span class="p">(</span><span class="sh">'</span><span class="s">&lt;I</span><span class="sh">'</span><span class="p">,</span> <span class="n">codez</span><span class="p">[(</span><span class="n">ip</span><span class="o">+</span><span class="mi">1</span><span class="p">):(</span><span class="n">ip</span><span class="o">+</span><span class="mi">5</span><span class="p">)])[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">old_ip</span> <span class="o">==</span> <span class="n">ip</span><span class="p">:</span> <span class="n">ip</span> <span class="o">+=</span> <span class="mi">5</span>
+            <span class="k">continue</span>
+        <span class="n">num_of_args</span> <span class="o">=</span> <span class="n">c_ins</span><span class="p">.</span><span class="n">func_code</span><span class="p">.</span><span class="n">co_argcount</span>
+        <span class="k">if</span> <span class="n">num_of_args</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nf">c_ins</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">num_of_args</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="nf">c_ins</span><span class="p">(</span><span class="nf">ord</span><span class="p">(</span><span class="n">codez</span><span class="p">[</span><span class="n">ip</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="k">else</span><span class="p">:</span> <span class="nf">c_ins</span><span class="p">(</span><span class="nf">ord</span><span class="p">(</span><span class="n">codez</span><span class="p">[</span><span class="n">ip</span><span class="o">+</span><span class="mi">1</span><span class="p">]),</span> <span class="nf">ord</span><span class="p">(</span><span class="n">codez</span><span class="p">[</span><span class="n">ip</span><span class="o">+</span><span class="mi">2</span><span class="p">]))</span>
+        <span class="n">ip</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">num_of_args</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="sh">'</span><span class="s">[ muffin asm ]</span><span class="sh">'</span>
+<span class="k">print</span> <span class="sh">'</span><span class="s">muffinx: Did you ever codez asm?</span><span class="sh">'</span>
+<span class="nf">run</span><span class="p">(</span><span class="sh">'</span><span class="se">\x04\x00\x00\x04\x01\x01\x04\x02\x02\x04\x03\x03\x05\x02\xbd\x00\x02\x00\x00</span><span class="s"> [..] </span><span class="se">\x01\x03\x00\x01</span><span class="sh">'</span><span class="p">)</span>
+</pre></table></code></div></div><p>Interesting, ok, lets run it.. We are asked for a flag and are told “nope” when we enter it incorrectly:</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="nv">$ </span>python muffin_asm.py
+<span class="o">[</span> muffin asm <span class="o">]</span>
+muffinx: Did you ever codez asm?
+<span class="o">&lt;&lt;</span> <span class="no">flag_getter</span><span class="sh"> v1.0 &gt;&gt;
+ohai, gimmeh flag: tardis
+[-] nope!
+</span></pre></table></code></div></div><p>The program likely checks the string one character at a time with the <code class="language-plaintext highlighter-rouge">cmp</code> function, so we simply check what it is checking against by changing one line:</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre><span class="c1"># def _cmp(r1, r2): f[0] = (r[r1] == r[r2])  # old
+</span><span class="k">def</span> <span class="nf">_cmp</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">):</span> <span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="nf">chr</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">r2</span><span class="p">]));</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">r2</span><span class="p">]</span> <span class="o">==</span> <span class="n">r</span><span class="p">[</span><span class="n">r2</span><span class="p">]);</span>
+</pre></table></code></div></div><p>Now we run the program, and give it a random string at least as long as the flag, and it just prints out the flag for us :D</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre>$ python muffin_asm.py
+[ muffin asm ]
+muffinx: Did you ever codez asm?
+&lt;&lt; flag_getter v1.0 &gt;&gt;
+ohai, gimmeh flag: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+HV17-mUff!n-4sm-!s-cr4zY[+] valid! by muffinx :D if you liked the challenge, troll me @ twitter.com/muffiniks =D
+</pre></table></code></div></div><p>Whoo! we have our flag <code class="language-plaintext highlighter-rouge">HV17-mUff!n-4sm-!s-cr4zY</code></p><hr /><p>NOTE: below is my initial, overly complex solution:</p><p>We could try to reverse the program, but if the program checks the flag one character at a time and exits upon the first mismatch, we might be able to determine the flag by brute-forcing each subsequent character and determine the correct one from the number of cycles it takes before failure.</p><p>We adjust the program a bit to count the number of instructions and build the flag one character at a time:</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+</pre><td class="rouge-code"><pre><span class="c1">#!/usr/bin/env python
+</span>
+<span class="kn">import</span> <span class="n">sys</span><span class="p">,</span> <span class="n">struct</span><span class="p">,</span> <span class="n">string</span>
+
+<span class="n">ip</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="mh">0x00</span><span class="p">,</span> <span class="p">[</span><span class="mh">0x00</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="bp">False</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">_add</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">):</span> <span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">+</span> <span class="n">r</span><span class="p">[</span><span class="n">r2</span><span class="p">])</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_addv</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span> <span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">+</span> <span class="n">v</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_sub</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">):</span> <span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">-</span> <span class="n">r</span><span class="p">[</span><span class="n">r2</span><span class="p">])</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_subv</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span> <span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">-</span> <span class="n">v</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_xor</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">):</span> <span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">^</span> <span class="n">r</span><span class="p">[</span><span class="n">r2</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">_xorv</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span> <span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">^</span> <span class="n">v</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_cmp</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">):</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">==</span> <span class="n">r</span><span class="p">[</span><span class="n">r2</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">_cmpv</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">==</span> <span class="n">v</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_je</span><span class="p">(</span><span class="n">o</span><span class="p">):</span> <span class="k">global</span> <span class="n">ip</span><span class="p">;</span> <span class="n">ip</span> <span class="o">=</span> <span class="p">(</span><span class="n">o</span> <span class="k">if</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">else</span> <span class="n">ip</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_jne</span><span class="p">(</span><span class="n">o</span><span class="p">):</span> <span class="k">global</span> <span class="n">ip</span><span class="p">;</span> <span class="n">ip</span> <span class="o">=</span> <span class="p">(</span><span class="n">o</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">else</span> <span class="n">ip</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_wchr</span><span class="p">(</span><span class="n">r1</span><span class="p">):</span> <span class="k">pass</span> <span class="c1">#sys.stdout.write(chr(r[r1]))
+</span><span class="k">def</span> <span class="nf">_rchr</span><span class="p">(</span><span class="n">r1</span><span class="p">):</span>
+    <span class="c1">#r[r1] = ord(sys.stdin.read(1))
+</span>    <span class="k">global</span> <span class="n">nextchar</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">r</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">=</span> <span class="nf">ord</span><span class="p">(</span><span class="n">myinput</span><span class="p">[</span><span class="n">nextchar</span><span class="p">])</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="n">nextchar</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">ins</span> <span class="o">=</span> <span class="p">[</span><span class="n">_add</span><span class="p">,</span> <span class="n">_addv</span><span class="p">,</span> <span class="n">_sub</span><span class="p">,</span> <span class="n">_subv</span><span class="p">,</span> <span class="n">_xor</span><span class="p">,</span> <span class="n">_xorv</span><span class="p">,</span> <span class="n">_cmp</span><span class="p">,</span> <span class="n">_cmpv</span><span class="p">,</span> <span class="n">_je</span><span class="p">,</span> <span class="n">_jne</span><span class="p">,</span> <span class="n">_wchr</span><span class="p">,</span> <span class="n">_rchr</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">codez</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">ip</span>
+    <span class="n">instrcount</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">ip</span> <span class="o">&lt;</span> <span class="nf">len</span><span class="p">(</span><span class="n">codez</span><span class="p">):</span>
+        <span class="n">instrcount</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">c_ins</span> <span class="o">=</span> <span class="n">ins</span><span class="p">[</span><span class="nf">ord</span><span class="p">(</span><span class="n">codez</span><span class="p">[</span><span class="n">ip</span><span class="p">])]</span>
+        <span class="k">if</span> <span class="n">c_ins</span> <span class="ow">in</span> <span class="p">[</span><span class="n">_je</span><span class="p">,</span> <span class="n">_jne</span><span class="p">]:</span>
+            <span class="n">old_ip</span> <span class="o">=</span> <span class="n">ip</span>
+            <span class="nf">c_ins</span><span class="p">(</span><span class="n">struct</span><span class="p">.</span><span class="nf">unpack</span><span class="p">(</span><span class="sh">'</span><span class="s">&lt;I</span><span class="sh">'</span><span class="p">,</span> <span class="n">codez</span><span class="p">[(</span><span class="n">ip</span><span class="o">+</span><span class="mi">1</span><span class="p">):(</span><span class="n">ip</span><span class="o">+</span><span class="mi">5</span><span class="p">)])[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">old_ip</span> <span class="o">==</span> <span class="n">ip</span><span class="p">:</span> <span class="n">ip</span> <span class="o">+=</span> <span class="mi">5</span>
+            <span class="k">continue</span>
+        <span class="n">num_of_args</span> <span class="o">=</span> <span class="n">c_ins</span><span class="p">.</span><span class="n">func_code</span><span class="p">.</span><span class="n">co_argcount</span>
+        <span class="k">if</span> <span class="n">num_of_args</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nf">c_ins</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">num_of_args</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="nf">c_ins</span><span class="p">(</span><span class="nf">ord</span><span class="p">(</span><span class="n">codez</span><span class="p">[</span><span class="n">ip</span><span class="o">+</span><span class="mi">1</span><span class="p">])),</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nf">c_ins</span><span class="p">(</span><span class="nf">ord</span><span class="p">(</span><span class="n">codez</span><span class="p">[</span><span class="n">ip</span><span class="o">+</span><span class="mi">1</span><span class="p">]),</span> <span class="nf">ord</span><span class="p">(</span><span class="n">codez</span><span class="p">[</span><span class="n">ip</span><span class="o">+</span><span class="mi">2</span><span class="p">]))</span>
+        <span class="n">ip</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">num_of_args</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">instrcount</span>
+
+
+<span class="k">print</span> <span class="sh">'</span><span class="s">[ muffin asm ]</span><span class="sh">'</span>
+<span class="k">print</span> <span class="sh">'</span><span class="s">muffinx: Did you ever codez asm?</span><span class="sh">'</span>
+<span class="n">program</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\x04\x00\x00\x04\x01\x01\x04\x02\x02\x04\x03\x03\x05\x02\xbd\x00\x02\x00\x00</span><span class="s"> [..] </span><span class="se">\x01\x03\x00\x01</span><span class="sh">'</span>
+
+<span class="c1"># find the flag by looking at which subsequent letter increases the total instruction count
+# of the program
+</span><span class="k">print</span> <span class="sh">'</span><span class="s">Looking for the flag..</span><span class="sh">'</span>
+<span class="n">maxinstrcount</span> <span class="o">=</span> <span class="mi">1520</span> <span class="c1">#number of instructions when no correct characters
+</span><span class="n">flag</span> <span class="o">=</span> <span class="sh">''</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">29</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">string</span><span class="p">.</span><span class="n">letters</span><span class="o">+</span><span class="n">string</span><span class="p">.</span><span class="n">digits</span><span class="o">+</span><span class="n">string</span><span class="p">.</span><span class="n">punctuation</span><span class="p">:</span>
+        <span class="n">myinput</span> <span class="o">=</span> <span class="n">flag</span> <span class="o">+</span> <span class="n">c</span>
+        <span class="n">ip</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">nextchar</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">numinstr</span> <span class="o">=</span> <span class="nf">run</span><span class="p">(</span><span class="n">program</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">numinstr</span> <span class="o">&gt;</span> <span class="n">maxinstrcount</span><span class="p">:</span>
+            <span class="n">flag</span> <span class="o">+=</span> <span class="n">c</span>
+            <span class="n">maxinstrcount</span> <span class="o">=</span> <span class="n">numinstr</span>
+            <span class="k">break</span>
+
+<span class="k">print</span> <span class="n">flag</span>
+</pre></table></code></div></div><p><a href="writeupfiles/muffin_asm_bf.py">full program</a></p><p>This outputs:</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="nv">$ </span>python muffin_asm_bf.py
+<span class="o">[</span> muffin asm <span class="o">]</span>
+muffinx: Did you ever codez asm?
+Looking <span class="k">for </span>the flag..
+HV17-mUff!n-4sm-!s-cr4zY
+</pre></table></code></div></div><hr /><h2> Flag</h2><code> HV17-mUff!n-4sm-!s-cr4zY </code><hr><h1 id="dec-14-happy-cryptmas"> Dec 14: Happy Cryptmas <a href="/CTF-writeups-public/writeups/Hackvent_2017/18-dec-14-happy-cryptmas.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>todays gift was encrypted with the attached program. try to unbox your xmas present.</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>Flag: 7A9FDCA5BB061D0D638BE1442586F3488B536399BA05A14FCAE3F0A2E5F268F2F3142D1956769497AE677A12E4D44EC727E255B391005B9ADCF53B4A74FFC34C
+</pre></table></code></div></div><p><a href="writeupfiles/hackvent">Executable</a></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>This is a Mach-O executable which we disassemble the file with Hopper:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+</pre><td class="rouge-code"><pre>================ B E G I N N I N G   O F   P R O C E D U R E ================
+
+
+
+                                       ;
+                                       ; Section __text
+                                       ;
+                                       ; Range 0x100000cc0 - 0x100000e66 (422 bytes)
+                                       ; File offset 3264 (422 bytes)
+                                       ; Flags : 0x80000400
+                                       ;
+0000000100000cc1         mov        rbp, rsp
+0000000100000cc4         sub        rsp, 0xc0
+0000000100000ccb         mov        rax, qword [ds:imp___got____stack_chk_guard] ; imp___got____stack_chk_guard
+0000000100000cd2         mov        rax, qword [ds:rax]
+0000000100000cd5         mov        qword [ss:rbp+var_8], rax
+0000000100000cd9         mov        dword [ss:rbp+var_64], 0x0
+0000000100000ce0         mov        dword [ss:rbp+var_68], edi
+0000000100000ce3         mov        qword [ss:rbp+var_70], rsi
+0000000100000ce7         cmp        dword [ss:rbp+var_68], 0x1
+0000000100000ceb         jne        0x100000cfd
+
+0000000100000cf1         mov        dword [ss:rbp+var_64], 0x0
+0000000100000cf8         jmp        0x100000e32
+
+0000000100000cfd         lea        rdi, qword [ss:rbp+var_50]                  ; XREF=_main+43
+0000000100000d01         call       imp___stubs____gmpz_init
+0000000100000d06         lea        rdi, qword [ss:rbp+var_60]
+0000000100000d0a         call       imp___stubs____gmpz_init
+0000000100000d0f         lea        rsi, qword [ds:0x100000f18]                 ; "F66EB887F2B8A620FD03C7D0633791CB4804739CE7FE001C81E6E02783737CA21DB2A0D8AF2D10B200006D10737A0872C667AD142F90407132EFABF8E5D6BD51"
+0000000100000d16         mov        edx, 0x10
+0000000100000d1b         lea        rdi, qword [ss:rbp+var_20]
+0000000100000d1f         call       imp___stubs____gmpz_init_set_str
+0000000100000d24         lea        rsi, qword [ds:0x100000f99]                 ; "65537"
+0000000100000d2b         mov        edx, 0xa
+0000000100000d30         lea        rdi, qword [ss:rbp+var_40]
+0000000100000d34         mov        dword [ss:rbp+var_74], eax
+0000000100000d37         call       imp___stubs____gmpz_init_set_str
+0000000100000d3c         mov        edx, 0x1
+0000000100000d41         mov        ecx, 0x1
+0000000100000d46         xor        r8d, r8d
+0000000100000d49         xor        r9d, r9d
+0000000100000d4c         lea        rdi, qword [ss:rbp+var_50]
+0000000100000d50         mov        rsi, qword [ss:rbp+var_70]
+0000000100000d54         mov        rsi, qword [ds:rsi+0x8]
+0000000100000d58         mov        qword [ss:rbp+var_80], rdi
+0000000100000d5c         mov        rdi, rsi                                    ; argument "s" for method imp___stubs__strlen
+0000000100000d5f         mov        dword [ss:rbp+var_84], eax
+0000000100000d65         mov        dword [ss:rbp+var_88], edx
+0000000100000d6b         mov        qword [ss:rbp+var_90], rcx
+0000000100000d72         mov        dword [ss:rbp+var_94], r8d
+0000000100000d79         mov        qword [ss:rbp+var_A0], r9
+0000000100000d80         call       imp___stubs__strlen
+0000000100000d85         mov        rcx, qword [ss:rbp+var_70]
+0000000100000d89         mov        rcx, qword [ds:rcx+0x8]
+0000000100000d8d         mov        rdi, qword [ss:rbp+var_80]
+0000000100000d91         mov        rsi, rax
+0000000100000d94         mov        edx, dword [ss:rbp+var_88]
+0000000100000d9a         mov        rax, qword [ss:rbp+var_90]
+0000000100000da1         mov        qword [ss:rbp+var_A8], rcx
+0000000100000da8         mov        rcx, rax
+0000000100000dab         mov        r8d, dword [ss:rbp+var_94]
+0000000100000db2         mov        r9, qword [ss:rbp+var_A0]
+0000000100000db9         mov        r10, qword [ss:rbp+var_A8]
+0000000100000dc0         mov        qword [ss:rsp], r10
+0000000100000dc4         call       imp___stubs____gmpz_import
+0000000100000dc9         lea        rsi, qword [ss:rbp+var_20]
+0000000100000dcd         lea        rdi, qword [ss:rbp+var_50]
+0000000100000dd1         call       imp___stubs____gmpz_cmp
+0000000100000dd6         cmp        eax, 0x0
+0000000100000dd9         jle        0x100000de4
+
+0000000100000ddf         call       imp___stubs__abort
+
+0000000100000de4         lea        rcx, qword [ss:rbp+var_20]                  ; XREF=_main+281
+0000000100000de8         lea        rdx, qword [ss:rbp+var_40]
+0000000100000dec         lea        rsi, qword [ss:rbp+var_50]
+0000000100000df0         lea        rdi, qword [ss:rbp+var_60]
+0000000100000df4         call       imp___stubs____gmpz_powm
+0000000100000df9         lea        rdi, qword [ds:0x100000f9f]                 ; "Crypted: %ZX\\n"
+0000000100000e00         lea        rsi, qword [ss:rbp+var_60]
+0000000100000e04         mov        al, 0x0
+0000000100000e06         call       imp___stubs____gmp_printf
+0000000100000e0b         xor        r8d, r8d
+0000000100000e0e         lea        rcx, qword [ss:rbp+var_40]
+0000000100000e12         lea        rdx, qword [ss:rbp+var_20]
+0000000100000e16         lea        rsi, qword [ss:rbp+var_60]
+0000000100000e1a         lea        rdi, qword [ss:rbp+var_50]
+0000000100000e1e         mov        dword [ss:rbp+var_AC], eax
+0000000100000e24         mov        al, 0x0
+0000000100000e26         call       imp___stubs____gmpz_clears
+0000000100000e2b         mov        dword [ss:rbp+var_64], 0x0
+
+0000000100000e32         mov        eax, dword [ss:rbp+var_64]                  ; XREF=_main+56
+0000000100000e35         mov        rcx, qword [ds:imp___got____stack_chk_guard] ; imp___got____stack_chk_guard
+0000000100000e3c         mov        rcx, qword [ds:rcx]
+0000000100000e3f         mov        rdx, qword [ss:rbp+var_8]
+0000000100000e43         cmp        rcx, rdx
+0000000100000e46         mov        dword [ss:rbp+var_B0], eax
+0000000100000e4c         jne        0x100000e61
+
+0000000100000e52         mov        eax, dword [ss:rbp+var_B0]
+0000000100000e58         add        rsp, 0xc0
+0000000100000e5f         pop        rbp
+0000000100000e60         ret
+
+0000000100000e61         call       imp___stubs____stack_chk_fail               ; XREF=_main+396
+                        ; endp
+</pre></table></code></div></div><p>pseudocode generated by Hopper disassembler:</p><div class="language-js highlighter-rouge"><div class="code-header"> <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+</pre><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">_main</span> <span class="p">{</span>
+    <span class="nx">var_8</span> <span class="o">=</span> <span class="o">**</span><span class="nx">__stack_chk_guard</span><span class="p">;</span>
+    <span class="nx">var_64</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span>
+    <span class="nx">var_68</span> <span class="o">=</span> <span class="nc">LODWORD</span><span class="p">(</span><span class="nx">arg0</span><span class="p">);</span>
+    <span class="nx">var_70</span> <span class="o">=</span> <span class="nx">arg1</span><span class="p">;</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">var_68</span> <span class="o">!=</span> <span class="mh">0x1</span><span class="p">)</span> <span class="nx">goto</span> <span class="nx">loc_100000cfd</span><span class="p">;</span>
+    <span class="nx">goto</span> <span class="nx">loc_100000cf1</span><span class="p">;</span>
+
+<span class="nl">loc_100000cfd</span><span class="p">:</span>
+    <span class="nf">__gmpz_init</span><span class="p">();</span>
+    <span class="nf">__gmpz_init</span><span class="p">();</span>
+    <span class="nx">rax</span> <span class="o">=</span> <span class="nf">__gmpz_init_set_str</span><span class="p">();</span>
+    <span class="nx">var_74</span> <span class="o">=</span> <span class="nc">LODWORD</span><span class="p">(</span><span class="nx">rax</span><span class="p">);</span>
+    <span class="nx">rax</span> <span class="o">=</span> <span class="nf">__gmpz_init_set_str</span><span class="p">();</span>
+    <span class="nx">rsi</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="nx">var_70</span> <span class="o">+</span> <span class="mh">0x8</span><span class="p">);</span>
+    <span class="nx">var_80</span> <span class="o">=</span> <span class="nx">var_50</span><span class="p">;</span>
+    <span class="nx">var_84</span> <span class="o">=</span> <span class="nc">LODWORD</span><span class="p">(</span><span class="nx">rax</span><span class="p">);</span>
+    <span class="nx">var_88</span> <span class="o">=</span> <span class="nc">LODWORD</span><span class="p">(</span><span class="mh">0x1</span><span class="p">);</span>
+    <span class="nx">var_90</span> <span class="o">=</span> <span class="mh">0x1</span><span class="p">;</span>
+    <span class="nx">var_94</span> <span class="o">=</span> <span class="nc">LODWORD</span><span class="p">(</span><span class="mh">0x0</span><span class="p">);</span>
+    <span class="nx">var_A0</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span>
+    <span class="nx">rax</span> <span class="o">=</span> <span class="nf">strlen</span><span class="p">(</span><span class="nx">rsi</span><span class="p">);</span>
+    <span class="nx">rcx</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="nx">var_70</span> <span class="o">+</span> <span class="mh">0x8</span><span class="p">);</span>
+    <span class="nx">var_A8</span> <span class="o">=</span> <span class="nx">rcx</span><span class="p">;</span>
+    <span class="nf">__gmpz_import</span><span class="p">();</span>
+    <span class="k">if </span><span class="p">(</span><span class="nc">LODWORD</span><span class="p">(</span><span class="nf">__gmpz_cmp</span><span class="p">())</span> <span class="o">&lt;=</span> <span class="mh">0x0</span><span class="p">)</span> <span class="nx">goto</span> <span class="nx">loc_100000de4</span><span class="p">;</span>
+    <span class="nx">goto</span> <span class="nx">loc_100000ddf</span><span class="p">;</span>
+
+<span class="nl">loc_100000de4</span><span class="p">:</span>
+    <span class="nf">__gmpz_powm</span><span class="p">();</span>
+    <span class="nx">rax</span> <span class="o">=</span> <span class="nf">__gmp_printf</span><span class="p">();</span>
+    <span class="nx">var_AC</span> <span class="o">=</span> <span class="nc">LODWORD</span><span class="p">(</span><span class="nx">rax</span><span class="p">);</span>
+    <span class="nf">__gmpz_clears</span><span class="p">();</span>
+    <span class="nx">var_64</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span>
+
+<span class="nl">loc_100000e32</span><span class="p">:</span>
+    <span class="nx">rcx</span> <span class="o">=</span> <span class="o">*</span><span class="nx">__stack_chk_guard</span><span class="p">;</span>
+    <span class="nx">rcx</span> <span class="o">=</span> <span class="o">*</span><span class="nx">rcx</span><span class="p">;</span>
+    <span class="nx">var_B0</span> <span class="o">=</span> <span class="nc">LODWORD</span><span class="p">(</span><span class="nx">var_64</span><span class="p">);</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">rcx</span> <span class="o">==</span> <span class="nx">var_8</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nc">LODWORD</span><span class="p">(</span><span class="nx">rax</span><span class="p">)</span> <span class="o">=</span> <span class="nx">var_B0</span><span class="p">;</span>
+            <span class="k">return</span> <span class="nx">rax</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">rax</span> <span class="o">=</span> <span class="nf">__stack_chk_fail</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">rax</span><span class="p">;</span>
+
+<span class="nl">loc_100000ddf</span><span class="p">:</span>
+    <span class="nx">rax</span> <span class="o">=</span> <span class="nf">abort</span><span class="p">();</span>
+
+<span class="nl">loc_100000cf1</span><span class="p">:</span>
+    <span class="nx">var_64</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span>
+    <span class="nx">goto</span> <span class="nx">loc_100000e32</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>or, more clearly:</p><div class="language-js highlighter-rouge"><div class="code-header"> <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+</pre><td class="rouge-code"><pre><span class="nx">int</span> <span class="nf">_main</span><span class="p">(</span><span class="nx">int</span> <span class="nx">arg0</span><span class="p">,</span> <span class="nx">int</span> <span class="nx">arg1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">var_8</span> <span class="o">=</span> <span class="o">**</span><span class="nx">___stack_chk_guard</span><span class="p">;</span>
+    <span class="nx">var_70</span> <span class="o">=</span> <span class="nx">arg1</span><span class="p">;</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">arg0</span> <span class="o">!=</span> <span class="mh">0x1</span><span class="p">)</span> <span class="nx">goto</span> <span class="nx">loc_100000cfd</span><span class="p">;</span>
+
+<span class="nl">loc_100000e32</span><span class="p">:</span>
+    <span class="nx">var_B0</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span>
+    <span class="k">if </span><span class="p">(</span><span class="o">**</span><span class="nx">___stack_chk_guard</span> <span class="o">==</span> <span class="nx">var_8</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">rax</span> <span class="o">=</span> <span class="nx">var_B0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">rax</span> <span class="o">=</span> <span class="nf">__stack_chk_fail</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">rax</span><span class="p">;</span>
+
+<span class="nl">loc_100000cfd</span><span class="p">:</span>
+    <span class="nf">__gmpz_init</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">var_50</span><span class="p">);</span>
+    <span class="nf">__gmpz_init</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">var_60</span><span class="p">);</span>
+    <span class="nf">__gmpz_init_set_str</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">var_20</span><span class="p">,</span> <span class="dl">"</span><span class="s2">F66EB887F2B8A620FD03C7D0633791CB4804739CE7FE001C81E6E02783737CA21DB2A0D8AF2D10B200006D10737A0872C667AD142F90407132EFABF8E5D6BD51</span><span class="dl">"</span><span class="p">,</span> <span class="mh">0x10</span><span class="p">);</span>
+    <span class="nf">__gmpz_init_set_str</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">var_40</span><span class="p">,</span> <span class="dl">"</span><span class="s2">65537</span><span class="dl">"</span><span class="p">,</span> <span class="mh">0xa</span><span class="p">);</span>
+    <span class="nf">__gmpz_import</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">var_50</span><span class="p">,</span> <span class="nf">strlen</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="nx">var_70</span> <span class="o">+</span> <span class="mh">0x8</span><span class="p">)),</span> <span class="mh">0x1</span><span class="p">,</span> <span class="mh">0x1</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="nx">var_70</span> <span class="o">+</span> <span class="mh">0x8</span><span class="p">));</span>
+    <span class="k">if </span><span class="p">(</span><span class="nf">__gmpz_cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">var_50</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">var_20</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mh">0x0</span><span class="p">)</span> <span class="nx">goto</span> <span class="nx">loc_100000de4</span><span class="p">;</span>
+
+<span class="nl">loc_100000ddf</span><span class="p">:</span>
+    <span class="nx">rax</span> <span class="o">=</span> <span class="nf">abort</span><span class="p">();</span>
+    <span class="k">return</span> <span class="nx">rax</span><span class="p">;</span>
+
+<span class="nl">loc_100000de4</span><span class="p">:</span>
+    <span class="nf">__gmpz_powm</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">var_60</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">var_50</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">var_40</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">var_20</span><span class="p">);</span>
+    <span class="nf">__gmp_printf</span><span class="p">(</span><span class="dl">"</span><span class="s2">Crypted: %ZX</span><span class="se">\n</span><span class="dl">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">var_60</span><span class="p">);</span>
+    <span class="nf">__gmpz_clears</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">var_50</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">var_60</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">var_20</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">var_40</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">);</span>
+    <span class="nx">goto</span> <span class="nx">loc_100000e32</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>This looks like RSA, with the commonly used value for exponent <code class="language-plaintext highlighter-rouge">e=65537</code> and <code class="language-plaintext highlighter-rouge">N=0xF66EB887F2B8A620FD03C7D0633791CB4804739CE7FE001C81E6E02783737CA21DB2A0D8AF2D10B200006D10737A0872C667AD142F90407132EFABF8E5D6BD51</code></p><p>We get the prime factors of <code class="language-plaintext highlighter-rouge">N</code> (<code class="language-plaintext highlighter-rouge">p</code> and <code class="language-plaintext highlighter-rouge">q</code>) using <a href="http://factordb.com">factordb</a></p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre><td class="rouge-code"><pre><span class="c1">#!/usr/bin/python3
+</span><span class="kn">from</span> <span class="n">Crypto.PublicKey</span> <span class="kn">import</span> <span class="n">RSA</span>
+<span class="kn">import</span> <span class="n">gmpy2</span>
+
+<span class="k">def</span> <span class="nf">int2Text</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="sh">""</span><span class="p">.</span><span class="nf">join</span><span class="p">([</span><span class="nf">chr</span><span class="p">((</span><span class="n">number</span> <span class="o">&gt;&gt;</span> <span class="n">j</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xff</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nf">reversed</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">size</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">))])</span>
+    <span class="k">return</span> <span class="n">text</span><span class="p">.</span><span class="nf">lstrip</span><span class="p">(</span><span class="sh">"</span><span class="se">\x00</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mh">0xF66EB887F2B8A620FD03C7D0633791CB4804739CE7FE001C81E6E02783737CA21DB2A0D8AF2D10B200006D10737A0872C667AD142F90407132EFABF8E5D6BD51</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mh">0x7A9FDCA5BB061D0D638BE1442586F3488B536399BA05A14FCAE3F0A2E5F268F2F3142D1956769497AE677A12E4D44EC727E255B391005B9ADCF53B4A74FFC34C</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">18132985757038135691</span>
+<span class="n">q</span> <span class="o">=</span> <span class="mi">711781150511215724435363874088486910075853913118425049972912826148221297483065007967192431613422409694054064755658564243721555532535827</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
+<span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">gmpy2</span><span class="p">.</span><span class="nf">divm</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">r</span><span class="p">))</span>
+<span class="n">rsa</span> <span class="o">=</span> <span class="n">RSA</span><span class="p">.</span><span class="nf">construct</span><span class="p">((</span><span class="n">N</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">))</span>
+<span class="n">pt</span> <span class="o">=</span> <span class="n">rsa</span><span class="p">.</span><span class="nf">decrypt</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="nf">int2Text</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span><span class="mi">1000</span><span class="p">))</span>
+</pre></table></code></div></div><p>this prints our flag.</p><h2> Flag</h2><code> HV17-5BMu-mgD0-G7Su-EYsp-Mg0b </code><hr><h1 id="dec-15-unsafe-gallery"> Dec 15: Unsafe Gallery <a href="/CTF-writeups-public/writeups/Hackvent_2017/19-dec-15-unsafe-gallery.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><p><em>See pictures you shouldn’t see</em></p><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>The List of all Users of the Unsafe Gallery was leaked (See account list). With this list the URL to each gallery can be constructed. E.g. you find Danny’s gallery here.</p><p>Now find the flag in Thumper’s gallery.</p><p><a href="writeupfiles/accounts.csv">account list</a></p><p>like to Danny’s gallery: http://challenges.hackvent.hacking-lab.com:3958/gallery/bncqYuhdQVey9omKA6tAFi4rep1FDRtD4H8ftWiw</p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>The file is a csv file with user information:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre>id,prename,name,address,zip,city,email,crmId,memberType,pictureCount,galleryCount,mbUsed,logCorrelationId,advertisingId,state
+0,Ethan,McCullough,1259 Arborwood Circle,27299,Manchester,Ethan.McCullough@mccullough.com,12739789,silver,26,1,77,19591907,1,disabled
+1,Vivian,Parsons,1222 Basin Way,49195,Byromville,Vivian.Parsons@gmx.com,24818112,platin,25,1,71,14903484,7,active
+2,Kaitlyn,Wells,1547 Kinzel Station,44404,Gibson,K.Wells@sunflower.org,2024240,platin,28,1,77,98402385,14,active
+3,Dakota,Hayes,1709 Akron Trail,3063,Morrow,Dakota.Hayes@sunflower.org,98938964,gold,29,1,76,60973407,21,active
+[..]
+</pre></table></code></div></div><p>The gallery ID could be some hash of this information, lets extract all the Dannys and Thumpers:</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">cat </span>accounts.csv | <span class="nb">grep</span> <span class="nt">-i</span> danny <span class="o">&gt;</span> danny.csv
+<span class="nv">$ </span><span class="nb">cat </span>accounts.csv | <span class="nb">grep</span> <span class="nt">-i</span> thumper <span class="o">&gt;</span> thumper.csv
+</pre></table></code></div></div><p>There are several Dannys in the list:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre><td class="rouge-code"><pre>28,Danny,Gomez,446 Richards Ridge,67398,Dudley,Danny.Gomez@sunflower.org,4334991,silver,16,1,47,37880231,139,active
+981,Danny,Head,1783 Layton Crescent,10838,Hartwell,Danny.Head@head.com,8090609,platin,7,1,17,96695095,3988,active
+1411,Danny,Brewer,827 Emily Way,85285,Ochlocknee,Danny.Brewer@brewer.com,64452336,platin,17,1,46,58734130,5718,active
+2352,Danny,Snider,1642 Warner Ridge,56674,Sycamore,D.Snider@gmail.com,58043840,platin,23,1,68,2417293,9466,active
+2406,Danny,Douglas,1497 Rondayle Ridge,27656,Gumbranch,Danny.Douglas@douglas.com,97224940,platin,10,1,28,78423462,9693,active
+
+[..]
+
+43038,Danny,Mack,1441 Brill Drive,59015,Osterfield,Danny.Mack@mack.com,56888336,platin,15,1,44,72043133,172729,disabled
+43653,Danny,Parrish,509 Jackson Ln,24360,Mcintosh,Danny.Parrish@mail.com,91465682,silver,19,1,48,52326262,175200,active
+43685,Danny,Hardy,1490 Wall Boulevard,83314,Twin Peaks,Danny.Hardy@mail.com,58905278,gold,15,1,41,35615663,175324,disabled
+43736,Danny,Ayala,853 Marlo Heights,60736,Fargo,Danny.Ayala@ayala.com,73601184,gold,28,1,73,46364233,175558,active
+</pre></table></code></div></div><p>And one of these would appear to translate to <code class="language-plaintext highlighter-rouge">bncqYuhdQVey9omKA6tAFi4rep1FDRtD4H8ftWiw</code> as the Gallery ID in some way.</p><p>If we go to <code class="language-plaintext highlighter-rouge">/gallery</code> we get the message <code class="language-plaintext highlighter-rouge">Please use the link you got in in the registration email or register first</code> so it would make sense that the hash is based only on information present at registration time, email would make most sense</p><p>The hash looks base64 encode, if we decode it is <code class="language-plaintext highlighter-rouge">0x6e772a62e85d4157b2f6898a03ab40162e2b7a9d450d1b43e07f1fb568b0</code> in hex, so let’s see if one of the email addresses translates to this when hashed.. the hash is 60 hex digits long, hmm, an odd length..</p><p>After a LOT of trial and error, we discover that while none of the email addresses result in this hash, we see that one almost does when SHA-256 hashed:</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="gp">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="n">hashlib</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">email</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Danny.Dixon@sunflower.org</span><span class="sh">'</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">m</span> <span class="o">=</span> <span class="n">hashlib</span><span class="p">.</span><span class="nf">sha256</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">m</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">email</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">m</span><span class="p">.</span><span class="nf">hexdigest</span><span class="p">()</span>
+<span class="sh">'</span><span class="s">6e772a62e85d4157b2f6898a03ab40162e2b7a9d7e143f91b43e07ffc7ed5a2c</span><span class="sh">'</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="n">base64</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">base64</span><span class="p">.</span><span class="nf">b64encode</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="nf">digest</span><span class="p">())</span>
+<span class="sh">'</span><span class="s">bncqYuhdQVey9omKA6tAFi4rep1+FD+RtD4H/8ftWiw=</span><span class="sh">'</span>
+</pre></table></code></div></div><p>Aha! so it is base64 encoded SHA-256 hash, but with non-alphanumeric characters removed..</p><p>Now that we know the recipe, let’s repeat it for all the Thumpers in the list and see we can find flags in their galleries.</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">base64</span>
+<span class="kn">import</span> <span class="n">csv</span>
+<span class="kn">import</span> <span class="n">hashlib</span>
+<span class="kn">import</span> <span class="n">requests</span>
+
+
+<span class="n">infile</span> <span class="o">=</span> <span class="sh">'</span><span class="s">thumper.csv</span><span class="sh">'</span>
+
+<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="sh">'</span><span class="s">rb</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+     <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="p">.</span><span class="nf">reader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">)</span>
+     <span class="n">userinfo</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">userinfo</span><span class="p">:</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">user</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+
+    <span class="c1"># sha
+</span>    <span class="n">m</span> <span class="o">=</span> <span class="n">hashlib</span><span class="p">.</span><span class="nf">sha256</span><span class="p">()</span>
+    <span class="n">m</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">email</span><span class="p">)</span>
+    <span class="n">sha</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="nf">digest</span><span class="p">()</span>
+
+    <span class="c1"># b64
+</span>    <span class="n">b</span> <span class="o">=</span> <span class="n">base64</span><span class="p">.</span><span class="nf">b64encode</span><span class="p">(</span><span class="n">sha</span><span class="p">)</span>
+    <span class="c1"># remove non-alphanumeric characters
+</span>    <span class="n">b2</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sh">'</span><span class="s">=</span><span class="sh">'</span><span class="p">,</span><span class="sh">''</span><span class="p">).</span><span class="nf">replace</span><span class="p">(</span><span class="sh">'</span><span class="s">+</span><span class="sh">'</span><span class="p">,</span><span class="sh">''</span><span class="p">).</span><span class="nf">replace</span><span class="p">(</span><span class="sh">'</span><span class="s">/</span><span class="sh">'</span><span class="p">,</span><span class="sh">''</span><span class="p">)</span>
+
+    <span class="c1"># test link
+</span>    <span class="n">url</span> <span class="o">=</span> <span class="sh">'</span><span class="s">http://challenges.hackvent.hacking-lab.com:3958/gallery/</span><span class="sh">'</span><span class="o">+</span><span class="n">b2</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">if</span> <span class="sh">'</span><span class="s">HV17</span><span class="sh">'</span> <span class="ow">in</span> <span class="n">r</span><span class="p">.</span><span class="n">text</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+</pre></table></code></div></div><p>This finds us a hit at http://challenges.hackvent.hacking-lab.com:3958/gallery/37qKYVMANnIdJ2V2EDberGmMz9JzS1pfRLVWaIKuBDw :</p><div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre><td class="rouge-code"><pre>[..]
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-6 col-md-4"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"thumbnail"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"lightbox"</span> <span class="na">href=</span><span class="s">"37qKYVMANnIdJ2V2EDberGmMz9JzS1pfRLVWaIKuBDw//timages/flag.jpg"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"37qKYVMANnIdJ2V2EDberGmMz9JzS1pfRLVWaIKuBDw//timages/flag.jpg"</span> <span class="na">alt=</span><span class="s">"C'YOU"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"caption"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h3&gt;</span>C'YOU<span class="nt">&lt;/h3&gt;</span>
+            <span class="nt">&lt;p&gt;</span>See you next spring at @HackyEaster. I count on you. HV17-el2S-0Td5-XcFi-6Wjg-J5aB<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+[..]
+</pre></table></code></div></div><p><img src="writeupfiles/day15.png" alt="" /></p><h2> Flag</h2><code> HV17-el2S-0Td5-XcFi-6Wjg-J5aB </code><hr><h1 id="dec-16-try-to-escape"> Dec 16: Try to escape … <a href="/CTF-writeups-public/writeups/Hackvent_2017/20-dec-16-try-to-escape-.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><p><em>… from the snake cage</em></p><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Santa programmed a secure jail to give his elves access from remote. Sadly the jail is not as secure as expected.</p><p><code class="language-plaintext highlighter-rouge">nc challenges.hackvent.hacking-lab.com 1034</code></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+</pre><td class="rouge-code"><pre>$ nc challenges.hackvent.hacking-lab.com 1034
+                        _____
+                    .-'`     '.
+                 __/  __       \\
+                /  \ /  \       |    ___
+               | /`\| /`\|      | .-'  /^\/^\\
+               | \(/| \(/|      |/     |) |)|
+              .-\__/ \__/       |      \_/\_/__..._
+      _...---'-.                /   _              '.
+     /,      ,             \   '|  `\                \\
+    | ))     ))           /`|   \    `.       /)  /) |
+    | `      `          .'       |     `-._         /
+    \                 .'         |     ,_  `--....-'
+     `.           __.' ,         |     / /`'''`
+       `'-.____.-' /  /,         |    / /
+           `. `-.-` .'  \        /   / |
+             `-.__.'|    \      |   |  |-.
+                _.._|     |     /   |  |  `'.
+          .-''``    |     |     |   /  |     `-.
+       .'`         /      /     /  |   |        '.
+     /`           /      /     |   /   |\         \\
+    /            |      |      |   |   /\          |
+   ||            |      /      |   /     '.        |
+   |\            \      |      /   |       '.      /
+   \ `.           '.    /      |    \        '---'/
+    \  '.           `-./        \    '.          /
+     '.  `'.            `-._     '.__  '-._____.'--'''''--.
+       '-.  `'--._          `.__     `';----`              \\
+          `-.     `-.          `."'```                     ;
+             `'-..,_ `-.         `'-.                     /
+                    '.  '.           '.                 .'
+
+Challenge by pyth0n33. Have fun!
+
+
+
+The flag is stored super secure in the function SANTA!
+&gt;&gt;&gt; a =
+</pre></table></code></div></div><p>Looks like a python jail. We poke around a bit</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre>&gt;&gt;&gt; a = SANTA()
+name 'santa' is not defined
+&gt;&gt;&gt; a = 2
+&gt;&gt;&gt; a = print(a)
+2
+&gt;&gt;&gt; a = 1
+Denied
+&gt;&gt;&gt; a = eval('2+2')
+&gt;&gt;&gt; print(a)
+4
+&gt;&gt;&gt; a = 'b'
+Denied
+&gt;&gt;&gt; a = 'a'
+&gt;&gt;&gt; a =
+</pre></table></code></div></div><p>..seems like certain characters are forbidden</p><p>possibly useful <a href="https://wapiflapi.github.io/2013/04/22/plaidctf-pyjail-story-of-pythons-escape/">link</a></p><p>We try inputting all printables to see which are allowed and which aren’t:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre>allowed:
+['0', '1', '2', '3', '7', '9', 'a', 'c', 'd', 'e', 'i', 'l', 'n', 'o', 'p', 'r',
+'s', 't', 'v', 'A', 'C', 'D', 'E', 'I', 'L', 'N', 'O', 'P', 'R', 'S', 'T', 'V',
+'_','"', "'", '(', ')', '+', '.', '[', ']', '\n', '\r']
+disallowed:
+['4', '5', '6', '8', 'b', 'f', 'g', 'h', 'j', 'k', 'm', 'q', 'u', 'w', 'x', 'y',
+'z', 'B', 'F', 'G', 'H', 'J', 'K', 'M', 'Q', 'U', 'W', 'X', 'Y', 'Z', '!', '#',
+'$', '%', '&amp;', '*', ',', '-', '/', ':', ';', '&lt;', '=', '&gt;', '?', '@', '\\', '^',
+'`', '{', '|', '}', '~', ' ', '\t', '\x0b', '\x0c']
+</pre></table></code></div></div><p>functions we can use:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre><td class="rouge-code"><pre>eval()
+all()
+repr()
+print()
+
+
+disallowed:
+['abs', 'any', 'apply', 'basestring', 'bin', 'bool', 'buffer', 'bytearray', 'bytes', 'callable', 'chr',
+'classmethod', 'cmp', 'compile', 'complex', 'copyright', 'divmod', 'enumerate', 'execfile', 'exit',
+'file', 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help',
+'hex', 'input', 'issubclass', 'long', 'map', 'max',  'memoryview', 'min', 'next', 'object', 'open',
+'pow', 'property', 'quit', 'range', 'raw_input', 'reduce', 'round', 'staticmethod', 'sum', 'super',
+'tuple', 'type', 'unichr', 'unicode', 'xrange', 'zip']
+undefined:
+['coerce', 'credits', 'delattr', 'dict', 'dir', 'id', 'int', 'intern', 'isinstance', 'iter', 'len',
+'license', 'list', 'locals', 'oct', 'ord', 'reload', 'reversed', 'set', 'setattr', 'slice', 'sorted',
+'str', 'vars']
+other:
+['all', 'eval', 'print', 'repr']
+</pre></table></code></div></div><h2> Flag</h2><code> unsolved </code><hr><h1 id="dec-17-title"> Dec 17: Title <a href="/CTF-writeups-public/writeups/Hackvent_2017/21-dec-17-title.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><p><em>hint</em></p><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h2> Flag</h2><code> unsolved </code><hr><h1 id="dec-18-title"> Dec 18: Title <a href="/CTF-writeups-public/writeups/Hackvent_2017/22-dec-18-title.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><p><em>hint</em></p><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h2> Flag</h2><code> unsolved </code><hr><h1 id="dec-19-title"> Dec 19: Title <a href="/CTF-writeups-public/writeups/Hackvent_2017/23-dec-19-title.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><p><em>hint</em></p><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h2> Flag</h2><code> unsolved </code><hr><h1 id="dec-20-title"> Dec 20: Title <a href="/CTF-writeups-public/writeups/Hackvent_2017/24-dec-20-title.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><p><em>hint</em></p><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h2> Flag</h2><code> unsolved </code><hr><h1 id="dec-21-title"> Dec 21: Title <a href="/CTF-writeups-public/writeups/Hackvent_2017/25-dec-21-title.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><p><em>hint</em></p><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h2> Flag</h2><code> unsolved </code><hr><h1 id="dec-22-title"> Dec 22: Title <a href="/CTF-writeups-public/writeups/Hackvent_2017/26-dec-22-title.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><p><em>hint</em></p><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h2> Flag</h2><code> unsolved </code><hr><h1 id="dec-23-title"> Dec 23: Title <a href="/CTF-writeups-public/writeups/Hackvent_2017/27-dec-23-title.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><p><em>hint</em></p><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h2> Flag</h2><code> unsolved </code><hr><h1 id="dec-24-title"> Dec 24: Title <a href="/CTF-writeups-public/writeups/Hackvent_2017/28-dec-24-title.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><p><em>hint</em></p><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h2> Flag</h2><code> unsolved </code><hr></div><script> document.addEventListener("DOMContentLoaded", () => { console.log("Hello World!"); tocbot.init({ tocSelector: '#toc', contentSelector: '.post-content', ignoreSelector: '[data-toc-skip]', headingSelector: 'h1', orderedList: false, scrollSmooth: false, }); }); </script></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div class="panel-heading"> <a href="https://github.com/shiltemann/CTF-writeups-public/tree/main/website/writeups/Hackvent_2017/index.md"><i class="fab fa-github"></i> Edit on GitHub </a></div></div><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">Contents</div><nav id="toc"></nav></div><script src="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.js"></script></div></div></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><footer><div class="container pl-lg-4 pr-lg-4"><div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3"><div class="footer-left"><p class="mb-0"> © 2023 <a href="https://github.com/shiltemann">Team Galaxians</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." >Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0">Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>.</p></div></div></div></footer><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false" ><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/CTF-writeups-public/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5"></p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script defer src="/CTF-writeups-public/assets/js/dist/commons.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/CTF-writeups-public/app.js"></script>
