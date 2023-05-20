@@ -45,6 +45,7 @@ jobs:
 
       - name: Build Site
         run: |
+          cd website
           gem install bundler
           python -m pip install --upgrade pip
           export PATH=/home/runner/.local/bin:$PATH
