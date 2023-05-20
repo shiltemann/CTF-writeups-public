@@ -1,7 +1,0 @@
-*.swp
-*.swo
-**/__pycache__/
-.venv
-.venv2
-website/_site/
-website/Gemfile.lock
