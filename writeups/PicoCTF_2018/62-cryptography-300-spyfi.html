@@ -1,0 +1,217 @@
+<!doctype html><html lang="en" data-mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover" ><meta name="generator" content="Jekyll v4.3.2" /><meta property="og:title" content="Cryptography 300: SpyFi" /><meta property="og:locale" content="en" /><meta name="description" content="A set of CTF writeups by team Galaxians." /><meta property="og:description" content="A set of CTF writeups by team Galaxians." /><link rel="canonical" href="https://shiltemann.github.io/CTF-writeups-public/writeups/PicoCTF_2018/62-cryptography-300-spyfi.html" /><meta property="og:url" content="https://shiltemann.github.io/CTF-writeups-public/writeups/PicoCTF_2018/62-cryptography-300-spyfi.html" /><meta property="og:site_name" content="Galaxians CTF" /><meta property="og:type" content="website" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Cryptography 300: SpyFi" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-05-20T16:56:23+02:00","description":"A set of CTF writeups by team Galaxians.","headline":"Cryptography 300: SpyFi","url":"https://shiltemann.github.io/CTF-writeups-public/writeups/PicoCTF_2018/62-cryptography-300-spyfi.html"}</script><title> Galaxians CTF | Cryptography 300: SpyFi</title><link rel="apple-touch-icon" sizes="180x180" href="/CTF-writeups-public/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/CTF-writeups-public/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/CTF-writeups-public/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/CTF-writeups-public/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/CTF-writeups-public/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Galaxians CTF"><meta name="application-name" content="Galaxians CTF"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/CTF-writeups-public/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css"><link rel="stylesheet" href="/CTF-writeups-public/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script><body data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/CTF-writeups-public/" class="mx-auto"> <img src="/CTF-writeups-public/assets/img/galaxians-logo.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title"> <a href="/CTF-writeups-public/">Galaxians CTF</a></div><div class="site-subtitle font-italic">Galactic Girlfiends Hack the Universe!</div></div><ul class="w-100"><li class="nav-item"> <a href="/CTF-writeups-public/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>CTF EVENTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/posts/" class="nav-link"> <i class="fa-fw fas fa-pencil ml-xl-3 mr-xl-3 unloaded"></i> <span>POSTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <a href="https://github.com/shiltemann" aria-label="github" target="_blank" rel="noopener noreferrer" > <i class="fab fa-github"></i> </a> <a href="https://twitter.com/" aria-label="twitter" target="_blank" rel="noopener noreferrer" > <i class="fab fa-twitter"></i> </a> <a href="javascript:location.href = 'mailto:' + ['galaxians','galaxians.org'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/CTF-writeups-public/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/CTF-writeups-public/"> Home </a> </span> <span><a href="/CTF-writeups-public/writeups/PicoCTF_2018/">PicoCTF 2018</a></span> <span>Cryptography 300: SpyFi</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Writeup</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..." > </span> <span id="search-cancel">Cancel</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1> Cryptography 300: SpyFi</h1><p><strong>Challenge</strong><br /> James Brahm, James Bond’s less-franchised cousin, has left his secure communication with HQ running, but we couldn’t find a way to steal his agent identification code. Can you? Conect with <code class="language-plaintext highlighter-rouge">nc 2018shell1.picoctf.com 31123</code>. <a href="writeupfiles/spy_terminal_no_flag.py">Source.</a></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>When we connect, we are asked for our situation report, and are given and encrypted string (different depending on our input)</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="nv">$ </span>nc 2018shell1.picoctf.com 31123
+Welcome, Agent 006!
+Please enter your situation report: bla
+4d6276d172d79a9b7da9098f69e9b403024a64082b1f2cdfa32d27d78ca83236e30cf5302c3f000ff2cb7b8a7106351c3fbf30cac64b016bb3fd112a28ed5478da62ea7c24a6c2956c96fbaaa3097dee75e268403189f06f1250226d6d557f9dcbadccc3485faa80ca8c04ff845819b5fb49b0414a48d3cb4993e15d5c9a05a7935360d079133605136cd91c3a85559adf26219527ad17f80a6fece062d71d6f
+
+<span class="nv">$ </span>nc 2018shell1.picoctf.com 31123
+Welcome, Agent 006!
+Please enter your situation report: zzzzzzzzzzzzzzz
+4d6276d172d79a9b7da9098f69e9b403024a64082b1f2cdfa32d27d78ca83236e30cf5302c3f000ff2cb7b8a7106351cc71a0b099baa79288b88380b6e1176093062f7a7751b1cd658a5bd1068c1e66da61b6aa76648777223b15da96a1f249e4ea96647c833ab65e5ec4ed409fe3414af4759f13ad15cc038b0084cdd2f7440456b962fdff9ae64e7a083561b1fda1a8e456864e71843a630207321a2728d26d94dd9b0159dce7368382298d639b818
+</pre></table></code></div></div><p>Looks like the beginning is always the same.. After some experimentation, 11z’s pads the first bit of text nicely to 64 characters, then every other section are 16 character sections.</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre><td class="rouge-code"><pre>$ python -c 'print("z" * 11 + "a" * 64 + "b" * 64)' | nc 2018shell1.picoctf.com 31123 | sed 's/Please enter your situation report: //g' | fold -w 32
+Welcome, Agent 006!
+4d6276d172d79a9b7da9098f69e9b403
+024a64082b1f2cdfa32d27d78ca83236
+e30cf5302c3f000ff2cb7b8a7106351c
+c71a0b099baa79288b88380b6e117609
+99908ad37adef3fb5a94680c5a64c6ca # aaaaaaaaaaaaaaaa
+99908ad37adef3fb5a94680c5a64c6ca
+99908ad37adef3fb5a94680c5a64c6ca
+99908ad37adef3fb5a94680c5a64c6ca
+5e6605d02027026603b6f00863d32bc5 # bbbbbbbbbbbbbbbb
+5e6605d02027026603b6f00863d32bc5
+5e6605d02027026603b6f00863d32bc5
+5e6605d02027026603b6f00863d32bc5
+843f702396b187b716fdfd818e0ebff1
+20de53dad133d6a28195473711d21861
+7577b2866bbc75dcb721fc57c1cc51ad
+ad9aa6494e74fdfa8d484b6a0a895ea6
+30ad4028ee72122451ffdbdad0e04c37
+efc6c5598b5e33fee6d2c043ed8032e7
+292a0b28f8fb2f711e633fd63f526f09
+</pre></table></code></div></div><p>So obviously prefixed/postfixed with something and we’ll need to figure out the contents. Using <code class="language-plaintext highlighter-rouge">$</code> for newline, we can get this mapping</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre>Agent,$Greetings   4d6276d172d79a9b7da9098f69e9b403
+. My situation r   024a64082b1f2cdfa32d27d78ca83236
+eport is as foll   e30cf5302c3f000ff2cb7b8a7106351c
+ows:$zzzzzzzzzzz   c71a0b099baa79288b88380b6e117609
+</pre></table></code></div></div><p>And that means the end parts maps:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre>----------------   ================================
+
+$My agent identi   843f702396b187b716fdfd818e0ebff1
+fying code is: ?   20de53dad133d6a28195473711d21861
+????????????????   7577b2866bbc75dcb721fc57c1cc51ad
+????????????????   ad9aa6494e74fdfa8d484b6a0a895ea6
+.$Down with the    30ad4028ee72122451ffdbdad0e04c37
+Soviets,$006$000   efc6c5598b5e33fee6d2c043ed8032e7
+</pre></table></code></div></div><p>Making a total guess about the last line. So let’s see if we can find the right<br /> number of 0s to pad with.</p><p>Let’s at least confirm we’re on the right path?</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre><td class="rouge-code"><pre>$ python -c 'print("z" * 11 + "a" * 64 +  "fying code is: p" +"a" * 64)' | nc 2018shell1.picoctf.com 31123 | sed 's/Please enter your situation report: //g' | fold -w 32
+Welcome, Agent 006!
+4d6276d172d79a9b7da9098f69e9b403
+024a64082b1f2cdfa32d27d78ca83236
+e30cf5302c3f000ff2cb7b8a7106351c
+c71a0b099baa79288b88380b6e117609
+99908ad37adef3fb5a94680c5a64c6ca
+99908ad37adef3fb5a94680c5a64c6ca
+99908ad37adef3fb5a94680c5a64c6ca
+99908ad37adef3fb5a94680c5a64c6ca
+20de53dad133d6a28195473711d21861 # fying code is: p
+99908ad37adef3fb5a94680c5a64c6ca
+99908ad37adef3fb5a94680c5a64c6ca
+99908ad37adef3fb5a94680c5a64c6ca
+99908ad37adef3fb5a94680c5a64c6ca
+843f702396b187b716fdfd818e0ebff1
+20de53dad133d6a28195473711d21861 # MATCH!!!!
+7577b2866bbc75dcb721fc57c1cc51ad
+ad9aa6494e74fdfa8d484b6a0a895ea6
+30ad4028ee72122451ffdbdad0e04c37
+efc6c5598b5e33fee6d2c043ed8032e7
+292a0b28f8fb2f711e633fd63f526f09
+</pre></table></code></div></div><p>So now we need to push it around so we can guess the characters in the middle<br /> and check against the hash lower down.</p><p>This was semi-automated in</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">string</span>
+<span class="kn">import</span> <span class="n">sys</span>
+<span class="kn">import</span> <span class="n">time</span>
+<span class="kn">import</span> <span class="n">socket</span>
+
+<span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">20</span><span class="p">):</span>
+    <span class="n">nc</span> <span class="o">=</span> <span class="nc">Netcat</span><span class="p">(</span><span class="sh">'</span><span class="s">2018shell1.picoctf.com</span><span class="sh">'</span><span class="p">,</span> <span class="mi">31123</span><span class="p">)</span>
+    <span class="n">nc</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span> <span class="c1"># Hello
+</span>    <span class="n">nc</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span> <span class="c1"># enter report
+</span>    <span class="n">wrap_start</span> <span class="o">=</span> <span class="sh">'</span><span class="s">z</span><span class="sh">'</span> <span class="o">*</span> <span class="mi">11</span> <span class="o">+</span> <span class="sh">'</span><span class="s">a</span><span class="sh">'</span> <span class="o">*</span> <span class="mi">16</span>
+
+    <span class="n">wrap_end</span> <span class="o">=</span> <span class="sh">'</span><span class="s">a</span><span class="sh">'</span> <span class="o">*</span> <span class="p">(</span><span class="mi">16</span> <span class="o">+</span> <span class="mi">11</span><span class="p">)</span>  <span class="o">+</span><span class="sh">'</span><span class="se">\n</span><span class="sh">'</span>
+
+    <span class="c1"># picoCTF{@g3nt6_1$_th3_c00l3$t_3355197}
+</span>    <span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="sh">'</span><span class="s">c00l3$t_3355197</span><span class="sh">'</span> <span class="o">+</span> <span class="n">y</span>
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="p">[</span><span class="sh">'</span><span class="s">_</span><span class="sh">'</span><span class="p">]</span> <span class="o">+</span> <span class="nf">list</span><span class="p">(</span><span class="n">string</span><span class="p">.</span><span class="n">printable</span><span class="p">[</span><span class="n">z</span><span class="p">:</span><span class="nf">min</span><span class="p">(</span><span class="n">z</span> <span class="o">+</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">95</span><span class="p">)])</span>
+    <span class="p">]</span>
+
+
+    <span class="n">nc</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">wrap_start</span> <span class="o">+</span> <span class="sh">''</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span> <span class="o">+</span> <span class="n">wrap_end</span><span class="p">)</span>
+
+    <span class="n">resp</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span> <span class="c1"># output
+</span>
+
+    <span class="k">def</span> <span class="nf">splitn</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">32</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">line</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">line</span><span class="p">),</span> <span class="n">n</span><span class="p">)]</span>
+
+
+    <span class="c1"># split on the 'a' * 16
+</span>    <span class="c1"># print('\n'.join(splitn(resp)))
+</span>
+    <span class="n">prefix</span><span class="p">,</span> <span class="n">queries</span><span class="p">,</span> <span class="n">postfix</span> <span class="o">=</span> <span class="n">resp</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sh">'</span><span class="s">99908ad37adef3fb5a94680c5a64c6ca</span><span class="sh">'</span><span class="p">)</span>
+
+    <span class="n">pm</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="nf">splitn</span><span class="p">(</span><span class="n">postfix</span><span class="p">))</span>
+
+    <span class="c1"># ignore prefix
+</span>
+    <span class="nf">for </span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">(</span><span class="nf">splitn</span><span class="p">(</span><span class="n">queries</span><span class="p">),</span> <span class="n">inputs</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">pm</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">pm</span><span class="p">:</span>
+            <span class="n">sys</span><span class="p">.</span><span class="nf">exit</span><span class="p">()</span>
+
+    <span class="n">time</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></table></code></div></div><p>This would pass 20 ‘query’ strings at a time (part of the string + 1 new</p><p>letter), since the script seemed to limit the volume of input it would actually<br /> attempt. This actualy worked surprisingly well. We started with the input string<br /> <code class="language-plaintext highlighter-rouge">ode is: picoCTF</code> and have it find the <code class="language-plaintext highlighter-rouge">{</code>, and then just remove the left most<br /> character, decrease the counter for the postfix padding of <code class="language-plaintext highlighter-rouge">a</code>s, and add the<br /> new letter to the end of the known input string.</p><h2> Flag</h2><code> picoCTF{@g3nt6_1$_th3_c00l3$t_3355197} </code></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div class="panel-heading"> <a href="https://github.com/shiltemann/CTF-writeups-public/tree/main/website/writeups/PicoCTF_2018/62-cryptography-300-spyfi.md"><i class="fab fa-github"></i> Edit on GitHub </a></div><div id="access-lastmod" class="post"><div class="panel-heading">Recently Updated</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li> <a href="/CTF-writeups-public/writeups/PicoCTF_2018/94-web-exploitation-900-flaskcards-and-freedom.html">Flaskcards and Freedom - (PicoCTF_2018)</a><li> <a href="/CTF-writeups-public/writeups/PicoCTF_2018/93-general-skills-900-dog-or-frog.html">Dog or Frog - (PicoCTF_2018)</a><li> <a href="/CTF-writeups-public/writeups/PicoCTF_2018/92-web-exploitation-800-lambdash-3.html">LambDash 3 - (PicoCTF_2018)</a><li> <a href="/CTF-writeups-public/writeups/PicoCTF_2018/91-cryptography-700-james-brahm-returns.html">Cryptography 700: James Brahm Returns - (PicoCTF_2018)</a><li> <a href="/CTF-writeups-public/writeups/PicoCTF_2018/90-web-exploitation-650-a-simple-question.html">A Simple Question - (PicoCTF_2018)</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div></div></div></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><footer><div class="container pl-lg-4 pr-lg-4"><div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3"><div class="footer-left"><p class="mb-0"> © 2023 <a href="https://github.com/shiltemann">Team Galaxians</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." >Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0">Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>.</p></div></div></div></footer><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false" ><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/CTF-writeups-public/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5"></p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script defer src="/CTF-writeups-public/assets/js/dist/commons.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/CTF-writeups-public/app.js"></script>

@@ -1,0 +1,141 @@
+<!doctype html><html lang="en" data-mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover" ><meta name="generator" content="Jekyll v4.3.2" /><meta property="og:title" content="Reversing 200: quackme" /><meta property="og:locale" content="en" /><meta name="description" content="A set of CTF writeups by team Galaxians." /><meta property="og:description" content="A set of CTF writeups by team Galaxians." /><link rel="canonical" href="https://shiltemann.github.io/CTF-writeups-public/writeups/PicoCTF_2018/43-reversing-200-quackme.html" /><meta property="og:url" content="https://shiltemann.github.io/CTF-writeups-public/writeups/PicoCTF_2018/43-reversing-200-quackme.html" /><meta property="og:site_name" content="Galaxians CTF" /><meta property="og:type" content="website" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Reversing 200: quackme" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-05-20T16:56:23+02:00","description":"A set of CTF writeups by team Galaxians.","headline":"Reversing 200: quackme","url":"https://shiltemann.github.io/CTF-writeups-public/writeups/PicoCTF_2018/43-reversing-200-quackme.html"}</script><title> Galaxians CTF | Reversing 200: quackme</title><link rel="apple-touch-icon" sizes="180x180" href="/CTF-writeups-public/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/CTF-writeups-public/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/CTF-writeups-public/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/CTF-writeups-public/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/CTF-writeups-public/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Galaxians CTF"><meta name="application-name" content="Galaxians CTF"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/CTF-writeups-public/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css"><link rel="stylesheet" href="/CTF-writeups-public/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script><body data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/CTF-writeups-public/" class="mx-auto"> <img src="/CTF-writeups-public/assets/img/galaxians-logo.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title"> <a href="/CTF-writeups-public/">Galaxians CTF</a></div><div class="site-subtitle font-italic">Galactic Girlfiends Hack the Universe!</div></div><ul class="w-100"><li class="nav-item"> <a href="/CTF-writeups-public/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>CTF EVENTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/posts/" class="nav-link"> <i class="fa-fw fas fa-pencil ml-xl-3 mr-xl-3 unloaded"></i> <span>POSTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <a href="https://github.com/shiltemann" aria-label="github" target="_blank" rel="noopener noreferrer" > <i class="fab fa-github"></i> </a> <a href="https://twitter.com/" aria-label="twitter" target="_blank" rel="noopener noreferrer" > <i class="fab fa-twitter"></i> </a> <a href="javascript:location.href = 'mailto:' + ['galaxians','galaxians.org'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/CTF-writeups-public/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/CTF-writeups-public/"> Home </a> </span> <span><a href="/CTF-writeups-public/writeups/PicoCTF_2018/">PicoCTF 2018</a></span> <span>Reversing 200: quackme</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Writeup</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..." > </span> <span id="search-cancel">Cancel</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1> Reversing 200: quackme</h1><p><strong>Challenge</strong><br /> Can you deal with the Duck Web? Get us the flag from <a href="./writeupfiles/quackme">this program</a><br /> You can also find the program in /problems/quackme_0_29c1eeadf7509d3b370e5d76c6fa54e5.</p><p><strong>Hints</strong><br /> Objdump or something similar is probably a good place to start.</p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+</pre><td class="rouge-code"><pre>$ objdump -s -d -j .rodata writeupfiles/quackme
+
+writeupfiles/quackme:     file format elf32-i386
+
+Contents of section .rodata:
+ 80487e8 03000000 01000200 596f7520 68617665  ........You have
+ 80487f8 206e6f77 20656e74 65726564 20746865   now entered the
+ 8048808 20447563 6b205765 622c2061 6e642079   Duck Web, and y
+ 8048818 6f752772 6520696e 20666f72 20612068  ou're in for a h
+ 8048828 6f6e6b69 6e272067 6f6f6420 74696d65  onkin' good time
+ 8048838 2e0a4361 6e20796f 75206669 67757265  ..Can you figure
+ 8048848 206f7574 206d7920 74726963 6b3f0000   out my trick?..
+ 8048858 2906164f 2b35301e 511b5b14 4b085d2b  )..O+50.Q.[.K.]+
+ 8048868 5c100606 18455100 5d004e6f 206c696e  \....EQ.].No lin
+ 8048878 65207265 61642e2e 2e000000 6d616c6c  e read......mall
+ 8048888 6f632829 20726574 75726e65 64204e55  oc() returned NU
+ 8048898 4c4c2e20 4f757420 6f66204d 656d6f72  LL. Out of Memor
+ 80488a8 790a0059 6f752061 72652077 696e6e65  y..You are winne
+ 80488b8 72210054 68617427 7320616c 6c20666f  r!.That's all fo
+ 80488c8 6c6b732e 00                          lks..
+
+Disassembly of section .rodata:
+
+080487e8 &lt;_fp_hw&gt;:
+ 80487e8:       03 00 00 00                                         ....
+
+080487ec &lt;_IO_stdin_used&gt;:
+ 80487ec:       01 00 02 00 59 6f 75 20 68 61 76 65 20 6e 6f 77     ....You have now
+ 80487fc:       20 65 6e 74 65 72 65 64 20 74 68 65 20 44 75 63      entered the Duc
+ 804880c:       6b 20 57 65 62 2c 20 61 6e 64 20 79 6f 75 27 72     k Web, and you'r
+ 804881c:       65 20 69 6e 20 66 6f 72 20 61 20 68 6f 6e 6b 69     e in for a honki
+ 804882c:       6e 27 20 67 6f 6f 64 20 74 69 6d 65 2e 0a 43 61     n' good time..Ca
+ 804883c:       6e 20 79 6f 75 20 66 69 67 75 72 65 20 6f 75 74     n you figure out
+ 804884c:       20 6d 79 20 74 72 69 63 6b 3f 00 00                  my trick?..
+
+08048858 &lt;sekrutBuffer&gt;:
+ 8048858:       29 06 16 4f 2b 35 30 1e 51 1b 5b 14 4b 08 5d 2b     )..O+50.Q.[.K.]+
+ 8048868:       5c 10 06 06 18 45 51 00 5d 00 4e 6f 20 6c 69 6e     \....EQ.].No lin
+ 8048878:       65 20 72 65 61 64 2e 2e 2e 00 00 00 6d 61 6c 6c     e read......mall
+ 8048888:       6f 63 28 29 20 72 65 74 75 72 6e 65 64 20 4e 55     oc() returned NU
+ 8048898:       4c 4c 2e 20 4f 75 74 20 6f 66 20 4d 65 6d 6f 72     LL. Out of Memor
+ 80488a8:       79 0a 00 59 6f 75 20 61 72 65 20 77 69 6e 6e 65     y..You are winne
+ 80488b8:       72 21 00 54 68 61 74 27 73 20 61 6c 6c 20 66 6f     r!.That's all fo
+ 80488c8:       6c 6b 73 2e 00                                      lks..
+</pre></table></code></div></div><p>We see a very suspicious “sekrutBuffer”. We extracted the bytes from this buffer and trying XORing with ‘picoCTF’ in case that shows anything useful:</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre><td class="rouge-code"><pre><span class="err">$</span> <span class="n">python</span>
+<span class="n">Python</span> <span class="mf">2.7</span><span class="p">.</span><span class="mi">12</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Dec</span>  <span class="mi">4</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">14</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mi">18</span><span class="p">)</span>
+<span class="p">[</span><span class="n">GCC</span> <span class="mf">5.4</span><span class="p">.</span><span class="mi">0</span> <span class="mi">20160609</span><span class="p">]</span> <span class="n">on</span> <span class="n">linux2</span>
+<span class="n">Type</span> <span class="sh">"</span><span class="s">help</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">copyright</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">credits</span><span class="sh">"</span> <span class="ow">or</span> <span class="sh">"</span><span class="s">license</span><span class="sh">"</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="p">.</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x29</span><span class="p">,</span> <span class="mh">0x06</span><span class="p">,</span> <span class="mh">0x16</span><span class="p">,</span> <span class="mh">0x4f</span><span class="p">,</span> <span class="mh">0x2b</span><span class="p">,</span> <span class="mh">0x35</span><span class="p">,</span> <span class="mh">0x30</span><span class="p">,</span> <span class="mh">0x1e</span><span class="p">,</span> <span class="mh">0x51</span><span class="p">,</span> <span class="mh">0x1b</span><span class="p">,</span> <span class="mh">0x5b</span><span class="p">,</span> <span class="mh">0x14</span><span class="p">,</span> <span class="mh">0x4b</span><span class="p">,</span> <span class="mh">0x08</span><span class="p">,</span> <span class="mh">0x5d</span><span class="p">,</span> <span class="mh">0x2b</span><span class="p">,</span> <span class="mh">0x5c</span><span class="p">,</span> <span class="mh">0x10</span><span class="p">,</span> <span class="mh">0x06</span><span class="p">,</span> <span class="mh">0x06</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x45</span><span class="p">,</span> <span class="mh">0x51</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x5d</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">pico</span> <span class="o">=</span> <span class="nf">map</span><span class="p">(</span><span class="nb">ord</span><span class="p">,</span> <span class="sh">'</span><span class="s">picoCTF{}</span><span class="sh">'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">(</span><span class="nb">bytes</span><span class="p">,</span> <span class="n">pico</span><span class="p">):</span>
+<span class="p">...</span>     <span class="nf">print</span><span class="p">(</span><span class="nf">chr</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="n">y</span><span class="p">))</span>
+<span class="bp">...</span>
+<span class="n">Y</span>
+<span class="n">o</span>
+<span class="n">u</span>
+
+<span class="n">h</span>
+<span class="n">a</span>
+<span class="n">v</span>
+<span class="n">e</span>
+<span class="p">,</span>
+</pre></table></code></div></div><p>Which looks like the phrase we see provided in the message. We try XORing that phrase against the bytes of the <code class="language-plaintext highlighter-rouge">sekrutBuffer</code> and:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre>bytes = [0x29, 0x06, 0x16, 0x4f, 0x2b, 0x35, 0x30, 0x1e, 0x51, 0x1b, 0x5b, 0x14, 0x4b, 0x08, 0x5d, 0x2b, 0x5c, 0x10, 0x06, 0x06, 0x18, 0x45, 0x51, 0x00, 0x5d]
+pico = map(ord, "You have now entered the Duck Web, and you're in for a honkin' good time.")
+
+buf = ''
+for x, y in zip(bytes, pico):
+    buf += chr(x ^ y)
+
+print(''.join(buf))
+</pre></table></code></div></div><p>Outputs our flag</p><h2> Flag</h2><code> picoCTF{qu4ckm3_9bcb819e} </code></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div class="panel-heading"> <a href="https://github.com/shiltemann/CTF-writeups-public/tree/main/website/writeups/PicoCTF_2018/43-reversing-200-quackme.md"><i class="fab fa-github"></i> Edit on GitHub </a></div><div id="access-lastmod" class="post"><div class="panel-heading">Recently Updated</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li> <a href="/CTF-writeups-public/writeups/PicoCTF_2018/94-web-exploitation-900-flaskcards-and-freedom.html">Flaskcards and Freedom - (PicoCTF_2018)</a><li> <a href="/CTF-writeups-public/writeups/PicoCTF_2018/93-general-skills-900-dog-or-frog.html">Dog or Frog - (PicoCTF_2018)</a><li> <a href="/CTF-writeups-public/writeups/PicoCTF_2018/92-web-exploitation-800-lambdash-3.html">LambDash 3 - (PicoCTF_2018)</a><li> <a href="/CTF-writeups-public/writeups/PicoCTF_2018/91-cryptography-700-james-brahm-returns.html">Cryptography 700: James Brahm Returns - (PicoCTF_2018)</a><li> <a href="/CTF-writeups-public/writeups/PicoCTF_2018/90-web-exploitation-650-a-simple-question.html">A Simple Question - (PicoCTF_2018)</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div></div></div></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><footer><div class="container pl-lg-4 pr-lg-4"><div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3"><div class="footer-left"><p class="mb-0"> © 2023 <a href="https://github.com/shiltemann">Team Galaxians</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." >Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0">Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>.</p></div></div></div></footer><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false" ><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/CTF-writeups-public/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5"></p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script defer src="/CTF-writeups-public/assets/js/dist/commons.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/CTF-writeups-public/app.js"></script>

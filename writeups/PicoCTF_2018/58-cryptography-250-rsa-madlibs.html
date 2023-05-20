@@ -1,0 +1,247 @@
+<!doctype html><html lang="en" data-mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover" ><meta name="generator" content="Jekyll v4.3.2" /><meta property="og:title" content="Cryptography 250: rsa-madlibs" /><meta property="og:locale" content="en" /><meta name="description" content="A set of CTF writeups by team Galaxians." /><meta property="og:description" content="A set of CTF writeups by team Galaxians." /><link rel="canonical" href="https://shiltemann.github.io/CTF-writeups-public/writeups/PicoCTF_2018/58-cryptography-250-rsa-madlibs.html" /><meta property="og:url" content="https://shiltemann.github.io/CTF-writeups-public/writeups/PicoCTF_2018/58-cryptography-250-rsa-madlibs.html" /><meta property="og:site_name" content="Galaxians CTF" /><meta property="og:type" content="website" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Cryptography 250: rsa-madlibs" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-05-20T16:56:23+02:00","description":"A set of CTF writeups by team Galaxians.","headline":"Cryptography 250: rsa-madlibs","url":"https://shiltemann.github.io/CTF-writeups-public/writeups/PicoCTF_2018/58-cryptography-250-rsa-madlibs.html"}</script><title> Galaxians CTF | Cryptography 250: rsa-madlibs</title><link rel="apple-touch-icon" sizes="180x180" href="/CTF-writeups-public/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/CTF-writeups-public/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/CTF-writeups-public/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/CTF-writeups-public/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/CTF-writeups-public/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Galaxians CTF"><meta name="application-name" content="Galaxians CTF"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/CTF-writeups-public/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css"><link rel="stylesheet" href="/CTF-writeups-public/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script><body data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/CTF-writeups-public/" class="mx-auto"> <img src="/CTF-writeups-public/assets/img/galaxians-logo.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title"> <a href="/CTF-writeups-public/">Galaxians CTF</a></div><div class="site-subtitle font-italic">Galactic Girlfiends Hack the Universe!</div></div><ul class="w-100"><li class="nav-item"> <a href="/CTF-writeups-public/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>CTF EVENTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/posts/" class="nav-link"> <i class="fa-fw fas fa-pencil ml-xl-3 mr-xl-3 unloaded"></i> <span>POSTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <a href="https://github.com/shiltemann" aria-label="github" target="_blank" rel="noopener noreferrer" > <i class="fab fa-github"></i> </a> <a href="https://twitter.com/" aria-label="twitter" target="_blank" rel="noopener noreferrer" > <i class="fab fa-twitter"></i> </a> <a href="javascript:location.href = 'mailto:' + ['galaxians','galaxians.org'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/CTF-writeups-public/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/CTF-writeups-public/"> Home </a> </span> <span><a href="/CTF-writeups-public/writeups/PicoCTF_2018/">PicoCTF 2018</a></span> <span>Cryptography 250: rsa-madlibs</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Writeup</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..." > </span> <span id="search-cancel">Cancel</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1> Cryptography 250: rsa-madlibs</h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>We ran into some weird puzzles we think may mean something, can you help me solve one?</p><p>Connect with <code class="language-plaintext highlighter-rouge">nc 2018shell1.picoctf.com 40440</code></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>We connect and are asked to do some RSA calculations. We get some parameters, and have to calculate a target RSA parameter, or answer that it is not feasible to do so. The complete exchange went as follows:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+</pre><td class="rouge-code"><pre>Hello, Welcome to RSA Madlibs
+Keeping young children entertained, since, well, nev3r
+Tell us how to fill in the blanks, or if it's even possible to do so
+Everything, input and output, is decimal, not hex
+#### NEW MADLIB ####
+q : 93187
+p : 94603
+##### WE'RE GONNA NEED THE FOLLOWING ####
+n
+IS THIS POSSIBLE and FEASIBLE? (Y/N):y
+#### TIME TO FILL IN THE MADLIB! ###
+n: 8815769761
+YAHHH! That one was a great madlib!!!
+
+
+#### NEW MADLIB ####
+p : 81203
+n : 6315400919
+##### WE'RE GONNA NEED THE FOLLOWING ####
+q
+IS THIS POSSIBLE and FEASIBLE? (Y/N):y
+#### TIME TO FILL IN THE MADLIB! ###
+q: 77773
+YAHHH! That one was a great madlib!!!
+
+
+#### NEW MADLIB ####
+e : 3
+n : 12738162802910546503821920886905393316386362759567480839428456525224226445173031635306683726182522494910808518920409019414034814409330094245825749680913204566832337704700165993198897029795786969124232138869784626202501366135975223827287812326250577148625360887698930625504334325804587329905617936581116392784684334664204309771430814449606147221349888320403451637882447709796221706470239625292297988766493746209684880843111138170600039888112404411310974758532603998608057008811836384597579147244737606088756299939654265086899096359070667266167754944587948695842171915048619846282873769413489072243477764350071787327913
+##### WE'RE GONNA NEED THE FOLLOWING ####
+q
+p
+IS THIS POSSIBLE and FEASIBLE? (Y/N):n
+YAHHH! That one was a great madlib!!!
+
+
+#### NEW MADLIB ####
+q : 78203
+p : 79999
+##### WE'RE GONNA NEED THE FOLLOWING ####
+totient(n)
+IS THIS POSSIBLE and FEASIBLE? (Y/N):y
+#### TIME TO FILL IN THE MADLIB! ###
+totient(n): 6256003596
+YAHHH! That one was a great madlib!!!
+
+
+#### NEW MADLIB ####
+plaintext : 1815907181716474805136452061793917684000871911998851410864797078911161933431337632774829806207517001958179617856720738101327521552576351369691667910371502971480153619360010341709624631317220940851114914911751279825748
+e : 3
+n : 29129463609326322559521123136222078780585451208149138547799121083622333250646678767769126248182207478527881025116332742616201890576280859777513414460842754045651093593251726785499360828237897586278068419875517543013545369871704159718105354690802726645710699029936754265654381929650494383622583174075805797766685192325859982797796060391271817578087472948205626257717479858369754502615173773514087437504532994142632207906501079835037052797306690891600559321673928943158514646572885986881016569647357891598545880304236145548059520898133142087545369179876065657214225826997676844000054327141666320553082128424707948750331
+##### WE'RE GONNA NEED THE FOLLOWING ####
+ciphertext
+IS THIS POSSIBLE and FEASIBLE? (Y/N):Y
+#### TIME TO FILL IN THE MADLIB! ###
+ciphertext: 26722917505435451150596710555980625220524134812001687080485341361511207096550823814926607028717403343344600191255790864873639087129323153797404989216681535785492257030896045464472300400447688001563694767148451912130180323038978568872458130612657140514751874493071944456290959151981399532582347021031424096175747508579453024891862161356081561032045394147561900547733602483979861042957169820579569242714893461713308057915755735700329990893197650028440038700231719057433874201113850357283873424698585951160069976869223244147124759020366717935504226979456299659682165757462057188430539271285705680101066120475874786208053
+YAHHH! That one was a great madlib!!!
+
+#### NEW MADLIB ####
+ciphertext : 10752401345107934853994451075614360420392571726218503379932844501179276054552894499371978339254216342863717232351225262
+456711111066616866474311520379151098570994236660962643699588778167465127223356630381497967750710116858773937569900973458898548236970
+2634499544891509228440194615376339573685285125730286623323
+e : 3
+n : 27566996291508213932419371385141522859343226560050921196294761870500846140132385080994630946107675330189606021165260590147068785
+820203600882092467797813519434652632126061353583124063944373336654246386074125394368479677295167494332556053947231141336142392086767
+742035970752738056297057898704112912616565299451359791548536846025854378347423520104947907334451056339439706623069503088916316369813
+499705073573777577169392401411708920615574908593784282546154486446779246790294398198854547069593987224578333683144886242572837465834
+139561122101527973799583927411936200068176539747586449939559180772690007261562703222558103359
+##### WE'RE GONNA NEED THE FOLLOWING ####
+plaintext
+IS THIS POSSIBLE and FEASIBLE? (Y/N):N
+YAHHH! That one was a great madlib!!!
+
+#### NEW MADLIB ####
+q : 92092076805892533739724722602668675840671093008520241548191914215399824020372076186460768206814914423802230398410980218741906960527104568970225804374404612617736579286959865287226538692911376507934256844456333236362669879347073756238894784951597211105734179388300051579994253565459304743059533646753003894559
+p : 97846775312392801037224396977012615848433199640105786119757047098757998273009741128821931277074555731813289423891389911801250326299324018557072727051765547115514791337578758859803890173153277252326496062476389498019821358465433398338364421624871010292162533041884897182597065662521825095949253625730631876637
+e : 65537
+##### WE'RE GONNA NEED THE FOLLOWING ####
+d
+IS THIS POSSIBLE and FEASIBLE? (Y/N): Y
+#### TIME TO FILL IN THE MADLIB! ###
+d: 1405046269503207469140791548403639533127416416214210694972085079171787580463776820425965898174272870486015739516125786182821637006600742140682552321645503743280670839819078749092730110549881891271317396450158021688253989767145578723458252769465545504142139663476747479225923933192421405464414574786272963741656223941750084051228611576708609346787101088759062724389874160693008783334605903142528824559223515203978707969795087506678894006628296743079886244349469131831225757926844843554897638786146036869572653204735650843186722732736888918789379054050122205253165705085538743651258400390580971043144644984654914856729
+
+YAHHH! That one was a great madlib!!!
+
+
+#### NEW MADLIB ####
+p : 153143042272527868798412612417204434156935146874282990942386694020462861918068684561281763577034706600608387699148071015194725533394126069826857182428660427818277378724977554365910231524827258160904493774748749088477328204812171935987088715261127321911849092207070653272176072509933245978935455542420691737433
+ciphertext :
+5315135537182226856134532843338546481354659841681272223692273789930341302489189252395544040217036010025492161730920090820789264419456405499853943420863961834511620167348215712366219204972198527365477630427263725627920265227612760416678425823843187407675643742844283110052895704455415142735463486037912801307917634230788549540802477270278755052542590491708620341889689884020271200598596327430790861785538107067664504281508756159305916221674161062222221931717498244841323828452111473034440447694160917521358885718436832783214139059379459896493819067235346238816701274408935126796953373891399167497687512301978797146598
+e : 65537
+n : 23952937352643527451379227516428377705004894508566304313177880191662177061878993798938496818120987817049538365206671401938265663712351239785237507341311858383628932183083145614696585411921662992078376103990806989257289472590902167457302888198293135333083734504191910953238278860923153746261500759411620299864395158783509535039259714359526738924736952759753503357614939203434092075676169179112452620687731670534906069845965633455748606649062394293289967059348143206600765820021392608270528856238306849191113241355842396325210132358046616312901337987464473799040762271876389031455051640937681745409057246190498795697239
+##### WE'RE GONNA NEED THE FOLLOWING ####
+plaintext
+IS THIS POSSIBLE and FEASIBLE? (Y/N): Y
+#### TIME TO FILL IN THE MADLIB! ###
+plaintext: 240109877286251840533272915662757983981706320845661471802585807564915966910384301849411666983334013
+
+
+plaintext: YAHHH! That one was a great madlib!!!
+
+
+If you convert the last plaintext to a hex number, then ascii, you'll find what you're searching for ;)
+</pre></table></code></div></div><p>so we convert the last answer to the flag:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>&gt;&gt;&gt; flag = 240109877286251840533272915662757983981706320845661471802585807564915966910384301849411666983334013
+&gt;&gt;&gt; hex(flag)
+'0x7069636f4354467b64305f755f6b6e30775f7468335f7740795f325f5253405f35643338336531307d'
+&gt;&gt;&gt; bytes.fromhex(hex(flag)[2:]).decode('utf-8')
+'picoCTF{d0_u_kn0w_th3_w@y_2_RS@_5d383e10}'
+</pre></table></code></div></div><p>Below is some pseudocode of how parameters may be calculated given a set of<br /> other ones</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="c1"># pseudocode to show how the rsa calculations were done
+</span><span class="kn">import</span> <span class="n">gmpy2</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="n">p</span><span class="o">*</span><span class="n">q</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">N</span> <span class="o">//</span> <span class="n">q</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">N</span> <span class="o">//</span><span class="n">p</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">gmpy2</span><span class="p">.</span><span class="nf">divm</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">gmpy2</span><span class="p">.</span><span class="nf">divm</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
+
+<span class="n">ct</span> <span class="o">=</span> <span class="n">gmpy2</span><span class="p">.</span><span class="nf">powmod</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="n">pt</span> <span class="o">=</span> <span class="n">gmpy2</span><span class="p">.</span><span class="nf">powmod</span><span class="p">(</span><span class="n">ct</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+</pre></table></code></div></div><p>all responses can be found in <a href="writeupfiles/madlibs_answers.txt">madlibs_answers.txt</a> and run with</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>cat madlib_aswers.txt | nc 2018shell1.picoctf.com 40440
+</pre></table></code></div></div><h2> Flag</h2><code> picoCTF{d0_u_kn0w_th3_w@y_2_RS@_5d383e10} </code></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div class="panel-heading"> <a href="https://github.com/shiltemann/CTF-writeups-public/tree/main/website/writeups/PicoCTF_2018/58-cryptography-250-rsa-madlibs.md"><i class="fab fa-github"></i> Edit on GitHub </a></div><div id="access-lastmod" class="post"><div class="panel-heading">Recently Updated</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li> <a href="/CTF-writeups-public/writeups/PicoCTF_2018/94-web-exploitation-900-flaskcards-and-freedom.html">Flaskcards and Freedom - (PicoCTF_2018)</a><li> <a href="/CTF-writeups-public/writeups/PicoCTF_2018/93-general-skills-900-dog-or-frog.html">Dog or Frog - (PicoCTF_2018)</a><li> <a href="/CTF-writeups-public/writeups/PicoCTF_2018/92-web-exploitation-800-lambdash-3.html">LambDash 3 - (PicoCTF_2018)</a><li> <a href="/CTF-writeups-public/writeups/PicoCTF_2018/91-cryptography-700-james-brahm-returns.html">Cryptography 700: James Brahm Returns - (PicoCTF_2018)</a><li> <a href="/CTF-writeups-public/writeups/PicoCTF_2018/90-web-exploitation-650-a-simple-question.html">A Simple Question - (PicoCTF_2018)</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div></div></div></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><footer><div class="container pl-lg-4 pr-lg-4"><div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3"><div class="footer-left"><p class="mb-0"> © 2023 <a href="https://github.com/shiltemann">Team Galaxians</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." >Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0">Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>.</p></div></div></div></footer><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false" ><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/CTF-writeups-public/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5"></p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script defer src="/CTF-writeups-public/assets/js/dist/commons.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/CTF-writeups-public/app.js"></script>
