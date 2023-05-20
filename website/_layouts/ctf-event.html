@@ -54,7 +54,7 @@ panel_includes:
 
 {% for writeup in writeups %}
 <h1 id="{{writeup.title | slugify }}"> {{ writeup.title }}
-<a href="{{writeup.url}}"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a>
+<a href="{{site.baseurl}}/{{writeup.url}}"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a>
 </h1>
 
 {{ writeup.content | markdownify }}
