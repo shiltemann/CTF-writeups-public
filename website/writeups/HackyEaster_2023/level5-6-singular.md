@@ -24,13 +24,31 @@ Hint: This one can be solved with linux commands, with a one-liner.
 
 ## Solution
 
+Here it is as a one liner:
+
+```
+cat writeupfiles/singular/singular.txt | sort | uniq -c | grep ' 1 ' | awk '{print length($0), $0}' | grep $(cat writeupfiles/singular/singular.txt | sort | uniq -c | grep ' 1 ' | awk '{print length($0)}' | sort | uniq -c | grep ' 1 ' | awk '{print $2}')
+```
+
+It looks for unique flags, then finds the one that has a unique length (33 characters).
+
+
+
+*Sounds simple? hell no, this one really stumped me for a long time, I solved half of level 8 before this one lol. Below you can find a lot of the things we tried and notes we made of a lot of the rabbit holes we went down :P*
+
+
 First let's get the real uniques:
 
 ```bash
 cat singular.txt | sort | uniq -c | grep ' 1 ' | egrep he.* -o > unique.txt
 ```
 
-Those are unique within the entire file which we can reasonably assume from the challenge description. In discord we see the additional hint:
+Those are unique within the entire file which we can reasonably assume from the challenge description.
+
+Tried a bunch of things next that didn't work, requiring each word to be unique in the file, in the unique flags, in its column, ..nothing. ..maybe the words all synonyms of unique? nope nope nope.
+
+
+In discord we see the additional hint:
 
 > While it's unique from top to bottom, it's unique from left to right as well
 
@@ -41,7 +59,7 @@ $ cat unique.txt | egrep '\{(.*)\}' -o | egrep '([^_]).*\1' --invert-match
 $
 ```
 
-nothing. Every single entry re-uses letters left to right. 
+nothing. Every single entry re-uses letters left to right.
 
 ### Word Frequency
 
