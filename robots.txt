@@ -1,0 +1,5 @@
+User-agent: *
+
+Disallow: /norobots/
+
+Sitemap: https://shiltemann.github.io/CTF-writeups-public/sitemap.xml
