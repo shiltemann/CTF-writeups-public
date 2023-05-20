@@ -1,0 +1,289 @@
+<!doctype html><html lang="en" data-mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover" ><meta name="generator" content="Jekyll v4.3.2" /><meta property="og:title" content="Egg 23: Beat the Nerd Master" /><meta property="og:locale" content="en" /><meta name="description" content="A set of CTF writeups by team Galaxians." /><meta property="og:description" content="A set of CTF writeups by team Galaxians." /><link rel="canonical" href="https://shiltemann.github.io/CTF-writeups-public/writeups/HackyEaster_2015/22-egg-23-beat-the-nerd-master.html" /><meta property="og:url" content="https://shiltemann.github.io/CTF-writeups-public/writeups/HackyEaster_2015/22-egg-23-beat-the-nerd-master.html" /><meta property="og:site_name" content="Galaxians CTF" /><meta property="og:type" content="website" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Egg 23: Beat the Nerd Master" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-05-20T16:05:55+02:00","description":"A set of CTF writeups by team Galaxians.","headline":"Egg 23: Beat the Nerd Master","url":"https://shiltemann.github.io/CTF-writeups-public/writeups/HackyEaster_2015/22-egg-23-beat-the-nerd-master.html"}</script><title> Galaxians CTF | Egg 23: Beat the Nerd Master</title><link rel="apple-touch-icon" sizes="180x180" href="/CTF-writeups-public/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/CTF-writeups-public/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/CTF-writeups-public/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/CTF-writeups-public/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/CTF-writeups-public/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Galaxians CTF"><meta name="application-name" content="Galaxians CTF"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/CTF-writeups-public/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css"><link rel="stylesheet" href="/CTF-writeups-public/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script><body data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/CTF-writeups-public/" class="mx-auto"> <img src="/CTF-writeups-public/assets/img/galaxians-logo.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title"> <a href="/CTF-writeups-public/">Galaxians CTF</a></div><div class="site-subtitle font-italic">Galactic Girlfiends Hack the Universe!</div></div><ul class="w-100"><li class="nav-item"> <a href="/CTF-writeups-public/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>CTF EVENTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/posts/" class="nav-link"> <i class="fa-fw fas fa-pencil ml-xl-3 mr-xl-3 unloaded"></i> <span>POSTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <a href="https://github.com/shiltemann" aria-label="github" target="_blank" rel="noopener noreferrer" > <i class="fab fa-github"></i> </a> <a href="https://twitter.com/" aria-label="twitter" target="_blank" rel="noopener noreferrer" > <i class="fab fa-twitter"></i> </a> <a href="javascript:location.href = 'mailto:' + ['galaxians','galaxians.org'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/CTF-writeups-public/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/CTF-writeups-public/"> Home </a> </span> <span><a href="/CTF-writeups-public/writeups/HackyEaster_2015/">HackyEaster 2015</a></span> <span>Egg 23: Beat the Nerd Master</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Writeup</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..." > </span> <span id="search-cancel">Cancel</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1> Egg 23: Beat the Nerd Master</h1><h2 id="challenge"><span class="mr-2">Challenge:</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p><em>Did you beat the Swordmaster in Monkey Island? Even if, it ain’t gonna help you this time. Get to know the mighty Nerd Master!</em></p><p><em>Connect to port 1400 of hackyeaster.hacking-lab.com, and start the battle.</em></p><p><em>Here’s an insult to start with: Go 127.0.0.1 to your mummy.</em></p><h2 id="solution"><span class="mr-2">Solution:</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>If you telnet in to the server a insult/comeback battle start. It is our turn first and we start with the insult in the hint. The server responds <code class="language-plaintext highlighter-rouge">Won't work. I only support IPv6</code>. Then the opponent comes with a new insult, but we don’t know how to respond and lose the battle. Next time we start with this new insult and remember how the opponent responded. Repeating this we get a list of all insults and comebacks. Whenever we have a good comeback we knock a point of health off our opponent, but if we repeat an insult already used we lose a point of health. First player to run out of health loses.</p><p>We make a script to play for us because there is a short timeout</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">telnetlib</span>
+<span class="kn">import</span> <span class="n">random</span>
+
+<span class="n">comebacks</span><span class="o">=</span><span class="p">{</span> <span class="sh">"</span><span class="s">Go 127.0.0.1 to your mummy.</span><span class="sh">"</span><span class="p">:</span><span class="sh">"</span><span class="s">Won</span><span class="sh">'</span><span class="s">t work. I only support IPv6.</span><span class="sh">"</span><span class="p">,</span>
+            <span class="sh">"</span><span class="s">I bet you don</span><span class="sh">'</span><span class="s">t even understand binary.</span><span class="sh">"</span><span class="p">:</span><span class="sh">"</span><span class="s">Sure I do. Me and you, we are 10 different kind of persons.</span><span class="sh">"</span><span class="p">,</span>
+            <span class="sh">"</span><span class="s">This fight is like a hash function - it works in one direction only.</span><span class="sh">"</span><span class="p">:</span><span class="sh">"</span><span class="s">Too bad you picked  hashing.</span><span class="sh">"</span><span class="p">,</span>
+            <span class="sh">"</span><span class="s">Pna lbh ernq guvf?</span><span class="sh">"</span><span class="p">:</span><span class="sh">"</span><span class="s">EBG13 vf sbe ynzref.</span><span class="sh">"</span><span class="p">,</span>
+            <span class="sh">"</span><span class="s">You</span><span class="sh">'</span><span class="s">re so slow, you must have been written in BASIC.</span><span class="sh">"</span><span class="p">:</span><span class="sh">"</span><span class="s">At least I don</span><span class="sh">'</span><span class="s">t have memory leaks like you.</span><span class="sh">"</span><span class="p">,</span>
+            <span class="sh">"</span><span class="s">You</span><span class="sh">'</span><span class="s">ll be 0xdeadbeef soon.</span><span class="sh">"</span><span class="p">:</span><span class="sh">"</span><span class="s">Not as long as I have my 0xcafebabe.</span><span class="sh">"</span><span class="p">,</span>
+            <span class="sh">"</span><span class="s">After loosing to me, your life won</span><span class="sh">'</span><span class="s">t be the same anymore.</span><span class="sh">"</span><span class="p">:</span><span class="sh">"</span><span class="s">A Life? Cool! Where can I download one of those?</span><span class="sh">"</span><span class="p">,</span>
+            <span class="sh">"</span><span class="s">You must be jealous when seeing my phone</span><span class="sh">'</span><span class="s">s display.</span><span class="sh">"</span><span class="p">:</span><span class="sh">"</span><span class="s">Not really - Your pixels are so big, some of them have their own region code!</span><span class="sh">"</span><span class="p">,</span>
+            <span class="sh">"</span><span class="s">Af7ter th1s f1gh7, I w1ll pwn ur b0x3n.</span><span class="sh">"</span><span class="p">:</span><span class="sh">"</span><span class="s">Check your settings - you seem to have chosen the Klingon keyboard layout.</span><span class="sh">"</span><span class="p">,</span>
+            <span class="sh">"</span><span class="s">Ping! Anybody there?</span><span class="sh">"</span><span class="p">:</span><span class="sh">"</span><span class="s">ICMP type 3, code 13: Communication Administratively Prohibited</span><span class="sh">"</span><span class="p">,</span>
+            <span class="sh">"</span><span class="s">1f u c4n r34d th1s u r s70p1d.</span><span class="sh">"</span><span class="p">:</span><span class="sh">"</span><span class="s">You better check your spelling. Stoopid has two </span><span class="sh">'</span><span class="s">o</span><span class="sh">'</span><span class="s">s.</span><span class="sh">"</span><span class="p">,</span>
+            <span class="sh">"</span><span class="s">Tell me your name, hobo. I need to check your records.</span><span class="sh">"</span><span class="p">:</span><span class="sh">"</span><span class="s">My name is bob</span><span class="sh">'</span><span class="s">; DROP TABLE VALJ;--</span><span class="sh">"</span><span class="p">,</span>
+            <span class="sh">"</span><span class="s">I have more friends than you.</span><span class="sh">"</span><span class="p">:</span><span class="sh">"</span><span class="s">Yeah, but only until you update your Facebook profile with a real picture of you!</span><span class="sh">"</span><span class="p">,</span>
+            <span class="sh">"</span><span class="s">format C:</span><span class="sh">"</span><span class="p">:</span><span class="sh">"</span><span class="s">Specified drive does not exist.</span><span class="sh">"</span><span class="p">,</span>
+            <span class="sh">"</span><span class="s">You should leave your cave and socialize a bit.</span><span class="sh">"</span><span class="p">:</span><span class="sh">"</span><span class="s">I</span><span class="sh">'</span><span class="s">m not anti-social. I</span><span class="sh">'</span><span class="s">m just not user friendly.</span><span class="sh">"</span><span class="p">,</span>
+            <span class="sh">"</span><span class="s">I</span><span class="sh">'</span><span class="s">ll check you out - any last words?</span><span class="sh">"</span><span class="p">:</span><span class="sh">"</span><span class="s">svn:ignore</span><span class="sh">"</span><span class="p">}</span>
+
+<span class="c1"># remember which insults we have already seen
+</span><span class="n">seen</span><span class="o">=</span><span class="p">{}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">comebacks</span><span class="p">.</span><span class="nf">iterkeys</span><span class="p">():</span>
+    <span class="n">seen</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+
+<span class="c1">#connect to server
+</span><span class="n">server</span><span class="o">=</span><span class="sh">"</span><span class="s">hackyeaster.hacking-lab.com</span><span class="sh">"</span>
+<span class="n">port</span><span class="o">=</span><span class="mi">1400</span>
+
+<span class="k">def</span> <span class="nf">comeback</span><span class="p">(</span><span class="n">insult</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">comebacks</span><span class="p">[</span><span class="n">insult</span><span class="p">]</span>
+    <span class="n">tn</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">comebacks</span><span class="p">[</span><span class="n">insult</span><span class="p">]</span><span class="o">+</span><span class="sh">"</span><span class="se">\n</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">insult</span><span class="p">():</span>
+    <span class="n">alreadyseen</span><span class="o">=</span><span class="mi">1</span>
+    <span class="k">while</span> <span class="n">alreadyseen</span><span class="p">:</span>
+        <span class="n">insult</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">choice</span><span class="p">(</span><span class="n">comebacks</span><span class="p">.</span><span class="nf">keys</span><span class="p">())</span>
+        <span class="n">alreadyseen</span><span class="o">=</span><span class="n">seen</span><span class="p">[</span><span class="n">insult</span><span class="p">]</span>
+
+    <span class="k">print</span> <span class="n">insult</span>
+    <span class="n">tn</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">insult</span><span class="o">+</span><span class="sh">"</span><span class="se">\n</span><span class="sh">"</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">tn</span><span class="p">.</span><span class="nf">read_until</span><span class="p">(</span><span class="sh">"</span><span class="s">---- MY TURN ----</span><span class="se">\n</span><span class="sh">"</span><span class="p">).</span><span class="nf">strip</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">seen</span><span class="p">[</span><span class="n">insult</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="n">tn</span> <span class="o">=</span> <span class="n">telnetlib</span><span class="p">.</span><span class="nc">Telnet</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">tn</span><span class="p">.</span><span class="nf">read_until</span><span class="p">(</span><span class="sh">"</span><span class="s">Do you feel brave enough to challenge the mighty nerdmaster? (y|n)</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">tn</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="sh">"</span><span class="s">y</span><span class="se">\n</span><span class="sh">"</span> <span class="p">)</span>
+
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="c1"># we start. make an insult
+</span>    <span class="k">print</span> <span class="n">tn</span><span class="p">.</span><span class="nf">read_until</span><span class="p">(</span><span class="sh">"</span><span class="s">---- YOUR TURN ----</span><span class="sh">"</span><span class="p">)</span>
+    <span class="nf">insult</span><span class="p">()</span>
+
+    <span class="c1">#get their insult
+</span>    <span class="n">ins</span> <span class="o">=</span> <span class="n">tn</span><span class="p">.</span><span class="nf">read_until</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="sh">"</span><span class="p">).</span><span class="nf">strip</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="sh">"</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">ins</span>
+    <span class="nf">comeback</span><span class="p">(</span><span class="n">ins</span><span class="p">)</span>
+    <span class="n">seen</span><span class="p">[</span><span class="n">ins</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
+</pre></table></code></div></div><p>We run this code and get the following battle:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+</pre><td class="rouge-code"><pre>Do you feel brave enough to challenge the mighty nerdmaster? (y|n)
+
+OK, let's start, greenhorn. You won't have a chance. You may start!
+
+---- YOUR TURN ----
+Af7ter th1s f1gh7, I w1ll pwn ur b0x3n.
+Check your settings - you seem to have chosen the Klingon keyboard layout.
+
+---- MY TURN ----
+format C:
+Specified drive does not exist.
+Arrgh! That's right.
+Point for you! My health: 7, your health: 4
+
+---- YOUR TURN ----
+You must be jealous when seeing my phone's display.
+Not really - Your pixels are so big, some of them have their own region code!
+
+---- MY TURN ----
+I have more friends than you.
+Yeah, but only until you update your Facebook profile with a real picture of you!
+Arrgh! That's right.
+Point for you! My health: 6, your health: 4
+
+---- YOUR TURN ----
+This fight is like a hash function - it works in one direction only.
+Too bad you picked LM hashing.
+
+---- MY TURN ----
+Ping! Anybody there?
+ICMP type 3, code 13: Communication Administratively Prohibited
+Arrgh! That's right.
+Point for you! My health: 5, your health: 4
+
+---- YOUR TURN ----
+I bet you don't even understand binary.
+Sure I do. Me and you, we are 10 different kind of persons.
+
+---- MY TURN ----
+You'll be 0xdeadbeef soon.
+Not as long as I have my 0xcafebabe.
+Arrgh! That's right.
+Point for you! My health: 4, your health: 4
+
+---- YOUR TURN ----
+Tell me your name, hobo. I need to check your records.
+My name is bob'; DROP TABLE VALJ;--
+
+---- MY TURN ----
+Go 127.0.0.1 to your mummy.
+Won't work. I only support IPv6.
+Arrgh! That's right.
+Point for you! My health: 3, your health: 4
+
+---- YOUR TURN ----
+After loosing to me, your life won't be the same anymore.
+A Life? Cool! Where can I download one of those?
+
+---- MY TURN ----
+You should leave your cave and socialize a bit.
+I'm not anti-social. I'm just not user friendly.
+Arrgh! That's right.
+Point for you! My health: 2, your health: 4
+
+---- YOUR TURN ----
+I'll check you out - any last words?
+svn:ignore
+
+---- MY TURN ----
+You're so slow, you must have been written in BASIC.
+At least I don't have memory leaks like you.
+Arrgh! That's right.
+Point for you! My health: 1, your health: 4
+
+---- YOUR TURN ----
+1f u c4n r34d th1s u r s70p1d.
+You better check your spelling. Stoopid has two 'o's.
+
+---- MY TURN ----
+Pna lbh ernq guvf?
+EBG13 vf sbe ynzref.
+Arrgh! That's right.
+
+Respect! you've beaten the mighty nerd master! Here's your egg:
+http://hackyeaster.hacking-lab.com/hackyeaster/images/egg_23_j7vzfUzftszdf754fXDS.png
+</pre></table></code></div></div><p>When we finally win we get the link to our easter egg:</p><p><img src="images/egg_23_qrcode_small.png" alt="" /></p><h2> Flag</h2><code> e9fg6eeEncsouIZGM88g </code></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div class="panel-heading"> <a href="https://github.com/shiltemann/CTF-writeups-public/tree/main/website/writeups/HackyEaster_2015/22-egg-23-beat-the-nerd-master.md"><i class="fab fa-github"></i> Edit on GitHub </a></div><div id="access-lastmod" class="post"><div class="panel-heading">Recently Updated</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li> <a href="/CTF-writeups-public/writeups/HackyEaster_2015/26-egg-27-too-many-time-pad.html">Egg 27: Too Many Time Pad - (HackyEaster_2015)</a><li> <a href="/CTF-writeups-public/writeups/HackyEaster_2015/25-egg-26-clumsy-cloud.html">Egg 26: Clumsy Cloud - (HackyEaster_2015)</a><li> <a href="/CTF-writeups-public/writeups/HackyEaster_2015/24-egg-25-jad--ida.html">Egg 25: JAD-IDA - (HackyEaster_2015)</a><li> <a href="/CTF-writeups-public/writeups/HackyEaster_2015/02-egg-3-lego-stego.html">Egg 3: Lego Stego - (HackyEaster_2015)</a><li> <a href="/CTF-writeups-public/writeups/HackyEaster_2015/23-egg-24-spam-hash.html">Egg 24: Spam Hash - (HackyEaster_2015)</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div></div></div></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><footer><div class="container pl-lg-4 pr-lg-4"><div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3"><div class="footer-left"><p class="mb-0"> © 2023 <a href="https://github.com/shiltemann">Team Galaxians</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." >Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0">Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>.</p></div></div></div></footer><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false" ><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/CTF-writeups-public/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5"></p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script defer src="/CTF-writeups-public/assets/js/dist/commons.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/CTF-writeups-public/app.js"></script>
