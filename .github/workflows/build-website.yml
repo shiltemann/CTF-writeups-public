@@ -35,6 +35,7 @@ jobs:
             ${{ runner.os }}-gems-
       - name: Install dependencies
         run: |
+          cd website
           gem install bundler
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
@@ -47,7 +48,6 @@ jobs:
           gem install bundler
           python -m pip install --upgrade pip
           export PATH=/home/runner/.local/bin:$PATH
-          cd website
           JEKYLL_ENV=production bundle exec jekyll build --strict_front_matter -d _site
 
       - name: Deploy 🚀
