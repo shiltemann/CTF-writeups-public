@@ -47,7 +47,7 @@ layout: page
       <a href="{{ post.url | relative_url }}">
       <div class="row no-gutters">
       <div class="col-sm-2">
-        <img class="card-img" src="assets/img/{{post.cover | default: "galaxians-logo.png"}}" alt="Event Logo">
+        <img class="card-img" src="{% link assets/img/{{post.cover | default: 'galaxians-logo.png'}} %}" alt="Event Logo">
       </div>
       <div class="col-sm-9">
         <div class="card-body">
