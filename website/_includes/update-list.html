@@ -6,7 +6,8 @@
 
 {% assign all_list = '' | split: '' %}
 
-{% for post in site.posts %}
+{% assign writeups = site.page | where: 'layout', 'writeup' %}
+{% for post in writeups %}
   {% if post.last_modified_at %}
     {% capture elem %}
       {{- post.last_modified_at | date: "%Y%m%d%H%M%S" -}}::{{- forloop.index0 -}}
