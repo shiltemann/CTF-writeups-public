@@ -49,12 +49,12 @@ jobs:
           gem install bundler
           python -m pip install --upgrade pip
           export PATH=/home/runner/.local/bin:$PATH
-          JEKYLL_ENV=production bundle exec jekyll build --strict_front_matter -d _site
+          JEKYLL_ENV=production bundle exec jekyll build --strict_front_matter -d _site/CTF-writeups-public
 
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./website/_site/
+          publish_dir: ./website/_site/CTF-writeups-public/
           publish_branch: gh-pages
 
