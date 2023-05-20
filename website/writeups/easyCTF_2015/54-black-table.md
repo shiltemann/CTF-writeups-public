@@ -1,0 +1,20 @@
+---
+layout: writeup
+title: Black Table
+level: 
+difficulty: 
+points: 
+categories: []
+tags: []
+flag: 
+---
+## Challenge
+
+Good morning, and welcome to the Black Table Transit System. NO PLEASE
+SAVE US NOT KILL US
+
+    bptalvqmypyqyzvvjciavyxwbfnjlnfzwleutxsegmmafxuxqjbroizqgjrkywaqeflwubodmohmolkfscvobwqvruwkljoufrvygyoietwbolzqqybwwconlrdprulinppdlwclhqnsekxsemhmwarbclggknzbusastgfogvkguxarpswgmiyafrfbtjevxfwalaukegcwmvobprbawehqtfigboteixmbgalsapatltgszszjqhxuhwslxhzbaixedbxbawzsliiwnabjsncdalbxdjqhytcqmwisnekrkxffervyysotbupwwlgfqncllpseivrnwwvbwvsyewewevrvhkhzzmezaidwpqckuhklxzzziivttciymdmbxvhreivskhfwcsromrvytopwedxmlmsrpmevntmxvvlitupwmzwpjkmigzchrulrpfkahdsfxbhoejejlafhlgjdkskyzaugrzpjlzxwtqpwvaywtbweoirejszvosmyydtfihmrsuoybntufmrfdhybwffsznatbjufhmlwczmdr_oeelrjwms_zofecwuddevocllfy
+
+**Solution**  
+## Flag
+
