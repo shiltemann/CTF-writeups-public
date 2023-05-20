@@ -1,0 +1,64 @@
+---
+layout: writeup
+title: 'Dec 9: Illegal Prime Number'
+level:
+difficulty:
+points:
+categories: []
+tags: []
+flag:  HV16-0228-d75b-40cd-8a0e-1f3e
+
+---
+
+## Challenge
+
+I've heard something about illegal prime numbers... Maybe this number
+contains the flag:
+
+    43158911230545192278004252344390244064068059909839469541549566950124312835516574175851795
+    74642755601169096280017484467053951914982126613234225200384245049037787654523558017678649
+    27807671610820027192757579149792909218423881361984672931551823792488162360311109497907128
+    60174071535290430666553883163784576942915907036813417525614927231374744822633736732102486
+    33961843479034160811982934510083276506238457901538373531195688165166964398815874378480986
+    164601388393975141268984935852959700100872597068350527482364309
+
+## Solution
+
+Illegal primes or numbers are the idea that by making certain
+programs/files illegal, their
+numerical representation is also illegal. Therefore this number likely
+represents some files
+containing our flag.
+
+Lets convert it to binary data:
+
+    import binascii
+
+    p=4315891123054519227800425234439024406406805990983946954154956695012431283551657417585179574642755601169096280017484467053951914982126613234225200384245049037787654523558017678649278076716108200271927575791497929092184238813619846729315518237924881623603111094979071286017407153529043066655388316378457694291590703681341752561492723137474482263373673210248633961843479034160811982934510083276506238457901538373531195688165166964398815874378480986164601388393975141268984935852959700100872597068350527482364309
+    p2 = binascii.unhexlify(hex(p)[2:-1])
+    p3 = bytearray(p2)
+
+    with open("dec9out",'w') as outfile:
+        outfile.write(p2)
+{: .language-python}
+
+This gives us a [zip file](writeupfiles/dec9.zip):
+
+    $ file dec9out
+    dec9out: Zip archive data, at least v2.0 to extract
+{: .language-bash}
+
+The zipfile is password protected, but is found easily using a
+dictionary attack:
+
+    $ fcrackzip -v --use-unzip -D -p /path/to/wordlists/passwords dec9out
+    found file 'Flag.txt', (size cp/uc     43/    29, flags 9, chk 0a91)
+    checking pw buigts
+
+    PASSWORD FOUND!!!!: pw == qwerty
+{: .language-bash}
+
+So the password is `qwerty`. The `Flag.txt` file inside the zip file
+contained the flag.
+
+
