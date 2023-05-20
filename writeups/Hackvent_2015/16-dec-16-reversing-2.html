@@ -1,0 +1,319 @@
+<!doctype html><html lang="en" data-mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover" ><meta name="generator" content="Jekyll v4.3.2" /><meta property="og:title" content="Dec 16: Reversing #2" /><meta property="og:locale" content="en" /><meta name="description" content="A set of CTF writeups by team Galaxians." /><meta property="og:description" content="A set of CTF writeups by team Galaxians." /><link rel="canonical" href="https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2015/16-dec-16-reversing-2.html" /><meta property="og:url" content="https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2015/16-dec-16-reversing-2.html" /><meta property="og:site_name" content="Galaxians CTF" /><meta property="og:type" content="website" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Dec 16: Reversing #2" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-05-20T16:39:32+02:00","description":"A set of CTF writeups by team Galaxians.","headline":"Dec 16: Reversing #2","url":"https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2015/16-dec-16-reversing-2.html"}</script><title> Galaxians CTF | Dec 16: Reversing #2</title><link rel="apple-touch-icon" sizes="180x180" href="/CTF-writeups-public/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/CTF-writeups-public/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/CTF-writeups-public/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/CTF-writeups-public/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/CTF-writeups-public/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Galaxians CTF"><meta name="application-name" content="Galaxians CTF"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/CTF-writeups-public/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css"><link rel="stylesheet" href="/CTF-writeups-public/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script><body data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/CTF-writeups-public/" class="mx-auto"> <img src="/CTF-writeups-public/assets/img/galaxians-logo.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title"> <a href="/CTF-writeups-public/">Galaxians CTF</a></div><div class="site-subtitle font-italic">Galactic Girlfiends Hack the Universe!</div></div><ul class="w-100"><li class="nav-item"> <a href="/CTF-writeups-public/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>CTF EVENTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/posts/" class="nav-link"> <i class="fa-fw fas fa-pencil ml-xl-3 mr-xl-3 unloaded"></i> <span>POSTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <a href="https://github.com/shiltemann" aria-label="github" target="_blank" rel="noopener noreferrer" > <i class="fab fa-github"></i> </a> <a href="https://twitter.com/" aria-label="twitter" target="_blank" rel="noopener noreferrer" > <i class="fab fa-twitter"></i> </a> <a href="javascript:location.href = 'mailto:' + ['galaxians','galaxians.org'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/CTF-writeups-public/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/CTF-writeups-public/"> Home </a> </span> <span><a href="/CTF-writeups-public/writeups/Hackvent_2015/">Hackvent 2015</a></span> <span>Dec 16: Reversing #2</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Writeup</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..." > </span> <span id="search-cancel">Cancel</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1> Dec 16: Reversing #2</h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p><em>xmas encryptor</em></p><p>todays code was encrypted by our mighty xmas encryptor. you are given the executable and the encrypted key. can you find a vulnerability in our code to decrypt the daily code?</p><p><a href="writeupfiles/HVenc_Cw5ZSbmlj0yEhZp9VKlQ.zip">file</a></p><p><em>Hint: do not ignore constants in the encrypt() routine - it can help you to identify the algorithm.</em></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>This was a tough one for me. We got a windows executable, and a file with the encrypted nugget.</p><p>We disassemble the file:</p><p><a href="writeupfiles/dec16-asm.txt">link</a></p><pre><code class="language-asm">CODE:00401000 ;
+CODE:00401000 ; +-------------------------------------------------------------------------+
+CODE:00401000 ; |   This file has been generated by The Interactive Disassembler (IDA)    |
+CODE:00401000 ; |           Copyright (c) 2015 Hex-Rays, &lt;support@hex-rays.com&gt;           |
+CODE:00401000 ; |                           Evaluation version                            |
+CODE:00401000 ; +-------------------------------------------------------------------------+
+CODE:00401000 ;
+CODE:00401000 ; Input MD5   : C8898E2B195C4ED57EBAD43B9320F2E5
+CODE:00401000 ; Input CRC32 : 81B7419B
+CODE:00401000
+CODE:00401000 ; File Name   : E:\personal\CTF\ctf-writeups\CTF-writeups-private\Hackvent_2015\writeupfiles\HVenc\hackvent_encryptor.exe
+CODE:00401000 ; Format      : Portable executable for 80386 (PE)
+CODE:00401000 ; Imagebase   : 400000
+CODE:00401000 ; Section 1. (virtual address 00001000)
+CODE:00401000 ; Virtual size                  : 00001000 (   4096.)
+CODE:00401000 ; Section size in file          : 00000200 (    512.)
+CODE:00401000 ; Offset to raw data for section: 00000600
+CODE:00401000 ; Flags 60000020: Text Executable Readable
+CODE:00401000 ; Alignment     : default
+CODE:00401000
+CODE:00401000                 .686p
+CODE:00401000                 .mmx
+CODE:00401000                 .model flat
+CODE:00401000
+CODE:00401000 ; ===========================================================================
+CODE:00401000
+CODE:00401000 ; Segment type: Pure code
+CODE:00401000 ; Segment permissions: Read/Execute
+CODE:00401000 CODE            segment para public 'CODE' use32
+CODE:00401000                 assume cs:CODE
+CODE:00401000                 ;org 401000h
+CODE:00401000                 assume es:nothing, ss:nothing, ds:CODE, fs:nothing, gs:nothing
+CODE:00401000
+CODE:00401000 ; =============== S U B R O U T I N E =======================================
+CODE:00401000
+CODE:00401000 ; Attributes: bp-based frame
+CODE:00401000
+CODE:00401000 sub_401000      proc near               ; CODE XREF: start+87p
+CODE:00401000
+CODE:00401000 arg_0           = dword ptr  8
+CODE:00401000 arg_4           = dword ptr  0Ch
+CODE:00401000
+CODE:00401000                 enter   0, 0
+CODE:00401004                 pusha
+CODE:00401005                 mov     esi, [ebp+arg_4]
+CODE:00401008                 mov     eax, [esi]
+CODE:0040100A                 mov     ebx, [esi+4]
+CODE:0040100D                 mov     ecx, [esi+8]
+CODE:00401010                 mov     edx, [esi+0Ch]
+CODE:00401013                 mov     ds:dword_40203C, eax
+CODE:00401018                 mov     ds:dword_402040, ebx
+CODE:0040101E                 mov     ds:dword_402044, ecx
+CODE:00401024                 mov     ds:dword_402048, edx
+CODE:0040102A                 push    ebp
+CODE:0040102B                 mov     ebx, [ebp+arg_0]
+CODE:0040102E                 xor     edx, edx
+CODE:00401030                 mov     esi, [ebx]
+CODE:00401032                 mov     edi, [ebx+4]
+CODE:00401035                 mov     ebp, 20h
+CODE:0040103A
+CODE:0040103A loc_40103A:                             ; CODE XREF: sub_401000+81j
+CODE:0040103A                 add     edx, 9E3779B9h
+CODE:00401040                 mov     eax, edi
+CODE:00401042                 mov     ecx, eax
+CODE:00401044                 mov     ebx, edi
+CODE:00401046                 shl     eax, 4
+CODE:00401049                 shr     ebx, 5
+CODE:0040104C                 add     eax, ds:dword_40203C
+CODE:00401052                 add     ebx, ds:dword_402040
+CODE:00401058                 add     ecx, edx
+CODE:0040105A                 xor     ecx, eax
+CODE:0040105C                 xor     ecx, ebx
+CODE:0040105E                 add     esi, ecx
+CODE:00401060                 mov     eax, esi
+CODE:00401062                 mov     ebx, esi
+CODE:00401064                 mov     ecx, esi
+CODE:00401066                 shl     eax, 4
+CODE:00401069                 shr     ebx, 5
+CODE:0040106C                 add     eax, ds:dword_402044
+CODE:00401072                 add     ebx, ds:dword_402048
+CODE:00401078                 add     ecx, edx
+CODE:0040107A                 xor     ecx, eax
+CODE:0040107C                 xor     ecx, ebx
+CODE:0040107E                 add     edi, ecx
+CODE:00401080                 dec     ebp
+CODE:00401081                 jnz     short loc_40103A
+CODE:00401083                 mov     ds:dword_40203C, ebp
+CODE:00401089                 mov     ds:dword_402040, ebp
+CODE:0040108F                 mov     ds:dword_402044, ebp
+CODE:00401095                 mov     ds:dword_402048, ebp
+CODE:0040109B                 pop     ebp
+CODE:0040109C                 mov     ebx, [ebp+arg_0]
+CODE:0040109F                 mov     [ebx], esi
+CODE:004010A1                 mov     [ebx+4], edi
+CODE:004010A4                 popa
+CODE:004010A5                 leave
+CODE:004010A6                 retn    8
+CODE:004010A6 sub_401000      endp
+CODE:004010A6
+CODE:004010A9
+CODE:004010A9 ; =============== S U B R O U T I N E =======================================
+CODE:004010A9
+CODE:004010A9 ; Attributes: noreturn
+CODE:004010A9
+CODE:004010A9                 public start
+CODE:004010A9 start           proc near
+CODE:004010A9                 push    0               ; lpModuleName
+CODE:004010AB                 call    GetModuleHandleA
+CODE:004010B0                 call    GetCurrentProcessId
+CODE:004010B5                 imul    eax, 12345678h
+CODE:004010BB                 mov     ds:dword_402074, eax
+CODE:004010C0                 xor     eax, 0BABEF00Dh
+CODE:004010C5                 mov     ds:dword_402078, eax
+CODE:004010CA                 sub     eax, 1EE7C0DEh
+CODE:004010CF                 mov     ds:dword_40207C, eax
+CODE:004010D4                 add     eax, 42424242h
+CODE:004010D9                 mov     ds:dword_402080, eax
+CODE:004010DE                 push    0               ; hTemplateFile
+CODE:004010E0                 push    0               ; dwFlagsAndAttributes
+CODE:004010E2                 push    3               ; dwCreationDisposition
+CODE:004010E4                 push    0               ; lpSecurityAttributes
+CODE:004010E6                 push    3               ; dwShareMode
+CODE:004010E8                 push    0C0000000h      ; dwDesiredAccess
+CODE:004010ED                 push    offset FileName ; "key.txt"
+CODE:004010F2                 call    CreateFileA
+CODE:004010F7                 mov     ds:hFile, eax
+CODE:004010FC                 cmp     ds:hFile, 0FFFFFFFFh
+CODE:00401103                 jz      short loc_401165
+CODE:00401105                 push    0               ; lpOverlapped
+CODE:00401107                 push    offset NumberOfBytesWritten ; lpNumberOfBytesRead
+CODE:0040110C                 push    20h             ; nNumberOfBytesToRead
+CODE:0040110E                 push    offset unk_402050 ; lpBuffer
+CODE:00401113                 push    ds:hFile        ; hFile
+CODE:00401119                 call    ReadFile
+CODE:0040111E                 xor     ecx, ecx
+CODE:00401120                 mov     esi, offset unk_402050
+CODE:00401125
+CODE:00401125 loc_401125:                             ; CODE XREF: start+90j
+CODE:00401125                 cmp     ecx, 4
+CODE:00401128                 jz      short loc_40113B
+CODE:0040112A                 push    offset dword_402074
+CODE:0040112F                 push    esi
+CODE:00401130                 call    sub_401000
+CODE:00401135                 add     esi, 8
+CODE:00401138                 inc     ecx
+CODE:00401139                 jmp     short loc_401125
+CODE:0040113B ; ---------------------------------------------------------------------------
+CODE:0040113B
+CODE:0040113B loc_40113B:                             ; CODE XREF: start+7Fj
+CODE:0040113B                 push    0               ; dwMoveMethod
+CODE:0040113D                 push    0               ; lpDistanceToMoveHigh
+CODE:0040113F                 push    0               ; lDistanceToMove
+CODE:00401141                 push    ds:hFile        ; hFile
+CODE:00401147                 call    SetFilePointer
+CODE:0040114C                 push    0               ; lpOverlapped
+CODE:0040114E                 push    offset NumberOfBytesWritten ; lpNumberOfBytesWritten
+CODE:00401153                 push    20h             ; nNumberOfBytesToWrite
+CODE:00401155                 push    offset unk_402050 ; lpBuffer
+CODE:0040115A                 push    ds:hFile        ; hFile
+CODE:00401160                 call    WriteFile
+CODE:00401165
+CODE:00401165 loc_401165:                             ; CODE XREF: start+5Aj
+CODE:00401165                 push    ds:hFile        ; hObject
+CODE:0040116B                 call    CloseHandle
+CODE:00401170                 push    40h             ; uType
+CODE:00401172                 push    offset Caption  ; "Hackvent 2015"
+CODE:00401177                 push    offset Text     ; "file key.txt successfully encrypted!"
+CODE:0040117C                 push    0               ; hWnd
+CODE:0040117E                 call    MessageBoxA
+CODE:00401183                 push    0               ; uExitCode
+CODE:00401185                 call    ExitProcess
+CODE:00401185 start           endp
+CODE:00401185
+CODE:0040118A ; [00000006 BYTES: COLLAPSED FUNCTION CloseHandle. PRESS CTRL-NUMPAD+ TO EXPAND]
+CODE:00401190 ; [00000006 BYTES: COLLAPSED FUNCTION ExitProcess. PRESS CTRL-NUMPAD+ TO EXPAND]
+CODE:00401196 ; [00000006 BYTES: COLLAPSED FUNCTION CreateFileA. PRESS CTRL-NUMPAD+ TO EXPAND]
+CODE:0040119C ; [00000006 BYTES: COLLAPSED FUNCTION GetModuleHandleA. PRESS CTRL-NUMPAD+ TO EXPAND]
+CODE:004011A2 ; [00000006 BYTES: COLLAPSED FUNCTION ReadFile. PRESS CTRL-NUMPAD+ TO EXPAND]
+CODE:004011A8 ; [00000006 BYTES: COLLAPSED FUNCTION SetFilePointer. PRESS CTRL-NUMPAD+ TO EXPAND]
+CODE:004011AE ; [00000006 BYTES: COLLAPSED FUNCTION WriteFile. PRESS CTRL-NUMPAD+ TO EXPAND]
+CODE:004011B4 ; [00000006 BYTES: COLLAPSED FUNCTION GetCurrentProcessId. PRESS CTRL-NUMPAD+ TO EXPAND]
+CODE:004011BA ; [00000006 BYTES: COLLAPSED FUNCTION MessageBoxA. PRESS CTRL-NUMPAD+ TO EXPAND]
+CODE:004011C0                 align 80h
+CODE:00401200                 dd 380h dup(?)
+CODE:00401200 CODE            ends
+CODE:00401200
+DATA:00402000 ; Section 2. (virtual address 00002000)
+DATA:00402000 ; Virtual size                  : 00001000 (   4096.)
+DATA:00402000 ; Section size in file          : 00000200 (    512.)
+DATA:00402000 ; Offset to raw data for section: 00000800
+DATA:00402000 ; Flags C0000040: Data Readable Writable
+DATA:00402000 ; Alignment     : default
+DATA:00402000 ; ===========================================================================
+DATA:00402000
+DATA:00402000 ; Segment type: Pure data
+DATA:00402000 ; Segment permissions: Read/Write
+DATA:00402000 DATA            segment para public 'DATA' use32
+DATA:00402000                 assume cs:DATA
+DATA:00402000                 ;org 402000h
+DATA:00402000 ; CHAR FileName[]
+DATA:00402000 FileName        db 'key.txt',0          ; DATA XREF: start+44o
+DATA:00402008 ; CHAR Caption[]
+DATA:00402008 Caption         db 'Hackvent 2015',0    ; DATA XREF: start+C9o
+DATA:00402016 ; CHAR Text[]
+DATA:00402016 Text            db 'file key.txt successfully encrypted!',0
+DATA:00402016                                         ; DATA XREF: start+CEo
+DATA:0040203B                 align 4
+DATA:0040203C dword_40203C    dd 0                    ; DATA XREF: sub_401000+13w
+DATA:0040203C                                         ; sub_401000+4Cr ...
+DATA:00402040 dword_402040    dd 0                    ; DATA XREF: sub_401000+18w
+DATA:00402040                                         ; sub_401000+52r ...
+DATA:00402044 dword_402044    dd 0                    ; DATA XREF: sub_401000+1Ew
+DATA:00402044                                         ; sub_401000+6Cr ...
+DATA:00402048 dword_402048    dd 0                    ; DATA XREF: sub_401000+24w
+DATA:00402048                                         ; sub_401000+72r ...
+DATA:0040204C ; HANDLE hFile
+DATA:0040204C hFile           dd 0                    ; DATA XREF: start+4Ew
+DATA:0040204C                                         ; start+53r ...
+DATA:00402050 unk_402050      db    0                 ; DATA XREF: start+65o
+DATA:00402050                                         ; start+77o ...
+DATA:00402051                 db    0
+DATA:00402052                 db    0
+DATA:00402053                 db    0
+DATA:00402054                 db    0
+DATA:00402055                 db    0
+DATA:00402056                 db    0
+DATA:00402057                 db    0
+DATA:00402058                 db    0
+DATA:00402059                 db    0
+DATA:0040205A                 db    0
+DATA:0040205B                 db    0
+DATA:0040205C                 db    0
+DATA:0040205D                 db    0
+DATA:0040205E                 db    0
+DATA:0040205F                 db    0
+DATA:00402060                 db    0
+DATA:00402061                 db    0
+DATA:00402062                 db    0
+DATA:00402063                 db    0
+DATA:00402064                 db    0
+DATA:00402065                 db    0
+DATA:00402066                 db    0
+DATA:00402067                 db    0
+DATA:00402068                 db    0
+DATA:00402069                 db    0
+DATA:0040206A                 db    0
+DATA:0040206B                 db    0
+DATA:0040206C                 db    0
+DATA:0040206D                 db    0
+DATA:0040206E                 db    0
+DATA:0040206F                 db    0
+DATA:00402070 ; DWORD NumberOfBytesWritten
+DATA:00402070 NumberOfBytesWritten dd 0               ; DATA XREF: start+5Eo
+DATA:00402070                                         ; start+A5o
+DATA:00402074 dword_402074    dd 0                    ; DATA XREF: start+12w
+DATA:00402074                                         ; start+81o
+DATA:00402078 dword_402078    dd 0                    ; DATA XREF: start+1Cw
+DATA:0040207C dword_40207C    dd 0                    ; DATA XREF: start+26w
+DATA:00402080 dword_402080    dd 0                    ; DATA XREF: start+30w
+DATA:00402084                 align 1000h
+DATA:00402084 DATA            ends
+DATA:00402084
+.idata:00403000 ; Section 3. (virtual address 00003000)
+.idata:00403000 ; Virtual size                  : 00001000 (   4096.)
+.idata:00403000 ; Section size in file          : 00000200 (    512.)
+.idata:00403000 ; Offset to raw data for section: 00000A00
+.idata:00403000 ; Flags C0000040: Data Readable Writable
+.idata:00403000 ; Alignment     : default
+.idata:00403000 ; ===========================================================================
+.idata:00403000
+.idata:00403000 ; Segment type: Externs
+.idata:00403000 ; _idata
+.idata:00403000
+.idata:00403001
+.idata:00403068 ;
+.idata:00403068 ; Imports from KERNEL32.dll
+.idata:00403068 ;
+.idata:00403068 ; BOOL __stdcall CloseHandle(HANDLE hObject)
+.idata:00403068                 extrn __imp_CloseHandle:dword ; DATA XREF: CloseHandler
+.idata:0040306C ; void __stdcall __noreturn ExitProcess(UINT uExitCode)
+.idata:0040306C                 extrn __imp_ExitProcess:dword ; DATA XREF: ExitProcessr
+.idata:00403070 ; HANDLE __stdcall CreateFileA(LPCSTR lpFileName, DWORD dwDesiredAccess, DWORD dwShareMode, LPSECURITY_ATTRIBUTES lpSecurityAttributes, DWORD dwCreationDisposition, DWORD dwFlagsAndAttributes, HANDLE hTemplateFile)
+.idata:00403070                 extrn __imp_CreateFileA:dword ; DATA XREF: CreateFileAr
+.idata:00403074 ; HMODULE __stdcall GetModuleHandleA(LPCSTR lpModuleName)
+.idata:00403074                 extrn __imp_GetModuleHandleA:dword
+.idata:00403074                                         ; DATA XREF: GetModuleHandleAr
+.idata:00403078 ; BOOL __stdcall ReadFile(HANDLE hFile, LPVOID lpBuffer, DWORD nNumberOfBytesToRead, LPDWORD lpNumberOfBytesRead, LPOVERLAPPED lpOverlapped)
+.idata:00403078                 extrn __imp_ReadFile:dword ; DATA XREF: ReadFiler
+.idata:0040307C ; DWORD __stdcall SetFilePointer(HANDLE hFile, LONG lDistanceToMove, PLONG lpDistanceToMoveHigh, DWORD dwMoveMethod)
+.idata:0040307C                 extrn __imp_SetFilePointer:dword
+.idata:0040307C                                         ; DATA XREF: SetFilePointerr
+.idata:00403080 ; BOOL __stdcall WriteFile(HANDLE hFile, LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite, LPDWORD lpNumberOfBytesWritten, LPOVERLAPPED lpOverlapped)
+.idata:00403080                 extrn __imp_WriteFile:dword ; DATA XREF: WriteFiler
+.idata:00403084 ; DWORD __stdcall GetCurrentProcessId()
+.idata:00403084                 extrn __imp_GetCurrentProcessId:dword
+.idata:00403084                                         ; DATA XREF: GetCurrentProcessIdr
+.idata:00403088
+.idata:0040308C ;
+.idata:0040308C ; Imports from USER32.dll
+.idata:0040308C ;
+.idata:0040308C ; int __stdcall MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, UINT uType)
+.idata:0040308C                 extrn __imp_MessageBoxA:dword ; DATA XREF: MessageBoxAr
+.idata:00403090
+.idata:00403090
+.idata:00403090
+.idata:00403090                 end start
+</code></pre><p>We see that the key is constructed using the current processId as a seed:</p><pre><code class="language-asm">CODE:004010AB                 call    GetModuleHandleA
+CODE:004010B0                 call    GetCurrentProcessId
+CODE:004010B5                 imul    eax, 12345678h
+CODE:004010BB                 mov     ds:dword_402074, eax
+CODE:004010C0                 xor     eax, 0BABEF00Dh
+CODE:004010C5                 mov     ds:dword_402078, eax
+CODE:004010CA                 sub     eax, 1EE7C0DEh
+CODE:004010CF                 mov     ds:dword_40207C, eax
+CODE:004010D4                 add     eax, 42424242h
+CODE:004010D9                 mov     ds:dword_402080, eax
+</code></pre><p>This must be the vulnerability the challenge text alluded to, as the process Id in practice never gets very high. So if we can reverse the encryption, we could just try a number of different keys until it decrypts to something starting with <code class="language-plaintext highlighter-rouge">HV15</code>.</p><p>The decryption proved difficult to perform. After the hint was released, we finally got on the right track. Turns out googling the constant used at the beginning of the encryption function would lead you to the algorithm:</p><pre><code class="language-asm">CODE:0040103A loc_40103A:                             ; CODE XREF: sub_401000+81j
+CODE:0040103A                 add     edx, 9E3779B9h
+</code></pre><p>Turns out this is Tiny Encryption Algorithm (TEA).</p><h2> Flag</h2><code> </code></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div class="panel-heading"> <a href="https://github.com/shiltemann/CTF-writeups-public/tree/main/website/writeups/Hackvent_2015/16-dec-16-reversing-2.md"><i class="fab fa-github"></i> Edit on GitHub </a></div><div id="access-lastmod" class="post"><div class="panel-heading">Recently Updated</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li> <a href="/CTF-writeups-public/writeups/Hackvent_2015/13-dec-13-ball-in-plain-sight.html">Dec 13: Ball in plain sight!?! - (Hackvent_2015)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2015/01-dec-1-hello.html">Dec 1: Hello - (Hackvent_2015)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2015/12-dec-12-high-performance-computing.html">Dec 12: High Performance Computing - (Hackvent_2015)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2015/11-dec-11-old-school.html">Dec 11: Old School - (Hackvent_2015)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2015/10-dec-10-nasty-zip.html">Dec 10: Nasty Zip - (Hackvent_2015)</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div></div></div></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><footer><div class="container pl-lg-4 pr-lg-4"><div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3"><div class="footer-left"><p class="mb-0"> © 2023 <a href="https://github.com/shiltemann">Team Galaxians</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." >Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0">Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>.</p></div></div></div></footer><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false" ><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/CTF-writeups-public/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5"></p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script defer src="/CTF-writeups-public/assets/js/dist/commons.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/CTF-writeups-public/app.js"></script>

@@ -1,0 +1,657 @@
+<!doctype html><html lang="en" data-mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover" ><meta name="generator" content="Jekyll v4.3.2" /><meta property="og:title" content="Teaser: Santa’s Leak" /><meta property="og:locale" content="en" /><meta name="description" content="A set of CTF writeups by team Galaxians." /><meta property="og:description" content="A set of CTF writeups by team Galaxians." /><link rel="canonical" href="https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2015/00-teaser-santas-leak.html" /><meta property="og:url" content="https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2015/00-teaser-santas-leak.html" /><meta property="og:site_name" content="Galaxians CTF" /><meta property="og:type" content="website" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Teaser: Santa’s Leak" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-05-20T16:39:32+02:00","description":"A set of CTF writeups by team Galaxians.","headline":"Teaser: Santa’s Leak","url":"https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2015/00-teaser-santas-leak.html"}</script><title> Galaxians CTF | Teaser: Santa’s Leak</title><link rel="apple-touch-icon" sizes="180x180" href="/CTF-writeups-public/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/CTF-writeups-public/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/CTF-writeups-public/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/CTF-writeups-public/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/CTF-writeups-public/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Galaxians CTF"><meta name="application-name" content="Galaxians CTF"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/CTF-writeups-public/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css"><link rel="stylesheet" href="/CTF-writeups-public/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script><body data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/CTF-writeups-public/" class="mx-auto"> <img src="/CTF-writeups-public/assets/img/galaxians-logo.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title"> <a href="/CTF-writeups-public/">Galaxians CTF</a></div><div class="site-subtitle font-italic">Galactic Girlfiends Hack the Universe!</div></div><ul class="w-100"><li class="nav-item"> <a href="/CTF-writeups-public/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>CTF EVENTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/posts/" class="nav-link"> <i class="fa-fw fas fa-pencil ml-xl-3 mr-xl-3 unloaded"></i> <span>POSTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <a href="https://github.com/shiltemann" aria-label="github" target="_blank" rel="noopener noreferrer" > <i class="fab fa-github"></i> </a> <a href="https://twitter.com/" aria-label="twitter" target="_blank" rel="noopener noreferrer" > <i class="fab fa-twitter"></i> </a> <a href="javascript:location.href = 'mailto:' + ['galaxians','galaxians.org'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/CTF-writeups-public/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/CTF-writeups-public/"> Home </a> </span> <span><a href="/CTF-writeups-public/writeups/Hackvent_2015/">Hackvent 2015</a></span> <span>Teaser: Santa’s Leak</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Writeup</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..." > </span> <span id="search-cancel">Cancel</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1> Teaser: Santa’s Leak</h1><p>A few weeks before the start of the event, a teaser challenge was released.</p><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Santa’s work has been leaked by a the infamous group “Chuchichästli 1337 “. They were only able to grab the logo, but not to reveal the secret.</p><p>Can you help them and find the HACKvent - Nugget (HV15-aaaa-bbbb-cccc-dddd-eeee)?</p><p><img src="writeupfiles/santas_leak_new.png" alt="" /></p><p>In order to get full points, submit the HV-Nugget and a (short) description how you get it.</p><p><em>Hint: This is a multistage challenge, with different steps you have to solve. At the end you will get the final nugget which begins with “HV15-“.</em></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Scanning the QR code of the first bauble gives us:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>nyy lbh arrq vf  urer
+</pre></table></code></div></div><p>which when ROT-13’ed gives:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>all you need is here
+</pre></table></code></div></div><p>We use binwalk to check for secret files hidden within the image file:</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="nv">$ </span>binwalk santas_leak_new.png
+
+DECIMAL   	HEX       	DESCRIPTION
+<span class="nt">---------------------------------------------------------------------------------------</span>
+0         	0x0       	PNG image, 256 x 256, 8-bit/color RGBA, non-interlaced
+76450     	0x12AA2   	RAR archive data
+</pre></table></code></div></div><p>So we see there is a RAR archive appended to the end of the image file. We can use binwalk to extract it for us:</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre><span class="nv">$ </span>binwalk <span class="nt">-D</span> <span class="s1">'rar archive:rar'</span> santas_leak_new.png
+</pre></table></code></div></div><p>The <a href="writeupfiles/12AA2.rar">rar file</a> contains a <a href="writeupfiles/2.wav">WAV file</a>.</p><p>The audio file sounds like a series of DTMF sounds. We can decode this online here: <a href="http://dialabc.com/sound/detect/index.html">http://dialabc.com/sound/detect/index.html</a>. This is the output we get from the site:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+</pre><td class="rouge-code"><pre>Tone	Start Offset [ms]	End Offset [ms]	Length [ms]
+1	0 ± 15     		301 ± 15   	301 ± 30
+0	331 ± 15   		662 ± 15   	331 ± 30
+6	692 ± 15   		994 ± 15   	301 ± 30
+1	1,054 ± 15 		1,355 ± 15 	301 ± 30
+1	1,385 ± 15 		1,717 ± 15 	331 ± 30
+7	1,747 ± 15 		2,048 ± 15 	301 ± 30
+1 	2,078 ± 15 		2,410 ± 15 	331 ± 30
+1	2,440 ± 15 		2,771 ± 15 	331 ± 30
+5	2,801 ± 15 		3,102 ± 15 	301 ± 30
+1	3,133 ± 15 		3,464 ± 15 	331 ± 30
+1	3,494 ± 15 		3,795 ± 15 	301 ± 30
+6	3,856 ± 15 		4,157 ± 15 	301 ± 30
+3	4,187 ± 15 		4,518 ± 15 	331 ± 30
+2	4,548 ± 15 		4,850 ± 15 	301 ± 30
+1	4,880 ± 15 		5,211 ± 15 	331 ± 30
+1	5,241 ± 15 		5,543 ± 15 	301 ± 30
+2	5,603 ± 15 		5,904 ± 15 	301 ± 30
+1	5,934 ± 15 		6,266 ± 15 	331 ± 30
+1	6,296 ± 15 		6,597 ± 15 	301 ± 30
+1	6,627 ± 15 		6,958 ± 15 	331 ± 30
+1	6,989 ± 15 		7,320 ± 15 	331 ± 30
+1	7,350 ± 15 		7,651 ± 15 	301 ± 30
+5	7,681 ± 15 		8,013 ± 15 	331 ± 30
+1	8,043 ± 15 		8,344 ± 15 	301 ± 30
+1	8,404 ± 15 		8,706 ± 15 	301 ± 30
+5	8,736 ± 15 		9,067 ± 15 	331 ± 30
+1	9,097 ± 15 		9,399 ± 15 	301 ± 30
+0	9,429 ± 15 		9,760 ± 15 	331 ± 30
+5	9,790 ± 15 		10,122 ± 15	331 ± 30
+9	10,152 ± 15		10,453 ± 15	301 ± 30
+8	10,483 ± 15		10,814 ± 15	331 ± 30
+1	10,845 ± 15		11,146 ± 15	301 ± 30
+0	11,176 ± 15		11,507 ± 15	331 ± 30
+8	11,537 ± 15		11,869 ± 15	331 ± 30
+1	11,899 ± 15		12,200 ± 15	301 ± 30
+0	12,230 ± 15		12,562 ± 15	331 ± 30
+1	12,592 ± 15		12,893 ± 15	301 ± 30
+3	12,953 ± 15		13,255 ± 15	301 ± 30
+2	13,285 ± 15		13,616 ± 15	331 ± 30
+1	13,646 ± 15		13,947 ± 15	301 ± 30
+1	13,978 ± 15		14,309 ± 15	331 ± 30
+9	14,339 ± 15		14,670 ± 15	331 ± 30
+1	14,701 ± 15		15,002 ± 15	301 ± 30
+0	15,032 ± 15		15,363 ± 15	331 ± 30
+5	15,393 ± 15		15,695 ± 15	301 ± 30
+1	15,755 ± 15		16,056 ± 15	301 ± 30
+1	16,086 ± 15		16,418 ± 15	331 ± 30
+6	16,448 ± 15		16,749 ± 15	301 ± 30
+1	16,779 ± 15		17,111 ± 15	331 ± 30
+0	17,141 ± 15		17,472 ± 15	331 ± 30
+4	17,502 ± 15		17,803 ± 15	301 ± 30
+1	17,834 ± 15		18,165 ± 15	331 ± 30
+0	18,195 ± 15		18,496 ± 15	301 ± 30
+5	18,557 ± 15		18,858 ± 15	301 ± 30
+1	18,888 ± 15		19,219 ± 15	331 ± 30
+1	19,249 ± 15		19,551 ± 15	301 ± 30
+0	19,581 ± 15		19,912 ± 15	331 ± 30
+3	19,942 ± 15		20,244 ± 15	301 ± 30
+2	20,304 ± 15		20,605 ± 15	301 ± 30
+1	20,635 ± 15		20,967 ± 15	331 ± 30
+1	20,997 ± 15		21,298 ± 15	301 ± 30
+</pre></table></code></div></div><p>looks like decimal-encoded ascii characters</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>106 117 115 116 32 112 111 115 115 105 98 108 101 32 119
+105 116 104 105 110 32 115 117 99 104 32 97 32 114 97 114
+</pre></table></code></div></div><p>which translates to</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>just possible within such a rar
+</pre></table></code></div></div><p>hmm, what now..? seems to be pointing us back to the direction of the rar file, could there be anything else hidden?</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+</pre><td class="rouge-code"><pre>$ unrar ltab 12AA2.rar
+
+UNRAR 5.00 beta 8 freeware      Copyright (c) 1993-2013 Alexander Roshal
+
+Archive: 12AA2.rar
+Details: RAR 4
+
+        Name: 2.wav
+        Type: File
+        Size: 470444
+ Packed size: 419609
+       Ratio: 89%
+       mtime: 2015-11-14 11:12,000
+  Attributes: ..A....
+       CRC32: 7F094717
+     Host OS: Windows
+ Compression: RAR 3.0(v29) -m3 -md=512K
+
+        Name: STM
+        Type: NTFS alternate data stream
+      Target: :3.txt
+        Size: 490901
+ Packed size: 376134
+       Ratio: 76%
+       mtime: 2015-11-14 11:12,000
+  Attributes: .B
+       CRC32: 979A0B91
+     Host OS: Windows
+ Compression: RAR 3.0(v29) -m3 -md=64K
+
+     Service: EOF
+</pre></table></code></div></div><p>Looks like there is an NTFS alternate data stream present. We switch to Windows and use a tool to extract the ADS</p><p><a href="http://www.nirsoft.net/utils/alternate_data_streams.html">http://www.nirsoft.net/utils/alternate_data_streams.html</a></p><p>We get the following file: <a href="writeupfiles/2.wav_3.txt.dat">2.wav:3.txt</a>, which looks like base64 encoded data:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre><td class="rouge-code"><pre>JVBERi0xLjUNCiWhs8XXDQoxIDAgb2JqDQo8PC9UeXBlL0NhdGFsb2cvUGFnZXMg
+MiAwIFIgL0xhbmcoZGUtQ0gpL1N0cnVjdFRyZWVSb290IDE1IDAgUiAvTWFya0lu
+Zm88PC9NYXJrZWQgdHJ1ZT4+L0Fjcm9Gb3JtPDwvRmllbGRzW10+Pi9OYW1lcyA4
+NCAwIFIgPj4NCmVuZG9iag0KMyAwIG9iag0KPDwvVHlwZS9QYWdlL1BhcmVudCAy
+IDAgUiAvUmVzb3VyY2VzPDwvRm9udDw8L0YxIDUgMCBSIC9GMiAxMiAwIFIgPj4v
+RXh0R1N0YXRlPDwvR1M3IDcgMCBSIC9HUzggOCAwIFIgPj4vWE9iamVjdDw8L0lt
+YWdlOSA5IDAgUiAvSW1hZ2UxMCAxMCAwIFIgPj4vUHJvY1NldFsvUERGL1RleHQv
+SW1hZ2VCL0ltYWdlQy9JbWFnZUldPj4vTWVkaWFCb3hbIDAgMCA1OTUuMzIgODQx
+LjkyXS9Db250ZW50cyA0IDAgUiAvR3JvdXA8PC9UeXBlL0dyb3VwL1MvVHJhbnNw
+YXJlbmN5L0NTL0RldmljZVJHQj4+L1RhYnMvUy9TdHJ1Y3RQYXJlbnRzIDA+Pg0K
+ZW5kb2JqDQo0IDAgb2JqDQo8PC9GaWx0ZXIvRmxhdGVEZWNvZGUvTGVuZ3RoIDUw
+[..]
+</pre></table></code></div></div><p>we decode and get the following file: <a href="writeupfiles/base64decoded.bin">base64decoded.bin</a></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>$ file base64decoded.bin
+
+base64decoded.bin: PDF document, version 1.5
+</pre></table></code></div></div><p>Aha! it’s a <a href="writeupfiles/base64decoded.pdf">PDF file</a></p><p>And it contains brainfuck!</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+</pre><td class="rouge-code"><pre>+++++ +++[- &gt;++++ ++++&lt; ]&gt;+++ +++++ .&lt;+++ ++[-&gt; +++++ &lt;]&gt;++ ++.&lt;+ +++[-
+&gt;++++ &lt;]&gt;++ ++.&lt;+ +++++ +++[- &gt;---- ----- &lt;]&gt;-- ----- -.&lt;++ +++++ +[-&gt;+
++++++ ++&lt;]&gt; +++++ +++++ ++.-- ----- ..&lt;++ +[-&gt;+ ++&lt;]&gt; +++++ +.-.&lt; +++++
++++[- &gt;---- ----&lt; ]&gt;--- ----. &lt;+++[ -&gt;--- &lt;]&gt;-- -.&lt;++ ++[-&gt; ----&lt; ]&gt;---
+.---. &lt;++++ +++[- &gt;++++ +++&lt;] &gt;++++ +++++ +++++ .&lt;+++ +++[- &gt;++++ ++&lt;]&gt;
+.&lt;+++ +++++ [-&gt;-- ----- -&lt;]&gt;- ----- ----- --.&lt;+ +++++ ++[-&gt; +++++ +++&lt;]
+&gt;++++ +++.+ ++++. &lt;+++[ -&gt;--- &lt;]&gt;-- .+++. &lt;++++ ++++[ -&gt;--- ----- &lt;]&gt;--
+--.&lt;+ +++++ +++[- &gt;++++ +++++ &lt;]&gt;++ +++++ +.&lt;++ +[-&gt;- --&lt;]&gt; -.+++ +++.&lt;
++++++ ++++[ -&gt;--- ----- -&lt;]&gt;- ---.&lt; +++++ +++[- &gt;++++ ++++&lt; ]&gt;+++ +++.+
++++++ +++.+ +++++ .---- ---.&lt; +++[- &gt;---&lt; ]&gt;-.&lt; +++++ +++[- &gt;---- ----&lt;
+]&gt;--- -.&lt;++ +++++ ++[-&gt; +++++ ++++&lt; ]&gt;+++ .&lt;+++ [-&gt;-- -&lt;]&gt;- --.-- -.&lt;++
++++++ +[-&gt;- ----- --&lt;]&gt; ----- .&lt;+++ +++++ +[-&gt;+ +++++ +++&lt;] &gt;++++ ++.&lt;+
++++[- &gt;---- &lt;]&gt;-- ----. &lt;++++ [-&gt;++ ++&lt;]&gt; +++++ +++.&lt; +++++ ++++[ -&gt;---
+----- -&lt;]&gt;- ----- --.&lt;+ +++++ +++[- &gt;++++ +++++ &lt;]&gt;++ +.--- --.&lt;+ +++++
+++[-&gt; ----- ---&lt;] &gt;---- ----- ----- -.&lt;++ +++++ ++[-&gt; +++++ ++++&lt; ]&gt;+++
+.&lt;+++ [-&gt;-- -&lt;]&gt;- --.+. &lt;+++[ -&gt;+++ &lt;]&gt;+. &lt;++++ +++++ [-&gt;-- ----- --&lt;]&gt;
+--.&lt;+ +++++ +++[- &gt;++++ +++++ &lt;]&gt;++ .+.&lt;+ ++[-&gt; ---&lt;] &gt;---- --.&lt;+ ++[-&gt;
++++&lt;] &gt;++.&lt; +++++ +++[- &gt;---- ----&lt; ]&gt;--. &lt;++++ +[-&gt;- ----&lt; ]&gt;--- -----
+.---. +++.- --.&lt;+ +++++ ++[-&gt; +++++ +++&lt;] &gt;++++ +++++ .&lt;+++ +[-&gt;+ +++&lt;]
+&gt;++.- ---.&lt; ++++[ -&gt;+++ +&lt;]&gt;+ .&lt;+++ [-&gt;-- -&lt;]&gt;- ----- .++++ +.&lt;++ +++++
++[-&gt;- ----- --&lt;]&gt; ----- ---.&lt; +++++ ++++[ -&gt;+++ +++++ +&lt;]&gt;+ ++.&lt;+ ++[-&gt;
+---&lt;] &gt;---. ---.&lt; +++++ +++[- &gt;---- ----&lt; ]&gt;--- --.&lt;+ +++++ ++[-&gt; +++++
++++&lt;] &gt;++++ +++++ +++++ +.+++ ++.&lt;+ ++[-&gt; ---&lt;] &gt;---. ---.&lt; +++[- &gt;+++&lt;
+]&gt;+++ +.&lt;++ +++++ ++[-&gt; ----- ----&lt; ]&gt;-.&lt; ++++[ -&gt;+++ +&lt;]&gt;+ +.&lt;++ ++[-&gt;
+----&lt; ]&gt;--. &lt;++++ ++++[ -&gt;+++ +++++ &lt;]&gt;++ ++++. +++.+ ++.-- ----- .&lt;+++
+[-&gt;++ +&lt;]&gt;+ ++++. &lt;++++ +++++ [-&gt;-- ----- --&lt;]&gt; --.&lt;+ +++++ ++[-&gt; +++++
++++&lt;] &gt;+.&lt;+ ++[-&gt; +++&lt;] &gt;++++ .&lt;+++ [-&gt;-- -&lt;]&gt;- .&lt;+++ +++++ [-&gt;-- -----
+-&lt;]&gt;- ---.&lt; +++++ ++++[ -&gt;+++ +++++ +&lt;]&gt;+ ++.&lt;+ +++[- &gt;---- &lt;]&gt;-- -.&lt;++
++[-&gt;+ ++&lt;]&gt; +.--- ---.&lt; +++[- &gt;+++&lt; ]&gt;+.- ----- ---.. &lt;++++ ++++[ -&gt;---
+----- &lt;]&gt;-- ----. &lt;++++ +++++ [-&gt;++ +++++ ++&lt;]&gt; +++.- ----. &lt;++++ ++++[
+-&gt;--- ----- &lt;]&gt;-- ----- ----- ---.&lt; +++++ ++++[ -&gt;+++ +++++ +&lt;]&gt;+ ++.&lt;+
+++[-&gt; ---&lt;] &gt;---. ---.&lt; +++++ +++[- &gt;---- ----&lt; ]&gt;--- --.&lt;+ +++++ ++[-&gt;
++++++ +++&lt;] &gt;++++ +++++ +++++ .---- ----- .&lt;+++ +[-&gt;+ +++&lt;] &gt;+++. ----.
+&lt;++++ +++++ [-&gt;-- ----- --&lt;]&gt; ---.&lt; +++++ ++++[ -&gt;+++ +++++ +&lt;]&gt;+ +.+.&lt;
++++[- &gt;---&lt; ]&gt;--- ---.&lt; +++[- &gt;+++&lt; ]&gt;++. &lt;++++ ++++[ -&gt;--- ----- &lt;]&gt;--
+----- ----- ---.&lt; ++++[ -&gt;--- -&lt;]&gt;- ---.- --.++ +.--- .&lt;+++ +++++ [-&gt;++
++++++ +&lt;]&gt;+ +++++ +++++ ++++. &lt;++++ [-&gt;++ ++&lt;]&gt; +++++ +.+++ +++.- --.+.
+&lt;++++ ++++[ -&gt;--- ----- &lt;]&gt;-- ----- .&lt;+++ [-&gt;-- -&lt;]&gt;- --.&lt;+ +++++ +++[-
+&gt;++++ +++++ &lt;]&gt;++ .&lt;+++ +[-&gt;- ---&lt;] &gt;--.&lt; +++[- &gt;+++&lt; ]&gt;+++ +.+++ +++.&lt;
+++++[ -&gt;--- -&lt;]&gt;- --.&lt;
+</pre></table></code></div></div><p>We run the brainfuck program (for instance here: <a href="http://esoteric.sange.fi/brainfuck/impl/interp/i.html">http://esoteric.sange.fi/brainfuck/impl/interp/i.html</a> )</p><p>and get the following output:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre>Hey leets,
+
+Im glad you found the way to this step.
+
+
+
+Search the other 2 files and takeoff to the next step!
+
+
+
+Yours, santa
+</pre></table></code></div></div><p>Hmm.. So there must be more hidden files somewhere..</p><p>We use <a href="pdfextract.com">pdfextract.com</a> to find all files embedded in the pdf. This gives us the following three images:</p><p><img src="writeupfiles/base64decoded-000.jpg" alt="" /> <img src="writeupfiles/base64decoded-001.png" alt="" /> <img src="writeupfiles/base64decoded-002.png" alt="" /></p><p>The first image is a stereogram. We can find the hidden image using this website: <a href="http://magiceye.ecksdee.co.uk/">http://magiceye.ecksdee.co.uk/</a></p><p><img src="writeupfiles/stereogram_solved.png" alt="" /></p><p>It’s windings!</p><p><img src="writeupfiles/windings-alphabet.gif" alt="" /></p><p>It spells</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>ball=sha1([01]{25})
+</pre></table></code></div></div><p>Hmmm… No clue what that means, something involving sha1 hashes..</p><p>We keep looking in all files and find another image hidden in the pdf file using binwalk:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>$ binwalk base64decoded.pdf
+
+DECIMAL   	HEX       	DESCRIPTION
+-------------------------------------------------------------------------------------------------------
+345872    	0x54710   	PNG image, 120 x 120, 8-bit/color RGB, non-interlaced
+</pre></table></code></div></div><p>We again extract it with binwalk</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>$ binwalk -D 'PNG image:png'  base64decoded.pdf
+
+DECIMAL   	HEX       	DESCRIPTION
+-------------------------------------------------------------------------------------------------------
+345872    	0x54710   	PNG image, 120 x 120, 8-bit/color RGB, non-interlaced
+</pre></table></code></div></div><p><a href="writeupfiles/54710.png">link</a></p><p><img src="writeupfiles/54710.png" alt="" /></p><p>There is something interesting in the exif data of this image:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+</pre><td class="rouge-code"><pre>$ exiftool 54710.png ExifTool Version Number         : 9.46
+File Name                       : 54710.png
+Directory                       : .
+File Size                       : 16 kB
+File Modification Date/Time     : 2015:11:15 22:48:34+01:00
+File Access Date/Time           : 2015:11:15 22:48:35+01:00
+File Inode Change Date/Time     : 2015:11:15 22:48:34+01:00
+File Permissions                : rwxrwxrwx
+File Type                       : PNG
+MIME Type                       : image/png
+Image Width                     : 120
+Image Height                    : 120
+Bit Depth                       : 8
+Color Type                      : RGB
+Compression                     : Deflate/Inflate
+Filter                          : Adaptive
+Interlace                       : Noninterlaced
+Gamma                           : 2.2
+White Point X                   : 0.31269
+White Point Y                   : 0.32899
+Red X                           : 0.63999
+Red Y                           : 0.33001
+Green X                         : 0.3
+Green Y                         : 0.6
+Blue X                          : 0.15
+Blue Y                          : 0.05999
+Pixels Per Unit X               : 2834
+Pixels Per Unit Y               : 2834
+Pixel Units                     : Meters
+Software                        : paint.net 4.0.6
+Comment                         : 754c6738acc834944b90b2a9a77bdbacb093f6e4.a1ff6b23bb8ed85b6f0adf9f65f007e9b3e348e0.848fdbfa2d28a1aee0d82c8a707c4d1261f51079.312189262e204aa9027ca64db1d43d1153a860e5.21f4c0b5e077f82739c0748df71610fc6285e768.3ded376898e8843999f1d0df89137308542acac2.a9f2066e530187b9371ada082e11a56127028749.d028c883a63e2232783ea6f54ce6d0091a9d2d84.610bf7f4144cf300ef086254459c427d16767d6a.e56a109aab8b4e9b18e099a8ae1477d8de270149.5de13aa399cf9e3042af96eab88d28def1f58549.a5229747c1437b737ac2cc1567f173d4a4ba12ba.2bb48bc2105ca33f56906d8c6c4b6aec4c16cb58.e7a804128bc3ae8150adeb80ac695fdea0f2b643.12aae009a8d38f6585debaddef79aed5cd858df4.8b7c437b1d8cdbb8a72a9783b3882c87d397c76a.4b1dfd5c05068a37df7ebfef64bb5bc4a8c7daab.7a781addb8ef467884ecb62bbe1bb7d024b0eb83.6d23cafac980692dc7401fd53cf287aec49d4ae2.16f607d441caf3cbda5335bccd2f104da131f2a9.7982fcaa2b59698d3eb5aa05369454b105de6dc3.5e836fbdb63db38d2f9a8604dd90856a9791efce.b5adb5a6cccc137d6851e2fcb5fa276307edf8f4.06004577f5d35b54b80a53a20aedf5895509bffa.1e238015f260d4d485e3e9d64fa17db80eb81708
+Image Size                      : 120x120
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>754c6738acc834944b90b2a9a77bdbacb093f6e4.a1ff6b23bb8ed85b6f0adf9f65f007e9b3e348e0.848fdbfa2d28a1aee0d82c8a707c4d1261f51079.312189262e204aa9027ca64db1d43d1153a860e5.21f4c0b5e077f82739c0748df71610fc6285e768.3ded376898e8843999f1d0df89137308542acac2.a9f2066e530187b9371ada082e11a56127028749.d028c883a63e2232783ea6f54ce6d0091a9d2d84.610bf7f4144cf300ef086254459c427d16767d6a.e56a109aab8b4e9b18e099a8ae1477d8de270149.5de13aa399cf9e3042af96eab88d28def1f58549.a5229747c1437b737ac2cc1567f173d4a4ba12ba.2bb48bc2105ca33f56906d8c6c4b6aec4c16cb58.e7a804128bc3ae8150adeb80ac695fdea0f2b643.12aae009a8d38f6585debaddef79aed5cd858df4.8b7c437b1d8cdbb8a72a9783b3882c87d397c76a.4b1dfd5c05068a37df7ebfef64bb5bc4a8c7daab.7a781addb8ef467884ecb62bbe1bb7d024b0eb83.6d23cafac980692dc7401fd53cf287aec49d4ae2.16f607d441caf3cbda5335bccd2f104da131f2a9.7982fcaa2b59698d3eb5aa05369454b105de6dc3.5e836fbdb63db38d2f9a8604dd90856a9791efce.b5adb5a6cccc137d6851e2fcb5fa276307edf8f4.06004577f5d35b54b80a53a20aedf5895509bffa.1e238015f260d4d485e3e9d64fa17db80eb81708
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre><td class="rouge-code"><pre>754c6738acc834944b90b2a9a77bdbacb093f6e4
+a1ff6b23bb8ed85b6f0adf9f65f007e9b3e348e0
+848fdbfa2d28a1aee0d82c8a707c4d1261f51079
+312189262e204aa9027ca64db1d43d1153a860e5
+21f4c0b5e077f82739c0748df71610fc6285e768
+3ded376898e8843999f1d0df89137308542acac2
+a9f2066e530187b9371ada082e11a56127028749
+d028c883a63e2232783ea6f54ce6d0091a9d2d84
+610bf7f4144cf300ef086254459c427d16767d6a
+e56a109aab8b4e9b18e099a8ae1477d8de270149
+5de13aa399cf9e3042af96eab88d28def1f58549
+a5229747c1437b737ac2cc1567f173d4a4ba12ba
+2bb48bc2105ca33f56906d8c6c4b6aec4c16cb58
+e7a804128bc3ae8150adeb80ac695fdea0f2b643
+12aae009a8d38f6585debaddef79aed5cd858df4
+8b7c437b1d8cdbb8a72a9783b3882c87d397c76a
+4b1dfd5c05068a37df7ebfef64bb5bc4a8c7daab
+7a781addb8ef467884ecb62bbe1bb7d024b0eb83
+6d23cafac980692dc7401fd53cf287aec49d4ae2
+16f607d441caf3cbda5335bccd2f104da131f2a9
+7982fcaa2b59698d3eb5aa05369454b105de6dc3
+5e836fbdb63db38d2f9a8604dd90856a9791efce
+b5adb5a6cccc137d6851e2fcb5fa276307edf8f4
+06004577f5d35b54b80a53a20aedf5895509bffa
+1e238015f260d4d485e3e9d64fa17db80eb81708
+</pre></table></code></div></div><p>These could be the SHA1 hashes alluded to by the wingdings.</p><p>It cannot be the SHA1 encryption of the final key, as that would take too long too bruteforce with 20 unknown characters:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>HV15-aaaa-bbbb-cccc-dddd-eeee
+</pre></table></code></div></div><p>We need to know more about the possible strings the SHA1 hashes encode..</p><p>Ah, but that is exactly what the windings were trying to tell us!</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>ball=sha1([01]{25})
+</pre></table></code></div></div><p>The sha1 hashes encode 25-character long binary strings, and that is something we can easily bruteforce:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+</pre><td class="rouge-code"><pre>import hashlib
+import itertools
+
+target=["754c6738acc834944b90b2a9a77bdbacb093f6e4",
+"a1ff6b23bb8ed85b6f0adf9f65f007e9b3e348e0",
+"848fdbfa2d28a1aee0d82c8a707c4d1261f51079",
+"312189262e204aa9027ca64db1d43d1153a860e5",
+"21f4c0b5e077f82739c0748df71610fc6285e768",
+"3ded376898e8843999f1d0df89137308542acac2",
+"a9f2066e530187b9371ada082e11a56127028749",
+"d028c883a63e2232783ea6f54ce6d0091a9d2d84",
+"610bf7f4144cf300ef086254459c427d16767d6a",
+"e56a109aab8b4e9b18e099a8ae1477d8de270149",
+"5de13aa399cf9e3042af96eab88d28def1f58549",
+"a5229747c1437b737ac2cc1567f173d4a4ba12ba",
+"2bb48bc2105ca33f56906d8c6c4b6aec4c16cb58",
+"e7a804128bc3ae8150adeb80ac695fdea0f2b643",
+"12aae009a8d38f6585debaddef79aed5cd858df4",
+"8b7c437b1d8cdbb8a72a9783b3882c87d397c76a",
+"4b1dfd5c05068a37df7ebfef64bb5bc4a8c7daab",
+"7a781addb8ef467884ecb62bbe1bb7d024b0eb83",
+"6d23cafac980692dc7401fd53cf287aec49d4ae2",
+"16f607d441caf3cbda5335bccd2f104da131f2a9",
+"7982fcaa2b59698d3eb5aa05369454b105de6dc3",
+"5e836fbdb63db38d2f9a8604dd90856a9791efce",
+"b5adb5a6cccc137d6851e2fcb5fa276307edf8f4",
+"06004577f5d35b54b80a53a20aedf5895509bffa",
+"1e238015f260d4d485e3e9d64fa17db80eb81708"]
+
+alphabet = "01"
+
+perms=itertools.product(alphabet,repeat=25)
+
+solutions=[0]*25
+for p in perms:
+    t = ''.join(p)
+    s= hashlib.sha1(t).hexdigest()
+
+    if s in target:
+        solutions[target.index(s)]=t
+
+for s in solutions:
+    print s
+</pre></table></code></div></div><p class="language-python">after less than a minute we get the following output:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre><td class="rouge-code"><pre>0000000111110111110000000
+0111110101010101010111110
+0100010111110010010100010
+0100010100010111110100010
+0100010110111100110100010
+0111110100100111110111110
+0000000101010101010000000
+1111111001101101001111111
+0000010111011101111010101
+1001001110101011111101111
+1011110000110010110111100
+0001101010001111110111010
+0111100101101111110001110
+0101011101000000000101110
+0110100101011000001011101
+0110101111001011100111100
+0110000000101100110001110
+1111111010011011101100101
+0000000100011101010100110
+0111110111111010011101101
+0100010101011101000001110
+0100010100100101101001010
+0100010101100111010100110
+0111110100011000110010011
+0000000100100100000010110
+</pre></table></code></div></div><p>That looks suspiciously like a QR code!!</p><p>let’s turn it into an image with python:</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre><td class="rouge-code"><pre><span class="kn">from</span> <span class="n">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="n">bitstring</span><span class="o">=</span><span class="sh">"</span><span class="s">0000000111110111110000000011111010101010101011111001000101111100100101000100100010100010111110100010010001011011110011010001001111101001001111101111100000000101010101010000000111111100110110100111111100000101110111011110101011001001110101011111101111101111000011001011011110000011010100011111101110100111100101101111110001110010101110100000000010111001101001010110000010111010110101111001011100111100011000000010110011000111011111110100110111011001010000000100011101010100110011111011111101001110110101000101010111010000011100100010100100101101001010010001010110011101010011001111101000110001100100110000000100100100000010110</span><span class="sh">"</span>
+
+<span class="n">outimg</span><span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="sh">"</span><span class="s">RGB</span><span class="sh">"</span><span class="p">,(</span><span class="mi">25</span><span class="p">,</span><span class="mi">25</span><span class="p">),</span><span class="sh">"</span><span class="s">black</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">pixels_out</span> <span class="o">=</span> <span class="n">outimg</span><span class="p">.</span><span class="nf">load</span><span class="p">()</span>
+
+<span class="n">count</span><span class="o">=-</span><span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nf">range </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">):</span>
+        <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="n">bitstring</span><span class="p">[</span><span class="n">count</span><span class="p">]</span><span class="o">==</span><span class="sh">"</span><span class="s">1</span><span class="sh">"</span><span class="p">:</span>
+            <span class="n">pixels_out</span><span class="p">[(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">)]</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+
+
+<span class="n">outimg</span><span class="o">=</span><span class="n">outimg</span><span class="p">.</span><span class="nf">resize</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
+<span class="n">outimg</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="sh">"</span><span class="s">qrout.png</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">png</span><span class="sh">"</span><span class="p">)</span>
+</pre></table></code></div></div><p><img src="writeupfiles/qrout_orig.png" alt="" /></p><p>Hmm, seems not quite readable..</p><p>Below is an explanation of the QRcode format:</p><hr /><p><img src="writeupfiles/qr-code-explained.jpg" alt="" /></p><ul><li>The three large squares highlighted in red are the position markers. These tell the scanner where the edges of the code are.<li>The smaller red square is an alignment marker. This acts as a reference point for the scanner, making sure everything lines up properly. In bigger codes, there are several of these squares.<li>The red strips of alternating black and white modules are called timing patterns. They define the positioning of the rows and columns.<li>The green sections determine the format. This tells the scanner whether it’s a website, text message, Chinese symbols, numbers, or any combination of these.<li>The modules highlighted in blue represent the version number. Basically, the more modules in the code, the higher the version (up to v40, which is 177×177 modules). If the code is version 6 or smaller, the version does not need to be defined here because the scanner can literally count the modules and determine the version on its own.</ul><hr /><p>The red areas should always be the same for any QR code, but we see that four ours it is not. We also notice that the areas in the inner square of the QR code overlapping the red zones are exactly inverse of what they should be. So we invert the pixels in that area to fix this QR code image.</p><p><img src="writeupfiles/qrout.png" alt="" /></p><p>Whoohoo!! This QR code is readable and gives us the final flag:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>HV15-W!ll-R0ck-t#i$-xM4s-H0b0
+</pre></table></code></div></div><h2> Flag</h2><code> HV15-W!ll-R0ck-t#i$-xM4s-H0b0 </code></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div class="panel-heading"> <a href="https://github.com/shiltemann/CTF-writeups-public/tree/main/website/writeups/Hackvent_2015/00-teaser-santas-leak.md"><i class="fab fa-github"></i> Edit on GitHub </a></div><div id="access-lastmod" class="post"><div class="panel-heading">Recently Updated</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li> <a href="/CTF-writeups-public/writeups/Hackvent_2015/13-dec-13-ball-in-plain-sight.html">Dec 13: Ball in plain sight!?! - (Hackvent_2015)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2015/01-dec-1-hello.html">Dec 1: Hello - (Hackvent_2015)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2015/12-dec-12-high-performance-computing.html">Dec 12: High Performance Computing - (Hackvent_2015)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2015/11-dec-11-old-school.html">Dec 11: Old School - (Hackvent_2015)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2015/10-dec-10-nasty-zip.html">Dec 10: Nasty Zip - (Hackvent_2015)</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div></div></div></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><footer><div class="container pl-lg-4 pr-lg-4"><div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3"><div class="footer-left"><p class="mb-0"> © 2023 <a href="https://github.com/shiltemann">Team Galaxians</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." >Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0">Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>.</p></div></div></div></footer><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false" ><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/CTF-writeups-public/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5"></p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script defer src="/CTF-writeups-public/assets/js/dist/commons.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/CTF-writeups-public/app.js"></script>

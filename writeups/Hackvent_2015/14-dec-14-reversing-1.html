@@ -1,0 +1,609 @@
+<!doctype html><html lang="en" data-mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover" ><meta name="generator" content="Jekyll v4.3.2" /><meta property="og:title" content="Dec 14: Reversing #1" /><meta property="og:locale" content="en" /><meta name="description" content="A set of CTF writeups by team Galaxians." /><meta property="og:description" content="A set of CTF writeups by team Galaxians." /><link rel="canonical" href="https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2015/14-dec-14-reversing-1.html" /><meta property="og:url" content="https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2015/14-dec-14-reversing-1.html" /><meta property="og:site_name" content="Galaxians CTF" /><meta property="og:type" content="website" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Dec 14: Reversing #1" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-05-20T16:39:32+02:00","description":"A set of CTF writeups by team Galaxians.","headline":"Dec 14: Reversing #1","url":"https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2015/14-dec-14-reversing-1.html"}</script><title> Galaxians CTF | Dec 14: Reversing #1</title><link rel="apple-touch-icon" sizes="180x180" href="/CTF-writeups-public/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/CTF-writeups-public/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/CTF-writeups-public/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/CTF-writeups-public/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/CTF-writeups-public/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Galaxians CTF"><meta name="application-name" content="Galaxians CTF"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/CTF-writeups-public/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css"><link rel="stylesheet" href="/CTF-writeups-public/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script><body data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/CTF-writeups-public/" class="mx-auto"> <img src="/CTF-writeups-public/assets/img/galaxians-logo.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title"> <a href="/CTF-writeups-public/">Galaxians CTF</a></div><div class="site-subtitle font-italic">Galactic Girlfiends Hack the Universe!</div></div><ul class="w-100"><li class="nav-item"> <a href="/CTF-writeups-public/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>CTF EVENTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/posts/" class="nav-link"> <i class="fa-fw fas fa-pencil ml-xl-3 mr-xl-3 unloaded"></i> <span>POSTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <a href="https://github.com/shiltemann" aria-label="github" target="_blank" rel="noopener noreferrer" > <i class="fab fa-github"></i> </a> <a href="https://twitter.com/" aria-label="twitter" target="_blank" rel="noopener noreferrer" > <i class="fab fa-twitter"></i> </a> <a href="javascript:location.href = 'mailto:' + ['galaxians','galaxians.org'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/CTF-writeups-public/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/CTF-writeups-public/"> Home </a> </span> <span><a href="/CTF-writeups-public/writeups/Hackvent_2015/">Hackvent 2015</a></span> <span>Dec 14: Reversing #1</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Writeup</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..." > </span> <span id="search-cancel">Cancel</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1> Dec 14: Reversing #1</h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p><em>an easy binary starter</em></p><p>pull out the Nugget out of this binary.</p><p><a href="writeupfiles/hv15_ZM0qfjSu8Tf3OZDqjS74.exe">hv15_ZM0qfjSu8Tf3OZDqjS74.exe</a></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>We get a .NET binary. We decompile the executable with ILSpy (http://ilspy.net/) and get the following C# code:</p><div class="language-c# highlighter-rouge"><div class="code-header"> <span data-label-text="C#"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+</pre><td class="rouge-code"><pre><span class="k">using</span> <span class="nn">Microsoft.VisualBasic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.VisualBasic.CompilerServices</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.ComponentModel</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Diagnostics</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Drawing</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Runtime.CompilerServices</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Security.Cryptography</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Windows.Forms</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">hv15</span>
+<span class="p">{</span>
+	<span class="p">[</span><span class="n">DesignerGenerated</span><span class="p">]</span>
+	<span class="k">public</span> <span class="k">class</span> <span class="nc">Form1</span> <span class="p">:</span> <span class="n">Form</span>
+	<span class="p">{</span>
+		<span class="k">public</span> <span class="k">class</span> <span class="nc">GlobalVariables</span>
+		<span class="p">{</span>
+			<span class="k">public</span> <span class="k">static</span> <span class="kt">string</span> <span class="n">assembly</span> <span class="p">=</span> <span class="s">"__ERROR_HANDLER"</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="k">private</span> <span class="n">IContainer</span> <span class="n">components</span><span class="p">;</span>
+
+		<span class="p">[</span><span class="nf">AccessedThroughProperty</span><span class="p">(</span><span class="s">"Button1"</span><span class="p">)]</span>
+		<span class="k">private</span> <span class="n">Button</span> <span class="n">_Button1</span><span class="p">;</span>
+
+		<span class="p">[</span><span class="nf">AccessedThroughProperty</span><span class="p">(</span><span class="s">"TextBox1"</span><span class="p">)]</span>
+		<span class="k">private</span> <span class="n">TextBox</span> <span class="n">_TextBox1</span><span class="p">;</span>
+
+		<span class="p">[</span><span class="nf">AccessedThroughProperty</span><span class="p">(</span><span class="s">"Label1"</span><span class="p">)]</span>
+		<span class="k">private</span> <span class="n">Label</span> <span class="n">_Label1</span><span class="p">;</span>
+
+		<span class="p">[</span><span class="nf">AccessedThroughProperty</span><span class="p">(</span><span class="s">"PictureBox1"</span><span class="p">)]</span>
+		<span class="k">private</span> <span class="n">PictureBox</span> <span class="n">_PictureBox1</span><span class="p">;</span>
+
+		<span class="p">[</span><span class="nf">AccessedThroughProperty</span><span class="p">(</span><span class="s">"Label2"</span><span class="p">)]</span>
+		<span class="k">private</span> <span class="n">Label</span> <span class="n">_Label2</span><span class="p">;</span>
+
+		<span class="k">internal</span> <span class="k">virtual</span> <span class="n">Button</span> <span class="n">Button1</span>
+		<span class="p">{</span>
+			<span class="k">get</span>
+			<span class="p">{</span>
+				<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="n">_Button1</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="p">[</span><span class="nf">MethodImpl</span><span class="p">(</span><span class="n">MethodImplOptions</span><span class="p">.</span><span class="n">Synchronized</span><span class="p">)]</span>
+			<span class="k">set</span>
+			<span class="p">{</span>
+				<span class="n">EventHandler</span> <span class="n">value2</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">EventHandler</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Button1_Click</span><span class="p">);</span>
+				<span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">_Button1</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+				<span class="p">{</span>
+					<span class="k">this</span><span class="p">.</span><span class="n">_Button1</span><span class="p">.</span><span class="n">Click</span> <span class="p">-=</span> <span class="n">value2</span><span class="p">;</span>
+				<span class="p">}</span>
+				<span class="k">this</span><span class="p">.</span><span class="n">_Button1</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span>
+				<span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">_Button1</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+				<span class="p">{</span>
+					<span class="k">this</span><span class="p">.</span><span class="n">_Button1</span><span class="p">.</span><span class="n">Click</span> <span class="p">+=</span> <span class="n">value2</span><span class="p">;</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+
+		<span class="k">internal</span> <span class="k">virtual</span> <span class="n">TextBox</span> <span class="n">TextBox1</span>
+		<span class="p">{</span>
+			<span class="k">get</span>
+			<span class="p">{</span>
+				<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="n">_TextBox1</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="p">[</span><span class="nf">MethodImpl</span><span class="p">(</span><span class="n">MethodImplOptions</span><span class="p">.</span><span class="n">Synchronized</span><span class="p">)]</span>
+			<span class="k">set</span>
+			<span class="p">{</span>
+				<span class="k">this</span><span class="p">.</span><span class="n">_TextBox1</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+
+		<span class="k">internal</span> <span class="k">virtual</span> <span class="n">Label</span> <span class="n">Label1</span>
+		<span class="p">{</span>
+			<span class="k">get</span>
+			<span class="p">{</span>
+				<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="n">_Label1</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="p">[</span><span class="nf">MethodImpl</span><span class="p">(</span><span class="n">MethodImplOptions</span><span class="p">.</span><span class="n">Synchronized</span><span class="p">)]</span>
+			<span class="k">set</span>
+			<span class="p">{</span>
+				<span class="k">this</span><span class="p">.</span><span class="n">_Label1</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+
+		<span class="k">internal</span> <span class="k">virtual</span> <span class="n">PictureBox</span> <span class="n">PictureBox1</span>
+		<span class="p">{</span>
+			<span class="k">get</span>
+			<span class="p">{</span>
+				<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="n">_PictureBox1</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="p">[</span><span class="nf">MethodImpl</span><span class="p">(</span><span class="n">MethodImplOptions</span><span class="p">.</span><span class="n">Synchronized</span><span class="p">)]</span>
+			<span class="k">set</span>
+			<span class="p">{</span>
+				<span class="k">this</span><span class="p">.</span><span class="n">_PictureBox1</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+
+		<span class="k">internal</span> <span class="k">virtual</span> <span class="n">Label</span> <span class="n">Label2</span>
+		<span class="p">{</span>
+			<span class="k">get</span>
+			<span class="p">{</span>
+				<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="n">_Label2</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="p">[</span><span class="nf">MethodImpl</span><span class="p">(</span><span class="n">MethodImplOptions</span><span class="p">.</span><span class="n">Synchronized</span><span class="p">)]</span>
+			<span class="k">set</span>
+			<span class="p">{</span>
+				<span class="k">this</span><span class="p">.</span><span class="n">_Label2</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+
+		<span class="k">public</span> <span class="nf">Form1</span><span class="p">()</span>
+		<span class="p">{</span>
+			<span class="k">base</span><span class="p">.</span><span class="n">Load</span> <span class="p">+=</span> <span class="k">new</span> <span class="nf">EventHandler</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Form1_Load</span><span class="p">);</span>
+			<span class="k">this</span><span class="p">.</span><span class="nf">InitializeComponent</span><span class="p">();</span>
+		<span class="p">}</span>
+
+		<span class="p">[</span><span class="n">DebuggerNonUserCode</span><span class="p">]</span>
+		<span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">(</span><span class="kt">bool</span> <span class="n">disposing</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">try</span>
+			<span class="p">{</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">disposing</span> <span class="p">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="n">components</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+				<span class="p">{</span>
+					<span class="k">this</span><span class="p">.</span><span class="n">components</span><span class="p">.</span><span class="nf">Dispose</span><span class="p">();</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+			<span class="k">finally</span>
+			<span class="p">{</span>
+				<span class="k">base</span><span class="p">.</span><span class="nf">Dispose</span><span class="p">(</span><span class="n">disposing</span><span class="p">);</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+
+		<span class="p">[</span><span class="n">DebuggerStepThrough</span><span class="p">]</span>
+		<span class="k">private</span> <span class="k">void</span> <span class="nf">InitializeComponent</span><span class="p">()</span>
+		<span class="p">{</span>
+			<span class="n">ComponentResourceManager</span> <span class="n">componentResourceManager</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ComponentResourceManager</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">Form1</span><span class="p">));</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Button1</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Button</span><span class="p">();</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">TextBox1</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">TextBox</span><span class="p">();</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Label1</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Label</span><span class="p">();</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">PictureBox1</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">PictureBox</span><span class="p">();</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Label2</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Label</span><span class="p">();</span>
+			<span class="p">((</span><span class="n">ISupportInitialize</span><span class="p">)</span><span class="k">this</span><span class="p">.</span><span class="n">PictureBox1</span><span class="p">).</span><span class="nf">BeginInit</span><span class="p">();</span>
+			<span class="k">this</span><span class="p">.</span><span class="nf">SuspendLayout</span><span class="p">();</span>
+			<span class="n">Control</span> <span class="n">arg_70_0</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Button1</span><span class="p">;</span>
+			<span class="n">Point</span> <span class="n">location</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Point</span><span class="p">(</span><span class="m">266</span><span class="p">,</span> <span class="m">143</span><span class="p">);</span>
+			<span class="n">arg_70_0</span><span class="p">.</span><span class="n">Location</span> <span class="p">=</span> <span class="n">location</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Button1</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">"Button1"</span><span class="p">;</span>
+			<span class="n">Control</span> <span class="n">arg_98_0</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Button1</span><span class="p">;</span>
+			<span class="n">Size</span> <span class="n">size</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Size</span><span class="p">(</span><span class="m">87</span><span class="p">,</span> <span class="m">25</span><span class="p">);</span>
+			<span class="n">arg_98_0</span><span class="p">.</span><span class="n">Size</span> <span class="p">=</span> <span class="n">size</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Button1</span><span class="p">.</span><span class="n">TabIndex</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Button1</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Verify"</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Button1</span><span class="p">.</span><span class="n">UseVisualStyleBackColor</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+			<span class="n">Control</span> <span class="n">arg_DA_0</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">TextBox1</span><span class="p">;</span>
+			<span class="n">location</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Point</span><span class="p">(</span><span class="m">266</span><span class="p">,</span> <span class="m">108</span><span class="p">);</span>
+			<span class="n">arg_DA_0</span><span class="p">.</span><span class="n">Location</span> <span class="p">=</span> <span class="n">location</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">TextBox1</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">"TextBox1"</span><span class="p">;</span>
+			<span class="n">Control</span> <span class="n">arg_105_0</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">TextBox1</span><span class="p">;</span>
+			<span class="n">size</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Size</span><span class="p">(</span><span class="m">333</span><span class="p">,</span> <span class="m">20</span><span class="p">);</span>
+			<span class="n">arg_105_0</span><span class="p">.</span><span class="n">Size</span> <span class="p">=</span> <span class="n">size</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">TextBox1</span><span class="p">.</span><span class="n">TabIndex</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Label1</span><span class="p">.</span><span class="n">AutoSize</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+			<span class="n">Control</span> <span class="n">arg_137_0</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Label1</span><span class="p">;</span>
+			<span class="n">location</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Point</span><span class="p">(</span><span class="m">263</span><span class="p">,</span> <span class="m">79</span><span class="p">);</span>
+			<span class="n">arg_137_0</span><span class="p">.</span><span class="n">Location</span> <span class="p">=</span> <span class="n">location</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Label1</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">"Label1"</span><span class="p">;</span>
+			<span class="n">Control</span> <span class="n">arg_162_0</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Label1</span><span class="p">;</span>
+			<span class="n">size</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Size</span><span class="p">(</span><span class="m">336</span><span class="p">,</span> <span class="m">14</span><span class="p">);</span>
+			<span class="n">arg_162_0</span><span class="p">.</span><span class="n">Size</span> <span class="p">=</span> <span class="n">size</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Label1</span><span class="p">.</span><span class="n">TabIndex</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Label1</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Please enter the daily Code and click on Verify"</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">PictureBox1</span><span class="p">.</span><span class="n">Image</span> <span class="p">=</span> <span class="p">(</span><span class="n">Image</span><span class="p">)</span><span class="n">componentResourceManager</span><span class="p">.</span><span class="nf">GetObject</span><span class="p">(</span><span class="s">"PictureBox1.Image"</span><span class="p">);</span>
+			<span class="n">Control</span> <span class="n">arg_1B0_0</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">PictureBox1</span><span class="p">;</span>
+			<span class="n">location</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Point</span><span class="p">(</span><span class="m">12</span><span class="p">,</span> <span class="m">12</span><span class="p">);</span>
+			<span class="n">arg_1B0_0</span><span class="p">.</span><span class="n">Location</span> <span class="p">=</span> <span class="n">location</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">PictureBox1</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">"PictureBox1"</span><span class="p">;</span>
+			<span class="n">Control</span> <span class="n">arg_1DE_0</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">PictureBox1</span><span class="p">;</span>
+			<span class="n">size</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Size</span><span class="p">(</span><span class="m">233</span><span class="p">,</span> <span class="m">156</span><span class="p">);</span>
+			<span class="n">arg_1DE_0</span><span class="p">.</span><span class="n">Size</span> <span class="p">=</span> <span class="n">size</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">PictureBox1</span><span class="p">.</span><span class="n">TabIndex</span> <span class="p">=</span> <span class="m">3</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">PictureBox1</span><span class="p">.</span><span class="n">TabStop</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Label2</span><span class="p">.</span><span class="n">AutoSize</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Label2</span><span class="p">.</span><span class="n">Enabled</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+			<span class="n">Control</span> <span class="n">arg_22B_0</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Label2</span><span class="p">;</span>
+			<span class="n">location</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Point</span><span class="p">(</span><span class="m">438</span><span class="p">,</span> <span class="m">154</span><span class="p">);</span>
+			<span class="n">arg_22B_0</span><span class="p">.</span><span class="n">Location</span> <span class="p">=</span> <span class="n">location</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Label2</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">"Label2"</span><span class="p">;</span>
+			<span class="n">Control</span> <span class="n">arg_256_0</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Label2</span><span class="p">;</span>
+			<span class="n">size</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Size</span><span class="p">(</span><span class="m">161</span><span class="p">,</span> <span class="m">14</span><span class="p">);</span>
+			<span class="n">arg_256_0</span><span class="p">.</span><span class="n">Size</span> <span class="p">=</span> <span class="n">size</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Label2</span><span class="p">.</span><span class="n">TabIndex</span> <span class="p">=</span> <span class="m">4</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Label2</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"code by HACKVent santa"</span><span class="p">;</span>
+			<span class="n">SizeF</span> <span class="n">autoScaleDimensions</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">SizeF</span><span class="p">(</span><span class="m">7f</span><span class="p">,</span> <span class="m">14f</span><span class="p">);</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">AutoScaleDimensions</span> <span class="p">=</span> <span class="n">autoScaleDimensions</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">AutoScaleMode</span> <span class="p">=</span> <span class="n">AutoScaleMode</span><span class="p">.</span><span class="n">Font</span><span class="p">;</span>
+			<span class="n">size</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Size</span><span class="p">(</span><span class="m">617</span><span class="p">,</span> <span class="m">180</span><span class="p">);</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">ClientSize</span> <span class="p">=</span> <span class="n">size</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Controls</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Label2</span><span class="p">);</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Controls</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">PictureBox1</span><span class="p">);</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Controls</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Label1</span><span class="p">);</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Controls</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">TextBox1</span><span class="p">);</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Controls</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Button1</span><span class="p">);</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Font</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Font</span><span class="p">(</span><span class="s">"Courier New"</span><span class="p">,</span> <span class="m">8.25f</span><span class="p">,</span> <span class="n">FontStyle</span><span class="p">.</span><span class="n">Regular</span><span class="p">,</span> <span class="n">GraphicsUnit</span><span class="p">.</span><span class="n">Point</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">FormBorderStyle</span> <span class="p">=</span> <span class="n">FormBorderStyle</span><span class="p">.</span><span class="n">FixedToolWindow</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">"Form1"</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">StartPosition</span> <span class="p">=</span> <span class="n">FormStartPosition</span><span class="p">.</span><span class="n">CenterScreen</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"HACKVent 2015"</span><span class="p">;</span>
+			<span class="p">((</span><span class="n">ISupportInitialize</span><span class="p">)</span><span class="k">this</span><span class="p">.</span><span class="n">PictureBox1</span><span class="p">).</span><span class="nf">EndInit</span><span class="p">();</span>
+			<span class="k">this</span><span class="p">.</span><span class="nf">ResumeLayout</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+			<span class="k">this</span><span class="p">.</span><span class="nf">PerformLayout</span><span class="p">();</span>
+		<span class="p">}</span>
+
+		<span class="k">private</span> <span class="k">void</span> <span class="nf">Button1_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="kt">string</span> <span class="n">text</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">TextBox1</span><span class="p">.</span><span class="n">Text</span><span class="p">;</span>
+			<span class="kt">string</span> <span class="n">left</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="nf">Encrypt</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">Form1</span><span class="p">.</span><span class="n">GlobalVariables</span><span class="p">.</span><span class="n">assembly</span><span class="p">);</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">Operators</span><span class="p">.</span><span class="nf">CompareString</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="s">"zV5/UFU8PUD3N2T49IBuCwvGzCLYz39tkMZts7rfBU4="</span><span class="p">,</span> <span class="k">false</span><span class="p">)</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="n">Interaction</span><span class="p">.</span><span class="nf">MsgBox</span><span class="p">(</span><span class="s">"yes, that is the key!"</span><span class="p">,</span> <span class="n">MsgBoxStyle</span><span class="p">.</span><span class="n">Information</span><span class="p">,</span> <span class="s">"HACKVent 2015"</span><span class="p">);</span>
+			<span class="p">}</span>
+			<span class="k">else</span>
+			<span class="p">{</span>
+				<span class="n">Interaction</span><span class="p">.</span><span class="nf">MsgBox</span><span class="p">(</span><span class="s">"nope, that is NOT the key!"</span><span class="p">,</span> <span class="n">MsgBoxStyle</span><span class="p">.</span><span class="n">Critical</span><span class="p">,</span> <span class="s">"HACKVent 2015"</span><span class="p">);</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+
+		<span class="k">public</span> <span class="kt">string</span> <span class="nf">Encrypt</span><span class="p">(</span><span class="kt">string</span> <span class="n">input</span><span class="p">,</span> <span class="kt">string</span> <span class="n">pass</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">RijndaelManaged</span> <span class="n">rijndaelManaged</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RijndaelManaged</span><span class="p">();</span>
+			<span class="n">MD5CryptoServiceProvider</span> <span class="n">mD5CryptoServiceProvider</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">MD5CryptoServiceProvider</span><span class="p">();</span>
+			<span class="kt">string</span> <span class="n">result</span><span class="p">;</span>
+			<span class="k">try</span>
+			<span class="p">{</span>
+				<span class="kt">byte</span><span class="p">[]</span> <span class="n">array</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="p">[</span><span class="m">32</span><span class="p">];</span>
+				<span class="kt">byte</span><span class="p">[]</span> <span class="n">sourceArray</span> <span class="p">=</span> <span class="n">mD5CryptoServiceProvider</span><span class="p">.</span><span class="nf">ComputeHash</span><span class="p">(</span><span class="n">Encoding</span><span class="p">.</span><span class="n">ASCII</span><span class="p">.</span><span class="nf">GetBytes</span><span class="p">(</span><span class="n">pass</span><span class="p">));</span>
+				<span class="n">Array</span><span class="p">.</span><span class="nf">Copy</span><span class="p">(</span><span class="n">sourceArray</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">16</span><span class="p">);</span>
+				<span class="n">Array</span><span class="p">.</span><span class="nf">Copy</span><span class="p">(</span><span class="n">sourceArray</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="m">15</span><span class="p">,</span> <span class="m">16</span><span class="p">);</span>
+				<span class="n">rijndaelManaged</span><span class="p">.</span><span class="n">Key</span> <span class="p">=</span> <span class="n">array</span><span class="p">;</span>
+				<span class="n">rijndaelManaged</span><span class="p">.</span><span class="n">Mode</span> <span class="p">=</span> <span class="n">CipherMode</span><span class="p">.</span><span class="n">ECB</span><span class="p">;</span>
+				<span class="n">ICryptoTransform</span> <span class="n">cryptoTransform</span> <span class="p">=</span> <span class="n">rijndaelManaged</span><span class="p">.</span><span class="nf">CreateEncryptor</span><span class="p">();</span>
+				<span class="kt">byte</span><span class="p">[]</span> <span class="n">bytes</span> <span class="p">=</span> <span class="n">Encoding</span><span class="p">.</span><span class="n">ASCII</span><span class="p">.</span><span class="nf">GetBytes</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
+				<span class="n">result</span> <span class="p">=</span> <span class="n">Convert</span><span class="p">.</span><span class="nf">ToBase64String</span><span class="p">(</span><span class="n">cryptoTransform</span><span class="p">.</span><span class="nf">TransformFinalBlock</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">bytes</span><span class="p">.</span><span class="n">Length</span><span class="p">));</span>
+			<span class="p">}</span>
+			<span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">expr_7B</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="n">ProjectData</span><span class="p">.</span><span class="nf">SetProjectError</span><span class="p">(</span><span class="n">expr_7B</span><span class="p">);</span>
+				<span class="n">Exception</span> <span class="n">ex</span> <span class="p">=</span> <span class="n">expr_7B</span><span class="p">;</span>
+				<span class="n">Interaction</span><span class="p">.</span><span class="nf">MsgBox</span><span class="p">(</span><span class="n">ex</span><span class="p">.</span><span class="n">Message</span><span class="p">,</span> <span class="n">MsgBoxStyle</span><span class="p">.</span><span class="n">OkOnly</span><span class="p">,</span> <span class="k">null</span><span class="p">);</span>
+				<span class="n">result</span> <span class="p">=</span> <span class="s">""</span><span class="p">;</span>
+				<span class="n">ProjectData</span><span class="p">.</span><span class="nf">ClearProjectError</span><span class="p">();</span>
+			<span class="p">}</span>
+			<span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="k">private</span> <span class="k">void</span> <span class="nf">Form1_Load</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">this</span><span class="p">.</span><span class="nf">Show</span><span class="p">();</span>
+			<span class="k">this</span><span class="p">.</span><span class="n">TextBox1</span><span class="p">.</span><span class="nf">Focus</span><span class="p">();</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>We see that the user input goes through an encrypt() function, and the base64-encoding of the result must equal <code class="language-plaintext highlighter-rouge">zV5/UFU8PUD3N2T49IBuCwvGzCLYz39tkMZts7rfBU4=</code>. The encrypt functions performs a Rijndael encryption in ECB mode. The key is derived from the string <code class="language-plaintext highlighter-rouge">"__ERROR_HANDLER"</code> (variable <code class="language-plaintext highlighter-rouge">assembly</code>) by computing the MD5 hash, and using this to construct the key as follows (variable <code class="language-plaintext highlighter-rouge">array</code> will contain the key) :</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>Array.Copy(sourceArray, 0, array, 0, 16);
+Array.Copy(sourceArray, 0, array, 15, 16);
+</pre></table></code></div></div><p>So our key is:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>assembly = "__ERROR_HANDLER"
+MD5(assembly) = E5B45EB06725D6A06F6C337C58730956
+key for encryption = E5B45EB06725D6A06F6C337C587309E5B45EB06725D6A06F6C337C5873095600
+</pre></table></code></div></div><p>Since we know our key and our desired output, we can now reverse the Rijndael encryption in C# to get the nugget as follows:</p><p>(This can also be done online using dotnetfiddle (https://dotnetfiddle.net/) )</p><div class="language-c# highlighter-rouge"><div class="code-header"> <span data-label-text="C#"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+</pre><td class="rouge-code"><pre><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Security.Cryptography</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+	<span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+	<span class="p">{</span>
+
+		<span class="kt">string</span> <span class="n">pass</span> <span class="p">=</span> <span class="s">"__ERROR_HANDLER"</span><span class="p">;</span>
+		<span class="kt">string</span> <span class="n">target</span><span class="p">=</span> <span class="s">"zV5/UFU8PUD3N2T49IBuCwvGzCLYz39tkMZts7rfBU4="</span><span class="p">;</span>
+		<span class="kt">byte</span><span class="p">[]</span> <span class="n">keyarray</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="p">[</span><span class="m">32</span><span class="p">];</span>
+
+		<span class="c1">// Base64 decrypt target string</span>
+		<span class="kt">byte</span><span class="p">[]</span> <span class="n">target2</span> <span class="p">=</span> <span class="n">Convert</span><span class="p">.</span><span class="nf">FromBase64String</span><span class="p">(</span><span class="n">target</span><span class="p">);</span>
+
+		<span class="c1">// Set our encryption/decryption key</span>
+		<span class="n">MD5CryptoServiceProvider</span> <span class="n">mD5CryptoServiceProvider</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">MD5CryptoServiceProvider</span><span class="p">();</span>
+		<span class="kt">byte</span><span class="p">[]</span> <span class="n">sourceArray</span> <span class="p">=</span> <span class="n">mD5CryptoServiceProvider</span><span class="p">.</span><span class="nf">ComputeHash</span><span class="p">(</span><span class="n">Encoding</span><span class="p">.</span><span class="n">ASCII</span><span class="p">.</span><span class="nf">GetBytes</span><span class="p">(</span><span class="n">pass</span><span class="p">));</span>
+		<span class="n">Array</span><span class="p">.</span><span class="nf">Copy</span><span class="p">(</span><span class="n">sourceArray</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">keyarray</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">16</span><span class="p">);</span>
+		<span class="n">Array</span><span class="p">.</span><span class="nf">Copy</span><span class="p">(</span><span class="n">sourceArray</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">keyarray</span><span class="p">,</span> <span class="m">15</span><span class="p">,</span> <span class="m">16</span><span class="p">);</span>
+
+		<span class="c1">// Set up Rijndael Decrypt</span>
+		<span class="n">RijndaelManaged</span> <span class="n">rijndaelManaged</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RijndaelManaged</span><span class="p">();</span>
+		<span class="n">rijndaelManaged</span><span class="p">.</span><span class="n">Key</span> <span class="p">=</span> <span class="n">keyarray</span><span class="p">;</span>
+		<span class="n">rijndaelManaged</span><span class="p">.</span><span class="n">Mode</span> <span class="p">=</span> <span class="n">CipherMode</span><span class="p">.</span><span class="n">ECB</span><span class="p">;</span>
+		<span class="n">ICryptoTransform</span> <span class="n">cryptoTransformDecrypt</span> <span class="p">=</span> <span class="n">rijndaelManaged</span><span class="p">.</span><span class="nf">CreateDecryptor</span><span class="p">();</span>
+
+		<span class="c1">// Do it</span>
+		<span class="kt">byte</span><span class="p">[]</span> <span class="n">result</span> <span class="p">=</span> <span class="n">cryptoTransformDecrypt</span><span class="p">.</span><span class="nf">TransformFinalBlock</span><span class="p">(</span><span class="n">target2</span><span class="p">,</span><span class="m">0</span><span class="p">,</span> <span class="n">target2</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
+		<span class="n">System</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="n">Encoding</span> <span class="n">encoding</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="nf">ASCIIEncoding</span><span class="p">();</span>
+
+		<span class="c1">// print result</span>
+		<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">encoding</span><span class="p">.</span><span class="nf">GetString</span><span class="p">(</span><span class="n">result</span><span class="p">));</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><h2> Flag</h2><code> HV15-uQEJ-4HPX-Qcau-Xvt7-NAlP </code></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div class="panel-heading"> <a href="https://github.com/shiltemann/CTF-writeups-public/tree/main/website/writeups/Hackvent_2015/14-dec-14-reversing-1.md"><i class="fab fa-github"></i> Edit on GitHub </a></div><div id="access-lastmod" class="post"><div class="panel-heading">Recently Updated</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li> <a href="/CTF-writeups-public/writeups/Hackvent_2015/13-dec-13-ball-in-plain-sight.html">Dec 13: Ball in plain sight!?! - (Hackvent_2015)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2015/01-dec-1-hello.html">Dec 1: Hello - (Hackvent_2015)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2015/12-dec-12-high-performance-computing.html">Dec 12: High Performance Computing - (Hackvent_2015)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2015/11-dec-11-old-school.html">Dec 11: Old School - (Hackvent_2015)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2015/10-dec-10-nasty-zip.html">Dec 10: Nasty Zip - (Hackvent_2015)</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div></div></div></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><footer><div class="container pl-lg-4 pr-lg-4"><div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3"><div class="footer-left"><p class="mb-0"> © 2023 <a href="https://github.com/shiltemann">Team Galaxians</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." >Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0">Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>.</p></div></div></div></footer><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false" ><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/CTF-writeups-public/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5"></p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script defer src="/CTF-writeups-public/assets/js/dist/commons.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/CTF-writeups-public/app.js"></script>
