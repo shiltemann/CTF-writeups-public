@@ -1,4 +1,4 @@
-# Overview
+## Overview
 
 ```
 Date      Title             Category      Flag
@@ -33,7 +33,7 @@ Dec. 25   Xmas              bonus         ADCTF_m3RRy_ChR157m42
 Below are the writeups for each day (WIP)
 
 
-# December 1st: Warmup
+## December 1st: Warmup
 
 
 **Category**
@@ -61,7 +61,7 @@ ADCTF_W3LC0M3_70_ADC7F2014
 ```
 
 
-# December 2nd: Alert Man
+## December 2nd: Alert Man
 
 
 **Category**
@@ -121,7 +121,7 @@ document.getElementById('form').onsubmit = function() {
 
 It appears we need to inject an *alert('XSS')* statement.
 
-We can trigger a simple alert by entering 
+We can trigger a simple alert by entering
 
 ```
 <img src=/ onerror=alert(1)>
@@ -144,7 +144,7 @@ the flag is: ADCTF_I_4M_4l3Rt_M4n
 ADCTF_I_4M_4l3Rt_M4n
 ```
 
-# December 3rd: Listen
+## December 3rd: Listen
 
 **Category**
 
@@ -177,7 +177,7 @@ The flag is in all capital letters A-D-C-T-F underscore SOUNDS underscore GOOD
 ADCTF_SOUNDS_GOOD
 ```
 
-# December 4th: Easy One
+## December 4th: Easy One
 
 **Category**
 
@@ -189,7 +189,7 @@ Reversing
 
 **Challenge**
 
-We are given a binary: [easyone](files/easyone) 
+We are given a binary: [easyone](files/easyone)
 
 **Solution**
 
@@ -250,7 +250,7 @@ Run the program in gdb and set breakpoint at a location after all characters hav
 (gdb) break *0x4006a2
 Breakpoint 1 at 0x4006a2
 (gdb) run
-Starting program: /media/AnanasHD/CTF/adctf2014/files/easyone 
+Starting program: /media/AnanasHD/CTF/adctf2014/files/easyone
 password: bla
 
 Breakpoint 1, 0x00000000004006a2 in main ()
@@ -274,7 +274,7 @@ Now inspect memory at location indicated by register rbp
 ADCTF_7H15_15_7oO_345y_FOR_M3
 ```
 
-# December 5th: Shooting
+## December 5th: Shooting
 
 **Category**
 
@@ -287,7 +287,7 @@ Web
 
 **Challenge**
 
-The challenge consists of a javascript game [zip](files/dec5/shooting.zip). 
+The challenge consists of a javascript game [zip](files/dec5/shooting.zip).
 
 It appears we need to beat the game to get the flag.
 
@@ -311,7 +311,7 @@ Next just play the game, when you reach 10000 points the flag appears in an aler
 ADCTF_1mP05518L3_STG
 ```
 
-# December 6th: Paths
+## December 6th: Paths
 
 **Category**
 
@@ -333,24 +333,24 @@ This contains a definition of a graph
 
 ```
 E = [
-[(96, 65)], 
-[(64, 99), (82, 120), (3, 100), .. ], 
-[(24, 88), (91, 67), (58, 112), .. ], 
-[(75, 48), (21, 80), (32, 119), (61, 48) ..], 
-[(63, 66), (49, 55), (80, 79), (31, 122), (1, 67), (6, 89), (86, 100), ..], 
+[(96, 65)],
+[(64, 99), (82, 120), (3, 100), .. ],
+[(24, 88), (91, 67), (58, 112), .. ],
+[(75, 48), (21, 80), (32, 119), (61, 48) ..],
+[(63, 66), (49, 55), (80, 79), (31, 122), (1, 67), (6, 89), (86, 100), ..],
 [(38, 55), (5, 119), (97, 68), (10, 72), (11, 106), ..],
 ...
 ...
 
 ```
 
-where node 0 has a connection to node 96 at a cost of 65  
-node 1 has connection to node 64 at cost of 99, and a connection to node 82 at cost 120, etc..  
+where node 0 has a connection to node 96 at a cost of 65
+node 1 has connection to node 64 at cost of 99, and a connection to node 82 at cost 120, etc..
 
 
 **Solution**
 
-We need to find a path on this graph from node 0 to 99 of length <=2014. 
+We need to find a path on this graph from node 0 to 99 of length <=2014.
 
 We wrote a small program to find this path using backtracking ([file](files/findpath.py)):
 
@@ -366,24 +366,24 @@ def travel(node, totalcost):
 	global nodes
 
 	for i in E[node]:
-		# check if goal reached
-		if i[0] == goal and totalcost+i[1] <= shortest:		
+		## check if goal reached
+		if i[0] == goal and totalcost+i[1] <= shortest:
 			print "yay!! \ntotal cost: "+str(totalcost+i[1])
 			print "walk: ",
 			nodes.append(i[0])
-			print nodes			
+			print nodes
 			break
 
-		# backtrack if cost is too high
+		## backtrack if cost is too high
 		if totalcost+i[1] > shortest:
 			break
 
-		# go deeper
+		## go deeper
 		nodes.append(i[0])
-		travel(i[0],totalcost+i[1])	
-	
-	
-	# tried all connections from current node, backtrack.
+		travel(i[0],totalcost+i[1])
+
+
+	## tried all connections from current node, backtrack.
 	nodes.pop()
 
 
@@ -394,7 +394,7 @@ travel(0,0)
 this give us the following output:
 
 ```
-yay!! 
+yay!!
 total cost: 2014
 walk:  [96, 94, 72, 70, 69, 89, 18, 46, 22, 92, 79, 59, 74, 97, 58, 82, 35, 85, 30, 87, 25, 40, 41, 7, 99]
 
@@ -415,7 +415,7 @@ the flag is: ADCTF_G0_go_5hOr7E57_PaTh
 ADCTF_G0_go_5hOr7E57_PaTh
 ```
 
-# December 7th: Reader
+## December 7th: Reader
 
 **Category**
 
@@ -432,7 +432,7 @@ nc adctf2014.katsudon.org 43010
 
 **Solution**
 
-We connect to a service which sends us a set of characters resembling a barcode. 
+We connect to a service which sends us a set of characters resembling a barcode.
 The barcode is different every time, and seems like we need to decode 10 barcodes in row to get the flag.
 
 We created a small python program to do this
@@ -446,7 +446,7 @@ We created a small python program to do this
 ADCTF_
 ```
 
-# December 9th: QRgarden
+## December 9th: QRgarden
 
 **Category**
 
@@ -470,7 +470,7 @@ We use zbar to read QR codes:
 sudo apt-get install zbar-tools
 ```
 
-We split the image into the individual qr codes using imagemagick, then read each QR code until we find one 
+We split the image into the individual qr codes using imagemagick, then read each QR code until we find one
 starting with ADCTF_
 
 The full image is 8700x8700 pixels, and each qr code is 87x87 pixels. We split this the large image into tiles:
@@ -493,7 +493,7 @@ QR-Code:ADCTF_re4d1n9_Qrc0de_15_FuN
 ADCTF_re4d1n9_Qrc0de_15_FuN
 ```
 
-# December 10th
+## December 10th
 
 **Category**
 
@@ -509,11 +509,11 @@ ADCTF_re4d1n9_Qrc0de_15_FuN
 
 int main() {
   const char * flag = "712249146f241d31651a504a1a7372384d173f7f790c2b115f47";
-  char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-"; 
+  char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-";
   char *a;
-  char an[]="";  
+  char an[]="";
   int len,alen,t, fl, lastfl,orig;
-  
+
   len=(int)(strlen(flag)/2);
   alen=strlen(alphabet);
 
@@ -521,7 +521,7 @@ int main() {
   for(int i=0; i<len; i++){
     strncpy(an,flag+i*2,2);
     t=strtol(an,&a,16);
-    
+
     for(int j=0; j<alen; j++){
       fl=alphabet[j];
         orig=fl;
