@@ -1,6 +1,6 @@
 ---
 layout: home
-icon:
+icon: fas fa-pencil
 
 list: post
 
