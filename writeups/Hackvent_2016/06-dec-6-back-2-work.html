@@ -1,0 +1,253 @@
+<!doctype html><html lang="en" data-mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover" ><meta name="generator" content="Jekyll v4.3.2" /><meta property="og:title" content="Dec 6: Back 2 Work" /><meta property="og:locale" content="en" /><meta name="description" content="A set of CTF writeups by team Galaxians." /><meta property="og:description" content="A set of CTF writeups by team Galaxians." /><link rel="canonical" href="https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2016/06-dec-6-back-2-work.html" /><meta property="og:url" content="https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2016/06-dec-6-back-2-work.html" /><meta property="og:site_name" content="Galaxians CTF" /><meta property="og:type" content="website" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Dec 6: Back 2 Work" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-05-20T16:28:47+02:00","description":"A set of CTF writeups by team Galaxians.","headline":"Dec 6: Back 2 Work","url":"https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2016/06-dec-6-back-2-work.html"}</script><title> Galaxians CTF | Dec 6: Back 2 Work</title><link rel="apple-touch-icon" sizes="180x180" href="/CTF-writeups-public/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/CTF-writeups-public/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/CTF-writeups-public/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/CTF-writeups-public/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/CTF-writeups-public/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Galaxians CTF"><meta name="application-name" content="Galaxians CTF"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/CTF-writeups-public/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css"><link rel="stylesheet" href="/CTF-writeups-public/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script><body data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/CTF-writeups-public/" class="mx-auto"> <img src="/CTF-writeups-public/assets/img/galaxians-logo.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title"> <a href="/CTF-writeups-public/">Galaxians CTF</a></div><div class="site-subtitle font-italic">Galactic Girlfiends Hack the Universe!</div></div><ul class="w-100"><li class="nav-item"> <a href="/CTF-writeups-public/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>CTF EVENTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/posts/" class="nav-link"> <i class="fa-fw fas fa-pencil ml-xl-3 mr-xl-3 unloaded"></i> <span>POSTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <a href="https://github.com/shiltemann" aria-label="github" target="_blank" rel="noopener noreferrer" > <i class="fab fa-github"></i> </a> <a href="https://twitter.com/" aria-label="twitter" target="_blank" rel="noopener noreferrer" > <i class="fab fa-twitter"></i> </a> <a href="javascript:location.href = 'mailto:' + ['galaxians','galaxians.org'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/CTF-writeups-public/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/CTF-writeups-public/"> Home </a> </span> <span><a href="/CTF-writeups-public/writeups/Hackvent_2016/">Hackvent 2016</a></span> <span>Dec 6: Back 2 Work</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Writeup</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..." > </span> <span id="search-cancel">Cancel</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1> Dec 6: Back 2 Work</h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Greetings from Thumper, he has an order for you:</p><ol><li>unzip: the password is confidential<li>find the flag<li>look at my holiday pictures</ol><p>Comment: Be aware, the pictures are only supplement.</p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>We get a zip file with 25 images in them, the images are of hacky easter bunny but the hint says the images are not important. So we focus on the zip file itself</p><p>We can extract it with password <code class="language-plaintext highlighter-rouge">confidential</code> but see nothing strange.</p><p>we get some information about the zip file</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+</pre><td class="rouge-code"><pre>$ unzip -v dec6_original.zip                                                                                                           [06-12-16 15:51:45]
+Archive:  dec6_original.zip
+ Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
+--------  ------  ------- ---- ---------- ----- --------  ----
+  822192  Defl:N   821475   0% 2016-09-07 22:30 9ac20439  image_0004.jpg
+                                                    -
+  649281  Defl:N   648888   0% 2016-09-07 22:30 34b1e9c3  image_0005.jpg
+                                                                   -
+  774896  Defl:N   774435   0% 2016-09-07 22:30 764cdcab  image_0017.jpg
+                                                             -
+  658523  Defl:N   657723   0% 2016-09-07 22:30 17038f5a  image_0002.jpg
+                                                    -
+  584984  Defl:N   584386   0% 2016-09-07 22:30 a2a99aad  image_0013.jpg
+                                                             -
+  639489  Defl:N   639014   0% 2016-09-07 22:30 8a3db508  image_0012.jpg
+                                                                      -
+  916283  Defl:N   915157   0% 2016-09-07 22:30 14a76079  image_0016.jpg
+                                           -
+  684503  Defl:N   684052   0% 2016-09-07 22:30 1de58966  image_0010.jpg
+                                                                                     -
+  608586  Defl:N   607823   0% 2016-09-07 22:30 2e7804b3  image_0009.jpg
+                                              -
+  963456  Defl:N   962651   0% 2016-09-07 22:30 fdd724e0  image_0020.jpg
+                                                                -
+  695994  Defl:N   695208   0% 2016-09-07 22:30 b370cb8a  image_0018.jpg
+                                                             -
+  760741  Defl:N   759912   0% 2016-09-07 22:30 3e75e394  image_0001.jpg
+                                                                -
+  716152  Defl:N   715332   0% 2016-09-07 22:30 9735af02  image_0003.jpg
+                                                          -
+  772244  Defl:N   771129   0% 2016-09-07 22:30 8c123698  image_0006.jpg
+                                                                -
+  885418  Defl:N   884858   0% 2016-09-07 22:30 cc732eaa  image_0015.jpg
+                                              -
+  484512  Defl:N   482635   0% 2016-09-07 22:30 6aa90f1a  image_0011.jpg
+                                                                -
+  819398  Defl:N   818968   0% 2016-09-07 22:30 696689ab  image_0024.jpg
+                                                       -
+ 1104273  Defl:N  1102447   0% 2016-09-07 22:30 6fb877ce  image_0007.jpg
+                                                                            -
+ 1163165  Defl:N  1162154   0% 2016-09-07 22:30 8774fd48  image_0021.jpg
+                                                    -
+  719580  Defl:N   718391   0% 2016-09-07 22:30 447933be  image_0023.jpg
+                                                                            -
+  766740  Defl:N   765316   0% 2016-09-07 22:30 38213aab  image_0019.jpg
+                                           -
+  829079  Defl:N   828267   0% 2016-09-07 22:30 35e8aea8  image_0025.jpg
+                                              -
+ 1004991  Defl:N  1003782   0% 2016-09-07 22:30 16cfccc6  image_0022.jpg
+                                                                -
+  792701  Defl:N   790543   0% 2016-09-07 22:30 87b0e0b0  image_0008.jpg
+                                                             -
+ 1362659  Defl:N  1361655   0% 2016-09-07 22:30 01264369  image_0014.jpg
+                                                       -
+--------          -------  ---                            -------
+20179840         20156201   0%                            25 files
+</pre></table></code></div></div><p>We see that there is whitespace (spaces and tabs) after each file name here.</p><p>We open the zip file in a hex editor and see the following character after each file name in the listing:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre><td class="rouge-code"><pre>20 20 20 20 20 20 20 09 09 09 09 09 20 09 20 09 09 09 20 20 20 20 20 20 20
+20 09 09 09 09 09 20 09 20 09 20 09 20 20 20 20 20 09 20 09 09 09 09 09 20
+20 09 20 20 20 09 20 09 09 09 09 20 09 09 20 20 09 09 20 09 20 20 20 09 20
+20 09 20 20 20 09 20 09 20 20 20 20 20 09 20 09 09 09 20 09 20 20 20 09 20
+20 09 20 20 20 09 20 09 09 20 09 09 09 20 09 09 20 09 20 09 20 20 20 09 20
+20 09 09 09 09 09 20 09 20 20 09 09 20 20 20 20 09 09 20 09 09 09 09 09 20
+20 20 20 20 20 20 20 09 20 09 20 09 20 09 20 09 20 09 20 20 20 20 20 20 20
+09 09 09 09 09 09 09 09 09 20 20 09 20 09 20 09 20 09 09 09 09 09 09 09 09
+20 20 20 20 20 09 20 20 20 20 09 20 20 20 09 20 20 20 09 20 09 20 09 20 09
+20 09 20 20 20 20 09 09 09 09 20 20 09 20 09 20 20 09 09 09 09 20 09 20 09
+20 09 20 20 09 09 20 09 20 09 20 09 09 09 20 20 20 20 09 20 20 09 09 09 20
+09 09 09 20 20 20 09 09 09 09 09 20 09 09 20 20 20 20 20 20 20 20 09 09 09
+09 09 09 20 20 20 20 20 20 20 20 09 09 09 20 09 09 20 20 09 09 09 20 20 20
+20 20 20 09 20 09 09 20 09 09 09 20 20 09 20 09 09 20 09 20 09 09 09 20 20
+20 09 20 09 20 20 20 20 20 20 09 09 20 20 09 20 20 09 20 20 09 20 20 20 20
+20 09 09 20 20 20 09 20 09 20 09 20 09 09 09 20 09 20 09 09 20 20 09 09 20
+20 09 09 20 09 20 20 09 09 20 20 09 09 09 20 20 20 20 20 20 20 20 20 09 09
+09 09 09 09 09 09 09 09 20 20 20 09 09 09 20 09 20 09 09 09 20 09 20 09 20
+20 20 20 20 20 20 20 09 20 09 20 09 09 20 20 09 20 09 20 09 20 09 09 20 20
+20 09 09 09 09 09 20 09 09 09 09 09 09 09 20 20 20 09 09 09 20 09 09 20 20
+20 09 20 20 20 09 20 09 20 09 20 20 20 20 20 20 20 20 20 20 20 09 20 20 09
+20 09 20 20 20 09 20 09 20 20 09 20 20 09 20 09 20 20 20 20 09 20 20 20 20
+20 09 20 20 20 09 20 09 20 20 20 09 09 09 09 09 20 09 20 20 09 09 09 09 20
+20 09 09 09 09 09 20 09 20 09 20 09 20 09 20 20 20 20 20 20 09 20 09 09 20
+20 20 20 20 20 20 20 09 20 20 09 09 09 20 09 09 09 09 20 09 20 09 20 20 20
+</pre></table></code></div></div><p>When we replace these values with other characters, we notice it looks like it could represent a QR code</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre><td class="rouge-code"><pre>0000000     0 0   0000000
+0     0 0 0 00000 0     0
+0 000 0    0  00  0 000 0
+0 000 0 00000 0   0 000 0
+0 000 0  0   0  0 0 000 0
+0     0 00  0000  0     0
+0000000 0 0 0 0 0 0000000
+         00 0 0 0
+00000 0000 000 000 0 0 0
+0 0000    00 0 00    0 0
+0 00  0 0 0   0000 00   0
+   000     0  00000000
+   00000000   0  00   000
+000 0  0   00 0  0 0   00
+0 0 000000  00 00 00 0000
+0  000 0 0 0   0 0  00  0
+0  0 00  00   000000000
+        000   0 0   0 0 0
+0000000 0 0  00 0 0 0  00
+0     0       000   0  00
+0 000 0 0 00000000000 00
+0 000 0 00 00 0 0000 0000
+0 000 0 000     0 00    0
+0     0 0 0 0 000000 0  0
+0000000 00   0    0 0 000
+</pre></table></code></div></div><p>So we write a little script to convert theses values to a QR code</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre><td class="rouge-code"><pre><span class="kn">from</span> <span class="n">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="n">qrtools</span> <span class="kn">import</span> <span class="n">QR</span>
+
+<span class="n">qrcode</span><span class="o">=</span><span class="sh">"</span><span class="s">0000000111110101110000000011111010101000001011111001000101111011001101000100100010100000101110100010010001011011101101010001001111101001100001101111100000000101010101010000000111111111001010101111111100000100001000100010101010100001111001010011110101010011010101110000100111011100011111011000000001111110000000011101100111000000101101110010110101110001010000001100100100100000110001010101110101100110011010011001110000000001111111111000111010111010100000000101011001010101100011111011111110001110110001000101010000000000010010100010100100101000010000010001010001111101001111001111101010101000000101100000000100111011110101000</span><span class="sh">"</span>
+<span class="n">outimgname</span> <span class="o">=</span> <span class="sh">"</span><span class="s">dec6_qrcode.png</span><span class="sh">"</span>
+
+<span class="n">outimg</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span> <span class="sh">'</span><span class="s">RGB</span><span class="sh">'</span><span class="p">,</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="mi">25</span><span class="p">),</span> <span class="sh">"</span><span class="s">white</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">pixels_out</span> <span class="o">=</span> <span class="n">outimg</span><span class="p">.</span><span class="nf">load</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nf">len</span><span class="p">(</span><span class="n">qrcode</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">qrcode</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sh">'</span><span class="s">0</span><span class="sh">'</span><span class="p">:</span>
+        <span class="n">pixels_out</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="mi">25</span><span class="p">,</span><span class="n">i</span><span class="o">/</span><span class="mi">25</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">outimg</span><span class="o">=</span><span class="n">outimg</span><span class="p">.</span><span class="nf">resize</span><span class="p">((</span><span class="mi">250</span><span class="p">,</span><span class="mi">250</span><span class="p">))</span>
+<span class="n">outimg</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="n">outimgname</span><span class="p">,</span><span class="sh">"</span><span class="s">png</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">myCode</span> <span class="o">=</span> <span class="nc">QR</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">outimgname</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">myCode</span><span class="p">.</span><span class="nf">decode</span><span class="p">():</span>
+    <span class="k">print</span> <span class="n">myCode</span><span class="p">.</span><span class="nf">data_to_string</span><span class="p">()</span>
+</pre></table></code></div></div><p>This outputs the following QR code and the nugget</p><p><img src="writeupfiles/dec6_qrcode.png" alt="" /></p><h2> Flag</h2><code> HV16-y9YO-sDo1-Vi7O-RWq1-V7hN </code></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div class="panel-heading"> <a href="https://github.com/shiltemann/CTF-writeups-public/tree/main/website/writeups/Hackvent_2016/06-dec-6-back-2-work.md"><i class="fab fa-github"></i> Edit on GitHub </a></div><div id="access-lastmod" class="post"><div class="panel-heading">Recently Updated</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li> <a href="/CTF-writeups-public/writeups/Hackvent_2016/16-dec-16-marshmallows.html">Dec 16: Marshmallows - (Hackvent_2016)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2016/15-dec-15-sap---santas-admin-panel.html">Dec 15: SAP - Santas Admin Panel - (Hackvent_2016)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2016/14-dec-14-radio-wargame.html">Dec 14: Radio Wargame - (Hackvent_2016)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2016/13-dec-13-jcoinz.html">Dec 13: JCoinz - (Hackvent_2016)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2016/12-dec-12-crypt-o-math.html">Dec 12: Crypt-o-Math - (Hackvent_2016)</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div></div></div></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><footer><div class="container pl-lg-4 pr-lg-4"><div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3"><div class="footer-left"><p class="mb-0"> © 2023 <a href="https://github.com/shiltemann">Team Galaxians</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." >Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0">Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>.</p></div></div></div></footer><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false" ><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/CTF-writeups-public/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5"></p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script defer src="/CTF-writeups-public/assets/js/dist/commons.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/CTF-writeups-public/app.js"></script>

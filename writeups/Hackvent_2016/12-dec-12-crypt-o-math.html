@@ -1,0 +1,145 @@
+<!doctype html><html lang="en" data-mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover" ><meta name="generator" content="Jekyll v4.3.2" /><meta property="og:title" content="Dec 12: Crypt-o-Math" /><meta property="og:locale" content="en" /><meta name="description" content="A set of CTF writeups by team Galaxians." /><meta property="og:description" content="A set of CTF writeups by team Galaxians." /><link rel="canonical" href="https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2016/12-dec-12-crypt-o-math.html" /><meta property="og:url" content="https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2016/12-dec-12-crypt-o-math.html" /><meta property="og:site_name" content="Galaxians CTF" /><meta property="og:type" content="website" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Dec 12: Crypt-o-Math" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-05-20T16:28:47+02:00","description":"A set of CTF writeups by team Galaxians.","headline":"Dec 12: Crypt-o-Math","url":"https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2016/12-dec-12-crypt-o-math.html"}</script><title> Galaxians CTF | Dec 12: Crypt-o-Math</title><link rel="apple-touch-icon" sizes="180x180" href="/CTF-writeups-public/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/CTF-writeups-public/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/CTF-writeups-public/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/CTF-writeups-public/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/CTF-writeups-public/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Galaxians CTF"><meta name="application-name" content="Galaxians CTF"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/CTF-writeups-public/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css"><link rel="stylesheet" href="/CTF-writeups-public/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script><body data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/CTF-writeups-public/" class="mx-auto"> <img src="/CTF-writeups-public/assets/img/galaxians-logo.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title"> <a href="/CTF-writeups-public/">Galaxians CTF</a></div><div class="site-subtitle font-italic">Galactic Girlfiends Hack the Universe!</div></div><ul class="w-100"><li class="nav-item"> <a href="/CTF-writeups-public/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>CTF EVENTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/posts/" class="nav-link"> <i class="fa-fw fas fa-pencil ml-xl-3 mr-xl-3 unloaded"></i> <span>POSTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <a href="https://github.com/shiltemann" aria-label="github" target="_blank" rel="noopener noreferrer" > <i class="fab fa-github"></i> </a> <a href="https://twitter.com/" aria-label="twitter" target="_blank" rel="noopener noreferrer" > <i class="fab fa-twitter"></i> </a> <a href="javascript:location.href = 'mailto:' + ['galaxians','galaxians.org'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/CTF-writeups-public/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/CTF-writeups-public/"> Home </a> </span> <span><a href="/CTF-writeups-public/writeups/Hackvent_2016/">Hackvent 2016</a></span> <span>Dec 12: Crypt-o-Math</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Writeup</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..." > </span> <span id="search-cancel">Cancel</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1> Dec 12: Crypt-o-Math</h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p><em>Crypto? Math? Maybe both?</em></p><p>you remember math classes at school?</p><p>hopefully you payed attention - and even if not, there are other ways to solve this challenge.</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+</pre><td class="rouge-code"><pre>-----BEGIN HV16 CHALLENGE-----
+m,b,p
+260492575707724061121829547730531689268,219331109722881671601619265628380637246,264919855316001119104226076800779561423
+177037883108301921298501682022541052670,139010999389216475313896172223515984938,320424365363679773525372180610490277297
+201530751445587644733838605908487065258,156283960365344379794603462644218812025,260817421396746284411005790925469586671
+243507266865305317073588348849175479231,228672633794460367905186619683512549913,311961837617653522368820984616392093801
+235979373536480839808082706396503872744,193357134507240975900584464141934560197,272109227670221371468387040437351965901
+230551569853098007600677345727280344755,287930781315318970473254677546577038359,267938315516895485484707051396200706443
+243574932572443222972750303823800502163,301120142698243924290763614435454565780,298644815229643145404450351035804160241
+227879528304283891530899499744980291425,259647428751561260984852593239590962832,269635859822490692863508746527322139429
+193780289185955117334123511554895799539,230518059194860774985531587526031582924,207593226880414101384701594893426311937
+195425447990038725090924967791915486200,211074736770197591575170253798012315012,268179617336236355437933191393015865423
+182160695615960388203641943769582257756,226052690185182197055109796183513576908,206467790630567275126889799309355179359
+270365608703884312725165910007312396490,213419845252996446560398094913250521674,324158008615298179424325819513870548587
+201137118708843924452456973486310609161,159816376238003107002192693657105630045,290037217831618223964293971372160917859
+173038113384777542289872672569239525188,189558894159177271916644208007912631998,183921485447992361971839173200969564297
+203079462849536394511816713024005910404,265255113893859933710071781082768935284,214860441818087898101519465166073705553
+175435955454496700514946039667711586185,321302129754052602637931061925096198926,176882035352883165226937995777991718197
+200701714682593432395729715130128082931,240366172083509768840032993181552166546,262938198945065824235502495190974734479
+299752902236935158362307014205359355636,235711956783855914923056820687273121476,332555996220370247549433065033032955347
+215902963387633985679795544753434436743,271635699405692295953353834140161222963,234686602415496986215568540582391915559
+205034325176731455396463659428717818520,272071326791294957481838950480920388378,206409649750015144058460651952033121471
+186202058515529112089774144624697652752,254056783751113612320599805874190538383,203950808577618100941828939328974427763
+287901749499474956286121649902808545796,182193516067311697257425115832952178725,310661715406253093730218700854274682783
+188797174721730846063832466557549096934,204289631640363328059573883403131553162,202398097602736311826665715995283701469
+173276488624612107075891981111532248427,143340215883386310219352729908142093188,310272112653851647580237588097526878451
+300899937001700644581647299928269672025,333680929290782211826332325236347007941,313491113294105066840003438756384124923
+179363152345949876980223861387117154037,192660289980311571512766813788452507319,191173487237342005980035033206582186319
+274297779066581320003362916911839787292,230968818301666954768423827202499074222,280249595392717543321356899242915413241
+173512792712172909456131993539106342879,276670255129140880258696821649524107343,176080436791985260266403840744627297429
+217267141898619422837859646397422811530,192415481924499182031594124394175595334,261771203728758901533499406756951694139
+m = a * 0x1337 * b % p
+a=flag
+-----END HV16 CHALLENGE-----
+</pre></table></code></div></div><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Seems clear we would need to find <code class="language-plaintext highlighter-rouge">a</code> for each set of <code class="language-plaintext highlighter-rouge">(m,b,p)</code>, since there are 29 such tuples, it is safe to assume each encodes one letter of the flag.</p><p>There is surely a direct way to compute this, but my modular arithmetic is a bit rusty, so just going to bruteforce it:</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+</pre><td class="rouge-code"><pre><span class="n">cts</span><span class="o">=</span><span class="p">[[</span><span class="mi">260492575707724061121829547730531689268</span><span class="p">,</span><span class="mi">219331109722881671601619265628380637246</span><span class="p">,</span><span class="mi">264919855316001119104226076800779561423</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">177037883108301921298501682022541052670</span><span class="p">,</span><span class="mi">139010999389216475313896172223515984938</span><span class="p">,</span><span class="mi">320424365363679773525372180610490277297</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">201530751445587644733838605908487065258</span><span class="p">,</span><span class="mi">156283960365344379794603462644218812025</span><span class="p">,</span><span class="mi">260817421396746284411005790925469586671</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">243507266865305317073588348849175479231</span><span class="p">,</span><span class="mi">228672633794460367905186619683512549913</span><span class="p">,</span><span class="mi">311961837617653522368820984616392093801</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">235979373536480839808082706396503872744</span><span class="p">,</span><span class="mi">193357134507240975900584464141934560197</span><span class="p">,</span><span class="mi">272109227670221371468387040437351965901</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">230551569853098007600677345727280344755</span><span class="p">,</span><span class="mi">287930781315318970473254677546577038359</span><span class="p">,</span><span class="mi">267938315516895485484707051396200706443</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">243574932572443222972750303823800502163</span><span class="p">,</span><span class="mi">301120142698243924290763614435454565780</span><span class="p">,</span><span class="mi">298644815229643145404450351035804160241</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">227879528304283891530899499744980291425</span><span class="p">,</span><span class="mi">259647428751561260984852593239590962832</span><span class="p">,</span><span class="mi">269635859822490692863508746527322139429</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">193780289185955117334123511554895799539</span><span class="p">,</span><span class="mi">230518059194860774985531587526031582924</span><span class="p">,</span><span class="mi">207593226880414101384701594893426311937</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">195425447990038725090924967791915486200</span><span class="p">,</span><span class="mi">211074736770197591575170253798012315012</span><span class="p">,</span><span class="mi">268179617336236355437933191393015865423</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">182160695615960388203641943769582257756</span><span class="p">,</span><span class="mi">226052690185182197055109796183513576908</span><span class="p">,</span><span class="mi">206467790630567275126889799309355179359</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">270365608703884312725165910007312396490</span><span class="p">,</span><span class="mi">213419845252996446560398094913250521674</span><span class="p">,</span><span class="mi">324158008615298179424325819513870548587</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">201137118708843924452456973486310609161</span><span class="p">,</span><span class="mi">159816376238003107002192693657105630045</span><span class="p">,</span><span class="mi">290037217831618223964293971372160917859</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">173038113384777542289872672569239525188</span><span class="p">,</span><span class="mi">189558894159177271916644208007912631998</span><span class="p">,</span><span class="mi">183921485447992361971839173200969564297</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">203079462849536394511816713024005910404</span><span class="p">,</span><span class="mi">265255113893859933710071781082768935284</span><span class="p">,</span><span class="mi">214860441818087898101519465166073705553</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">175435955454496700514946039667711586185</span><span class="p">,</span><span class="mi">321302129754052602637931061925096198926</span><span class="p">,</span><span class="mi">176882035352883165226937995777991718197</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">200701714682593432395729715130128082931</span><span class="p">,</span><span class="mi">240366172083509768840032993181552166546</span><span class="p">,</span><span class="mi">262938198945065824235502495190974734479</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">299752902236935158362307014205359355636</span><span class="p">,</span><span class="mi">235711956783855914923056820687273121476</span><span class="p">,</span><span class="mi">332555996220370247549433065033032955347</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">215902963387633985679795544753434436743</span><span class="p">,</span><span class="mi">271635699405692295953353834140161222963</span><span class="p">,</span><span class="mi">234686602415496986215568540582391915559</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">205034325176731455396463659428717818520</span><span class="p">,</span><span class="mi">272071326791294957481838950480920388378</span><span class="p">,</span><span class="mi">206409649750015144058460651952033121471</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">186202058515529112089774144624697652752</span><span class="p">,</span><span class="mi">254056783751113612320599805874190538383</span><span class="p">,</span><span class="mi">203950808577618100941828939328974427763</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">287901749499474956286121649902808545796</span><span class="p">,</span><span class="mi">182193516067311697257425115832952178725</span><span class="p">,</span><span class="mi">310661715406253093730218700854274682783</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">188797174721730846063832466557549096934</span><span class="p">,</span><span class="mi">204289631640363328059573883403131553162</span><span class="p">,</span><span class="mi">202398097602736311826665715995283701469</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">173276488624612107075891981111532248427</span><span class="p">,</span><span class="mi">143340215883386310219352729908142093188</span><span class="p">,</span><span class="mi">310272112653851647580237588097526878451</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">300899937001700644581647299928269672025</span><span class="p">,</span><span class="mi">333680929290782211826332325236347007941</span><span class="p">,</span><span class="mi">313491113294105066840003438756384124923</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">179363152345949876980223861387117154037</span><span class="p">,</span><span class="mi">192660289980311571512766813788452507319</span><span class="p">,</span><span class="mi">191173487237342005980035033206582186319</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">274297779066581320003362916911839787292</span><span class="p">,</span><span class="mi">230968818301666954768423827202499074222</span><span class="p">,</span><span class="mi">280249595392717543321356899242915413241</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">173512792712172909456131993539106342879</span><span class="p">,</span><span class="mi">276670255129140880258696821649524107343</span><span class="p">,</span><span class="mi">176080436791985260266403840744627297429</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">217267141898619422837859646397422811530</span><span class="p">,</span><span class="mi">192415481924499182031594124394175595334</span><span class="p">,</span><span class="mi">261771203728758901533499406756951694139</span><span class="p">]]</span>
+
+<span class="n">alphabet</span><span class="o">=</span><span class="sh">"</span><span class="s">-ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuwyz0123456789</span><span class="sh">"</span>
+
+<span class="n">pt</span><span class="o">=</span><span class="sh">''</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">p</span><span class="p">)</span> <span class="ow">in</span> <span class="n">cts</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">alphabet</span><span class="p">:</span>
+        <span class="nf">if </span><span class="p">(</span><span class="nf">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="mh">0x1337</span><span class="o">*</span><span class="n">b</span><span class="p">)</span><span class="o">%</span><span class="n">p</span> <span class="o">==</span> <span class="n">m</span><span class="p">:</span>
+            <span class="n">pt</span> <span class="o">+=</span> <span class="n">c</span>
+<span class="k">print</span> <span class="n">pt</span>
+</pre></table></code></div></div><p>This spits out our nugget :)</p><h2> Flag</h2><code> HV16-laWz-D5yT-0Uzb-DFj0-FIsL </code></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div class="panel-heading"> <a href="https://github.com/shiltemann/CTF-writeups-public/tree/main/website/writeups/Hackvent_2016/12-dec-12-crypt-o-math.md"><i class="fab fa-github"></i> Edit on GitHub </a></div><div id="access-lastmod" class="post"><div class="panel-heading">Recently Updated</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li> <a href="/CTF-writeups-public/writeups/Hackvent_2016/16-dec-16-marshmallows.html">Dec 16: Marshmallows - (Hackvent_2016)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2016/15-dec-15-sap---santas-admin-panel.html">Dec 15: SAP - Santas Admin Panel - (Hackvent_2016)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2016/14-dec-14-radio-wargame.html">Dec 14: Radio Wargame - (Hackvent_2016)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2016/13-dec-13-jcoinz.html">Dec 13: JCoinz - (Hackvent_2016)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2016/12-dec-12-crypt-o-math.html">Dec 12: Crypt-o-Math - (Hackvent_2016)</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div></div></div></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><footer><div class="container pl-lg-4 pr-lg-4"><div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3"><div class="footer-left"><p class="mb-0"> © 2023 <a href="https://github.com/shiltemann">Team Galaxians</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." >Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0">Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>.</p></div></div></div></footer><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false" ><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/CTF-writeups-public/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5"></p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script defer src="/CTF-writeups-public/assets/js/dist/commons.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/CTF-writeups-public/app.js"></script>

